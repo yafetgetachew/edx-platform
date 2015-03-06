@@ -11,6 +11,7 @@
 # Андрей Сандлер <setcursorpos@gmail.com>, 2013
 # Danil Moskovoy <tenrius@gmail.com>, 2013
 # DariaTkacheva <d.i.tkacheva@gmail.com>, 2014
+# Dmitriy <polevaiabrest@gmail.com>, 2014
 # Evgeniya <eugenia000@gmail.com>, 2013
 # elenapykhtina <elenapykhtina@mail.ru>, 2014
 # Евгений Козлов <eudjin@gmail.com>, 2014
@@ -40,6 +41,7 @@
 # Translators:
 # AndyZ <Andrey.Zakhvatov@gmail.com>, 2014
 # Андрей Сандлер <setcursorpos@gmail.com>, 2013
+# Dmitriy <polevaiabrest@gmail.com>, 2014
 # Evgeniya <eugenia000@gmail.com>, 2013
 # Elena Freundorfer <e_freundorfer@gmx.de>, 2014
 # Maksimenkova Olga <omaksimenkova@hse.ru>, 2014
@@ -54,6 +56,7 @@
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
 # Translators:
+# Dmitriy <polevaiabrest@gmail.com>, 2014
 # Maksimenkova Olga <omaksimenkova@hse.ru>, 2014
 # webslavic <webslavic@yahoo.com>, 2014
 # Weyedide <weyedide@gmail.com>, 2014
@@ -71,7 +74,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:06-0500\n"
+"POT-Creation-Date: 2014-11-17 12:58-0500\n"
 "PO-Revision-Date: 2014-10-08 18:08+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/edx-platform/language/ru/)\n"

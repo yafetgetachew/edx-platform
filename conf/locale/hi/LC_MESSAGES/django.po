@@ -72,7 +72,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:08-0500\n"
+"POT-Creation-Date: 2014-11-17 13:00-0500\n"
 "PO-Revision-Date: 2014-10-27 15:11+0000\n"
 "Last-Translator: ria1234 <contactpayal@yahoo.com.au>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/edx-platform/language/hi/)\n"
@@ -4213,6 +4213,10 @@ msgid "CourseMode price updated successfully"
 msgstr ""
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
+msgid "Enrollment data is now available in {dashboard_link}."
+msgstr ""
+
+#: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "Membership"
 msgstr "सदस्यता"
 
@@ -7375,6 +7379,12 @@ msgstr ""
 msgid "&copy; 2014 {platform_name}, some rights reserved"
 msgstr ""
 
+#. Translators: 'Open edX' is a brand, please keep this untranslated. See
+#. http://openedx.org for more information.
+#: lms/templates/footer.html
+msgid "Powered by Open edX"
+msgstr ""
+
 #: lms/templates/forgot_password_modal.html
 #: lms/templates/forgot_password_modal.html
 msgid "Password Reset"
@@ -7830,8 +7840,17 @@ msgstr ""
 
 #: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
 #: lms/templates/navigation.html
+msgid "How it Works"
+msgstr "यह कैसे काम करता है"
+
+#: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
+#: lms/templates/navigation.html
 msgid "Find Courses"
 msgstr "पाठ्यक्रम ढूंढें"
+
+#: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
+msgid "Schools & Partners"
+msgstr ""
 
 #: lms/templates/navigation-edx.html lms/templates/navigation.html
 msgid "Dashboard for:"
@@ -7847,14 +7866,6 @@ msgstr "लॉग आउट"
 
 #: lms/templates/navigation-edx.html lms/templates/navigation.html
 msgid "Shopping Cart"
-msgstr ""
-
-#: lms/templates/navigation-edx.html lms/templates/navigation.html
-msgid "How it Works"
-msgstr "यह कैसे काम करता है"
-
-#: lms/templates/navigation-edx.html
-msgid "Schools & Partners"
 msgstr ""
 
 #: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
@@ -9192,15 +9203,9 @@ msgstr "ग्रेड यहां से डाउनलोड करें"
 #: lms/templates/courseware/instructor_dashboard.html
 msgid ""
 "Note: some of these buttons are known to time out for larger courses. We "
-"have temporarily disabled those features for courses with more than "
-"{max_enrollment} students. We are urgently working on fixing this issue. "
-"Thank you for your patience as we continue working to improve the platform!"
+"have disabled those features for courses with more than {max_enrollment} "
+"students."
 msgstr ""
-"नोट: इन में से कुछ बटन बड़े पाठ्यक्रमों में काम करना बंद कर देते हैं। हमने "
-"कुछ देर के लिए जिन पाठयक्रमो में {max_enrollment} से ज्यादा छात्र हैं उनमें "
-"इन सुविधाओं को निष्क्रिय कर दिया है। हम जल्द से जल्द इस मुद्दे का हल ढूंढने "
-"की कोशिश कर रहे हैं। प्लेटफ़ॉर्म सुधारने का काम जारी है और आपके धैर्य के लिए"
-" धन्यवाद!"
 
 #: lms/templates/courseware/instructor_dashboard.html
 msgid "Export grades to remote gradebook"
@@ -9355,28 +9360,6 @@ msgid "Section:"
 msgstr "धारा:"
 
 #: lms/templates/courseware/instructor_dashboard.html
-#: lms/templates/instructor/instructor_dashboard_2/membership.html
-msgid "Batch Enrollment"
-msgstr "बैच दाखिला"
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid ""
-"Enroll or un-enroll one or many students: enter emails, separated by new "
-"lines or commas;"
-msgstr ""
-"एक या अनेक छात्रों को भर्ती करें या फिर उनका नाम हटाएं: ई-मेलें दर्ज करने के"
-" लिए, या तो ई-मेल अलग-अलग लाइनों में डालें या फिर अल्पविराम से अलग करके उनको"
-" प्रवेश करें;"
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid "Notify students by email"
-msgstr "छात्रों को ई-मेल से इत्तला दें"
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid "Auto-enroll students when they activate"
-msgstr "छात्र जब एक्टिवेट करते हैं तो उन्हे खुद-ब-खुद एनरोल करें"
-
-#: lms/templates/courseware/instructor_dashboard.html
 msgid "Problem urlname:"
 msgstr "समस्या का यू आर एल दें:"
 
@@ -9475,17 +9458,6 @@ msgstr "जो ई-मेल कतार में हैं वह रद्�
 #: lms/templates/courseware/instructor_dashboard.html
 msgid "No Analytics are available at this time."
 msgstr "इस वक्त कोई एनलिटिक्स उपलब्ध नहीं हैं।"
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid ""
-"Students enrolled (historical count, includes those who have since "
-"unenrolled):"
-msgstr ""
-"दाखिल छात्र (historical count, includes those who have since unenrolled):"
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid "Students active in the last week:"
-msgstr "पिछले सप्ताह में सक्रिय छात्र:"
 
 #: lms/templates/courseware/instructor_dashboard.html
 msgid "Student activity day by day"
@@ -11769,6 +11741,10 @@ msgstr "लिंग वितरण"
 #: lms/templates/instructor/instructor_dashboard_2/instructor_dashboard_2.html
 msgid "Revert to Legacy Dashboard"
 msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/membership.html
+msgid "Batch Enrollment"
+msgstr "बैच दाखिला"
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 #: lms/templates/instructor/instructor_dashboard_2/membership.html

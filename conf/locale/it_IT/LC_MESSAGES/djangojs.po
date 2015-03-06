@@ -25,6 +25,7 @@
 # Nicola Moretto <nmoretto-transifex@yahoo.it>, 2014
 # Pietro Lombardo <pietrolombardo1979@gmail.com>, 2014
 # Sarina Canelake <sarina@edx.org>, 2014
+# Thimoty Barbieri <thimoty@thimoty.it>, 2014
 # #-#-#-#-#  djangojs-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2014 EdX
@@ -63,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:06-0500\n"
-"PO-Revision-Date: 2014-10-30 09:54+0000\n"
+"POT-Creation-Date: 2014-11-17 12:58-0500\n"
+"PO-Revision-Date: 2014-11-15 17:41+0000\n"
 "Last-Translator: Pietro Lombardo <pietrolombardo1979@gmail.com>\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/edx-platform/language/it_IT/)\n"
 "MIME-Version: 1.0\n"

@@ -43,6 +43,7 @@
 # 
 # Translators:
 # Alexander L. <alexander.lohberg@paluno.uni-due.de>, 2014
+# Christian Layr <Christian.Layr@unisg.ch>, 2014
 # Ettore Atalan <atalanttore@googlemail.com>, 2014
 # trajan, 2014
 # Ron Lucke <ronlucke@googlemail.com>, 2014
@@ -60,7 +61,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:06-0500\n"
+"POT-Creation-Date: 2014-11-17 12:58-0500\n"
 "PO-Revision-Date: 2014-10-08 18:08+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/edx-platform/language/de_DE/)\n"

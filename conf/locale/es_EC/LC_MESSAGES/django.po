@@ -5,10 +5,28 @@
 # 
 # Translators:
 # Antonio Pardo <apardo@alabs.org>, 2013
+# Antonio Pardo <apardo@alabs.org>, 2013
+# arrow1234 <aleoncavallo@gmail.com>, 2014
+# Cristian Salamea <ovnicraft@gmail.com>, 2014
+# David Salazar <imdjsg@gmail.com>, 2014
+# diegobe <diegobe@iadb.org>, 2014
+# dzepeda <davitzepeda@hotmail.com>, 2014
+# Fernando Abramowitz <ferabra@gmail.com>, 2014
+# jorgebarrero <jorgebarrero@gmail.com>, 2014
 # Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2013
+# Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2013
+# karlman72 <karlman72@gmail.com>, 2014
 # Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
+# Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
+# MarnyLopez, 2014
+# Natalia, 2013
 # Natalia, 2013
 # Cristian Salamea <ovnicraft@gmail.com>, 2014
+# rcelaya <rcelaya@ula.ve>, 2014
+# Sarina Canelake <sarina@edx.org>, 2014
+# sebasco <sjduranh@gmail.com>, 2014
+# wjmendez <walterj.mendez@gmail.com>, 2014
+# xocoyotzin, 2014
 # #-#-#-#-#  django-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2014 EdX
@@ -21,16 +39,39 @@
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
 # Translators:
+# addictivo <addictivoh@gmail.com>, 2014
+# andreslucena <andreslucena@gmail.com>, 2013
 # andreslucena <andreslucena@gmail.com>, 2013
 # Antonio Pardo <apardo@alabs.org>, 2013
+# Antonio Pardo <apardo@alabs.org>, 2013
+# camilomaiden <inactive+camilomaiden@transifex.com>, 2014
+# Cristian Salamea <ovnicraft@gmail.com>, 2013
+# David Salazar <imdjsg@gmail.com>, 2014
+# dzepeda <davitzepeda@hotmail.com>, 2014
+# emgl <marsh_melow@hotmail.es>, 2014
+# Etna Pretelín Ricárdez, 2014
+# Fernando Abramowitz <ferabra@gmail.com>, 2013
 # Fernando Abramowitz <ferabra@gmail.com>, 2013
 # Herty Nava <translation@bolmedia.ca>, 2013
+# Irvin Cabrera <pirpinachisloco@hotmail.com>, 2014
+# Ismael Saavedra <isma.18.94@gmail.com>, 2014
+# jimenaianina <jime.ianina@gmail.com>, 2014
+# jorgebarrero <jorgebarrero@gmail.com>, 2014
 # Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2013
+# Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2013
+# Lalo Cabrera <laloogcabrera@yahoo.com.mx>, 2014
 # Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
+# Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
+# Marco Morales, 2014
+# MarnyLopez, 2014
 # Miguel A Mellet <mmellets@gmail.com>, 2014
+# morsoinferno <cristobal.acosta@usach.cl>, 2014
 # Nestor Alejandro Mendoza Espinoza <name1984@gmail.com>, 2014
 # Natalia, 2013
+# Natalia, 2013
 # Cristian Salamea <ovnicraft@gmail.com>, 2014
+# Santiago Salkin <salkin.santiago@gmail.com>, 2014
+# Sarina Canelake <sarina@edx.org>, 2014
 # #-#-#-#-#  mako-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2014 edX
@@ -54,7 +95,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:08-0500\n"
+"POT-Creation-Date: 2014-11-17 13:00-0500\n"
 "PO-Revision-Date: 2014-08-25 20:21+0000\n"
 "Last-Translator: x_vela <x_vela@hotmail.com>\n"
 "Language-Team: Spanish (Ecuador) (http://www.transifex.com/projects/p/edx-platform/language/es_EC/)\n"
@@ -4128,6 +4169,10 @@ msgid "CourseMode price updated successfully"
 msgstr ""
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
+msgid "Enrollment data is now available in {dashboard_link}."
+msgstr ""
+
+#: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "Membership"
 msgstr ""
 
@@ -7094,6 +7139,12 @@ msgstr ""
 msgid "&copy; 2014 {platform_name}, some rights reserved"
 msgstr ""
 
+#. Translators: 'Open edX' is a brand, please keep this untranslated. See
+#. http://openedx.org for more information.
+#: lms/templates/footer.html
+msgid "Powered by Open edX"
+msgstr ""
+
 #: lms/templates/forgot_password_modal.html
 #: lms/templates/forgot_password_modal.html
 msgid "Password Reset"
@@ -7511,7 +7562,16 @@ msgstr ""
 
 #: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
 #: lms/templates/navigation.html
+msgid "How it Works"
+msgstr ""
+
+#: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
+#: lms/templates/navigation.html
 msgid "Find Courses"
+msgstr ""
+
+#: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
+msgid "Schools & Partners"
 msgstr ""
 
 #: lms/templates/navigation-edx.html lms/templates/navigation.html
@@ -7528,14 +7588,6 @@ msgstr ""
 
 #: lms/templates/navigation-edx.html lms/templates/navigation.html
 msgid "Shopping Cart"
-msgstr ""
-
-#: lms/templates/navigation-edx.html lms/templates/navigation.html
-msgid "How it Works"
-msgstr ""
-
-#: lms/templates/navigation-edx.html
-msgid "Schools & Partners"
 msgstr ""
 
 #: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
@@ -8819,9 +8871,8 @@ msgstr ""
 #: lms/templates/courseware/instructor_dashboard.html
 msgid ""
 "Note: some of these buttons are known to time out for larger courses. We "
-"have temporarily disabled those features for courses with more than "
-"{max_enrollment} students. We are urgently working on fixing this issue. "
-"Thank you for your patience as we continue working to improve the platform!"
+"have disabled those features for courses with more than {max_enrollment} "
+"students."
 msgstr ""
 
 #: lms/templates/courseware/instructor_dashboard.html
@@ -8955,25 +9006,6 @@ msgid "Section:"
 msgstr ""
 
 #: lms/templates/courseware/instructor_dashboard.html
-#: lms/templates/instructor/instructor_dashboard_2/membership.html
-msgid "Batch Enrollment"
-msgstr ""
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid ""
-"Enroll or un-enroll one or many students: enter emails, separated by new "
-"lines or commas;"
-msgstr ""
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid "Notify students by email"
-msgstr ""
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid "Auto-enroll students when they activate"
-msgstr ""
-
-#: lms/templates/courseware/instructor_dashboard.html
 msgid "Problem urlname:"
 msgstr ""
 
@@ -9059,16 +9091,6 @@ msgstr ""
 
 #: lms/templates/courseware/instructor_dashboard.html
 msgid "No Analytics are available at this time."
-msgstr ""
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid ""
-"Students enrolled (historical count, includes those who have since "
-"unenrolled):"
-msgstr ""
-
-#: lms/templates/courseware/instructor_dashboard.html
-msgid "Students active in the last week:"
 msgstr ""
 
 #: lms/templates/courseware/instructor_dashboard.html
@@ -11279,6 +11301,10 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/instructor_dashboard_2.html
 msgid "Revert to Legacy Dashboard"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/membership.html
+msgid "Batch Enrollment"
 msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html

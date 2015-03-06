@@ -6,16 +6,19 @@
 # Translators:
 # Antonio Pardo <apardo@alabs.org>, 2013
 # arrow1234 <aleoncavallo@gmail.com>, 2014
-# Cristian Salamea <ovnicraft@gmail.com>, 2014
+# Cristian Salamea <ovnicraft@gmail.com>, 2013-2014
 # David Salazar <imdjsg@gmail.com>, 2014
 # diegobe <diegobe@iadb.org>, 2014
 # dzepeda <davitzepeda@hotmail.com>, 2014
 # Fernando Abramowitz <ferabra@gmail.com>, 2014
+# Gerardo Laster, 2014
 # Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2013
 # karlman72 <karlman72@gmail.com>, 2014
+# Lalo Cabrera <laloogcabrera@yahoo.com.mx>, 2014
 # Luis Ricardo Ruiz <luislicardo1307@gmail.com>, 2013
 # MarnyLopez, 2014
 # Miguel A Mellet <mmellets@gmail.com>, 2014
+# morsoinferno <cristobal.acosta@usach.cl>, 2014
 # Natalia, 2013
 # rcelaya <rcelaya@ula.ve>, 2014
 # Sarina Canelake <sarina@edx.org>, 2014
@@ -46,8 +49,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:06-0500\n"
-"PO-Revision-Date: 2014-10-08 18:08+0000\n"
+"POT-Creation-Date: 2014-11-17 12:58-0500\n"
+"PO-Revision-Date: 2014-11-27 00:21+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Spanish (Ecuador) (http://www.transifex.com/projects/p/edx-platform/language/es_EC/)\n"
 "MIME-Version: 1.0\n"

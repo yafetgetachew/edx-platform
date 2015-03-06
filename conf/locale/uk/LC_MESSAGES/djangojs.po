@@ -5,6 +5,7 @@
 # 
 # Translators:
 # annburdyliak <annburdyliak@ya.ru>, 2014
+# Eugenia <sakovets93@gmail.com>, 2014
 # IvanPrimachenko <jastudent1@gmail.com>, 2014
 # junnyml <junnyml@gmail.com>, 2014
 # marichkafox <marichka.fox@gmail.com>, 2014
@@ -43,7 +44,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:06-0500\n"
+"POT-Creation-Date: 2014-11-17 12:58-0500\n"
 "PO-Revision-Date: 2014-10-14 15:11+0000\n"
 "Last-Translator: Tetiana Korshun\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/edx-platform/language/uk/)\n"

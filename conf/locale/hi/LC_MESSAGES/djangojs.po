@@ -8,6 +8,7 @@
 # Anant Vima <anant.vima@anu.edu.au>, 2014
 # CHANDRA SHEKHAR SHARMA <shekharsharma041@gmail.com>, 2014
 # ria1234 <contactpayal@yahoo.com.au>, 2014
+# Goutam Kumar Dey <de_kumargoutam@yahoo.co.in>, 2014
 # gvidushiin <gvidushiin@gmail.com>, 2014
 # ria1234 <contactpayal@yahoo.com.au>, 2014
 # Sarina Canelake <sarina@edx.org>, 2014
@@ -31,6 +32,7 @@
 # 
 # Translators:
 # Bhupendra Singh Rajawat <bsrajawat14@gmail.com>, 2014
+# Goutam Kumar Dey <de_kumargoutam@yahoo.co.in>, 2014
 # #-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2014 edX
@@ -41,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-11-10 09:06-0500\n"
-"PO-Revision-Date: 2014-10-08 18:08+0000\n"
+"POT-Creation-Date: 2014-11-17 12:58-0500\n"
+"PO-Revision-Date: 2014-11-26 09:40+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/edx-platform/language/hi/)\n"
 "MIME-Version: 1.0\n"
