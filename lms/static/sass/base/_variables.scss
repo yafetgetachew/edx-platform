@@ -18,7 +18,7 @@ $fg-min-width: 810px;
 // ====================
 
 // FONTS
-$sans-serif: 'Open Sans', $verdana, sans-serif;
+$sans-serif: 'FoundersGroteskXCond', 'Open Sans', $verdana, sans-serif;
 $monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
 $body-font-family: $sans-serif;
 $serif: $georgia;
@@ -30,7 +30,7 @@ $font-semibold: 600;
 $font-bold: 700;
 
 // ====================
-
+$font_base_color_custom: white;
 // MISC: base fonts/colors
 $body-font-size: em(14);
 $body-line-height: golden-ratio(.875em, 1);
