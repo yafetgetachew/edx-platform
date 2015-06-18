@@ -12,8 +12,8 @@
 @include font-face('Open Sans', '../fonts/OpenSans/OpenSans-Bold-webfont', 700);
 @include font-face('Open Sans', '../fonts/OpenSans/OpenSans-BoldItalic-webfont', 700, italic);
 
-@include font-face('FoundersGroteskXCond', '../fonts/Founders/FoundersGroteskXCond-Med');
-@include font-face('FoundersGroteskXCond', '../fonts/Founders/FoundersGroteskXCond-Bold');
+@include font-face('FoundersGroteskXCond-Med', '../fonts/Founders/FoundersGroteskXCond-Med');
+@include font-face('FoundersGroteskXCond-Bold', '../fonts/Founders/FoundersGroteskXCond-Bold');
 @include font-face('FoundersGroteskXCond', '../fonts/Founders/FoundersGroteskXCond-Reg');
-@include font-face('FoundersGroteskXCond', '../fonts/Founders/FoundersGroteskXCond-Lt');
-@include font-face('FoundersGroteskXCond', '../fonts/Founders/FoundersGroteskXCond-SmBd');
+@include font-face('FoundersGroteskXCond-Lt', '../fonts/Founders/FoundersGroteskXCond-Lt');
+@include font-face('FoundersGroteskXCond-SmBd', '../fonts/Founders/FoundersGroteskXCond-SmBd');
