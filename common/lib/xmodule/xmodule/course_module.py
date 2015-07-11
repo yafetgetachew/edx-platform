@@ -24,6 +24,7 @@ from xblock.core import XBlock
 from xblock.fields import Scope, List, String, Dict, Boolean, Integer, Float
 from .fields import Date
 from django.utils.timezone import UTC
+from stevedore.extension import ExtensionManager
 
 
 log = logging.getLogger(__name__)
@@ -1313,6 +1314,17 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
 
 
         """
+        if True:
+            def grader_from_conf(name):
+                GRADING_POLICY_NAMESPACE = 'openedx.grading_policy'
+                extension = ExtensionManager(namespace=GRADING_POLICY_NAMESPACE)
+                try:
+                    return extension[name].plugin
+                except KeyError:
+                    raise Exception("Unrecognized grader {0}".format(name))
+            grader = grader_from_conf('vertical')
+            return grader.grading_context(self)
+
         # If this descriptor has been bound to a student, return the corresponding
         # XModule. If not, just use the descriptor itself
         try:
