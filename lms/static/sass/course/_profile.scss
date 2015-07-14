@@ -285,7 +285,7 @@
               border-bottom: 0;
             }
 
-            h3 {
+            h3, h4 {
               color: #666;
 
               span {
@@ -303,7 +303,7 @@
             .scores {
               margin: lh(0.5) 0;
 
-              h3 {
+              h3, h4 {
                 font-size: em(14);
                 display: inline-block;
               }
@@ -320,6 +320,18 @@
                   font-weight: normal;
                   padding-right: 1em;
                 }
+              }
+            }
+
+            h3 + .verticals {
+              padding-top: lh();
+            }
+
+            .verticals {
+              padding-left: lh(0.5);
+
+              h4 {
+                font-size: em(15);
               }
             }
           }
