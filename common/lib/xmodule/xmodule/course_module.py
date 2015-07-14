@@ -24,7 +24,7 @@ from xblock.core import XBlock
 from xblock.fields import Scope, List, String, Dict, Boolean, Integer, Float
 from .fields import Date
 from django.utils.timezone import UTC
-from openedx.core.djangoapps.grading import use_custom_grading_if_enabled
+from openedx.core.djangoapps.grading import use_custom_grading_if_enabled_for
 
 
 log = logging.getLogger(__name__)
@@ -1290,7 +1290,7 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         return announcement, start, now
 
     @lazy
-    @use_custom_grading_if_enabled('grading_context')
+    @use_custom_grading_if_enabled_for('grading_context')
     def grading_context(self):
         """
         This returns a dictionary with keys necessary for quickly grading

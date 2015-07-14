@@ -19,7 +19,7 @@ def get_grading_class(name):
         raise GradingPolicyError("Unrecognized grader {0}".format(name))
 
 
-def use_custom_grading_if_enabled(method_name):
+def use_custom_grading_if_enabled_for(method_name):
     def decorator(func):
         def wrapper(*args, **kwargs):
             if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
