@@ -43,7 +43,6 @@ from xmodule.modulestore.modulestore_settings import update_module_store_setting
 from xmodule.modulestore.edit_info import EditInfoMixin
 from xmodule.mixin import LicenseMixin
 from lms.djangoapps.lms_xblock.mixin import LmsBlockMixin
-from openedx.core.lib.rooted_paths import rooted_glob
 
 ################################### FEATURES ###################################
 # The display name of the platform to be used in templates/emails/etc.
@@ -505,9 +504,8 @@ MAKO_TEMPLATES = {}
 MAKO_TEMPLATES['main'] = [PROJECT_ROOT / 'templates',
                           COMMON_ROOT / 'templates',
                           COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
-                          COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates']
-
-MAKO_TEMPLATES['main'] += rooted_glob(ENV_ROOT / 'edx-platform' / 'openedx' / 'core' / 'djangoapps', '**/templates')
+                          COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates',
+                          REPO_ROOT / 'openedx' / 'core' / 'djangoapps']
 
 # This is where Django Template lookup is defined. There are a few of these
 # still left lying around.
@@ -517,6 +515,7 @@ TEMPLATE_DIRS = [
     COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
     COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates',
     COMMON_ROOT / 'static',  # required to statically include common Underscore templates
+    REPO_ROOT / 'openedx' / 'core' / 'djangoapps'
 ]
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -1212,7 +1211,7 @@ X_FRAME_OPTIONS = 'ALLOW'
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
-
+from openedx.core.lib.rooted_paths import rooted_glob
 
 courseware_js = (
     [

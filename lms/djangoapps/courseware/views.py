@@ -1106,7 +1106,7 @@ def _progress(request, course_key, student_id):
 
     with grades.manual_transaction():
         if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
-            response = render_to_response('progress.html', context)
+            response = render_to_response('grading/templates/progress.html', context)
         else:
             response = render_to_response('courseware/progress.html', context)
 
