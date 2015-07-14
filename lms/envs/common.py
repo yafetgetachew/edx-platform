@@ -420,6 +420,9 @@ FEATURES = {
 
     # Enable the max score cache to speed up grading
     'ENABLE_MAX_SCORE_CACHE': True,
+
+    # Enable custom grading
+    'ENABLE_CUSTOM_GRADING': True
 }
 
 # Ignore static asset files on import which match this pattern
@@ -2569,3 +2572,7 @@ LTI_USER_EMAIL_DOMAIN = 'lti.example.com'
 # Number of seconds before JWT tokens expire
 JWT_EXPIRATION = 30
 JWT_ISSUER = None
+
+############################ Settings for Grading app #############################
+
+GRADING_TYPE = 'vertical'

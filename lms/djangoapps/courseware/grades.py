@@ -28,7 +28,7 @@ from submissions import api as sub_api  # installed from the edx-submissions rep
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.signals.signals import GRADES_UPDATED
-from stevedore.extension import ExtensionManager
+from openedx.core.djangoapps.grading import get_grading_class
 
 
 log = logging.getLogger("edx.courseware")
@@ -244,14 +244,6 @@ def answer_distributions(course_key):
     return answer_counts
 
 
-def grader_from_conf(name):
-    extension = ExtensionManager(namespace='openedx.grading_policy')
-    try:
-        return extension[name].plugin
-    except KeyError:
-        raise Exception("Unrecognized grader {0}".format(name))
-
-
 @transaction.commit_manually
 def grade(student, request, course, keep_raw_scores=False, field_data_cache=None, scores_client=None):
     """
@@ -260,8 +252,9 @@ def grade(student, request, course, keep_raw_scores=False, field_data_cache=None
     Send a signal to update the minimum grade requirement status.
     """
     with manual_transaction():
-        if True:
-            grader = grader_from_conf('vertical')
+        # Use custom grading mechanism if it's enabled
+        if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
+            grader = get_grading_class(settings.GRADING_TYPE)
             grade_summary = grader.grade(student, request, course, keep_raw_scores, field_data_cache, scores_client)
         else:
             grade_summary = _grade(student, request, course, keep_raw_scores, field_data_cache, scores_client)
@@ -466,8 +459,9 @@ def progress_summary(student, request, course, field_data_cache=None, scores_cli
     in case there are unanticipated errors.
     """
     with manual_transaction():
-        if True:
-            grader = grader_from_conf('vertical')
+        # Use custom grading mechanism if it's enabled
+        if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
+            grader = get_grading_class(settings.GRADING_TYPE)
             return grader.progress_summary(student, request, course, field_data_cache, scores_client)
         else:
             return _progress_summary(student, request, course, field_data_cache, scores_client)
