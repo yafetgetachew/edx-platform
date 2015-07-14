@@ -28,7 +28,7 @@ from submissions import api as sub_api  # installed from the edx-submissions rep
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.signals.signals import GRADES_UPDATED
-from openedx.core.djangoapps.grading import get_grading_class
+from openedx.core.djangoapps.grading import use_custom_grading_if_enabled
 
 
 log = logging.getLogger("edx.courseware")
@@ -252,12 +252,7 @@ def grade(student, request, course, keep_raw_scores=False, field_data_cache=None
     Send a signal to update the minimum grade requirement status.
     """
     with manual_transaction():
-        # Use custom grading mechanism if it's enabled
-        if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
-            grader = get_grading_class(settings.GRADING_TYPE)
-            grade_summary = grader.grade(student, request, course, keep_raw_scores, field_data_cache, scores_client)
-        else:
-            grade_summary = _grade(student, request, course, keep_raw_scores, field_data_cache, scores_client)
+        grade_summary = _grade(student, request, course, keep_raw_scores, field_data_cache, scores_client)
 
         responses = GRADES_UPDATED.send_robust(
             sender=None,
@@ -273,6 +268,7 @@ def grade(student, request, course, keep_raw_scores=False, field_data_cache=None
         return grade_summary
 
 
+@use_custom_grading_if_enabled('grade')
 def _grade(student, request, course, keep_raw_scores, field_data_cache, scores_client):
     """
     Unwrapped version of "grade"
@@ -459,17 +455,13 @@ def progress_summary(student, request, course, field_data_cache=None, scores_cli
     in case there are unanticipated errors.
     """
     with manual_transaction():
-        # Use custom grading mechanism if it's enabled
-        if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
-            grader = get_grading_class(settings.GRADING_TYPE)
-            return grader.progress_summary(student, request, course, field_data_cache, scores_client)
-        else:
-            return _progress_summary(student, request, course, field_data_cache, scores_client)
+        return _progress_summary(student, request, course, field_data_cache, scores_client)
 
 
 # TODO: This method is not very good. It was written in the old course style and
 # then converted over and performance is not good. Once the progress page is redesigned
 # to not have the progress summary this method should be deleted (so it won't be copied).
+@use_custom_grading_if_enabled('progress_summary')
 def _progress_summary(student, request, course, field_data_cache=None, scores_client=None):
     """
     Unwrapped version of "progress_summary".
