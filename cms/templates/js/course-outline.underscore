@@ -101,47 +101,46 @@ if (xblockInfo.get('graded')) {
         </div>
     </div>
     <div class="<%= xblockType %>-status">
-        <% if (!xblockInfo.isVertical()) { %>
-            <% if (xblockInfo.get('explanatory_message') !=null) { %>
-                <div class="explanatory-message">
-                    <span>
-                        <%= xblockInfo.get('explanatory_message') %>
-                    </span>
-                </div>
-            <% } else { %>
-              <div class="status-release">
+        <% if (xblockInfo.get('explanatory_message') !=null) { %>
+            <div class="explanatory-message">
+                <span>
+                    <%= xblockInfo.get('explanatory_message') %>
+                </span>
+            </div>
+        <% } else { %>
+          <div class="status-release">
+            <p>
+                <span class="sr status-release-label"><%= gettext('Release Status:') %></span>
+                <span class="status-release-value">
+                    <% if (xblockInfo.get('released_to_students')) { %>
+                        <i class="icon fa fa-check-square-o"></i>
+                        <%= gettext('Released:') %>
+                    <% } else if (xblockInfo.get('release_date')) { %>
+                        <i class="icon fa fa-clock-o"></i>
+                        <%= gettext('Scheduled:') %>
+                    <% } else { %>
+                        <i class="icon fa fa-clock-o"></i>
+                        <%= gettext('Unscheduled') %>
+                    <% } %>
+                    <% if (xblockInfo.get('release_date')) { %>
+                        <%= xblockInfo.get('release_date') %>
+                    <% } %>
+                </span>
+            </p>
+          </div>
+        <% } %>
+
+        <% if (xblockInfo.get('due_date') || xblockInfo.get('graded')) { %>
+            <div class="status-grading">
                 <p>
-                    <span class="sr status-release-label"><%= gettext('Release Status:') %></span>
-                    <span class="status-release-value">
-                        <% if (xblockInfo.get('released_to_students')) { %>
-                            <i class="icon fa fa-check-square-o"></i>
-                            <%= gettext('Released:') %>
-                        <% } else if (xblockInfo.get('release_date')) { %>
-                            <i class="icon fa fa-clock-o"></i>
-                            <%= gettext('Scheduled:') %>
-                        <% } else { %>
-                            <i class="icon fa fa-clock-o"></i>
-                            <%= gettext('Unscheduled') %>
-                        <% } %>
-                        <% if (xblockInfo.get('release_date')) { %>
-                            <%= xblockInfo.get('release_date') %>
-                        <% } %>
-                    </span>
+                    <span class="sr status-grading-label"> <%= gettext('Graded as:') %> </span>
+                    <i class="icon fa fa-check"></i>
+                    <span class="status-grading-value"> <%= gradingType %> </span>
+                    <% if (xblockInfo.get('due_date')) { %>
+                        <span class="status-grading-date"> <%= gettext('Due:') %> <%= xblockInfo.get('due_date') %> </span>
+                    <% } %>
                 </p>
-              </div>
-            <% } %>
-            <% if (xblockInfo.get('due_date') || xblockInfo.get('graded')) { %>
-                <div class="status-grading">
-                    <p>
-                        <span class="sr status-grading-label"> <%= gettext('Graded as:') %> </span>
-                        <i class="icon fa fa-check"></i>
-                        <span class="status-grading-value"> <%= gradingType %> </span>
-                        <% if (xblockInfo.get('due_date')) { %>
-                            <span class="status-grading-date"> <%= gettext('Due:') %> <%= xblockInfo.get('due_date') %> </span>
-                        <% } %>
-                    </p>
-                </div>
-            <% } %>
+            </div>
         <% } %>
 
         <% if (statusMessage) { %>
