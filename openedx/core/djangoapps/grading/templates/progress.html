@@ -157,11 +157,15 @@ from django.utils.http import urlquote_plus
   <div class="${get_class_name(type)}">
     %for block_id in items:
       <% block = blocks[block_id] %>
+      <%
+        has_scores = block.get('scores', False)
+        has_children = len(block['children']) > 0
+      %>
+      ## Display only gradable verticals
+      %if block['block_type'] == 'vertical' and not has_scores:
+        <% continue %>
+      %endif
       <%self:block_wrapper type="${block['block_type']}">
-        <%
-          has_scores = block.get('scores', False)
-          has_children = len(block['children']) > 0
-        %>
         ${get_title(block, show_scores=has_scores)}
         %if has_scores:
           ${grading_info(block)}
