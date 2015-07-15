@@ -10,6 +10,7 @@ from util.module_utils import yield_dynamic_descriptor_descendants
 from student.models import anonymous_id_for_user
 from xmodule import graders
 from xmodule.graders import Score
+from xmodule.exceptions import UndefinedContext
 from submissions import api as sub_api  # installed from the edx-submissions repository
 
 
