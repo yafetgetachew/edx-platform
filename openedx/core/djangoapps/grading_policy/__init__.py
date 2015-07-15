@@ -19,7 +19,10 @@ def get_grading_class(name):
         raise GradingPolicyError("Unrecognized grader {0}".format(name))
 
 
-def use_custom_grading_if_enabled_for(method_name):
+# @TODO: Temporary solution that will be replaced in the future. We use this
+# decorator to avoid merge conflict.
+def use_custom_grading(method_name):
+    """Uses a custom grading algorithm or native depends on settings."""
     def decorator(func):
         def wrapper(*args, **kwargs):
             if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
