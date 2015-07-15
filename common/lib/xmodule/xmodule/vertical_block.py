@@ -84,6 +84,8 @@ class VerticalBlock(SequenceFields, XModuleFields, StudioEditableBlock, XmlParse
         """
         Returns the highest priority icon class.
         """
+        if self.graded:
+            return 'graded'
         child_classes = set(child.get_icon_class() for child in self.get_children())  # pylint: disable=no-member
         new_class = 'other'
         for higher_class in CLASS_PRIORITY:
