@@ -28,7 +28,7 @@ from submissions import api as sub_api  # installed from the edx-submissions rep
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.signals.signals import GRADES_UPDATED
-from openedx.core.djangoapps.grading import use_custom_grading_if_enabled_for
+from openedx.core.djangoapps.grading_policy import use_custom_grading_if_enabled_for
 
 
 log = logging.getLogger("edx.courseware")
