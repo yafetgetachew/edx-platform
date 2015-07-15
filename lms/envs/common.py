@@ -2578,3 +2578,6 @@ JWT_ISSUER = None
 ############################ Settings for Grading app #############################
 
 GRADING_TYPE = 'vertical'
+# If grading type is set to `vertical`, we can adjust progress view to display
+# only gradable verticals.
+DISPLAY_ONLY_GRADABLE_VERTICALS = True

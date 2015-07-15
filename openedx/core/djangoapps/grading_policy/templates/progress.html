@@ -158,18 +158,25 @@ from django.utils.http import urlquote_plus
     %for block_id in items:
       <% block = blocks[block_id] %>
       <%
-        has_scores = block.get('scores', False)
+        has_scores = block.get('scores')
         has_children = len(block['children']) > 0
       %>
-      ## Display only gradable verticals
-      %if block['block_type'] == 'vertical' and not has_scores:
+      ## Display only verticals with scores
+      %if DISPLAY_ONLY_GRADABLE_VERTICALS and block['block_type'] == 'vertical' and not has_scores:
         <% continue %>
       %endif
+
+      <%
+        seq_with_no_scores = False
+        if block['block_type'] == 'sequential':
+          children = [blocks[child_id] for child_id in block['children']]
+          seq_with_no_scores = not any(child.get('scores') for child in children)
+      %>
       <%self:block_wrapper type="${block['block_type']}">
         ${get_title(block, show_scores=has_scores)}
         %if has_scores:
           ${grading_info(block)}
-        %elif has_children:
+        %elif has_children and not seq_with_no_scores:
           ${build_summary(block['children'], block['block_type'])}
         %else:
           <div class="scores"><h4 class="no-scores">${_("No problem scores in this section")}</h4></div>
