@@ -360,7 +360,7 @@ define(['jquery', 'backbone', 'underscore', 'gettext', 'js/views/baseview',
             } else if (xblockInfo.isSequential()) {
                 editors = [ReleaseDateEditor, StaffLockEditor];
             } else if (xblockInfo.isVertical()) {
-                editors = [ReleaseDateEditor, GradingEditor, DueDateEditor, StaffLockEditor];
+                editors = [GradingEditor, DueDateEditor, StaffLockEditor];
             }
 
             return new SettingsXBlockModal($.extend({
