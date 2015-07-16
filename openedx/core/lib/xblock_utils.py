@@ -211,6 +211,23 @@ def grade_histogram(module_id):
     return grades
 
 
+def add_grading_markup(course, block, view, frag, context):  # pylint: disable=unused-argument
+    if isinstance(block, VerticalBlock) and (not context or not context.get('child_of_vertical', False)):
+        return wrap_fragment(
+            frag,
+            render_to_string(
+                "grading_policy/templates/grading_info.html",
+                {
+                    'block_content': frag.content,
+                    'due': block.due,
+                    'format': block.format,
+                    'due_date_display_format': course.due_date_display_format,
+                }
+            )
+        )
+    return frag
+
+
 @contract(user=User, has_instructor_access=bool, block=XBlock, view=basestring, frag=Fragment, context="dict|None")
 def add_staff_markup(user, has_instructor_access, disable_staff_debug_info, block, view, frag, context):  # pylint: disable=unused-argument
     """
