@@ -24,7 +24,7 @@ from xblock.core import XBlock
 from xblock.fields import Scope, List, String, Dict, Boolean, Integer, Float
 from .fields import Date
 from django.utils.timezone import UTC
-from openedx.core.djangoapps.grading_policy import use_custom_grading
+from . import use_custom_grading
 
 
 log = logging.getLogger(__name__)
