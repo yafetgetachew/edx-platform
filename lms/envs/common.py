@@ -1976,6 +1976,7 @@ OPTIONAL_APPS = (
 
     # milestones
     'milestones',
+    'officemix'
 )
 
 for app_name in OPTIONAL_APPS:

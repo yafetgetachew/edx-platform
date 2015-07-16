@@ -804,6 +804,7 @@ OPTIONAL_APPS = (
 
     # milestones
     'milestones',
+    'officemix'
 )
 
 
