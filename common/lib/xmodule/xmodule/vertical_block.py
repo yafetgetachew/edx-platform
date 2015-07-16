@@ -12,6 +12,7 @@ from xmodule.seq_module import SequenceFields
 from xmodule.studio_editable import StudioEditableBlock
 from xmodule.x_module import STUDENT_VIEW, XModuleFields
 from xmodule.xml_module import XmlParserMixin
+from xmodule.modulestore.inheritance import own_metadata
 
 log = logging.getLogger(__name__)
 
@@ -84,7 +85,7 @@ class VerticalBlock(SequenceFields, XModuleFields, StudioEditableBlock, XmlParse
         """
         Returns the highest priority icon class.
         """
-        if self.graded:
+        if own_metadata(self).get('graded', False):
             return 'graded'
         child_classes = set(child.get_icon_class() for child in self.get_children())  # pylint: disable=no-member
         new_class = 'other'
