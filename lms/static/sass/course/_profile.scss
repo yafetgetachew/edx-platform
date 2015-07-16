@@ -269,6 +269,36 @@
           width: flex-grid(2, 9);
         }
 
+        > .scores {
+          display: table-cell;
+          @include padding-left(flex-gutter(9));
+          width: flex-grid(7, 9);
+        }
+
+        .scores {
+          margin: lh(0.5) 0;
+
+          h3, h4 {
+            color: #666;
+            font-size: em(14);
+            display: inline-block;
+          }
+
+          ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+
+            li {
+              display: inline-block;
+              font-size: em(14);
+              font-weight: normal;
+              padding-right: 1em;
+            }
+          }
+        }
+
         .sections {
           display: table-cell;
           @include padding-left(flex-gutter(9));
@@ -298,29 +328,6 @@
             p {
               color: #999;
               font-size: em(14);
-            }
-
-            .scores {
-              margin: lh(0.5) 0;
-
-              h3, h4 {
-                font-size: em(14);
-                display: inline-block;
-              }
-
-              ol {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                display: inline-block;
-
-                li {
-                  display: inline-block;
-                  font-size: em(14);
-                  font-weight: normal;
-                  padding-right: 1em;
-                }
-              }
             }
 
             h3 + .verticals {
