@@ -89,11 +89,11 @@ def _grade(student, request, course, keep_raw_scores, field_data_cache, scores_c
     totaled_scores = {}
     # This next complicated loop is just to collect the totaled_scores, which is
     # passed to the grader
-    for block_format, blocks in grading_context['graded_blocks'].iteritems():
+    for block_format, blocks in grading_context['graded_sections'].iteritems():
         format_scores = []
         for block in blocks:
-            block_descriptor = block['block_descriptor']
-            block_name = block_descriptor.display_name_with_default
+            section_descriptor = block['section_descriptor']
+            block_name = section_descriptor.display_name_with_default
 
             # some problems have state that is updated independently of interaction
             # with the LMS, so they need to always be scored. (E.g. foldit.,
@@ -130,7 +130,7 @@ def _grade(student, request, course, keep_raw_scores, field_data_cache, scores_c
                         student, request, descriptor, field_data_cache, course.id, course=course
                     )
 
-                descendants = yield_dynamic_descriptor_descendants(block_descriptor, student.id, create_module)
+                descendants = yield_dynamic_descriptor_descendants(section_descriptor, student.id, create_module)
                 for module_descriptor in descendants:
                     (correct, total) = get_score(
                         student,
@@ -177,7 +177,7 @@ def _grade(student, request, course, keep_raw_scores, field_data_cache, scores_c
             else:
                 log.info(
                     "Unable to grade a block with a total possible score of zero. " +
-                    str(block_descriptor.location)
+                    str(section_descriptor.location)
                 )
 
         totaled_scores[block_format] = format_scores
@@ -329,14 +329,14 @@ def _grading_context(grading_type, course):
     a student. They are used by grades.grade()
 
     The grading context has two keys:
-    graded_blocks - This contains the sections that are graded, as
+    graded_sections - This contains the sections that are graded, as
         well as all possible children modules that can affect the
         grading. This allows some sections to be skipped if the student
         hasn't seen any part of it.
 
         The format is a dictionary keyed by section-type. The values are
         arrays of dictionaries containing
-            "block_descriptor" : The section descriptor
+            "section_descriptor" : The section descriptor
             "xmoduledescriptors" : An array of xmoduledescriptors that
                 could possibly be in the section, for any student
 
@@ -361,7 +361,7 @@ def _grading_context(grading_type, course):
         return usage_key.block_type in course.block_types_affecting_grading
 
     all_descriptors = []
-    graded_blocks = {}
+    graded_sections = {}
 
     def yield_descriptor_descendents(module_descriptor):
         for child in module_descriptor.get_children(usage_key_filter=possibly_scored):
@@ -380,12 +380,12 @@ def _grading_context(grading_type, course):
 
             # The xmoduledescriptors included here are only the ones that have scores.
             block_description = {
-                'block_descriptor': curr_block,
+                'section_descriptor': curr_block,
                 'xmoduledescriptors': [child for child in xmoduledescriptors if child.has_score]
             }
 
             block_format = curr_block.format if curr_block.format is not None else ''
-            graded_blocks[block_format] = graded_blocks.get(block_format, []) + [block_description]
+            graded_sections[block_format] = graded_sections.get(block_format, []) + [block_description]
 
             all_descriptors.extend(xmoduledescriptors)
             all_descriptors.append(curr_block)
@@ -394,5 +394,5 @@ def _grading_context(grading_type, course):
             # Add this blocks children to the stack so that we can traverse them as well.
             blocks_stack.extend(children)
 
-    return {'graded_blocks': graded_blocks,
+    return {'graded_sections': graded_sections,
             'all_descriptors': all_descriptors, }
