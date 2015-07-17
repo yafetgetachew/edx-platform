@@ -12,6 +12,9 @@ from xmodule import graders
 from xmodule.graders import Score
 from xmodule.exceptions import UndefinedContext
 from submissions import api as sub_api  # installed from the edx-submissions repository
+import logging
+
+log = logging.getLogger(__name__)
 
 
 class CourseGrading(object):
