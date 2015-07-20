@@ -814,9 +814,11 @@ def _order_problems(blocks):
     assignments = dict()
     # First, sort out all the blocks into their correct assignments and all the
     # assignments into their correct types.
+    grading_type = 'vertical' if settings.FEATURES['ENABLE_CUSTOM_GRADING'] else 'sequential'
     for block in blocks:
         # Put the assignments in order into the assignments list.
-        if blocks[block]['block_type'] == 'sequential':
+
+        if blocks[block]['block_type'] == grading_type:
             block_format = blocks[block]['format']
             if block_format not in assignments:
                 assignments[block_format] = OrderedDict()
@@ -826,7 +828,7 @@ def _order_problems(blocks):
         if blocks[block]['block_type'] == 'problem' and blocks[block]['graded'] is True:
             current = blocks[block]['parent']
             # crawl up the tree for the sequential block
-            while blocks[current]['block_type'] != 'sequential':
+            while blocks[current]['block_type'] != grading_type:
                 current = blocks[current]['parent']
 
             current_format = blocks[current]['format']
