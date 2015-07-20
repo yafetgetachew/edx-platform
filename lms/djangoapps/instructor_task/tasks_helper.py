@@ -815,12 +815,10 @@ def _order_problems(blocks):
     assignments = dict()
     # First, sort out all the blocks into their correct assignments and all the
     # assignments into their correct types.
-
     grading_type = get_grading_type()
 
     for block in blocks:
         # Put the assignments in order into the assignments list.
-
         if blocks[block]['block_type'] == grading_type:
             block_format = blocks[block]['format']
             if block_format not in assignments:
