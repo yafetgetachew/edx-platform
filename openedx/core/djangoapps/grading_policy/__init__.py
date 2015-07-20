@@ -41,11 +41,11 @@ def get_grading_type():
     :return: grading type if ENABLE_CUSTOM_GRADING else return default value
     """
     if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
-        allowed_types = settings['GRADING_ALLOWED_TYPES']
-        grading_type = settings['GRADING_TYPE']
+        allowed_types = settings.GRADING_ALLOWED_TYPES
+        grading_type = settings.GRADING_TYPE
         if grading_type in allowed_types:
             return grading_type
         else:
             raise GradingPolicyError("You must define valid GRADING_TYPE, your type {}, allowed_types are {}".format(
-                settings['GRADING_TYPE']), allowed_types)
+                grading_type), allowed_types)
     return 'sequential'
