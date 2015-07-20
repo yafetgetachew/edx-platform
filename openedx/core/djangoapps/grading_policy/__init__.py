@@ -46,6 +46,9 @@ def get_grading_type():
         if grading_type in allowed_types:
             return grading_type
         else:
-            raise GradingPolicyError("You must define valid GRADING_TYPE, your type {}, allowed_types are {}".format(
-                grading_type), allowed_types)
+            raise GradingPolicyError(
+                "You must define valid GRADING_TYPE, your type {}, allowed_types are {}".format(
+                    grading_type, allowed_types
+                )
+            )
     return 'sequential'
