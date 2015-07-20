@@ -2579,6 +2579,8 @@ JWT_ISSUER = None
 
 # Possible values: vertical|sequential
 GRADING_TYPE = 'vertical'
+GRADING_ALLOWED_TYPES = ('vertical', 'sequential')
+
 # If grading type is set to `vertical`, we can adjust progress view to display
 # only gradable verticals.
 DISPLAY_ONLY_GRADABLE_VERTICALS = True

@@ -1,10 +1,7 @@
-import logging
 from stevedore.extension import ExtensionManager
 from django.conf import settings
 
 GRADING_POLICY_NAMESPACE = 'openedx.grading_policy'
-
-log = logging.getLogger(__name__)
 
 
 class GradingPolicyError(Exception):
@@ -44,11 +41,11 @@ def get_grading_type():
     :return: grading type if ENABLE_CUSTOM_GRADING else return default value
     """
     if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
-        allowed_types = ('vertical', 'sequential')
+        allowed_types = settings['GRADING_ALLOWED_TYPES']
         grading_type = settings['GRADING_TYPE']
-        try:
-            assert grading_type['GRADING_TYPE'] in allowed_types
-        except AssertionError:
-            log.warning("You must define valid GRADING_TYPE in settings")
-        return grading_type
+        if grading_type in allowed_types:
+            return grading_type
+        else:
+            raise GradingPolicyError("You must define valid GRADING_TYPE, your type {}, allowed_types are {}".format(
+                settings['GRADING_TYPE']), allowed_types)
     return 'sequential'
