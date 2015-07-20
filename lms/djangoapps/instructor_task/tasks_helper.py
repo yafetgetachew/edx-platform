@@ -54,6 +54,7 @@ from openedx.core.djangoapps.course_groups.models import CourseUserGroup
 from openedx.core.djangoapps.content.course_structures.models import CourseStructure
 from opaque_keys.edx.keys import UsageKey
 from openedx.core.djangoapps.course_groups.cohorts import add_user_to_cohort, is_course_cohorted
+from openedx.core.djangoapps.grading_policy import get_grading_type
 from student.models import CourseEnrollment, CourseAccessRole
 from verify_student.models import SoftwareSecurePhotoVerification
 from util.query import use_read_replica_if_available
@@ -814,7 +815,9 @@ def _order_problems(blocks):
     assignments = dict()
     # First, sort out all the blocks into their correct assignments and all the
     # assignments into their correct types.
-    grading_type = 'vertical' if settings.FEATURES['ENABLE_CUSTOM_GRADING'] else 'sequential'
+
+    grading_type = get_grading_type()
+
     for block in blocks:
         # Put the assignments in order into the assignments list.
 

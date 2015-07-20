@@ -32,3 +32,15 @@ def use_custom_grading(method_name):
                 return func(*args, **kwargs)
         return wrapper
     return decorator
+
+
+def get_grading_type():
+    """
+    :return: grading type if ENABLE_CUSTOM_GRADING else return default value
+    """
+    if settings.FEATURES['ENABLE_CUSTOM_GRADING']:
+        allowed_types = ('vertical', 'sequential')
+        grading_type = settings['GRADING_TYPE']
+        assert grading_type in allowed_types
+        return grading_type
+    return 'sequential'
