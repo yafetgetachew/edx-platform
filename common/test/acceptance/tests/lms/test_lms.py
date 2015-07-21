@@ -576,14 +576,20 @@ class HighLevelTabTest(UniqueCourseTest):
             XBlockFixtureDesc('static_tab', 'Test Static Tab'),
             XBlockFixtureDesc('chapter', 'Test Section').add_children(
                 XBlockFixtureDesc('sequential', 'Test Subsection').add_children(
-                    XBlockFixtureDesc('problem', 'Test Problem 1', data=load_data_str('multiple_choice.xml')),
-                    XBlockFixtureDesc('problem', 'Test Problem 2', data=load_data_str('formula_problem.xml')),
-                    XBlockFixtureDesc('html', 'Test HTML'),
+                    XBlockFixtureDesc('vertical', 'Test Unit').add_children(
+                        XBlockFixtureDesc('problem', 'Test Problem 1', data=load_data_str('multiple_choice.xml')),
+                        XBlockFixtureDesc('problem', 'Test Problem 2', data=load_data_str('formula_problem.xml')),
+                        XBlockFixtureDesc('html', 'Test HTML'),
+                    )
                 )
             ),
             XBlockFixtureDesc('chapter', 'Test Section 2').add_children(
-                XBlockFixtureDesc('sequential', 'Test Subsection 2'),
-                XBlockFixtureDesc('sequential', 'Test Subsection 3'),
+                XBlockFixtureDesc('sequential', 'Test Subsection 2').add_children(
+                    XBlockFixtureDesc('vertical', 'Test Unit 2')
+                ),
+                XBlockFixtureDesc('sequential', 'Test Subsection 3').add_children(
+                    XBlockFixtureDesc('vertical', 'Test Unit 3')
+                ),
             )
         ).install()
 
@@ -619,9 +625,11 @@ class HighLevelTabTest(UniqueCourseTest):
         # Only problems should have scores; so there should be 2 scores.
         CHAPTER = 'Test Section'
         SECTION = 'Test Subsection'
+        UNIT = 'Test Unit'
         EXPECTED_SCORES = [(0, 3), (0, 1)]
 
-        actual_scores = self.progress_page.scores(CHAPTER, SECTION)
+        actual_scores = self.progress_page.scores(CHAPTER, SECTION, UNIT)
+
         self.assertEqual(actual_scores, EXPECTED_SCORES)
 
     def test_static_tab(self):

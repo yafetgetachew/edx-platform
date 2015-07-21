@@ -22,7 +22,7 @@ class ProgressPage(CoursePage):
     def grading_formats(self):
         return [label.replace(' Scores:', '') for label in self.q(css="div.scores h4").text]
 
-    def scores(self, chapter, section):
+    def scores(self, chapter, section, unit):
         """
         Return a list of (points, max_points) tuples representing the scores
         for the section.
@@ -42,8 +42,12 @@ class ProgressPage(CoursePage):
         if section_index is None:
             return None
 
+        unit_index = self._unit_index(chapter_index, section_index, unit)
+        if unit_index is None:
+            return None
+
         # Retrieve the scores for the section
-        return self._section_scores(chapter_index, section_index)
+        return self._unit_scores(chapter_index, section_index, unit_index)
 
     def _chapter_index(self, title):
         """
@@ -85,19 +89,56 @@ class ProgressPage(CoursePage):
         except ValueError:
             self.warning("Could not find section '{0}'".format(title))
             return None
+            return None
 
-    def _section_scores(self, chapter_index, section_index):
+    def _unit_index(self, chapter_index, section_index, title):
+        """
+        Return the CSS index of the unit with `title` in the section at `section_index`
+        and the chapter at `chapter_index`.
+        Returns `None` if it can't find such a section.
+        """
+
+        # This is a hideous CSS selector that means:
+        # Get the links containing the unit titles in `section_index`.
+        # The link text is the section title.
+        unit_css = "{chapter} {section} {unit}".format(
+            chapter="div.chapters>section:nth-of-type({})".format(chapter_index),
+            section="div.sections>div:nth-of-type({})".format(section_index),
+            unit="div.verticals div h4 a",
+        )
+
+        unit_titles = self.q(css=unit_css).map(lambda el: el.text.lower().strip()).results
+
+        # The section titles also contain "n of m possible points" on the second line
+        # We have to remove this to find the right title
+        unit_titles = [t.split('\n')[0] for t in unit_titles]
+
+        # Some links are blank, so remove them
+        unit_titles = [t for t in unit_titles if t]
+
+        try:
+            # CSS indices are 1-indexed, so add one to the list index
+            return unit_titles.index(title.lower()) + 1
+        except ValueError:
+            self.warning("Could not find unit '{0}'".format(title))
+            return None
+
+    def _unit_scores(self, chapter_index, section_index, unit_index):
         """
         Return a list of `(points, max_points)` tuples representing
         the scores in the specified chapter and section.
 
-        `chapter_index` and `section_index` start at 1.
+        `chapter_index`, `section_index` and `unit_index` start at 1.
         """
         # This is CSS selector means:
-        # Get the scores for the chapter at `chapter_index` and the section at `section_index`
+        # Get the scores for the chapter at `chapter_index`, the section at `section_index`
+        # and the unit at `unit_index`
         # Example text of the retrieved elements: "0/1"
-        score_css = "div.chapters>section:nth-of-type({0}) div.sections>div:nth-of-type({1}) div.scores>ol>li".format(
-            chapter_index, section_index
+        score_css = "{chapter} {section} {unit} {scores}".format(
+            chapter="div.chapters>section:nth-of-type({})".format(chapter_index),
+            section="div.sections>div:nth-of-type({})".format(section_index),
+            unit="div.verticals>div:nth-of-type({})".format(unit_index),
+            scores="div.scores>ol>li",
         )
 
         text_scores = self.q(css=score_css).text
