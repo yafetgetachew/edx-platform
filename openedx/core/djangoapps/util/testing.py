@@ -1,6 +1,8 @@
 """ Mixins for setting up particular course structures (such as split tests or cohorted content) """
 
 from datetime import datetime
+from django.conf import settings
+from django.test.utils import override_settings
 from pytz import UTC
 
 from openedx.core.djangoapps.course_groups.models import CourseUserGroupPartitionGroup
@@ -11,6 +13,12 @@ from xmodule.modulestore.tests.django_utils import ModuleStoreTestCase
 from xmodule.partitions.partitions import UserPartition, Group
 from student.tests.factories import CourseEnrollmentFactory, UserFactory
 
+FEATURES = settings.FEATURES.copy()
+FEATURES_WITHOUT_CUSTOM_GRADING = FEATURES.copy()
+FEATURES_WITHOUT_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = False
+FEATURES_WITH_CUSTOM_GRADING = FEATURES.copy()
+FEATURES_WITH_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = False
+
 
 class ContentGroupTestCase(ModuleStoreTestCase):
     """
@@ -19,6 +27,7 @@ class ContentGroupTestCase(ModuleStoreTestCase):
     staff user, users with access to Alpha/Beta (by way of cohorts),
     and a non-cohorted user with no special access.
     """
+
     def setUp(self):
         super(ContentGroupTestCase, self).setUp()
 
@@ -100,11 +109,12 @@ class ContentGroupTestCase(ModuleStoreTestCase):
         self.course = self.store.get_item(self.course.location)
 
 
-class TestConditionalContent(ModuleStoreTestCase):
+class ConditionalContentMixin(object):
     """
     Construct a course with graded problems that exist within a split test.
     """
     TEST_SECTION_NAME = 'Problem'
+    GRADING_TYPE = 'sequential'
 
     def setUp(self):
         """
@@ -122,7 +132,7 @@ class TestConditionalContent(ModuleStoreTestCase):
                             -> vertical (Group B)
                                 -> problem
         """
-        super(TestConditionalContent, self).setUp()
+        super(ConditionalContentMixin, self).setUp()
 
         # Create user partitions
         self.user_partition_group_a = 0
@@ -155,7 +165,7 @@ class TestConditionalContent(ModuleStoreTestCase):
 
         # add a sequence to the course to which the problems can be added
         self.problem_section = ItemFactory.create(parent_location=chapter.location,
-                                                  category='sequential',
+                                                  category=self.GRADING_TYPE,
                                                   metadata={'graded': True, 'format': 'Homework'},
                                                   display_name=self.TEST_SECTION_NAME)
 
@@ -207,3 +217,13 @@ class TestConditionalContent(ModuleStoreTestCase):
             display_name='Group B problem container',
             location=vertical_b_url
         )
+
+
+@override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING)
+class TestConditionalContentVerticals(ConditionalContentMixin, ModuleStoreTestCase):
+    GRADING_TYPE = 'vertical'
+
+
+@override_settings(FEATURES=FEATURES_WITHOUT_CUSTOM_GRADING)
+class TestConditionalContentSequential(ConditionalContentMixin, ModuleStoreTestCase):
+    GRADING_TYPE = 'sequential'

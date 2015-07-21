@@ -15,8 +15,8 @@ from xmodule.modulestore.django import modulestore
 
 
 USER_COUNT = 11
-FEATURES_WITH_CUSTOM_GRADING = settings.FEATURES.copy()
-FEATURES_WITH_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = False
+FEATURES_WITHOUT_CUSTOM_GRADING = settings.FEATURES.copy()
+FEATURES_WITHOUT_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = False
 
 
 @attr('shard_1')
@@ -86,7 +86,7 @@ class TestGradebook(ModuleStoreTestCase):
 
 
 @attr('shard_1')
-@override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING)
+@override_settings(FEATURES=FEATURES_WITHOUT_CUSTOM_GRADING)
 class TestDefaultGradingPolicy(TestGradebook):
     """
     Tests that the grading policy is properly applied for all users in the course
