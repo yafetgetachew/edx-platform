@@ -3,6 +3,7 @@
 Integration tests for submitting problem responses and getting grades.
 """
 import json
+from django.test.utils import override_settings
 import os
 from textwrap import dedent
 
@@ -32,7 +33,11 @@ from openedx.core.djangoapps.credit.api import (
 from openedx.core.djangoapps.credit.models import CreditCourse, CreditProvider
 from openedx.core.djangoapps.user_api.tests.factories import UserCourseTagFactory
 
+FEATURES_WITH_EXPORT_GIT = settings.FEATURES.copy()
+FEATURES_WITH_EXPORT_GIT['ENABLE_CUSTOM_GRADING'] = False
 
+
+@override_settings(FEATURES=FEATURES_WITH_EXPORT_GIT)
 class TestSubmittingProblems(ModuleStoreTestCase, LoginEnrollmentTestCase):
     """
     Check that a course gets graded properly.
