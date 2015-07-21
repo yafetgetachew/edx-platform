@@ -212,7 +212,7 @@ def grade_histogram(module_id):
 
 
 def add_grading_markup(course, block, view, frag, context):  # pylint: disable=unused-argument
-    if isinstance(block, VerticalBlock) and (not context or not context.get('child_of_vertical', False)):
+    if course and isinstance(block, VerticalBlock) and (not context or not context.get('child_of_vertical', False)):
         return wrap_fragment(
             frag,
             render_to_string(
