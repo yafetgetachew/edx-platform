@@ -10,6 +10,7 @@ from mock import patch, MagicMock
 from nose.plugins.attrib import attr
 
 from capa.tests.response_xml_factory import StringResponseXMLFactory
+
 from courseware.courses import get_course_by_id  # pyline: disable=import-error
 from courseware.field_overrides import OverrideFieldData  # pylint: disable=import-error
 from courseware.tests.factories import StudentModuleFactory  # pylint: disable=import-error
@@ -24,7 +25,7 @@ from student.tests.factories import (  # pylint: disable=import-error
     AdminFactory,
     CourseEnrollmentFactory,
     UserFactory,
-)
+    )
 
 from xmodule.x_module import XModuleMixin
 from xmodule.modulestore.tests.django_utils import (
@@ -47,6 +48,13 @@ from .factories import (
     CcxMembershipFactory,
     CcxFutureMembershipFactory,
 )
+from django.conf import settings
+
+FEATURES = settings.FEATURES.copy()
+FEATURES_WITHOUT_CUSTOM_GRADING = FEATURES.copy()
+FEATURES_WITHOUT_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = False
+FEATURES_WITH_CUSTOM_GRADING = FEATURES.copy()
+FEATURES_WITH_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = True
 
 
 def intercept_renderer(path, context):
@@ -100,22 +108,22 @@ class TestCoachDashboard(ModuleStoreTestCase, LoginEnrollmentTestCase):
         chapters = [ItemFactory.create(start=start, parent=course)
                     for _ in xrange(2)]
         sequentials = flatten([
-            [
-                ItemFactory.create(parent=chapter) for _ in xrange(2)
-            ] for chapter in chapters
-        ])
+                                  [
+                                      ItemFactory.create(parent=chapter) for _ in xrange(2)
+                                      ] for chapter in chapters
+                                  ])
         verticals = flatten([
-            [
-                ItemFactory.create(
-                    due=due, parent=sequential, graded=True, format='Homework'
-                ) for _ in xrange(2)
-            ] for sequential in sequentials
-        ])
+                                [
+                                    ItemFactory.create(
+                                        due=due, parent=sequential, graded=True, format='Homework'
+                                    ) for _ in xrange(2)
+                                    ] for sequential in sequentials
+                                ])
         blocks = flatten([  # pylint: disable=unused-variable
-            [
-                ItemFactory.create(parent=vertical) for _ in xrange(2)
-            ] for vertical in verticals
-        ])
+                            [
+                                ItemFactory.create(parent=vertical) for _ in xrange(2)
+                                ] for vertical in verticals
+                            ])
 
     def make_coach(self):
         """
@@ -442,30 +450,30 @@ GET_CHILDREN = XModuleMixin.get_children
 
 def patched_get_children(self, usage_key_filter=None):
     """Emulate system tools that mask courseware not visible to students"""
+
     def iter_children():
         """skip children not visible to students"""
         for child in GET_CHILDREN(self, usage_key_filter=usage_key_filter):
             child._field_data_cache = {}  # pylint: disable=protected-access
             if not child.visible_to_staff_only:
                 yield child
+
     return list(iter_children())
 
 
-@attr('shard_1')
-@override_settings(FIELD_OVERRIDE_PROVIDERS=(
-    'ccx.overrides.CustomCoursesForEdxOverrideProvider',))
-@patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
-class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase):
+class CCXGradesMixin(object):
     """
     Tests for Custom Courses views.
     """
     MODULESTORE = TEST_DATA_SPLIT_MODULESTORE
+    CATEGORY = None
 
     def setUp(self):
         """
         Set up tests
         """
-        super(TestCCXGrades, self).setUp()
+
+        super(CCXGradesMixin, self).setUp()
         self.course = course = CourseFactory.create(enable_ccx=True)
 
         # Create instructor account
@@ -480,7 +488,7 @@ class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase):
         sections = [
             ItemFactory.create(
                 parent=chapter,
-                category="sequential",
+                category=self.CATEGORY,
                 metadata={'graded': True, 'format': 'Homework'})
             for _ in xrange(4)]
         # pylint: disable=unused-variable
@@ -492,8 +500,8 @@ class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase):
                     data=StringResponseXMLFactory().build_xml(answer='foo'),
                     metadata={'rerandomize': 'always'}
                 ) for _ in xrange(4)
-            ] for section in sections
-        ]
+                ] for section in sections
+            ]
 
         # Create CCX
         role = CourseCcxCoachRole(course.id)
@@ -518,6 +526,7 @@ class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase):
             OverrideFieldData object that is done during the wrap method.
             """
             OverrideFieldData.provider_classes = None
+
         self.addCleanup(cleanup_provider_classes)
 
         # override course grading policy and make last section invisible to students
@@ -615,11 +624,36 @@ class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase):
         self.assertEqual(len(grades['section_breakdown']), 4)
 
 
+@attr('shard_1')
+@override_settings(FIELD_OVERRIDE_PROVIDERS=('ccx.overrides.CustomCoursesForEdxOverrideProvider',))
+@patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
+@override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING, GRADING_TYPE='vertical')
+class TestCustomGradeVerticals(ModuleStoreTestCase, LoginEnrollmentTestCase, CCXGradesMixin):
+    CATEGORY = 'vertical'
+
+
+@attr('shard_1')
+@override_settings(FIELD_OVERRIDE_PROVIDERS=('ccx.overrides.CustomCoursesForEdxOverrideProvider',))
+@patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
+@override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING, GRADING_TYPE='sequential')
+class TestCustomGradeSequential(ModuleStoreTestCase, LoginEnrollmentTestCase, CCXGradesMixin):
+    CATEGORY = 'sequential'
+
+
+@attr('shard_1')
+@override_settings(FIELD_OVERRIDE_PROVIDERS=('ccx.overrides.CustomCoursesForEdxOverrideProvider',))
+@patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
+@override_settings(FEATURES=FEATURES_WITHOUT_CUSTOM_GRADING)
+class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase, CCXGradesMixin):
+    CATEGORY = 'sequential'
+
+
 @ddt.ddt
 class CCXCoachTabTestCase(ModuleStoreTestCase):
     """
     Test case for CCX coach tab.
     """
+
     def setUp(self):
         super(CCXCoachTabTestCase, self).setUp()
         self.course = CourseFactory.create()
@@ -666,10 +700,12 @@ def iter_blocks(course):
     """
     Returns an iterator over all of the blocks in a course.
     """
+
     def visit(block):
         """ get child blocks """
         yield block
         for child in block.get_children():
             for descendant in visit(child):  # wish they'd backport yield from
                 yield descendant
+
     return visit(course)

@@ -218,7 +218,7 @@ def _grading_context(grading_type, course):
             }
 
             block_format = curr_block.format if curr_block.format is not None else ''
-            graded_sections[block_format] = graded_sections.get(block_format, []) + [block_description]
+            graded_sections[block_format] = [block_description] + graded_sections.get(block_format, [])
 
             all_descriptors.extend(xmoduledescriptors)
             all_descriptors.append(curr_block)
@@ -226,6 +226,5 @@ def _grading_context(grading_type, course):
             children = curr_block.get_children() if curr_block.has_children else []
             # Add this blocks children to the stack so that we can traverse them as well.
             blocks_stack.extend(children)
-
     return {'graded_sections': graded_sections,
             'all_descriptors': all_descriptors, }
