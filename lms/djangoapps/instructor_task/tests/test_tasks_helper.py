@@ -7,6 +7,7 @@ Tests that CSV grade report generation works with unicode emails.
 
 """
 import ddt
+from django.conf import settings
 from mock import Mock, patch
 import tempfile
 import unicodecsv
@@ -41,7 +42,13 @@ from instructor_task.tasks_helper import (
     upload_exec_summary_report,
     generate_students_certificates,
 )
-from openedx.core.djangoapps.util.testing import ContentGroupTestCase, TestConditionalContent
+from openedx.core.djangoapps.util.testing import ContentGroupTestCase, TestConditionalContentSequential
+
+
+FEATURES = settings.FEATURES.copy()
+FEATURES_WITHOUT_CUSTOM_GRADING = FEATURES.copy()
+FEATURES_WITHOUT_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = False
+
 
 
 @ddt.ddt
@@ -469,6 +476,7 @@ class TestInstructorDetailedEnrollmentReport(TestReportMixin, InstructorTaskCour
                     self.assertEqual(row[column_header], expected_cell_content)
 
 
+@override_settings(FEATURES=FEATURES_WITHOUT_CUSTOM_GRADING)
 @ddt.ddt
 class TestProblemGradeReport(TestReportMixin, InstructorTaskModuleTestCase):
     """
@@ -565,7 +573,7 @@ class TestProblemGradeReport(TestReportMixin, InstructorTaskModuleTestCase):
         ])
 
 
-class TestProblemReportSplitTestContent(TestReportMixin, TestConditionalContent, InstructorTaskModuleTestCase):
+class TestProblemReportSplitTestContent(TestReportMixin, TestConditionalContentSequential, InstructorTaskModuleTestCase):
     """
     Test the problem report on a course that has split tests.
     """
@@ -629,6 +637,7 @@ class TestProblemReportSplitTestContent(TestReportMixin, TestConditionalContent,
         ])
 
 
+@override_settings(FEATURES=FEATURES_WITHOUT_CUSTOM_GRADING)
 class TestProblemReportCohortedContent(TestReportMixin, ContentGroupTestCase, InstructorTaskModuleTestCase):
     """
     Test the problem report on a course that has cohorted content.
