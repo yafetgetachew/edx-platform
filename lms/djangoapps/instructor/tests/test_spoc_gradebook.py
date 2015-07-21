@@ -1,8 +1,10 @@
 """
 Tests of the instructor dashboard spoc gradebook
 """
+from django.conf import settings
 
 from django.core.urlresolvers import reverse
+from django.test.utils import override_settings
 from nose.plugins.attrib import attr
 from xmodule.modulestore.tests.factories import CourseFactory, ItemFactory
 from student.tests.factories import UserFactory, CourseEnrollmentFactory, AdminFactory
@@ -13,6 +15,8 @@ from xmodule.modulestore.django import modulestore
 
 
 USER_COUNT = 11
+FEATURES_WITH_CUSTOM_GRADING = settings.FEATURES.copy()
+FEATURES_WITH_CUSTOM_GRADING['ENABLE_CUSTOM_GRADING'] = False
 
 
 @attr('shard_1')
@@ -82,6 +86,7 @@ class TestGradebook(ModuleStoreTestCase):
 
 
 @attr('shard_1')
+@override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING)
 class TestDefaultGradingPolicy(TestGradebook):
     """
     Tests that the grading policy is properly applied for all users in the course
@@ -108,6 +113,7 @@ class TestDefaultGradingPolicy(TestGradebook):
 
 
 @attr('shard_1')
+@override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING)
 class TestLetterCutoffPolicy(TestGradebook):
     """
     Tests advanced grading policy (with letter grade cutoffs). Includes tests of
