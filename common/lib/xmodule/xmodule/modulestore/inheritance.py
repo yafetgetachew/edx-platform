@@ -26,6 +26,17 @@ class UserPartitionList(List):
                 for user_partition in values]
 
 
+class GraidingTypeString(String):
+    def from_json(self, value):
+        value = super(self, GraidingTypeString).from_json(self, value)
+        if value in settings.GRADING_ALLOWED_TYPES:
+            return value
+        else:
+            raise TypeError('You must define valid GRADING_TYPE. Allowed types: {}.'.format(
+                settings.GRADING_ALLOWED_TYPES
+            ))
+
+
 class InheritanceMixin(XBlockMixin):
     """Field definitions for inheritable fields."""
 
@@ -33,6 +44,11 @@ class InheritanceMixin(XBlockMixin):
         help="Whether this module contributes to the final course grade",
         scope=Scope.settings,
         default=False,
+    )
+    grading_type = GraidingTypeString(
+        help="Enter the method type by which this course is graded",
+        scope=Scope.settings,
+        default='sequential',
     )
     start = Date(
         help="Start time when this module is visible",

@@ -13,7 +13,8 @@ define(['jquery', 'backbone', 'underscore', 'gettext', 'js/views/baseview',
 ) {
     'use strict';
     var CourseOutlineXBlockModal, SettingsXBlockModal, PublishXBlockModal, AbstractEditor, BaseDateEditor,
-        ReleaseDateEditor, DueDateEditor, GradingEditor, PublishEditor, StaffLockEditor;
+        ReleaseDateEditor, DueDateEditor, GradingEditor, PublishEditor, StaffLockEditor, Editors
+        ;
 
     CourseOutlineXBlockModal = BaseModal.extend({
         events : {
@@ -339,9 +340,41 @@ define(['jquery', 'backbone', 'underscore', 'gettext', 'js/views/baseview',
             return {
                 hasExplicitStaffLock: this.isModelLocked(),
                 ancestorLocked: this.isAncestorLocked()
-            }
+            };
         }
     });
+
+    Editors = {
+      get: function(xblockInfo) {
+        var gradingType = xblockInfo.get('grading_type');
+        if (_.isFunction(Editors.TYPES[gradingType])) {
+          return Editors.TYPES[gradingType](xblockInfo);
+        } else {
+          console.error('Wrong grading type: ' + gradingType, '. Switching to default grading type.');
+          return Editors.TYPES.sequential(xblockInfo);
+        }
+      }
+    };
+
+    Editors.TYPES = {
+      vertical: function(xblockInfo) {
+        if (xblockInfo.isChapter()) {
+            return [ReleaseDateEditor, StaffLockEditor];
+        } else if (xblockInfo.isSequential()) {
+            return [ReleaseDateEditor, GradingEditor, DueDateEditor, StaffLockEditor];
+        } else if (xblockInfo.isVertical()) {
+            return [StaffLockEditor];
+        }
+      },
+
+      sequential: function(xblockInfo) {
+        if (xblockInfo.isChapter() || xblockInfo.isSequential()) {
+            return [ReleaseDateEditor, StaffLockEditor];
+        } else if (xblockInfo.isVertical()) {
+            return [GradingEditor, DueDateEditor, StaffLockEditor];
+        }
+      }
+    };
 
     return {
         getModal: function (type, xblockInfo, options) {
@@ -353,16 +386,7 @@ define(['jquery', 'backbone', 'underscore', 'gettext', 'js/views/baseview',
         },
 
         getEditModal: function (xblockInfo, options) {
-            var editors = [];
-
-            if (xblockInfo.isChapter()) {
-                editors = [ReleaseDateEditor, StaffLockEditor];
-            } else if (xblockInfo.isSequential()) {
-                editors = [ReleaseDateEditor, StaffLockEditor];
-            } else if (xblockInfo.isVertical()) {
-                editors = [GradingEditor, DueDateEditor, StaffLockEditor];
-            }
-
+            var editors = Editors.get(xblockInfo);
             return new SettingsXBlockModal($.extend({
                 editors: editors,
                 model: xblockInfo

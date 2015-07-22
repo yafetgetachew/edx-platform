@@ -47,9 +47,5 @@ setup(
             "random = openedx.core.djangoapps.user_api.partition_schemes:RandomUserPartitionScheme",
             "cohort = openedx.core.djangoapps.course_groups.partition_scheme:CohortPartitionScheme",
         ],
-        "openedx.grading_policy": [
-            "vertical = openedx.core.djangoapps.grading_policy.grading:VerticalGrading",
-            "sequential = openedx.core.djangoapps.grading_policy.grading:SequentialGrading",
-        ]
     }
 )

@@ -420,9 +420,6 @@ FEATURES = {
 
     # Enable the max score cache to speed up grading
     'ENABLE_MAX_SCORE_CACHE': True,
-
-    # Enable custom grading
-    'ENABLE_CUSTOM_GRADING': True
 }
 
 # Ignore static asset files on import which match this pattern

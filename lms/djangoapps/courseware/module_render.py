@@ -588,7 +588,7 @@ def get_module_system_for_user(user, field_data_cache,  # TODO  # pylint: disabl
             has_instructor_access = has_access(user, 'instructor', descriptor, course_id)
             block_wrappers.append(partial(add_staff_markup, user, has_instructor_access, disable_staff_debug_info))
 
-    grading_type = get_grading_type()
+    grading_type = get_grading_type(course)
     if grading_type == 'vertical':
         block_wrappers.append(partial(add_grading_markup, course))
 

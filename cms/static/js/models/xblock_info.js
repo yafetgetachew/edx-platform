@@ -96,6 +96,10 @@ function(Backbone, _, str, ModuleUtils) {
              */
             'course_graders': null,
             /**
+             * String with a grading type.
+             */
+            'grading_type': null,
+            /**
              * True if this xblock contributes to the final course grade.
              */
             'graded': null,

@@ -840,6 +840,7 @@ def create_xblock_info(xblock, data=None, metadata=None, include_ancestor_info=F
         "has_explicit_staff_lock": xblock.fields['visible_to_staff_only'].is_set_on(xblock),
         "start": xblock.fields['start'].to_json(xblock.start),
         "graded": xblock.graded,
+        "grading_type": xblock.grading_type,
         "due_date": get_default_time_display(xblock.due),
         "due": xblock.fields['due'].to_json(xblock.due),
         "format": xblock.format,
