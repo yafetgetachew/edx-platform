@@ -628,7 +628,6 @@ class HighLevelTabTest(UniqueCourseTest):
         EXPECTED_SCORES = [(0, 3), (0, 1)]
 
         actual_scores = self.progress_page.scores(CHAPTER, SECTION)
-
         self.assertEqual(actual_scores, EXPECTED_SCORES)
 
     def test_static_tab(self):

@@ -85,7 +85,6 @@ class ProgressPage(CoursePage):
         except ValueError:
             self.warning("Could not find section '{0}'".format(title))
             return None
-            return None
 
     def _section_scores(self, chapter_index, section_index):
         """
@@ -95,12 +94,10 @@ class ProgressPage(CoursePage):
         `chapter_index` and `section_index` start at 1.
         """
         # This is CSS selector means:
-        # Get the scores for the chapter at `chapter_index`, the section at `section_index`.
+        # Get the scores for the chapter at `chapter_index` and the section at `section_index`
         # Example text of the retrieved elements: "0/1"
-        score_css = "{chapter} {section} {scores}".format(
-            chapter="div.chapters>section:nth-of-type({})".format(chapter_index),
-            section="div.sections>div:nth-of-type({})".format(section_index),
-            scores="div.scores>ol>li",
+        score_css = "div.chapters>section:nth-of-type({0}) div.sections>div:nth-of-type({1}) div.scores>ol>li".format(
+            chapter_index, section_index
         )
 
         text_scores = self.q(css=score_css).text
