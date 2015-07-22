@@ -14,7 +14,7 @@ from celery.states import SUCCESS, FAILURE
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
-from openedx.core.djangoapps.util.testing import TestConditionalContentVerticals, TestConditionalContentVerticals
+from openedx.core.djangoapps.util.testing import TestConditionalContentSequential, TestConditionalContentVerticals
 from capa.tests.response_xml_factory import (CodeResponseXMLFactory,
                                              CustomResponseXMLFactory)
 from xmodule.modulestore.tests.factories import ItemFactory
@@ -464,6 +464,7 @@ class TestDeleteProblemTask(TestIntegrationTask):
         instructor_task = InstructorTask.objects.get(id=instructor_task.id)
         self.assertEqual(instructor_task.task_state, SUCCESS)
 
+
 class GradeReportConditionalContentMixin(object):
     """
     Test grade report in cases where there are problems contained within split tests.
@@ -570,9 +571,9 @@ class GradeReportConditionalContentMixin(object):
             )
 
 
-class TestGradeReportConditionalContent(TestReportMixin, TestConditionalContentVerticals, TestIntegrationTask, GradeReportConditionalContentMixin):
+class TestGradeReportConditionalContent(TestReportMixin, TestConditionalContentSequential, TestIntegrationTask, GradeReportConditionalContentMixin):
     """
-    Tests based on TestConditionalContentMixin
+    Tests based on TestConditionalContentSequentialMixin
     """
 
 

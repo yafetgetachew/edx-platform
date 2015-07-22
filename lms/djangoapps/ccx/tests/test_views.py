@@ -628,7 +628,7 @@ class CCXGradesMixin(object):
 @override_settings(FIELD_OVERRIDE_PROVIDERS=('ccx.overrides.CustomCoursesForEdxOverrideProvider',))
 @patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
 @override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING, GRADING_TYPE='vertical')
-class TestCustomGradeVerticals(ModuleStoreTestCase, LoginEnrollmentTestCase, CCXGradesMixin):
+class TestCustomGradeVerticals(CCXGradesMixin, ModuleStoreTestCase, LoginEnrollmentTestCase):
     CATEGORY = 'vertical'
 
 
@@ -636,7 +636,7 @@ class TestCustomGradeVerticals(ModuleStoreTestCase, LoginEnrollmentTestCase, CCX
 @override_settings(FIELD_OVERRIDE_PROVIDERS=('ccx.overrides.CustomCoursesForEdxOverrideProvider',))
 @patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
 @override_settings(FEATURES=FEATURES_WITH_CUSTOM_GRADING, GRADING_TYPE='sequential')
-class TestCustomGradeSequential(ModuleStoreTestCase, LoginEnrollmentTestCase, CCXGradesMixin):
+class TestCustomGradeSequential(CCXGradesMixin, ModuleStoreTestCase, LoginEnrollmentTestCase):
     CATEGORY = 'sequential'
 
 
@@ -644,7 +644,7 @@ class TestCustomGradeSequential(ModuleStoreTestCase, LoginEnrollmentTestCase, CC
 @override_settings(FIELD_OVERRIDE_PROVIDERS=('ccx.overrides.CustomCoursesForEdxOverrideProvider',))
 @patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
 @override_settings(FEATURES=FEATURES_WITHOUT_CUSTOM_GRADING)
-class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase, CCXGradesMixin):
+class TestCCXGrades(CCXGradesMixin,ModuleStoreTestCase, LoginEnrollmentTestCase):
     CATEGORY = 'sequential'
 
 
