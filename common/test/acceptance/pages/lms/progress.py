@@ -22,7 +22,7 @@ class ProgressPage(CoursePage):
     def grading_formats(self):
         return [label.replace(' Scores:', '') for label in self.q(css="div.scores h4").text]
 
-    def scores(self, chapter, section, unit):
+    def scores(self, chapter, section, unit=None):
         """
         Return a list of (points, max_points) tuples representing the scores
         for the section.
@@ -42,12 +42,15 @@ class ProgressPage(CoursePage):
         if section_index is None:
             return None
 
-        unit_index = self._unit_index(chapter_index, section_index, unit)
-        if unit_index is None:
-            return None
-
-        # Retrieve the scores for the section
-        return self._unit_scores(chapter_index, section_index, unit_index)
+        if unit is not None:
+            unit_index = self._unit_index(chapter_index, section_index, unit)
+            if unit_index is None:
+                return None
+            # Retrieve the scores for the unit
+            return self._unit_scores(chapter_index, section_index, unit_index)
+        else:
+            # Retrieve the scores for the section
+            return self._section_scores(chapter_index, section_index)
 
     def _chapter_index(self, title):
         """
@@ -122,6 +125,28 @@ class ProgressPage(CoursePage):
         except ValueError:
             self.warning("Could not find unit '{0}'".format(title))
             return None
+
+    def _section_scores(self, chapter_index, section_index):
+        """
+        Return a list of `(points, max_points)` tuples representing
+        the scores in the specified chapter and section.
+
+        `chapter_index`, `section_index` and `unit_index` start at 1.
+        """
+        # This is CSS selector means:
+        # Get the scores for the chapter at `chapter_index`, the section at `section_index`
+        # and the unit at `unit_index`
+        # Example text of the retrieved elements: "0/1"
+        score_css = "{chapter} {section} {scores}".format(
+            chapter="div.chapters>section:nth-of-type({})".format(chapter_index),
+            section="div.sections>div:nth-of-type({})".format(section_index),
+            scores="div.scores>ol>li",
+        )
+
+        text_scores = self.q(css=score_css).text
+
+        # Convert text scores to tuples of (points, max_points)
+        return [tuple(map(int, score.split('/'))) for score in text_scores]
 
     def _unit_scores(self, chapter_index, section_index, unit_index):
         """
