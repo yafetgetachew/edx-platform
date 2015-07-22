@@ -95,7 +95,7 @@ class CoursewareTest(UniqueCourseTest):
 
         # Visit course outline page in studio.
         self.course_outline.visit()
-        
+
         # Set release date for subsection in future.
         self._change_problem_release_date_in_studio()
 
