@@ -1,5 +1,5 @@
 # #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
-# edX translation file.
+# edX community translations have been downloaded from Slovenian (http://www.transifex.com/projects/p/edx-platform/language/sl/).
 # Copyright (C) 2015 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-26 13:20+0000\n"
-"PO-Revision-Date: 2015-01-20 14:25+0000\n"
+"POT-Creation-Date: 2015-02-17 22:14+0000\n"
+"PO-Revision-Date: 2015-02-02 13:52+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/edx-platform/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -52,8 +52,9 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/static/coffee/src/discussion/utils.js
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: cms/static/coffee/src/views/tabs.js cms/static/js/factories/export.js
@@ -65,10 +66,20 @@ msgstr ""
 #: cms/static/js/views/modals/course_outline_modals.js
 #: cms/static/js/views/utils/view_utils.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: cms/templates/js/add-xblock-component-menu-problem.underscore
+#: cms/templates/js/add-xblock-component-menu.underscore
+#: cms/templates/js/content-group-editor.underscore
+#: cms/templates/js/course_info_handouts.underscore
+#: cms/templates/js/edit-textbook.underscore
+#: cms/templates/js/group-configuration-editor.underscore
+#: cms/templates/js/section-name-edit.underscore
+#: cms/templates/js/xblock-string-field-editor.underscore
+#: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Cancel"
 msgstr "Prekliči"
 
 #: cms/static/js/base.js lms/static/js/verify_student/photocapture.js
+#: cms/templates/js/checklist.underscore
 msgid "This link will open in a new browser window/tab"
 msgstr "Ta povezava se bo odprla v novem oknu/zavihku"
 
@@ -78,7 +89,7 @@ msgstr "Ta povezava se bo odprla v novem oknu/zavihku"
 #: lms/static/coffee/src/instructor_dashboard/util.js
 #: lms/static/coffee/src/instructor_dashboard/util.js
 msgid "Unknown"
-msgstr ""
+msgstr "Neznan"
 
 #: cms/static/js/factories/manage_users.js
 #: cms/static/js/factories/manage_users_lib.js cms/static/js/views/asset.js
@@ -96,7 +107,7 @@ msgstr ""
 #: cms/templates/js/xblock-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -106,7 +117,7 @@ msgstr ""
 #: cms/templates/js/asset-library.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #: cms/static/js/views/metadata.js lms/static/js/views/file_uploader.js
 msgid "Upload File"
@@ -119,7 +130,7 @@ msgstr ""
 #: lms/static/js/verify_student/views/payment_confirmation_step_view.js
 #: lms/static/js/verify_student/views/step_view.js
 msgid "Error"
-msgstr ""
+msgstr "Napaka"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -134,7 +145,7 @@ msgstr ""
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -143,31 +154,31 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/templates/js/image-modal.underscore
 msgid "Close"
-msgstr ""
+msgstr "Zapri"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Show Annotations"
-msgstr ""
+msgstr "Prikaži pripombe"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Hide Annotations"
-msgstr ""
+msgstr "Skrij pripombe"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Expand Instructions"
-msgstr ""
+msgstr "Razširi navodila"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Collapse Instructions"
-msgstr ""
+msgstr "Združi navodila"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Commentary"
-msgstr ""
+msgstr "Komentar"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Reply to Annotation"
-msgstr ""
+msgstr "Odgovorite na komentar"
 
 #. Translators: %(earned)s is the number of points earned. %(total)s is the
 #. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
@@ -176,63 +187,63 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "(%(earned)s/%(possible)s point)"
 msgid_plural "(%(earned)s/%(possible)s points)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "(%(earned)s/%(possible)s točko)"
+msgstr[1] "(%(earned)s/%(possible)s točki)"
+msgstr[2] "(%(earned)s/%(possible)s točk)"
+msgstr[3] "(%(earned)s/%(possible)s točk)"
 
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10). There will always be at least 1 point possible.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "(%(num_points)s point possible)"
 msgid_plural "(%(num_points)s points possible)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "(%(num_points)s možna točka)"
+msgstr[1] "(%(num_points)s možni točki)"
+msgstr[2] "(%(num_points)s možne točke)"
+msgstr[3] "(%(num_points)s možnih točk)"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Answer:"
-msgstr ""
+msgstr "Odgovor:"
 
 #. Translators: the word Answer here refers to the answer to a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Hide Answer"
-msgstr ""
+msgstr "Skrij odgovor"
 
 #. Translators: the word Answer here refers to the answer to a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Show Answer"
-msgstr ""
+msgstr "Pokaži odogovor"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Reveal Answer"
-msgstr ""
+msgstr "Pokaži odgovor"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Answer hidden"
-msgstr ""
+msgstr "Odgovor je skrit"
 
 #. Translators: the word unanswered here is about answering a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "unanswered"
-msgstr ""
+msgstr "neodgovorjen"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Status: unsubmitted"
-msgstr ""
+msgstr "Status: neoddan"
 
 #. Translators: A "rating" is a score a student gives to indicate how well
 #. they feel they were graded on this problem
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "You need to pick a rating before you can submit."
-msgstr ""
+msgstr "Izbrati morate oceno predno lahko pošljete"
 
 #. Translators: this message appears when transitioning between openended
 #. grading
@@ -246,7 +257,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Submit"
-msgstr ""
+msgstr "Oddaj"
 
 #. Translators: one clicks this button after one has finished filling out the
 #. grading
@@ -258,7 +269,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid ""
 "Your response has been submitted. Please check back later for your grade."
-msgstr ""
+msgstr "Tvoj odgovor je bil poslan. Preveri kasneje za tvojo oceno."
 
 #. Translators: this button is clicked to submit a student's rating of
 #. an evaluator's assessment
@@ -268,7 +279,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "Answer saved, but not yet submitted."
-msgstr ""
+msgstr "Odgovor je shranjen, vendar še ni poslan"
 
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid ""
@@ -305,19 +316,19 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "Show Question"
-msgstr ""
+msgstr "Pokaži vprašanje"
 
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "Hide Question"
-msgstr ""
+msgstr "Skrij vprašanje"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Paragraph"
-msgstr ""
+msgstr "Odstavek"
 
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Preformatted"
@@ -328,27 +339,27 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 1"
-msgstr ""
+msgstr "Naslov1"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 2"
-msgstr ""
+msgstr "Naslov2"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 3"
-msgstr ""
+msgstr "Naslov3"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Add to Dictionary"
-msgstr ""
+msgstr "Dodaj v slovar"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -356,37 +367,37 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: cms/templates/js/add-xblock-component-menu-problem.underscore
 msgid "Advanced"
-msgstr ""
+msgstr "Napredno"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Align center"
-msgstr ""
+msgstr "Poravnaj centralno"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Align left"
-msgstr ""
+msgstr "Poravnaj levo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Align right"
-msgstr ""
+msgstr "Poravnaj desno"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Alignment"
-msgstr ""
+msgstr "Poravnava"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Alternative source"
-msgstr ""
+msgstr "Alternativni vir"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -404,13 +415,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Author"
-msgstr ""
+msgstr "Avtor"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Background color"
-msgstr ""
+msgstr "Barva ozadja"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -429,13 +440,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Body"
-msgstr ""
+msgstr "Telo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Bold"
-msgstr ""
+msgstr "Krepko"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -447,7 +458,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Border"
-msgstr ""
+msgstr "Obroba"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -495,25 +506,25 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Cell"
-msgstr ""
+msgstr "Celica"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Center"
-msgstr ""
+msgstr "Center"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Circle"
-msgstr ""
+msgstr "Krog"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Clear formatting"
-msgstr ""
+msgstr "Počisti oblikovanje"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -525,31 +536,31 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Code"
-msgstr ""
+msgstr "Koda"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Color"
-msgstr ""
+msgstr "Barva"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Cols"
-msgstr ""
+msgstr "Cols"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Column group"
-msgstr ""
+msgstr "Skupina stoplcev"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Column"
-msgstr ""
+msgstr "Stolpec"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -561,13 +572,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Copy row"
-msgstr ""
+msgstr "Kopiraj vrstico"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Copy"
-msgstr ""
+msgstr "Kopiraj"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -579,7 +590,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Custom color"
-msgstr ""
+msgstr "Poljubna barva"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -591,13 +602,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Cut row"
-msgstr ""
+msgstr "Izreži vrstico"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Cut"
-msgstr ""
+msgstr "Izreži"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -615,19 +626,19 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Delete column"
-msgstr ""
+msgstr "Izbriši stolpec"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Delete row"
-msgstr ""
+msgstr "Izbriši vrstico"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Delete table"
-msgstr ""
+msgstr "Izbriši tabelo"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -636,7 +647,7 @@ msgstr ""
 #: cms/templates/js/group-configuration-editor.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -654,19 +665,19 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Div"
-msgstr ""
+msgstr "div"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Document properties"
-msgstr ""
+msgstr "Lastnosti dokumenta"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Edit HTML"
-msgstr ""
+msgstr "Uredi HTML"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -679,7 +690,7 @@ msgstr ""
 #: cms/templates/js/show-textbook.underscore
 #: cms/templates/js/xblock-string-field-editor.underscore
 msgid "Edit"
-msgstr ""
+msgstr "Uredi"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -703,19 +714,19 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "File"
-msgstr ""
+msgstr "Datoteka"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Find and replace"
-msgstr ""
+msgstr "Najdi in zamenjaj"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Find next"
-msgstr ""
+msgstr "Najdi naslednjega"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -727,13 +738,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Find"
-msgstr ""
+msgstr "Najdi"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Finish"
-msgstr ""
+msgstr "Konec"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -745,13 +756,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Font Sizes"
-msgstr ""
+msgstr "Velikost pisave"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Footer"
-msgstr ""
+msgstr "Noga"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -771,7 +782,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/templates/js/image-modal.underscore
 msgid "Fullscreen"
-msgstr ""
+msgstr "Celozalonsko"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -789,37 +800,37 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Header 1"
-msgstr ""
+msgstr "Glava 1"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Header 2"
-msgstr ""
+msgstr "Glava 2"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Header 3"
-msgstr ""
+msgstr "Glava 3"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Header 4"
-msgstr ""
+msgstr "Glava 4"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Header 5"
-msgstr ""
+msgstr "Glava 5"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Header 6"
-msgstr ""
+msgstr "Glava 6"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -830,44 +841,45 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Header"
-msgstr ""
+msgstr "Glava"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Headers"
-msgstr ""
+msgstr "Glave"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 4"
-msgstr ""
+msgstr "Naslov 4"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 5"
-msgstr ""
+msgstr "Naslov 5"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 6"
-msgstr ""
+msgstr "Naslov 6"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Headings"
-msgstr ""
+msgstr "Naslovi"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Height"
-msgstr ""
+msgstr "Višina"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -891,19 +903,19 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Ignore all"
-msgstr ""
+msgstr "Ignoriraj vse"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Ignore"
-msgstr ""
+msgstr "Ignoriraj"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Image description"
-msgstr ""
+msgstr "Opis slike"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -921,85 +933,85 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert column after"
-msgstr ""
+msgstr "Vstavi stolpec pred"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert column before"
-msgstr ""
+msgstr "Vstavi stolpec za"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert date/time"
-msgstr ""
+msgstr "Vstavi datum/čas"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert image"
-msgstr ""
+msgstr "Vstavi sliko"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert link"
-msgstr ""
+msgstr "Vstavi povezavo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert row after"
-msgstr ""
+msgstr "Vstavi vrstico za"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert row before"
-msgstr ""
+msgstr "Vstavi vrstico pred"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert table"
-msgstr ""
+msgstr "Vstavi tabelo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert template"
-msgstr ""
+msgstr "Vstavi predlogo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert video"
-msgstr ""
+msgstr "Vstavi video"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert"
-msgstr ""
+msgstr "Vstavi"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert/edit image"
-msgstr ""
+msgstr "Vstavi/spremeni sliko"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert/edit link"
-msgstr ""
+msgstr "Vstavi/spremeni povezavo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Insert/edit video"
-msgstr ""
+msgstr "Vstavi/spremeni video"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1017,7 +1029,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Keywords"
-msgstr ""
+msgstr "Ključne besede"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1029,7 +1041,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Left"
-msgstr ""
+msgstr "Levo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1059,25 +1071,25 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Merge cells"
-msgstr ""
+msgstr "Združi celice"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Middle"
-msgstr ""
+msgstr "Sredina"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "New document"
-msgstr ""
+msgstr "Nov dokument"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "New window"
-msgstr ""
+msgstr "Novo okno"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -1086,13 +1098,13 @@ msgstr ""
 #: cms/templates/js/paging-footer.underscore
 #: cms/templates/js/paging-header.underscore
 msgid "Next"
-msgstr ""
+msgstr "Naprej"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "No color"
-msgstr ""
+msgstr "Brez barve"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1104,7 +1116,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "None"
-msgstr ""
+msgstr "Brez"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1116,19 +1128,19 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Ok"
-msgstr ""
+msgstr "V redu"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Page break"
-msgstr ""
+msgstr "Prelom strani"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Paste as text"
-msgstr ""
+msgstr "Prilepi kot besedilo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1142,13 +1154,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Paste row after"
-msgstr ""
+msgstr "Prilepi vrstico za"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Paste row before"
-msgstr ""
+msgstr "Prilepi vrstico pred"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1160,7 +1172,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Paste"
-msgstr ""
+msgstr "Prilepi"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1187,13 +1199,13 @@ msgstr ""
 #: lms/static/coffee/src/customwmd.js
 #: cms/templates/js/asset-library.underscore
 msgid "Preview"
-msgstr ""
+msgstr "Predogled"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Print"
-msgstr ""
+msgstr "Natisni"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1205,20 +1217,20 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Remove link"
-msgstr ""
+msgstr "Odstrani povezavo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Replace all"
-msgstr ""
+msgstr "Zamenjaj vse"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Replace with"
-msgstr ""
+msgstr "Zamenjaj z"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -1228,7 +1240,7 @@ msgstr ""
 #: cms/templates/js/metadata-file-uploader-item.underscore
 #: cms/templates/js/video/metadata-translations-item.underscore
 msgid "Replace"
-msgstr ""
+msgstr "Zamenjaj"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1254,13 +1266,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Right"
-msgstr ""
+msgstr "Desno"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Robots"
-msgstr ""
+msgstr "Roboti"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1284,13 +1296,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Row"
-msgstr ""
+msgstr "Vrstica"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Rows"
-msgstr ""
+msgstr "Vrstice"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1320,13 +1332,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Source code"
-msgstr ""
+msgstr "Izvorna koda"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Source"
-msgstr ""
+msgstr "Izvor"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1350,13 +1362,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Square"
-msgstr ""
+msgstr "Kvadrat"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Start search"
-msgstr ""
+msgstr "Začni iskanje"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1368,13 +1380,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Style"
-msgstr ""
+msgstr "Slog"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Subscript"
-msgstr ""
+msgstr "Podpisano"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1386,13 +1398,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Table properties"
-msgstr ""
+msgstr "Lastnosti tabele"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Table"
-msgstr ""
+msgstr "Tabela"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1404,13 +1416,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Templates"
-msgstr ""
+msgstr "Predloge"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Text color"
-msgstr ""
+msgstr "Barva besedila"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1438,31 +1450,31 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Tools"
-msgstr ""
+msgstr "Orodja"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Top"
-msgstr ""
+msgstr "Vrh"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Underline"
-msgstr ""
+msgstr "Podčrtano"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Undo"
-msgstr ""
+msgstr "Razveljavi"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1480,7 +1492,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1494,11 +1506,13 @@ msgstr ""
 msgid "Vertical space"
 msgstr ""
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: lms/templates/courseware_search/search_item.underscore
 msgid "View"
-msgstr ""
+msgstr "Pogled"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1516,19 +1530,19 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Width"
-msgstr ""
+msgstr "Širina"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Words: {0}"
-msgstr ""
+msgstr "Besede:{0}"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "You have unsaved changes are you sure you want to navigate away?"
-msgstr ""
+msgstr "Imate neshranjene spremembe, ali res želite nadaljevati?"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1559,9 +1573,36 @@ msgid ""
 "Click Cancel to return to this page without sending your information."
 msgstr ""
 
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "incorrect"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "correct"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "answer"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "Short explanation"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid ""
+"If you use the Advanced Editor, this problem will be converted to XML and you will not be able to return to the Simple Editor Interface.\n"
+"\n"
+"Proceed to the Advanced Editor and convert this problem to XML?"
+msgstr ""
+
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
 msgid ""
-"Sequence error! Cannot navigate to tab %(tab_name)s in the current "
+"Sequence error! Cannot navigate to %(tab_name)s in the current "
 "SequenceModule. Please contact the course staff."
 msgstr ""
 
@@ -1595,7 +1636,7 @@ msgstr "Celozaslonski način"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Speed"
-msgstr ""
+msgstr "Hitrost"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Volume"
@@ -1673,26 +1714,26 @@ msgstr "Video končan"
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "%(value)s hour"
 msgid_plural "%(value)s hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%(value)s ura"
+msgstr[1] "%(value)s uri"
+msgstr[2] "%(value)s ure"
+msgstr[3] "%(value)s ur"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "%(value)s minute"
 msgid_plural "%(value)s minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%(value)s minuta"
+msgstr[1] "%(value)s minuti"
+msgstr[2] "%(value)s minute"
+msgstr[3] "%(value)s minute"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "%(value)s second"
 msgid_plural "%(value)s seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%(value)s sekunda"
+msgstr[1] "%(value)s sekundi"
+msgstr[2] "%(value)s sekunde"
+msgstr[3] "%(value)s sekunde"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "Caption will be displayed when "
@@ -1717,11 +1758,11 @@ msgstr ""
 #: common/static/coffee/src/discussion/discussion_module_view.js
 #: common/static/coffee/src/discussion/discussion_module_view.js
 msgid "Hide Discussion"
-msgstr ""
+msgstr "Skrij pogovor"
 
 #: common/static/coffee/src/discussion/discussion_module_view.js
 msgid "Show Discussion"
-msgstr ""
+msgstr "Prikaži pogovor"
 
 #: common/static/coffee/src/discussion/discussion_module_view.js
 #: common/static/coffee/src/discussion/discussion_module_view.js
@@ -1734,26 +1775,28 @@ msgstr ""
 #: common/static/coffee/src/discussion/views/discussion_user_profile_view.js
 #: common/static/coffee/src/discussion/views/response_comment_view.js
 msgid "Sorry"
-msgstr ""
+msgstr "Oprosti"
 
 #: common/static/coffee/src/discussion/discussion_module_view.js
 msgid "We had some trouble loading the discussion. Please try again."
-msgstr ""
+msgstr "Pri nalaganju pogovora smo imeli težave. Prosimo poskusite znova."
 
 #: common/static/coffee/src/discussion/discussion_module_view.js
 msgid ""
 "We had some trouble loading the threads you requested. Please try again."
-msgstr ""
+msgstr "Pri nalaganju smo imeli težave. Prosimo, poskusite znova."
 
 #: common/static/coffee/src/discussion/utils.js
 msgid "Loading content"
-msgstr ""
+msgstr "Nalagam vsebino"
 
 #: common/static/coffee/src/discussion/utils.js
 msgid ""
 "We had some trouble processing your request. Please ensure you have copied "
 "any unsaved work and then reload the page."
 msgstr ""
+"Pri obdelavi vašega zahtevka smo imeli težave. Prosimo poskrbite, da imate "
+"kopijo neshranjenih sprememb in ponovno naložite stran."
 
 #: common/static/coffee/src/discussion/utils.js
 msgid "We had some trouble processing your request. Please try again."
@@ -1765,15 +1808,15 @@ msgstr ""
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 #: common/static/coffee/src/discussion/views/discussion_topic_menu_view.js
 msgid "…"
-msgstr ""
+msgstr "..."
 
 #: common/static/coffee/src/discussion/views/discussion_content_view.js
 msgid "currently %(numVotes)s vote"
 msgid_plural "currently %(numVotes)s votes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Trenutno %(numVotes)s glas"
+msgstr[1] "Trenutno %(numVotes)s glasova"
+msgstr[2] "Trenutno %(numVotes)s glasovi"
+msgstr[3] "Trenutno %(numVotes)s glasov"
 
 #: common/static/coffee/src/discussion/views/discussion_content_view.js
 msgid "%(numVotes)s Vote"
@@ -1813,6 +1856,7 @@ msgstr ""
 #: common/static/coffee/src/discussion/views/discussion_content_view.js
 msgid "We had some trouble saving your vote.  Please try again."
 msgstr ""
+"Pri shranjevanju tvojega glasu smo imeli težave. Prosim poskusite znova"
 
 #: common/static/coffee/src/discussion/views/discussion_content_view.js
 msgid "We had some trouble pinning this thread. Please try again."
@@ -1841,15 +1885,15 @@ msgstr ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 msgid "Load more"
-msgstr ""
+msgstr "Naloži več"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 msgid "Loading more threads"
-msgstr ""
+msgstr "Nalagam več vsebine"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 msgid "We had some trouble loading more threads. Please try again."
-msgstr ""
+msgstr "Pri nalaganju vsebine smo imeli težave. Prosimo poskusite znova."
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 msgid "%(unread_count)s new comment"
@@ -1860,13 +1904,18 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
-#: lms/static/js/edxnotes/views/tabs/search_results.js
-msgid "Search Results"
+msgid "Current conversation"
 msgstr ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
+#: lms/static/js/edxnotes/views/tabs/search_results.js
+#: lms/templates/courseware_search/search_list.underscore
+msgid "Search Results"
+msgstr "Rezultati iskanja"
+
+#: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 msgid "Loading thread list"
-msgstr ""
+msgstr "Nalagam seznam vsebine"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 msgid ""
@@ -1913,7 +1962,7 @@ msgstr[3] ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "Showing all responses"
-msgstr ""
+msgstr "Prikaži vse odzive"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "Showing first response"
@@ -1925,7 +1974,7 @@ msgstr[3] ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "Load all responses"
-msgstr ""
+msgstr "Naloži vse odzive"
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "Load next %(numResponses)s responses"
@@ -1933,7 +1982,7 @@ msgstr ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Ste prepričani, da želite izbrisati to objavo?"
 
 #: common/static/coffee/src/discussion/views/discussion_user_profile_view.js
 msgid "We had some trouble loading the page you requested. Please try again."
@@ -1941,15 +1990,15 @@ msgstr ""
 
 #: common/static/coffee/src/discussion/views/new_post_view.js
 msgid "Your post will be discarded."
-msgstr ""
+msgstr "Vaša objava bo izbrisana"
 
 #: common/static/coffee/src/discussion/views/response_comment_show_view.js
 msgid "anonymous"
-msgstr ""
+msgstr "anonimen"
 
 #: common/static/coffee/src/discussion/views/response_comment_view.js
 msgid "Are you sure you want to delete this comment?"
-msgstr ""
+msgstr "Ste prepričani, da želite izbrisati ta komentar"
 
 #: common/static/coffee/src/discussion/views/response_comment_view.js
 msgid "We had some trouble deleting this comment. Please try again."
@@ -1957,7 +2006,7 @@ msgstr ""
 
 #: common/static/coffee/src/discussion/views/thread_response_view.js
 msgid "Are you sure you want to delete this response?"
-msgstr ""
+msgstr "Ste prepričani, da želite izbrisati ta odgovor?"
 
 #: common/static/js/capa/drag_and_drop/base_image.js
 msgid "Drop target image"
@@ -2103,7 +2152,7 @@ msgstr[3] ""
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "User"
-msgstr ""
+msgstr "Uporabnik"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Annotation"
@@ -2111,11 +2160,11 @@ msgstr ""
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Start"
-msgstr ""
+msgstr "Začetek"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "End"
-msgstr ""
+msgstr "Konec"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "#Replies"
@@ -2133,7 +2182,7 @@ msgstr ""
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "My Notes"
-msgstr ""
+msgstr "Moji zapiski"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Instructor"
@@ -2176,7 +2225,7 @@ msgstr ""
 #: cms/templates/js/mock/mock-xmodule-settings-only-editor.underscore
 #: cms/templates/js/video/metadata-translations-entry.underscore
 msgid "Clear"
-msgstr ""
+msgstr "počisti"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Text"
@@ -2184,7 +2233,7 @@ msgstr ""
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Image"
@@ -2200,35 +2249,36 @@ msgstr ""
 
 #: lms/static/coffee/src/calculator.js
 msgid "Open Calculator"
-msgstr ""
+msgstr "Odpri kalkulator"
 
 #: lms/static/coffee/src/calculator.js
 msgid "Close Calculator"
-msgstr ""
+msgstr "Zapri kalkulator"
 
 #: lms/static/coffee/src/customwmd.js
 msgid "Post body"
-msgstr ""
+msgstr "Post vsebina"
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error generating student profile information. Please try again."
 msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
+#: lms/templates/courseware_search/search_loading.underscore
 msgid "Loading"
 msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error getting student list."
-msgstr ""
+msgstr "Napaka pri pridobivanju seznama študentov."
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error retrieving grading configuration."
-msgstr ""
+msgstr "Napaka pri pridobivanju nastavitev za ocene."
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error generating grades. Please try again."
-msgstr ""
+msgstr "Napaka pri generiranju ocen. Poskusite znova."
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "File Name"
@@ -2262,7 +2312,7 @@ msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Email"
-msgstr ""
+msgstr "Sporočilo"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 #: lms/static/coffee/src/instructor_dashboard/membership.js
@@ -2420,11 +2470,11 @@ msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your message must have a subject."
-msgstr ""
+msgstr "Vaše sporočilo mora imeti naslov."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your message cannot be blank."
-msgstr ""
+msgstr "Vaše sporočilo ne more biti prazno."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid ""
@@ -2434,7 +2484,7 @@ msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your email was successfully queued for sending."
-msgstr ""
+msgstr "Vaš email je bil uspešno uvrščen v vrsto za pošiljanje."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid ""
@@ -2460,19 +2510,22 @@ msgid ""
 "classes, it may take up to an hour (or more, if other courses are "
 "simultaneously sending email) to send all emails."
 msgstr ""
+"Vaše sporočilo je bil uspešno uvrščeno v vrsto za pošiljanje. Prosimo "
+"upoštevajte, da lahko pošiljanje sporočil traja tudi do eno uro (ali več, če"
+" pošiljate sporočila za več tečajev hkrati)."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Error sending email."
-msgstr ""
+msgstr "Napaka pri pošiljanju sporočila."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "There is no email history for this course."
-msgstr ""
+msgstr "Za ta tečaj nimate zgodovine sporočil."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "There was an error obtaining email task history for this course."
-msgstr ""
+msgstr "Pri pridobivanju zgodovine sporočil za ta tečaj je prišlo do napake."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "There was an error obtaining email content history for this course."
@@ -2484,7 +2537,7 @@ msgstr ""
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Please enter a student email address or username."
-msgstr ""
+msgstr "Prosimo vnesite email ali ime študenta."
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2507,6 +2560,8 @@ msgid ""
 "Success! Problem attempts reset for problem '<%= problem_id %>' and student "
 "'<%= student_id %>'."
 msgstr ""
+"Uspešno! Problem za problem  '<%= problem_id %>' in študenta '<%= student_id"
+" %>' je ponastavljen."
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2519,6 +2574,8 @@ msgstr ""
 msgid ""
 "Delete student '<%= student_id %>'s state on problem '<%= problem_id %>'?"
 msgstr ""
+"Izbriši študentovo '<%= student_id %>' stanje na problemu '<%= problem_id "
+"%>'?"
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2529,7 +2586,7 @@ msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Module state successfully deleted."
-msgstr ""
+msgstr "Stanje modula uspešno izbrisano."
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2537,6 +2594,9 @@ msgid ""
 "'<%= student_id %>'. Click the 'Show Background Task History for Student' "
 "button to see the status of the task."
 msgstr ""
+"Ponovno ocenjevanje za problem  '<%= problem_id %>' in študenta '<%= "
+"student_id %>' se je začelo. Kliknite na 'Pokaži zgodovino opravil za "
+"študenta' da pogledate status opravila. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2554,7 +2614,7 @@ msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Reset attempts for all students on problem '<%= problem_id %>'?"
-msgstr ""
+msgstr "Ponastavi poskuse za vse študente na problemu  '<%= problem_id %>'?"
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2562,6 +2622,9 @@ msgid ""
 " Click the 'Show Background Task History for Problem' button to see the "
 "status of the task."
 msgstr ""
+"Opravilo za ponastavitev vseh poskusov na problemu '<%= problem_id %>' se je"
+" uspešno začelo. Kliknite na 'Pokaži zgodovino opravil za problem' da "
+"pogledate status opravila. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2572,7 +2635,7 @@ msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Rescore problem '<%= problem_id %>' for all students?"
-msgstr ""
+msgstr "Ponovno oceni problem  '<%= problem_id %>'  za vse študente?"
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2580,6 +2643,9 @@ msgid ""
 "students. Click the 'Show Background Task History for Problem' button to see"
 " the status of the task."
 msgstr ""
+"Opravilo za ponovno ocenjevanje vseh poskusov na problemu '<%= problem_id "
+"%>' se je uspešno začelo. Kliknite na 'Pokaži zgodovino opravil za problem' "
+"da pogledate status opravila. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2590,6 +2656,8 @@ msgstr ""
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Error listing task history for this student and problem."
 msgstr ""
+"Pri pridobivanju zgodovine opravil za tega študenta in ta problem je prišlo "
+"do napake."
 
 #. Translators: a "Task" is a background process such as grading students or
 #. sending email
@@ -2619,7 +2687,7 @@ msgstr ""
 #. appears after this
 #: lms/static/coffee/src/instructor_dashboard/util.js
 msgid "Submitted"
-msgstr ""
+msgstr "Oddano"
 
 #. Translators: The length of a task (eg, sending email) in seconds appears
 #. this
@@ -2697,35 +2765,35 @@ msgstr ""
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Grades saved.  Fetching the next submission to grade."
-msgstr ""
+msgstr "Ocene shranjene. Pridobivam naslednjo nalogo za ocenjevanje."
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Problem Name"
-msgstr ""
+msgstr "Ime problema"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Graded"
-msgstr ""
+msgstr "Ocenjeno"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Available to Grade"
-msgstr ""
+msgstr "Na voljo za ocenjevanje"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Required"
-msgstr ""
+msgstr "Obvezno"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Progress"
-msgstr ""
+msgstr "Potek"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Back to problem list"
-msgstr ""
+msgstr "Nazaj na seznam problemov"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Try loading again"
-msgstr ""
+msgstr "Poskusite naložiti ponovno"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "<%= num %> available "
@@ -2737,28 +2805,28 @@ msgstr ""
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "<%= num %> more needed to start ML"
-msgstr ""
+msgstr "<%= num %> več potrebnih za začetek ML"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Re-check for submissions"
-msgstr ""
+msgstr "Ponovno preveri za oddajo"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "System got into invalid state: <%= state %>"
-msgstr ""
+msgstr "Sistem je dobil neveljavno stanje: <%= state %>"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "System got into invalid state for submission: "
-msgstr ""
+msgstr "Sistem je dobil neveljavno stanje za oddajo:"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "(Hide)"
-msgstr ""
+msgstr "(Skrij)"
 
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "(Show)"
-msgstr ""
+msgstr "(Prikaži)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Insert Hyperlink"
@@ -3076,6 +3144,14 @@ msgid ""
 "Your file '{file}' has been uploaded. Allow a few minutes for processing."
 msgstr ""
 
+#: lms/static/js/search/views/search_list_view.js
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
 #: lms/static/js/student_account/account.js
 #: lms/static/js/student_profile/profile.js
 msgid "The data could not be saved."
@@ -3216,13 +3292,15 @@ msgstr[3] ""
 
 #: lms/templates/class_dashboard/d3_stacked_bar_graph.js
 msgid "Number of Students"
-msgstr ""
+msgstr "Število študentov"
 
 #: cms/static/coffee/src/main.js
 msgid ""
 "This may be happening because of an error with our server or your internet "
 "connection. Try refreshing the page or making sure you are online."
 msgstr ""
+"To se dogaja zaradi napake na naših serverjih ali vaši internetni povezavi. "
+"Poizkusite osvežiti stran ali preverite internetno povezavo."
 
 #: cms/static/coffee/src/main.js
 msgid "Studio's having trouble saving your work"
@@ -3400,7 +3478,7 @@ msgstr ""
 
 #: cms/static/js/factories/manage_users.js
 msgid "Try Again"
-msgstr ""
+msgstr "Poskusite ponovno"
 
 #: cms/static/js/factories/manage_users_lib.js
 msgid "You must enter a valid email address in order to add an instructor"
@@ -3442,7 +3520,7 @@ msgstr ""
 #. completed successfully
 #: cms/static/js/models/active_video_upload.js
 msgid "Upload completed"
-msgstr ""
+msgstr "Nalaganje je zaključeno"
 
 #. Translators: This is the status of a video upload that has failed
 #: cms/static/js/models/active_video_upload.js
@@ -3572,7 +3650,7 @@ msgstr ""
 #: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Date Added"
-msgstr ""
+msgstr "Dodan datum"
 
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
@@ -3595,12 +3673,12 @@ msgstr ""
 #: cms/static/js/views/assets.js
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "Choose File"
-msgstr ""
+msgstr "Izberi datoteko"
 
 #: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "Upload New File"
-msgstr ""
+msgstr "Naloži novo datoteko"
 
 #: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 msgid "Load Another File"
@@ -3735,7 +3813,7 @@ msgstr ""
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/grading-editor.underscore
 msgid "Not Graded"
-msgstr ""
+msgstr "Neocenjeno"
 
 #: cms/static/js/views/paged_container.js
 msgid "Date added"
@@ -3783,7 +3861,7 @@ msgstr ""
 #: cms/templates/js/metadata-file-uploader-item.underscore
 #: cms/templates/js/video/metadata-translations-item.underscore
 msgid "Upload"
-msgstr ""
+msgstr "Naloži"
 
 #: cms/static/js/views/uploads.js
 msgid "We're sorry, there was an error"
@@ -3821,7 +3899,7 @@ msgstr ""
 #: cms/static/js/views/xblock_editor.js
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Settings"
-msgstr ""
+msgstr "Nastavitve"
 
 #: cms/static/js/views/xblock_outline.js
 msgid "New %(component_type)s"
@@ -3860,7 +3938,7 @@ msgstr ""
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/publish-xblock.underscore
 msgid "Publish"
-msgstr ""
+msgstr "Objavi"
 
 #. Translators: "title" is the name of the current component being edited.
 #: cms/static/js/views/modals/edit_xblock.js
@@ -3938,6 +4016,14 @@ msgstr ""
 
 #: cms/static/js/views/pages/container_subviews.js
 msgid "Making Visible to Students"
+msgstr ""
+
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course Index"
+msgstr ""
+
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course has been successfully reindexed."
 msgstr ""
 
 #: cms/static/js/views/settings/advanced.js
@@ -4031,6 +4117,18 @@ msgstr ""
 msgid "Upload translation"
 msgstr ""
 
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
+#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: lms/templates/courseware_search/search_list.underscore
+msgid "gettext("
+msgstr ""
+
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/templates/verify_student/enrollment_confirmation_step.underscore
 msgid "Status"
@@ -4038,47 +4136,55 @@ msgstr ""
 
 #: common/templates/js/image-modal.underscore
 msgid "Large"
-msgstr ""
+msgstr "Veliko"
 
 #: common/templates/js/image-modal.underscore
 msgid "Zoom In"
-msgstr ""
+msgstr "Povečaj"
 
 #: common/templates/js/image-modal.underscore
 msgid "Zoom Out"
-msgstr ""
+msgstr "Pomanjšaj"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "This post is visible only to %(group_name)s."
-msgstr ""
+msgstr "Ta objava je vidna samo %(group_name)s."
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "This post is visible to everyone."
-msgstr ""
+msgstr "Ta objava je vidna vsem"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "%(post_type)s posted %(time_ago)s by %(author)s"
-msgstr ""
+msgstr "%(post_type)s je ob %(time_ago)s objavil %(author)s"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "Pinned"
-msgstr ""
+msgstr "Označeno"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "Reported"
-msgstr ""
+msgstr "Prijavljena"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "Closed"
-msgstr ""
+msgstr "Zaprto"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "(this post is about %(courseware_title_linked)s)"
+msgstr "(ta objava je o %(courseware_title_linked)s )"
+
+#: lms/templates/courseware_search/search_error.underscore
+msgid "There was an error, try searching again."
+msgstr ""
+
+#: lms/templates/courseware_search/search_list.underscore
+msgid "Sorry, no results were found."
 msgstr ""
 
 #: lms/templates/dashboard/donation.underscore
 msgid "Donate"
-msgstr ""
+msgstr "Doniraj"
 
 #: lms/templates/edxnotes/note-item.underscore
 msgid "Highlighted text"
@@ -4119,10 +4225,10 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "(contains %(student_count)s student)"
 msgid_plural "(contains %(student_count)s students)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "(vsebuje %(student_count)s študenta)"
+msgstr[1] "(vsebuje %(student_count)s študenta)"
+msgstr[2] "(vsebuje %(student_count)s študentov)"
+msgstr[3] "(vsebuje %(student_count)s študentov)"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid ""
@@ -4133,7 +4239,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "What does this mean?"
-msgstr ""
+msgstr "Kaj to pomeni?"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Students are added to this cohort automatically."
@@ -4141,7 +4247,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Edit settings in Studio"
-msgstr ""
+msgstr "Spremeni nastavitve v Studiu"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Manage Students"
@@ -4166,11 +4272,11 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "(Required Field)"
-msgstr ""
+msgstr "(Obvezno Polje)"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "e.g. johndoe@example.com, JaneDoe, joeydoe@example.com"
-msgstr ""
+msgstr "npr. johndoe@example.com, JaneDoe, joeydoe@example.com"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid ""
@@ -4180,7 +4286,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Add Students"
-msgstr ""
+msgstr "Dodaj Študente"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Add a New Cohort"
@@ -4259,19 +4365,19 @@ msgstr ""
 
 #: lms/templates/student_account/account.underscore
 msgid "New Address"
-msgstr ""
+msgstr "Nov naslov"
 
 #: lms/templates/student_account/account.underscore
 msgid "Password"
-msgstr ""
+msgstr "geslo"
 
 #: lms/templates/student_account/account.underscore
 msgid "Change My Email Address"
-msgstr ""
+msgstr "spremeni moj email naslov"
 
 #: lms/templates/student_account/account.underscore
 msgid "Reset Password"
-msgstr ""
+msgstr "Ponastavi geslo"
 
 #: lms/templates/student_account/form_field.underscore
 msgid "Forgot password?"
@@ -4286,7 +4392,7 @@ msgstr ""
 
 #: lms/templates/student_account/login.underscore
 msgid "Password Reset Email Sent"
-msgstr ""
+msgstr "Sporočilo o ponastavitvi gesla poslano"
 
 #: lms/templates/student_account/login.underscore
 msgid ""
@@ -4370,15 +4476,15 @@ msgstr ""
 
 #: lms/templates/student_profile/profile.underscore
 msgid "Full Name"
-msgstr ""
+msgstr "Celostno ime"
 
 #: lms/templates/student_profile/profile.underscore
 msgid "Preferred Language"
-msgstr ""
+msgstr "Želeni jezik"
 
 #: lms/templates/student_profile/profile.underscore
 msgid "Update Profile"
-msgstr ""
+msgstr "Posodobi profil"
 
 #: lms/templates/verify_student/enrollment_confirmation_step.underscore
 msgid "Congratulations! You are now verified on %(platformName)s!"
@@ -4422,7 +4528,7 @@ msgstr ""
 
 #: lms/templates/verify_student/error.underscore
 msgid "Error:"
-msgstr ""
+msgstr "Napaka:"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid "Take Your Photo"
@@ -4643,7 +4749,7 @@ msgstr ""
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Amount"
@@ -4761,7 +4867,7 @@ msgstr ""
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Confirm"
-msgstr ""
+msgstr "Potrdi"
 
 #: lms/templates/verify_student/webcam_photo.underscore
 msgid ""
@@ -4817,7 +4923,7 @@ msgstr ""
 #: cms/templates/js/asset-library.underscore
 #: cms/templates/js/basic-modal.underscore
 msgid "Actions"
-msgstr ""
+msgstr "Akcije"
 
 #: cms/templates/js/asset-library.underscore
 msgid "You haven't added any assets to this course yet."
@@ -4829,7 +4935,7 @@ msgstr ""
 
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "close"
-msgstr ""
+msgstr "zapri"
 
 #: cms/templates/js/asset.underscore
 msgid "No description available"
@@ -4837,7 +4943,7 @@ msgstr ""
 
 #: cms/templates/js/asset.underscore
 msgid "Open/download this file"
-msgstr ""
+msgstr "Odpri/prenesi to datoteko"
 
 #: cms/templates/js/asset.underscore
 msgid "Studio:"
@@ -4857,7 +4963,7 @@ msgstr ""
 
 #: cms/templates/js/asset.underscore
 msgid "Lock/unlock file"
-msgstr ""
+msgstr "Zakleni/odkleni datoteko"
 
 #: cms/templates/js/checklist.underscore
 msgid "{number}% of checklists completed"
@@ -4890,11 +4996,11 @@ msgstr ""
 #: cms/templates/js/content-group-editor.underscore
 #: cms/templates/js/group-configuration-editor.underscore
 msgid "Create"
-msgstr ""
+msgstr "Ustvari"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Contains staff only content"
-msgstr ""
+msgstr "Vsebina je dostopna le osebju"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Unpublished changes to live content"
@@ -4909,24 +5015,13 @@ msgid "Unpublished changes to content that will release in the future"
 msgstr ""
 
 #: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
-#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-msgid "gettext("
-msgstr ""
-
-#: cms/templates/js/course-outline.underscore
 msgid "Display Name"
-msgstr ""
+msgstr "Prikaži ime"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/course-outline.underscore
 msgid "Configure"
-msgstr ""
+msgstr "Nastavi"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/course-outline.underscore
@@ -4955,11 +5050,11 @@ msgstr ""
 
 #: cms/templates/js/course-outline.underscore
 msgid "Graded as:"
-msgstr ""
+msgstr "Ocenjeno kot:"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Due:"
-msgstr ""
+msgstr "Do:"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
@@ -4976,7 +5071,7 @@ msgstr ""
 
 #: cms/templates/js/course_grade_policy.underscore
 msgid "Abbreviation"
-msgstr ""
+msgstr "Okrajšava"
 
 #: cms/templates/js/course_grade_policy.underscore
 msgid "e.g. HW, Midterm"
@@ -4992,7 +5087,7 @@ msgstr ""
 
 #: cms/templates/js/course_grade_policy.underscore
 msgid "Total Number"
-msgstr ""
+msgstr "Celotna številka"
 
 #: cms/templates/js/course_grade_policy.underscore
 msgid "total exercises assigned"
@@ -5022,11 +5117,11 @@ msgstr ""
 
 #: cms/templates/js/due-date-editor.underscore
 msgid "Due Date:"
-msgstr ""
+msgstr "Datum oddaje"
 
 #: cms/templates/js/due-date-editor.underscore
 msgid "Due Time in UTC:"
-msgstr ""
+msgstr "Čas oddaje v UTC"
 
 #: cms/templates/js/due-date-editor.underscore
 #: cms/templates/js/due-date-editor.underscore
@@ -5035,11 +5130,11 @@ msgstr ""
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "Chapter Name"
-msgstr ""
+msgstr "Naslov poglavja"
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "Chapter %s"
-msgstr ""
+msgstr "Poglavje %s"
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "provide the title/name of the chapter that will be used in navigating"
@@ -5059,11 +5154,11 @@ msgstr ""
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "Upload PDF"
-msgstr ""
+msgstr "Naloži PDF"
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "delete chapter"
-msgstr ""
+msgstr "izbriši poglavje"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Textbook information"
@@ -5085,15 +5180,15 @@ msgstr ""
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Chapter information"
-msgstr ""
+msgstr "Informacije o poglavju"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Add a Chapter"
-msgstr ""
+msgstr "Dodaj poglavje"
 
 #: cms/templates/js/grading-editor.underscore
 msgid "Grading"
-msgstr ""
+msgstr "Ocenjevanje"
 
 #: cms/templates/js/grading-editor.underscore
 msgid "Grade as:"
@@ -5101,7 +5196,7 @@ msgstr ""
 
 #: cms/templates/js/group-configuration-details.underscore
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: cms/templates/js/group-configuration-details.underscore
 #: cms/templates/js/group-configuration-editor.underscore
@@ -5142,11 +5237,11 @@ msgstr ""
 
 #: cms/templates/js/group-configuration-editor.underscore
 msgid "Group information"
-msgstr ""
+msgstr "Informacije o skupini"
 
 #: cms/templates/js/group-configuration-editor.underscore
 msgid "Groups"
-msgstr ""
+msgstr "Skupine"
 
 #: cms/templates/js/group-configuration-editor.underscore
 msgid ""
@@ -5156,7 +5251,7 @@ msgstr ""
 
 #: cms/templates/js/group-configuration-editor.underscore
 msgid "Add another group"
-msgstr ""
+msgstr "Dodaj skupino"
 
 #: cms/templates/js/group-configuration-editor.underscore
 msgid ""
@@ -5166,13 +5261,13 @@ msgstr ""
 
 #: cms/templates/js/group-edit.underscore
 msgid "delete group"
-msgstr ""
+msgstr "izbriši skupino"
 
 #: cms/templates/js/metadata-dict-entry.underscore
 #: cms/templates/js/metadata-list-entry.underscore
 #: cms/templates/js/video/metadata-translations-entry.underscore
 msgid "Add"
-msgstr ""
+msgstr "dodaj"
 
 #: cms/templates/js/metadata-dict-entry.underscore
 #: cms/templates/js/metadata-file-uploader-entry.underscore
@@ -5184,12 +5279,12 @@ msgstr ""
 #: cms/templates/js/mock/mock-xmodule-settings-only-editor.underscore
 #: cms/templates/js/video/metadata-translations-entry.underscore
 msgid "Clear Value"
-msgstr ""
+msgstr "počisti vrednost"
 
 #: cms/templates/js/metadata-file-uploader-item.underscore
 #: cms/templates/js/video/metadata-translations-item.underscore
 msgid "Download"
-msgstr ""
+msgstr "Prenesi"
 
 #: cms/templates/js/no-textbooks.underscore
 msgid "You haven't added any textbooks to this course yet."
@@ -5206,7 +5301,7 @@ msgstr ""
 
 #: cms/templates/js/paging-footer.underscore
 msgid "Page number"
-msgstr ""
+msgstr "Številka strani"
 
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Previous Uploads"
@@ -5226,7 +5321,7 @@ msgstr ""
 
 #: cms/templates/js/publish-history.underscore
 msgid "Never published"
-msgstr ""
+msgstr "Nikoli objavleno"
 
 #: cms/templates/js/publish-history.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -5238,7 +5333,7 @@ msgstr ""
 #: cms/templates/js/publish-xblock.underscore
 #: cms/templates/js/staff-lock-editor.underscore
 msgid "message"
-msgstr ""
+msgstr "sporočilo"
 
 #: cms/templates/js/publish-history.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -5279,7 +5374,7 @@ msgstr ""
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Is Visible To:"
-msgstr ""
+msgstr "Vidno :"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Will Be Visible To:"
@@ -5287,11 +5382,11 @@ msgstr ""
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Staff Only"
-msgstr ""
+msgstr "Samo osebje"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Staff and Students"
-msgstr ""
+msgstr "Osebje in študenti"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Some content in this unit is visible only to particular content groups"
@@ -5300,7 +5395,7 @@ msgstr ""
 #: cms/templates/js/publish-xblock.underscore
 #: cms/templates/js/staff-lock-editor.underscore
 msgid "Hide from students"
-msgstr ""
+msgstr "Skrij pred študenti"
 
 #: cms/templates/js/release-date-editor.underscore
 msgid "Release Date and Time"
@@ -5354,7 +5449,7 @@ msgstr ""
 
 #: cms/templates/js/upload-dialog.underscore
 msgid "File upload succeeded"
-msgstr ""
+msgstr "Datoteka je uspešno naložena"
 
 #: cms/templates/js/validation-error-modal.underscore
 msgid ""
@@ -5371,11 +5466,11 @@ msgstr ""
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: cms/templates/js/xblock-string-field-editor.underscore
 msgid "Edit the name"
-msgstr ""
+msgstr "Spremeni ime"
 
 #: cms/templates/js/xblock-string-field-editor.underscore
 msgid "Edit %(display_name)s (required)"
-msgstr ""
+msgstr "Spremeni %(display_name)s (zahtevan)"
 
 #: cms/templates/js/xblock-string-field-editor.underscore
 msgid "formLabel"
@@ -5393,7 +5488,7 @@ msgstr ""
 
 #: cms/templates/js/mock/mock-index-page.underscore
 msgid "Courses"
-msgstr ""
+msgstr "Tečaji"
 
 #: cms/templates/js/mock/mock-index-page.underscore
 msgid "Libraries"
@@ -5429,7 +5524,7 @@ msgstr ""
 
 #: cms/templates/js/video/metadata-translations-item.underscore
 msgid "Remove"
-msgstr ""
+msgstr "Odstrani"
 
 #: cms/templates/js/video/transcripts/metadata-videolist-entry.underscore
 msgid "Add URLs for additional versions"

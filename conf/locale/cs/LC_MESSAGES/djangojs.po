@@ -1,5 +1,5 @@
 # #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
-# edX translation file.
+# edX community translations have been downloaded from Czech (http://www.transifex.com/projects/p/edx-platform/language/cs/).
 # Copyright (C) 2015 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
@@ -35,8 +35,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-26 13:20+0000\n"
-"PO-Revision-Date: 2015-01-20 14:25+0000\n"
+"POT-Creation-Date: 2015-02-17 22:14+0000\n"
+"PO-Revision-Date: 2015-02-02 13:52+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/edx-platform/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/static/coffee/src/discussion/utils.js
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -79,12 +79,12 @@ msgstr ""
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: cms/static/js/base.js lms/static/js/verify_student/photocapture.js
 #: cms/templates/js/checklist.underscore
 msgid "This link will open in a new browser window/tab"
-msgstr ""
+msgstr "Odkaz se otevře v novém okně/záložce prohlížeče"
 
 #: cms/static/js/factories/manage_users.js
 #: cms/static/js/factories/manage_users_lib.js
@@ -110,7 +110,7 @@ msgstr ""
 #: cms/templates/js/xblock-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -120,11 +120,11 @@ msgstr ""
 #: cms/templates/js/asset-library.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Name"
-msgstr ""
+msgstr "Jméno"
 
 #: cms/static/js/views/metadata.js lms/static/js/views/file_uploader.js
 msgid "Upload File"
-msgstr ""
+msgstr "Nahrát soubor"
 
 #. Translators: This message will be added to the front of messages of type
 #. error,
@@ -148,7 +148,7 @@ msgstr ""
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -157,31 +157,31 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/templates/js/image-modal.underscore
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Show Annotations"
-msgstr ""
+msgstr "Zobrazit poznámky"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Hide Annotations"
-msgstr ""
+msgstr "Schovat poznámky"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Expand Instructions"
-msgstr ""
+msgstr "Rozbalit instrukce"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Collapse Instructions"
-msgstr ""
+msgstr "Sbalit instrukce"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Commentary"
-msgstr ""
+msgstr "Komentář"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Reply to Annotation"
-msgstr ""
+msgstr "Odpovědět na poznámku"
 
 #. Translators: %(earned)s is the number of points earned. %(total)s is the
 #. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
@@ -206,39 +206,39 @@ msgstr[2] ""
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Answer:"
-msgstr ""
+msgstr "Odpověď:"
 
 #. Translators: the word Answer here refers to the answer to a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Hide Answer"
-msgstr ""
+msgstr "Skrýt odpověď"
 
 #. Translators: the word Answer here refers to the answer to a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Show Answer"
-msgstr ""
+msgstr "Zobrazit odpověď"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Reveal Answer"
-msgstr ""
+msgstr "Odhalit odpověď"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Answer hidden"
-msgstr ""
+msgstr "Odpověď schována"
 
 #. Translators: the word unanswered here is about answering a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "unanswered"
-msgstr ""
+msgstr "Neodpověženo"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Status: unsubmitted"
-msgstr ""
+msgstr "Stav: Nezasláno"
 
 #. Translators: A "rating" is a score a student gives to indicate how well
 #. they feel they were graded on this problem
@@ -258,7 +258,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Submit"
-msgstr ""
+msgstr "Zaslat"
 
 #. Translators: one clicks this button after one has finished filling out the
 #. grading
@@ -317,12 +317,12 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "Show Question"
-msgstr ""
+msgstr "Zobrazit otázku"
 
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "Hide Question"
-msgstr ""
+msgstr "Skrýt otázku"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -340,27 +340,27 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 1"
-msgstr ""
+msgstr "Nadpis 1"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 2"
-msgstr ""
+msgstr "Nadpis 2"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Heading 3"
-msgstr ""
+msgstr "Nadpis 3"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Add to Dictionary"
-msgstr ""
+msgstr "Přidat do slovníku"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -368,25 +368,25 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: cms/templates/js/add-xblock-component-menu-problem.underscore
 msgid "Advanced"
-msgstr ""
+msgstr "Pokročilé"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Align center"
-msgstr ""
+msgstr "Zarovnat na střed"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Align left"
-msgstr ""
+msgstr "Zarovnat doleva"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Align right"
-msgstr ""
+msgstr "Zarovnat doprava"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -398,7 +398,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Alternative source"
-msgstr ""
+msgstr "Alternativní zdroj"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -416,13 +416,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Background color"
-msgstr ""
+msgstr "Barva pozadí"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -441,7 +441,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Body"
-msgstr ""
+msgstr "Tělo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -453,13 +453,13 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Border color"
-msgstr ""
+msgstr "Barva okraje"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Border"
-msgstr ""
+msgstr "Okraj"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -579,7 +579,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovat"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -691,7 +691,7 @@ msgstr ""
 #: cms/templates/js/show-textbook.underscore
 #: cms/templates/js/xblock-string-field-editor.underscore
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -842,6 +842,7 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Header"
 msgstr ""
 
@@ -1199,7 +1200,7 @@ msgstr ""
 #: lms/static/coffee/src/customwmd.js
 #: cms/templates/js/asset-library.underscore
 msgid "Preview"
-msgstr ""
+msgstr "Náhled"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1450,7 +1451,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1506,9 +1507,11 @@ msgstr ""
 msgid "Vertical space"
 msgstr ""
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: lms/templates/courseware_search/search_item.underscore
 msgid "View"
 msgstr ""
 
@@ -1571,9 +1574,36 @@ msgid ""
 "Click Cancel to return to this page without sending your information."
 msgstr ""
 
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "incorrect"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "correct"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "answer"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "Short explanation"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid ""
+"If you use the Advanced Editor, this problem will be converted to XML and you will not be able to return to the Simple Editor Interface.\n"
+"\n"
+"Proceed to the Advanced Editor and convert this problem to XML?"
+msgstr ""
+
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
 msgid ""
-"Sequence error! Cannot navigate to tab %(tab_name)s in the current "
+"Sequence error! Cannot navigate to %(tab_name)s in the current "
 "SequenceModule. Please contact the course staff."
 msgstr ""
 
@@ -1585,7 +1615,7 @@ msgstr "Přehrát"
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/04_video_control.js
 msgid "Pause"
-msgstr ""
+msgstr "Pozastavit"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Mute"
@@ -1603,7 +1633,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/04_video_control.js
 msgid "Fill browser"
-msgstr ""
+msgstr "Průzkumník souborů"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Speed"
@@ -1611,7 +1641,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Volume"
-msgstr ""
+msgstr "Hlasitost"
 
 #. Translators: Volume level equals 0%.
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
@@ -1705,15 +1735,15 @@ msgstr[2] ""
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "Caption will be displayed when "
-msgstr ""
+msgstr "Záhlaví bude zobrazeno když"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "Turn on captions"
-msgstr ""
+msgstr "Zapnout titulky"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "Turn off captions"
-msgstr ""
+msgstr "Vypnout titulky"
 
 #: common/lib/xmodule/xmodule/public/js/library_content_edit.js
 msgid "Updating with latest library content"
@@ -1866,7 +1896,12 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
+msgid "Current conversation"
+msgstr ""
+
+#: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 #: lms/static/js/edxnotes/views/tabs/search_results.js
+#: lms/templates/courseware_search/search_list.underscore
 msgid "Search Results"
 msgstr ""
 
@@ -1948,7 +1983,7 @@ msgstr ""
 
 #: common/static/coffee/src/discussion/views/response_comment_show_view.js
 msgid "anonymous"
-msgstr ""
+msgstr "anonymní"
 
 #: common/static/coffee/src/discussion/views/response_comment_view.js
 msgid "Are you sure you want to delete this comment?"
@@ -2128,7 +2163,7 @@ msgstr ""
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "My Notes"
-msgstr ""
+msgstr "Moje poznámky"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Instructor"
@@ -2142,7 +2177,7 @@ msgstr ""
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: common/static/js/vendor/ova/catch/js/catch.js
@@ -2210,6 +2245,7 @@ msgid "Error generating student profile information. Please try again."
 msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
+#: lms/templates/courseware_search/search_loading.underscore
 msgid "Loading"
 msgstr ""
 
@@ -2257,7 +2293,7 @@ msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 #: lms/static/coffee/src/instructor_dashboard/membership.js
@@ -3067,6 +3103,13 @@ msgid ""
 "Your file '{file}' has been uploaded. Allow a few minutes for processing."
 msgstr ""
 
+#: lms/static/js/search/views/search_list_view.js
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
 #: lms/static/js/student_account/account.js
 #: lms/static/js/student_profile/profile.js
 msgid "The data could not be saved."
@@ -3229,7 +3272,7 @@ msgstr ""
 #: cms/static/js/views/utils/xblock_utils.js
 #: cms/static/js/views/utils/xblock_utils.js
 msgid "Saving"
-msgstr ""
+msgstr "Ukládání"
 
 #: cms/static/coffee/src/views/tabs.js
 msgid "Delete Page Confirmation"
@@ -3245,7 +3288,7 @@ msgstr ""
 #: cms/static/js/views/show_textbook.js
 #: cms/static/js/views/utils/xblock_utils.js
 msgid "Deleting"
-msgstr ""
+msgstr "Mazání"
 
 #: cms/static/coffee/src/xblock/cms.runtime.v1.js
 msgid "OpenAssessment Save Error"
@@ -3253,7 +3296,7 @@ msgstr ""
 
 #: cms/static/js/base.js
 msgid "This link will open in a modal window"
-msgstr ""
+msgstr "Odkaz se otevře v modálním okně"
 
 #: cms/static/js/collections/group.js
 msgid "Group %s"
@@ -3369,7 +3412,7 @@ msgstr ""
 #: cms/static/js/factories/manage_users.js
 #: cms/static/js/factories/manage_users_lib.js
 msgid "Are you sure?"
-msgstr ""
+msgstr "Jste si jistý ?"
 
 #: cms/static/js/factories/manage_users.js
 msgid ""
@@ -3430,7 +3473,7 @@ msgstr ""
 #. completed successfully
 #: cms/static/js/models/active_video_upload.js
 msgid "Upload completed"
-msgstr ""
+msgstr "Nahrávání dokončeno"
 
 #. Translators: This is the status of a video upload that has failed
 #: cms/static/js/models/active_video_upload.js
@@ -3439,7 +3482,7 @@ msgstr ""
 
 #: cms/static/js/models/course.js cms/static/js/models/section.js
 msgid "You must specify a name"
-msgstr ""
+msgstr "Musíte upřesnit jméno"
 
 #: cms/static/js/models/group.js
 msgid "Group name is required"
@@ -3474,10 +3517,12 @@ msgid ""
 "Only <%= fileTypes %> files can be uploaded. Please select a file ending in "
 "<%= fileExtensions %> to upload."
 msgstr ""
+"Nahrány mohou být pouze soubory <%= fileTypes %>. Pro nahrání zvolte, "
+"prosím, soubory s koncovkou <%= fileExtensions %>"
 
 #: cms/static/js/models/uploads.js
 msgid "or"
-msgstr ""
+msgstr "nebo"
 
 #: cms/static/js/models/xblock_validation.js
 msgid "This component has validation issues."
@@ -3485,15 +3530,15 @@ msgstr ""
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course must have an assigned start date."
-msgstr ""
+msgstr "Kurz musí mít stanoveno počáteční datum."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course end date cannot be before the course start date."
-msgstr ""
+msgstr "Datum ukončení kurzu nemůže předcházet datu začátku kurzu."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course start date cannot be before the enrollment start date."
-msgstr ""
+msgstr "Datum začátku kurzu nemůže předcházet datu začátku zápisu do kurzu."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The enrollment start date cannot be after the enrollment end date."
@@ -3505,7 +3550,7 @@ msgstr ""
 
 #: cms/static/js/models/settings/course_details.js
 msgid "Key should only contain letters, numbers, _, or -"
-msgstr ""
+msgstr "Klíč by měl obsahovat pouze písmena, čísla, podtržítka, nebo pomlčky"
 
 #: cms/static/js/models/settings/course_details.js
 msgid "Please enter an integer between "
@@ -3517,7 +3562,7 @@ msgstr ""
 
 #: cms/static/js/models/settings/course_grader.js
 msgid "Please enter an integer between 0 and 100."
-msgstr ""
+msgstr "Vložte, prosím, celé číslo mezi 0 a 100."
 
 #: cms/static/js/models/settings/course_grader.js
 msgid "Please enter an integer greater than 0."
@@ -3533,7 +3578,7 @@ msgstr ""
 
 #: cms/static/js/models/settings/course_grading_policy.js
 msgid "Grace period must be specified in HH:MM format."
-msgstr ""
+msgstr "Tolerance prodlení musí být stanovena ve formátu HH:MM"
 
 #: cms/static/js/spec/views/assets_spec.js
 #: cms/static/js/spec/views/paging_spec.js
@@ -3544,7 +3589,7 @@ msgstr ""
 
 #: cms/static/js/views/asset.js
 msgid "Delete File Confirmation"
-msgstr ""
+msgstr "Potvrzení smazání souboru"
 
 #: cms/static/js/views/asset.js
 msgid ""
@@ -3555,7 +3600,7 @@ msgstr ""
 
 #: cms/static/js/views/asset.js
 msgid "Your file has been deleted."
-msgstr ""
+msgstr "Váš soubor byl smazán."
 
 #: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
@@ -3588,7 +3633,7 @@ msgstr ""
 #: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "Upload New File"
-msgstr ""
+msgstr "Nahrát nový soubor"
 
 #: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 msgid "Load Another File"
@@ -3606,11 +3651,11 @@ msgstr ""
 
 #: cms/static/js/views/course_info_update.js
 msgid "Are you sure you want to delete this update?"
-msgstr ""
+msgstr "Určitě chcete smazat tuto aktualizaci?"
 
 #: cms/static/js/views/course_info_update.js
 msgid "This action cannot be undone."
-msgstr ""
+msgstr "Tato akce nemůže být vrácena."
 
 #: cms/static/js/views/course_rerun.js
 msgid "Create Re-run"
@@ -3622,7 +3667,7 @@ msgstr ""
 
 #: cms/static/js/views/edit_chapter.js
 msgid "Upload a new PDF to “<%= name %>”"
-msgstr ""
+msgstr "Nahrajte nové PDF do “<%= name %>”"
 
 #: cms/static/js/views/edit_chapter.js
 msgid "Please select a PDF file to upload."
@@ -3679,13 +3724,15 @@ msgstr ""
 
 #: cms/static/js/views/import.js
 msgid "There was an error with the upload"
-msgstr ""
+msgstr "Vyskytl se problém s nahráváním"
 
 #: cms/static/js/views/import.js
 msgid ""
 "File format not supported. Please upload a file with a <code>tar.gz</code> "
 "extension."
 msgstr ""
+"Nepodporovaný formát souboru. Nahrajte, prosím, soubor s příponou "
+"<code>tar.gz</code>."
 
 #. Translators: "item_display_name" is the name of the item to be deleted.
 #: cms/static/js/views/list_item.js
@@ -3699,11 +3746,11 @@ msgstr ""
 
 #: cms/static/js/views/overview.js
 msgid "Collapse All Sections"
-msgstr ""
+msgstr "Sbalit všechny sekce"
 
 #: cms/static/js/views/overview.js
 msgid "Expand All Sections"
-msgstr ""
+msgstr "Rozbalit všechny sekce"
 
 #: cms/static/js/views/overview.js
 msgid "Release date:"
@@ -3757,7 +3804,7 @@ msgstr ""
 
 #: cms/static/js/views/show_textbook.js
 msgid "Delete “<%= name %>”?"
-msgstr ""
+msgstr "Smazat “<%= name %>”?"
 
 #: cms/static/js/views/show_textbook.js
 msgid ""
@@ -3773,11 +3820,11 @@ msgstr ""
 
 #: cms/static/js/views/uploads.js
 msgid "We're sorry, there was an error"
-msgstr ""
+msgstr "Je nám líto, došlo k chybě"
 
 #: cms/static/js/views/validation.js
 msgid "You've made some changes"
-msgstr ""
+msgstr "Provedli jste změny"
 
 #: cms/static/js/views/validation.js
 msgid "Your changes will not take effect until you save your progress."
@@ -3794,20 +3841,20 @@ msgstr ""
 
 #: cms/static/js/views/validation.js
 msgid "Save Changes"
-msgstr ""
+msgstr "Uložit změny"
 
 #: cms/static/js/views/validation.js
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Vaše změny byly uloženy."
 
 #: cms/static/js/views/xblock_editor.js
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: cms/static/js/views/xblock_editor.js
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: cms/static/js/views/xblock_outline.js
 msgid "New %(component_type)s"
@@ -3926,6 +3973,14 @@ msgstr ""
 msgid "Making Visible to Students"
 msgstr ""
 
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course Index"
+msgstr ""
+
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course has been successfully reindexed."
+msgstr ""
+
 #: cms/static/js/views/settings/advanced.js
 msgid ""
 "Your changes will not take effect until you save your progress. Take care "
@@ -3949,11 +4004,11 @@ msgstr ""
 
 #: cms/static/js/views/settings/main.js
 msgid "Upload your course image."
-msgstr ""
+msgstr "Nahrát obrázek vašeho kurzu."
 
 #: cms/static/js/views/settings/main.js
 msgid "Files must be in JPEG or PNG format."
-msgstr ""
+msgstr "Formát souborů musí být JPEG nebo PNG."
 
 #: cms/static/js/views/utils/create_course_utils.js
 msgid ""
@@ -3969,7 +4024,7 @@ msgstr ""
 
 #: cms/static/js/views/utils/view_utils.js
 msgid "Required field."
-msgstr ""
+msgstr "Povinné pole."
 
 #: cms/static/js/views/utils/view_utils.js
 msgid "Please do not use any spaces in this field."
@@ -3977,7 +4032,7 @@ msgstr ""
 
 #: cms/static/js/views/utils/view_utils.js
 msgid "Please do not use any spaces or special characters in this field."
-msgstr ""
+msgstr "Zde nepoužívejte mezery ani speciální znaky."
 
 #: cms/static/js/views/utils/xblock_utils.js
 msgid "component"
@@ -4017,6 +4072,18 @@ msgstr ""
 msgid "Upload translation"
 msgstr ""
 
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
+#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: lms/templates/courseware_search/search_list.underscore
+msgid "gettext("
+msgstr ""
+
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/templates/verify_student/enrollment_confirmation_step.underscore
 msgid "Status"
@@ -4028,11 +4095,11 @@ msgstr ""
 
 #: common/templates/js/image-modal.underscore
 msgid "Zoom In"
-msgstr ""
+msgstr "Přiblížit"
 
 #: common/templates/js/image-modal.underscore
 msgid "Zoom Out"
-msgstr ""
+msgstr "Oddálit"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "This post is visible only to %(group_name)s."
@@ -4060,6 +4127,14 @@ msgstr ""
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "(this post is about %(courseware_title_linked)s)"
+msgstr ""
+
+#: lms/templates/courseware_search/search_error.underscore
+msgid "There was an error, try searching again."
+msgstr ""
+
+#: lms/templates/courseware_search/search_list.underscore
+msgid "Sorry, no results were found."
 msgstr ""
 
 #: lms/templates/dashboard/donation.underscore
@@ -4248,7 +4323,7 @@ msgstr ""
 
 #: lms/templates/student_account/account.underscore
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: lms/templates/student_account/account.underscore
 msgid "Change My Email Address"
@@ -4894,17 +4969,6 @@ msgid "Unpublished changes to content that will release in the future"
 msgstr ""
 
 #: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
-#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-msgid "gettext("
-msgstr ""
-
-#: cms/templates/js/course-outline.underscore
 msgid "Display Name"
 msgstr ""
 
@@ -4916,7 +4980,7 @@ msgstr ""
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/course-outline.underscore
 msgid "Drag to reorder"
-msgstr ""
+msgstr "Tažením přesuňte"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Release Status:"
@@ -5414,7 +5478,7 @@ msgstr ""
 
 #: cms/templates/js/video/metadata-translations-item.underscore
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 #: cms/templates/js/video/transcripts/metadata-videolist-entry.underscore
 msgid "Add URLs for additional versions"

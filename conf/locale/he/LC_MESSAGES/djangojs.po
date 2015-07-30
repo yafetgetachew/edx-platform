@@ -1,5 +1,5 @@
 # #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
-# edX translation file.
+# edX community translations have been downloaded from Hebrew (http://www.transifex.com/projects/p/edx-platform/language/he/).
 # Copyright (C) 2015 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-26 13:20+0000\n"
-"PO-Revision-Date: 2015-01-20 14:25+0000\n"
+"POT-Creation-Date: 2015-02-17 22:14+0000\n"
+"PO-Revision-Date: 2015-02-02 13:52+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/edx-platform/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/static/coffee/src/discussion/utils.js
 msgid "OK"
-msgstr ""
+msgstr "בסדר"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -77,12 +77,12 @@ msgstr ""
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: cms/static/js/base.js lms/static/js/verify_student/photocapture.js
 #: cms/templates/js/checklist.underscore
 msgid "This link will open in a new browser window/tab"
-msgstr ""
+msgstr "קישור זה יפתח בחלון/טאב חדש"
 
 #: cms/static/js/factories/manage_users.js
 #: cms/static/js/factories/manage_users_lib.js
@@ -90,7 +90,7 @@ msgstr ""
 #: lms/static/coffee/src/instructor_dashboard/util.js
 #: lms/static/coffee/src/instructor_dashboard/util.js
 msgid "Unknown"
-msgstr ""
+msgstr "לא ידוע"
 
 #: cms/static/js/factories/manage_users.js
 #: cms/static/js/factories/manage_users_lib.js cms/static/js/views/asset.js
@@ -108,7 +108,7 @@ msgstr ""
 #: cms/templates/js/xblock-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
 msgid "Delete"
-msgstr ""
+msgstr "מחק"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -118,11 +118,11 @@ msgstr ""
 #: cms/templates/js/asset-library.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #: cms/static/js/views/metadata.js lms/static/js/views/file_uploader.js
 msgid "Upload File"
-msgstr ""
+msgstr "העלה קובץ"
 
 #. Translators: This message will be added to the front of messages of type
 #. error,
@@ -131,7 +131,7 @@ msgstr ""
 #: lms/static/js/verify_student/views/payment_confirmation_step_view.js
 #: lms/static/js/verify_student/views/step_view.js
 msgid "Error"
-msgstr ""
+msgstr "שגיאה"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -146,7 +146,7 @@ msgstr ""
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Save"
-msgstr ""
+msgstr "שמור"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -159,27 +159,27 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Show Annotations"
-msgstr ""
+msgstr "הראה ביאור"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Hide Annotations"
-msgstr ""
+msgstr "הסתר ביאור"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Expand Instructions"
-msgstr ""
+msgstr "הרחב הנחיות"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Collapse Instructions"
-msgstr ""
+msgstr "כווץ הנחיות"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Commentary"
-msgstr ""
+msgstr "הערות"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Reply to Annotation"
-msgstr ""
+msgstr "השב לביאור"
 
 #. Translators: %(earned)s is the number of points earned. %(total)s is the
 #. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
@@ -202,45 +202,45 @@ msgstr[1] ""
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Answer:"
-msgstr ""
+msgstr "תשובה:"
 
 #. Translators: the word Answer here refers to the answer to a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Hide Answer"
-msgstr ""
+msgstr "הסתר תשובה"
 
 #. Translators: the word Answer here refers to the answer to a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Show Answer"
-msgstr ""
+msgstr "הצג תשובה"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Reveal Answer"
-msgstr ""
+msgstr "חשוף תשובה"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Answer hidden"
-msgstr ""
+msgstr "תשובה מוסתרת"
 
 #. Translators: the word unanswered here is about answering a problem the
 #. student must solve.;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "unanswered"
-msgstr ""
+msgstr "לא נענה"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Status: unsubmitted"
-msgstr ""
+msgstr "מצב: לא הוגש"
 
 #. Translators: A "rating" is a score a student gives to indicate how well
 #. they feel they were graded on this problem
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "You need to pick a rating before you can submit."
-msgstr ""
+msgstr "עליך לבחור דירוג לפני שתוכל להגיש."
 
 #. Translators: this message appears when transitioning between openended
 #. grading
@@ -249,19 +249,19 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "Your score did not meet the criteria to move to the next step."
-msgstr ""
+msgstr "הציון שלך לא עמד בקריטריון הדרוש כדי לעבור לשלב הבא."
 
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 #: lms/static/coffee/src/staff_grading/staff_grading.js
 msgid "Submit"
-msgstr ""
+msgstr "הגש"
 
 #. Translators: one clicks this button after one has finished filling out the
 #. grading
 #. form for an openended assessment
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid "Submit assessment"
-msgstr ""
+msgstr "הגש הערכה"
 
 #: common/lib/xmodule/xmodule/js/src/combinedopenended/display.js
 msgid ""
@@ -838,6 +838,7 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Header"
 msgstr ""
 
@@ -1502,9 +1503,11 @@ msgstr ""
 msgid "Vertical space"
 msgstr ""
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: lms/templates/courseware_search/search_item.underscore
 msgid "View"
 msgstr ""
 
@@ -1567,9 +1570,36 @@ msgid ""
 "Click Cancel to return to this page without sending your information."
 msgstr ""
 
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "incorrect"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "correct"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "answer"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "Short explanation"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid ""
+"If you use the Advanced Editor, this problem will be converted to XML and you will not be able to return to the Simple Editor Interface.\n"
+"\n"
+"Proceed to the Advanced Editor and convert this problem to XML?"
+msgstr ""
+
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
 msgid ""
-"Sequence error! Cannot navigate to tab %(tab_name)s in the current "
+"Sequence error! Cannot navigate to %(tab_name)s in the current "
 "SequenceModule. Please contact the course staff."
 msgstr ""
 
@@ -1856,7 +1886,12 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
+msgid "Current conversation"
+msgstr ""
+
+#: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 #: lms/static/js/edxnotes/views/tabs/search_results.js
+#: lms/templates/courseware_search/search_list.underscore
 msgid "Search Results"
 msgstr ""
 
@@ -2189,6 +2224,7 @@ msgid "Error generating student profile information. Please try again."
 msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
+#: lms/templates/courseware_search/search_loading.underscore
 msgid "Loading"
 msgstr ""
 
@@ -3042,6 +3078,12 @@ msgid ""
 "Your file '{file}' has been uploaded. Allow a few minutes for processing."
 msgstr ""
 
+#: lms/static/js/search/views/search_list_view.js
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] ""
+msgstr[1] ""
+
 #: lms/static/js/student_account/account.js
 #: lms/static/js/student_profile/profile.js
 msgid "The data could not be saved."
@@ -3176,13 +3218,15 @@ msgstr[1] ""
 
 #: lms/templates/class_dashboard/d3_stacked_bar_graph.js
 msgid "Number of Students"
-msgstr ""
+msgstr "מספר תלמידים"
 
 #: cms/static/coffee/src/main.js
 msgid ""
 "This may be happening because of an error with our server or your internet "
 "connection. Try refreshing the page or making sure you are online."
 msgstr ""
+"ייתכן ודבר זה מתרחש בשל טעות בשרת שלנו או בחיבור האינטרנט. נסה לרענן את הדף "
+"או וודא שאתה מקוון."
 
 #: cms/static/coffee/src/main.js
 msgid "Studio's having trouble saving your work"
@@ -3225,7 +3269,7 @@ msgstr ""
 
 #: cms/static/js/base.js
 msgid "This link will open in a modal window"
-msgstr ""
+msgstr "קישור זה יפתח בחלון חדש"
 
 #: cms/static/js/collections/group.js
 msgid "Group %s"
@@ -3449,7 +3493,7 @@ msgstr ""
 
 #: cms/static/js/models/uploads.js
 msgid "or"
-msgstr ""
+msgstr "או"
 
 #: cms/static/js/models/xblock_validation.js
 msgid "This component has validation issues."
@@ -3516,7 +3560,7 @@ msgstr ""
 
 #: cms/static/js/views/asset.js
 msgid "Delete File Confirmation"
-msgstr ""
+msgstr "אישור למחיקת הקובץ"
 
 #: cms/static/js/views/asset.js
 msgid ""
@@ -3532,7 +3576,7 @@ msgstr ""
 #: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Date Added"
-msgstr ""
+msgstr "תאריך ההוספה"
 
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
@@ -3669,11 +3713,11 @@ msgstr ""
 
 #: cms/static/js/views/overview.js
 msgid "Collapse All Sections"
-msgstr ""
+msgstr "לכווץ את כל הסעיפים"
 
 #: cms/static/js/views/overview.js
 msgid "Expand All Sections"
-msgstr ""
+msgstr "להרחיב את כל הסעיפים"
 
 #: cms/static/js/views/overview.js
 msgid "Release date:"
@@ -3896,6 +3940,14 @@ msgstr ""
 msgid "Making Visible to Students"
 msgstr ""
 
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course Index"
+msgstr ""
+
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course has been successfully reindexed."
+msgstr ""
+
 #: cms/static/js/views/settings/advanced.js
 msgid ""
 "Your changes will not take effect until you save your progress. Take care "
@@ -3987,6 +4039,18 @@ msgstr ""
 msgid "Upload translation"
 msgstr ""
 
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
+#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: lms/templates/courseware_search/search_list.underscore
+msgid "gettext("
+msgstr ""
+
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/templates/verify_student/enrollment_confirmation_step.underscore
 msgid "Status"
@@ -4030,6 +4094,14 @@ msgstr ""
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "(this post is about %(courseware_title_linked)s)"
+msgstr ""
+
+#: lms/templates/courseware_search/search_error.underscore
+msgid "There was an error, try searching again."
+msgstr ""
+
+#: lms/templates/courseware_search/search_list.underscore
+msgid "Sorry, no results were found."
 msgstr ""
 
 #: lms/templates/dashboard/donation.underscore
@@ -4597,7 +4669,7 @@ msgstr ""
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Date"
-msgstr ""
+msgstr "תאריך"
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Amount"
@@ -4860,17 +4932,6 @@ msgstr ""
 
 #: cms/templates/js/course-outline.underscore
 msgid "Unpublished changes to content that will release in the future"
-msgstr ""
-
-#: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
-#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-msgid "gettext("
 msgstr ""
 
 #: cms/templates/js/course-outline.underscore

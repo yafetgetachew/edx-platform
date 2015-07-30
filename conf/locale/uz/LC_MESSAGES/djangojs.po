@@ -1,5 +1,5 @@
 # #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
-# edX translation file.
+# edX community translations have been downloaded from Uzbek (http://www.transifex.com/projects/p/edx-platform/language/uz/).
 # Copyright (C) 2015 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-26 13:20+0000\n"
-"PO-Revision-Date: 2015-01-20 14:25+0000\n"
+"POT-Creation-Date: 2015-02-17 22:14+0000\n"
+"PO-Revision-Date: 2015-02-02 13:52+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Uzbek (http://www.transifex.com/projects/p/edx-platform/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -830,6 +830,7 @@ msgstr ""
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Header"
 msgstr ""
 
@@ -1438,7 +1439,7 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Title"
-msgstr ""
+msgstr "Сарлавҳа"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1494,9 +1495,11 @@ msgstr ""
 msgid "Vertical space"
 msgstr ""
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: lms/templates/courseware_search/search_item.underscore
 msgid "View"
 msgstr ""
 
@@ -1559,9 +1562,36 @@ msgid ""
 "Click Cancel to return to this page without sending your information."
 msgstr ""
 
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "incorrect"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "correct"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "answer"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid "Short explanation"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/problem/edit.js
+msgid ""
+"If you use the Advanced Editor, this problem will be converted to XML and you will not be able to return to the Simple Editor Interface.\n"
+"\n"
+"Proceed to the Advanced Editor and convert this problem to XML?"
+msgstr ""
+
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
 msgid ""
-"Sequence error! Cannot navigate to tab %(tab_name)s in the current "
+"Sequence error! Cannot navigate to %(tab_name)s in the current "
 "SequenceModule. Please contact the course staff."
 msgstr ""
 
@@ -1655,11 +1685,11 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/video/05_video_quality_control.js
 msgid "HD on"
-msgstr ""
+msgstr "HD ёқиқ"
 
 #: common/lib/xmodule/xmodule/js/src/video/05_video_quality_control.js
 msgid "HD off"
-msgstr ""
+msgstr "HD ўчиқ"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
@@ -1842,7 +1872,12 @@ msgid_plural "%(unread_count)s new comments"
 msgstr[0] ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
+msgid "Current conversation"
+msgstr ""
+
+#: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 #: lms/static/js/edxnotes/views/tabs/search_results.js
+#: lms/templates/courseware_search/search_list.underscore
 msgid "Search Results"
 msgstr ""
 
@@ -1964,52 +1999,52 @@ msgstr ""
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "less than a minute"
-msgstr ""
+msgstr "1 дақиқадан кам"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about a minute"
-msgstr ""
+msgstr "тахминан 1 дақиқа"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
+msgstr[0] "%d дақиқа"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about an hour"
-msgstr ""
+msgstr "тахминан 1 соат"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about %d hour"
 msgid_plural "about %d hours"
-msgstr[0] ""
+msgstr[0] "тахминан %d соат"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "a day"
-msgstr ""
+msgstr "1 кун"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] ""
+msgstr[0] "%d кун"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about a month"
-msgstr ""
+msgstr "тахминан 1 ой"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] ""
+msgstr[0] "%d ой"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about a year"
-msgstr ""
+msgstr "тахминан 1 йил"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] ""
+msgstr[0] "%d йил"
 
 #. Translators: please note that this is not a literal flag, but rather a
 #. report
@@ -2164,6 +2199,7 @@ msgid "Error generating student profile information. Please try again."
 msgstr ""
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
+#: lms/templates/courseware_search/search_loading.underscore
 msgid "Loading"
 msgstr ""
 
@@ -2728,31 +2764,31 @@ msgstr ""
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "Қалин (Ctrl+B)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "Ётиқ (Ctrl+I)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Hyperlink (Ctrl+L)"
-msgstr ""
+msgstr "Гипербоғлама (Ctrl+L)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Blockquote (Ctrl+Q)"
-msgstr ""
+msgstr "Иқтибос (Ctrl+Q)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Code Sample (Ctrl+K)"
-msgstr ""
+msgstr "Намуна код (Ctrl+K)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Image (Ctrl+G)"
-msgstr ""
+msgstr "Расм (Ctrl+G)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Numbered List (Ctrl+O)"
-msgstr ""
+msgstr "Рақамли рўйхат (Ctrl+O)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Bulleted List (Ctrl+U)"
@@ -2760,7 +2796,7 @@ msgstr ""
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Heading (Ctrl+H)"
-msgstr ""
+msgstr "Сарлавҳа (Ctrl+H)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Horizontal Rule (Ctrl+R)"
@@ -3012,6 +3048,11 @@ msgstr ""
 msgid ""
 "Your file '{file}' has been uploaded. Allow a few minutes for processing."
 msgstr ""
+
+#: lms/static/js/search/views/search_list_view.js
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] ""
 
 #: lms/static/js/student_account/account.js
 #: lms/static/js/student_profile/profile.js
@@ -3862,6 +3903,14 @@ msgstr ""
 msgid "Making Visible to Students"
 msgstr ""
 
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course Index"
+msgstr ""
+
+#: cms/static/js/views/pages/course_outline.js
+msgid "Course has been successfully reindexed."
+msgstr ""
+
 #: cms/static/js/views/settings/advanced.js
 msgid ""
 "Your changes will not take effect until you save your progress. Take care "
@@ -3953,6 +4002,18 @@ msgstr ""
 msgid "Upload translation"
 msgstr ""
 
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
+#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: lms/templates/courseware_search/search_list.underscore
+msgid "gettext("
+msgstr ""
+
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/templates/verify_student/enrollment_confirmation_step.underscore
 msgid "Status"
@@ -3996,6 +4057,14 @@ msgstr ""
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "(this post is about %(courseware_title_linked)s)"
+msgstr ""
+
+#: lms/templates/courseware_search/search_error.underscore
+msgid "There was an error, try searching again."
+msgstr ""
+
+#: lms/templates/courseware_search/search_list.underscore
+msgid "Sorry, no results were found."
 msgstr ""
 
 #: lms/templates/dashboard/donation.underscore
@@ -4825,17 +4894,6 @@ msgstr ""
 
 #: cms/templates/js/course-outline.underscore
 msgid "Unpublished changes to content that will release in the future"
-msgstr ""
-
-#: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore
-#: cms/templates/js/course-outline.underscore cms/templates/js/list.underscore
-#: cms/templates/js/list.underscore cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/publish-xblock.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-#: cms/templates/js/xblock-outline.underscore
-msgid "gettext("
 msgstr ""
 
 #: cms/templates/js/course-outline.underscore
