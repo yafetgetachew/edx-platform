@@ -128,10 +128,10 @@ FEATURES = {
 
     # This flag disables the requirement of having to agree to the TOS for users registering
     # with Shib.  Feature was requested by Stanford's office of general counsel
-    'SHIB_DISABLE_TOS': False,
+    'SHIB_DISABLE_TOS': True,
 
     # Toggles OAuth2 authentication provider
-    'ENABLE_OAUTH2_PROVIDER': False,
+    'ENABLE_OAUTH2_PROVIDER': True,
 
     # Can be turned off if course lists need to be hidden. Effects views and templates.
     'COURSES_ARE_BROWSABLE': True,
@@ -1937,6 +1937,7 @@ OPTIONAL_APPS = (
 
     # milestones
     'milestones',
+    'officemix',
 )
 
 for app_name in OPTIONAL_APPS:
@@ -2011,3 +2012,6 @@ PDF_RECEIPT_LOGO_HEIGHT_MM = 12
 PDF_RECEIPT_COBRAND_LOGO_PATH = PROJECT_ROOT + '/static/images/default-theme/logo.png'
 # Height of the Co-brand Logo in mm
 PDF_RECEIPT_COBRAND_LOGO_HEIGHT_MM = 12
+
+
+OAUTH_OIDC_ISSUER = "https://kilian-lms.raccoongang.com/oauth2"

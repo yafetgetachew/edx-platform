@@ -375,7 +375,8 @@ class DiscussionTab(EnrolledOrStaffTab):
     def __init__(self, tab_dict=None):
         super(DiscussionTab, self).__init__(
             # Translators: "Discussion" is the title of the course forum page
-            name=tab_dict['name'] if tab_dict else _('Discussion'),
+            #name=tab_dict['name'] if tab_dict else _('FAQ'),
+            name=_('FAQ'),
             tab_id=self.type,
             link_func=link_reverse_func('django_comment_client.forum.views.forum_form_discussion'),
         )
@@ -442,7 +443,7 @@ class ExternalDiscussionTab(LinkTab):
     def __init__(self, tab_dict=None, link_value=None):
         super(ExternalDiscussionTab, self).__init__(
             # Translators: 'Discussion' refers to the tab in the courseware that leads to the discussion forums
-            name=_('Discussion'),
+            name=_('FAQ'),
             tab_id='discussion',
             link_value=tab_dict['link'] if tab_dict else link_value,
         )

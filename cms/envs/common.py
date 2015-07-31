@@ -768,6 +768,7 @@ OPTIONAL_APPS = (
 
     # milestones
     'milestones',
+    'officemix',
 )
 
 
@@ -876,3 +877,5 @@ XBLOCK_SETTINGS = {
         'YOUTUBE_API_KEY': YOUTUBE_API_KEY
     }
 }
+
+OAUTH_OIDC_ISSUER = "https://kilian-lms.raccoongang.com/oauth2"
