@@ -1482,14 +1482,16 @@ def create_account(request, post_override=None):  # pylint: disable-msg=too-many
         return JsonResponse(js, status=400)
 
     # Can't have terms of service for certain SHIB users, like at Stanford
-    tos_required = (
-        not settings.FEATURES.get("AUTH_USE_SHIB") or
-        not settings.FEATURES.get("SHIB_DISABLE_TOS") or
-        not do_external_auth or
-        not eamap.external_domain.startswith(
-            external_auth.views.SHIBBOLETH_DOMAIN_PREFIX
-        )
-    )
+
+    tos_required = False
+#    tos_required = (
+#        not settings.FEATURES.get("AUTH_USE_SHIB") or
+#        not settings.FEATURES.get("SHIB_DISABLE_TOS") or
+#        not do_external_auth or
+#        not eamap.external_domain.startswith(
+#            external_auth.views.SHIBBOLETH_DOMAIN_PREFIX
+#        )
+#    )
 
     if tos_required:
         if post_vars.get('terms_of_service', 'false') != u'true':
