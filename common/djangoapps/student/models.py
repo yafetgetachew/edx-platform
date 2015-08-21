@@ -1875,6 +1875,7 @@ def push_enrollment_to_sso(sender, instance, **kwargs):
         'mode': instance.mode,
         'is_active': instance.is_active,
         'course_id': str(instance.course.id),
+        'course_run': instance.course.id.run,
         'user': instance.user.username
     }
     r = requests.post(sso_api_url, headers=sso_api_headers, data=data)
@@ -1896,6 +1897,7 @@ def delete_enrollment_from_sso(sender, instance, **kwargs):
 
     data = {
         'course_id': str(instance.course.id),
+        'course_run': instance.course.id.run,
         'user': instance.user.username
     }
 
