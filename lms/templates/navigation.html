@@ -8,8 +8,6 @@ from django.utils.translation import ugettext as _
 from microsite_configuration import microsite
 from microsite_configuration.templatetags.microsite import platform_name
 from ccx.overrides import get_current_ccx
-import third_party_auth
-from third_party_auth import provider, pipeline
 
 # App that handles subdomain specific branding
 import branding
@@ -95,7 +93,7 @@ site_status_msg = get_site_status_msg(course_id)
             <li><a href="${reverse('account_settings')}">${_("Account Settings")}</a></li>
             <li><a href="${reverse('learner_profile', kwargs={'username': user.username})}">${_("My Profile")}</a></li>
           </%block>
-          <li><a href="${reverse('social-logout')}" role="menuitem">${_("Sign Out")}</a></li>
+          <li><a href="${reverse('logout')}" role="menuitem">${_("Sign Out")}</a></li>
         </ul>
       </li>
     </ol>
@@ -132,15 +130,7 @@ site_status_msg = get_site_status_msg(course_id)
           </li>
           % else:
           <li class="nav-global-04">
-              % if third_party_auth.is_enabled():
-                  % for enabled in provider.Registry.enabled():
-                      % if not enabled.get_setting('use_for_cms'):
-                          <a class="cta cta-register" href="${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_LOGIN)}${login_query()}">${_("Register Now")}</a>
-                      % endif
-                  % endfor
-              % else:
-                  <a class="cta cta-register" href="/register${login_query()}">${_("Register Now")}</a>
-              % endif
+            <a class="cta cta-register" href="/register${login_query()}">${_("Register Now")}</a>
           </li>
           % endif
       % endif
@@ -152,15 +142,7 @@ site_status_msg = get_site_status_msg(course_id)
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
           <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
           % else:
-              % if third_party_auth.is_enabled():
-                  % for enabled in provider.Registry.enabled():
-                      % if not enabled.get_setting('use_for_cms'):
-                          <a class="cta cta-login" href="${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_LOGIN)}${login_query()}">${_("Sign in")}</a>
-                      % endif
-                  % endfor
-              % else:
-                  <a class="cta cta-login" href="/login${login_query()}">${_("Sign in")}</a>
-              % endif
+          <a class="cta cta-login" href="/login${login_query()}">${_("Sign in")}</a>
           % endif
       % endif
     </li>
