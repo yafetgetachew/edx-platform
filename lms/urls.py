@@ -723,3 +723,8 @@ urlpatterns += (
     url(r'^404$', handler404),
     url(r'^500$', handler500),
 )
+
+urlpatterns += (
+    # Extend API
+    url(r'^api/extended/', include('open_edx_api_extension.urls', namespace='api_extension')),
+)
