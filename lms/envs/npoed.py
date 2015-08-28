@@ -11,7 +11,10 @@ SOCIAL_AUTH_EXCLUDE_URL_PATTERN = r'^/admin'
 SOCIAL_AUTH_LOGOUT_URL = "%s/logout/" % SSO_NPOED_URL #'http://sso.rnoep.raccoongang.com/logout/'
 SOCIAL_AUTH_RAISE_EXCEPTIONS = True
 
-MIDDLEWARE_CLASSES += ('sso_edx_npoed.middleware.SeamlessAuthorization', )
+MIDDLEWARE_CLASSES += ('sso_edx_npoed.middleware.PLPRedirection',
+                       'sso_edx_npoed.middleware.SeamlessAuthorization')
+
+PLP_URL = ENV_TOKENS.get('PLP_URL')
 
 # We should login always with npoed-sso
 # from sso_edx_npoed.backends.npoed import NpoedBackend
