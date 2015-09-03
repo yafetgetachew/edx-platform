@@ -14,7 +14,7 @@
         ## implementation note: will need to figure out how to handle combining detail
         ## statuses of multiple modules in js.
         <li>
-        <a class="seq_${item['type']} inactive progress-${item['progress_status']}"
+        <a class="inactive progress-${item['progress_status']}"
            data-id="${item['id']}"
            data-element="${idx+1}"
            href="javascript:void(0);"
@@ -24,7 +24,12 @@
            id="tab_${idx}"
            tabindex="0"
            role="tab">
-            <p aria-hidden="false">${item['title']}</p>
+       <p aria-hidden="false">${item['title']}</p>
+       % if len(item['title']) > 15:
+           <div class='icon-nav-text'>${item['title'][:12]}...</div>
+       % else:
+           <div class='icon-nav-text'>${item['title']}</div>
+       % endif
           </a>
         </li>
         % endfor
