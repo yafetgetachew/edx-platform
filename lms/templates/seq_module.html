@@ -24,16 +24,17 @@
            id="tab_${idx}"
            tabindex="0"
            role="tab">
-       <p aria-hidden="false">${item['title']}</p>
+       <p aria-hidden="false">${item['title']} </p>
+
+
        % if len(item['title']) > 15:
-           <div class='icon-nav-text'>${item['title'][:12]}...</div>
+           <div class='icon-nav-text'>${item['page_title'][:12]}...</div>
        % else:
-           <div class='icon-nav-text'>${item['title']}</div>
+           <div class='icon-nav-text'>${item['page_title']}</div>
        % endif
           </a>
-        </li>
-        % endfor
-      </ol>
+       % endfor
+	</ol>
     </div>
 
     <ul class="sequence-nav-buttons">
