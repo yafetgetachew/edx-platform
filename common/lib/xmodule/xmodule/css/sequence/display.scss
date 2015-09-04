@@ -195,9 +195,6 @@ nav.sequence-nav {
             background-image: url('../images/sequence-nav/list-finished.png');
           }
         }
-        .icon-nav-text {
-           text-align: center !important
-        }
         p {
           @extend %ui-depth2;
           background: #333;
