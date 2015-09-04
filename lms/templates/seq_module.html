@@ -14,7 +14,7 @@
         ## implementation note: will need to figure out how to handle combining detail
         ## statuses of multiple modules in js.
         <li>
-        <a class="inactive progress-${item['progress_status']}"
+        <a class="inactive progress-${item['progress_status']} icon-nav-text"
            data-id="${item['id']}"
            data-element="${idx+1}"
            href="javascript:void(0);"
@@ -23,15 +23,13 @@
            aria-controls="seq_contents_${idx}"
            id="tab_${idx}"
            tabindex="0"
-           role="tab">
-       <p aria-hidden="false">${item['title']} </p>
-
-
-       % if len(item['title']) > 15:
-           <div class='icon-nav-text'>${item['page_title'][:12]}...</div>
-       % else:
-           <div class='icon-nav-text'>${item['page_title']}</div>
-       % endif
+           role="tab" style="text-align: center">
+        % if len(item['title']) > 15:
+           ${item['title'][:12]}...
+        % else:
+           ${item['title']}
+        % endif
+	<p aria-hidden="false">${item['title']} </p>
           </a>
        % endfor
 	</ol>

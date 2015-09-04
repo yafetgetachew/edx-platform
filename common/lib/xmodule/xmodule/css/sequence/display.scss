@@ -196,7 +196,7 @@ nav.sequence-nav {
           }
         }
         .icon-nav-text {
-           text-align: center
+           text-align: center !important
         }
         p {
           @extend %ui-depth2;
