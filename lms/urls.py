@@ -18,6 +18,7 @@ urlpatterns = (
 
     # certificate view
     url(r'^update_certificate$', 'certificates.views.update_certificate'),
+    url(r'^api/extended/', include('open_edx_api_extension.urls', namespace='api_extension')),
     url(r'^update_example_certificate$', 'certificates.views.update_example_certificate'),
     url(r'^request_certificate$', 'certificates.views.request_certificate'),
 

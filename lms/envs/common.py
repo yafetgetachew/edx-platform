@@ -1760,6 +1760,7 @@ YOUTUBE_API_KEY = None
 INSTALLED_APPS = (
     # Standard ones that are always installed...
     'django.contrib.auth',
+    'open_edx_api_extension',
     'django.contrib.contenttypes',
     'django.contrib.humanize',
     'django.contrib.messages',
