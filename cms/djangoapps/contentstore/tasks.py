@@ -51,6 +51,9 @@ def rerun_course(source_course_key_string, destination_course_key_string, user_i
         # call edxval to attach videos to the rerun
         copy_course_videos(source_course_key, destination_course_key)
 
+	from xmodule.modulestore.django import SignalHandler
+        SignalHandler(store).send('course_published', course_key=destination_course_key)
+
         return "succeeded"
 
     except DuplicateCourseError as exc:
