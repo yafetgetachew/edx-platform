@@ -60,5 +60,5 @@ git+https://github.com/edx/ecommerce-api-client.git@1.0.0#egg=ecommerce-api-clie
 -e git+https://github.com/open-craft/xblock-poll@v1.0#egg=xblock-poll
 
 # Npoed specific repos:
-pip install -e git+https://github.com/raccoongang/open_edx_api_extension.git#egg=open_edx_api_extension
-pip install -e git+https://github.com/miptliot/npoed-sso-edx-client.git#egg=sso_edx_npoed
+-e git+https://github.com/raccoongang/open_edx_api_extension.git#egg=open_edx_api_extension
+-e git+https://github.com/miptliot/npoed-sso-edx-client.git#egg=sso_edx_npoed
