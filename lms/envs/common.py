@@ -2576,5 +2576,6 @@ LTI_USER_EMAIL_DOMAIN = 'lti.example.com'
 SSO_ML_URL = 'http://sso.millionlights.org'
 SSO_ML_BACKEND_NAME = 'sso_ml-oauth2'
 PLP_URL = 'https://millionlights.org'
+SSO_ML_API_URL = 'http://ssores.millionlights.org'
 
 THIRD_PARTY_AUTH_BACKENDS = ('sso_edx_ml.backends.ml.MLBackend',)
