@@ -1197,8 +1197,8 @@ MIDDLEWARE_CLASSES = (
     'microsite_configuration.middleware.MicrositeSessionCookieDomainMiddleware',
 
     # SSO
-    # 'sso_edx_ml.middleware.PLPRedirection',
-    # 'sso_edx_ml.middleware.SeamlessAuthorization',
+    'sso_edx_ml.middleware.PLPRedirection',
+    'sso_edx_ml.middleware.SeamlessAuthorization',
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
