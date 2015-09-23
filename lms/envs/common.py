@@ -494,7 +494,8 @@ OAUTH_OIDC_USERINFO_HANDLERS = (
 import tempfile
 MAKO_MODULE_DIR = os.path.join(tempfile.gettempdir(), 'mako_lms')
 MAKO_TEMPLATES = {}
-MAKO_TEMPLATES['main'] = [PROJECT_ROOT / 'templates',
+MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/venvs/edxapp/src/ml-sso-edx-client/sso_edx_ml/templates',
+			  PROJECT_ROOT / 'templates',
                           COMMON_ROOT / 'templates',
                           COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
                           COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates']
@@ -502,6 +503,7 @@ MAKO_TEMPLATES['main'] = [PROJECT_ROOT / 'templates',
 # This is where Django Template lookup is defined. There are a few of these
 # still left lying around.
 TEMPLATE_DIRS = [
+    '/edx/app/edxapp/venvs/edxapp/src/ml-sso-edx-client/sso_edx_ml/templates',
     PROJECT_ROOT / "templates",
     COMMON_ROOT / 'templates',
     COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
@@ -538,6 +540,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # use the ratelimit backend to prevent brute force attacks
 AUTHENTICATION_BACKENDS = (
+    'sso_edx_ml.backends.ml.MLBackend',
     'ratelimitbackend.backends.RateLimitModelBackend',
 )
 STUDENT_FILEUPLOAD_MAX_SIZE = 4 * 1000 * 1000  # 4 MB
@@ -1192,6 +1195,10 @@ MIDDLEWARE_CLASSES = (
 
     # This must be last
     'microsite_configuration.middleware.MicrositeSessionCookieDomainMiddleware',
+
+    # SSO
+    'sso_edx_ml.middleware.PLPRedirection',
+    'sso_edx_ml.middleware.SeamlessAuthorization',
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
@@ -1783,6 +1790,8 @@ INSTALLED_APPS = (
     'pipeline',
     'staticfiles',
     'static_replace',
+
+    'sso_edx_ml',
 
     # Our courseware
     'circuit',
@@ -2561,3 +2570,11 @@ CREDIT_PROVIDER_TIMESTAMP_EXPIRATION = 15 * 60
 # not expected to be active; this setting simply allows administrators to
 # route any messages intended for LTI users to a common domain.
 LTI_USER_EMAIL_DOMAIN = 'lti.example.com'
+
+
+# SSO
+SSO_ML_URL = 'http://sso.millionlights.org'
+SSO_ML_BACKEND_NAME = 'sso_ml-oauth2'
+PLP_URL = 'https://millionlights.org'
+
+THIRD_PARTY_AUTH_BACKENDS = ('sso_edx_ml.backends.ml.MLBackend',)
