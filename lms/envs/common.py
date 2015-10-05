@@ -2577,5 +2577,6 @@ SSO_ML_URL = 'http://portal.millionlights.org'
 SSO_ML_BACKEND_NAME = 'sso_ml-oauth2'
 PLP_URL = 'http://portal.millionlights.org'
 SSO_ML_API_URL = 'http://portal.millionlights.org'
+SOCIAL_AUTH_ALWAYS_ASSOCIATE = True
 
 THIRD_PARTY_AUTH_BACKENDS = ('sso_edx_ml.backends.ml.MLBackend',)
