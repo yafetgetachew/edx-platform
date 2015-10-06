@@ -2579,5 +2579,6 @@ PLP_URL = 'http://portal.millionlights.org'
 SSO_ML_API_URL = 'http://portal.millionlights.org'
 SOCIAL_AUTH_ALWAYS_ASSOCIATE = True
 SOCIAL_AUTH_LOGOUT_URL = 'http://portal.millionlights.org/UserRegister/LoginOut'
+SOCIAL_AUTH_EXCLUDE_URL_PATTERN = r'^/admin'
 
 THIRD_PARTY_AUTH_BACKENDS = ('sso_edx_ml.backends.ml.MLBackend',)
