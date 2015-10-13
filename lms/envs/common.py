@@ -1197,7 +1197,7 @@ MIDDLEWARE_CLASSES = (
     'microsite_configuration.middleware.MicrositeSessionCookieDomainMiddleware',
 
     # SSO
-    'sso_edx_ml.middleware.PLPRedirection',
+    'sso_edx_ml.middleware.PortalRedirection',
     'sso_edx_ml.middleware.SeamlessAuthorization',
 )
 
@@ -2573,12 +2573,12 @@ LTI_USER_EMAIL_DOMAIN = 'lti.example.com'
 
 
 # SSO
-SSO_ML_URL = 'http://portal.millionlights.org'
+SSO_ML_URL = 'https://millionlights.org'
 SSO_ML_BACKEND_NAME = 'sso_ml-oauth2'
-PLP_URL = 'http://portal.millionlights.org'
-SSO_ML_API_URL = 'http://portal.millionlights.org'
+PORTAL_URL = 'https://millionlights.org'
+SSO_ML_API_URL = 'https://millionlights.org'
 SOCIAL_AUTH_ALWAYS_ASSOCIATE = True
-SOCIAL_AUTH_LOGOUT_URL = 'http://portal.millionlights.org/UserRegister/LoginOut'
+SOCIAL_AUTH_LOGOUT_URL = 'https://millionlights.org/UserRegister/LoginOut'
 SOCIAL_AUTH_EXCLUDE_URL_PATTERN = r'^/admin'
 
 THIRD_PARTY_AUTH_BACKENDS = ('sso_edx_ml.backends.ml.MLBackend',)
