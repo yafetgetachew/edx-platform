@@ -350,7 +350,10 @@ FEATURES = {
     'ENABLE_EDXNOTES': False,
 
     # Milestones application flag
-    'MILESTONES_APP': False,
+    'MILESTONES_APP': True,
+
+    # Entrance exams feature flag
+    'ENTRANCE_EXAMS': True,
 
     # Prerequisite courses feature flag
     'ENABLE_PREREQUISITE_COURSES': False,
@@ -2573,12 +2576,12 @@ LTI_USER_EMAIL_DOMAIN = 'lti.example.com'
 
 
 # SSO
-SSO_ML_URL = 'https://millionlights.org'
-SSO_ML_BACKEND_NAME = 'sso_ml-oauth2'
 PORTAL_URL = 'https://millionlights.org'
-SSO_ML_API_URL = 'https://millionlights.org'
+SSO_ML_URL = PORTAL_URL
+SSO_ML_BACKEND_NAME = 'sso_ml-oauth2'
+SSO_ML_API_URL = PORTAL_URL
 SOCIAL_AUTH_ALWAYS_ASSOCIATE = True
-SOCIAL_AUTH_LOGOUT_URL = 'https://millionlights.org/UserRegister/LoginOut'
+SOCIAL_AUTH_LOGOUT_URL = "{}/{}".format(PORTAL_URL, 'UserRegister/LoginOut')
 SOCIAL_AUTH_EXCLUDE_URL_PATTERN = r'^/admin'
 
 THIRD_PARTY_AUTH_BACKENDS = ('sso_edx_ml.backends.ml.MLBackend',)
