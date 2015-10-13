@@ -10,8 +10,11 @@ from pkg_resources import resource_string
 
 from xmodule.x_module import XModule, STUDENT_VIEW
 from xmodule.seq_module import SequenceDescriptor
-from xblock.fields import Scope, ReferenceList
+from xmodule.studio_editable import StudioEditableModule, StudioEditableDescriptor
 from xmodule.modulestore.exceptions import ItemNotFoundError
+from xmodule.validation import StudioValidation, StudioValidationMessage
+from xblock.fields import Scope, ReferenceList, String
+from xblock.fragment import Fragment
 
 
 log = logging.getLogger('edx.' + __name__)
@@ -19,11 +22,28 @@ log = logging.getLogger('edx.' + __name__)
 
 class ConditionalFields(object):
     has_children = True
-    show_tag_list = ReferenceList(help="List of urls of children that are references to external modules", scope=Scope.content)
-    sources_list = ReferenceList(help="List of sources upon which this module is conditional", scope=Scope.content)
+    display_name = String(display_name="Display Name",
+                          help="Display name for this module",
+                          scope=Scope.settings,
+                          default='Conditional')
+    show_tag_list = ReferenceList(help="List of urls of children that are references to external modules",
+                                  scope=Scope.content)
+    sources_list = ReferenceList(help="List of sources upon which this module is conditional",
+                                 scope=Scope.content)
+    xml_attr = String(help="Tag attribute in xml",
+                      scope=Scope.content,
+                      default='correct',
+                      values=lambda: [{'display_name': xml_attr, 'value': xml_attr} for xml_attr in ConditionalModule.conditions_map.keys()])
+    xml_value = String(help="Value xml_attr in xml",
+                       scope=Scope.content,
+                       default='True')
+    message = String(help="Message for case, where one or more are not passed. "
+                          "Here you can use variable {link}, which generate link to required module.",
+                     scope=Scope.content,
+                     default='{link} must be attempted before this will become visible.')
 
 
-class ConditionalModule(ConditionalFields, XModule):
+class ConditionalModule(ConditionalFields, XModule, StudioEditableModule):
     """
     Blocks child module from showing unless certain conditions are met.
 
@@ -95,27 +115,15 @@ class ConditionalModule(ConditionalFields, XModule):
         'voted': 'voted'  # poll_question attr
     }
 
-    def _get_condition(self):
-        # Get first valid condition.
-        for xml_attr, attr_name in self.conditions_map.iteritems():
-            xml_value = self.descriptor.xml_attributes.get(xml_attr)
-            if xml_value:
-                return xml_value, attr_name
-        raise Exception(
-            'Error in conditional module: no known conditional found in {!r}'.format(
-                self.descriptor.xml_attributes.keys()
-            )
-        )
-
     @lazy
     def required_modules(self):
         return [self.system.get_module(descriptor) for
                 descriptor in self.descriptor.get_required_module_descriptors()]
 
     def is_condition_satisfied(self):
-        xml_value, attr_name = self._get_condition()
+        attr_name = self.conditions_map[self.xml_attr]
 
-        if xml_value and self.required_modules:
+        if self.xml_value and self.required_modules:
             for module in self.required_modules:
                 if not hasattr(module, attr_name):
                     # We don't throw an exception here because it is possible for
@@ -130,7 +138,7 @@ class ConditionalModule(ConditionalFields, XModule):
                 if callable(attr):
                     attr = attr()
 
-                if xml_value != str(attr):
+                if self.xml_value != str(attr):
                     break
             else:
                 return True
@@ -147,18 +155,27 @@ class ConditionalModule(ConditionalFields, XModule):
             'depends': ';'.join(self.required_html_ids)
         })
 
+    def author_view(self, context):
+        """
+        Renders the Studio preview by rendering each child so that they can all be seen and edited.
+        """
+        fragment = Fragment()
+        root_xblock = context.get('root_xblock')
+        is_root = root_xblock and root_xblock.location == self.location
+        if is_root or (not context.get('is_unit_page') and is_root is not None):
+            self.render_children(context, fragment, can_reorder=True, can_add=True)
+        return fragment
+
     def handle_ajax(self, _dispatch, _data):
         """This is called by courseware.moduleodule_render, to handle
         an AJAX call.
         """
         if not self.is_condition_satisfied():
-            defmsg = "{link} must be attempted before this will become visible."
-            message = self.descriptor.xml_attributes.get('message', defmsg)
             context = {'module': self,
-                       'message': message}
+                       'message': self.message}
             html = self.system.render_template('conditional_module.html',
                                                context)
-            return json.dumps({'html': [html], 'message': bool(message)})
+            return json.dumps({'html': [html], 'message': bool(self.message)})
 
         html = [child.render(STUDENT_VIEW).content for child in self.get_display_items()]
 
@@ -177,8 +194,16 @@ class ConditionalModule(ConditionalFields, XModule):
                 new_class = c
         return new_class
 
+    def validate(self):
+        """
+        Message for either error or warning validation message/s.
 
-class ConditionalDescriptor(ConditionalFields, SequenceDescriptor):
+        Returns message and type. Priority given to error type message.
+        """
+        return self.descriptor.validate()
+
+
+class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditableDescriptor):
     """Descriptor for conditional xmodule."""
     _tag_name = 'conditional'
 
@@ -203,6 +228,13 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor):
                     self.location.course_key.make_usage_key_from_deprecated_string(item)
                     for item in ConditionalDescriptor.parse_sources(self.xml_attributes)
                 ]
+        if not (self.xml_attr and self.xml_value):
+            for xml_attr, attr_name in ConditionalModule.conditions_map.iteritems():
+                if xml_attr in self.xml_attributes and isinstance(self.xml_attributes[xml_attr], basestring):
+                    self.xml_attr = xml_attr
+                    self.xml_value = self.xml_attributes[xml_attr]
+        if not self.message:
+            self.message = self.xml_attributes['message']
 
     @staticmethod
     def parse_sources(xml_element):
@@ -262,4 +294,35 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor):
         # Locations may have been changed to Locators.
         stringified_sources_list = map(lambda loc: loc.to_deprecated_string(), self.sources_list)
         self.xml_attributes['sources'] = ';'.join(stringified_sources_list)
+        self.xml_attributes[self.xml_attr] = self.xml_value
+        self.xml_attributes['message'] = self.message
         return xml_object
+
+    def validate(self):
+        validation = super(ConditionalDescriptor, self).validate()
+        if not self.sources_list:
+            conditional_validation = StudioValidation(self.location)
+            conditional_validation.add(
+                StudioValidationMessage(
+                    StudioValidationMessage.NOT_CONFIGURED,
+                    u"Is not configured list of sources upon which this module is conditional.",
+                    action_class='edit-button',
+                    action_label=u"Configure list of sources"
+                )
+            )
+            validation = StudioValidation.copy(validation)
+            validation.summary = conditional_validation.messages[0]
+        return validation
+
+    @property
+    def non_editable_metadata_fields(self):
+        non_editable_fields = super(ConditionalDescriptor, self).non_editable_metadata_fields
+        non_editable_fields.extend([
+            ConditionalDescriptor.due,
+            ConditionalDescriptor.is_practice_exam,
+            ConditionalDescriptor.is_proctored_enabled,
+            ConditionalDescriptor.is_time_limited,
+            ConditionalDescriptor.default_time_limit_minutes,
+            ConditionalDescriptor.show_tag_list,
+        ])
+        return non_editable_fields
