@@ -2576,7 +2576,7 @@ LTI_USER_EMAIL_DOMAIN = 'lti.example.com'
 
 
 # SSO
-PORTAL_URL = 'https://www.millionlights.org/'
+PORTAL_URL = 'https://millionlights.org'
 SSO_ML_URL = PORTAL_URL
 SSO_ML_BACKEND_NAME = 'sso_ml-oauth2'
 SSO_ML_API_URL = PORTAL_URL
