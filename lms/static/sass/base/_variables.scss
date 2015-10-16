@@ -241,11 +241,14 @@ $dark-trans-bg: rgba(0, 0, 0, .75);
 
 $body-bg: rgb(250,250,250);
 $container-bg: $white;
-$header-image: linear-gradient(-90deg, rgba(255,255,255, 1), rgba(230,230,230, 0.9));
-$header-bg: $white;
+//$header-image: linear-gradient(-90deg, rgba(255,255,255, 1), rgba(230,230,230, 0.9));
+$header-image: url('../images/orange-banner-bg.jpg');
+//$header-bg: $white;
+$header-bg: #ED6300 ;
 $courseware-header-image: linear-gradient(top, rgb(255,255,255), rgb(238,238,238));
 $courseware-header-bg: transparent;
-$footer-bg: $white;
+//$footer-bg: $white;
+$footer-bg: url('../images/orange-banner-bg.jpg');
 $courseware-footer-border: none;
 $courseware-footer-shadow: none;
 $courseware-footer-margin: 0px;
