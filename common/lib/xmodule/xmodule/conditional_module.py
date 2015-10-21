@@ -19,28 +19,49 @@ from xblock.fragment import Fragment
 
 log = logging.getLogger('edx.' + __name__)
 
+# Make '_' a no-op so we can scrape strings
+_ = lambda text: text
+
 
 class ConditionalFields(object):
     has_children = True
-    display_name = String(display_name="Display Name",
-                          help="Display name for this module",
-                          scope=Scope.settings,
-                          default='Conditional')
-    show_tag_list = ReferenceList(help="List of urls of children that are references to external modules",
-                                  scope=Scope.content)
-    sources_list = ReferenceList(help="List of sources upon which this module is conditional",
-                                 scope=Scope.content)
-    xml_attr = String(help="Tag attribute in xml",
-                      scope=Scope.content,
-                      default='correct',
-                      values=lambda: [{'display_name': xml_attr, 'value': xml_attr} for xml_attr in ConditionalModule.conditions_map.keys()])
-    xml_value = String(help="Value xml_attr in xml",
-                       scope=Scope.content,
-                       default='True')
-    message = String(help="Message for case, where one or more are not passed. "
-                          "Here you can use variable {link}, which generate link to required module.",
-                     scope=Scope.content,
-                     default='{link} must be attempted before this will become visible.')
+    display_name = String(
+        display_name=_("Display Name"),
+        help=_("Display name for this module"),
+        scope=Scope.settings,
+        default=_('Conditional')
+    )
+
+    show_tag_list = ReferenceList(
+        help=_("List of urls of children that are references to external modules"),
+        scope=Scope.content
+    )
+
+    sources_list = ReferenceList(
+        help=_("List of sources upon which this module is conditional"),
+        scope=Scope.content
+    )
+
+    condional_attr = String(
+        help=_("Tag attribute in xml"),
+        scope=Scope.content,
+        default='correct',
+        values=lambda: [{'display_name': xml_attr, 'value': xml_attr}
+                        for xml_attr in ConditionalModule.conditions_map.keys()]
+    )
+
+    conditional_value = String(
+        help=_("Value xml_attr in xml"),
+        scope=Scope.content,
+        default='True'
+    )
+
+    message = String(
+        help=_("Message for case, where one or more are not passed. "
+               "Here you can use variable {link}, which generate link to required module."),
+        scope=Scope.content,
+        default=_('{link} must be attempted before this will become visible.')
+    )
 
 
 class ConditionalModule(ConditionalFields, XModule, StudioEditableModule):
@@ -121,9 +142,9 @@ class ConditionalModule(ConditionalFields, XModule, StudioEditableModule):
                 descriptor in self.descriptor.get_required_module_descriptors()]
 
     def is_condition_satisfied(self):
-        attr_name = self.conditions_map[self.xml_attr]
+        attr_name = self.conditions_map[self.condional_attr]
 
-        if self.xml_value and self.required_modules:
+        if self.conditional_value and self.required_modules:
             for module in self.required_modules:
                 if not hasattr(module, attr_name):
                     # We don't throw an exception here because it is possible for
@@ -138,7 +159,7 @@ class ConditionalModule(ConditionalFields, XModule, StudioEditableModule):
                 if callable(attr):
                     attr = attr()
 
-                if self.xml_value != str(attr):
+                if self.conditional_value != str(attr):
                     break
             else:
                 return True
@@ -228,11 +249,11 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
                     self.location.course_key.make_usage_key_from_deprecated_string(item)
                     for item in ConditionalDescriptor.parse_sources(self.xml_attributes)
                 ]
-        if not (self.xml_attr and self.xml_value):
-            for xml_attr, attr_name in ConditionalModule.conditions_map.iteritems():
-                if xml_attr in self.xml_attributes and isinstance(self.xml_attributes[xml_attr], basestring):
-                    self.xml_attr = xml_attr
-                    self.xml_value = self.xml_attributes[xml_attr]
+        if not (self.condional_attr and self.conditional_value):
+            for condional_attr, attr_name in ConditionalModule.conditions_map.iteritems():
+                if condional_attr in self.xml_attributes and isinstance(self.xml_attributes[condional_attr], basestring):
+                    self.condional_attr = condional_attr
+                    self.conditional_value = self.xml_attributes[condional_attr]
         if not self.message:
             self.message = self.xml_attributes['message']
 
@@ -294,7 +315,7 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
         # Locations may have been changed to Locators.
         stringified_sources_list = map(lambda loc: loc.to_deprecated_string(), self.sources_list)
         self.xml_attributes['sources'] = ';'.join(stringified_sources_list)
-        self.xml_attributes[self.xml_attr] = self.xml_value
+        self.xml_attributes[self.condional_attr] = self.conditional_value
         self.xml_attributes['message'] = self.message
         return xml_object
 
@@ -305,9 +326,9 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
             conditional_validation.add(
                 StudioValidationMessage(
                     StudioValidationMessage.NOT_CONFIGURED,
-                    u"Is not configured list of sources upon which this module is conditional.",
+                    _(u"Is not configured list of sources upon which this module is conditional."),
                     action_class='edit-button',
-                    action_label=u"Configure list of sources"
+                    action_label=_(u"Configure list of sources")
                 )
             )
             validation = StudioValidation.copy(validation)
