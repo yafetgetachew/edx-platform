@@ -39,7 +39,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from .discussionsettings import *
 import dealer.git
-from xmodule.modulestore.modulestore_settings import update_module_store_settings
+from xmodule.modulestore.modulestore_settings import \
+    update_module_store_settings
 from xmodule.modulestore.edit_info import EditInfoMixin
 from xmodule.mixin import LicenseMixin
 from lms.djangoapps.lms_xblock.mixin import LmsBlockMixin
@@ -65,14 +66,18 @@ DISCUSSION_SETTINGS = {
 # Features
 FEATURES = {
     'DISPLAY_DEBUG_INFO_TO_STAFF': True,
-    'DISPLAY_HISTOGRAMS_TO_STAFF': False,  # For large courses this slows down courseware access for staff.
+    'DISPLAY_HISTOGRAMS_TO_STAFF': False,
+# For large courses this slows down courseware access for staff.
 
-    'REROUTE_ACTIVATION_EMAIL': False,  # nonempty string = address for all activation emails
-    'DEBUG_LEVEL': 0,  # 0 = lowest level, least verbose, 255 = max level, most verbose
+    'REROUTE_ACTIVATION_EMAIL': False,
+# nonempty string = address for all activation emails
+    'DEBUG_LEVEL': 0,
+# 0 = lowest level, least verbose, 255 = max level, most verbose
 
     ## DO NOT SET TO True IN THIS FILE
     ## Doing so will cause all courses to be released on production
-    'DISABLE_START_DATES': False,  # When True, all courses will be active, regardless of start date
+    'DISABLE_START_DATES': False,
+# When True, all courses will be active, regardless of start date
 
     # When True, will only publicly list courses by the subdomain.
     'SUBDOMAIN_COURSE_LISTINGS': False,
@@ -96,8 +101,9 @@ FEATURES = {
     # university to use for branding purposes
     'SUBDOMAIN_BRANDING': False,
 
-    'FORCE_UNIVERSITY_DOMAIN': False,  # set this to the university domain to use, as an override to HTTP_HOST
-                                       # set to None to do no university selection
+    'FORCE_UNIVERSITY_DOMAIN': False,
+# set this to the university domain to use, as an override to HTTP_HOST
+    # set to None to do no university selection
 
     # for consistency in user-experience, keep the value of the following 3 settings
     # in sync with the corresponding ones in cms/envs/common.py
@@ -116,18 +122,23 @@ FEATURES = {
     # in their emails, and they will have no way to resubscribe.
     'ENABLE_DISCUSSION_EMAIL_DIGEST': False,
 
-    'ENABLE_PSYCHOMETRICS': False,  # real-time psychometrics (eg item response theory analysis in instructor dashboard)
+    'ENABLE_PSYCHOMETRICS': False,
+# real-time psychometrics (eg item response theory analysis in instructor dashboard)
 
-    'ENABLE_DJANGO_ADMIN_SITE': True,  # set true to enable django's admin site, even on prod (e.g. for course ops)
+    'ENABLE_DJANGO_ADMIN_SITE': True,
+# set true to enable django's admin site, even on prod (e.g. for course ops)
     'ENABLE_SQL_TRACKING_LOGS': False,
     'ENABLE_LMS_MIGRATION': False,
     'ENABLE_MANUAL_GIT_RELOAD': False,
 
-    'ENABLE_MASQUERADE': True,  # allow course staff to change to student view of courseware
+    'ENABLE_MASQUERADE': True,
+# allow course staff to change to student view of courseware
 
-    'ENABLE_SYSADMIN_DASHBOARD': False,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
+    'ENABLE_SYSADMIN_DASHBOARD': False,
+# sysadmin dashboard, to see what courses are loaded, to delete & load courses
 
-    'DISABLE_LOGIN_BUTTON': False,  # used in systems where login is automatic, eg MIT SSL
+    'DISABLE_LOGIN_BUTTON': False,
+# used in systems where login is automatic, eg MIT SSL
 
     # extrernal access methods
     'ACCESS_REQUIRE_STAFF_FOR_COURSE': False,
@@ -424,7 +435,8 @@ XQUEUE_WAITTIME_BETWEEN_REQUESTS = 5  # seconds
 
 
 ############################# SET PATH INFORMATION #############################
-PROJECT_ROOT = path(__file__).abspath().dirname().dirname()  # /edx-platform/lms
+PROJECT_ROOT = path(
+    __file__).abspath().dirname().dirname()  # /edx-platform/lms
 REPO_ROOT = PROJECT_ROOT.dirname()
 COMMON_ROOT = REPO_ROOT / "common"
 ENV_ROOT = REPO_ROOT.dirname()  # virtualenv dir /edx-platform is in
@@ -487,6 +499,7 @@ OAUTH_OIDC_USERINFO_HANDLERS = (
 # This is where we stick our compiled template files. Most of the app uses Mako
 # templates
 import tempfile
+
 MAKO_MODULE_DIR = os.path.join(tempfile.gettempdir(), 'mako_lms')
 MAKO_TEMPLATES = {}
 MAKO_TEMPLATES['main'] = [PROJECT_ROOT / 'templates',
@@ -501,7 +514,8 @@ TEMPLATE_DIRS = [
     COMMON_ROOT / 'templates',
     COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
     COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates',
-    COMMON_ROOT / 'static',  # required to statically include common Underscore templates
+    COMMON_ROOT / 'static',
+    # required to statically include common Underscore templates
 ]
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -509,7 +523,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.i18n',
-    'django.contrib.auth.context_processors.auth',  # this is required for admin
+    'django.contrib.auth.context_processors.auth',
+    # this is required for admin
     'django.core.context_processors.csrf',
 
     # Added for django-wiki
@@ -584,7 +599,8 @@ LMS_MIGRATION_ALLOWED_IPS = []
 # DHM: I really wanted to ensure the separators were the same (+ or /) but all patts I tried had
 # too many inadvertent side effects :-(
 COURSE_KEY_PATTERN = r'(?P<course_key_string>[^/+]+(/|\+)[^/+]+(/|\+)[^/?]+)'
-COURSE_ID_PATTERN = COURSE_KEY_PATTERN.replace('course_key_string', 'course_id')
+COURSE_ID_PATTERN = COURSE_KEY_PATTERN.replace('course_key_string',
+                                               'course_id')
 COURSE_KEY_REGEX = COURSE_KEY_PATTERN.replace('P<course_key_string>', ':')
 
 USAGE_KEY_PATTERN = r'(?P<usage_key_string>(?:i4x://?[^/]+/[^/]+/[^/]+/[^@]+(?:@[^/]+)?)|(?:[^/]+))'
@@ -611,7 +627,8 @@ TRACKING_BACKENDS = {
 
 # We're already logging events, and we don't want to capture user
 # names/passwords.  Heartbeat events are likely not interesting.
-TRACKING_IGNORE_URL_PATTERNS = [r'^/event', r'^/login', r'^/heartbeat', r'^/segmentio/event', r'^/performance']
+TRACKING_IGNORE_URL_PATTERNS = [r'^/event', r'^/login', r'^/heartbeat',
+                                r'^/segmentio/event', r'^/performance']
 
 EVENT_TRACKING_ENABLED = True
 EVENT_TRACKING_BACKENDS = {
@@ -637,7 +654,8 @@ EVENT_TRACKING_BACKENDS = {
         'ENGINE': 'eventtracking.backends.routing.RoutingBackend',
         'OPTIONS': {
             'backends': {
-                'segment': {'ENGINE': 'eventtracking.backends.segment.SegmentBackend'}
+                'segment': {
+                'ENGINE': 'eventtracking.backends.segment.SegmentBackend'}
             },
             'processors': [
                 {
@@ -849,7 +867,8 @@ LANGUAGES = (
     ('en', u'English'),
     ('rtl', u'Right-to-Left Test Language'),
     ('eo', u'Dummy Language (Esperanto)'),  # Dummy languaged used for testing
-    ('fake2', u'Fake translations'),        # Another dummy language for testing (not pushed to prod)
+    ('fake2', u'Fake translations'),
+    # Another dummy language for testing (not pushed to prod)
 
     ('am', u'አማርኛ'),  # Amharic
     ('ar', u'العربية'),  # Arabic
@@ -1020,7 +1039,7 @@ PAYMENT_REPORT_GENERATOR_GROUP = 'shoppingcart_report_access'
 
 ################################# open ended grading config  #####################
 
-#By setting up the default settings with an incorrect user name and password,
+# By setting up the default settings with an incorrect user name and password,
 # will get an error when attempting to connect
 OPEN_ENDED_GRADING_INTERFACE = {
     'url': 'http://example.com/peer_grading',
@@ -1123,7 +1142,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
 
     # Instead of AuthenticationMiddleware, we use a cached backed version
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     'cache_toolbox.middleware.CacheBackedAuthenticationMiddleware',
     'student.middleware.UserStandingMiddleware',
     'contentserver.middleware.StaticContentServer',
@@ -1143,7 +1162,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
 
     'splash.middleware.SplashMiddleware',
-
 
     'geoinfo.middleware.CountryMiddleware',
     'embargo.middleware.EmbargoMiddleware',
@@ -1224,7 +1242,7 @@ courseware_js = (
     [
         'coffee/src/' + pth + '.js'
         for pth in ['courseware', 'histogram', 'navigation', 'time']
-    ] +
+        ] +
     ['js/' + pth + '.js' for pth in ['ajax-error']] +
     sorted(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/modules/**/*.js'))
 )
@@ -1282,8 +1300,10 @@ dashboard_js = (
 discussion_js = (
     rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/customwmd.js') +
     rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/mathjax_accessible.js') +
-    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/mathjax_delay_renderer.js') +
-    sorted(rooted_glob(COMMON_ROOT / 'static', 'coffee/src/discussion/**/*.js'))
+    rooted_glob(PROJECT_ROOT / 'static',
+                'coffee/src/mathjax_delay_renderer.js') +
+    sorted(
+        rooted_glob(COMMON_ROOT / 'static', 'coffee/src/discussion/**/*.js'))
 )
 
 discussion_vendor_js = [
@@ -1297,12 +1317,17 @@ discussion_vendor_js = [
     'js/split.js'
 ]
 
-staff_grading_js = sorted(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/staff_grading/**/*.js'))
-open_ended_js = sorted(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/open_ended/**/*.js'))
-notes_js = sorted(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/notes/**/*.js'))
+staff_grading_js = sorted(
+    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/staff_grading/**/*.js'))
+open_ended_js = sorted(
+    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/open_ended/**/*.js'))
+notes_js = sorted(
+    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/notes/**/*.js'))
 instructor_dash_js = (
-    sorted(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/instructor_dashboard/**/*.js')) +
-    sorted(rooted_glob(PROJECT_ROOT / 'static', 'js/instructor_dashboard/**/*.js'))
+    sorted(rooted_glob(PROJECT_ROOT / 'static',
+                       'coffee/src/instructor_dashboard/**/*.js')) +
+    sorted(rooted_glob(PROJECT_ROOT / 'static',
+                       'js/instructor_dashboard/**/*.js'))
 )
 
 verify_student_js = [
@@ -1483,10 +1508,12 @@ PIPELINE_CSS = {
     },
 }
 
-
-common_js = set(rooted_glob(COMMON_ROOT / 'static', 'coffee/src/**/*.js')) - set(courseware_js + discussion_js + staff_grading_js + open_ended_js + notes_js + instructor_dash_js)    # pylint: disable=line-too-long
-project_js = set(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/**/*.js')) - set(courseware_js + discussion_js + staff_grading_js + open_ended_js + notes_js + instructor_dash_js)  # pylint: disable=line-too-long
-
+common_js = set(
+    rooted_glob(COMMON_ROOT / 'static', 'coffee/src/**/*.js')) - set(
+    courseware_js + discussion_js + staff_grading_js + open_ended_js + notes_js + instructor_dash_js)  # pylint: disable=line-too-long
+project_js = set(
+    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/**/*.js')) - set(
+    courseware_js + discussion_js + staff_grading_js + open_ended_js + notes_js + instructor_dash_js)  # pylint: disable=line-too-long
 
 PIPELINE_JS = {
     'base_application': {
@@ -1497,11 +1524,12 @@ PIPELINE_JS = {
     'application': {
 
         # Application will contain all paths not in courseware_only_js
-        'source_filenames': ['js/xblock/core.js'] + sorted(common_js) + sorted(project_js) + base_application_js + [
-            'js/sticky_filter.js',
-            'js/query-params.js',
-            'js/vendor/moment.min.js',
-        ],
+        'source_filenames': ['js/xblock/core.js'] + sorted(common_js) + sorted(
+            project_js) + base_application_js + [
+                                'js/sticky_filter.js',
+                                'js/query-params.js',
+                                'js/vendor/moment.min.js',
+                            ],
         'output_filename': 'js/lms-application.js',
     },
     'proctoring': {
@@ -1521,11 +1549,13 @@ PIPELINE_JS = {
         'output_filename': 'js/lms-main_vendor.js',
     },
     'module-descriptor-js': {
-        'source_filenames': rooted_glob(COMMON_ROOT / 'static/', 'xmodule/descriptors/js/*.js'),
+        'source_filenames': rooted_glob(COMMON_ROOT / 'static/',
+                                        'xmodule/descriptors/js/*.js'),
         'output_filename': 'js/lms-module-descriptors.js',
     },
     'module-js': {
-        'source_filenames': rooted_glob(COMMON_ROOT / 'static', 'xmodule/modules/js/*.js'),
+        'source_filenames': rooted_glob(COMMON_ROOT / 'static',
+                                        'xmodule/modules/js/*.js'),
         'output_filename': 'js/lms-modules.js',
     },
     'discussion': {
@@ -1604,7 +1634,6 @@ if os.path.isdir(DATA_DIR):
                         continue
                 os.system("rm %s" % (js_dir / new_filename))
                 os.system("coffee -c %s" % (js_dir / filename))
-
 
 STATICFILES_IGNORE_PATTERNS = (
     "*.py",
@@ -1780,7 +1809,8 @@ YOUTUBE = {
         },
     },
 
-    'IMAGE_API': 'http://img.youtube.com/vi/{youtube_id}/0.jpg',  # /maxresdefault.jpg for 1920*1080
+    'IMAGE_API': 'http://img.youtube.com/vi/{youtube_id}/0.jpg',
+# /maxresdefault.jpg for 1920*1080
 }
 YOUTUBE_API_KEY = None
 
@@ -1864,7 +1894,7 @@ INSTALLED_APPS = (
     'course_wiki',  # Our customizations
     'mptt',
     'sekizai',
-    #'wiki.plugins.attachments',
+    # 'wiki.plugins.attachments',
     'wiki.plugins.links',
     'wiki.plugins.notifications',
     'course_wiki.plugins.markdownedx',
@@ -1930,7 +1960,7 @@ INSTALLED_APPS = (
     'course_action_state',
 
     # Additional problem types
-    'edx_jsme',    # Molecular Structure
+    'edx_jsme',  # Molecular Structure
 
     # Country list
     'django_countries',
@@ -1992,7 +2022,8 @@ MKTG_URL_LINK_MAP = {
     'COURSES': 'courses',
     'ROOT': 'root',
     'TOS': 'tos',
-    'HONOR': 'honor',  # If your site does not have an honor code, simply delete this line.
+    'HONOR': 'honor',
+# If your site does not have an honor code, simply delete this line.
     'PRIVACY': 'privacy',
     'PRESS': 'press',
     'BLOG': 'blog',
@@ -2671,8 +2702,9 @@ NOTIFICATION_EMAIL_EDX_LOGO = "templates/credit_notifications/edx-logo-header.pn
 
 #### PROCTORING CONFIGURATION DEFAULTS
 
-PROCTORING_BACKEND_PROVIDER = {
-    'class': 'edx_proctoring.backends.null.NullBackendProvider',
-    'options': {},
-}
+PROCTORING_BACKEND_PROVIDERS = {
+    'default': {
+        'class': 'edx_proctoring.backends.null.NullBackendProvider',
+        'options': {},
+    }}
 PROCTORING_SETTINGS = {}

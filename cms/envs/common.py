@@ -35,12 +35,15 @@ import sys
 import lms.envs.common
 # Although this module itself may not use these imported variables, other dependent modules may.
 from lms.envs.common import (
-    USE_TZ, TECH_SUPPORT_EMAIL, PLATFORM_NAME, BUGS_EMAIL, DOC_STORE_CONFIG, DATA_DIR, ALL_LANGUAGES, WIKI_ENABLED,
-    update_module_store_settings, ASSET_IGNORE_REGEX, COPYRIGHT_YEAR, PARENTAL_CONSENT_AGE_LIMIT, COMP_THEME_DIR,
+    USE_TZ, TECH_SUPPORT_EMAIL, PLATFORM_NAME, BUGS_EMAIL, DOC_STORE_CONFIG,
+    DATA_DIR, ALL_LANGUAGES, WIKI_ENABLED,
+    update_module_store_settings, ASSET_IGNORE_REGEX, COPYRIGHT_YEAR,
+    PARENTAL_CONSENT_AGE_LIMIT, COMP_THEME_DIR,
     # The following PROFILE_IMAGE_* settings are included as they are
     # indirectly accessed through the email opt-in API, which is
     # technically accessible through the CMS via legacy URLs.
-    PROFILE_IMAGE_BACKEND, PROFILE_IMAGE_DEFAULT_FILENAME, PROFILE_IMAGE_DEFAULT_FILE_EXTENSION,
+    PROFILE_IMAGE_BACKEND, PROFILE_IMAGE_DEFAULT_FILENAME,
+    PROFILE_IMAGE_DEFAULT_FILE_EXTENSION,
     PROFILE_IMAGE_SECRET_KEY, PROFILE_IMAGE_MIN_BYTES, PROFILE_IMAGE_MAX_BYTES,
     # The following setting is included as it is used to check whether to
     # display credit eligibility table on the CMS or not.
@@ -123,7 +126,6 @@ FEATURES = {
     # Turn off Video Upload Pipeline through Studio, by default
     'ENABLE_VIDEO_UPLOAD_PIPELINE': False,
 
-
     # Is this an edX-owned domain? (edx.org)
     # for consistency in user-experience, keep the value of this feature flag
     # in sync with the one in lms/envs/common.py
@@ -193,7 +195,8 @@ SOCIAL_SHARING_SETTINGS = {
 }
 
 ############################# SET PATH INFORMATION #############################
-PROJECT_ROOT = path(__file__).abspath().dirname().dirname()  # /edx-platform/cms
+PROJECT_ROOT = path(
+    __file__).abspath().dirname().dirname()  # /edx-platform/cms
 REPO_ROOT = PROJECT_ROOT.dirname()
 COMMON_ROOT = REPO_ROOT / "common"
 LMS_ROOT = REPO_ROOT / "lms"
@@ -212,6 +215,7 @@ GEOIPV6_PATH = REPO_ROOT / "common/static/data/geoip/GeoIPv6.dat"
 ############################# WEB CONFIGURATION #############################
 # This is where we stick our compiled template files.
 import tempfile
+
 MAKO_MODULE_DIR = os.path.join(tempfile.gettempdir(), 'mako_cms')
 MAKO_TEMPLATES = {}
 MAKO_TEMPLATES['main'] = [
@@ -219,7 +223,8 @@ MAKO_TEMPLATES['main'] = [
     COMMON_ROOT / 'templates',
     COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates',
     COMMON_ROOT / 'djangoapps' / 'pipeline_js' / 'templates',
-    COMMON_ROOT / 'static',  # required to statically include common Underscore templates
+    COMMON_ROOT / 'static',
+    # required to statically include common Underscore templates
 ]
 
 for namespace, template_dirs in lms.envs.common.MAKO_TEMPLATES.iteritems():
@@ -232,13 +237,13 @@ EDX_ROOT_URL = ''
 LOGIN_REDIRECT_URL = EDX_ROOT_URL + '/signin'
 LOGIN_URL = EDX_ROOT_URL + '/signin'
 
-
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.i18n',
-    'django.contrib.auth.context_processors.auth',  # this is required for admin
+    'django.contrib.auth.context_processors.auth',
+    # this is required for admin
     'django.core.context_processors.csrf',
     'dealer.contrib.django.staff.context_processor',  # access git revision
     'contentstore.context_processors.doc_url',
@@ -541,7 +546,8 @@ PIPELINE_CSS = {
 PIPELINE_JS = {
     'module-js': {
         'source_filenames': (
-            rooted_glob(COMMON_ROOT / 'static/', 'xmodule/descriptors/js/*.js') +
+            rooted_glob(COMMON_ROOT / 'static/',
+                        'xmodule/descriptors/js/*.js') +
             rooted_glob(COMMON_ROOT / 'static/', 'xmodule/modules/js/*.js') +
             rooted_glob(COMMON_ROOT / 'static/', 'coffee/src/discussion/*.js')
         ),
@@ -687,7 +693,8 @@ YOUTUBE = {
         },
     },
 
-    'IMAGE_API': 'http://img.youtube.com/vi/{youtube_id}/0.jpg',  # /maxresdefault.jpg for 1920*1080
+    'IMAGE_API': 'http://img.youtube.com/vi/{youtube_id}/0.jpg',
+# /maxresdefault.jpg for 1920*1080
 }
 
 ############################# VIDEO UPLOAD PIPELINE #############################
@@ -727,7 +734,8 @@ INSTALLED_APPS = (
     'contentstore',
     'course_creators',
     'student',  # misleading name due to sharing with lms
-    'openedx.core.djangoapps.course_groups',  # not used in cms (yet), but tests run
+    'openedx.core.djangoapps.course_groups',
+    # not used in cms (yet), but tests run
     'xblock_config',
 
     # Tracking
@@ -775,7 +783,7 @@ INSTALLED_APPS = (
     'course_action_state',
 
     # Additional problem types
-    'edx_jsme',    # Molecular Structure
+    'edx_jsme',  # Molecular Structure
 
     'openedx.core.djangoapps.content.course_overviews',
     'openedx.core.djangoapps.content.course_structures',
@@ -844,7 +852,8 @@ EVENT_TRACKING_BACKENDS = {
         'ENGINE': 'eventtracking.backends.routing.RoutingBackend',
         'OPTIONS': {
             'backends': {
-                'segment': {'ENGINE': 'eventtracking.backends.segment.SegmentBackend'}
+                'segment': {
+                'ENGINE': 'eventtracking.backends.segment.SegmentBackend'}
             },
             'processors': [
                 {
@@ -899,7 +908,6 @@ OPTIONAL_APPS = (
     # edX Proctoring
     'edx_proctoring',
 )
-
 
 for app_name in OPTIONAL_APPS:
     # First attempt to only find the module rather than actually importing it,
@@ -979,10 +987,13 @@ ADVANCED_COMPONENT_TYPES = [
     # further work to make them robust, maintainable, finalize data formats,
     # etc.
     'concept',  # Concept mapper. See https://github.com/pmitros/ConceptXBlock
-    'done',  # Lets students mark things as done. See https://github.com/pmitros/DoneXBlock
+    'done',
+    # Lets students mark things as done. See https://github.com/pmitros/DoneXBlock
     'audio',  # Embed an audio file. See https://github.com/pmitros/AudioXBlock
-    'recommender',  # Crowdsourced recommender. Prototype by dli&pmitros. Intended for roll-out in one place in one course.
-    'profile',  # Prototype user profile XBlock. Used to test XBlock parameter passing. See https://github.com/pmitros/ProfileXBlock
+    'recommender',
+    # Crowdsourced recommender. Prototype by dli&pmitros. Intended for roll-out in one place in one course.
+    'profile',
+    # Prototype user profile XBlock. Used to test XBlock parameter passing. See https://github.com/pmitros/ProfileXBlock
 
     'split_test',
     'combinedopenended',
@@ -1030,7 +1041,8 @@ ADVANCED_PROBLEM_TYPES = [
 # Files and Uploads type filter values
 
 FILES_AND_UPLOAD_TYPE_FILTERS = {
-    "Images": ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', 'image/tiff', 'image/tif', 'image/x-icon'],
+    "Images": ['image/png', 'image/jpeg', 'image/jpg', 'image/gif',
+               'image/tiff', 'image/tif', 'image/x-icon'],
     "Documents": [
         'application/pdf',
         'text/plain',
@@ -1086,8 +1098,10 @@ DEPRECATED_BLOCK_TYPES = ['peergrading', 'combinedopenended']
 
 #### PROCTORING CONFIGURATION DEFAULTS
 
-PROCTORING_BACKEND_PROVIDER = {
-    'class': 'edx_proctoring.backends.null.NullBackendProvider',
-    'options': {},
+PROCTORING_BACKEND_PROVIDERS = {
+    'default': {
+        'class': 'edx_proctoring.backends.null.NullBackendProvider',
+        'options': {},
+    }
 }
 PROCTORING_SETTINGS = {}

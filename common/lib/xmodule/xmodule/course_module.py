@@ -24,7 +24,7 @@ from xblock.core import XBlock
 from xblock.fields import Scope, List, String, Dict, Boolean, Integer, Float
 from .fields import Date
 from django.utils.timezone import UTC
-
+from django.conf import settings
 
 log = logging.getLogger(__name__)
 
@@ -34,6 +34,16 @@ _ = lambda text: text
 CATALOG_VISIBILITY_CATALOG_AND_ABOUT = "both"
 CATALOG_VISIBILITY_ABOUT = "about"
 CATALOG_VISIBILITY_NONE = "none"
+
+
+def get_proctoring_list():
+    result = []
+    proctoring_providers = settings.PROCTORING_BACKEND_PROVIDERS
+    for proctoring_key, proctoring_settings in proctoring_providers.items():
+        result.append(
+            {"display_name": proctoring_key,
+             "value": proctoring_key}
+        )
 
 
 class StringOrDate(Date):
@@ -122,7 +132,8 @@ class Textbook(object):
         try:
             r = requests.get(toc_url)
         except Exception as err:
-            msg = 'Error %s: Unable to retrieve textbook table of contents at %s' % (err, toc_url)
+            msg = 'Error %s: Unable to retrieve textbook table of contents at %s' % (
+                err, toc_url)
             log.error(msg)
             raise Exception(msg)
 
@@ -130,7 +141,8 @@ class Textbook(object):
         try:
             table_of_contents = etree.fromstring(r.text)
         except Exception as err:
-            msg = 'Error %s: Unable to parse XML for textbook table of contents at %s' % (err, toc_url)
+            msg = 'Error %s: Unable to parse XML for textbook table of contents at %s' % (
+                err, toc_url)
             log.error(msg)
             raise Exception(msg)
 
@@ -153,7 +165,8 @@ class TextbookList(List):
             except:
                 # If we can't get to S3 (e.g. on a train with no internet), don't break
                 # the rest of the courseware.
-                log.exception("Couldn't load textbook ({0}, {1})".format(title, book_url))
+                log.exception("Couldn't load textbook ({0}, {1})".format(title,
+                                                                         book_url))
                 continue
 
         return textbooks
@@ -173,18 +186,25 @@ class TextbookList(List):
 class CourseFields(object):
     lti_passports = List(
         display_name=_("LTI Passports"),
-        help=_('Enter the passports for course LTI tools in the following format: "id:client_key:client_secret".'),
+        help=_(
+            'Enter the passports for course LTI tools in the following format: "id:client_key:client_secret".'),
         scope=Scope.settings
     )
     textbooks = TextbookList(
-        help=_("List of pairs of (title, url) for textbooks used in this course"),
+        help=_(
+            "List of pairs of (title, url) for textbooks used in this course"),
         default=[],
         scope=Scope.content
     )
 
-    wiki_slug = String(help=_("Slug that points to the wiki for this course"), scope=Scope.content)
-    enrollment_start = Date(help=_("Date that enrollment for this class is opened"), scope=Scope.settings)
-    enrollment_end = Date(help=_("Date that enrollment for this class is closed"), scope=Scope.settings)
+    wiki_slug = String(help=_("Slug that points to the wiki for this course"),
+                       scope=Scope.content)
+    enrollment_start = Date(
+        help=_("Date that enrollment for this class is opened"),
+        scope=Scope.settings)
+    enrollment_end = Date(
+        help=_("Date that enrollment for this class is closed"),
+        scope=Scope.settings)
     start = Date(
         help=_("Start time when this module is visible"),
         default=DEFAULT_START_DATE,
@@ -210,7 +230,8 @@ class CourseFields(object):
     )
     pre_requisite_courses = List(
         display_name=_("Pre-Requisite Courses"),
-        help=_("Pre-Requisite Course key if this course has a pre-requisite course"),
+        help=_(
+            "Pre-Requisite Course key if this course has a pre-requisite course"),
         scope=Scope.settings
     )
     grading_policy = Dict(
@@ -253,33 +274,40 @@ class CourseFields(object):
     )
     show_calculator = Boolean(
         display_name=_("Show Calculator"),
-        help=_("Enter true or false. When true, students can see the calculator in the course."),
+        help=_(
+            "Enter true or false. When true, students can see the calculator in the course."),
         default=False,
         scope=Scope.settings
     )
     display_name = String(
-        help=_("Enter the name of the course as it should appear in the edX.org course list."),
+        help=_(
+            "Enter the name of the course as it should appear in the edX.org course list."),
         default="Empty",
         display_name=_("Course Display Name"),
         scope=Scope.settings
     )
     course_edit_method = String(
         display_name=_("Course Editor"),
-        help=_('Enter the method by which this course is edited ("XML" or "Studio").'),
+        help=_(
+            'Enter the method by which this course is edited ("XML" or "Studio").'),
         default="Studio",
         scope=Scope.settings,
-        deprecated=True  # Deprecated because someone would not edit this value within Studio.
+        deprecated=True
+        # Deprecated because someone would not edit this value within Studio.
     )
     show_chat = Boolean(
         display_name=_("Show Chat Widget"),
-        help=_("Enter true or false. When true, students can see the chat widget in the course."),
+        help=_(
+            "Enter true or false. When true, students can see the chat widget in the course."),
         default=False,
         scope=Scope.settings
     )
-    tabs = CourseTabList(help="List of tabs to enable in this course", scope=Scope.settings, default=[])
+    tabs = CourseTabList(help="List of tabs to enable in this course",
+                         scope=Scope.settings, default=[])
     end_of_course_survey_url = String(
         display_name=_("Course Survey URL"),
-        help=_("Enter the URL for the end-of-course survey. If your course does not have a survey, enter null."),
+        help=_(
+            "Enter the URL for the end-of-course survey. If your course does not have a survey, enter null."),
         scope=Scope.settings
     )
     discussion_blackouts = List(
@@ -336,13 +364,15 @@ class CourseFields(object):
     )
     mobile_available = Boolean(
         display_name=_("Mobile Course Available"),
-        help=_("Enter true or false. If true, the course will be available to mobile devices."),
+        help=_(
+            "Enter true or false. If true, the course will be available to mobile devices."),
         default=False,
         scope=Scope.settings
     )
     video_upload_pipeline = Dict(
         display_name=_("Video Upload Credentials"),
-        help=_("Enter the unique identifier for your course's video files provided by edX."),
+        help=_(
+            "Enter the unique identifier for your course's video files provided by edX."),
         scope=Scope.settings
     )
     facebook_url = String(
@@ -362,13 +392,15 @@ class CourseFields(object):
     )
     disable_progress_graph = Boolean(
         display_name=_("Disable Progress Graph"),
-        help=_("Enter true or false. If true, students cannot view the progress graph."),
+        help=_(
+            "Enter true or false. If true, students cannot view the progress graph."),
         default=False,
         scope=Scope.settings
     )
     pdf_textbooks = List(
         display_name=_("PDF Textbooks"),
-        help=_("List of dictionaries containing pdf_textbook configuration"), scope=Scope.settings
+        help=_("List of dictionaries containing pdf_textbook configuration"),
+        scope=Scope.settings
     )
     html_textbooks = List(
         display_name=_("HTML Textbooks"),
@@ -403,7 +435,8 @@ class CourseFields(object):
     )
     allow_anonymous = Boolean(
         display_name=_("Allow Anonymous Discussion Posts"),
-        help=_("Enter true or false. If true, students can create discussion posts that are anonymous to all users."),
+        help=_(
+            "Enter true or false. If true, students can create discussion posts that are anonymous to all users."),
         scope=Scope.settings, default=True
     )
     allow_anonymous_to_peers = Boolean(
@@ -416,7 +449,8 @@ class CourseFields(object):
     )
     advanced_modules = List(
         display_name=_("Advanced Module List"),
-        help=_("Enter the names of the advanced components to use in your course."),
+        help=_(
+            "Enter the names of the advanced components to use in your course."),
         scope=Scope.settings
     )
     has_children = True
@@ -437,7 +471,8 @@ class CourseFields(object):
                         "action_external": False,
                     },
                     {
-                        "short_description": _("Set Important Dates for Your Course"),
+                        "short_description": _(
+                            "Set Important Dates for Your Course"),
                         "long_description": _(
                             "Establish your course's student enrollment and launch dates on the Schedule and Details "
                             "page."
@@ -448,7 +483,8 @@ class CourseFields(object):
                         "action_external": False,
                     },
                     {
-                        "short_description": _("Draft Your Course's Grading Policy"),
+                        "short_description": _(
+                            "Draft Your Course's Grading Policy"),
                         "long_description": _(
                             "Set up your assignment types and grading policy even if you haven't created all your "
                             "assignments."
@@ -459,7 +495,8 @@ class CourseFields(object):
                         "action_external": False,
                     },
                     {
-                        "short_description": _("Explore the Other Studio Checklists"),
+                        "short_description": _(
+                            "Explore the Other Studio Checklists"),
                         "long_description": _(
                             "Discover other available course authoring tools, and find help when you need it."
                         ),
@@ -474,8 +511,10 @@ class CourseFields(object):
                 "short_description": _("Draft a Rough Course Outline"),
                 "items": [
                     {
-                        "short_description": _("Create Your First Section and Subsection"),
-                        "long_description": _("Use your course outline to build your first Section and Subsection."),
+                        "short_description": _(
+                            "Create Your First Section and Subsection"),
+                        "long_description": _(
+                            "Use your course outline to build your first Section and Subsection."),
                         "is_checked": False,
                         "action_url": "CourseOutline",
                         "action_text": _("Edit Course Outline"),
@@ -493,7 +532,8 @@ class CourseFields(object):
                         "action_external": False,
                     },
                     {
-                        "short_description": _("Designate a Subsection as Graded"),
+                        "short_description": _(
+                            "Designate a Subsection as Graded"),
                         "long_description": _(
                             "Set a Subsection to be graded as a specific assignment type. Assignments within graded "
                             "Subsections count toward a student's final grade."
@@ -505,7 +545,8 @@ class CourseFields(object):
                     },
                     {
                         "short_description": _("Reordering Course Content"),
-                        "long_description": _("Use drag and drop to reorder the content in your course."),
+                        "long_description": _(
+                            "Use drag and drop to reorder the content in your course."),
                         "is_checked": False,
                         "action_url": "CourseOutline",
                         "action_text": _("Edit Course Outline"),
@@ -513,7 +554,8 @@ class CourseFields(object):
                     },
                     {
                         "short_description": _("Renaming Sections"),
-                        "long_description": _("Rename Sections by clicking the Section name from the Course Outline."),
+                        "long_description": _(
+                            "Rename Sections by clicking the Section name from the Course Outline."),
                         "is_checked": False,
                         "action_url": "CourseOutline",
                         "action_text": _("Edit Course Outline"),
@@ -531,7 +573,8 @@ class CourseFields(object):
                         "action_external": False,
                     },
                     {
-                        "short_description": _("Add an Instructor-Only Section to Your Outline"),
+                        "short_description": _(
+                            "Add an Instructor-Only Section to Your Outline"),
                         "long_description": _(
                             "Some course authors find using a section for unsorted, in-progress work useful. To do "
                             "this, create a section and set the release date to the distant future."
@@ -547,7 +590,8 @@ class CourseFields(object):
                 "short_description": _("Explore edX's Support Tools"),
                 "items": [
                     {
-                        "short_description": _("Explore the Studio Help Forum"),
+                        "short_description": _(
+                            "Explore the Studio Help Forum"),
                         "long_description": _(
                             "Access the Studio Help forum from the menu that appears when you click your user name "
                             "in the top right corner of Studio."
@@ -559,15 +603,18 @@ class CourseFields(object):
                     },
                     {
                         "short_description": _("Enroll in edX 101"),
-                        "long_description": _("Register for edX 101, edX's primer for course creation."),
+                        "long_description": _(
+                            "Register for edX 101, edX's primer for course creation."),
                         "is_checked": False,
                         "action_url": "https://edge.edx.org/courses/edX/edX101/How_to_Create_an_edX_Course/about",
                         "action_text": _("Register for edX 101"),
                         "action_external": True,
                     },
                     {
-                        "short_description": _("Download the Studio Documentation"),
-                        "long_description": _("Download the searchable Studio reference documentation in PDF form."),
+                        "short_description": _(
+                            "Download the Studio Documentation"),
+                        "long_description": _(
+                            "Download the searchable Studio reference documentation in PDF form."),
                         "is_checked": False,
                         "action_url": "http://files.edx.org/Getting_Started_with_Studio.pdf",
                         "action_text": _("Download Documentation"),
@@ -602,7 +649,8 @@ class CourseFields(object):
                     },
                     {
                         "short_description": _("Add Course FAQs"),
-                        "long_description": _("Include a short list of frequently asked questions about your course."),
+                        "long_description": _(
+                            "Include a short list of frequently asked questions about your course."),
                         "is_checked": False,
                         "action_url": "SettingsDetails",
                         "action_text": _("Edit Course Schedule &amp; Details"),
@@ -647,7 +695,8 @@ class CourseFields(object):
     )
     enrollment_domain = String(
         display_name=_("External Login Domain"),
-        help=_("Enter the external login method students can use for the course."),
+        help=_(
+            "Enter the external login method students can use for the course."),
         scope=Scope.settings
     )
     certificates_show_before_end = Boolean(
@@ -715,7 +764,8 @@ class CourseFields(object):
     )
     cert_html_view_enabled = Boolean(
         display_name=_("Certificate Web/HTML View Enabled"),
-        help=_("If true, certificate Web/HTML views are enabled for the course."),
+        help=_(
+            "If true, certificate Web/HTML views are enabled for the course."),
         scope=Scope.settings,
         default=False,
     )
@@ -723,7 +773,8 @@ class CourseFields(object):
         # Translators: This field is the container for course-specific certifcate configuration values
         display_name=_("Certificate Web/HTML View Overrides"),
         # Translators: These overrides allow for an alternative configuration of the certificate web view
-        help=_("Enter course-specific overrides for the Web/HTML template parameters here (JSON format)"),
+        help=_(
+            "Enter course-specific overrides for the Web/HTML template parameters here (JSON format)"),
         scope=Scope.settings,
     )
 
@@ -732,7 +783,8 @@ class CourseFields(object):
         # Translators: This field is the container for course-specific certifcate configuration values
         display_name=_("Certificate Configuration"),
         # Translators: These overrides allow for an alternative configuration of the certificate web view
-        help=_("Enter course-specific configuration information here (JSON format)"),
+        help=_(
+            "Enter course-specific configuration information here (JSON format)"),
         scope=Scope.settings,
     )
 
@@ -747,7 +799,8 @@ class CourseFields(object):
     # note that the courseware template needs to change when this is removed.
     css_class = String(
         display_name=_("CSS Class for Course Reruns"),
-        help=_("Allows courses to share the same css class across runs even if they have different numbers."),
+        help=_(
+            "Allows courses to share the same css class across runs even if they have different numbers."),
         scope=Scope.settings, default="",
         deprecated=True
     )
@@ -759,7 +812,8 @@ class CourseFields(object):
     # more sensible framework later.
     discussion_link = String(
         display_name=_("Discussion Forum External Link"),
-        help=_("Allows specification of an external link to replace discussion forums."),
+        help=_(
+            "Allows specification of an external link to replace discussion forums."),
         scope=Scope.settings,
         deprecated=True
     )
@@ -815,14 +869,16 @@ class CourseFields(object):
 
     invitation_only = Boolean(
         display_name=_("Invitation Only"),
-        help=_("Whether to restrict enrollment to invitation by the course staff."),
+        help=_(
+            "Whether to restrict enrollment to invitation by the course staff."),
         default=False,
         scope=Scope.settings
     )
 
     course_survey_name = String(
         display_name=_("Pre-Course Survey Name"),
-        help=_("Name of SurveyForm to display as a pre-course survey to the user."),
+        help=_(
+            "Name of SurveyForm to display as a pre-course survey to the user."),
         default=None,
         scope=Scope.settings,
         deprecated=True
@@ -849,7 +905,8 @@ class CourseFields(object):
         default=CATALOG_VISIBILITY_CATALOG_AND_ABOUT,
         scope=Scope.settings,
         values=[
-            {"display_name": _("Both"), "value": CATALOG_VISIBILITY_CATALOG_AND_ABOUT},
+            {"display_name": _("Both"),
+             "value": CATALOG_VISIBILITY_CATALOG_AND_ABOUT},
             {"display_name": _("About"), "value": CATALOG_VISIBILITY_ABOUT},
             {"display_name": _("None"), "value": CATALOG_VISIBILITY_NONE}]
     )
@@ -905,7 +962,8 @@ class CourseFields(object):
             "topics is a list of topics."
         ),
         scope=Scope.settings,
-        deprecated=True,  # Deprecated until the teams feature is made generally available
+        deprecated=True,
+        # Deprecated until the teams feature is made generally available
     )
 
     enable_proctored_exams = Boolean(
@@ -915,6 +973,16 @@ class CourseFields(object):
         ),
         default=False,
         scope=Scope.settings
+    )
+
+    proctoring_service = String(
+        display_name=_("Proctoring service"),
+        help=_(
+            "Defines the proctoring Service for this Course"
+        ),
+        # default=,
+        scope=Scope.settings,
+        values=get_proctoring_list()
     )
 
     minimum_grade_credit = Float(
@@ -928,7 +996,8 @@ class CourseFields(object):
     )
 
 
-class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
+class CourseModule(CourseFields,
+                   SequenceModule):  # pylint: disable=abstract-method
     """
     The CourseDescriptor needs its module_class to be a SequenceModule, but some code that
     expects a CourseDescriptor to have all its fields can fail if it gets a SequenceModule instead.
@@ -968,19 +1037,24 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         if self.system.resources_fs is None:
             self.syllabus_present = False
         else:
-            self.syllabus_present = self.system.resources_fs.exists(path('syllabus'))
+            self.syllabus_present = self.system.resources_fs.exists(
+                path('syllabus'))
 
         self._grading_policy = {}
         self.set_grading_policy(self.grading_policy)
 
         if self.discussion_topics == {}:
-            self.discussion_topics = {_('General'): {'id': self.location.html_id()}}
+            self.discussion_topics = {
+                _('General'): {'id': self.location.html_id()}}
 
         try:
             if not getattr(self, "tabs", []):
                 CourseTabList.initialize_default(self)
         except InvalidTabsException as err:
-            raise type(err)('{msg} For course: {course_id}'.format(msg=err.message, course_id=unicode(self.id)))
+            raise type(err)(
+                '{msg} For course: {course_id}'.format(msg=err.message,
+                                                       course_id=unicode(
+                                                           self.id)))
 
     def set_grading_policy(self, course_policy):
         """
@@ -995,9 +1069,11 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         # BOY DO I HATE THIS grading_policy CODE ACROBATICS YET HERE I ADD MORE (dhm)--this fixes things persisted w/
         # defective grading policy values (but not None)
         if 'GRADER' not in grading_policy:
-            grading_policy['GRADER'] = CourseFields.grading_policy.default['GRADER']
+            grading_policy['GRADER'] = CourseFields.grading_policy.default[
+                'GRADER']
         if 'GRADE_CUTOFFS' not in grading_policy:
-            grading_policy['GRADE_CUTOFFS'] = CourseFields.grading_policy.default['GRADE_CUTOFFS']
+            grading_policy['GRADE_CUTOFFS'] = \
+                CourseFields.grading_policy.default['GRADE_CUTOFFS']
 
         # Override any global settings with the course settings
         grading_policy.update(course_policy)
@@ -1018,19 +1094,22 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
                 continue
             log.debug("Loading grading policy from {0}".format(policy_path))
             try:
-                with system.resources_fs.open(policy_path) as grading_policy_file:
+                with system.resources_fs.open(
+                        policy_path) as grading_policy_file:
                     policy_str = grading_policy_file.read()
                     # if we successfully read the file, stop looking at backups
                     break
             except IOError:
-                msg = "Unable to load course settings file from '{0}'".format(policy_path)
+                msg = "Unable to load course settings file from '{0}'".format(
+                    policy_path)
                 log.warning(msg)
 
         return policy_str
 
     @classmethod
     def from_xml(cls, xml_data, system, id_generator):
-        instance = super(CourseDescriptor, cls).from_xml(xml_data, system, id_generator)
+        instance = super(CourseDescriptor, cls).from_xml(xml_data, system,
+                                                         id_generator)
 
         # bleh, have to parse the XML here to just pull out the url_name attribute
         # I don't think it's stored anywhere in the instance.
@@ -1072,17 +1151,21 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
             wiki_slug = wiki_tag.attrib.get("slug", default=None)
             xml_object.remove(wiki_tag)
 
-        definition, children = super(CourseDescriptor, cls).definition_from_xml(xml_object, system)
+        definition, children = super(CourseDescriptor,
+                                     cls).definition_from_xml(xml_object,
+                                                              system)
         definition['textbooks'] = textbooks
         definition['wiki_slug'] = wiki_slug
 
         # load license if it exists
-        definition = LicenseMixin.parse_license_from_xml(definition, xml_object)
+        definition = LicenseMixin.parse_license_from_xml(definition,
+                                                         xml_object)
 
         return definition, children
 
     def definition_to_xml(self, resource_fs):
-        xml_object = super(CourseDescriptor, self).definition_to_xml(resource_fs)
+        xml_object = super(CourseDescriptor, self).definition_to_xml(
+            resource_fs)
 
         if len(self.textbooks) > 0:
             textbook_xml_object = etree.Element('textbook')
@@ -1343,7 +1426,8 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         graded_sections = {}
 
         def yield_descriptor_descendents(module_descriptor):
-            for child in module_descriptor.get_children(usage_key_filter=possibly_scored):
+            for child in module_descriptor.get_children(
+                    usage_key_filter=possibly_scored):
                 yield child
                 for module_descriptor in yield_descriptor_descendents(child):
                     yield module_descriptor
@@ -1351,17 +1435,21 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         for chapter in self.get_children():
             for section in chapter.get_children():
                 if section.graded:
-                    xmoduledescriptors = list(yield_descriptor_descendents(section))
+                    xmoduledescriptors = list(
+                        yield_descriptor_descendents(section))
                     xmoduledescriptors.append(section)
 
                     # The xmoduledescriptors included here are only the ones that have scores.
                     section_description = {
                         'section_descriptor': section,
-                        'xmoduledescriptors': [child for child in xmoduledescriptors if child.has_score]
+                        'xmoduledescriptors': [child for child in
+                                               xmoduledescriptors if
+                                               child.has_score]
                     }
 
                     section_format = section.format if section.format is not None else ''
-                    graded_sections[section_format] = graded_sections.get(section_format, []) + [section_description]
+                    graded_sections[section_format] = graded_sections.get(
+                        section_format, []) + [section_description]
 
                     all_descriptors.extend(xmoduledescriptors)
                     all_descriptors.append(section)
@@ -1374,7 +1462,8 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         """Return all block types that could impact grading (i.e. scored, or having children)."""
         return frozenset(
             cat for (cat, xblock_class) in XBlock.load_classes() if (
-                getattr(xblock_class, 'has_score', False) or getattr(xblock_class, 'has_children', False)
+                getattr(xblock_class, 'has_score', False) or getattr(
+                    xblock_class, 'has_children', False)
             )
         )
 
@@ -1430,10 +1519,11 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         date_proxy = Date()
         try:
             ret = [
-                {"start": date_proxy.from_json(start), "end": date_proxy.from_json(end)}
+                {"start": date_proxy.from_json(start),
+                 "end": date_proxy.from_json(end)}
                 for start, end
                 in filter(None, self.discussion_blackouts)
-            ]
+                ]
             for blackout in ret:
                 if not blackout["start"] or not blackout["end"]:
                     raise ValueError
@@ -1510,7 +1600,8 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         Returns a unique deterministic base32-encoded ID for the course.
         The optional padding_char parameter allows you to override the "=" character used for padding.
         """
-        return course_metadata_utils.clean_course_key(self.location.course_key, padding_char)
+        return course_metadata_utils.clean_course_key(self.location.course_key,
+                                                      padding_char)
 
     @property
     def teams_enabled(self):
@@ -1552,7 +1643,7 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
         return [
             p for p in self.user_partitions
             if p.scheme == scheme
-        ]
+            ]
 
     def set_user_partitions_for_scheme(self, partitions, scheme):
         """
@@ -1568,7 +1659,8 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
 
         """
         other_partitions = [
-            p for p in self.user_partitions  # pylint: disable=access-member-before-definition
+            p for p in self.user_partitions
+            # pylint: disable=access-member-before-definition
             if p.scheme != scheme
-        ]
+            ]
         self.user_partitions = other_partitions + partitions  # pylint: disable=attribute-defined-outside-init
