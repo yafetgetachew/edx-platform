@@ -147,17 +147,17 @@ from django.core.urlresolvers import reverse
     <section id="dashboard-search-results" class="search-results dashboard-search-results"></section>
   % endif
 
-  <section class="profile-sidebar" id="profile-sidebar" role="region" aria-label="User info">
-    <header class="profile">
-      <h2 class="username-header"><span class="sr">${_("Username")}: </span></h2>
-    </header>
-    <section class="user-info">
-      <ul>
-        <li class="heads-up">
-          <span class="title">${_("Want to change your account settings?")}</span>
-          <span class="copy">${_("Click the arrow next to your username above.")}</span>
-        </li>
-
+##  <section class="profile-sidebar" id="profile-sidebar" role="region" aria-label="User info">
+##    <header class="profile">
+##      <h2 class="username-header"><span class="sr">${_("Username")}: </span></h2>
+##    </header>
+##    <section class="user-info">
+##      <ul>
+##        <li class="heads-up">
+##          <span class="title">${_("Want to change your account settings?")}</span>
+##          <span class="copy">${_("Click the arrow next to your username above.")}</span>
+##        </li>
+##
 ##        % if len(order_history_list):
 ##        <li class="order-history">
 ##          <span class="title">${_("Order History")}</span>
@@ -166,12 +166,12 @@ from django.core.urlresolvers import reverse
 ##          % endfor
 ##        </li>
 ##        % endif
-
-        <%include file='dashboard/_dashboard_status_verification.html' />
-
-      </ul>
-    </section>
-  </section>
+##
+##        <%include file='dashboard/_dashboard_status_verification.html' />
+##
+##      </ul>
+##    </section>
+##  </section>
 </section>
 
 <section id="email-settings-modal" class="modal" aria-hidden="true">
