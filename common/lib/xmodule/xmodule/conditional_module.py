@@ -241,6 +241,7 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
         Create an instance of the conditional module.
         """
         super(ConditionalDescriptor, self).__init__(*args, **kwargs)
+
         # Convert sources xml_attribute to a ReferenceList field type so Location/Locator
         # substitution can be done.
         if not self.sources_list:
@@ -249,13 +250,6 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
                     self.location.course_key.make_usage_key_from_deprecated_string(item)
                     for item in ConditionalDescriptor.parse_sources(self.xml_attributes)
                 ]
-        if not (self.condional_attr and self.conditional_value):
-            for condional_attr, attr_name in ConditionalModule.conditions_map.iteritems():
-                if condional_attr in self.xml_attributes and isinstance(self.xml_attributes[condional_attr], basestring):
-                    self.condional_attr = condional_attr
-                    self.conditional_value = self.xml_attributes[condional_attr]
-        if not self.message:
-            self.message = self.xml_attributes['message']
 
     @staticmethod
     def parse_sources(xml_element):
@@ -284,6 +278,14 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
     def definition_from_xml(cls, xml_object, system):
         children = []
         show_tag_list = []
+        definition = {}
+        for condional_attr in ConditionalModule.conditions_map.iterkeys():
+            conditional_value = xml_object.get(condional_attr)
+            if conditional_value is not None:
+                definition.update({
+                    'condional_attr': condional_attr,
+                    'conditional_value': str(conditional_value),
+                })
         for child in xml_object:
             if child.tag == 'show':
                 locations = ConditionalDescriptor.parse_sources(child)
@@ -298,7 +300,10 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
                     msg = "Unable to load child when parsing Conditional."
                     log.exception(msg)
                     system.error_tracker(msg)
-        return {'show_tag_list': show_tag_list}, children
+        definition.update({
+            'show_tag_list': show_tag_list,
+        })
+        return definition, children
 
     def definition_to_xml(self, resource_fs):
         xml_object = etree.Element(self._tag_name)
