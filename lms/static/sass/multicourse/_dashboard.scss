@@ -16,6 +16,7 @@
   padding: ($baseline*2) 0 0 0;
 
   .profile-sidebar {
+    display: none;
     background: transparent;
     @include float(right);
     margin-top: ($baseline*2);
