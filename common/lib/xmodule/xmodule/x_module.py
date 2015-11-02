@@ -705,7 +705,7 @@ class XModuleMixin(XModuleFields, XBlock):
         return metadata_field_editor_info
 
     def add_field_location(self, metadata_fields):
-        if self.runtime.modulestore.get_course(self.runtime.course_id).show_location:
+        if self.system.modulestore.get_course(self.location.course_key).show_location:
             metadata_fields['location'] = {
                 'default_value': '',
                 'explicitly_set': False,
