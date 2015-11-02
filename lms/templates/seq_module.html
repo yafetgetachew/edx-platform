@@ -24,8 +24,8 @@
            id="tab_${idx}"
            tabindex="0"
            role="tab" style="text-align: center" >
-        % if len(item['title']) > 15:
-           ${item['title'][:12]}...
+        % if len(item['title']) > 16:
+           ${item['title'][:14]}...
         % else:
            ${item['title']}
         % endif

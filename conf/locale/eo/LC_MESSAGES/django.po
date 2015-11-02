@@ -22,11 +22,12 @@
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # EdX Team <info@edx.org>, 2015.
 # 
-# #-#-#-#-#  messages.po (EdX Studio)  #-#-#-#-#
+# #-#-#-#-#  messages.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2013 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
+# Translators:
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2015 edX
@@ -37,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-26 14:03+0000\n"
-"PO-Revision-Date: 2015-01-26 14:03:13.864767\n"
+"POT-Creation-Date: 2015-10-28 16:34+0000\n"
+"PO-Revision-Date: 2015-10-28 16:34:08.006060\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -60,18 +61,6 @@ msgstr "Öpén Éndéd Pänél Ⱡ'σ#"
 #: lms/templates/edxnotes/edxnotes.html
 msgid "Notes"
 msgstr "Nötés Ⱡ'σяєм ι#"
-
-#. #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
-#. Translators: "Discussion" is the title of the course forum page
-#. Translators: 'Discussion' refers to the tab in the courseware that leads to
-#. the discussion forums
-#. #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
-#. Translators: This is a forum post type
-#: cms/djangoapps/contentstore/views/component.py
-#: common/lib/xmodule/xmodule/tabs.py common/lib/xmodule/xmodule/tabs.py
-#: lms/templates/discussion/_underscore_templates.html
-msgid "Discussion"
-msgstr "Dïsçüssïön Ⱡ#"
 
 #: cms/djangoapps/contentstore/views/component.py
 #: lms/djangoapps/class_dashboard/dashboard_data.py
@@ -3053,6 +3042,14 @@ msgid "Edit Library List."
 msgstr "Édït Lïßrärý Lïst. Ⱡ'σ#"
 
 #: common/lib/xmodule/xmodule/library_content_module.py
+msgid ""
+"This course does not support content libraries. Contact your system "
+"administrator for more information."
+msgstr ""
+"Thïs çöürsé döés nöt süppört çöntént lïßrärïés. Çöntäçt ýöür sýstém "
+"ädmïnïsträtör för möré ïnförmätïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
+
+#: common/lib/xmodule/xmodule/library_content_module.py
 msgid "A library has not yet been selected."
 msgstr "À lïßrärý häs nöt ýét ßéén séléçtéd. Ⱡ'σяєм ιρ#"
 
@@ -3501,6 +3498,18 @@ msgstr "Prögréss #"
 #: lms/templates/wiki/base.html
 msgid "Wiki"
 msgstr "Wïkï Ⱡ'σяєм#"
+
+#. #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
+#. Translators: "Discussion" is the title of the course forum page
+#. name=tab_dict['name'] if tab_dict else _('FAQ'),
+#. Translators: 'Discussion' refers to the tab in the courseware that leads to
+#. the discussion forums
+#: common/lib/xmodule/xmodule/tabs.py common/lib/xmodule/xmodule/tabs.py
+#: lms/templates/footer-edx-new.html lms/templates/footer.html
+#: lms/templates/static_templates/faq.html
+#: lms/templates/static_templates/faq.html
+msgid "FAQ"
+msgstr "FÀQ Ⱡ'σя#"
 
 #: common/lib/xmodule/xmodule/tabs.py cms/templates/textbooks.html
 #: cms/templates/textbooks.html cms/templates/widgets/header.html
@@ -7774,8 +7783,8 @@ msgstr "Ýöü müst ägréé tö thé {platform_name} {terms_of_service}. Ⱡ'�
 #. #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 #. Translators: This is a legal document users must agree to
 #. in order to register a new account.
-#: openedx/core/djangoapps/user_api/views.py cms/templates/widgets/footer.html
-#: lms/templates/footer.html lms/templates/static_templates/tos.html
+#: openedx/core/djangoapps/user_api/views.py
+#: lms/templates/static_templates/tos.html
 #: lms/templates/static_templates/tos.html
 msgid "Terms of Service"
 msgstr "Térms öf Sérvïçé Ⱡ'σ#"
@@ -7881,6 +7890,13 @@ msgstr ""
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
 msgstr "Ûplöäd çömplétéd Ⱡ'σ#"
+
+#. #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
+#. Translators: This is a forum post type
+#: cms/djangoapps/contentstore/views/component.py
+#: lms/templates/discussion/_underscore_templates.html
+msgid "Discussion"
+msgstr "Dïsçüssïön Ⱡ#"
 
 #: cms/djangoapps/contentstore/views/component.py
 msgid "HTML"
@@ -8208,11 +8224,6 @@ msgstr "çlösé Ⱡ'σяєм ι#"
 msgid "Cancel"
 msgstr "Çänçél Ⱡ'σяєм ιρѕ#"
 
-#: cms/templates/course-create-rerun.html cms/templates/index.html
-#: cms/templates/settings.html lms/templates/courseware/course_about.html
-msgid "Course Number"
-msgstr "Çöürsé Nümßér Ⱡ'#"
-
 #: cms/templates/course_outline.html cms/templates/index.html
 #: lms/templates/dashboard/_dashboard_prompt_midcourse_reverify.html
 msgid "Dismiss"
@@ -8345,7 +8356,7 @@ msgstr ""
 " #"
 
 #: cms/templates/widgets/footer.html lms/templates/footer-edx-new.html
-#: lms/templates/footer.html lms/templates/static_templates/privacy.html
+#: lms/templates/static_templates/privacy.html
 #: lms/templates/static_templates/privacy.html
 msgid "Privacy Policy"
 msgstr "Prïväçý Pölïçý Ⱡ'#"
@@ -8752,18 +8763,22 @@ msgstr ""
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя "
 "ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυ#"
 
-#. Translators: '&copy;' is an HTML character code for the copyright symbol.
-#. Please don't remove or change it.
+#. Translators: 'EdX', 'edX', and 'Open edX' are trademarks of 'edX Inc.'.
+#. Please do not translate any of these trademarks and company names.
 #: lms/templates/footer-edx-new.html lms/templates/footer.html
-msgid "&copy; {copyright_year} {platform_name}, some rights reserved"
+msgid ""
+"EdX, Open edX, and the edX and Open edX logos are registered trademarks or "
+"trademarks of {link_start}edX Inc.{link_end}"
 msgstr ""
-"&copy; {copyright_year} {platform_name}, sömé rïghts résérvéd Ⱡ'σяєм ι#"
+"ÉdX, Öpén édX, änd thé édX änd Öpén édX lögös äré régïstéréd trädémärks ör "
+"trädémärks öf {link_start}édX Ìnç.{link_end} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σ#"
 
 #: lms/templates/footer-edx-new.html
 msgid "(Revised 4/16/2014)"
 msgstr "(Révïséd 4/16/2014) Ⱡ'σя#"
 
-#: lms/templates/footer-edx-new.html lms/templates/footer.html
+#: lms/templates/footer-edx-new.html
 msgid "News"
 msgstr "Néws Ⱡ'σяєм#"
 
@@ -8772,12 +8787,6 @@ msgstr "Néws Ⱡ'σяєм#"
 #: lms/templates/static_templates/contact.html
 msgid "Contact"
 msgstr "Çöntäçt #"
-
-#: lms/templates/footer-edx-new.html lms/templates/footer.html
-#: lms/templates/static_templates/faq.html
-#: lms/templates/static_templates/faq.html
-msgid "FAQ"
-msgstr "FÀQ Ⱡ'σя#"
 
 #: lms/templates/footer-edx-new.html
 msgid "edX Blog"
@@ -8836,19 +8845,6 @@ msgstr "Àpplé äpp ön Àpplé Störé Ⱡ'σяє#"
 #: lms/templates/footer-edx-new.html
 msgid "Android app on Google Play"
 msgstr "Àndröïd äpp ön Gööglé Pläý Ⱡ'σяєм#"
-
-#: lms/templates/footer.html lms/templates/static_templates/jobs.html
-#: lms/templates/static_templates/jobs.html
-msgid "Jobs"
-msgstr "Jößs Ⱡ'σяєм#"
-
-#: lms/templates/footer.html
-msgid ""
-"{tos_link_start}Terms of Service{tos_link_end} and {honor_link_start}Honor "
-"Code{honor_link_end}"
-msgstr ""
-"{tos_link_start}Térms öf Sérvïçé{tos_link_end} änd {honor_link_start}Hönör "
-"Çödé{honor_link_end} Ⱡ'σяєм ιρѕυм#"
 
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
@@ -9059,16 +9055,8 @@ msgstr "För änýöné, änýwhéré, änýtïmé Ⱡ'σяєм #"
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
 #: lms/templates/index.html
-msgid "Welcome to Open edX!"
-msgstr "Wélçömé tö Öpén édX! Ⱡ'σя#"
-
-#. Translators: 'Open edX' is a brand, please keep this untranslated. See
-#. http://openedx.org for more information.
-#: lms/templates/index.html
-msgid "It works! This is the default homepage for this Open edX instance."
-msgstr ""
-"Ìt wörks! Thïs ïs thé défäült hömépägé för thïs Öpén édX ïnstänçé. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя #"
+msgid "VIEW ALL COURSES"
+msgstr "VÌÉW ÀLL ÇÖÛRSÉS Ⱡ'σ#"
 
 #: lms/templates/invalid_email_key.html
 msgid "Invalid email change key"
@@ -9382,7 +9370,6 @@ msgid "Register"
 msgstr "Régïstér #"
 
 #: lms/templates/navigation-edx.html lms/templates/navigation-edx.html
-#: lms/templates/navigation.html lms/templates/navigation.html
 msgid "Sign in"
 msgstr "Sïgn ïn #"
 
@@ -9405,6 +9392,10 @@ msgstr "Sçhööls #"
 #: lms/templates/navigation.html lms/templates/navigation.html
 msgid "Register Now"
 msgstr "Régïstér Nöw Ⱡ#"
+
+#: lms/templates/navigation.html lms/templates/navigation.html
+msgid "SIGN IN"
+msgstr "SÌGN ÌN #"
 
 #: lms/templates/notes.html lms/templates/textannotation.html
 #: lms/templates/videoannotation.html
@@ -9692,16 +9683,16 @@ msgstr ""
 "{dashboard_link_start}héré{link_end} tö rétürn tö ýöür däshßöärd.  Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
 
-#: lms/templates/seq_module.html lms/templates/seq_module.html
+#: lms/templates/seq_module.html
 #: lms/templates/discussion/mustache/_pagination.mustache
 msgid "Previous"
 msgstr "Prévïöüs #"
 
-#: lms/templates/seq_module.html lms/templates/seq_module.html
+#: lms/templates/seq_module.html
 msgid "Section Navigation"
 msgstr "Séçtïön Nävïgätïön Ⱡ'σ#"
 
-#: lms/templates/seq_module.html lms/templates/seq_module.html
+#: lms/templates/seq_module.html
 #: lms/templates/discussion/mustache/_pagination.mustache
 msgid "Next"
 msgstr "Néxt Ⱡ'σяєм#"
@@ -10572,49 +10563,6 @@ msgid "View About Page in studio"
 msgstr "Vïéw Àßöüt Pägé ïn stüdïö Ⱡ'σяєм#"
 
 #: lms/templates/courseware/course_about.html
-msgid "Overview"
-msgstr "Övérvïéw #"
-
-#: lms/templates/courseware/course_about.html
-msgid "Share with friends and family!"
-msgstr "Shäré wïth frïénds änd fämïlý! Ⱡ'σяєм #"
-
-#: lms/templates/courseware/course_about.html
-#: lms/templates/courseware/course_about.html
-msgid "Tweet that you've registered for this course"
-msgstr "Twéét thät ýöü'vé régïstéréd för thïs çöürsé Ⱡ'σяєм ιρѕυм#"
-
-#: lms/templates/courseware/course_about.html
-#: lms/templates/courseware/course_about.html
-msgid "Email someone to say you've registered for this course"
-msgstr ""
-"Émäïl söméöné tö säý ýöü'vé régïstéréd för thïs çöürsé Ⱡ'σяєм ιρѕυм ∂σ#"
-
-#. Translators: This text will be automatically posted to the student's
-#. Twitter account. {url} should appear at the end of the text.
-#: lms/templates/courseware/course_about.html
-msgid "I just registered for {number} {title} through {account}: {url}"
-msgstr ""
-"Ì jüst régïstéréd för {number} {title} thröügh {account}: {url} Ⱡ'σяєм ιρѕυм"
-" #"
-
-#: lms/templates/courseware/course_about.html
-msgid "Take a course with {platform} online"
-msgstr "Täké ä çöürsé wïth {platform} önlïné Ⱡ'σяєм #"
-
-#: lms/templates/courseware/course_about.html
-msgid "I just registered for {number} {title} through {platform} {url}"
-msgstr ""
-"Ì jüst régïstéréd för {number} {title} thröügh {platform} {url} Ⱡ'σяєм "
-"ιρѕυм#"
-
-#: lms/templates/courseware/course_about.html
-msgid "Post a Facebook message to say you've registered for this course"
-msgstr ""
-"Pöst ä Fäçéßöök méssägé tö säý ýöü'vé régïstéréd för thïs çöürsé Ⱡ'σяєм "
-"ιρѕυм ∂σłσя #"
-
-#: lms/templates/courseware/course_about.html
 msgid "Classes Start"
 msgstr "Çlässés Stärt Ⱡ'#"
 
@@ -10679,12 +10627,12 @@ msgstr ""
 "réléäsé däté. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
 
 #: lms/templates/courseware/courses.html
-msgid "Explore free courses from {university_name}."
-msgstr "Éxplöré fréé çöürsés fröm {university_name}. Ⱡ'σяєм #"
+msgid "Learn About {university_name}."
+msgstr "Léärn Àßöüt {university_name}. Ⱡ'σ#"
 
 #: lms/templates/courseware/courses.html
-msgid "Explore courses from {platform_name}."
-msgstr "Éxplöré çöürsés fröm {platform_name}. Ⱡ'σяєм#"
+msgid "Learn About {platform_name}."
+msgstr "Léärn Àßöüt {platform_name}. Ⱡ'σ#"
 
 #: lms/templates/courseware/courses.html
 msgid "{platform_name} Logo"
@@ -15229,19 +15177,20 @@ msgstr "Thïs Çöürsé Ûnäväïläßlé Ìn Ýöür Çöüntrý Ⱡ'σяєм
 #: lms/templates/static_templates/embargo.html
 msgid ""
 "Our system indicates that you are trying to access this {platform_name} "
-"course from a country currently subject to U.S. economic and trade "
-"sanctions. Unfortunately, at this time {platform_name} must comply with "
-"export controls, and we cannot allow you to access this particular course. "
-"Feel free to browse our catalogue to find other courses you may be "
-"interested in taking."
+"course from a country or region currently subject to U.S. economic and trade"
+" sanctions. Unfortunately, at this time {platform_name} must comply with "
+"export controls, and we cannot allow you to access this course."
 msgstr ""
 "Öür sýstém ïndïçätés thät ýöü äré trýïng tö äççéss thïs {platform_name} "
-"çöürsé fröm ä çöüntrý çürréntlý süßjéçt tö Û.S. éçönömïç änd trädé "
-"sänçtïöns. Ûnförtünätélý, ät thïs tïmé {platform_name} müst çömplý wïth "
-"éxpört çöntröls, änd wé çännöt ällöw ýöü tö äççéss thïs pärtïçülär çöürsé. "
-"Féél fréé tö ßröwsé öür çätälögüé tö fïnd öthér çöürsés ýöü mäý ßé "
-"ïntéréstéd ïn täkïng. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg "
-"єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє м#"
+"çöürsé fröm ä çöüntrý ör régïön çürréntlý süßjéçt tö Û.S. éçönömïç änd trädé"
+" sänçtïöns. Ûnförtünätélý, ät thïs tïmé {platform_name} müst çömplý wïth "
+"éxpört çöntröls, änd wé çännöt ällöw ýöü tö äççéss thïs çöürsé. Ⱡ'σяєм ιρѕυм"
+" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη#"
+
+#: lms/templates/static_templates/jobs.html
+#: lms/templates/static_templates/jobs.html
+msgid "Jobs"
+msgstr "Jößs Ⱡ'σяєм#"
 
 #: lms/templates/static_templates/media-kit.html
 #: lms/templates/static_templates/media-kit.html
@@ -16918,6 +16867,11 @@ msgstr ""
 #: cms/templates/course-create-rerun.html
 msgid "Note: No spaces or special characters are allowed."
 msgstr "Nöté: Nö späçés ör spéçïäl çhäräçtérs äré ällöwéd. Ⱡ'σяєм ιρѕυм ∂#"
+
+#: cms/templates/course-create-rerun.html cms/templates/index.html
+#: cms/templates/settings.html
+msgid "Course Number"
+msgstr "Çöürsé Nümßér Ⱡ'#"
 
 #. Translators: This is an example for the number used to identify a course,
 #. seen when filling out the form to create a new course. The number here is
@@ -18919,11 +18873,11 @@ msgstr ""
 "ïnstrüçtïöns prövïdéd ßý ýöür {manager}. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłι#"
 
-#: cms/templates/settings.html cms/templates/settings.html
+#: cms/templates/settings.html
 msgid "Program Manager"
 msgstr "Prögräm Mänägér Ⱡ'#"
 
-#: cms/templates/settings.html cms/templates/settings.html
+#: cms/templates/settings.html
 msgid "PM"
 msgstr "PM Ⱡ'#"
 
@@ -18993,14 +18947,14 @@ msgid ""
 "These dates impact <strong>when your courseware can be viewed</strong>, but "
 "they are <strong>not the dates shown on your course summary page</strong>. "
 "To provide the course start and registration dates as shown on your course "
-"summary page, follow the instructions provided by your {manager}."
+"summary page, follow the instructions provided by your Program Manager."
 msgstr ""
 "Thésé dätés ïmpäçt <strong>whén ýöür çöürséwäré çän ßé vïéwéd</strong>, ßüt "
 "théý äré <strong>nöt thé dätés shöwn ön ýöür çöürsé sümmärý pägé</strong>. "
 "Tö prövïdé thé çöürsé stärt änd régïsträtïön dätés äs shöwn ön ýöür çöürsé "
-"sümmärý pägé, föllöw thé ïnstrüçtïöns prövïdéd ßý ýöür {manager}. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя "
-"ιη¢#"
+"sümmärý pägé, föllöw thé ïnstrüçtïöns prövïdéd ßý ýöür Prögräm Mänägér. "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ "
+"тємρσя ιη¢ι∂ι∂#"
 
 #: cms/templates/settings.html
 msgid "Introducing Your Course"
@@ -19595,9 +19549,16 @@ msgstr ""
 "Àn äçtïvätïön lïnk häs ßéén sént tö {email}, älöng wïth ïnstrüçtïöns för "
 "äçtïvätïng ýöür äççöünt. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
 
+#. Translators: 'EdX', 'edX', 'Studio', and 'Open edX' are trademarks of 'edX
+#. Inc.'. Please do not translate any of these trademarks and company names.
 #: cms/templates/widgets/footer.html
-msgid "All rights reserved."
-msgstr "Àll rïghts résérvéd. Ⱡ'σя#"
+msgid ""
+"EdX, Open edX, Studio, and the edX and Open edX logos are registered "
+"trademarks or trademarks of {link_start}edX Inc.{link_end}"
+msgstr ""
+"ÉdX, Öpén édX, Stüdïö, änd thé édX änd Öpén édX lögös äré régïstéréd "
+"trädémärks ör trädémärks öf {link_start}édX Ìnç.{link_end} Ⱡ'σяєм ιρѕυм "
+"∂σłσя ѕιт αмєт, ¢σηѕє#"
 
 #: cms/templates/widgets/footer.html cms/templates/widgets/sock.html
 msgid "Contact Us"
