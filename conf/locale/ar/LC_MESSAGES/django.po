@@ -488,6 +488,8 @@ msgid ""
 "You have already created an account using an external login like WebAuth or "
 "Shibboleth. Please contact {tech_support_email} for support."
 msgstr ""
+"لقد قمت بإنشاء حساب بالفعل عن طريق استخدام تسجيل دخول خارجي مثل WebAuth أو "
+"Shibboleth . يرجى الاتصال بـ {tech_support_email} للحصول على الدعم."
 
 #: common/djangoapps/student/forms.py
 msgid "Username must be minimum of two characters long"
@@ -8489,6 +8491,7 @@ msgid "Optional language the team uses as ISO 639-1 code."
 msgstr "اللغة الاختيارية التي يستخدمها الفريق كرمز ISO 639-1."
 
 #: lms/djangoapps/teams/plugins.py
+#: lms/djangoapps/teams/templates/teams/teams.html
 msgid "Teams"
 msgstr "الفِرَق"
 
@@ -13202,7 +13205,7 @@ msgstr ""
 
 #: lms/templates/courseware/progress.html
 msgid "Completed"
-msgstr ""
+msgstr "استُكملت العملية"
 
 #: lms/templates/courseware/progress.html
 msgid "Upcoming"
@@ -14900,7 +14903,7 @@ msgstr "الاسم الظاهر للمساق:"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Course End Date:"
-msgstr ""
+msgstr "بالطبع تاريخ الانتهاء"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Has the course started?"
@@ -17396,7 +17399,7 @@ msgstr ""
 
 #: themes/red-theme/lms/templates/header.html
 msgid "My Profile"
-msgstr ""
+msgstr "ملفي الشخصي"
 
 #: themes/red-theme/lms/templates/header.html
 msgid "Register Now"
@@ -17620,7 +17623,7 @@ msgstr "هذه الوحدة غير مفعَّلة."
 
 #: cms/templates/certificates.html
 msgid "Working with Certificates"
-msgstr ""
+msgstr "العمل مع شهادات "
 
 #: cms/templates/certificates.html
 msgid ""
@@ -17635,6 +17638,8 @@ msgid ""
 "For verified certificates, specify between one and four signatories and "
 "upload the associated images."
 msgstr ""
+"للحصول على شهادات التحقق منها، وتحديد بين واحد وأربعة الموقعة وتحميل الصور "
+"المرتبطة بها. "
 
 #: cms/templates/certificates.html
 msgid ""
@@ -17650,6 +17655,8 @@ msgid ""
 "To view a sample certificate, choose a course mode and select "
 "{em_start}Preview Certificate{em_end}."
 msgstr ""
+"لعرض شهادة العينة، واختيار النمط الدراسي وحدد {em_start} شهادة معاينة "
+"{em_end} "
 
 #: cms/templates/certificates.html
 msgid "Issuing Certificates to Learners"
@@ -17661,6 +17668,9 @@ msgid ""
 "selects {em_start}Activate{em_end}. Course team members without the Admin "
 "role cannot edit or delete an activated certificate."
 msgstr ""
+"لبدء إصدار الشهادات، وبالطبع أعضاء الفريق مع يختار دور المشرف {em_start} "
+"{تنشيط em_end}. أعضاء الفريق بالطبع دون دور المشرف لا يمكن تحرير أو حذف "
+"شهادة تفعيلها.  "
 
 #: cms/templates/certificates.html
 msgid ""
@@ -17668,6 +17678,8 @@ msgid ""
 "learners who have already earned certificates will no longer be able to "
 "access them."
 msgstr ""
+"{em_start} لا {em_end} حذف الشهادات بعد دورة قد بدأ؛ والمتعلمين الذين لديهم "
+"شهادات حصل بالفعل لم يعد قادرا على الوصول إليها.  "
 
 #: cms/templates/certificates.html
 msgid "Learn more about certificates"
@@ -20590,11 +20602,11 @@ msgstr ""
 
 #: cms/templates/visibility_editor.html
 msgid "Verification Checkpoint"
-msgstr ""
+msgstr "التحقق نقطة تدقيق "
 
 #: cms/templates/visibility_editor.html
 msgid "Verification checkpoint to complete"
-msgstr ""
+msgstr "نقطة تحقيق للتحقق لإكمال "
 
 #: cms/templates/visibility_editor.html
 msgid ""
@@ -20602,6 +20614,9 @@ msgid ""
 "the content in this component. Learners who do not require verification see "
 "this content by default."
 msgstr ""
+"يجب أن المتعلمين الذين يحتاجون إلى التحقق اجتياز حاجز اختيارها لرؤية المحتوى"
+" في هذا العنصر. المتعلمين الذين لا تتطلب التحقق رؤية هذا المحتوى بشكل "
+"افتراضي."
 
 #: cms/templates/emails/activation_email.txt
 msgid ""

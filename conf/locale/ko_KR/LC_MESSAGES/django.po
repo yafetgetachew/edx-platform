@@ -233,7 +233,8 @@ msgstr ""
 "해당 시간이 지나면 학습자는 인증용 사진을 제출할 수 없습니다. 인증 요청은 선택사항이며, 사진은 인증의 목적으로만 사용됩니다."
 
 #: common/djangoapps/course_modes/models.py
-#: lms/djangoapps/shoppingcart/reports.py
+#: lms/djangoapps/shoppingcart/reports.py cms/templates/widgets/header.html
+#: lms/templates/courseware/courseware.html
 msgid "Course"
 msgstr "강좌"
 
@@ -434,6 +435,8 @@ msgid ""
 "You have already created an account using an external login like WebAuth or "
 "Shibboleth. Please contact {tech_support_email} for support."
 msgstr ""
+"WebAuth나 Shibboleth와 같은 외부 계정을 사용중입니다. 도움이 필요하시면  {tech_support_email}로 "
+"연락바랍니다. "
 
 #: common/djangoapps/student/forms.py
 msgid "Username must be minimum of two characters long"
@@ -455,7 +458,7 @@ msgstr "실명은 최소 두 글자 이상이어야 합니다."
 msgid ""
 "Usernames must contain only letters, numbers, underscores (_), and hyphens "
 "(-)."
-msgstr ""
+msgstr "아이디는 오직 알파벳, 숫자, 밀줄 표시(_), 하이픈(-) 으로만 만들 수 있습니다. "
 
 #: common/djangoapps/student/forms.py
 msgid "Username cannot be more than %(limit_value)s characters long"
@@ -1272,7 +1275,7 @@ msgstr "오답"
 
 #: common/lib/capa/capa/inputtypes.py
 msgid "partially correct"
-msgstr ""
+msgstr "부분적으로 맞습니다."
 
 #: common/lib/capa/capa/inputtypes.py
 msgid "incomplete"
@@ -1298,7 +1301,7 @@ msgstr "틀립니다."
 
 #: common/lib/capa/capa/inputtypes.py
 msgid "This is partially correct."
-msgstr ""
+msgstr "부분적으로 맞습니다."
 
 #: common/lib/capa/capa/inputtypes.py
 msgid "This is unanswered."
@@ -4535,9 +4538,14 @@ msgstr ""
 "© {org_name}. All rights reserved except where noted. EdX, Open edX and the "
 "edX and Open EdX logos are registered trademarks or trademarks of edX Inc. "
 
+#. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: 'Open edX' is a brand, please keep this untranslated.
 #. See http://openedx.org for more information.
-#: lms/djangoapps/branding/api.py
+#. #-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#
+#. Translators: 'Open edX' is a brand, please keep this untranslated. See
+#. http://openedx.org for more information.
+#: lms/djangoapps/branding/api.py cms/templates/widgets/footer.html
+#: themes/red-theme/lms/templates/footer.html
 msgid "Powered by Open edX"
 msgstr "Powered by Open edX"
 
@@ -4545,7 +4553,7 @@ msgstr "Powered by Open edX"
 msgid "Blog"
 msgstr "블로그"
 
-#: lms/djangoapps/branding/api.py
+#: lms/djangoapps/branding/api.py themes/red-theme/lms/templates/footer.html
 msgid "News"
 msgstr "뉴스"
 
@@ -4719,55 +4727,55 @@ msgstr "단일 기본 이미지만 있을 수 있습니다. "
 
 #: lms/djangoapps/certificates/models.py
 msgid "Name of template."
-msgstr ""
+msgstr "템플릿 이름"
 
 #: lms/djangoapps/certificates/models.py
 msgid "Description and/or admin notes."
-msgstr ""
+msgstr "설명 및 교수자의 메시지"
 
 #: lms/djangoapps/certificates/models.py
 msgid "Django template HTML."
-msgstr ""
+msgstr "Django template HTML."
 
 #: lms/djangoapps/certificates/models.py
 msgid "Organization of template."
-msgstr ""
+msgstr "템플릿 기관"
 
 #: lms/djangoapps/certificates/models.py
 msgid "The course mode for this template."
-msgstr ""
+msgstr "이 템플릿이 적용될 강좌 모드"
 
 #: lms/djangoapps/certificates/models.py
 msgid "On/Off switch."
-msgstr ""
+msgstr "On/Off 바꿉니다."
 
 #: lms/djangoapps/certificates/models.py
 msgid "Description of the asset."
-msgstr ""
+msgstr "이 자료에 대한 설명"
 
 #: lms/djangoapps/certificates/models.py
 msgid "Asset file. It could be an image or css file."
-msgstr ""
+msgstr "자료 파일입니다. 이미지 또는 css 파일이어야 합니다."
 
 #: lms/djangoapps/certificates/views/support.py
 msgid "User {username} does not exist"
-msgstr ""
+msgstr "이용자 {username} 가 존재하지 않습니다."
 
 #: lms/djangoapps/certificates/views/support.py
 msgid "{course_key} is not a valid course key"
-msgstr ""
+msgstr "{course_key} 는 유효하지 않은 강좌 키입니다.  "
 
 #: lms/djangoapps/certificates/views/support.py
 msgid "The course {course_key} does not exist"
-msgstr ""
+msgstr "강좌 {course_key} 는 존재하지 않습니다."
 
 #: lms/djangoapps/certificates/views/support.py
 msgid "User {username} is not enrolled in the course {course_key}"
-msgstr ""
+msgstr "{username} 은/는 강좌{course_key}에 등록하지 않았습니다. "
 
 #: lms/djangoapps/certificates/views/support.py
 msgid "An unexpected error occurred while regenerating certificates."
-msgstr ""
+msgstr "이수증을 다시 만드는 동안 오류가 발생 했습니다. "
 
 #. Translators:  This text describes the 'Honor' course certificate type.
 #: lms/djangoapps/certificates/views/webview.py
@@ -4805,12 +4813,12 @@ msgstr "{cert_type} 이수증은 학습자의 프로그램 성취도가 상위�
 
 #: lms/djangoapps/certificates/views/webview.py
 msgid "I completed the {course_title} course on {platform_name}."
-msgstr ""
+msgstr "{platform_name}에서 제공하는 {course_title} 강좌를 완료했습니다."
 
 #: lms/djangoapps/certificates/views/webview.py
 msgid ""
 "I completed a course on {platform_name}. Take a look at my certificate."
-msgstr ""
+msgstr "{platform_name}의 한 강좌를 완료 했습니다. 제 강좌 이수증을 살펴보세요."
 
 #. Translators:  The format of the date includes the full name of the month
 #: lms/djangoapps/certificates/views/webview.py
@@ -5133,7 +5141,7 @@ msgstr "글을 추가하기 위해 강좌의 위키로 가보세요. "
 
 #: lms/djangoapps/courseware/access_response.py
 msgid "Course has not started"
-msgstr ""
+msgstr "강좌가 아직 시작되지 않았습니다."
 
 #: lms/djangoapps/courseware/access_response.py
 msgid "Course does not start until {}"
@@ -5879,7 +5887,7 @@ msgstr ""
 msgid ""
 "The proctored exam results report is being created. To view the status of "
 "the report, see Pending Instructor Tasks below."
-msgstr ""
+msgstr "감독이 있는 평가 결과 보고서가 만들어지고 있습니다. 보고서의 상태를 보려면, 아래의 대기중인 교수자 작업을 보세요."
 
 #: lms/djangoapps/instructor/views/api.py
 msgid ""
@@ -5887,6 +5895,8 @@ msgid ""
 "status of the report, see Pending Instructor Tasks below. You will be able "
 "to download the report when it is complete."
 msgstr ""
+"감독이 있는 평가 결과 보고서가 생성되었습니다. 보고서의 상태를 보려면, 아래의 대기중인 교수자 작업을 보세요. 생성 완료된 보고서는 "
+"다운로드할 수 있습니다."
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "Could not parse amount as a decimal"
@@ -7851,7 +7861,7 @@ msgstr "이메일이 입력되지 않았습니다."
 
 #: lms/djangoapps/support/views/index.py
 msgid "View and regenerate certificates."
-msgstr ""
+msgstr "이수증 보기 및 재 생성"
 
 #: lms/djangoapps/support/views/index.py lms/templates/support/refund.html
 msgid "Manual Refund"
@@ -7859,7 +7869,7 @@ msgstr "수동 환불"
 
 #: lms/djangoapps/support/views/index.py
 msgid "Track refunds issued directly through CyberSource."
-msgstr ""
+msgstr "CyberSource를 통해 직접 환불이 이루어집니다."
 
 #: lms/djangoapps/support/views/refund.py
 #: lms/templates/shoppingcart/billing_details.html
@@ -7935,7 +7945,7 @@ msgstr "제공된 강좌 ID {course_id}가 유효하지 않습니다. "
 
 #: lms/djangoapps/teams/views.py
 msgid "You are already in a team in this course."
-msgstr ""
+msgstr "이미 팀 구성원입니다."
 
 #: lms/djangoapps/teams/views.py
 msgid "username or team_id must be specified."
@@ -7951,7 +7961,7 @@ msgstr "팀 id가 필요합니다."
 
 #: lms/djangoapps/teams/views.py
 msgid "This team is already full."
-msgstr ""
+msgstr "여석이 없습니다."
 
 #: lms/djangoapps/teams/views.py
 msgid "The user {username} is already a member of a team in this course."
@@ -8969,7 +8979,7 @@ msgstr "{username} 은 이미 사용중인 아이디입니다. 다른 아이디�
 #. a field on the registration form meant to hold the user's name.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Jane Doe"
-msgstr ""
+msgstr "홍길동"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: These instructions appear on the registration form,
@@ -9081,53 +9091,58 @@ msgstr "이 필드는 편집할 수 없습니다. "
 #: cms/djangoapps/contentstore/course_group_config.py
 #: cms/djangoapps/contentstore/views/certificates.py
 msgid "invalid JSON"
-msgstr ""
+msgstr "유효하지 않은 JSON"
 
 #: cms/djangoapps/contentstore/course_group_config.py
 msgid "must have name of the configuration"
-msgstr ""
+msgstr "설정 이름을 가져야 합니다."
 
 #: cms/djangoapps/contentstore/course_group_config.py
 msgid "must have at least one group"
-msgstr ""
+msgstr "적어도 한 그룹이 있어야 합니다."
 
 #: cms/djangoapps/contentstore/course_info_model.py
 msgid "Invalid course update id."
-msgstr ""
+msgstr "유효하지 않은 강좌 업데이트 ID"
 
 #: cms/djangoapps/contentstore/course_info_model.py
 msgid "Course update not found."
-msgstr ""
+msgstr "강좌 업데이트가 없습니다."
 
 #: cms/djangoapps/contentstore/courseware_index.py
 msgid "Could not index item: {}"
-msgstr ""
+msgstr "해당 항목의 인덱스를 생성할 수 없습니다. : {}"
 
 #: cms/djangoapps/contentstore/courseware_index.py
 msgid "General indexing error occurred"
-msgstr ""
+msgstr "General Indexing 오류가 발생했습니다."
 
 #: cms/djangoapps/contentstore/courseware_index.py
 msgid "(Unnamed)"
-msgstr ""
+msgstr "(이름 없음)"
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid ""
 "GIT_REPO_EXPORT_DIR not set or path {0} doesn't exist, please create it, or "
 "configure a different path with GIT_REPO_EXPORT_DIR"
 msgstr ""
+"GIT_REPO_EXPORT_DIR 이 설정이 안되었거나 path {0} 가 존재하지 않습니다, 그것을 생성하거나, 다른 경로의 "
+"GIT_REPO_EXPORT_DIR 를 설정하세요"
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid ""
 "Non writable git url provided. Expecting something like: "
 "git@github.com:mitocw/edx4edx_lite.git"
 msgstr ""
+"쓰기 불가능한 git url입니다. git@github.com:mitocw/edx4edx_lite.git 같은 것이 필요합니다."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid ""
 "If using http urls, you must provide the username and password in the url. "
 "Similar to https://user:pass@github.com/user/course."
 msgstr ""
+"http URL이용시,  URL에 아이디와 비밀번호를 입력해야 합니다. \n"
+"https://user:pass@github.com/user/course 와 같이 입력하면 됩니다."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid "Unable to determine branch, repo in detached HEAD mode"
@@ -9135,45 +9150,47 @@ msgstr "detached HEAD 모드에서 branch, repo를 결정할 수 없음, "
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid "Unable to update or clone git repository."
-msgstr ""
+msgstr "git 저장소를 업데이트 혹은 복사할 수 없음."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid "Unable to export course to xml."
-msgstr ""
+msgstr "강좌를 xml로 내보낼 수 없습니다."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid "Unable to configure git username and password"
-msgstr ""
+msgstr "git 아이디와 비밀번호를 설정할 수 없습니다."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid ""
 "Unable to commit changes. This is usually because there are no changes to be"
 " committed"
-msgstr ""
+msgstr "변경사항을 수행할수 없음. 이것은 보통 수행된 변경사항이 없기 때문입니다."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid ""
 "Unable to push changes.  This is usually because the remote repository "
 "cannot be contacted"
-msgstr ""
+msgstr "변경사항을 적용할 수 없습니다. 이는 주로 원격 저장소가 연결되지 않았기 때문에 발생합니다."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid "Bad course location provided"
-msgstr ""
+msgstr "잘못된 강좌 위치입니다"
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid "Missing branch on fresh clone"
-msgstr ""
+msgstr "frexh clone상에서 branch가 없음"
 
 #: cms/djangoapps/contentstore/utils.py
 msgid "Deleted group"
-msgstr ""
+msgstr "삭제된 집단"
 
 #: cms/djangoapps/contentstore/management/commands/git_export.py
 msgid ""
 "Take the specified course and attempt to export it to a git repository\n"
 ". Course directory must already be a git repository. Usage:  git_export <course_loc> <git_url>"
 msgstr ""
+"특정 강좌를 선택해서 그것을 git 저장소에 내보내기 해보세요. 강좌 디렉토리가 git 저장소에 있을 것입니다. "
+"사용법:git_export <course_loc> <git_url>"
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid ""
@@ -9181,38 +9198,40 @@ msgid ""
 "instructions here to upload a file elsewhere and link to it instead: "
 "{faq_url}"
 msgstr ""
+"파일 {filename}이 최대 크기인 {size_mb} MB를 초과합니다. 부디 여기있는 지시를 따라서 이 파일을 다른 곳에 "
+"업로드시키고 링크 {faq_url}를 해주십시요. "
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
-msgstr ""
+msgstr "업로드 완료"
 
 #: cms/djangoapps/contentstore/views/certificates.py
 msgid "must have name of the certificate"
-msgstr ""
+msgstr "이수증의 이름이 필요합니다."
 
 #: cms/djangoapps/contentstore/views/certificates.py
 msgid "Certificate dict {0} missing value key '{1}'"
-msgstr ""
+msgstr "Certificate dict {0} missing value key '{1}'"
 
 #: cms/djangoapps/contentstore/views/certificates.py
 msgid "PermissionDenied: Failed in authenticating {user}"
-msgstr ""
+msgstr "PermissionDenied: Failed in authenticating {user}"
 
 #: cms/djangoapps/contentstore/views/component.py
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: cms/djangoapps/contentstore/views/component.py
 msgid "Video"
-msgstr ""
+msgstr "동영상"
 
 #: cms/djangoapps/contentstore/views/component.py
 msgid "Blank"
-msgstr ""
+msgstr "공란"
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid "Course has been successfully reindexed."
-msgstr ""
+msgstr "강좌가 성공적으로 재인댁스가 이루어졌습니다."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid "Unscheduled"
@@ -9222,7 +9241,7 @@ msgstr "지정되지 않음"
 msgid ""
 "Special characters not allowed in organization, course number, and course "
 "run."
-msgstr ""
+msgstr "기관, 강좌 번호, 기관별 강좌 번호에 특수문자를 사용할 수 없습니다."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid ""
@@ -9233,7 +9252,7 @@ msgstr "동일 기관, 강좌 번호, 기관별 강좌 번호로 이미 다른 �
 #: cms/djangoapps/contentstore/views/course.py
 msgid ""
 "Please change either the organization or course number so that it is unique."
-msgstr ""
+msgstr "기관이나 강좌 번호가 유일하도록 변경하십시오."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid ""
@@ -9241,74 +9260,78 @@ msgid ""
 "\n"
 "{err}"
 msgstr ""
+"강좌 '{name}'를 생성할 수 없음\n"
+"\n"
+"\n"
+"{err}"
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid "Invalid prerequisite course key"
-msgstr ""
+msgstr "선수 강좌 키가 유효하지 않습니다."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid "An error occurred while trying to save your tabs"
-msgstr ""
+msgstr "탭을 저장하는 동안 오류가 발생했습니다."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid "Tabs Exception"
-msgstr ""
+msgstr "Tabs 예외"
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid "This group configuration is in use and cannot be deleted."
-msgstr ""
+msgstr "그룹 설정이 사용중이어서 삭제할 수 없습니다."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid "This content group is in use and cannot be deleted."
-msgstr ""
+msgstr "콘텐츠 그룹이 사용중이어서 삭제할 수 없습니다."
 
 #: cms/djangoapps/contentstore/views/entrance_exam.py
 msgid "Entrance Exam - Subsection"
-msgstr ""
+msgstr "사전 평가 - 소주제"
 
 #: cms/djangoapps/contentstore/views/entrance_exam.py
 msgid "Completed Course Entrance Exam"
-msgstr ""
+msgstr "강좌 사전 평가 완료"
 
 #: cms/djangoapps/contentstore/views/export_git.py
 msgid "Course successfully exported to git repository"
-msgstr ""
+msgstr "강좌가 git 저장소에 성공적으로 내보내기 되었습니다."
 
 #: cms/djangoapps/contentstore/views/helpers.py
 msgid "Vertical"
-msgstr ""
+msgstr "수직의 "
 
 #: cms/djangoapps/contentstore/views/helpers.py
 msgid "Empty"
-msgstr ""
+msgstr "이름 없음"
 
 #: cms/djangoapps/contentstore/views/import_export.py
 msgid "We only support uploading a .tar.gz file."
-msgstr ""
+msgstr "하나의 .tar.gz 파일 업로딩만 지원합니다. "
 
 #: cms/djangoapps/contentstore/views/import_export.py
 msgid "File upload corrupted. Please try again"
-msgstr ""
+msgstr "파일 업로드에 에러가 발생했습니다. 다시 시도하세요."
 
 #: cms/djangoapps/contentstore/views/import_export.py
 msgid "Could not find the {0} file in the package."
-msgstr ""
+msgstr "패키지에서  {0} 을 발견할 수 없습니다."
 
 #: cms/djangoapps/contentstore/views/item.py
 msgid "Invalid data"
-msgstr ""
+msgstr "유효하지 않은 데이터"
 
 #: cms/djangoapps/contentstore/views/item.py
 msgid "Invalid data ({details})"
-msgstr ""
+msgstr "유효하지 않은 데이터({details})"
 
 #: cms/djangoapps/contentstore/views/item.py
 msgid "Duplicate of {0}"
-msgstr ""
+msgstr "{0} 의 복사본"
 
 #: cms/djangoapps/contentstore/views/item.py
 msgid "Duplicate of '{0}'"
-msgstr ""
+msgstr "'{0}'의 Duplicate"
 
 #. Translators: The {pct_sign} here represents the percent sign, i.e., '%'
 #. in many languages. This is used to avoid Transifex's misinterpreting of
@@ -9316,21 +9339,21 @@ msgstr ""
 #: cms/djangoapps/contentstore/views/item.py
 msgid ""
 "Students must score {score}{pct_sign} or higher to access course materials."
-msgstr ""
+msgstr "학습자가 강좌를 수강하려면 {score}{pct_sign} 이상을 맞춰야 합니다. "
 
 #. Translators: This is the percent sign. It will be used to represent
 #. a percent value out of 100, e.g. "58%" means "58/100".
 #: cms/djangoapps/contentstore/views/item.py
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: cms/djangoapps/contentstore/views/item.py
 msgid "{section_or_subsection} \"{display_name}\""
-msgstr ""
+msgstr "{section_or_subsection} \"{display_name}\""
 
 #: cms/djangoapps/contentstore/views/library.py
 msgid "Unable to create library - missing required field '{field}'"
-msgstr ""
+msgstr "콘텐츠 보관함을 만들 수 없습니다 - 빠진 {field} 항목이 필요합니다. "
 
 #: cms/djangoapps/contentstore/views/library.py
 msgid ""
@@ -9338,51 +9361,56 @@ msgid ""
 "\n"
 "{err}"
 msgstr ""
+"'{name}' 콘텐츠 보관함을 만들지 못하였습니다.\n"
+"\n"
+"{err}"
 
 #: cms/djangoapps/contentstore/views/library.py
 msgid ""
 "There is already a library defined with the same organization and library "
 "code. Please change your library code so that it is unique within your "
 "organization."
-msgstr ""
+msgstr "이미 동일 기관에서 정의된 도서관과 도서관 코드가 있습니다. 기관내에서 고유한 도서관 코드를 입력해서 변경해 주세요."
 
 #: cms/djangoapps/contentstore/views/transcripts_ajax.py
 msgid "Incoming video data is empty."
-msgstr ""
+msgstr "들어오는 동영상 대이터가 비어있습니다."
 
 #: cms/djangoapps/contentstore/views/transcripts_ajax.py
 msgid "Can't find item by locator."
-msgstr ""
+msgstr "이 위치의 항목을 찾을 수 없습니다."
 
 #: cms/djangoapps/contentstore/views/transcripts_ajax.py
 msgid "Transcripts are supported only for \"video\" modules."
-msgstr ""
+msgstr "자막은 동영상 모듈에서만 지원됩니다."
 
 #: cms/djangoapps/contentstore/views/user.py
 msgid "Insufficient permissions"
-msgstr ""
+msgstr "불충분한 허가"
 
 #: cms/djangoapps/contentstore/views/user.py
 msgid "Could not find user by email address '{email}'."
-msgstr ""
+msgstr "이메일 주소 '{email}'로 사용자를 찾을 수 없습니다. "
 
 #: cms/djangoapps/contentstore/views/user.py
 msgid "User {email} has registered but has not yet activated his/her account."
-msgstr ""
+msgstr "사용자 {email} 가 등록했지만 자신의 계정을 아직 활성화하지 않았습니다."
 
 #: cms/djangoapps/contentstore/views/user.py
 msgid "No `role` specified."
-msgstr ""
+msgstr "`role`이 지정되지 않았습니다."
 
 #: cms/djangoapps/contentstore/views/user.py
 msgid "Invalid `role` specified."
-msgstr ""
+msgstr "유효하지 않은 `role`이 지정되었습니다."
 
 #: cms/djangoapps/contentstore/views/user.py
 msgid "You may not remove the last Admin. Add another Admin first."
-msgstr ""
+msgstr "마지막 관리자를 제거할 수 없습니다. 다른 관리자를 추가하세요."
 
-#: cms/templates/import.html
+#. #-#-#-#-#  django-studio.po (edx-platform)  #-#-#-#-#
+#. Translators: This is the status of an active video upload
+#: cms/djangoapps/contentstore/views/videos.py cms/templates/import.html
 msgid "Uploading"
 msgstr "업로딩"
 
@@ -9390,53 +9418,57 @@ msgstr "업로딩"
 #. processing
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "In Progress"
-msgstr ""
+msgstr "진행중"
 
 #. Translators: This is the status for a video that the servers have
 #. successfully processed
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Ready"
-msgstr ""
+msgstr "비"
 
 #. Translators: This is the status for a video that the servers have failed to
 #. process
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Failed"
-msgstr ""
+msgstr "실패"
 
 #. Translators: This is the status for a video for which an invalid
 #. processing token was provided in the course settings
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Invalid Token"
-msgstr ""
+msgstr "유효하지 않은 토큰"
 
 #. Translators: This is the status for a video that was included in a course
 #. import
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Imported"
-msgstr ""
+msgstr "가져오기됨"
 
 #. Translators: This is the status for a video that is in an unknown state
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Unknown"
-msgstr ""
+msgstr "알수없음"
 
 #. Translators: This is the header for a CSV file column
 #. containing URLs for video encodings for the named profile
 #. (e.g. desktop, mobile high quality, mobile low quality)
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "{profile_name} URL"
-msgstr ""
+msgstr "{profile_name} URL"
 
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Duration"
-msgstr ""
+msgstr "지속기간"
 
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "Date Added"
-msgstr ""
+msgstr "추가된 날짜"
 
-#: cms/templates/index.html
+#. #-#-#-#-#  django-studio.po (edx-platform)  #-#-#-#-#
+#. Translators: This is listed as the duration for a video that has not
+#. yet reached the point in its processing by the servers where its
+#. duration is determined.
+#: cms/djangoapps/contentstore/views/videos.py cms/templates/index.html
 #: lms/templates/dashboard/_dashboard_status_verification.html
 msgid "Pending"
 msgstr "대기중"
@@ -9445,45 +9477,45 @@ msgstr "대기중"
 #. listing for videos uploaded through Studio
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "{course}_video_urls"
-msgstr ""
+msgstr "{course}_video_urls"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "unrequested"
-msgstr ""
+msgstr "요청되지 않은"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "pending"
-msgstr ""
+msgstr "유보중인"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "granted"
-msgstr ""
+msgstr "부여됨"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "denied"
-msgstr ""
+msgstr "거절됨"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "Studio user"
-msgstr ""
+msgstr "스튜디오 사용자"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "The date when state was last updated"
-msgstr ""
+msgstr "상태가 마지막으로 업데이트된 날짜"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "Current course creator state"
-msgstr ""
+msgstr "현재 강좌 개설자 상태"
 
 #: cms/djangoapps/course_creators/models.py
 msgid ""
 "Optional notes about this user (for example, why course creation access was "
 "denied)"
-msgstr ""
+msgstr "사용자에 대한 선택적인 노트(예, 왜 강좌 생성 접근이 거부되었는지)"
 
 #: cms/djangoapps/models/settings/course_metadata.py
 msgid "Incorrect format for field '{name}'. {detailed_message}"
-msgstr ""
+msgstr "잘못된 '{name}' 영역의 포맷. {detailed_message} "
 
 #: cms/templates/404.html cms/templates/error.html
 #: lms/templates/static_templates/404.html
@@ -9526,7 +9558,7 @@ msgstr "강좌 번호"
 #: cms/templates/course_outline.html
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Course Start Date:"
-msgstr ""
+msgstr "개강일:"
 
 #: cms/templates/html_error.html lms/templates/module-error.html
 msgid "Error:"
@@ -9818,7 +9850,7 @@ msgstr "대시보드"
 
 #: lms/templates/dashboard.html
 msgid "My Courses"
-msgstr ""
+msgstr "내 강좌"
 
 #: lms/templates/dashboard.html
 msgid "Looks like you haven't enrolled in any courses yet."
@@ -10743,6 +10775,8 @@ msgid ""
 "You have re-enabled forum notification emails from {platform_name}. You may "
 "{dashboard_link_start}return to your dashboard{link_end}."
 msgstr ""
+"{platform_name} 게시판 알림 이메일을 다시 활성화했습니다. {dashboard_link_start} 대시보드로 "
+"돌아갑니다.{link_end}"
 
 #: lms/templates/seq_module.html
 msgid "Previous"
@@ -11077,6 +11111,9 @@ msgid ""
 "You may {dashboard_link_start}return to your dashboard{link_end}. If you did"
 " not mean to do this, {undo_link_start}you can re-subscribe{link_end}."
 msgstr ""
+"앞으로 {platform_name}에서 게시판 알림 이메일을 수신하지 않습니다.  {dashboard_link_start} 대시보드로 "
+"돌아갑니다.{link_end} 혹시 이 설정을 원했던 것이 아니라면{undo_link_start} 다시 이메일을 수신하는 것으로 설정할 "
+"수 있습니다.{link_end}"
 
 #: lms/templates/using.html
 msgid "Using the system"
@@ -11322,7 +11359,7 @@ msgstr "CCX 코치 대시보드"
 
 #: lms/templates/ccx/coach_dashboard.html
 msgid "Name your CCX"
-msgstr ""
+msgstr "CCX의 이름을 입력하세요."
 
 #: lms/templates/ccx/coach_dashboard.html
 #: lms/templates/courseware/legacy_instructor_dashboard.html
@@ -11417,11 +11454,11 @@ msgstr ""
 
 #: lms/templates/ccx/enrollment.html
 msgid "Revoke access"
-msgstr ""
+msgstr "접근 권한 취소"
 
 #: lms/templates/ccx/enrollment.html
 msgid "Enter username or email"
-msgstr ""
+msgstr "아이디 또는 이메일을 입력하세요"
 
 #: lms/templates/ccx/grading_policy.html
 msgid "WARNING"
@@ -11447,13 +11484,13 @@ msgstr "성적 규정 저장하기"
 #. the format of YYYY-MM-DD
 #: lms/templates/ccx/schedule.html
 msgid "Date format four digit year dash two digit month dash two digit day"
-msgstr ""
+msgstr "날짜의 형식은 0000-00-00으로, 0에서 9까지의 숫자 두 자리와 대쉬를 사용해야 합니다."
 
 #. Translators: This explains to people using a screen reader how to interpret
 #. the format of HH:MM
 #: lms/templates/ccx/schedule.html
 msgid "Time format two digit hours colon two digit minutes"
-msgstr ""
+msgstr "시간의 형식은 00:00으로, 0에서 9까지의 숫자 두 자리와 콜론을 사용해야 합니다."
 
 #: lms/templates/ccx/schedule.html
 msgid "Set date"
@@ -11479,13 +11516,13 @@ msgstr "시작일"
 #. the format of YYYY-MM-DD
 #: lms/templates/ccx/schedule.html
 msgid "format four digit year dash two digit month dash two digit day"
-msgstr ""
+msgstr "날짜의 형식은 0000-00-00으로, 0에서 9까지의 숫자 두 자리와 대쉬를 사용해야 합니다."
 
 #. Translators: This explains to people using a screen reader how to interpret
 #. the format of HH:MM
 #: lms/templates/ccx/schedule.html
 msgid "Start time format two digit hours colon two digit minutes"
-msgstr ""
+msgstr "시작 시간의 형식은 00:00으로, 0에서 9까지의 숫자 두 자리와 콜론을 사용해야 합니다. "
 
 #: lms/templates/ccx/schedule.html
 msgid "(Optional)"
@@ -11495,7 +11532,7 @@ msgstr "(선택사항)"
 #. the format of HH:MM
 #: lms/templates/ccx/schedule.html
 msgid "Due Time format two digit hours colon two digit minutes"
-msgstr ""
+msgstr "마감 시간의 형식은 00:00으로, 0에서 9까지의 숫자 두 자리와 콜론을 사용해야 합니다.   "
 
 #: lms/templates/ccx/schedule.html
 msgid "Add Unit"
@@ -11840,7 +11877,7 @@ msgstr "등록마감"
 
 #: lms/templates/courseware/course_about.html
 msgid "Add {course_name} to Cart <span>({price} USD)</span>"
-msgstr ""
+msgstr "장바구니에 {course_name}<span>({price} USD)</span>추가하기 "
 
 #: lms/templates/courseware/course_about.html
 msgid "Enroll in {course_name}"
@@ -12046,11 +12083,11 @@ msgstr "당신은 아직 등록되지 않았습니다. "
 msgid ""
 "You are not currently enrolled in this course. {link_start}Sign up "
 "now!{link_end}"
-msgstr ""
+msgstr "이 강좌에 현재 등록되어 있지 않습니다. {link_start} 지금 등록하세요! {link_end}"
 
 #: lms/templates/courseware/info.html
 msgid "View Updates in Studio"
-msgstr ""
+msgstr "스튜디오에서 업데이트 보기"
 
 #: lms/templates/courseware/info.html
 msgid "Course Updates &amp; News"
@@ -12379,7 +12416,7 @@ msgstr "{student_name} 님은 본 강좌에서 학점을 받기 위한 조건을
 
 #: lms/templates/courseware/progress.html
 msgid "{a_start}Go to your dashboard{a_end} to purchase course credit."
-msgstr ""
+msgstr "유료과정을 듣기 위해 {a_start}대시보드로 가세요{a_end} "
 
 #: lms/templates/courseware/progress.html
 msgid "{student_name}, you have not yet met the requirements for credit."
@@ -12407,7 +12444,7 @@ msgstr ""
 
 #: lms/templates/courseware/progress.html
 msgid "Completed"
-msgstr ""
+msgstr "완료됨"
 
 #: lms/templates/courseware/progress.html
 msgid "Upcoming"
@@ -12419,7 +12456,7 @@ msgstr "적게"
 
 #: lms/templates/courseware/progress.html
 msgid "{earned} of {total} possible points"
-msgstr ""
+msgstr "{total} 가능한 점수 중 {earned} "
 
 #: lms/templates/courseware/progress.html
 msgid "Problem Scores: "
@@ -12459,6 +12496,8 @@ msgid ""
 "completing your {platform_name} course! {link_start}Get your credit "
 "now.{link_end}"
 msgstr ""
+"축하합니다. 성공적으로 {platform_name} 강좌를 수료하여 학점을 받을 수 있습니다. {link_start} 학점을 "
+"받으세요.{link_end}"
 
 #: lms/templates/credit_notifications/credit_eligibility_email.html
 msgid ""
@@ -12481,7 +12520,7 @@ msgstr ""
 msgid ""
 "We hope you enjoyed the course, and we hope to see you in future "
 "{platform_name} courses!"
-msgstr ""
+msgstr "강좌를 수강하며 즐거웠나요? 앞으로의 {platform_name}강좌에서 다시 만나길 기대합니다!"
 
 #: lms/templates/credit_notifications/credit_eligibility_email.html
 #: lms/templates/emails/activation_email.txt
@@ -12493,7 +12532,7 @@ msgstr "{platform_name} 팀 "
 msgid ""
 "{link_start}Click here for more information on credit at "
 "{platform_name}{link_end}."
-msgstr ""
+msgstr "{link_start} {platform_name}의 학점에 대한 정보를 얻기 위해 눌러주세요.{link_end}."
 
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid ""
@@ -13982,7 +14021,7 @@ msgstr "강좌 이름:"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Course End Date:"
-msgstr ""
+msgstr "종강일:"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Has the course started?"
@@ -14002,7 +14041,7 @@ msgstr "강좌가 끝났습니까?"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Number of sections:"
-msgstr ""
+msgstr "주제의 수:"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Grade Cutoffs:"
@@ -14086,11 +14125,11 @@ msgstr "등록할 수 있는 학습자의 CSV 다운로드"
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid ""
 "Click to generate a CSV file of all proctored exam results in this course."
-msgstr ""
+msgstr "감독이 있는 평가 결과를 CSV파일로 생성합니다. "
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Generate Proctored Exam Results Report"
-msgstr ""
+msgstr "시험감독 평가 결과 보고서 생성"
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Click to generate a CSV file of survey results for this course."
@@ -15160,7 +15199,7 @@ msgstr "금액 설정"
 
 #: lms/templates/instructor/instructor_dashboard_2/special_exams.html
 msgid "Allowance Section"
-msgstr ""
+msgstr "Allowance Section"
 
 #: lms/templates/instructor/instructor_dashboard_2/special_exams.html
 msgid "Student Special Exam Attempts"
@@ -16144,11 +16183,11 @@ msgstr "링크"
 
 #: lms/templates/support/certificates.html lms/templates/support/index.html
 msgid "Student Support"
-msgstr ""
+msgstr "학습자 지원"
 
 #: lms/templates/support/certificates.html
 msgid "Student Support: Certificates"
-msgstr ""
+msgstr "학습자 지원: 이수증"
 
 #: lms/templates/survey/survey.html
 msgid "User Survey"
@@ -16329,11 +16368,11 @@ msgstr ""
 
 #: themes/red-theme/lms/templates/header.html
 msgid "My Profile"
-msgstr ""
+msgstr "내 프로필"
 
 #: themes/red-theme/lms/templates/header.html
 msgid "Register Now"
-msgstr ""
+msgstr "지금 등록하세요"
 
 #: cms/templates/404.html
 msgid "The page that you were looking for was not found."
@@ -16503,7 +16542,7 @@ msgstr "파일 관리 방법에 대해 자세히 알아보기"
 
 #: cms/templates/asset_index.html
 msgid "close"
-msgstr ""
+msgstr "닫기"
 
 #: cms/templates/asset_index.html
 msgid "Max per-file size: {max_filesize}MB"
@@ -16929,7 +16968,7 @@ msgstr "지원되지 않는 구성요소"
 
 #: cms/templates/course_outline.html
 msgid "Deprecated Component"
-msgstr ""
+msgstr "더 이상 사용하지 않는 구성요소"
 
 #: cms/templates/course_outline.html
 msgid ""
@@ -19270,18 +19309,18 @@ msgstr "해당 콘텐츠 그룹이 없습니다. 다른 것를 선택하거나 �
 
 #: cms/templates/visibility_editor.html
 msgid "Verification Checkpoint"
-msgstr ""
+msgstr "인증 기준 "
 
 #: cms/templates/visibility_editor.html
 msgid "Verification checkpoint to complete"
-msgstr ""
+msgstr "완료해야 할 인증 점검 사항"
 
 #: cms/templates/visibility_editor.html
 msgid ""
 "Learners who require verification must pass the selected checkpoint to see "
 "the content in this component. Learners who do not require verification see "
 "this content by default."
-msgstr ""
+msgstr "인증을 신청한 학습자는 인증 기준에 해당하는 학습활동을 통과해야 합니다"
 
 #: cms/templates/emails/activation_email.txt
 msgid ""
@@ -19365,7 +19404,7 @@ msgstr "수강중인 강좌"
 
 #: cms/templates/widgets/header.html
 msgid "Course Navigation"
-msgstr ""
+msgstr "강좌 찾아보기"
 
 #: cms/templates/widgets/header.html
 msgid "Outline"

@@ -283,10 +283,31 @@ msgstr "Borrar"
 msgid "Uploading"
 msgstr "Subiendo"
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: cms/static/js/views/assets.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: cms/templates/js/asset-library.underscore
+#: cms/templates/js/previous-video-upload-list.underscore
+#: cms/templates/js/signatory-details.underscore
+#: cms/templates/js/signatory-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-library.a80d4a190855.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-library.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/previous-video-upload-list.51e26b0e6476.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/previous-video-upload-list.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-details.109758305475.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-details.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.underscore
+#: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
+#: test_root/staticfiles/cms/templates/asset-library.underscore
+#: test_root/staticfiles/cms/templates/previous-video-upload-list.51e26b0e6476.underscore
+#: test_root/staticfiles/cms/templates/previous-video-upload-list.underscore
+#: test_root/staticfiles/cms/templates/signatory-details.109758305475.underscore
+#: test_root/staticfiles/cms/templates/signatory-details.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
+#: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Name"
 msgstr "Nombre"
 
@@ -612,9 +633,15 @@ msgstr "Encabezado 3"
 msgid "Add to Dictionary"
 msgstr "Agregar al diccionario"
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: cms/templates/js/add-xblock-component-menu-problem.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/add-xblock-component-menu-problem.9c0639087466.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/add-xblock-component-menu-problem.underscore
+#: test_root/staticfiles/cms/templates/add-xblock-component-menu-problem.9c0639087466.underscore
+#: test_root/staticfiles/cms/templates/add-xblock-component-menu-problem.underscore
 msgid "Advanced"
 msgstr "Avanzado"
 
@@ -1429,9 +1456,11 @@ msgstr "Sin color"
 msgid "Nonbreaking space"
 msgstr "Espacio sin saltos"
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: cms/templates/js/timed-examination-preference-editor.underscore
 msgid "None"
 msgstr "Ninguno"
 
@@ -1505,10 +1534,16 @@ msgstr "Pre"
 msgid "Prev"
 msgstr "Previo"
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: lms/static/coffee/src/customwmd.js
+#: cms/templates/js/asset-library.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-library.a80d4a190855.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-library.underscore
+#: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
+#: test_root/staticfiles/cms/templates/asset-library.underscore
 msgid "Preview"
 msgstr "Vista previa"
 
@@ -1542,9 +1577,20 @@ msgstr "Reemplazar todo"
 msgid "Replace with"
 msgstr "Reemplazar con"
 
+#. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: cms/templates/js/metadata-file-uploader-item.underscore
+#: cms/templates/js/video/metadata-translations-item.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-file-uploader-item.fa4e6b88d889.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-file-uploader-item.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/video/metadata-translations-item.e6ce4d1caffe.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/video/metadata-translations-item.underscore
+#: test_root/staticfiles/cms/templates/metadata-file-uploader-item.fa4e6b88d889.underscore
+#: test_root/staticfiles/cms/templates/metadata-file-uploader-item.underscore
+#: test_root/staticfiles/cms/templates/video/metadata-translations-item.e6ce4d1caffe.underscore
+#: test_root/staticfiles/cms/templates/video/metadata-translations-item.underscore
 msgid "Replace"
 msgstr "Reemplazar"
 
@@ -2641,6 +2687,41 @@ msgid "Annotation Text"
 msgstr "Anotación"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
+#: cms/templates/js/metadata-dict-entry.underscore
+#: cms/templates/js/metadata-file-uploader-entry.underscore
+#: cms/templates/js/metadata-list-entry.underscore
+#: cms/templates/js/metadata-number-entry.underscore
+#: cms/templates/js/metadata-option-entry.underscore
+#: cms/templates/js/metadata-string-entry.underscore
+#: cms/templates/js/video/metadata-translations-entry.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-dict-entry.870a172d2a87.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-dict-entry.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-file-uploader-entry.a4de8ee7a313.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-file-uploader-entry.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-list-entry.2f62b8f01268.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-list-entry.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-number-entry.e409f39f687a.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-number-entry.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-option-entry.f3c3996edccc.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-option-entry.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-string-entry.585336933efe.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-string-entry.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/video/metadata-translations-entry.94cf2f9f52e9.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/video/metadata-translations-entry.underscore
+#: test_root/staticfiles/cms/templates/metadata-dict-entry.870a172d2a87.underscore
+#: test_root/staticfiles/cms/templates/metadata-dict-entry.underscore
+#: test_root/staticfiles/cms/templates/metadata-file-uploader-entry.a4de8ee7a313.underscore
+#: test_root/staticfiles/cms/templates/metadata-file-uploader-entry.underscore
+#: test_root/staticfiles/cms/templates/metadata-list-entry.2f62b8f01268.underscore
+#: test_root/staticfiles/cms/templates/metadata-list-entry.underscore
+#: test_root/staticfiles/cms/templates/metadata-number-entry.e409f39f687a.underscore
+#: test_root/staticfiles/cms/templates/metadata-number-entry.underscore
+#: test_root/staticfiles/cms/templates/metadata-option-entry.f3c3996edccc.underscore
+#: test_root/staticfiles/cms/templates/metadata-option-entry.underscore
+#: test_root/staticfiles/cms/templates/metadata-string-entry.585336933efe.underscore
+#: test_root/staticfiles/cms/templates/metadata-string-entry.underscore
+#: test_root/staticfiles/cms/templates/video/metadata-translations-entry.94cf2f9f52e9.underscore
+#: test_root/staticfiles/cms/templates/video/metadata-translations-entry.underscore
 msgid "Clear"
 msgstr "Borrar"
 
@@ -2698,6 +2779,21 @@ msgid "team count"
 msgstr "Cantidad de equipos"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
+#: cms/templates/js/certificate-editor.underscore
+#: cms/templates/js/content-group-editor.underscore
+#: cms/templates/js/group-configuration-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/content-group-editor.fb7df3c51164.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/content-group-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.underscore
+#: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
+#: test_root/staticfiles/cms/templates/certificate-editor.underscore
+#: test_root/staticfiles/cms/templates/content-group-editor.fb7df3c51164.underscore
+#: test_root/staticfiles/cms/templates/content-group-editor.underscore
+#: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
+#: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Create"
 msgstr "Crear"
 
@@ -4753,7 +4849,11 @@ msgstr "Borrando"
 msgid "OpenAssessment Save Error"
 msgstr "Error al guardar en el servidor OpenAssessment"
 
-#: cms/static/js/base.js
+#: cms/static/js/base.js cms/templates/js/checklist.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/checklist.ccf05a0c32e4.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/checklist.underscore
+#: test_root/staticfiles/cms/templates/checklist.ccf05a0c32e4.underscore
+#: test_root/staticfiles/cms/templates/checklist.underscore
 msgid "This link will open in a new browser window/tab"
 msgstr "Este vínculo se abrirá en una nueva ventana o pestaña del navegador"
 
@@ -5156,7 +5256,16 @@ msgstr ""
 msgid "Your file has been deleted."
 msgstr "Su archivo ha sido borrado."
 
-#: cms/static/js/views/assets.js
+#: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
+#: cms/templates/js/previous-video-upload-list.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-library.a80d4a190855.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-library.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/previous-video-upload-list.51e26b0e6476.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/previous-video-upload-list.underscore
+#: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
+#: test_root/staticfiles/cms/templates/asset-library.underscore
+#: test_root/staticfiles/cms/templates/previous-video-upload-list.51e26b0e6476.underscore
+#: test_root/staticfiles/cms/templates/previous-video-upload-list.underscore
 msgid "Date Added"
 msgstr "Fecha añadida"
 
@@ -5191,10 +5300,20 @@ msgid "Max file size exceeded"
 msgstr "Tamaño maximo del archivo excedido"
 
 #: cms/static/js/views/assets.js
+#: cms/templates/js/asset-upload-modal.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-upload-modal.08d287c1d54b.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-upload-modal.underscore
+#: test_root/staticfiles/cms/templates/asset-upload-modal.08d287c1d54b.underscore
+#: test_root/staticfiles/cms/templates/asset-upload-modal.underscore
 msgid "Choose File"
 msgstr "Elegir archivo"
 
 #: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
+#: cms/templates/js/asset-upload-modal.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-upload-modal.08d287c1d54b.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/asset-upload-modal.underscore
+#: test_root/staticfiles/cms/templates/asset-upload-modal.08d287c1d54b.underscore
+#: test_root/staticfiles/cms/templates/asset-upload-modal.underscore
 msgid "Upload New File"
 msgstr "Subir nuevo archivo"
 
@@ -5311,7 +5430,11 @@ msgstr "Error importando curso"
 msgid "There was an error with the upload"
 msgstr "Hubo un error con la subida del archivo"
 
-#: cms/static/js/views/license.js
+#: cms/static/js/views/license.js cms/templates/js/license-selector.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/license-selector.underscore
+#: test_root/staticfiles/cms/templates/license-selector.852169a50ef7.underscore
+#: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "All Rights Reserved"
 msgstr "Todos los Derechos Reservados"
 
@@ -5470,6 +5593,15 @@ msgid "Edit section release date"
 msgstr "Editar la fecha de liberación de la sección"
 
 #: cms/static/js/views/overview_assignment_grader.js
+#: cms/templates/js/grading-editor.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/course-outline.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/grading-editor.7ff8eefeea64.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/grading-editor.underscore
+#: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
+#: test_root/staticfiles/cms/templates/course-outline.underscore
+#: test_root/staticfiles/cms/templates/grading-editor.7ff8eefeea64.underscore
+#: test_root/staticfiles/cms/templates/grading-editor.underscore
 msgid "Not Graded"
 msgstr "No calificado"
 
@@ -5545,6 +5677,16 @@ msgstr ""
 "cualquier referencia al mismo en la navegación del curso será eliminada."
 
 #: cms/static/js/views/uploads.js
+#: cms/templates/js/metadata-file-uploader-item.underscore
+#: cms/templates/js/video/metadata-translations-item.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-file-uploader-item.fa4e6b88d889.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/metadata-file-uploader-item.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/video/metadata-translations-item.e6ce4d1caffe.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/video/metadata-translations-item.underscore
+#: test_root/staticfiles/cms/templates/metadata-file-uploader-item.fa4e6b88d889.underscore
+#: test_root/staticfiles/cms/templates/metadata-file-uploader-item.underscore
+#: test_root/staticfiles/cms/templates/video/metadata-translations-item.e6ce4d1caffe.underscore
+#: test_root/staticfiles/cms/templates/video/metadata-translations-item.underscore
 msgid "Upload"
 msgstr "Subir"
 
@@ -5620,6 +5762,16 @@ msgid "Publish all unpublished changes for this %(item)s?"
 msgstr "Publicar todos los cambios no publicados para este %(item)s?"
 
 #: cms/static/js/views/modals/course_outline_modals.js
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/publish-xblock.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/course-outline.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.underscore
+#: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
+#: test_root/staticfiles/cms/templates/course-outline.underscore
+#: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
+#: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Publish"
 msgstr "Publicar"
 
@@ -5658,6 +5810,11 @@ msgid "Publishing"
 msgstr "Publicar"
 
 #: cms/static/js/views/pages/container_subviews.js
+#: cms/templates/js/publish-xblock.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
+#: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.underscore
+#: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
+#: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Discard Changes"
 msgstr "Descartar cambios"
 
@@ -5870,7 +6027,7 @@ msgstr "Formato incorrecto de URL."
 #: test_root/staticfiles/cms/templates/active-video-upload-list.a3c73865dbb7.underscore
 #: test_root/staticfiles/cms/templates/active-video-upload-list.underscore
 msgid "Drag and drop or click here to upload video files."
-msgstr ""
+msgstr "Arrastre y suelte o pulse aquí para subir ficheros de vídeo."
 
 #: cms/templates/js/active-video-upload.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/active-video-upload.7145c07dbb94.underscore
@@ -5878,7 +6035,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/active-video-upload.7145c07dbb94.underscore
 #: test_root/staticfiles/cms/templates/active-video-upload.underscore
 msgid "status"
-msgstr ""
+msgstr "estado"
 
 #: cms/templates/js/add-xblock-component-menu-problem.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/add-xblock-component-menu-problem.9c0639087466.underscore
@@ -5886,7 +6043,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/add-xblock-component-menu-problem.9c0639087466.underscore
 #: test_root/staticfiles/cms/templates/add-xblock-component-menu-problem.underscore
 msgid "Common Problem Types"
-msgstr ""
+msgstr "Tipos de problemas comunes"
 
 #: cms/templates/js/add-xblock-component.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/add-xblock-component.d4aecd3a64dd.underscore
@@ -5894,7 +6051,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/add-xblock-component.d4aecd3a64dd.underscore
 #: test_root/staticfiles/cms/templates/add-xblock-component.underscore
 msgid "Add New Component"
-msgstr ""
+msgstr "Añadir nuevo Componente"
 
 #: cms/templates/js/advanced_entry.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/advanced_entry.660f21a633f7.underscore
@@ -5902,7 +6059,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/advanced_entry.660f21a633f7.underscore
 #: test_root/staticfiles/cms/templates/advanced_entry.underscore
 msgid "Deprecated"
-msgstr ""
+msgstr "Descartado"
 
 #: cms/templates/js/asset-library.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset-library.a80d4a190855.underscore
@@ -5910,7 +6067,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
 #: test_root/staticfiles/cms/templates/asset-library.underscore
 msgid "List of uploaded files and assets in this course"
-msgstr ""
+msgstr "Lista de archivos y recursos cargados en este curso"
 
 #: cms/templates/js/asset-library.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset-library.a80d4a190855.underscore
@@ -5918,7 +6075,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
 #: test_root/staticfiles/cms/templates/asset-library.underscore
 msgid "- Sortable"
-msgstr ""
+msgstr "- Ordenable"
 
 #: cms/templates/js/asset-library.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset-library.a80d4a190855.underscore
@@ -5926,7 +6083,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
 #: test_root/staticfiles/cms/templates/asset-library.underscore
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: cms/templates/js/asset-library.underscore
 #: cms/templates/js/basic-modal.underscore
@@ -5952,7 +6109,7 @@ msgstr "Acciones"
 #: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
 #: test_root/staticfiles/cms/templates/asset-library.underscore
 msgid "You haven't added any assets to this course yet."
-msgstr ""
+msgstr "No ha añadido aún ningún recurso a este curso."
 
 #: cms/templates/js/asset-library.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset-library.a80d4a190855.underscore
@@ -5960,7 +6117,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset-library.a80d4a190855.underscore
 #: test_root/staticfiles/cms/templates/asset-library.underscore
 msgid "Upload your first asset"
-msgstr ""
+msgstr "Subir su primer recurso"
 
 #: cms/templates/js/asset-upload-modal.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset-upload-modal.08d287c1d54b.underscore
@@ -5968,7 +6125,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset-upload-modal.08d287c1d54b.underscore
 #: test_root/staticfiles/cms/templates/asset-upload-modal.underscore
 msgid "close"
-msgstr ""
+msgstr "cerrar"
 
 #: cms/templates/js/asset.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset.aabc8b491a6d.underscore
@@ -5976,7 +6133,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset.aabc8b491a6d.underscore
 #: test_root/staticfiles/cms/templates/asset.underscore
 msgid "No description available"
-msgstr ""
+msgstr "No hay descripción disponible"
 
 #: cms/templates/js/asset.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset.aabc8b491a6d.underscore
@@ -5984,7 +6141,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset.aabc8b491a6d.underscore
 #: test_root/staticfiles/cms/templates/asset.underscore
 msgid "Open/download this file"
-msgstr ""
+msgstr "Abrir / descargar este archivo"
 
 #: cms/templates/js/asset.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset.aabc8b491a6d.underscore
@@ -5992,7 +6149,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset.aabc8b491a6d.underscore
 #: test_root/staticfiles/cms/templates/asset.underscore
 msgid "Studio:"
-msgstr ""
+msgstr "Studio:"
 
 #: cms/templates/js/asset.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset.aabc8b491a6d.underscore
@@ -6000,7 +6157,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset.aabc8b491a6d.underscore
 #: test_root/staticfiles/cms/templates/asset.underscore
 msgid "Web:"
-msgstr ""
+msgstr "Web:"
 
 #: cms/templates/js/asset.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset.aabc8b491a6d.underscore
@@ -6008,7 +6165,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset.aabc8b491a6d.underscore
 #: test_root/staticfiles/cms/templates/asset.underscore
 msgid "Delete this asset"
-msgstr ""
+msgstr "Borrar este objeto"
 
 #: cms/templates/js/asset.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset.aabc8b491a6d.underscore
@@ -6016,7 +6173,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset.aabc8b491a6d.underscore
 #: test_root/staticfiles/cms/templates/asset.underscore
 msgid "Lock this asset"
-msgstr ""
+msgstr "Bloquear este recurso"
 
 #: cms/templates/js/asset.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/asset.aabc8b491a6d.underscore
@@ -6024,7 +6181,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/asset.aabc8b491a6d.underscore
 #: test_root/staticfiles/cms/templates/asset.underscore
 msgid "Lock/unlock file"
-msgstr ""
+msgstr "Bloquear / Desbloquear recurso"
 
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/content-group-details.underscore
@@ -6042,7 +6199,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-details.497c481b40c1.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-details.underscore
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: cms/templates/js/certificate-details.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-details.5f988a0367c5.underscore
@@ -6050,7 +6207,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-details.5f988a0367c5.underscore
 #: test_root/staticfiles/cms/templates/certificate-details.underscore
 msgid "Certificate Details"
-msgstr ""
+msgstr "Detalles del certificado"
 
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
@@ -6063,7 +6220,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Course Title Override"
-msgstr ""
+msgstr "Reemplazo para el título del curso"
 
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
@@ -6076,7 +6233,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Certificate Signatories"
-msgstr ""
+msgstr "Signatarios del certificado"
 
 #: cms/templates/js/certificate-editor.underscore
 #: cms/templates/js/content-group-editor.underscore
@@ -6099,7 +6256,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "error.message"
-msgstr ""
+msgstr "Mensaje de error"
 
 #: cms/templates/js/certificate-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
@@ -6107,7 +6264,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Certificate Information"
-msgstr ""
+msgstr "Información del certificado"
 
 #: cms/templates/js/certificate-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
@@ -6115,7 +6272,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Certificate Name"
-msgstr ""
+msgstr "Nombre del certificado"
 
 #: cms/templates/js/certificate-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
@@ -6123,7 +6280,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Name of the certificate"
-msgstr ""
+msgstr "Nombre del certificado"
 
 #: cms/templates/js/certificate-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
@@ -6131,7 +6288,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Description of the certificate"
-msgstr ""
+msgstr "Descripción del certificado"
 
 #: cms/templates/js/certificate-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
@@ -6139,7 +6296,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Course title"
-msgstr ""
+msgstr "Título del curso"
 
 #: cms/templates/js/certificate-web-preview.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-web-preview.7f1a4d99de65.underscore
@@ -6147,7 +6304,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-web-preview.7f1a4d99de65.underscore
 #: test_root/staticfiles/cms/templates/certificate-web-preview.underscore
 msgid "Choose mode"
-msgstr ""
+msgstr "Elegir modo"
 
 #: cms/templates/js/certificate-web-preview.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-web-preview.7f1a4d99de65.underscore
@@ -6155,7 +6312,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-web-preview.7f1a4d99de65.underscore
 #: test_root/staticfiles/cms/templates/certificate-web-preview.underscore
 msgid "Preview Certificate"
-msgstr ""
+msgstr "Previsualizar certificado"
 
 #: cms/templates/js/certificate-web-preview.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-web-preview.7f1a4d99de65.underscore
@@ -6163,7 +6320,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-web-preview.7f1a4d99de65.underscore
 #: test_root/staticfiles/cms/templates/certificate-web-preview.underscore
 msgid "Activate"
-msgstr ""
+msgstr "Activar"
 
 #: cms/templates/js/certificate-web-preview.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-web-preview.7f1a4d99de65.underscore
@@ -6171,7 +6328,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/certificate-web-preview.7f1a4d99de65.underscore
 #: test_root/staticfiles/cms/templates/certificate-web-preview.underscore
 msgid "Deactivate"
-msgstr ""
+msgstr "Desactivar"
 
 #: cms/templates/js/checklist.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/checklist.ccf05a0c32e4.underscore
@@ -6179,7 +6336,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/checklist.ccf05a0c32e4.underscore
 #: test_root/staticfiles/cms/templates/checklist.underscore
 msgid "{number}{pct_sign} of checklists completed"
-msgstr ""
+msgstr "{number}{pct_sign} de las tareas de chequeo completado"
 
 #: cms/templates/js/checklist.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/checklist.ccf05a0c32e4.underscore
@@ -6187,7 +6344,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/checklist.ccf05a0c32e4.underscore
 #: test_root/staticfiles/cms/templates/checklist.underscore
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: cms/templates/js/checklist.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/checklist.ccf05a0c32e4.underscore
@@ -6195,7 +6352,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/checklist.ccf05a0c32e4.underscore
 #: test_root/staticfiles/cms/templates/checklist.underscore
 msgid "Tasks Completed:"
-msgstr ""
+msgstr "Tareas completadas"
 
 #: cms/templates/js/container-message.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/container-message.cc1224413644.underscore
@@ -6206,6 +6363,8 @@ msgid ""
 "Caution: The last published version of this unit is live. By publishing "
 "changes you will change the student experience."
 msgstr ""
+"Atención: La última versión publicada de esta unidad está en vivo. Al "
+"publicar los cambios, cambiará la experiencia de los estudiantes."
 
 #: cms/templates/js/content-group-details.underscore
 #: cms/templates/js/content-group-editor.underscore
@@ -6218,7 +6377,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/content-group-editor.fb7df3c51164.underscore
 #: test_root/staticfiles/cms/templates/content-group-editor.underscore
 msgid "Cannot delete when in use by a unit"
-msgstr ""
+msgstr "No puede borrar cuando esta en uso por una unidad"
 
 #: cms/templates/js/content-group-details.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/content-group-details.170ba2663d4a.underscore
@@ -6226,7 +6385,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/content-group-details.170ba2663d4a.underscore
 #: test_root/staticfiles/cms/templates/content-group-details.underscore
 msgid "This content group is used in:"
-msgstr ""
+msgstr "Este contenido de grupo es usado en:"
 
 #: cms/templates/js/content-group-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/content-group-editor.fb7df3c51164.underscore
@@ -6234,7 +6393,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/content-group-editor.fb7df3c51164.underscore
 #: test_root/staticfiles/cms/templates/content-group-editor.underscore
 msgid "Content Group Name"
-msgstr ""
+msgstr "Content Group Name"
 
 #: cms/templates/js/content-group-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/content-group-editor.fb7df3c51164.underscore
@@ -6242,7 +6401,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/content-group-editor.fb7df3c51164.underscore
 #: test_root/staticfiles/cms/templates/content-group-editor.underscore
 msgid "Content Group ID"
-msgstr ""
+msgstr "ID de Contenido de Grupo"
 
 #: cms/templates/js/content-group-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/content-group-editor.fb7df3c51164.underscore
@@ -6250,7 +6409,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/content-group-editor.fb7df3c51164.underscore
 #: test_root/staticfiles/cms/templates/content-group-editor.underscore
 msgid "This is the name of the group"
-msgstr ""
+msgstr "Este es el nombre del grupo"
 
 #: cms/templates/js/content-group-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/content-group-editor.fb7df3c51164.underscore
@@ -6258,7 +6417,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/content-group-editor.fb7df3c51164.underscore
 #: test_root/staticfiles/cms/templates/content-group-editor.underscore
 msgid "This content group is used in one or more units."
-msgstr ""
+msgstr "Este contenido de grupo es usado en uno o mas unidades."
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6266,7 +6425,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Contains staff only content"
-msgstr ""
+msgstr "Contiene solo contenido del equipo del curso"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6274,7 +6433,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Unpublished changes to live content"
-msgstr ""
+msgstr "Cambios no publicados en el contenido en vivo"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6282,7 +6441,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Unpublished units will not be released"
-msgstr ""
+msgstr "Las unidades no publicadas no serán liberadas"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6290,7 +6449,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Unpublished changes to content that will release in the future"
-msgstr ""
+msgstr "Cambios no publicados del contenido que será liberado en el futuro"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
@@ -6303,7 +6462,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/xblock-outline.26511430588d.underscore
 #: test_root/staticfiles/cms/templates/xblock-outline.underscore
 msgid "Collapse/Expand this %(xblock_type)s"
-msgstr ""
+msgstr "Contraer/Expandir esta %(xblock_type)s"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6311,7 +6470,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre para mostrar:"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6319,7 +6478,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Configure"
-msgstr ""
+msgstr "Configurar"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6327,7 +6486,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Drag to reorder"
-msgstr ""
+msgstr "Arrastre para reorganizar"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6335,7 +6494,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Release Status:"
-msgstr ""
+msgstr "Estado de liberación:"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -6353,7 +6512,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/xblock-outline.26511430588d.underscore
 #: test_root/staticfiles/cms/templates/xblock-outline.underscore
 msgid "Released:"
-msgstr ""
+msgstr "Liberado:"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -6366,7 +6525,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Scheduled:"
-msgstr ""
+msgstr "Programado"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -6379,7 +6538,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Unscheduled"
-msgstr ""
+msgstr "No programado"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6387,7 +6546,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Graded as:"
-msgstr ""
+msgstr "Calificado como:"
 
 #: cms/templates/js/course-outline.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course-outline.05246d1f7f2d.underscore
@@ -6395,7 +6554,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course-outline.05246d1f7f2d.underscore
 #: test_root/staticfiles/cms/templates/course-outline.underscore
 msgid "Due:"
-msgstr ""
+msgstr "Fecha de entrega:"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
@@ -6408,7 +6567,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/xblock-outline.26511430588d.underscore
 #: test_root/staticfiles/cms/templates/xblock-outline.underscore
 msgid "You haven't added any content to this course yet."
-msgstr ""
+msgstr "Todavía no ha añadido ningún contenido a este curso."
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
@@ -6421,7 +6580,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/xblock-outline.26511430588d.underscore
 #: test_root/staticfiles/cms/templates/xblock-outline.underscore
 msgid "Click to add a new %(xblock_type)s"
-msgstr ""
+msgstr "Haga clic para añadir una nueva %(xblock_type)s"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6429,7 +6588,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "Assignment Type Name"
-msgstr ""
+msgstr "Nombre del tipo de tarea"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6437,7 +6596,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "e.g. Homework, Midterm Exams"
-msgstr ""
+msgstr "Ej: Tareas, Evaluaciones"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6445,7 +6604,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "Abbreviation"
-msgstr ""
+msgstr "Abreviatura"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6453,7 +6612,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "e.g. HW, Midterm"
-msgstr ""
+msgstr "Ej: Tarea, Eval."
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6461,7 +6620,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "Weight of Total Grade"
-msgstr ""
+msgstr "Peso en la calificación total"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6469,7 +6628,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "as a percent, e.g. 40"
-msgstr ""
+msgstr "como porcentaje, ej: 40"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6477,7 +6636,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "Total Number"
-msgstr ""
+msgstr "Número total"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6485,7 +6644,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "total exercises assigned"
-msgstr ""
+msgstr "Total de ejercicios asignados"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6493,7 +6652,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "Number of Droppable"
-msgstr ""
+msgstr "Cantidad de ejercicios excluibles"
 
 #: cms/templates/js/course_grade_policy.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_grade_policy.62f954876128.underscore
@@ -6501,7 +6660,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_grade_policy.62f954876128.underscore
 #: test_root/staticfiles/cms/templates/course_grade_policy.underscore
 msgid "total exercises that won't be graded"
-msgstr ""
+msgstr "Total de ejercicios que no serán calificados"
 
 #: cms/templates/js/course_info_handouts.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_info_handouts.03885b977531.underscore
@@ -6509,7 +6668,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_info_handouts.03885b977531.underscore
 #: test_root/staticfiles/cms/templates/course_info_handouts.underscore
 msgid "Course Handouts"
-msgstr ""
+msgstr "Apuntes del curso"
 
 #: cms/templates/js/course_info_handouts.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_info_handouts.03885b977531.underscore
@@ -6517,7 +6676,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_info_handouts.03885b977531.underscore
 #: test_root/staticfiles/cms/templates/course_info_handouts.underscore
 msgid "You have no handouts defined"
-msgstr ""
+msgstr "No tiene apuntes denifidos"
 
 #: cms/templates/js/course_info_handouts.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_info_handouts.03885b977531.underscore
@@ -6528,6 +6687,7 @@ msgid ""
 "There is invalid code in your content. Please check to make sure it is valid"
 " HTML."
 msgstr ""
+"Hay código invalido en su contenido. Por favor verifique la validez del HTML"
 
 #: cms/templates/js/course_info_update.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_info_update.4e28d561f259.underscore
@@ -6535,7 +6695,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_info_update.4e28d561f259.underscore
 #: test_root/staticfiles/cms/templates/course_info_update.underscore
 msgid "Send push notification to mobile apps"
-msgstr ""
+msgstr "Enviar notificaciones PUSH a las aplicaciones móviles"
 
 #: cms/templates/js/course_info_update.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_info_update.4e28d561f259.underscore
@@ -6543,7 +6703,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_info_update.4e28d561f259.underscore
 #: test_root/staticfiles/cms/templates/course_info_update.underscore
 msgid "Send notification to mobile apps"
-msgstr ""
+msgstr "Enviar notificaciones a las aplicaciones móviles"
 
 #: cms/templates/js/course_info_update.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/course_info_update.4e28d561f259.underscore
@@ -6551,7 +6711,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/course_info_update.4e28d561f259.underscore
 #: test_root/staticfiles/cms/templates/course_info_update.underscore
 msgid "Post"
-msgstr ""
+msgstr "Publicación"
 
 #: cms/templates/js/due-date-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/due-date-editor.53fafdcf5daf.underscore
@@ -6559,7 +6719,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/due-date-editor.53fafdcf5daf.underscore
 #: test_root/staticfiles/cms/templates/due-date-editor.underscore
 msgid "Due Date:"
-msgstr ""
+msgstr "Fecha límite:"
 
 #: cms/templates/js/due-date-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/due-date-editor.53fafdcf5daf.underscore
@@ -6567,7 +6727,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/due-date-editor.53fafdcf5daf.underscore
 #: test_root/staticfiles/cms/templates/due-date-editor.underscore
 msgid "Due Time in UTC:"
-msgstr ""
+msgstr "Hora límite en UTC:"
 
 #: cms/templates/js/due-date-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/due-date-editor.53fafdcf5daf.underscore
@@ -6575,7 +6735,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/due-date-editor.53fafdcf5daf.underscore
 #: test_root/staticfiles/cms/templates/due-date-editor.underscore
 msgid "Clear Grading Due Date"
-msgstr ""
+msgstr "Borrar la fecha límite de calificación"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6583,7 +6743,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "Chapter Name"
-msgstr ""
+msgstr "Nombre del capítulo"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6591,7 +6751,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "Chapter %s"
-msgstr ""
+msgstr "Capítulo %s"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6599,7 +6759,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "provide the title/name of the chapter that will be used in navigating"
-msgstr ""
+msgstr "Ingrese el título / nombre del capítulo que se usará"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6607,7 +6767,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "Chapter Asset"
-msgstr ""
+msgstr "Recursos del capítulo"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6615,7 +6775,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "path/to/introductionToCookieBaking-CH%d.pdf"
-msgstr ""
+msgstr "ruta/al/capitulo%d.pdf"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6623,7 +6783,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "upload a PDF file or provide the path to a Studio asset file"
-msgstr ""
+msgstr "Suba un archivo PDF o ingrese la ruta de un recurso en Studio"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6631,7 +6791,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "Upload PDF"
-msgstr ""
+msgstr "Subir PDF"
 
 #: cms/templates/js/edit-chapter.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-chapter.d3f01421964c.underscore
@@ -6639,7 +6799,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-chapter.d3f01421964c.underscore
 #: test_root/staticfiles/cms/templates/edit-chapter.underscore
 msgid "delete chapter"
-msgstr ""
+msgstr "borrar capítulo"
 
 #: cms/templates/js/edit-textbook.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-textbook.faa3ebbda7fa.underscore
@@ -6647,7 +6807,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-textbook.faa3ebbda7fa.underscore
 #: test_root/staticfiles/cms/templates/edit-textbook.underscore
 msgid "Textbook information"
-msgstr ""
+msgstr "Información del libro de texto"
 
 #: cms/templates/js/edit-textbook.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-textbook.faa3ebbda7fa.underscore
@@ -6655,7 +6815,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-textbook.faa3ebbda7fa.underscore
 #: test_root/staticfiles/cms/templates/edit-textbook.underscore
 msgid "Textbook Name"
-msgstr ""
+msgstr "Nombre"
 
 #: cms/templates/js/edit-textbook.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-textbook.faa3ebbda7fa.underscore
@@ -6663,7 +6823,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-textbook.faa3ebbda7fa.underscore
 #: test_root/staticfiles/cms/templates/edit-textbook.underscore
 msgid "Introduction to Cookie Baking"
-msgstr ""
+msgstr "Introducción a las Ciencias de la Computación"
 
 #: cms/templates/js/edit-textbook.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-textbook.faa3ebbda7fa.underscore
@@ -6674,6 +6834,8 @@ msgid ""
 "provide the title/name of the text book as you would like your students to "
 "see it"
 msgstr ""
+"ingrese el título / nombre del libro de texto como será visto por los "
+"estudiantes"
 
 #: cms/templates/js/edit-textbook.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-textbook.faa3ebbda7fa.underscore
@@ -6681,7 +6843,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-textbook.faa3ebbda7fa.underscore
 #: test_root/staticfiles/cms/templates/edit-textbook.underscore
 msgid "Chapter information"
-msgstr ""
+msgstr "Información del capítulo"
 
 #: cms/templates/js/edit-textbook.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/edit-textbook.faa3ebbda7fa.underscore
@@ -6689,7 +6851,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/edit-textbook.faa3ebbda7fa.underscore
 #: test_root/staticfiles/cms/templates/edit-textbook.underscore
 msgid "Add a Chapter"
-msgstr ""
+msgstr "Añadir capítulo"
 
 #: cms/templates/js/grading-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/grading-editor.7ff8eefeea64.underscore
@@ -6697,7 +6859,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/grading-editor.7ff8eefeea64.underscore
 #: test_root/staticfiles/cms/templates/grading-editor.underscore
 msgid "Grading"
-msgstr ""
+msgstr "Calificaciones"
 
 #: cms/templates/js/grading-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/grading-editor.7ff8eefeea64.underscore
@@ -6705,7 +6867,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/grading-editor.7ff8eefeea64.underscore
 #: test_root/staticfiles/cms/templates/grading-editor.underscore
 msgid "Grade as:"
-msgstr ""
+msgstr "Calificar como:"
 
 #: cms/templates/js/group-configuration-details.underscore
 #: cms/templates/js/group-configuration-editor.underscore
@@ -6718,7 +6880,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Cannot delete when in use by an experiment"
-msgstr ""
+msgstr "No se puede borrar mientras esté en uso por un experimento"
 
 #: cms/templates/js/group-configuration-details.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-details.497c481b40c1.underscore
@@ -6726,7 +6888,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-details.497c481b40c1.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-details.underscore
 msgid "This Group Configuration is used in:"
-msgstr ""
+msgstr "Esta configuración de grupo se usa en:"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6734,7 +6896,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Group Configuration information"
-msgstr ""
+msgstr "Información de configuración del grupo"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6742,7 +6904,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Group Configuration Name"
-msgstr ""
+msgstr "Nombre de configuración del grupo"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6750,7 +6912,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Group Configuration ID"
-msgstr ""
+msgstr "Identificación de configuración del grupo"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6758,7 +6920,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "This is the Name of the Group Configuration"
-msgstr ""
+msgstr "Este es el nombre de la Configuración del Grupo"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6766,7 +6928,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Name or short description of the configuration"
-msgstr ""
+msgstr "Nombre o descripción corta de la configuración"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6774,7 +6936,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "This is the Description of the Group Configuration"
-msgstr ""
+msgstr "Esta es la descripción de configuración del grupo"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6782,7 +6944,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Optional long description"
-msgstr ""
+msgstr "Descripción larga optativa"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6790,7 +6952,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Group information"
-msgstr ""
+msgstr "Información del grupo"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6798,7 +6960,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6809,6 +6971,8 @@ msgid ""
 "Name of the groups that students will be assigned to, for example, Control, "
 "Video, Problems. You must have two or more groups."
 msgstr ""
+"Nombre de los grupos a los que los estudiantes serán asignados. Por ejemplo,"
+" Control, video, problemas. Debe tener dos o más grupos."
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6816,7 +6980,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-configuration-editor.0d2d2666fe2b.underscore
 #: test_root/staticfiles/cms/templates/group-configuration-editor.underscore
 msgid "Add another group"
-msgstr ""
+msgstr "Añadir nuevo grupo"
 
 #: cms/templates/js/group-configuration-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-configuration-editor.0d2d2666fe2b.underscore
@@ -6827,6 +6991,8 @@ msgid ""
 "This configuration is currently used in content experiments. If you make "
 "changes to the groups, you may need to edit those experiments."
 msgstr ""
+"Esta configuración se está usando en contenidos experimentales. Si hace "
+"cambios a los grupos, puede que necesite editar también dichos experimentos."
 
 #: cms/templates/js/group-edit.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/group-edit.025ee9ad6b68.underscore
@@ -6834,7 +7000,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/group-edit.025ee9ad6b68.underscore
 #: test_root/staticfiles/cms/templates/group-edit.underscore
 msgid "delete group"
-msgstr ""
+msgstr "borrar grupo"
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6842,7 +7008,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/license-selector.852169a50ef7.underscore
 #: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "License Type"
-msgstr ""
+msgstr "Tipo de Licencia"
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6850,7 +7016,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/license-selector.852169a50ef7.underscore
 #: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "Learn more about {license_name}"
-msgstr ""
+msgstr "Saber más sobre  {license_name}"
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6858,7 +7024,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/license-selector.852169a50ef7.underscore
 #: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "Options for {license_name}"
-msgstr ""
+msgstr "Opciones para  {license_name}"
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6867,6 +7033,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "The following options are available for the {license_name} license."
 msgstr ""
+"Las siguientes opciones están disponibles para {license_name}  licencia"
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6874,7 +7041,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/license-selector.852169a50ef7.underscore
 #: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "License Display"
-msgstr ""
+msgstr "Muestra de la Licencia"
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6885,6 +7052,7 @@ msgid ""
 "The following message will be displayed at the bottom of the courseware "
 "pages within your course:"
 msgstr ""
+"El siguiente mensaje será mostrado al final de las páginas de los cursos. "
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6893,6 +7061,8 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "Creative Commons licensed content, with terms as follow:"
 msgstr ""
+"Contenido con licencia Creative Commons de acuerdo a los siguientes "
+"términos:"
 
 #: cms/templates/js/license-selector.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/license-selector.852169a50ef7.underscore
@@ -6900,7 +7070,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/license-selector.852169a50ef7.underscore
 #: test_root/staticfiles/cms/templates/license-selector.underscore
 msgid "Some Rights Reserved"
-msgstr ""
+msgstr "Algunos Derechos Reservados"
 
 #: cms/templates/js/list.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/list.a0c15d411f42.underscore
@@ -6908,7 +7078,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/list.a0c15d411f42.underscore
 #: test_root/staticfiles/cms/templates/list.underscore
 msgid "New %(item_type)s"
-msgstr ""
+msgstr "Nueva %(item_type)s"
 
 #: cms/templates/js/metadata-dict-entry.underscore
 #: cms/templates/js/metadata-list-entry.underscore
@@ -6926,7 +7096,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/metadata-translations-entry.94cf2f9f52e9.underscore
 #: test_root/staticfiles/cms/templates/video/metadata-translations-entry.underscore
 msgid "Add"
-msgstr ""
+msgstr "Añadir"
 
 #: cms/templates/js/metadata-dict-entry.underscore
 #: cms/templates/js/metadata-file-uploader-entry.underscore
@@ -6964,7 +7134,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/metadata-translations-entry.94cf2f9f52e9.underscore
 #: test_root/staticfiles/cms/templates/video/metadata-translations-entry.underscore
 msgid "Clear Value"
-msgstr ""
+msgstr "Borrar"
 
 #: cms/templates/js/metadata-file-uploader-item.underscore
 #: cms/templates/js/video/metadata-translations-item.underscore
@@ -6977,7 +7147,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/metadata-translations-item.e6ce4d1caffe.underscore
 #: test_root/staticfiles/cms/templates/video/metadata-translations-item.underscore
 msgid "Download"
-msgstr ""
+msgstr "Descargar"
 
 #: cms/templates/js/no-textbooks.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/no-textbooks.dd80461b169e.underscore
@@ -6985,7 +7155,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/no-textbooks.dd80461b169e.underscore
 #: test_root/staticfiles/cms/templates/no-textbooks.underscore
 msgid "You haven't added any textbooks to this course yet."
-msgstr ""
+msgstr "No ha añadido aún ningún libro de texto a este curso."
 
 #: cms/templates/js/no-textbooks.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/no-textbooks.dd80461b169e.underscore
@@ -6993,7 +7163,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/no-textbooks.dd80461b169e.underscore
 #: test_root/staticfiles/cms/templates/no-textbooks.underscore
 msgid "Add your first textbook"
-msgstr ""
+msgstr "Añada su primer libro de texto"
 
 #: cms/templates/js/paging-header.underscore
 #: common/static/common/templates/components/paging-footer.underscore
@@ -7015,7 +7185,7 @@ msgstr "Anterior"
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.51e26b0e6476.underscore
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.underscore
 msgid "Previous Uploads"
-msgstr ""
+msgstr "Subidas anteriores"
 
 #: cms/templates/js/previous-video-upload-list.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/previous-video-upload-list.51e26b0e6476.underscore
@@ -7023,7 +7193,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.51e26b0e6476.underscore
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.underscore
 msgid "Download available encodings (.csv)"
-msgstr ""
+msgstr "Descargar las codificaciones disponibles (.csv)"
 
 #: cms/templates/js/previous-video-upload-list.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/previous-video-upload-list.51e26b0e6476.underscore
@@ -7031,7 +7201,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.51e26b0e6476.underscore
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.underscore
 msgid "Duration"
-msgstr ""
+msgstr "Duración"
 
 #: cms/templates/js/previous-video-upload-list.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/previous-video-upload-list.51e26b0e6476.underscore
@@ -7039,7 +7209,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.51e26b0e6476.underscore
 #: test_root/staticfiles/cms/templates/previous-video-upload-list.underscore
 msgid "Video ID"
-msgstr ""
+msgstr "ID del video"
 
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
@@ -7061,7 +7231,7 @@ msgstr "Estado"
 #: test_root/staticfiles/cms/templates/publish-history.d92856e1158b.underscore
 #: test_root/staticfiles/cms/templates/publish-history.underscore
 msgid "Never published"
-msgstr ""
+msgstr "Nunca publicad"
 
 #: cms/templates/js/publish-history.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -7075,6 +7245,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Last published %(last_published_date)s by %(publish_username)s"
 msgstr ""
+"Publicado por última vez el %(last_published_date)s por %(publish_username)s"
 
 #: cms/templates/js/publish-history.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -7092,7 +7263,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/staff-lock-editor.5c244c0a0c57.underscore
 #: test_root/staticfiles/cms/templates/staff-lock-editor.underscore
 msgid "message"
-msgstr ""
+msgstr "mensaje"
 
 #: cms/templates/js/publish-history.underscore
 #: cms/templates/js/publish-xblock.underscore
@@ -7105,7 +7276,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Previously published"
-msgstr ""
+msgstr "Publicado previamente"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7113,7 +7284,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Draft (Never published)"
-msgstr ""
+msgstr "Borrador (Nunca publicado)"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7121,7 +7292,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Visible to Staff Only"
-msgstr ""
+msgstr "Visible solo para el equipo del curso"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7129,7 +7300,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Published and Live"
-msgstr ""
+msgstr "Publicado y en vivo"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7137,7 +7308,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Published (not yet released)"
-msgstr ""
+msgstr "Publicado (aún no liberado)"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7145,7 +7316,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Draft (Unpublished changes)"
-msgstr ""
+msgstr "Borrador (Cambios no publicados)"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7153,7 +7324,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Release:"
-msgstr ""
+msgstr "Liberación:"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7161,7 +7332,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Publishing Status"
-msgstr ""
+msgstr "Estado de publicación"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7169,7 +7340,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Draft saved on %(last_saved_date)s by %(edit_username)s"
-msgstr ""
+msgstr "Borrador guardado el %(last_saved_date)s por %(edit_username)s"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7177,7 +7348,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "with %(release_date_from)s"
-msgstr ""
+msgstr "con %(release_date_from)s"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7185,7 +7356,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Is Visible To:"
-msgstr ""
+msgstr "Es visible para:"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7193,7 +7364,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Will Be Visible To:"
-msgstr ""
+msgstr "Será visible para:"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7201,7 +7372,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Staff Only"
-msgstr ""
+msgstr "Solo equipo del curso"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7209,7 +7380,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "with %(section_or_subsection)s"
-msgstr ""
+msgstr "con %(section_or_subsection)s"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7217,7 +7388,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.98ac0aad864c.underscore
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Staff and Students"
-msgstr ""
+msgstr "Equipo del curso y estudiantes"
 
 #: cms/templates/js/publish-xblock.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/publish-xblock.98ac0aad864c.underscore
@@ -7226,6 +7397,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/publish-xblock.underscore
 msgid "Some content in this unit is visible only to particular content groups"
 msgstr ""
+"Algún contenido en esta unidad es visible sólo a un grupo en particular"
 
 #: cms/templates/js/publish-xblock.underscore
 #: cms/templates/js/staff-lock-editor.underscore
@@ -7238,7 +7410,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/staff-lock-editor.5c244c0a0c57.underscore
 #: test_root/staticfiles/cms/templates/staff-lock-editor.underscore
 msgid "Hide from students"
-msgstr ""
+msgstr "Ocultar a los estudiantes"
 
 #: cms/templates/js/release-date-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/release-date-editor.e5bc4ea904db.underscore
@@ -7246,7 +7418,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/release-date-editor.e5bc4ea904db.underscore
 #: test_root/staticfiles/cms/templates/release-date-editor.underscore
 msgid "Release Date and Time"
-msgstr ""
+msgstr "Fecha y hora de liberación"
 
 #: cms/templates/js/release-date-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/release-date-editor.e5bc4ea904db.underscore
@@ -7254,7 +7426,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/release-date-editor.e5bc4ea904db.underscore
 #: test_root/staticfiles/cms/templates/release-date-editor.underscore
 msgid "Release Date:"
-msgstr ""
+msgstr "Fecha de liberación:"
 
 #: cms/templates/js/release-date-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/release-date-editor.e5bc4ea904db.underscore
@@ -7262,7 +7434,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/release-date-editor.e5bc4ea904db.underscore
 #: test_root/staticfiles/cms/templates/release-date-editor.underscore
 msgid "Release Time in UTC:"
-msgstr ""
+msgstr "Hora de liberación en UTC:"
 
 #: cms/templates/js/release-date-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/release-date-editor.e5bc4ea904db.underscore
@@ -7270,7 +7442,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/release-date-editor.e5bc4ea904db.underscore
 #: test_root/staticfiles/cms/templates/release-date-editor.underscore
 msgid "Clear Release Date/Time"
-msgstr ""
+msgstr "Borrar la fecha y hora de liberación"
 
 #: cms/templates/js/show-textbook.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/show-textbook.dd0031e77606.underscore
@@ -7278,7 +7450,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/show-textbook.dd0031e77606.underscore
 #: test_root/staticfiles/cms/templates/show-textbook.underscore
 msgid "View Live"
-msgstr ""
+msgstr "Ver en vivo"
 
 #: cms/templates/js/signatory-details.underscore
 #: cms/templates/js/signatory-editor.underscore
@@ -7291,7 +7463,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Organization"
-msgstr ""
+msgstr "Organización"
 
 #: cms/templates/js/signatory-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
@@ -7299,7 +7471,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Certificate Signatory Configuration"
-msgstr ""
+msgstr "Configuración de signatarios"
 
 #: cms/templates/js/signatory-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
@@ -7307,7 +7479,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Name of the signatory"
-msgstr ""
+msgstr "Nombre del signatario"
 
 #: cms/templates/js/signatory-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
@@ -7315,7 +7487,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Title of the signatory"
-msgstr ""
+msgstr "Título del signatario"
 
 #: cms/templates/js/signatory-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
@@ -7323,7 +7495,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Organization of the signatory"
-msgstr ""
+msgstr "Organización del signatario"
 
 #: cms/templates/js/signatory-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
@@ -7331,7 +7503,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Signature Image"
-msgstr ""
+msgstr "Imagen de la firma"
 
 #: cms/templates/js/signatory-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
@@ -7339,7 +7511,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Path to Signature Image"
-msgstr ""
+msgstr "Ruta a la imagen de la firma"
 
 #: cms/templates/js/staff-lock-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/staff-lock-editor.5c244c0a0c57.underscore
@@ -7347,7 +7519,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/staff-lock-editor.5c244c0a0c57.underscore
 #: test_root/staticfiles/cms/templates/staff-lock-editor.underscore
 msgid "Student Visibility"
-msgstr ""
+msgstr "Visibilidad al estudiante"
 
 #: cms/templates/js/staff-lock-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/staff-lock-editor.5c244c0a0c57.underscore
@@ -7358,6 +7530,9 @@ msgid ""
 "If the unit was previously published and released to students, any changes "
 "you made to the unit when it was hidden will now be visible to students."
 msgstr ""
+"Si la unidad fue publicada anteriormente y liberada a los estudiantes, "
+"cualquier cambio que haya realizado cuando estaba oculta será ahora visible "
+"para los estudiantes."
 
 #: cms/templates/js/staff-lock-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/staff-lock-editor.5c244c0a0c57.underscore
@@ -7369,6 +7544,9 @@ msgid ""
 "to see its content after the release date has passed and you have published "
 "the unit."
 msgstr ""
+"Si hace esta %(xblockType)s visible a los estudiantes, ellos podrán ver su "
+"contenido después de que la fecha de liberación haya pasado y la unidad se "
+"encuentre publicada."
 
 #: cms/templates/js/staff-lock-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/staff-lock-editor.5c244c0a0c57.underscore
@@ -7379,6 +7557,9 @@ msgid ""
 "Any subsections or units that are explicitly hidden from students will "
 "remain hidden after you clear this option for the section."
 msgstr ""
+"Cualquier subsección o unidad que esté explícitamente oculta a los "
+"estudiantes permanecerá oculta aún después de limpiar esta opción para la "
+"sección. "
 
 #: cms/templates/js/staff-lock-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/staff-lock-editor.5c244c0a0c57.underscore
@@ -7389,6 +7570,8 @@ msgid ""
 "Any units that are explicitly hidden from students will remain hidden after "
 "you clear this option for the subsection."
 msgstr ""
+"Cualquier unidad que esté explícitamente oculta a los estudiantes "
+"permanecerá oculta aún después de limpiar esta opción para la subsección. "
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7396,7 +7579,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "Current Role:"
-msgstr ""
+msgstr "Rol actual:"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7404,7 +7587,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "You!"
-msgstr ""
+msgstr "¡Usted!"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7412,7 +7595,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "send an email message to {email}"
-msgstr ""
+msgstr "envie un correo electrónico a {email}"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7421,6 +7604,8 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "Promote another member to Admin to remove your admin rights"
 msgstr ""
+"Promueva a otro miembro del equipo a administrador si quiere quitar sus "
+"propios privilegios de administrador"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7428,7 +7613,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "Add {role} Access"
-msgstr ""
+msgstr "Añadir permisos de {role}"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7436,7 +7621,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "Remove {role} Access"
-msgstr ""
+msgstr "Eliminar permisos de {role}"
 
 #: cms/templates/js/team-member.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/team-member.a88bb640fd1c.underscore
@@ -7444,7 +7629,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/team-member.a88bb640fd1c.underscore
 #: test_root/staticfiles/cms/templates/team-member.underscore
 msgid "Delete the user, {username}"
-msgstr ""
+msgstr "Borrar el usuario, {username}"
 
 #: cms/templates/js/upload-dialog.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/upload-dialog.558d2055b5ef.underscore
@@ -7452,7 +7637,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/upload-dialog.558d2055b5ef.underscore
 #: test_root/staticfiles/cms/templates/upload-dialog.underscore
 msgid "File upload succeeded"
-msgstr ""
+msgstr "Archivo subido con exito"
 
 #: cms/templates/js/validation-error-modal.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/validation-error-modal.df2e470ab957.underscore
@@ -7463,6 +7648,8 @@ msgid ""
 "Please check the following validation feedbacks and reflect them in your "
 "course settings:"
 msgstr ""
+"Por favor revisa la retroalimentación de validación y reflejalo en tu "
+"configuración de curso."
 
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/xblock-string-field-editor.2f9cb521d87c.underscore
@@ -7470,7 +7657,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/xblock-string-field-editor.2f9cb521d87c.underscore
 #: test_root/staticfiles/cms/templates/xblock-string-field-editor.underscore
 msgid "Edit the name"
-msgstr ""
+msgstr "Editar el nombre"
 
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/xblock-string-field-editor.2f9cb521d87c.underscore
@@ -7478,7 +7665,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/xblock-string-field-editor.2f9cb521d87c.underscore
 #: test_root/staticfiles/cms/templates/xblock-string-field-editor.underscore
 msgid "Edit %(display_name)s (required)"
-msgstr ""
+msgstr "Editar %(display_name)s (requerido)"
 
 #: cms/templates/js/xblock-string-field-editor.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/xblock-string-field-editor.2f9cb521d87c.underscore
@@ -7486,7 +7673,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/xblock-string-field-editor.2f9cb521d87c.underscore
 #: test_root/staticfiles/cms/templates/xblock-string-field-editor.underscore
 msgid "formLabel"
-msgstr ""
+msgstr "Etiqueta"
 
 #: cms/templates/js/video/transcripts/metadata-videolist-entry.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/metadata-videolist-entry.b08359a9023b.underscore
@@ -7494,7 +7681,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/metadata-videolist-entry.b08359a9023b.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/metadata-videolist-entry.underscore
 msgid "Add URLs for additional versions"
-msgstr ""
+msgstr "Añada URLs para las versiones adicionales"
 
 #: cms/templates/js/video/transcripts/metadata-videolist-entry.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/metadata-videolist-entry.b08359a9023b.underscore
@@ -7507,6 +7694,11 @@ msgid ""
 "another version. These URLs cannot be YouTube URLs. The first listed video "
 "that's compatible with the student's computer will play."
 msgstr ""
+"Para asegurar que todos los estudiantes puedan ver el video, recomendamos "
+"suministrar tanto una versión .mp4 como una versión .webm del recurso. Haga "
+"clic a continuación para añadir la URL de una nueva versión. Estas URLs no "
+"pueden ser de Youtube. El primer video listado que sea compatible con la "
+"terminal del usuario será el que se reproducirá."
 
 #: cms/templates/js/video/transcripts/metadata-videolist-entry.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/metadata-videolist-entry.b08359a9023b.underscore
@@ -7514,7 +7706,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/metadata-videolist-entry.b08359a9023b.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/metadata-videolist-entry.underscore
 msgid "Default Timed Transcript"
-msgstr ""
+msgstr "Transcripción con tiempos por defecto"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-choose.underscore
 #: cms/templates/js/video/transcripts/messages/transcripts-replace.underscore
@@ -7527,7 +7719,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-replace.327dc19e5de7.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-replace.underscore
 msgid "Timed Transcript Conflict"
-msgstr ""
+msgstr "Conflicto en la transcripción"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-choose.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-choose.0aed48cbc2b6.underscore
@@ -7538,6 +7730,8 @@ msgid ""
 "The timed transcript for the first video file does not appear to be the same"
 " as the timed transcript for the second video file."
 msgstr ""
+"La transcripción para este primer video no parece ser la misma que la "
+"transcripción para el segundo video"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-choose.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-choose.0aed48cbc2b6.underscore
@@ -7545,7 +7739,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-choose.0aed48cbc2b6.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-choose.underscore
 msgid "Which timed transcript would you like to use?"
-msgstr ""
+msgstr "¿Cuál de las transcripciones desea utilizar?"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-choose.underscore
 #: cms/templates/js/video/transcripts/messages/transcripts-found.underscore
@@ -7583,7 +7777,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.aca6141ea300.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Error."
-msgstr ""
+msgstr "Error."
 
 #: cms/templates/js/video/transcripts/messages/transcripts-choose.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-choose.0aed48cbc2b6.underscore
@@ -7591,7 +7785,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-choose.0aed48cbc2b6.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-choose.underscore
 msgid "Timed Transcript from %(filename)s"
-msgstr ""
+msgstr "Transcripción de %(filename)s"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-found.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-found.6d20cead9bcb.underscore
@@ -7599,7 +7793,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-found.6d20cead9bcb.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-found.underscore
 msgid "Timed Transcript Found"
-msgstr ""
+msgstr "Se encontró una transcripción"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-found.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-found.6d20cead9bcb.underscore
@@ -7611,6 +7805,9 @@ msgid ""
 "transcript, you can download, edit, and re-upload the existing transcript. "
 "If you want to replace this transcript, upload a new .srt transcript file."
 msgstr ""
+"EdX tiene una transcripción para este video. Si desea editarla, puede "
+"descargar, editar y volver a cargar el archivo de transcripción. Si desea "
+"reemplazarla, puede hacerlo cargando un nuevo archivo .srt"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-found.underscore
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
@@ -7638,7 +7835,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.aca6141ea300.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Upload New Transcript"
-msgstr ""
+msgstr "Cargar nueva transcripción"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-found.underscore
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
@@ -7651,7 +7848,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-import.44ae5eef8161.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-import.underscore
 msgid "Upload New .srt Transcript"
-msgstr ""
+msgstr "Cargar nuevo archivo de transcripción .srt"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-found.underscore
 #: cms/templates/js/video/transcripts/messages/transcripts-not-found.underscore
@@ -7669,7 +7866,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-uploaded.bd6cb4fc282d.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-uploaded.underscore
 msgid "Download Transcript for Editing"
-msgstr ""
+msgstr "Descargar Transcripción para editar"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-import.44ae5eef8161.underscore
@@ -7677,7 +7874,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-import.44ae5eef8161.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-import.underscore
 msgid "No EdX Timed Transcript"
-msgstr ""
+msgstr "No hay una transcripción"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-import.44ae5eef8161.underscore
@@ -7689,6 +7886,9 @@ msgid ""
 " transcript on YouTube. You can import the YouTube transcript or upload your"
 " own .srt transcript file."
 msgstr ""
+"EdX no tiene una transcripción de este video en Studio, pero hemos "
+"encontrado una en Youtube. Puede importar la transcripción de Youtube o "
+"subir su propio archivo .srt."
 
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-import.44ae5eef8161.underscore
@@ -7696,7 +7896,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-import.44ae5eef8161.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-import.underscore
 msgid "Import YouTube Transcript"
-msgstr ""
+msgstr "Importar la transcripción desde YouTube"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-not-found.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-not-found.1dfac14a6721.underscore
@@ -7704,7 +7904,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-not-found.1dfac14a6721.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-not-found.underscore
 msgid "No Timed Transcript"
-msgstr ""
+msgstr "No hay transcripción"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-not-found.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-not-found.1dfac14a6721.underscore
@@ -7715,6 +7915,8 @@ msgid ""
 "EdX doesn\\'t have a timed transcript for this video. Please upload an .srt "
 "file."
 msgstr ""
+"EdX no cuenta con una transcripción para este video. Por favor suba un "
+"archivo de transcripción .srt"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-replace.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-replace.327dc19e5de7.underscore
@@ -7725,6 +7927,8 @@ msgid ""
 "The timed transcript for this video on edX is out of date, but YouTube has a"
 " current timed transcript for this video."
 msgstr ""
+"La transcripción para este video en edX está desactualizada, pero en YouTube"
+" hay una transcripción actualizada para el mismo"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-replace.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-replace.327dc19e5de7.underscore
@@ -7732,7 +7936,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-replace.327dc19e5de7.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-replace.underscore
 msgid "Do you want to replace the edX transcript with the YouTube transcript?"
-msgstr ""
+msgstr "¿Desea reemplazar la transcripción de edX con la de YouTube?"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-replace.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-replace.327dc19e5de7.underscore
@@ -7740,7 +7944,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-replace.327dc19e5de7.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-replace.underscore
 msgid "Yes, replace the edX transcript with the YouTube transcript"
-msgstr ""
+msgstr "Si, reemplazar la transcripción de edX con la de YouTube"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-uploaded.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-uploaded.bd6cb4fc282d.underscore
@@ -7748,7 +7952,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-uploaded.bd6cb4fc282d.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-uploaded.underscore
 msgid "Timed Transcript Uploaded Successfully"
-msgstr ""
+msgstr "Transcripción cargada exitosamente"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-uploaded.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-uploaded.bd6cb4fc282d.underscore
@@ -7760,6 +7964,9 @@ msgid ""
 "transcript, upload a new .srt transcript file. If you want to edit this "
 "transcript, you can download, edit, and re-upload the existing transcript."
 msgstr ""
+"EdX tiene una transcripción para este video. Si desea reemplazarla, suba un "
+"nuevo archivo .srt.  Si desea editar esta transcripción, descargue, edite y "
+"vuelva a cargar el archivo de transcripción."
 
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-use-existing.aca6141ea300.underscore
@@ -7767,7 +7974,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.aca6141ea300.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Confirm Timed Transcript"
-msgstr ""
+msgstr "Confirmar la transcripción"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-use-existing.aca6141ea300.underscore
@@ -7779,6 +7986,9 @@ msgid ""
 "you want to use the current timed transcript or upload a new .srt transcript"
 " file?"
 msgstr ""
+"Usted ha cambiado la URL del video, pero no hizo cambios en el archivo de "
+"transcripción. ¿Desea usar el archivo de transcripción actual o subir un "
+"nuevo archivo .srt?"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/video/transcripts/messages/transcripts-use-existing.aca6141ea300.underscore
@@ -7786,7 +7996,7 @@ msgstr ""
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.aca6141ea300.underscore
 #: test_root/staticfiles/cms/templates/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
-msgstr ""
+msgstr "Usar la transcripción actual"
 
 #: common/static/common/templates/image-modal.underscore
 #: test_root/staticfiles/cms/common/templates/image-modal.8fe501b2957a.underscore
@@ -10545,119 +10755,119 @@ msgstr "Tomar foto"
 #: test_root/staticfiles/cms/templates/add-xblock-component-menu-problem.9c0639087466.underscore
 #: test_root/staticfiles/cms/templates/add-xblock-component-menu-problem.underscore
 msgid "Common Problems with Hints and Feedback"
-msgstr ""
+msgstr "Problemas comunes con las pistas y los comentarios"
 
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Title of the course"
-msgstr ""
+msgstr "Título del curso"
 
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Organization Logo"
-msgstr ""
+msgstr "Logo de la organización"
 
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Path to organization logo"
-msgstr ""
+msgstr "Ruta del logo de la organización"
 
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Maximum logo height 125px, width variable"
-msgstr ""
+msgstr "Altura máxima del logo, 125px, ancho variable"
 
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "Add Signatory"
-msgstr ""
+msgstr "Añadir signatario"
 
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/certificate-editor.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.93e592c413af.underscore
 #: test_root/staticfiles/cms/templates/certificate-editor.underscore
 msgid "(Up to 4 signatories are allowed for a certificate)"
-msgstr ""
+msgstr "(Se permiten hasta 4 signatarios por certificado)"
 
 #: test_root/staticfiles/cms/coffee/fixtures/list.a0c15d411f42.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/list.underscore
 #: test_root/staticfiles/cms/templates/list.a0c15d411f42.underscore
 #: test_root/staticfiles/cms/templates/list.underscore
 msgid "Add your first %(item_type)s"
-msgstr ""
+msgstr "Añada su primera %(item_type)s"
 
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Maximum 40 characters"
-msgstr ""
+msgstr "Máximo 40 caracteres"
 
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "2 Lines, 40 characters each"
-msgstr ""
+msgstr "2 líneas, 40 caracteres cada una"
 
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/coffee/fixtures/signatory-editor.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.3009878ee0a5.underscore
 #: test_root/staticfiles/cms/templates/signatory-editor.underscore
 msgid "Image must be 450px X 150px transparent PNG"
-msgstr ""
+msgstr "La imagen debe ser de 450px X 150px en formato PNG con transparencia."
 
 #: test_root/staticfiles/cms/templates/commerce/receipt.90d0f0fb7c4d.underscore
 #: test_root/staticfiles/cms/templates/commerce/receipt.underscore
 #: test_root/staticfiles/lms/templates/commerce/receipt.90d0f0fb7c4d.underscore
 #: test_root/staticfiles/lms/templates/commerce/receipt.underscore
 msgid "Thank you! We have received your payment."
-msgstr ""
+msgstr "Gracias! Hemos recibido su pago."
 
 #: test_root/staticfiles/cms/templates/discovery/filter_bar.20a680f9b347.underscore
 #: test_root/staticfiles/cms/templates/discovery/filter_bar.underscore
 #: test_root/staticfiles/lms/templates/discovery/filter_bar.20a680f9b347.underscore
 #: test_root/staticfiles/lms/templates/discovery/filter_bar.underscore
 msgid "CLEAR ALL"
-msgstr ""
+msgstr "BORRAR TODO"
 
 #: test_root/staticfiles/cms/templates/discovery/more_less_links.36be0faecf3e.underscore
 #: test_root/staticfiles/cms/templates/discovery/more_less_links.underscore
 #: test_root/staticfiles/lms/templates/discovery/more_less_links.36be0faecf3e.underscore
 #: test_root/staticfiles/lms/templates/discovery/more_less_links.underscore
 msgid "MORE..."
-msgstr ""
+msgstr "MAS..."
 
 #: test_root/staticfiles/cms/templates/discovery/more_less_links.36be0faecf3e.underscore
 #: test_root/staticfiles/cms/templates/discovery/more_less_links.underscore
 #: test_root/staticfiles/lms/templates/discovery/more_less_links.36be0faecf3e.underscore
 #: test_root/staticfiles/lms/templates/discovery/more_less_links.underscore
 msgid "LESS..."
-msgstr ""
+msgstr "MENOS..."
 
 #: test_root/staticfiles/cms/templates/discovery/result_item.c9453a26c840.underscore
 #: test_root/staticfiles/cms/templates/discovery/result_item.underscore
 #: test_root/staticfiles/lms/templates/discovery/result_item.c9453a26c840.underscore
 #: test_root/staticfiles/lms/templates/discovery/result_item.underscore
 msgid "gettext("
-msgstr ""
+msgstr "gettext("
 
 #: test_root/staticfiles/cms/templates/discovery/search_facets_list.38160b8cc3b7.underscore
 #: test_root/staticfiles/cms/templates/discovery/search_facets_list.underscore
 #: test_root/staticfiles/lms/templates/discovery/search_facets_list.38160b8cc3b7.underscore
 #: test_root/staticfiles/lms/templates/discovery/search_facets_list.underscore
 msgid "Refine your search"
-msgstr ""
+msgstr "Refinar su búsqueda"
 
 #: cms/templates/js/add-xblock-component-button.underscore
 msgid "Add Component:"
