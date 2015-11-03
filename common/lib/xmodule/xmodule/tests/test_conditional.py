@@ -316,14 +316,15 @@ class ConditionalModuleXmlTest(unittest.TestCase):
             ['i4x://HarvardX/ER22x/poll_question/T15_poll', 'i4x://HarvardX/ER22x/poll_question/T16_poll']
         )
 
-    def test_conditional_module_parse_condional_attr_and_conditional_value(self):
+    def test_conditional_module_parse_attr_values(self):
         xml = '<conditional attempted="false"></conditional>'
         xml_object = etree.XML(xml)
         definition, children = ConditionalDescriptor.definition_from_xml(xml_object, Mock())
         expected_definition = {
             'show_tag_list': [],
             'condional_attr': 'attempted',
-            'conditional_value': 'false'
+            'conditional_value': 'false',
+            'conditional_message': ''
         }
 
         self.assertEqual(definition, expected_definition)

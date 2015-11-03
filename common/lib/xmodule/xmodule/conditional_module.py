@@ -56,7 +56,8 @@ class ConditionalFields(object):
         default='True'
     )
 
-    message = String(
+    conditional_message = String(
+        display_name=_("Message"),
         help=_("Message for case, where one or more are not passed. "
                "Here you can use variable {link}, which generate link to required module."),
         scope=Scope.content,
@@ -193,10 +194,10 @@ class ConditionalModule(ConditionalFields, XModule, StudioEditableModule):
         """
         if not self.is_condition_satisfied():
             context = {'module': self,
-                       'message': self.message}
+                       'message': self.conditional_message}
             html = self.system.render_template('conditional_module.html',
                                                context)
-            return json.dumps({'html': [html], 'message': bool(self.message)})
+            return json.dumps({'html': [html], 'message': bool(self.conditional_message)})
 
         html = [child.render(STUDENT_VIEW).content for child in self.get_display_items()]
 
@@ -302,6 +303,7 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
                     system.error_tracker(msg)
         definition.update({
             'show_tag_list': show_tag_list,
+            'conditional_message': xml_object.get('message', '')
         })
         return definition, children
 
@@ -321,7 +323,7 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
         stringified_sources_list = map(lambda loc: loc.to_deprecated_string(), self.sources_list)
         self.xml_attributes['sources'] = ';'.join(stringified_sources_list)
         self.xml_attributes[self.condional_attr] = self.conditional_value
-        self.xml_attributes['message'] = self.message
+        self.xml_attributes['message'] = self.conditional_message
         return xml_object
 
     def validate(self):
