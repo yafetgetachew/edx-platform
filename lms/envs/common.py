@@ -2421,7 +2421,8 @@ ALL_LANGUAGES = (
 OPTIONAL_APPS = (
     'mentoring',
     'problem_builder',
-    'edx_sga',
+    #'edx_sga',
+    'edx_gea',
 
     # edx-ora2
     'submissions',
@@ -2442,6 +2443,9 @@ OPTIONAL_APPS = (
 
     # Organizations App (http://github.com/edx/edx-organizations)
     'organizations',
+	
+    #xBlock
+    'password_container',
 )
 
 for app_name in OPTIONAL_APPS:

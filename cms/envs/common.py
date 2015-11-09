@@ -880,7 +880,8 @@ MAX_FAILED_LOGIN_ATTEMPTS_LOCKOUT_PERIOD_SECS = 15 * 60
 OPTIONAL_APPS = (
     'mentoring',
     'problem_builder',
-    'edx_sga',
+    #'edx_sga',
+    'edx_gea',
 
     # edx-ora2
     'submissions',
@@ -898,6 +899,9 @@ OPTIONAL_APPS = (
 
     # edX Proctoring
     'edx_proctoring',
+
+    #xBlock
+    'password_container',
 )
 
 
@@ -969,7 +973,7 @@ ADVANCED_COMPONENT_TYPES = [
     'graphical_slider_tool',
     'lti',
     'library_content',
-    'edx_sga',
+    #'edx_sga',
     'problem-builder',
     'pb-dashboard',
     'poll',
