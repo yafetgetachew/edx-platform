@@ -49,7 +49,7 @@ from student.helpers import (
   <article class="course${mode_class}">
 
     <%
-      course_target = reverse('info', args=[course.id.to_deprecated_string()])
+      course_target = reverse('courseware', args=[course.id.to_deprecated_string()])
     %>
 
     % if show_courseware_link:
