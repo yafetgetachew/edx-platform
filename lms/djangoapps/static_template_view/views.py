@@ -39,6 +39,9 @@ def render(request, template):
 
     url(r'^jobs$', 'static_template_view.views.render', {'template': 'jobs.html'}, name="jobs")
     """
+    if settings.FEATURES.get('USE_CUSTOM_THEME', False):
+        return render_to_response(template, {})
+
     return render_to_response('static_templates/' + template, {})
 
 
