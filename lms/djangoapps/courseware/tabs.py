@@ -55,5 +55,7 @@ def get_course_tab_list(course, user):
                 continue
             if tab.type == 'courseware':
                 tab.name = _("Entrance Exam")
+        if tab.type == 'discussion':
+            continue
         course_tab_list.append(tab)
     return course_tab_list
