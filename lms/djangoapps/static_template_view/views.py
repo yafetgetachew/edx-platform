@@ -3,6 +3,7 @@
 # List of valid templates is explicitly managed for (short-term)
 # security reasons.
 
+
 from edxmako.shortcuts import render_to_response, render_to_string
 from mako.exceptions import TopLevelLookupException
 from django.shortcuts import redirect
@@ -11,6 +12,7 @@ from django.http import HttpResponseNotFound, HttpResponseServerError, Http404
 from django_future.csrf import ensure_csrf_cookie
 
 from util.cache import cache_if_anonymous
+from django.core.context_processors import csrf
 
 valid_templates = []
 
@@ -29,6 +31,7 @@ def index(request, template):
         return redirect('/')
 
 
+
 @ensure_csrf_cookie
 @cache_if_anonymous()
 def render(request, template):
@@ -39,8 +42,42 @@ def render(request, template):
 
     url(r'^jobs$', 'static_template_view.views.render', {'template': 'jobs.html'}, name="jobs")
     """
+    from static_template_view.forms import FeedbackForm
+    from django.core.mail import send_mail
+    from smtplib import SMTPException
+    notification = None
+    style = ''
+    errors = {}
     if settings.FEATURES.get('USE_CUSTOM_THEME', False):
-        return render_to_response(template, {})
+        if request.POST:
+            form = FeedbackForm(request.POST)
+            if form.is_valid():
+                data_form = form.cleaned_data
+                email = data_form.get('email')
+                subject = 'feedback'
+
+                full_message = \
+                u'Full name: {full_name} \nEmail: {email} \nPhone: {phone} \nI am a: {i_am_a} \nInquiry type: {inquiry_type} \n{message} '.format(
+                    full_name=data_form.get('full_name'),
+                    email=email,
+                    phone=data_form.get('phone'),
+                    i_am_a=data_form.get('i_am_a'),
+                    inquiry_type=data_form.get('inquiry_type'),
+                    message=data_form.get('message')
+                    )
+                try:
+                    send_mail(subject, full_message, email, ['support@businessagainstslavery.org',], fail_silently=False,)
+                    notification = 'Message was successfuly sent. Thank you for contacting us!'
+                    style = 'style="margin-top:10px;"'
+                except SMTPException as e:
+                    notification = 'Message not been sent, please try again later'
+                    style = 'style="margin-top:10px;"'
+            errors = form.errors
+        csrf_token = csrf(request)['csrf_token']
+        return render_to_response(template, {'csrf_token': csrf_token,
+                                             'message': notification,
+                                             'style': style,
+                                             'errors': errors})
 
     return render_to_response('static_templates/' + template, {})
 
