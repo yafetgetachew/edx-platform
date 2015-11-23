@@ -8020,3 +8020,73 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr ""
+
+msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group and with financial support from the European Commission. By completing this short course, you will learn about what human trafficking is and why it occurs. You will also find out what you and your company can do to help fight trafficking. We hope that you finish this course feeling empowered to help create a world where no one is for sale."
+msgstr "Acest curs online a fost conceput de Not For Sale şi Fundaţia Samilia, în colaborare cu Delhaize Group şi prin contribuţia financiară a Comisiei Europene. Prin parcurgerea acestui scurt curs veţi afla ce este traficul de fiinţe umane şi cauzele apariţiei acestuia. Veţi afla, de asemenea, ce puteţi face dvs. şi compania dvs. pentru a ajuta în lupta împotriva traficului de persoane. Sperăm să terminaţi acest curs cu dorinţa de a ajuta la crearea unei lumi în care nimeni nu e de vânzare."
+
+msgid "About Samilia"
+msgstr "Despre Samilia"
+
+msgid "Samilia Foundation was created in 2007 in order to alert and raise awareness on human trafficking in Belgium. Samilia develops prevention and social inclusion projects in countries of origin of victims of trafficking, whether victims of sexual exploitation or forced labour, and collaborates with the private sector, local and international NGOs and governments in order to efficiently set actions to combat the root causes of human trafficking."
+msgstr "Fundația Samilia a fost creată în 2007 cu scopul de a alerta şi de a sensibiliza persoanele în Belgia despre traficului de persoane. Samilia dezvoltă proiecte de prevenire și de incluziune socială în țările de origine ale victimelor, (indiferent dacă victimele sunt exploatate din punct de vedere sexual sau prin muncă forțată), și colaborează cu sectorul privat, ONG­uri și guvernele locale și internaționale, în scopul de a stabili în mod eficient acțiuni de combatere împotriva cauzelor profunde al traficul de fiînte umane."
+
+msgid "Samilia offers corporate workshops on human trafficking in order to raise awareness on slavery in supply chains and get the private sector involved in the fight against this growing phenomenon."
+msgstr "Samilia oferă ateliere de lucru corporative privind traficul de persoane cu scopul de a sensibiliza persoanele despre sclavia în lanțurile de aprovizionare și pentru a incentiva sectorul privat în lupta acest fenomen în creștere."
+
+msgid "You can support and find out more on Samilia on"
+msgstr "Puteți suporta și afla mai multe despre Samilia pe"
+
+msgid "About Not For Sale"
+msgstr "Despre Not For Sale"
+
+msgid "Founded in 2007, Not For Sale works to protect, equip and empower survivors of human trafficking and those at risk of exploitation. With headquarters in San Francisco, California, the international nonprofit manages projects with children and adults in North America, Europe and Asia."
+msgstr "Fondată în anul 2007, Not for Sale lucrează pentru a proteja, echipa și reabilita supravietuitorii traficului de ființe umane și persoanele cu risc de exploatare. Cu sediul central in San Francisco, California, Not For Sale este o organizatie internațională non profit care administreaza proiecte cu copii si adulti, in America de Nord, Europa și Asia."
+
+msgid "Not For Sale also works to engage businesses in the fight against human trafficking with awareness raising, supply chain responsibility, and survivor training and employment programs."
+msgstr "Not For Sale lucrează pentru angajarea afacerilor in lupta împotriva traficului de ființe umane cu scopul de a­crește gradul de conștientizare asupra responsabilitatea în lanțul de aprovizionare, precum și a­forma şi angaja supravietuitori prin programe."
+
+msgid "To date, Not For Sale has provided services to more than 10,000 people in 11 countries. Learn more at "
+msgstr "Până în prezent, Not For Sale, a oferit servicii pentru 10.000 de persoane în 11 de țări. Puteți suporta și afla mai multe despre Not For Sale pe"
+
+# FAQ
+msgid "FAQ"
+msgstr "Întrebări frecvente"
+
+msgid "Who created this course?"
+msgstr "Cine a conceput acest curs?"
+
+msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group, and with financial support from the European Commission."
+msgstr "Acest curs de instruire a fost dezvoltat de către Not For Sale și Fundația Samilia, în consultare cu Delhaize Group si cu sprijin financiar din partea Comisiei Europene."
+
+msgid "What is the purpose of this course?"
+msgstr "Care este scopul acestui curs?"
+
+msgid "This course is designed to raise awareness about human trafficking. Its intention is to inform and educate users about the issue and what they can do to be part of the solution."
+msgstr "Acest curs este conceput pentru a spori gradul de conştientizare cu privire la traficul de ființe umane. Intenția sa este de a informa și de a educa utilizatorii despre problemă și de a le spune ce pot face pentru a căuta o soluție."
+
+msgid "How long is this course?"
+msgstr "Cât durează acest curs?"
+
+msgid "Completing this course should take you no more than 40 minutes. However, there are optional sections and resources that you can access to gain a deeper knowledge on the issue, which might add to the total time for completing this course."
+msgstr "Finalizarea acestui curs nu ar trebui să vă ia mai mult de 40 de minute. Însă, există secțiuni opționale și resurse pe care le puteți accesa pentru a aprofunda problema, fapt care ar putea prelungi durata totală necesară pentru finalizarea acestui curs."
+
+msgid "Do I need to know anything about human trafficking before taking this course?"
+msgstr "Trebuie să știu ceva despre traficul de persoane înainte de a urma acest curs?"
+
+msgid "No, this course is an introductory course designed to educate and inform you about human trafficking. Previous knowledge is not required."
+msgstr "Nu, acesta este un curs introductiv conceput special pentru a educa și a vă informa în privința traficului de persoane. Nu sunt necesare cunoștințe anterioare."
+
+msgid "If I see an instance of human trafficking taking place, what should I do?"
+msgstr "Dacă sesizez un caz de trafic de persoane, ce ar trebui să fac?"
+
+msgid "Do not intervene to try rescue someone you suspect of being a victim of human trafficking or confront a trafficker, as this can put you, the potential victim, and the people around you in danger. If you suspect a case of human trafficking is taking place, call the local police for help."
+msgstr "Nu interveniți pentru a încerca să salvați o persoană pe care o bănuiți că ar fi victimă a traficului de ființe umane și nici nu confruntați un traficant, deoarece acest lucru vă poate pune în pericol pe dvs., pe potențiala victimă și pe oamenii din jurul dvs. Dacă suspectați că ați descoperit un caz de trafic de persoane, sunați la poliția locală pentru ajutor."
+
+msgid "I’m having problems with my account, who can I contact?"
+msgstr "Am probleme cu contul meu, pe cine pot contacta?"
+
+msgid "If you are having problems with the course you can contact"
+msgstr "Dacă aveți probleme legate de curs, contactați­ne la."
+
+msgid " We will make every attempt to respond to your concern in a timely manner."
+msgstr "Vom face toate eforturile pentru a răspunde la problema dvs. în timp util."

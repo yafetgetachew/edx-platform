@@ -8010,3 +8010,73 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr ""
+
+msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group and with financial support from the European Commission. By completing this short course, you will learn about what human trafficking is and why it occurs. You will also find out what you and your company can do to help fight trafficking. We hope that you finish this course feeling empowered to help create a world where no one is for sale."
+msgstr "Το παρόν διαδικτυακό μάθημα σχεδιάστηκε από τη Not For Sale και το Ίδρυμα Samilia, σε συνεργασία με τον Όμιλο Delhaize και πραγματοποιείται μέ τη χρηματοοικονομική συνεισφορά της Ευρωπαϊκής Επιτροπής. Μετά την ολοκλήρωση του σύντομου αυτού μαθήματος, θα γνωρίζετε τι είναι η εμπορία ανθρώπων και γιατί συμβαίνει. Θα ενημερωθείτε επίσης σχετικά με τον τρόπο με τον οποίο μπορείτε, εσείς και η εταιρεία σας, να βοηθήσετε στην καταπολέμηση της εμπορίας ανθρώπων. Ελπίζουμε ότι με το πέρας του παρόντος μαθήματος θα αισθανθείτε την ανάγκη να βοηθήστε στη δημιουργία μιας κοινωνίας μέσα στην οποία κανείς δεν είναι προς πώληση."
+
+msgid "About Samilia"
+msgstr "Για Samilia"
+
+msgid "Samilia Foundation was created in 2007 in order to alert and raise awareness on human trafficking in Belgium. Samilia develops prevention and social inclusion projects in countries of origin of victims of trafficking, whether victims of sexual exploitation or forced labour, and collaborates with the private sector, local and international NGOs and governments in order to efficiently set actions to combat the root causes of human trafficking."
+msgstr "Το ίδρυμα Samilia ιδρύθηκε το 2007 με σκοπό την ενημέρωση και ευαισθητοποίηση στο θέμα της εμπορίας ανθρώπων στο Βέλγιο. Δημιουργεί προγράμματα κοινωνικής ένταξης και πρόληψης σε χώρες προέλευσης θυμάτων, θύματα σεξουαλικής εκμετάλλευσης ή καταναγκαστικής εργασίας. Συνεργάζεται με εταιρίες ιδιωτικού τομέα, τοπικές και διεθνείς ΜΚΟ αλλά και με κυβερνήσεις για την ανάπτυξη ενεργειών για την αντιμετώπιση των βασικών αιτιών της εμπορίας ανθρώπων."
+
+msgid "Samilia offers corporate workshops on human trafficking in order to raise awareness on slavery in supply chains and get the private sector involved in the fight against this growing phenomenon."
+msgstr "Η Samilia προσφέρει εταιρικά προγράμματα σχετικά με την εμπορία ανθρώπων με στόχο την ενημέρωση για τη δουλεία ανθρώπων στην εφοδιαστικη αλυσίδα και τη συμμετοχή του ιδιωτικού τομέα στον αγώνα κατά του φαινόμενου που αναπτύσσεται ραγδαία"
+
+msgid "You can support and find out more on Samilia on"
+msgstr "Μπορείτε να υποστηρίξετε την οργάνωση και να βρείτε περισσότερες πληροφορίες στο"
+
+msgid "About Not For Sale"
+msgstr "Για Not For Sale"
+
+msgid "Founded in 2007, Not For Sale works to protect, equip and empower survivors of human trafficking and those at risk of exploitation. With headquarters in San Francisco, California, the international nonprofit manages projects with children and adults in North America, Europe and Asia."
+msgstr "Η Not For Sales ιδρύθηκε το 2007 και στοχεύει στην προστασία και ενδυνάμωση πρώην θυμάτων εμπορίας ανθρώπων καθώς και αυτών που αποτελούν πιθανά θύματα εκμετάλλευσης. Διατηρώντας γραφεία στο Σαν Φραντσίσκο, στην Καλιφόρνια, αυτή η διεθνής ΜΚΟ χειρίζεται έργα που αφορούν παιδιά αλλά και ενηλίκους στη νότια Αμερική, Ευρώπη και Ασία."
+
+msgid "Not For Sale also works to engage businesses in the fight against human trafficking with awareness raising, supply chain responsibility, and survivor training and employment programs."
+msgstr "Η Not For Sale στοχεύει στην εμπλοκή και συμμετοχή των ιδιωτικών εταιριών στην καταπολέμηση της εμπορίας ανθρώπων με εκστρατείες ενημέρωσης, με εφαρμογή υπεύθυνων πρακτικών στην εφοδιαστική αλυσίδα και την ανάπτυξη προγραμμάτων εκπαίδευσης και απασχόλησης για πρώην θύματα εμπορίας ανθρώπων."
+
+msgid "To date, Not For Sale has provided services to more than 10,000 people in 11 countries. Learn more at "
+msgstr "Μέχρι σήμερα, έχει προσφέρει υπηρεσίες σε περισσότερους απο 10.000 ανθρώπους σε 11 χώρες. Μάθε περισσότερα στο"
+
+# FAQ
+msgid "FAQ"
+msgstr ""
+
+msgid "Who created this course?"
+msgstr "Ποιος δημιούργησε το παρόν εκπαιδευτικό πρόγραμμα;"
+
+msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group, and with financial support from the European Commission."
+msgstr "Το παρόν εκπαιδευτικό πρόγραμμα σχεδιάστηκε από τη Not For Sale και το Ίδρυμα Samilia, σε συνεργασία με τον Όμιλο Delhaize, και πραγματοποιείται με τη γενναιόδωρη συνεισφορά της Ευρωπαϊκής Επιτροπής."
+
+msgid "What is the purpose of this course?"
+msgstr "Ποιος είναι ο σκοπός του παρόντος εκπαιδευτικού προγράμματος;"
+
+msgid "This course is designed to raise awareness about human trafficking. Its intention is to inform and educate users about the issue and what they can do to be part of the solution."
+msgstr "Το παρόν εκπαιδευτικό πρόγραμμα έχει σχεδιαστεί με σκοπό την αύξηση της ευαισθητοποίησης σχετικά με την εμπορία ανθρώπων. Πρόθεσή του είναι να ενημερώσει και να εκπαιδεύσει τους χρήστες σχετικά με το θέμα και σχετικά με τρόπο που μπορούν να συνεισφέρουν για να αποτελέσουν μέρος της λύσης."
+
+msgid "How long is this course?"
+msgstr "Πόσο διαρκεί αυτό το εκπαιδευτικό πρόγραμμα;"
+
+msgid "Completing this course should take you no more than 40 minutes. However, there are optional sections and resources that you can access to gain a deeper knowledge on the issue, which might add to the total time for completing this course."
+msgstr "Για την ολοκλήρωση του παρόντος εκπαιδευτικού προγράμματος δεν θα χρειαστείτε περισσότερα από 20 λεπτά. Ωστόσο, υπάρχουν προαιρετικές ενότητες και πηγές που μπορείτε να επισκεφθείτε για να αποκτήσετε μια βαθύτερη γνώση για το θέμα και αυτό ενδεχομένως θα αυξήσει τον συνολικό χρόνο για την ολοκλήρωση του εκπαιδευτικού προγράμματος."
+
+msgid "Do I need to know anything about human trafficking before taking this course?"
+msgstr "Χρειάζεται να γνωρίζω κάτι σχετικά με την εμπορία ανθρώπων για να παρακολουθήσω το παρόν εκπαιδευτικό πρόγραμμα;"
+
+msgid "No, this course is an introductory course designed to educate and inform you about human trafficking. Previous knowledge is not required."
+msgstr "Όχι, αυτό το πρόγραμμα αποτελεί ένα εισαγωγικό εκπαιδευτικό πρόγραμμα που αποσκοπεί στην εκπαίδευση και την ενημέρωσή σας σχετικά με την εμπορία ανθρώπων. Δεν απαιτείται κάποια προηγούμενη γνώση επί του θέματος."
+
+msgid "If I see an instance of human trafficking taking place, what should I do?"
+msgstr "Αν συναντήσω ένα περιστατικό εμπορίας ανθρώπων, τι πρέπει να κάνω;"
+
+msgid "Do not intervene to try rescue someone you suspect of being a victim of human trafficking or confront a trafficker, as this can put you, the potential victim, and the people around you in danger. If you suspect a case of human trafficking is taking place, call the local police for help."
+msgstr "Μην παρεμβαίνετε στη διάσωση κάποιου ατόμου που υποψιάζεστε ότι έχει πέσει θύμα εμπορίας ανθρώπων ή μην έρχεστε σε αντιπαράθεση με τον διακινητή, καθώς κάτι τέτοιο ενδέχεται να θέσει εσάς, το πιθανό θύμα και τα άτομα γύρω σας σε κίνδυνο. Σε περίπτωση που υποψιάζεστε κάποια υπόθεση εμπορίας ανθρώπων, επικοινωνήστε με τις αστυνομικές αρχές της περιοχής σας για βοήθεια."
+
+msgid "I’m having problems with my account, who can I contact?"
+msgstr "Αντιμετωπίζω προβλήματα με τον λογαριασμό μου, πού μπορώ να απευθυνθώ;"
+
+msgid "If you are having problems with the course you can contact."
+msgstr "Αν αντιμετωπίζετε προβλήματα με το εκπαιδευτικό πρόγραμμα, μπορείτε να επικοινωνήσετε μαζί μας στο"
+
+msgid " We will make every attempt to respond to your concern in a timely manner."
+msgstr " Θα καταβάλουμε κάθε προσπάθεια να απαντήσουμε εγκαίρως στην ερώτηση ή την απορία σας."

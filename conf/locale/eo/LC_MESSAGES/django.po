@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-10-28 16:34+0000\n"
-"PO-Revision-Date: 2015-10-28 16:34:08.006060\n"
+"POT-Creation-Date: 2015-11-20 12:50+0000\n"
+"PO-Revision-Date: 2015-11-20 12:50:05.512109\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -9055,8 +9055,8 @@ msgstr "För änýöné, änýwhéré, änýtïmé Ⱡ'σяєм #"
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
 #: lms/templates/index.html
-msgid "VIEW ALL COURSES"
-msgstr "VÌÉW ÀLL ÇÖÛRSÉS Ⱡ'σ#"
+msgid "Training Courses"
+msgstr "Träïnïng Çöürsés Ⱡ'σ#"
 
 #: lms/templates/invalid_email_key.html
 msgid "Invalid email change key"
@@ -9207,18 +9207,6 @@ msgstr "Sïgn ïn wïth {provider_name} Ⱡ'σ#"
 #: lms/templates/lti.html
 msgid "External resource"
 msgstr "Éxtérnäl résöürçé Ⱡ'σ#"
-
-#. Translators: "points" is the student's achieved score on this LTI unit, and
-#. "total_points" is the maximum number of points achievable.
-#: lms/templates/lti.html
-msgid "{points} / {total_points} points"
-msgstr "{points} / {total_points} pöïnts Ⱡ'σ#"
-
-#. Translators: "total_points" is the maximum number of points achievable on
-#. this LTI unit
-#: lms/templates/lti.html
-msgid "{total_points} points possible"
-msgstr "{total_points} pöïnts pössïßlé Ⱡ'σя#"
 
 #: lms/templates/lti.html
 msgid "View resource in a new window"
@@ -9390,8 +9378,8 @@ msgid "Schools"
 msgstr "Sçhööls #"
 
 #: lms/templates/navigation.html lms/templates/navigation.html
-msgid "Register Now"
-msgstr "Régïstér Nöw Ⱡ#"
+msgid "REGISTER"
+msgstr "RÉGÌSTÉR #"
 
 #: lms/templates/navigation.html lms/templates/navigation.html
 msgid "SIGN IN"
@@ -10631,8 +10619,8 @@ msgid "Learn About {university_name}."
 msgstr "Léärn Àßöüt {university_name}. Ⱡ'σ#"
 
 #: lms/templates/courseware/courses.html
-msgid "Learn About {platform_name}."
-msgstr "Léärn Àßöüt {platform_name}. Ⱡ'σ#"
+msgid "Training Courses."
+msgstr "Träïnïng Çöürsés. Ⱡ'σ#"
 
 #: lms/templates/courseware/courses.html
 msgid "{platform_name} Logo"
