@@ -404,7 +404,7 @@ class XQueueCertInterface(object):
             'course_id': unicode(example_cert.course_key),
             'name': example_cert.full_name,
             'template_pdf': example_cert.template,
-
+            'course_name': 'Example certificate',
             # Example certificates are not associated with a particular user.
             # However, we still need to find the example certificate when
             # we receive a response from the queue.  For this reason,
