@@ -33,7 +33,7 @@ def index(request, template):
 
 
 @ensure_csrf_cookie
-@cache_if_anonymous()
+#@cache_if_anonymous()
 def render(request, template):
     """
     This view function renders the template sent without checking that it
@@ -47,7 +47,6 @@ def render(request, template):
     from smtplib import SMTPException
     notification = None
     style = ''
-    errors = {}
     if settings.FEATURES.get('USE_CUSTOM_THEME', False):
         if request.POST:
             form = FeedbackForm(request.POST)
@@ -66,18 +65,19 @@ def render(request, template):
                     message=data_form.get('message')
                     )
                 try:
-                    send_mail(subject, full_message, email, ['support@businessagainstslavery.org',], fail_silently=False,)
+                    send_mail(subject, full_message, email, [settings.TECH_SUPPORT_EMAIL,], fail_silently=False,)
                     notification = 'Message was successfuly sent. Thank you for contacting us!'
                     style = 'style="margin-top:10px;"'
                 except SMTPException as e:
                     notification = 'Message not been sent, please try again later'
                     style = 'style="margin-top:10px;"'
-            errors = form.errors
+        else:
+            form = FeedbackForm()
         csrf_token = csrf(request)['csrf_token']
         return render_to_response(template, {'csrf_token': csrf_token,
                                              'message': notification,
                                              'style': style,
-                                             'errors': errors})
+                                             'form': form})
 
     return render_to_response('static_templates/' + template, {})
 
