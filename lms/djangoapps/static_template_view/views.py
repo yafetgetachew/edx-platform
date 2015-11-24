@@ -12,7 +12,7 @@ from django.http import HttpResponseNotFound, HttpResponseServerError, Http404
 from django_future.csrf import ensure_csrf_cookie
 
 from util.cache import cache_if_anonymous
-from django.core.context_processors import csrf
+from django.middleware.csrf import get_token
 
 valid_templates = []
 
@@ -33,7 +33,6 @@ def index(request, template):
 
 
 @ensure_csrf_cookie
-# @cache_if_anonymous()
 def render(request, template):
     """
     This view function renders the template sent without checking that it
@@ -71,7 +70,7 @@ def render(request, template):
                 style = 'style="margin-top:10px;"'
         else:
             form = FeedbackForm()
-        csrf_token = csrf(request)['csrf_token']
+        csrf_token = get_token(request)
         return render_to_response(template, {'csrf_token': csrf_token,
                                              'message': notification,
                                              'style': style,
