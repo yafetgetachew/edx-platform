@@ -1,6 +1,6 @@
 from django import forms
 
-i_am_a_choice = (
+I_AM_A_CHOICE = (
     ('', '-- select --'),
     ('student', 'Student'),
     ('professor', 'Professor'),
@@ -9,7 +9,7 @@ i_am_a_choice = (
     ('other', 'Other'),
 )
 
-inquiry_choice = (
+INQUIRY_CHOICE = (
     ('', '-- select --'),
     ('registration', 'Question about Registration and Activation'),
     ('technical', 'I am having a Technology Problem'),
@@ -26,7 +26,7 @@ class FeedbackForm(forms.Form):
     full_name = forms.CharField(max_length=255)
     email = forms.EmailField()
     phone = forms.CharField(required=False, max_length=255)
-    i_am_a = forms.CharField(required=False,  widget=forms.Select(choices=i_am_a_choice))
-    inquiry_type = forms.CharField(widget=forms.Select(choices=inquiry_choice))
+    i_am_a = forms.CharField(required=False,  widget=forms.Select(choices=I_AM_A_CHOICE))
+    inquiry_type = forms.CharField(widget=forms.Select(choices=INQUIRY_CHOICE))
     message = forms.CharField(widget=forms.Textarea(attrs={'cols': '60',
                                                            'rows': '5'}))

@@ -33,7 +33,7 @@ def index(request, template):
 
 
 @ensure_csrf_cookie
-#@cache_if_anonymous()
+# @cache_if_anonymous()
 def render(request, template):
     """
     This view function renders the template sent without checking that it
@@ -48,29 +48,27 @@ def render(request, template):
     notification = None
     style = ''
     if settings.FEATURES.get('USE_CUSTOM_THEME', False):
-        if request.POST:
+        if request.method == 'POST':
             form = FeedbackForm(request.POST)
             if form.is_valid():
                 data_form = form.cleaned_data
-                email = data_form.get('email')
                 subject = 'feedback'
 
                 full_message = \
                 u'Full name: {full_name} \nEmail: {email} \nPhone: {phone} \nI am a: {i_am_a} \nInquiry type: {inquiry_type} \n{message} '.format(
-                    full_name=data_form.get('full_name'),
-                    email=email,
-                    phone=data_form.get('phone'),
-                    i_am_a=data_form.get('i_am_a'),
-                    inquiry_type=data_form.get('inquiry_type'),
-                    message=data_form.get('message')
+                    full_name=data_form['full_name'],
+                    email=data_form['email'],
+                    phone=data_form.get('phone', ''),
+                    i_am_a=data_form.get('i_am_a', ''),
+                    inquiry_type=data_form['inquiry_type'],
+                    message=data_form['message']
                     )
                 try:
-                    send_mail(subject, full_message, email, [settings.TECH_SUPPORT_EMAIL,], fail_silently=False,)
+                    send_mail(subject, full_message, data_form['email'], [settings.TECH_SUPPORT_EMAIL,], fail_silently=False,)
                     notification = 'Message was successfuly sent. Thank you for contacting us!'
-                    style = 'style="margin-top:10px;"'
                 except SMTPException as e:
                     notification = 'Message not been sent, please try again later'
-                    style = 'style="margin-top:10px;"'
+                style = 'style="margin-top:10px;"'
         else:
             form = FeedbackForm()
         csrf_token = csrf(request)['csrf_token']
