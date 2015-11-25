@@ -27,6 +27,8 @@ from boto.s3.key import Key
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models, transaction
+from django.utils.encoding import filepath_to_uri
+from django.utils.six.moves.urllib.parse import urljoin
 
 from xmodule_django.models import CourseKeyField
 
@@ -374,7 +376,7 @@ class LocalFSReportStore(ReportStore):
 
     def path_to(self, course_id, filename):
         """Return the full path to a given file for a given course."""
-        return os.path.join(self.root_path, urllib.quote(course_id.to_deprecated_string(), safe=''), filename)
+        return os.path.join(self.root_path, course_id.to_deprecated_string().replace('/', '_'), filename)
 
     def store(self, course_id, filename, buff, config=None):  # pylint: disable=unused-argument
         """
@@ -416,7 +418,8 @@ class LocalFSReportStore(ReportStore):
         files = [(filename, os.path.join(course_dir, filename)) for filename in os.listdir(course_dir)]
         files.sort(key=lambda (filename, full_path): os.path.getmtime(full_path), reverse=True)
 
+        path = settings.GRADES_DOWNLOAD['ROOT_PATH']
         return [
-            (filename, ("file://" + urllib.quote(full_path)))
+            (filename, urljoin(settings.MEDIA_URL, full_path.replace(path, 'grade')))
             for filename, full_path in files
         ]
