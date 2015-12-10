@@ -18,21 +18,21 @@ $fg-min-width: 810px;
 // ====================
 
 // FONTS
-$sans-serif: $founder; // 'Open Sans', $verdana, sans-serif;
-$monospace: $founder; // Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
-$body-font-family: $founder; // $sans-serif;
-$serif: $founder; // $georgia;
+$sans-serif: 'Open Sans', $verdana, sans-serif;
+$monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+$body-font-family: $sans-serif;
+$serif: $georgia;
 
 // FONT-WEIGHTS
 $font-light: 300;
 $font-regular: 400;
-$font-semibold: 400;
-$font-bold: 400;
+$font-semibold: 600;
+$font-bold: 700;
 
 // ====================
 $font_base_color_custom: white;
 // MISC: base fonts/colors
-$body-font-size: em(30);
+$body-font-size: em(14);
 $body-line-height: golden-ratio(.875em, 1);
 $base-font-color: rgb(60,60,60);
 $baseFontColor: rgb(60,60,60);
@@ -427,12 +427,12 @@ $video-thumb-url: '../images/homepage-hero-video-thumb.jpg';
 // SPLINT: new standards
 
 // SPLINT: fonts
-$f-serif: $founder; // 'Bree Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
-$f-sans-serif: $founder; // 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
-$f-monospace: $founder; // 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
+$f-serif: 'Bree Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+$f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+$f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
 
 // Header specific sans-serif
-$header-sans-serif: $founder; // 'Open Sans', Arial, Helvetica, sans-serif;
+$header-sans-serif: 'Open Sans', Arial, Helvetica, sans-serif;
 
 // SPLINT: colors
 
