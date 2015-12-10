@@ -19,15 +19,15 @@ $fg-min-width: 810px;
 
 // FONTS
 $sans-serif: 'Open Sans', $verdana, sans-serif;
-$monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
-$body-font-family: $sans-serif;
-$serif: $georgia;
+$monospace: 'Open Sans';//Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+$body-font-family: 'Open Sans';//$sans-serif;
+$serif: 'Open Sans';//$georgia;
 
 // FONT-WEIGHTS
 $font-light: 300;
-$font-regular: 400;
-$font-semibold: 600;
-$font-bold: 700;
+$font-regular: 300;//400;
+$font-semibold: 300;//600;
+$font-bold: 300;//700;
 
 // ====================
 $font_base_color_custom: white;
