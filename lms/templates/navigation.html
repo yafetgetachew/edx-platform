@@ -127,7 +127,7 @@ site_status_msg = get_site_status_msg(course_id)
             % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
             <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
             % else:
-            <a class="cta cta-login" href="/login${login_query()}">${_("Sing in")}</a>
+            <a class="cta cta-login" href="/login${login_query()}">${_("Sign in")}</a>
             % endif
         % endif
       </li>
