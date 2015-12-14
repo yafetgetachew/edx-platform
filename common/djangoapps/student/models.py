@@ -518,7 +518,7 @@ class PasswordHistory(models.Model):
             return False
 
         days_before_password_reset = None
-        if user.is_staff:
+        if user and user.is_staff:
             if cls.is_staff_forced_password_reset_enabled():
                 days_before_password_reset = \
                     settings.ADVANCED_SECURITY_CONFIG['MIN_DAYS_FOR_STAFF_ACCOUNTS_PASSWORD_RESETS']
