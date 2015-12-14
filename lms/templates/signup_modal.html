@@ -135,8 +135,8 @@ import calendar
           % if settings.REGISTRATION_EXTRA_FIELDS['honor_code'] != 'hidden':
           <label data-field="honor_code" class="honor-code" for="signup_honor">
             <input id="signup_honor" name="honor_code" type="checkbox" value="true">
-            ${_('I agree to the {link_start}Honor Code{link_end}').format(
-              link_start='<a href="{url}" target="_blank">'.format(url=reverse('honor')),
+            ${_('I agree to the {link_start}Terms of Service{link_end}').format(
+              link_start='<a href="{url}" target="_blank">'.format(url=reverse('tos')),
               link_end='</a>') + ' *'}
           </label>
           % endif

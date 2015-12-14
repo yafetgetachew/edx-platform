@@ -1170,7 +1170,7 @@ class RegistrationViewTest(ThirdPartyAuthTestMixin, ApiTestCase):
     )
     @mock.patch.dict(settings.FEATURES, {"ENABLE_MKTG_SITE": True})
     def test_registration_honor_code_mktg_site_enabled(self):
-        link_html = '<a href=\"https://www.test.com/honor\">Terms of Service and Honor Code</a>'
+        link_html = '<a href=\"https://www.test.com/tos\">Terms of Service</a>'
         self._assert_reg_field(
             {"honor_code": "required"},
             {
@@ -1194,7 +1194,7 @@ class RegistrationViewTest(ThirdPartyAuthTestMixin, ApiTestCase):
     @override_settings(MKTG_URLS_LINK_MAP={"HONOR": "honor"})
     @mock.patch.dict(settings.FEATURES, {"ENABLE_MKTG_SITE": False})
     def test_registration_honor_code_mktg_site_disabled(self):
-        link_html = '<a href=\"/honor\">Terms of Service and Honor Code</a>'
+        link_html = '<a href=\"/tos\">Terms of Service</a>'
         self._assert_reg_field(
             {"honor_code": "required"},
             {
@@ -1224,7 +1224,7 @@ class RegistrationViewTest(ThirdPartyAuthTestMixin, ApiTestCase):
     def test_registration_separate_terms_of_service_mktg_site_enabled(self):
         # Honor code field should say ONLY honor code,
         # not "terms of service and honor code"
-        link_html = '<a href=\"https://www.test.com/honor\">Honor Code</a>'
+        link_html = '<a href=\"https://www.test.com/tos\">Terms of Service</a>'
         self._assert_reg_field(
             {"honor_code": "required", "terms_of_service": "required"},
             {
@@ -1275,7 +1275,7 @@ class RegistrationViewTest(ThirdPartyAuthTestMixin, ApiTestCase):
         self._assert_reg_field(
             {"honor_code": "required", "terms_of_service": "required"},
             {
-                "label": "I agree to the {platform_name} <a href=\"/honor\">Honor Code</a>.".format(
+                "label": "I agree to the {platform_name} <a href=\"/tos\">Terms of Service</a>.".format(
                     platform_name=settings.PLATFORM_NAME
                 ),
                 "name": "honor_code",
