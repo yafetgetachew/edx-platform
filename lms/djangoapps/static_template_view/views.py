@@ -14,6 +14,13 @@ from django_future.csrf import ensure_csrf_cookie
 from util.cache import cache_if_anonymous
 from django.middleware.csrf import get_token
 
+# Additional imports for feedback form
+from static_template_view.forms import FeedbackForm
+from django.core.mail import send_mail
+from smtplib import SMTPException
+from django.middleware.csrf import get_token
+from django.contrib import messages
+
 valid_templates = []
 
 if settings.STATIC_GRAB:
@@ -41,11 +48,7 @@ def render(request, template):
 
     url(r'^jobs$', 'static_template_view.views.render', {'template': 'jobs.html'}, name="jobs")
     """
-    from static_template_view.forms import FeedbackForm
-    from django.core.mail import send_mail
-    from smtplib import SMTPException
-    notification = None
-    style = ''
+
     if settings.FEATURES.get('USE_CUSTOM_THEME', False):
         if request.method == 'POST':
             form = FeedbackForm(request.POST)
@@ -64,19 +67,20 @@ def render(request, template):
                     )
                 try:
                     send_mail(subject, full_message, data_form['email'], [settings.TECH_SUPPORT_EMAIL,], fail_silently=False,)
-                    notification = 'Message was successfuly sent. Thank you for contacting us!'
+                    messages.success(request, 'Message was successfuly sent. Thank you for contacting us!')
                 except SMTPException as e:
-                    notification = 'Message not been sent, please try again later'
-                style = 'style="margin-top:10px;"'
+                    messages.error(request, 'Message not been sent, please try again later')
+                else:
+                    return redirect(request.build_absolute_uri())
         else:
             form = FeedbackForm()
         csrf_token = get_token(request)
-        return render_to_response(template, {'csrf_token': csrf_token,
-                                             'message': notification,
-                                             'style': style,
-                                             'form': form})
+        context = {
+            'csrf_token': csrf_token,
+            'form': form
+        }
 
-    return render_to_response('static_templates/' + template, {})
+    return render_to_response(template, context)
 
 
 @ensure_csrf_cookie
