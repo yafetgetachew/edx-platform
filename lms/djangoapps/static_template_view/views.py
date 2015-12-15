@@ -17,6 +17,9 @@ from static_template_view.forms import FeedbackForm
 from django.core.mail import send_mail
 from smtplib import SMTPException
 from django.middleware.csrf import get_token
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 valid_templates = []
 
@@ -67,17 +70,17 @@ def render(request, template):
                     )
                 try:
                     send_mail(subject, full_message, data_form['email'], [settings.TECH_SUPPORT_EMAIL,], fail_silently=False,)
-                    notification = 'Message was successfuly sent. Thank you for contacting us!'
+                    messages.success(request, 'Message was successfuly sent. Thank you for contacting us!')
                 except SMTPException as e:
-                    notification = 'Message not been sent, please try again later'
+                    messages.success(request, 'Message not been sent, please try again later')
                 style = 'style="margin-top:10px;"'
+                return HttpResponseRedirect(reverse('contact'))
         else:
             form = FeedbackForm()
 
         csrf_token = get_token(request)
         context = {
             'csrf_token': csrf_token,
-            'message': notification,
             'style': style,
             'form': form
         }
