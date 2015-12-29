@@ -1960,15 +1960,12 @@ def password_reset_confirm_wrapper(
             'validlink': True,
             'form': None,
             'title': _('Password reset unsuccessful'),
-            'err_msg': err_msg,
-            'THEME_ENABLED': settings.FEATURES.get('USE_CUSTOM_THEME', False)
+            'err_msg': err_msg
         }
         return TemplateResponse(request, 'registration/password_reset_confirm.html', context)
     else:
         # we also want to pass settings.PLATFORM_NAME in as extra_context
-        extra_context = {"platform_name": settings.PLATFORM_NAME,
-                         'THEME_ENABLED': settings.FEATURES.get('USE_CUSTOM_THEME', False)
-                         }
+        extra_context = {"platform_name": settings.PLATFORM_NAME}
 
         if request.method == 'POST':
             # remember what the old password hash is before we call down
