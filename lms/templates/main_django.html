@@ -28,16 +28,15 @@
   <div class="window-wrap" dir="${static.dir_rtl()}">
     <a class="nav-skip" href="{% block nav_skip %}#content{% endblock %}">{% trans "Skip to main content" %}</a>
     {% with course=request.course %}
-      {% include "header.html" %}
+        {% include "theme-header.html" %}
     {% endwith %}
     <div class="content-wrapper" id="content">
       {% block body %}{% endblock %}
       {% block bodyextra %}{% endblock %}
     </div>
     {% with course=request.course %}
-      {% include "footer.html" %}
+      {% include "theme-footer.html" %}
     {% endwith %}
-
   </div>
 
     {% javascript 'application' %}
