@@ -162,13 +162,13 @@ from student.helpers import (
                 % endif
               % endif
             % endif
-            <div class="wrapper-action-more">
-              <a href="#actions-dropdown-${dashboard_index}" class="action action-more" id="actions-dropdown-link-${dashboard_index}" aria-haspopup="true" aria-expanded="false" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}">
-                <span class="sr">${_('Course options dropdown')}</span>
-                <i class="fa fa-cog" aria-hidden="true"></i>
-              </a>
-              <div class="actions-dropdown" id="actions-dropdown-${dashboard_index}" aria-label="${_('Additional Actions Menu')}">
-                <ul class="actions-dropdown-list" id="actions-dropdown-list-${dashboard_index}" aria-label="${_('Available Actions')}" role="menu">
+##             <div class="wrapper-action-more">
+##               <a href="#actions-dropdown-${dashboard_index}" class="action action-more" id="actions-dropdown-link-${dashboard_index}" aria-haspopup="true" aria-expanded="false" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}">
+##                 <span class="sr">${_('Course options dropdown')}</span>
+##                 <i class="fa fa-cog" aria-hidden="true"></i>
+##               </a>
+##               <div class="actions-dropdown" id="actions-dropdown-${dashboard_index}" aria-label="${_('Additional Actions Menu')}">
+##                 <ul class="actions-dropdown-list" id="actions-dropdown-list-${dashboard_index}" aria-label="${_('Available Actions')}" role="menu">
 ##                   <li class="actions-item" id="actions-item-unenroll-${dashboard_index}">
 ##                     % if is_paid_course and show_refund_option:
 ##                       ## Translators: The course name will be added to the end of this sentence.
@@ -253,18 +253,18 @@ from student.helpers import (
 ##                       % endif
 ##                     % endif
 ##                   </li>
-                  <li class="actions-item" id="actions-item-email-settings-${dashboard_index}">
-                    % if show_email_settings:
-                      % if not is_course_blocked:
-                        <a href="#email-settings-modal" class="action action-email-settings" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" data-optout="${unicode(course.id) in course_optouts}">${_('Email Settings')}</a>
-                      % else:
-                        <a class="action action-email-settings is-disabled" data-course-id="${course.id| h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" data-optout="${unicode(course.id) in course_optouts}">${_('Email Settings')}</a>
-                      % endif
-                    % endif
-                  </li>
-                </ul>
-              </div>
-            </div>
+##                   <li class="actions-item" id="actions-item-email-settings-${dashboard_index}">
+##                     % if show_email_settings:
+##                       % if not is_course_blocked:
+##                         <a href="#email-settings-modal" class="action action-email-settings" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" data-optout="${unicode(course.id) in course_optouts}">${_('Email Settings')}</a>
+##                       % else:
+##                         <a class="action action-email-settings is-disabled" data-course-id="${course.id| h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" data-optout="${unicode(course.id) in course_optouts}">${_('Email Settings')}</a>
+##                       % endif
+##                     % endif
+##                   </li>
+##                 </ul>
+##               </div>
+##             </div>
           </div>
         </div>
       </div>
