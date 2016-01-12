@@ -519,6 +519,8 @@ def _index_bulk_op(request, course_key, chapter, section, position):
                     'prev_section_url': prev_section_url
                 }
             ))
+            ## Added this return for redirect to most recent page
+            return redirect(prev_section_url)
 
         result = render_to_response('courseware/courseware.html', context)
     except Exception as e:
