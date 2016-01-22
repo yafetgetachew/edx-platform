@@ -1412,7 +1412,8 @@ def enforce_single_login(sender, request, user, signal, **kwargs):    # pylint: 
             key = request.session.session_key
         else:
             key = None
-        user.profile.set_login_session(key)
+        if user and hasattr(user, 'profile'):
+            user.profile.set_login_session(key)
 
 
 class DashboardConfiguration(ConfigurationModel):
