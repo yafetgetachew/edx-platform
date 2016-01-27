@@ -1111,14 +1111,23 @@ CREDIT_TASK_MAX_RETRIES = 5
 # or denied for credit.
 CREDIT_PROVIDER_TIMESTAMP_EXPIRATION = 15 * 60
 
+################################ Settings for Microsites ################################
 
-################################ Deprecated Blocks Info ################################
+### Select an implementation for the microsite backend
+# for MICROSITE_BACKEND possible choices are
+# 1. microsite_configuration.backends.filebased.FilebasedMicrositeBackend
+# 2. microsite_configuration.backends.database.DatabaseMicrositeBackend
+MICROSITE_BACKEND = 'microsite_configuration.backends.filebased.FilebasedMicrositeBackend'
+# for MICROSITE_TEMPLATE_BACKEND possible choices are
+# 1. microsite_configuration.backends.filebased.FilebasedMicrositeTemplateBackend
+# 2. microsite_configuration.backends.database.DatabaseMicrositeTemplateBackend
+MICROSITE_TEMPLATE_BACKEND = 'microsite_configuration.backends.filebased.FilebasedMicrositeTemplateBackend'
+# TTL for microsite database template cache
+MICROSITE_DATABASE_TEMPLATE_CACHE_TTL = 5 * 60
 
-DEPRECATED_BLOCK_TYPES = ['peergrading', 'combinedopenended']
+############################### PROCTORING CONFIGURATION DEFAULTS ##############
 
-#### PROCTORING CONFIGURATION DEFAULTS
-
-PROCTORING_BACKEND_PROVIDER = {
+PROCTORING_BACKEND_PROVIDERS = {
     'class': 'edx_proctoring.backends.null.NullBackendProvider',
     'options': {},
 }

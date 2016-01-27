@@ -705,7 +705,12 @@ class TestTOC(ModuleStoreTestCase):
 @attr('shard_1')
 @ddt.ddt
 @patch.dict('django.conf.settings.FEATURES', {'ENABLE_SPECIAL_EXAMS': True})
-class TestProctoringRendering(ModuleStoreTestCase):
+class TestProctoringRendering(SharedModuleStoreTestCase):
+    @classmethod
+    def setUpClass(cls):
+        super(TestProctoringRendering, cls).setUpClass()
+        cls.course_key = ToyCourseFactory.create(proctoring_service='TEST_PROCTOR').id
+
     """Check the Table of Contents for a course"""
     def setUp(self):
         """

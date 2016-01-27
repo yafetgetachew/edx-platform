@@ -565,3 +565,41 @@ FEATURES['ORGANIZATIONS_APP'] = True
 
 # Financial assistance page
 FEATURES['ENABLE_FINANCIAL_ASSISTANCE_FORM'] = True
+
+JWT_AUTH.update({
+    'JWT_SECRET_KEY': 'test-secret',
+    'JWT_ISSUER': 'https://test-provider/oauth2',
+    'JWT_AUDIENCE': 'test-key',
+})
+
+# Disable the use of the plugin manager in the transformer registry for
+# better performant unit tests.
+from openedx.core.lib.block_structure.transformer_registry import TransformerRegistry
+TransformerRegistry.USE_PLUGIN_MANAGER = False
+
+PROCTORING_BACKEND_PROVIDERS = {
+        "TEST_PROCTOR": {
+            'class': 'edx_proctoring.backends.null.NullBackendProvider',
+            'options': {},
+            "settings": {
+                "LINK_URLS": {
+                    "contact_us": "{add link here}",
+                    "faq": "{add link here}",
+                    "online_proctoring_rules": "{add link here}",
+                    "tech_requirements": "{add link here}"
+                }
+            }
+        },
+        "TEST_PROCTOR_2": {
+            'class': 'edx_proctoring.backends.null.NullBackendProvider',
+            'options': {},
+            "settings": {
+                "LINK_URLS": {
+                    "contact_us": "{add link here}",
+                    "faq": "{add link here}",
+                    "online_proctoring_rules": "{add link here}",
+                    "tech_requirements": "{add link here}"
+                }
+            }
+        }
+    }
