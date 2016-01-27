@@ -183,10 +183,7 @@ def toc_for_course(user, request, course, active_chapter, active_section, field_
 
                 if not section.hide_from_toc:
                     section_context = {
-                        # hack this because have not found from where passing such value
-                        # section.display_name_with_default = "Entrance Exam - Subsection"
-                        'display_name': section.display_name_with_default \
-                            if not u'Entrance Exam - Subsection' else chapter.display_name_with_default,
+                        'display_name': section.display_name_with_default,
                         'url_name': section.url_name,
                         'format': section.format if section.format is not None else '',
                         'due': section.due,
@@ -246,6 +243,7 @@ def toc_for_course(user, request, course, active_chapter, active_section, field_
                             section_context.update({
                                 'proctoring': timed_exam_attempt_context,
                             })
+
                     sections.append(section_context)
             toc_chapters.append({
                 'display_name': chapter.display_name_with_default,
