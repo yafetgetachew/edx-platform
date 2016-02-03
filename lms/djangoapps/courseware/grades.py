@@ -301,7 +301,11 @@ def grade(student, request, course, keep_raw_scores=False, field_data_cache=None
 
     Also sends a signal to update the minimum grade requirement status.
     """
-    grade_summary = _grade(student, request, course, keep_raw_scores, field_data_cache, scores_client)
+    grade_summary = course.grading.grade(
+        student, request, course,
+        keep_raw_scores, field_data_cache,
+        scores_client
+    )
     responses = GRADES_UPDATED.send_robust(
         sender=None,
         username=student.username,
@@ -519,11 +523,7 @@ def progress_summary(student, request, course, field_data_cache=None, scores_cli
     """
     Returns progress summary for all chapters in the course.
     """
-    progress = _progress_summary(student, request, course, field_data_cache, scores_client)
-    if progress:
-        return progress.chapters
-    else:
-        return None
+    return course.grading.progress_summary(student, request, course, field_data_cache, scores_client)
 
 
 def get_weighted_scores(student, course, field_data_cache=None, scores_client=None):
