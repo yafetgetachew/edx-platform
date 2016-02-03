@@ -26,6 +26,8 @@ import os
 from path import path
 from xmodule.modulestore.modulestore_settings import convert_module_store_setting_if_needed
 
+from elasticsearch import Elasticsearch
+
 # SERVICE_VARIANT specifies name of the variant used, which decides what JSON
 # configuration files are read during startup.
 SERVICE_VARIANT = os.environ.get('SERVICE_VARIANT', None)
@@ -676,3 +678,14 @@ ENV_TOKENS.get('CERTIFICATES_STATIC_VERIFY_URL', CERTIFICATES_STATIC_VERIFY_URL)
 if FEATURES.get('ENABLE_LTI_PROVIDER'):
     INSTALLED_APPS += ('lti_provider',)
     AUTHENTICATION_BACKENDS += ('lti_provider.users.LtiBackend', )
+
+
+##################### Raccoongang changes #####################
+ELASTIC_SEARCH_HOST = ENV_TOKENS.get('ELASTIC_SEARCH_HOST', 'localhost')
+
+class ExtHostElasticsearch(Elasticsearch):
+    def __init__(self, *args, **kwargs):
+        kwargs['host'] = ELASTIC_SEARCH_HOST
+        super(ExtHostElasticsearch, self).__init__(*args, **kwargs)
+
+ELASTIC_SEARCH_IMPL = ExtHostElasticsearch
