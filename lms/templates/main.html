@@ -11,6 +11,81 @@ from branding import api as branding_api
 <!--[if lte IE 9]><html class="ie ie9 lte9" lang="${LANGUAGE_CODE}"><![endif]-->
 <!--[if !IE]><!--><html lang="${LANGUAGE_CODE}"><!--<![endif]-->
 <head dir="${static.dir_rtl()}">
+
+
+<script type="text/javascript">
+        window.recognizing = false;
+        var ChromeSpeechXBlock = function () {
+        var finalTranscript = '';
+        $("#start_button").on('click', function(e){
+            e.stopPropagation();
+            return false;
+        });
+        // check that your browser supports the API
+        if (!('webkitSpeechRecognition' in window)) {
+            function HideDivStart() {
+                $('#div_start').css('display', 'none');
+            };
+            HideDivStart();
+        } else {
+            // Create the recognition object and define the event handlers
+            var recognition = new webkitSpeechRecognition();
+            // recognition.continuous = true;         // keep processing input until stopped
+            recognition.interimResults = true;     // show interim results
+            recognition.lang = 'en-GB';           // specify the language
+            recognition.onstart = function() {
+                $('#start_img').prop('src', '/static/images/mic-animate.gif');
+            };
+            recognition.onerror = function(event) {
+                window.recognizing = false;
+                console.log("There was a recognition error...");
+                $('#start_img').prop('src', '/static/images/mic.gif');
+            };
+            recognition.onend = function() {
+                $('#start_img').prop('src', '/static/images/mic.gif');
+            };
+            recognition.onresult = function(event) {
+                var interimTranscript = '';
+                for (var i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        finalTranscript += event.results[i][0].transcript;
+                    } else {
+                        interimTranscript += event.results[i][0].transcript;
+                    }
+                }
+                $('#annotator-field-0').val(finalTranscript);
+            };
+                      function OnClickReaction(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if (window.recognizing == true) {
+                window.recognizing = false;
+                recognition.stop();
+                e.preventDefault();
+                e.stopPropagation();
+                $('#start_img').prop('src', '/static/images/mic.gif');
+            } else {
+                if (e.currentTarget.id == 'start_button' && window.recognizing == false){
+                    window.recognizing = true;
+                    recognition.start();
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $('#start_img').prop('src', '/static/images/mic-slash.gif');
+                }
+            }
+        };
+            $("#start_button").on('click', OnClickReaction);
+ 
+        }
+}
+
+</script>
+
+
+
+
+
+<link href="/static/css/Raccoongang.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">

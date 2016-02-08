@@ -197,22 +197,27 @@ define([
      * form.annotator-widget and reverse order of Save and Cancel buttons.
      **/
     Annotator.Editor.prototype.html = [
-        '<div class="annotator-outer annotator-editor">',
+        '<div class="annotator-outer annotator-editor" onload="ChromeSpeechXBlock()">',
             '<form class="annotator-widget" tabindex="-1">',
+                '<div id="div_start">',
+                    '<button id="start_button">',
+                        '<img alt="Start" id="start_img" src="/static/images/mic.gif" style="height:30px;">',
+                    '</button>',
+                '</div>',
                 '<ul class="annotator-listing"></ul>',
                 '<div class="annotator-controls">',
-                    '<button class="annotator-save">',
+                    '<button class="annotator-save" id="save">',
                         _t('Save'),
                         '<span class="sr">', _t('Note'), '</span>',
                     '</button>',
-                    '<button class="annotator-cancel">',
+                    '<button class="annotator-cancel" id="cancel">',
                         _t('Cancel'),
                         '<span class="sr">', _t('Note'), '</span>',
                     '</button>',
                 '</div>',
-            '</form>',
+            '</form>', 
         '</div>'
-    ].join('');
+    ].join(' ');
 
 
     /**
