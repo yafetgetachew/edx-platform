@@ -75,7 +75,33 @@ site_status_msg = get_site_status_msg(course_id)
           </li>
         %endif
       </%block>
+
+      ## Course filtering
+
+      % if is_view_courses and settings.FEATURES.get('COUNTRY_FILTER', False):
+      <li class="nav-global-02">
+        <form action="" method="get">
+          <select name="country">
+            <option value="">all courses</option>
+          % for key, value in settings.FEATURES.get('COUNTRY_FILTER', False).items():
+            <option value="${value}"
+              %if value == country:
+                selected
+              %endif
+              >
+              ${key}
+            </option>
+          % endfor
+          </select>
+          <input type="submit" value="filter" class="filter_button">
+        </form>
+      </li>
+      % endif
+
+      ## ------------------------
+
     </ol>
+
     <ol class="user">
       <li class="primary">
         <a href="${reverse('dashboard')}" class="user-link">

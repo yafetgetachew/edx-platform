@@ -357,7 +357,7 @@ def get_courses_by_university(user, domain=None):
     return universities
 
 
-def get_courses(user, domain=None):
+def get_courses(user, domain=None, country=None):
     '''
     Returns a list of courses available, sorted by course.number
     '''
@@ -367,8 +367,12 @@ def get_courses(user, domain=None):
         'COURSE_CATALOG_VISIBILITY_PERMISSION',
         settings.COURSE_CATALOG_VISIBILITY_PERMISSION
     )
-
     courses = [c for c in courses if has_access(user, permission_name, c)]
+
+    if country:
+        access_country = (lambda course: country in course.display_name_with_default[-5:] \
+                          or 'CAM' in course.display_name_with_default[-5:])
+        courses = [c for c in courses if access_country(c)]
 
     courses = sorted(courses, key=lambda course: course.number)
 
