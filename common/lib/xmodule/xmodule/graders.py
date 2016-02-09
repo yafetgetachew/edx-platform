@@ -101,9 +101,7 @@ def grader_from_conf(conf):
                     del subgraderconf[key]
 
             subgrader = subgrader_class(**subgraderconf)
-            subgraders.append(
-                (subgrader, subgrader.category, weight, passing_grade)
-            )
+            subgraders.append((subgrader, subgrader.category, weight, passing_grade))
 
         except (TypeError, ValueError) as error:
             # Add info and re-raise
@@ -188,7 +186,7 @@ class WeightedSubsectionsGrader(CourseGrader):
         section_breakdown = []
         grade_breakdown = []
 
-        for subgrader, category, weight in self.sections:
+        for subgrader, category, weight, passing_grade in self.sections:
             subgrade_result = subgrader.grade(grade_sheet, generate_random_scores)
 
             weighted_percent = subgrade_result['percent'] * weight

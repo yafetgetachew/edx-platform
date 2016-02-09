@@ -21,12 +21,13 @@
   <div class="field field-checkbox checkbox-cosmetic" id="field-course-grading-assignment-passing-grade-enabled">
     <input type="checkbox" id="passing_grade_enabled" name="passing_grade_enabled" class="input input-checkbox">
     <label for="passing_grade_enabled" class="label">
-              <i class="icon fa fa-check-square-o input-checkbox-checked"></i>
-              <i class="icon fa fa-square-o input-checkbox-unchecked"></i>
-              <%= gettext("Passing Grade Enabled") %>
-            </label>
+      <i class="icon fa fa-check-square-o input-checkbox-checked"></i>
+      <i class="icon fa fa-square-o input-checkbox-unchecked"></i>
+      <%= gettext("Passing Grade Enabled") %>
+    </label>
   </div>
-    <div class="field text" id="field-course-grading-assignment-passing-grade">
+  <div class="clearfix"></div>
+  <div class="field text" id="field-course-grading-assignment-passing-grade">
     <label for="course-grading-assignment-passing-grade"><%= gettext("Passing Grade") %></label>
     <input type="text" class="short" id="course-grading-assignment-passing-grade" value = "<%= model.get('passing_grade') %>" />
     <span class="tip tip-inline"><%= gettext("as a percent, e.g. 60") %></span>
