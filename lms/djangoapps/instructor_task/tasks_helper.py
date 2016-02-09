@@ -1280,7 +1280,8 @@ def generate_students_certificates(
         status = generate_user_certificates(
             student,
             course_id,
-            course=course
+            course=course,
+            insecure=settings.FEATURES.get('HTTP_LMS_CALLBACK_URL', False)
         )
 
         if status in [CertificateStatuses.generating, CertificateStatuses.downloadable]:

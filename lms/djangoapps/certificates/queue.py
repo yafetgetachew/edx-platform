@@ -102,7 +102,7 @@ class XQueueCertInterface(object):
         )
         self.whitelist = CertificateWhitelist.objects.all()
         self.restricted = UserProfile.objects.filter(allow_certificate=False)
-        self.use_https = True
+        self.use_https = not settings.FEATURES.get('HTTP_LMS_CALLBACK_URL', False)
 
     def regen_cert(self, student, course_id, course=None, forced_grade=None, template_file=None, generate_pdf=True):
         """(Re-)Make certificate for a particular student in a particular course
@@ -404,7 +404,7 @@ class XQueueCertInterface(object):
             'course_id': unicode(example_cert.course_key),
             'name': example_cert.full_name,
             'template_pdf': example_cert.template,
-
+            'course_name': 'Example certificate',
             # Example certificates are not associated with a particular user.
             # However, we still need to find the example certificate when
             # we receive a response from the queue.  For this reason,
