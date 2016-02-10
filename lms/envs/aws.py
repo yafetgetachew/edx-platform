@@ -689,3 +689,6 @@ class ExtHostElasticsearch(Elasticsearch):
         super(ExtHostElasticsearch, self).__init__(*args, **kwargs)
 
 ELASTIC_SEARCH_IMPL = ExtHostElasticsearch
+
+LMS_BASE = ENV_TOKENS.get('LMS_BASE', 'localhost')
+

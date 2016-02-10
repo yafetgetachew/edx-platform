@@ -416,7 +416,11 @@ class LocalFSReportStore(ReportStore):
         files = [(filename, os.path.join(course_dir, filename)) for filename in os.listdir(course_dir)]
         files.sort(key=lambda (filename, full_path): os.path.getmtime(full_path), reverse=True)
 
+        scheme = settings.FEATURES.get('USE_HTTP') and 'http' or 'https'
+        url = '{}://{}'.format(scheme, settings.LMS_BASE)
+        mroot_len = len(settings.MEDIA_ROOT)
+        _build_url = lambda fp: '{}{}'.format(url, os.path.join(settings.MEDIA_URL, urllib.quote(fp[mroot_len:])))
         return [
-            (filename, ("file://" + urllib.quote(full_path)))
+            (filename, (_build_url(full_path)))
             for filename, full_path in files
         ]
