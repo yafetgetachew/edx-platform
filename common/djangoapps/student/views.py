@@ -122,6 +122,7 @@ from notification_prefs.views import enable_notifications
 
 # Note that this lives in openedx, so this dependency should be refactored.
 from openedx.core.djangoapps.user_api.preferences import api as preferences_api
+from util.course_utils import country_filter
 
 
 log = logging.getLogger("edx.student")
@@ -150,6 +151,7 @@ def index(request, extra_context=None, user=AnonymousUser()):
     extra_context is used to allow immediate display of certain modal windows, eg signup,
     as used by external_auth.
     """
+    country = request.GET.get('country')
     if extra_context is None:
         extra_context = {}
     # The course selection work is done in courseware.courses.
@@ -158,14 +160,16 @@ def index(request, extra_context=None, user=AnonymousUser()):
     if domain is False:
         domain = request.META.get('HTTP_HOST')
 
-    courses = get_courses(user, domain=domain)
+    courses = get_courses(user, domain=domain, country=country)
     if microsite.get_value("ENABLE_COURSE_SORTING_BY_START_DATE",
                            settings.FEATURES["ENABLE_COURSE_SORTING_BY_START_DATE"]):
         courses = sort_by_start_date(courses)
     else:
         courses = sort_by_announcement(courses)
 
-    context = {'courses': courses}
+    context = {'courses': courses,
+               'show_country_filter': True,
+               'country': country}
 
     context.update(extra_context)
     return render_to_response('index.html', context)
@@ -509,6 +513,7 @@ def is_course_blocked(request, redeemed_registration_codes, course_key):
 @ensure_csrf_cookie
 def dashboard(request):
     user = request.user
+    country = request.GET.get('country')
 
     platform_name = microsite.get_value("platform_name", settings.PLATFORM_NAME)
 
@@ -528,6 +533,7 @@ def dashboard(request):
     # longer exist (because the course IDs have changed). Still, we don't delete those
     # enrollments, because it could have been a data push snafu.
     course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
+    course_enrollments = country_filter(course_enrollments, country)
 
     # sort the enrollment pairs by the enrollment date
     course_enrollments.sort(key=lambda x: x.created, reverse=True)
@@ -692,6 +698,7 @@ def dashboard(request):
         'order_history_list': order_history_list,
         'courses_requirements_not_met': courses_requirements_not_met,
         'nav_hidden': True,
+        'show_country_filter': True,
     }
 
     return render_to_response('dashboard.html', context)

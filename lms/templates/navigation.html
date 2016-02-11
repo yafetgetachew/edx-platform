@@ -47,6 +47,7 @@ site_status_msg = get_site_status_msg(course_id)
       </a>
     </h1>
 
+
     % if course:
     <h2 class="course-header"><span class="provider">${course.display_org_with_default | h}:</span>
       ${course.display_number_with_default | h}
@@ -75,30 +76,6 @@ site_status_msg = get_site_status_msg(course_id)
           </li>
         %endif
       </%block>
-
-      ## Course filtering
-
-      % if is_view_courses and settings.FEATURES.get('COUNTRY_FILTER', False):
-      <li class="nav-global-02">
-        <form action="" method="get">
-          <select name="country">
-            <option value="">all courses</option>
-          % for key, value in settings.FEATURES.get('COUNTRY_FILTER', False).items():
-            <option value="${value}"
-              %if value == country:
-                selected
-              %endif
-              >
-              ${key}
-            </option>
-          % endfor
-          </select>
-          <input type="submit" value="filter" class="filter_button">
-        </form>
-      </li>
-      % endif
-
-      ## ------------------------
 
     </ol>
 
@@ -167,6 +144,36 @@ site_status_msg = get_site_status_msg(course_id)
 
       % endif
     </ol>
+
+    % endif
+     ## Course filtering
+
+      % if settings.FEATURES.get('COUNTRY_FILTER', False) and show_country_filter:
+        <span class="filter-form">
+          <form action="" method="get">
+            <select name="country">
+              <option value="">all courses</option>
+            % for key, value in settings.FEATURES.get('COUNTRY_FILTER', False).items():
+              <option value="${value}"
+                %if value == country:
+                  selected
+                %endif
+                >
+                ${key}
+              </option>
+            % endfor
+            </select>
+            <input type="submit" value="filter" class="filter_button">
+          </form>
+        </span>
+      % endif
+
+      ## ------------------------
+
+    % if user.is_authenticated():
+
+    % else:
+
 
     <ol class="right nav-courseware">
     <li class="nav-courseware-01">

@@ -45,12 +45,10 @@ def get_course_enrollments(user):
 
 
 @ensure_csrf_cookie
-@cache_if_anonymous()
 def index(request):
     '''
     Redirects to main page -- info page if user authenticated, or marketing if not
     '''
-
     if settings.COURSEWARE_ENABLED and request.user.is_authenticated():
         # For microsites, only redirect to dashboard if user has
         # courses in his/her dashboard. Otherwise UX is a bit cryptic.
@@ -92,7 +90,6 @@ def index(request):
 
 
 @ensure_csrf_cookie
-@cache_if_anonymous()
 def courses(request):
     """
     Render the "find courses" page. If the marketing site is enabled, redirect

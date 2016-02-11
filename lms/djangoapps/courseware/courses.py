@@ -26,6 +26,7 @@ from student.models import CourseEnrollment
 import branding
 
 from opaque_keys.edx.keys import UsageKey
+from util.course_utils import country_filter
 
 log = logging.getLogger(__name__)
 
@@ -369,11 +370,7 @@ def get_courses(user, domain=None, country=None):
     )
     courses = [c for c in courses if has_access(user, permission_name, c)]
 
-    if country:
-        access_country = (lambda course: country in course.display_name_with_default[-5:] \
-                          or 'CAM' in course.display_name_with_default[-5:])
-        courses = [c for c in courses if access_country(c)]
-
+    courses = country_filter(courses, country)
     courses = sorted(courses, key=lambda course: course.number)
 
     return courses
