@@ -48,6 +48,9 @@ from lms.envs.common import (
 
     # Django REST framework configuration
     REST_FRAMEWORK,
+
+    COPYRIGHT_YEAR,
+    PLATFORM_NAME,
 )
 from path import Path as path
 from warnings import simplefilter
