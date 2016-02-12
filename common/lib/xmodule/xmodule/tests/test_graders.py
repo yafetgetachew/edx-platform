@@ -2,7 +2,7 @@
 import unittest
 
 from xmodule import graders
-from xmodule.graders import Score, aggregate_scores
+from xmodule.graders import Score, aggregate_scores, WeightedSubsectionsGrader
 
 
 class GradesheetTest(unittest.TestCase):
