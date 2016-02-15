@@ -7,7 +7,8 @@ var CourseGrader = Backbone.Model.extend({
         "drop_count" : 0,
         "short_label" : "", // what to use in place of type if space is an issue
         "weight" : 0, // int 0..100,
-        "passing_grade": 0 // int 0..100,
+        "passing_grade": 0, // int 0..100
+        "passing_grade_enabled": false
     },
     parse : function(attrs) {
         // round off values while converting them to integer

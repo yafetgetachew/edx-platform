@@ -90,7 +90,7 @@ $(function () {
             detail_tooltips[section['category'] + "-grade_breakdown"] = [ section['detail'] ]
   
     totalLabel = _("Total")
-    if 'sections_passed' in grade_summary and not grade_summary['sections_passed']:
+    if not grade_summary['sections_passed']:
         totalLabel += "<br><span style=\"color: #b60000;white-space: nowrap;\">({status})</span>" .format(
         status = _('not pass')
     )
@@ -112,7 +112,7 @@ $(function () {
     for grade in descending_grades:
         percent = grade_cutoffs[grade]
         grade_cutoff_ticks.append( [ percent, u"{0} {1:.0%}".format(grade, percent) ] )
-        if 'sections_passed' in grade_summary and not grade_summary['sections_passed']:
+        if not grade_summary['sections_passed']:
             grading_issues.append([0.25, percent])
             grading_issues_tooltips.append(_('One of the categories is not passed'))
   else:
@@ -140,7 +140,7 @@ $(function () {
   var colors = ['#f3f3f3', '#e9e9e9', '#ddd'];
   var markings = [];
 
-  %if 'sections_passed' in grade_summary and grade_summary['sections_passed']:
+  %if grade_summary['sections_passed']:
     for(var i=1; i<ascending_grades.length-1; i++) // Skip the i=0 marking, which starts from 0%
         markings.push({yaxis: {from: ascending_grades[i], to: ascending_grades[i+1]}, color: colors[(i-1) % colors.length]});
   %else:
