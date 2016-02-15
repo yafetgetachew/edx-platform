@@ -11,15 +11,25 @@ var GraderView = ValidatingView.extend({
         "click .remove-grading-data" : "deleteModel",
         // would love to move to a general superclass, but event hashes don't inherit in backbone :-(
         'focus :input' : "inputFocus",
-        'blur :input' : "inputUnfocus"
+        'blur :input' : "inputUnfocus",
+        'click #field-course-grading-assignment-passing-grade-enabled' : "togglePassingGrade"
     },
     initialize : function() {
         this.listenTo(this.model, 'invalid', this.handleValidationError);
+        this.listenTo(this.model, 'change:passing_grade_enabled', this.render);
         this.selectorToField = _.invert(this.fieldToSelectorMap);
         this.render();
     },
 
     render: function() {
+        if (this.model.get('passing_grade_enabled') == true) {
+            this.$('#' + this.fieldToSelectorMap['passing_grade_enabled']).attr('checked', this.model.get('passing_grade_enabled'));
+            this.$('.div-grade-section').show();
+        }
+        else {
+            this.$('#' + this.fieldToSelectorMap['passing_grade_enabled']).removeAttr('checked');
+            this.$('.div-grade-section').hide();
+        }
         return this;
     },
     fieldToSelectorMap : {
@@ -28,7 +38,8 @@ var GraderView = ValidatingView.extend({
         'min_count' : 'course-grading-assignment-totalassignments',
         'drop_count' : 'course-grading-assignment-droppable',
         'weight' : 'course-grading-assignment-gradeweight',
-        'passing_grade' : 'course-grading-assignment-passing-grade'
+        'passing_grade' : 'course-grading-assignment-passing-grade',
+        'passing_grade_enabled': 'passing-grade-enabled'
     },
     updateModel: function(event) {
         // HACK to fix model sometimes losing its pointer to the collection [I think I fixed this but leaving
@@ -63,6 +74,10 @@ var GraderView = ValidatingView.extend({
     deleteModel : function(e) {
         e.preventDefault();
         this.collection.remove(this.model);
+    },
+
+    togglePassingGrade: function(ev) {
+        this.model.set({'passing_grade_enabled': !this.model.get('passing_grade_enabled')});
     }
 });
 
