@@ -48,19 +48,23 @@ class ProgressTest(UniqueCourseTest):
 
         course_fix.add_children(
             XBlockFixtureDesc('chapter', 'Test Section 1').add_children(
-                XBlockFixtureDesc('sequential', 'Test Subsection 1').add_children(
+                XBlockFixtureDesc(
+                    'sequential', 'Test Subsection 1', metadata={'graded': True, 'format': 'Homework'}
+                ).add_children(
                     XBlockFixtureDesc(
-                        'vertical', 'Test Vertical 1', metadata={'graded': True, 'format': 'Homework'}
+                        'vertical', 'Test Vertical 1'
                     ).add_children(XBlockFixtureDesc('problem', 'Test Problem 1', data=problem)),
                 ),
-                XBlockFixtureDesc('sequential', 'Test Subsection 2').add_children(
+                XBlockFixtureDesc(
+                    'sequential', 'Test Subsection 2', metadata={'graded': True, 'format': 'Homework'}
+                ).add_children(
                     XBlockFixtureDesc(
-                        'vertical', 'Test Vertical 2', metadata={'graded': True, 'format': 'Homework'}
+                        'vertical', 'Test Vertical 2'
                     ).add_children(XBlockFixtureDesc('problem', 'Test Problem 3', data=problem)),
                 ),
                 XBlockFixtureDesc('sequential', 'Test Subsection 3').add_children(
                     XBlockFixtureDesc(
-                        'vertical', 'Test Vertical 3', metadata={'graded': True, 'format': 'Exam'}
+                        'vertical', 'Test Vertical 3'
                     ).add_children(XBlockFixtureDesc('problem', 'Test Problem 3', data=problem)),
                 ),
             ),
@@ -153,9 +157,7 @@ class ProgressTest(UniqueCourseTest):
         ])
 
         self.check_problem('Test Section 1', 'Test Subsection 1', answer='6.5')
-        res = self.progress_page.visit()
-        print("get url", self.progress_page.url)
-        print(dir(res.browser))
+        self.progress_page.visit()
         self.assertTrue(self.progress_page.has_passing_information_table)
         self.assertEqual(
             self.progress_page.passing_information_table.status,
