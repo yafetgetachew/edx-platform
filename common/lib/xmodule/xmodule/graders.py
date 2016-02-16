@@ -101,7 +101,9 @@ def grader_from_conf(conf):
                     del subgraderconf[key]
 
             subgrader = subgrader_class(**subgraderconf)
-            subgraders.append((subgrader, subgrader.category, weight, passing_grade))
+            subgraders.append(
+                (subgrader, subgrader.category, weight, passing_grade)
+            )
 
         except (TypeError, ValueError) as error:
             # Add info and re-raise
