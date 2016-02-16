@@ -188,6 +188,7 @@ class GradingPageTest(StudioCourseTest):
         self.page.click_add_assignment_button()
         assignment = self.page.assignments[-1]
         assignment.name = 'New Type'
+        self.page.click_enable_passing_grade()
         assignment.passing_grade = 7
         self.page.click_save_button()
         self.assertEqual(assignment.passing_grade, 7)
@@ -251,7 +252,7 @@ class GradingPageTest(StudioCourseTest):
         """
         self.page.visit()
         assignment = self.page.get_assignment_by_name('Homework')
-        assignment.name = ' '
+        assignment.name = ''
         self.assertTrue(self.page.is_save_button_disabled())
 
     def test_can_edit_grading_range_names(self):
