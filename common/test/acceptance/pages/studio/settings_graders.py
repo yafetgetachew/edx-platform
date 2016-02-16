@@ -140,15 +140,23 @@ class GradingPage(CoursePage):
 
     def is_save_button_disabled(self):
         """
-        Indicates whther save button is disabled.
+        Indicates whether save button is disabled.
         """
-        return self.q(css="div#page-notification a.action-save.is-disabled").present
+        return self.q(css="div#page-notification button.action-save.is-disabled").present
 
     def click_add_assignment_button(self):
         """
         Clicks the 'New Assignment Type' button.
         """
         self.q(css=self.grading_css + " .add-grading-data").first.click()
+
+    def click_enable_passing_grade(self):
+        """
+        Clicks the 'Passing Grade Enabled' checkbox.
+        """
+        qs = self.q(css=self.grading_css + " #field-course-grading-assignment-passing-grade-enabled")
+        qs[0].click()
+        qs[-1].click()
 
     def click_save_button(self):
         """

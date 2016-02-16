@@ -144,7 +144,10 @@ def set_input_value(page, css, value):
     input_element.click()
     # Select all, then input the value
     input_element.send_keys(Keys.CONTROL + 'a')
-    input_element.send_keys(value)
+    if value == '':
+        input_element.send_keys(Keys.DELETE)
+    else:
+        input_element.send_keys(value)
     # Return the input_element for chaining
     return input_element
 
