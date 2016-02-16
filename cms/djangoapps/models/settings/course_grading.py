@@ -15,6 +15,7 @@ class CourseGradingModel(object):
         self.grade_cutoffs = course_descriptor.grade_cutoffs
         self.grace_period = CourseGradingModel.convert_set_grace_period(course_descriptor)
         self.minimum_grade_credit = course_descriptor.minimum_grade_credit
+        self.passing_grade_enabled = False
 
     @classmethod
     def fetch(cls, course_key):

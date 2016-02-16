@@ -153,7 +153,9 @@ class ProgressTest(UniqueCourseTest):
         ])
 
         self.check_problem('Test Section 1', 'Test Subsection 1', answer='6.5')
-        self.progress_page.visit()
+        res = self.progress_page.visit()
+        print("get url", self.progress_page.url)
+        print(dir(res.browser))
         self.assertTrue(self.progress_page.has_passing_information_table)
         self.assertEqual(
             self.progress_page.passing_information_table.status,
