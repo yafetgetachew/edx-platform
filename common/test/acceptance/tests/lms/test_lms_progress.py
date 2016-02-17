@@ -117,11 +117,13 @@ class ProgressTest(UniqueCourseTest):
         self.set_assignments([
             {
                 'type': 'Homework', 'passing_grade': 70, 'weight': 50,
-                'min_count': 2, 'drop_count': 0, 'short_label': 'HW'
+                'min_count': 2, 'drop_count': 0, 'short_label': 'HW',
+                'passing_grade_enabled': True
             },
             {
                 'type': 'Exam', 'passing_grade': 0, 'weight': 50,
-                'min_count': 1, 'drop_count': 0, 'short_label': 'EX'
+                'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
+                'passing_grade_enabled': True
             },
         ])
 
@@ -148,11 +150,13 @@ class ProgressTest(UniqueCourseTest):
         self.set_assignments([
             {
                 'type': 'Homework', 'passing_grade': 70, 'weight': 50,
-                'min_count': 2, 'drop_count': 0, 'short_label': 'HW'
+                'min_count': 2, 'drop_count': 0, 'short_label': 'HW',
+                'passing_grade_enabled': True
             },
             {
                 'type': 'Exam', 'passing_grade': 0, 'weight': 50,
-                'min_count': 1, 'drop_count': 0, 'short_label': 'EX'
+                'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
+                'passing_grade_enabled': True
             },
         ])
 
