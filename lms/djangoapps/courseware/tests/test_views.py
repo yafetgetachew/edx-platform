@@ -930,8 +930,7 @@ class ProgressPageTests(ModuleStoreTestCase):
 
     @patch.dict('django.conf.settings.FEATURES', {'CERTIFICATES_HTML_VIEW': True})
     @patch('courseware.grades.grade', Mock(return_value={'grade': None, 'percent': 0.75, 'section_breakdown': [],
-                                                         'grade_breakdown': [], 'sections_passed': False,
-                                                         'sections_passed': True}))
+                                                         'grade_breakdown': [], 'sections_passed': False}))
     def test_view_certificate_cannot_generate(self):
         """
         If certificate web view is enabled, but one of the assignments is not passed then certificate web view button
@@ -956,7 +955,7 @@ class ProgressPageTests(ModuleStoreTestCase):
 
     @patch.dict('django.conf.settings.FEATURES', {'CERTIFICATES_HTML_VIEW': False})
     @patch('courseware.grades.grade', Mock(return_value={'grade': 'Pass', 'percent': 0.75, 'section_breakdown': [],
-                                                         'grade_breakdown': []}))
+                                                         'grade_breakdown': [], 'sections_passed': True}))
     def test_view_certificate_link_hidden(self):
         """
         If certificate web view is disabled then certificate web view button should not appear for user who certificate
