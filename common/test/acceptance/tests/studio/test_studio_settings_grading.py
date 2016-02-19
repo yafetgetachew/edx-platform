@@ -1,5 +1,5 @@
 """
-Acceptance tests for Studio Setting pages
+Acceptance tests for Studio Setting pages.
 """
 from bok_choy.promise import BrokenPromise
 from .base_studio_test import StudioCourseTest

@@ -15,7 +15,7 @@ from ...fixtures.grading import GradingConfigFixture
 
 class ProgressTest(UniqueCourseTest):
     """
-    Test progress page
+    Test progress page.
     """
     USERNAME = "STUDENT_TESTER"
     EMAIL = "student101@example.com"
@@ -71,8 +71,9 @@ class ProgressTest(UniqueCourseTest):
         ).install()
 
         # Auto-auth register for the course.
-        AutoAuthPage(self.browser, username=self.USERNAME, email=self.EMAIL,
-                     course_id=self.course_id, staff=False).visit()
+        AutoAuthPage(
+            self.browser, username=self.USERNAME, email=self.EMAIL, course_id=self.course_id, staff=False
+        ).visit()
 
     def check_problem(self, section, subsection, answer):
         """

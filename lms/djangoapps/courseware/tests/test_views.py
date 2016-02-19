@@ -963,15 +963,22 @@ class ProgressPageTests(ModuleStoreTestCase):
         self.assertNotContains(resp, 'Request Certificate')
 
     @patch.dict('django.conf.settings.FEATURES', {'CERTIFICATES_HTML_VIEW': True})
-    @patch('courseware.grades.grade', Mock(return_value={'grade': 'Pass',
-                                                         'percent': 0.75,
-                                                         'section_breakdown': [],
-                                                         'grade_breakdown': [],
-                                                         'sections_passed': True}))
+    @patch(
+        'courseware.grades.grade',
+        Mock(
+            return_value={
+                'grade': 'Pass',
+                'percent': 0.75,
+                'section_breakdown': [],
+                'grade_breakdown': [],
+                'sections_passed': True
+            }
+        )
+    )
     def test_view_certificate_link(self):
         """
-        If certificate web view is enabled then certificate web view button should appear for user who certificate is
-        available/generated
+        If certificate web view is enabled then certificate web view button
+        should appear for user who certificate is available/generated.
         """
         certificate = GeneratedCertificateFactory.create(
             user=self.user,
@@ -1023,12 +1030,22 @@ class ProgressPageTests(ModuleStoreTestCase):
         self.assertNotContains(resp, 'Request Certificate')
 
     @patch.dict('django.conf.settings.FEATURES', {'CERTIFICATES_HTML_VIEW': True})
-    @patch('courseware.grades.grade', Mock(return_value={'grade': None, 'percent': 0.75, 'section_breakdown': [],
-                                                         'grade_breakdown': [], 'sections_passed': False}))
+    @patch(
+        'courseware.grades.grade',
+        Mock(
+            return_value={
+                'grade': None,
+                'percent': 0.75,
+                'section_breakdown': [],
+                'grade_breakdown': [],
+                'sections_passed': False
+            }
+        )
+    )
     def test_view_certificate_cannot_generate(self):
         """
-        If certificate web view is enabled, but one of the assignments is not passed then certificate web view button
-        should not appear for user.
+        If certificate web view is enabled, but one of the assignments is not
+        passed then certificate web view button should not appear for user.
         """
         GeneratedCertificateFactory.create(
             user=self.user,
@@ -1048,12 +1065,22 @@ class ProgressPageTests(ModuleStoreTestCase):
         self.assertNotContains(resp, u"Download Your Certificate")
 
     @patch.dict('django.conf.settings.FEATURES', {'CERTIFICATES_HTML_VIEW': False})
-    @patch('courseware.grades.grade', Mock(return_value={'grade': 'Pass', 'percent': 0.75, 'section_breakdown': [],
-                                                         'grade_breakdown': [], 'sections_passed': True}))
+    @patch(
+        'courseware.grades.grade',
+        Mock(
+            return_value={
+                'grade': 'Pass',
+                'percent': 0.75,
+                'section_breakdown': [],
+                'grade_breakdown': [],
+                'sections_passed': True
+            }
+        )
+    )
     def test_view_certificate_link_hidden(self):
         """
-        If certificate web view is disabled then certificate web view button should not appear for user who certificate
-        is available/generated
+        If certificate web view is disabled then certificate web view button
+        should not appear for user who certificate is available/generated.
         """
         GeneratedCertificateFactory.create(
             user=self.user,
@@ -1077,7 +1104,9 @@ class ProgressPageTests(ModuleStoreTestCase):
     )
     @ddt.unpack
     def test_query_counts(self, (sql_calls, mongo_calls, self_paced), self_paced_enabled):
-        """Test that query counts remain the same for self-paced and instructor-paced courses."""
+        """
+        Test that query counts remain the same for self-paced and instructor-paced courses.
+        """
         SelfPacedConfiguration(enabled=self_paced_enabled).save()
         self.setup_course(self_paced=self_paced)
         with self.assertNumQueries(sql_calls), check_mongo_calls(mongo_calls):
@@ -1139,7 +1168,8 @@ class IsCoursePassedTests(ModuleStoreTestCase):
     @patch('courseware.grades.grade', Mock(return_value={'percent': 0.9, 'sections_passed': False}))
     def test_user_fails_if_assignment_fails(self):
         # Mocking the grades.grade
-        # If user has above passing marks, but one of the assignments doesn't reach passing grade then True will return
+        # If user has above passing marks, but one of the assignments doesn't
+        # reach passing grade then True will return
         self.assertFalse(views.is_course_passed(self.course, None, self.student, self.request))
 
     @patch('courseware.grades.grade', Mock(return_value={'percent': 0.9, 'sections_passed': True}))
@@ -1191,7 +1221,9 @@ class GenerateUserCertTests(ModuleStoreTestCase):
 
     @patch('courseware.grades.grade', Mock(return_value={'grade': None, 'percent': 0.75, 'sections_passed': False}))
     def test_user_with_out_assignment_passing_grade(self):
-        # If user has no grading then json will return failed message and badrequest code
+        """
+        If user has no grading then json will return failed message and badrequest code.
+        """
         resp = self.client.post(self.url)
         self.assertEqual(resp.status_code, HttpResponseBadRequest.status_code)
         self.assertIn("Your certificate will be available when you pass the course.", resp.content)
