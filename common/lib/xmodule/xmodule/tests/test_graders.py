@@ -137,23 +137,31 @@ class GraderTest(unittest.TestCase):
         # will act like SingleSectionGraders on single sections.
         midterm_grader = graders.AssignmentFormatGrader("Midterm", 1, 0)
 
-        weighted_grader = graders.WeightedSubsectionsGrader([(homework_grader, homework_grader.category, 0.25, 0.0),
-                                                             (lab_grader, lab_grader.category, 0.25, 0.0),
-                                                             (midterm_grader, midterm_grader.category, 0.5, 0.0)])
+        weighted_grader = graders.WeightedSubsectionsGrader([
+            (homework_grader, homework_grader.category, 0.25, 0.0),
+            (lab_grader, lab_grader.category, 0.25, 0.0),
+            (midterm_grader, midterm_grader.category, 0.5, 0.0)
+        ])
 
-        over_one_weights_grader = graders.WeightedSubsectionsGrader([(homework_grader, homework_grader.category, 0.5, 0.0),
-                                                                     (lab_grader, lab_grader.category, 0.5, 0.0),
-                                                                     (midterm_grader, midterm_grader.category, 0.5, 0.0)])
+        over_one_weights_grader = graders.WeightedSubsectionsGrader([
+            (homework_grader, homework_grader.category, 0.5, 0.0),
+            (lab_grader, lab_grader.category, 0.5, 0.0),
+            (midterm_grader, midterm_grader.category, 0.5, 0.0)
+        ])
 
         # The midterm should have all weight on this one
-        zero_weights_grader = graders.WeightedSubsectionsGrader([(homework_grader, homework_grader.category, 0.0, 0.0),
-                                                                 (lab_grader, lab_grader.category, 0.0, 0.0),
-                                                                 (midterm_grader, midterm_grader.category, 0.5, 0.0)])
+        zero_weights_grader = graders.WeightedSubsectionsGrader([
+            (homework_grader, homework_grader.category, 0.0, 0.0),
+            (lab_grader, lab_grader.category, 0.0, 0.0),
+            (midterm_grader, midterm_grader.category, 0.5, 0.0)
+        ])
 
         # This should always have a final percent of zero
-        all_zero_weights_grader = graders.WeightedSubsectionsGrader([(homework_grader, homework_grader.category, 0.0, 0.0),
-                                                                     (lab_grader, lab_grader.category, 0.0, 0.0),
-                                                                     (midterm_grader, midterm_grader.category, 0.0, 0.0)])
+        all_zero_weights_grader = graders.WeightedSubsectionsGrader([
+            (homework_grader, homework_grader.category, 0.0, 0.0),
+            (lab_grader, lab_grader.category, 0.0, 0.0),
+            (midterm_grader, midterm_grader.category, 0.0, 0.0)
+        ])
 
         failing_passing_grade_grader = WeightedSubsectionsGrader([
             (homework_grader, homework_grader.category, 0.25, 0.5),
