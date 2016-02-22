@@ -15,8 +15,6 @@ from courseware.courses import get_course_by_id
 from courseware.tests.factories import StudentModuleFactory
 from courseware.tests.helpers import LoginEnrollmentTestCase
 from courseware.tabs import get_course_tab_list
-from instructor.access import list_with_level, allow_access
-
 from django.conf import settings
 from django.core.urlresolvers import reverse, resolve
 from django.utils.timezone import UTC
@@ -25,11 +23,7 @@ from django.test import RequestFactory
 from edxmako.shortcuts import render_to_response
 from request_cache.middleware import RequestCache
 from opaque_keys.edx.keys import CourseKey
-from student.roles import (
-    CourseCcxCoachRole,
-    CourseInstructorRole,
-    CourseStaffRole,
-)
+from student.roles import CourseCcxCoachRole
 from student.models import (
     CourseEnrollment,
     CourseEnrollmentAllowed,
@@ -54,7 +48,6 @@ from ccx_keys.locator import CCXLocator
 
 from lms.djangoapps.ccx.models import CustomCourseForEdX
 from lms.djangoapps.ccx.overrides import get_override_for_ccx, override_field_for_ccx
-from lms.djangoapps.ccx.views import ccx_course
 from lms.djangoapps.ccx.tests.factories import CcxFactory
 from lms.djangoapps.ccx.tests.utils import (
     CcxTestCase,
@@ -141,16 +134,6 @@ class TestCoachDashboard(CcxTestCase, LoginEnrollmentTestCase):
         super(TestCoachDashboard, self).setUp()
         # Login with the instructor account
         self.client.login(username=self.coach.username, password="test")
-
-        # adding staff to master course.
-        staff = UserFactory()
-        allow_access(self.course, staff, 'staff')
-        self.assertTrue(CourseStaffRole(self.course.id).has_user(staff))
-
-        # adding instructor to master course.
-        instructor = UserFactory()
-        allow_access(self.course, instructor, 'instructor')
-        self.assertTrue(CourseInstructorRole(self.course.id).has_user(instructor))
 
     def assert_elements_in_schedule(self, url, n_chapters=2, n_sequentials=4, n_verticals=8):
         """
