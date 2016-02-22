@@ -15,6 +15,7 @@ from django.http import HttpResponse, Http404, HttpResponseForbidden
 from django.utils.translation import ugettext as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 
 from capa.xqueue_interface import XQUEUE_METRIC_NAME
 from certificates.api import (
@@ -463,6 +464,7 @@ def _update_certificate_context(context, course, user, user_certificate):
     )
 
 
+@login_required
 def render_html_view(request, user_id, course_id):
     """
     This public view generates an HTML representation of the specified student's certificate
