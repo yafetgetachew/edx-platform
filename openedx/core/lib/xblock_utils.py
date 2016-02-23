@@ -230,7 +230,7 @@ def add_staff_markup(user, has_instructor_access, disable_staff_debug_info, bloc
 
         if is_studio_course and is_mongo_course:
             # build edit link to unit in CMS. Can't use reverse here as lms doesn't load cms's urls.py
-            edit_link = "//" + settings.CMS_BASE + '/container/' + unicode(block.location)
+            edit_link = "http://" + settings.CMS_BASE + '/container/' + unicode(block.location)
 
             # return edit link in rendered HTML for display
             return wrap_fragment(
