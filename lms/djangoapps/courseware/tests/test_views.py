@@ -1169,7 +1169,7 @@ class IsCoursePassedTests(ModuleStoreTestCase):
     def test_user_fails_if_assignment_fails(self):
         # Mocking the grades.grade
         # If user has above passing marks, but one of the assignments doesn't
-        # reach passing grade then True will return
+        # reach passing grade then False will return
         self.assertFalse(views.is_course_passed(self.course, None, self.student, self.request))
 
     @patch('courseware.grades.grade', Mock(return_value={'percent': 0.9, 'sections_passed': True}))
