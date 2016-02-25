@@ -144,7 +144,7 @@ def set_input_value(page, css, value):
     input_element.click()
     # Select all, then input the value
     input_element.send_keys(Keys.CONTROL + 'a')
-    # To allow an empty values we send DELETE key
+    # To allow empty values we send DELETE key
     if value == '':
         input_element.send_keys(Keys.DELETE)
     else:
