@@ -39,15 +39,16 @@ class CourseGradingModel(object):
 
         # return empty model
         else:
-            return {"id": index,
-                    "type": "",
-                    "min_count": 0,
-                    "drop_count": 0,
-                    "short_label": None,
-                    "weight": 0,
-                    "passing_grade": 0,
-                    "passing_grade_enabled": False
-                    }
+            return {
+                "id": index,
+                "type": "",
+                "min_count": 0,
+                "drop_count": 0,
+                "short_label": None,
+                "weight": 0,
+                "passing_grade": 0,
+                "passing_grade_enabled": False
+            }
 
     @staticmethod
     def update_from_json(course_key, jsondict, user):

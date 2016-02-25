@@ -63,6 +63,8 @@ var CourseGrader = Backbone.Model.extend({
             }
             else attrs.drop_count = intDropCount;
         }
+        // show error if passing grade value is invalid
+        // else get its rounded value
         if (_.has(attrs, 'passing_grade')) {
             var passingGrade = attrs.passing_grade,
                 intPsGrade = Math.round(passingGrade); // see if this ensures value saved is int
