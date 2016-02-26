@@ -13,24 +13,24 @@
 
   <div class="field text" id="field-course-grading-assignment-gradeweight">
     <label for="course-grading-assignment-gradeweight"><%= gettext("Weight of Total Grade") %></label>
-    <input type="text" class="short" id="course-grading-assignment-gradeweight" value = "<%= model.get('weight') %>" />
+    <input type="text" class="short" id="course-grading-assignment-gradeweight" value="<%= model.get('weight') %>" />
     <span class="tip tip-inline"><%= gettext("as a percent, e.g. 40") %></span>
   </div>
 
   <div class="field text" id="field-course-grading-assignment-totalassignments">
     <label for="course-grading-assignment-totalassignments"><%= gettext("Total Number") %></label>
-    <input type="text" class="short" id="course-grading-assignment-totalassignments" value = "<%= model.get('min_count') %>" />
+    <input type="text" class="short" id="course-grading-assignment-totalassignments" value="<%= model.get('min_count') %>" />
     <span class="tip tip-inline"><%= gettext("total exercises assigned") %></span>
   </div>
 
   <div class="field text" id="field-course-grading-assignment-droppable">
     <label for="course-grading-assignment-droppable"><%= gettext("Number of Droppable") %></label>
-    <input type="text" class="short" id="course-grading-assignment-droppable" value = "<%= model.get('drop_count') %>" />
+    <input type="text" class="short" id="course-grading-assignment-droppable" value="<%= model.get('drop_count') %>" />
     <span class="tip tip-inline"><%= gettext("total exercises that won't be graded") %></span>
   </div>
 
   <div class="clearfix"></div>
-  <div class="field field-checkbox checkbox-cosmetic" id="field-course-grading-assignment-passing-grade-enabled">
+  <div class="field field-checkbox checkbox-cosmetic" id="assignment-passing-grade-enabled">
     <input type="checkbox" id="passing-grade-enabled" name="passing-grade-enabled" class="input input-checkbox">
     <label for="passing_grade_enabled" class="label">
       <i class="icon fa fa-check-square-o input-checkbox-checked"></i>
@@ -40,9 +40,9 @@
   </div>
   <div class="clearfix"></div>
   <div class="div-grade-section" hidden="hidden">
-    <div class="field text" id="field-course-grading-assignment-passing-grade">
-      <label for="course-grading-assignment-passing-grade"><%= gettext("Passing Grade") %></label>
-      <input type="text" class="short" id="course-grading-assignment-passing-grade" value = "<%= model.get('passing_grade') %>" />
+    <div class="field text" id="field-assignment-passing-grade">
+      <label for="assignment-passing-grade"><%= gettext("Passing Grade") %></label>
+      <input type="text" class="short" id="assignment-passing-grade" value="<%= model.get('passing_grade') %>" />
       <span class="tip tip-inline"><%= gettext("as a percent, e.g. 60") %></span>
     </div>
   </div>

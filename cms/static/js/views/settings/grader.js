@@ -12,7 +12,7 @@ var GraderView = ValidatingView.extend({
         // would love to move to a general superclass, but event hashes don't inherit in backbone :-(
         'focus :input' : "inputFocus",
         'blur :input' : "inputUnfocus",
-        'click #field-course-grading-assignment-passing-grade-enabled' : "togglePassingGrade"
+        'click #assignment-passing-grade-enabled' : "togglePassingGrade"
     },
     initialize : function() {
         this.listenTo(this.model, 'invalid', this.handleValidationError);
@@ -22,8 +22,9 @@ var GraderView = ValidatingView.extend({
     },
 
     render: function() {
-        if (this.model.get('passing_grade_enabled') == true) {
-            this.$('#' + this.fieldToSelectorMap['passing_grade_enabled']).attr('checked', this.model.get('passing_grade_enabled'));
+        if (this.model.get('passing_grade_enabled')) {
+            this.$('#' + this.fieldToSelectorMap['passing_grade_enabled'])
+                .prop('checked', this.model.get('passing_grade_enabled'));
             this.$('.div-grade-section').show();
         }
         else {
@@ -38,7 +39,7 @@ var GraderView = ValidatingView.extend({
         'min_count' : 'course-grading-assignment-totalassignments',
         'drop_count' : 'course-grading-assignment-droppable',
         'weight' : 'course-grading-assignment-gradeweight',
-        'passing_grade' : 'course-grading-assignment-passing-grade',
+        'passing_grade' : 'assignment-passing-grade',
         'passing_grade_enabled': 'passing-grade-enabled'
     },
     updateModel: function(event) {
@@ -76,7 +77,7 @@ var GraderView = ValidatingView.extend({
         this.collection.remove(this.model);
     },
 
-    togglePassingGrade: function(ev) {
+    togglePassingGrade: function() {
         this.model.set({'passing_grade_enabled': !this.model.get('passing_grade_enabled')});
     }
 });

@@ -110,11 +110,14 @@ from django.core.urlresolvers import reverse
           %for student in students:
           <% sections_passed = {section['category']: section['is_passed'] for section in student['grade_summary']['grade_breakdown']} %>
           <tr>
+              <script>
+                  console.log(${ course.raw_grader });
+              </script>
             %for section in student['grade_summary']['section_breakdown']:
               <% is_passed = sections_passed.get(section['category']) %>
-              ${percent_data( section['percent'], section['detail'] )}
+              ${percent_data( section['percent'], section['detail'], is_passed )}
             %endfor
-            ${percent_data( student['grade_summary']['percent'], student['grade_summary']['sections_passed'], _('Total'))}
+            ${percent_data( student['grade_summary']['percent'], _('Total'), student['grade_summary']['sections_passed'])}
           </tr>
           %endfor
         </tbody>
