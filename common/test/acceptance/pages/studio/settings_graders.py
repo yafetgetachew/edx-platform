@@ -155,7 +155,7 @@ class GradingPage(CoursePage):
         """
         Clicks the 'Passing Grade Enabled' checkbox.
         """
-        qs = self.q(css=self.grading_css + " #field-course-grading-assignment-passing-grade-enabled")
+        qs = self.q(css=self.grading_css + " #assignment-passing-grade-enabled")
         qs[0].click()
         qs[-1].click()
 
@@ -255,14 +255,14 @@ class Assignment(object):
         """
         Return assignment passing grade.
         """
-        return int(self.find_css('#course-grading-assignment-passing-grade').first.attrs('value')[0])
+        return int(self.find_css('#assignment-passing-grade').first.attrs('value')[0])
 
     @passing_grade.setter
     def passing_grade(self, value):
         """
         Set assignment passing grade.
         """
-        set_input_value(self.page, self.get_selector(css='#course-grading-assignment-passing-grade'), value)
+        set_input_value(self.page, self.get_selector(css='#assignment-passing-grade'), value)
 
     def delete(self):
         """
