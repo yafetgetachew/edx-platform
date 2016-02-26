@@ -42,6 +42,7 @@ define([
             expect(model.get('min_count')).toBe(3);
             expect(model.get('drop_count')).toBe(1);
         });
+
         describe('validation', function () {
             it('gives an error if type is an empty string', function() {
                 var model = new CourseGrader(), errors;
@@ -61,7 +62,7 @@ define([
                 // don't allow negative integers
                 errors = model.validate({weight: -12}, {validate:true});
                 expect(errors.weight).toBe('Please enter an integer between 0 and 100.');
-                // don't allow floats
+                // don't allow value greater then 100
                 errors = model.validate({weight: 101}, {validate:true});
                 expect(errors.weight).toBe('Please enter an integer between 0 and 100.');
             });
@@ -72,9 +73,15 @@ define([
                 expect(errors.weight).toBe('Please enter an integer between 0 and 100.');
             });
 
-            it('gives an error if weight is an empty string', function() {
+            it('gives an error if weight is string with only spaces', function() {
                 var model = new CourseGrader(), errors;
-                errors = model.validate({weight: '  '}, {validate:true});
+                errors = model.validate({weight: ' '}, {validate:true});
+                expect(errors.weight).toBe('Please enter an integer between 0 and 100.');
+            });
+
+            it('gives an error if weight is float number', function() {
+                var model = new CourseGrader(), errors;
+                errors = model.validate({weight: '10.5'}, {validate:true});
                 expect(errors.weight).toBe('Please enter an integer between 0 and 100.');
             });
 
@@ -83,7 +90,7 @@ define([
                 // don't allow negative integers
                 errors = model.validate({passing_grade: -12}, {validate:true});
                 expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
-                // don't allow floats
+                // don't allow value more then 100
                 errors = model.validate({passing_grade: 101}, {validate:true});
                 expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
             });
@@ -94,7 +101,7 @@ define([
                 expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
             });
 
-            it('gives an error if passing_grade is an empty string', function() {
+            it('gives an error if passing_grade is empty or string with only spaces', function() {
                 var model = new CourseGrader(), errors;
                 errors = model.validate({passing_grade: ''}, {validate:true});
                 expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
