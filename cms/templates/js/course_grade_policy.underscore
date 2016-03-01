@@ -39,7 +39,7 @@
     </label>
   </div>
   <div class="clearfix"></div>
-  <div class="div-grade-section" hidden="hidden">
+  <div class="div-grade-section" style="display: none">
     <div class="field text" id="field-assignment-passing-grade">
       <label for="assignment-passing-grade"><%= gettext("Passing Grade") %></label>
       <input type="text" class="short" id="assignment-passing-grade" value="<%= model.get('passing_grade') %>" />
