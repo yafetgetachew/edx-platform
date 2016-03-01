@@ -22,15 +22,12 @@ var GraderView = ValidatingView.extend({
     },
 
     render: function() {
-        if (this.model.get('passing_grade_enabled')) {
-            this.$('#' + this.fieldToSelectorMap['passing_grade_enabled'])
-                .prop('checked', this.model.get('passing_grade_enabled'));
-            this.$('.div-grade-section').show();
-        }
-        else {
-            this.$('#' + this.fieldToSelectorMap['passing_grade_enabled']).removeAttr('checked');
-            this.$('.div-grade-section').hide();
-        }
+        var isPassingGradeEnabled = this.model.get('passing_grade_enabled');
+        var gradeInput = this.$('#' + this.fieldToSelectorMap['passing_grade_enabled']);
+
+        gradeInput.prop('checked', isPassingGradeEnabled);
+        this.$('.div-grade-section').toggle(isPassingGradeEnabled);
+
         return this;
     },
     fieldToSelectorMap : {
