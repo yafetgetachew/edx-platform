@@ -188,7 +188,7 @@ class GradingPageTest(StudioCourseTest):
         self.page.click_add_assignment_button()
         assignment = self.page.assignments[-1]
         assignment.name = 'New Type'
-        self.page.click_enable_passing_grade()
+        assignment.click_enable_passing_grade()
         assignment.passing_grade = 7
         self.page.click_save_button()
         self.assertEqual(assignment.passing_grade, 7)

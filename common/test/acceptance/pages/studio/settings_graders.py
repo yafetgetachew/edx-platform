@@ -151,14 +151,6 @@ class GradingPage(CoursePage):
         """
         self.q(css=self.grading_css + " .add-grading-data").first.click()
 
-    def click_enable_passing_grade(self):
-        """
-        Clicks the 'Passing Grade Enabled' checkbox.
-        """
-        qs = self.q(css=self.grading_css + " #assignment-passing-grade-enabled")
-        qs[0].click()
-        qs[-1].click()
-
     def click_save_button(self):
         """
         Saves page changes.
@@ -269,6 +261,12 @@ class Assignment(object):
         Delete the assignment type.
         """
         self.find_css('.remove-grading-data').first.click()
+
+    def click_enable_passing_grade(self):
+        """
+        Clicks the 'Passing Grade Enabled' checkbox.
+        """
+        self.find_css(self.get_selector('#assignment-passing-grade-enabled')).first.click()
 
     def __repr__(self):
         return "<{}:{}>".format(self.__class__.__name__, self.name)
