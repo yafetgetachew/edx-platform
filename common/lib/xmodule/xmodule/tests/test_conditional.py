@@ -317,9 +317,9 @@ class ConditionalModuleXmlTest(unittest.TestCase):
         )
 
     def test_conditional_module_parse_attr_values(self):
-        xml = '<conditional attempted="false"></conditional>'
-        xml_object = etree.XML(xml)
-        definition, children = ConditionalDescriptor.definition_from_xml(xml_object, Mock())
+        root = '<conditional attempted="false"></conditional>'
+        xml_object = etree.XML(root)
+        definition = ConditionalDescriptor.definition_from_xml(xml_object, Mock())[0]
         expected_definition = {
             'show_tag_list': [],
             'condional_attr': 'attempted',
@@ -339,6 +339,7 @@ class ConditionalModuleXmlTest(unittest.TestCase):
             'sources': ''
         }
         self.assertDictEqual(modules['cond_module'].xml_attributes, expected_xml_attributes)
+
 
 class ConditionalModuleStudioTest(XModuleXmlImportTest):
     """
@@ -362,7 +363,7 @@ class ConditionalModuleStudioTest(XModuleXmlImportTest):
         self.conditional = self.sequence.get_children()[0]
 
         self.module_system = get_test_system()
-        self.module_system.descriptor_runtime = self.course._runtime
+        self.module_system.descriptor_runtime = self.course._runtime  # pylint: disable=protected-access
 
         user = Mock(username='ma', email='ma@edx.org', is_staff=False, is_active=True)
         self.conditional.bind_for_student(
