@@ -94,16 +94,18 @@ class ProgressTest(UniqueCourseTest):
 
     def test_passing_info_table_is_hidden_when_all_passing_grades_equal_zero(self):
         """
-        Ensures that the passing information table is hiiden when all passing grades equal 0.
+        Ensures that the passing information table is hidden when all passing grades equal 0.
         """
         self.set_assignments([
             {
                 'type': 'Homework', 'passing_grade': 0, 'weight': 50,
-                'min_count': 2, 'drop_count': 0, 'short_label': 'HW'
+                'min_count': 2, 'drop_count': 0, 'short_label': 'HW',
+                'passing_grade_enabled': True
             },
             {
                 'type': 'Exam', 'passing_grade': 0, 'weight': 50,
-                'min_count': 1, 'drop_count': 0, 'short_label': 'EX'
+                'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
+                'passing_grade_enabled': True
             },
         ])
 
@@ -175,4 +177,57 @@ class ProgressTest(UniqueCourseTest):
         self.assertEqual(
             self.progress_page.passing_information_table.status,
             [('Homework', '70', '100', 'Pass')]
+        )
+
+    def test_passing_info_table_has_correct_values_when_passing_grade_enabled_chages(self):
+        """
+        Scenario: Ensures that the passing information table has correct values
+        if passing_grade_enabled changes
+        Given I have a course with 2 categories ("Homework", "Exam")
+        And "Homework" has passing grade "70" and contains 2 problems
+        And "Exam" has passing grade "0" and contains 1 problem
+        When I pass the 1st Homework's problem (current grade for the category is 50)
+        And I go to the Progress page
+        Then I see that "Homework" category is not passed in the passing information table
+        Then I change passing_grade_enabled setting for Homework
+        And I go to the Progress page
+        Then I see that "Homework" category is passed in the passing information table
+        """
+
+        self.set_assignments([
+            {
+                'type': 'Homework', 'passing_grade': 70, 'weight': 50,
+                'min_count': 2, 'drop_count': 0, 'short_label': 'HW',
+                'passing_grade_enabled': True
+            },
+            {
+                'type': 'Exam', 'passing_grade': 0, 'weight': 50,
+                'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
+                'passing_grade_enabled': True
+            },
+        ])
+        self.check_problem('Test Section 1', 'Test Subsection 1', answer='6.5')
+        self.progress_page.visit()
+        self.assertTrue(self.progress_page.has_passing_information_table)
+        self.assertEqual(
+            self.progress_page.passing_information_table.status,
+            [('Homework', '70', '50', 'Not pass')]
+        )
+        self.set_assignments([
+            {
+                'type': 'Homework', 'passing_grade': 70, 'weight': 50,
+                'min_count': 2, 'drop_count': 0, 'short_label': 'HW',
+                'passing_grade_enabled': False
+            },
+            {
+                'type': 'Exam', 'passing_grade': 0, 'weight': 50,
+                'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
+                'passing_grade_enabled': False
+            },
+        ])
+        self.progress_page.visit()
+        self.assertTrue(self.progress_page.has_passing_information_table)
+        self.assertEqual(
+            self.progress_page.passing_information_table.status,
+            [('Homework', '70', '50', 'Pass')]
         )
