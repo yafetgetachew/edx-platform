@@ -19944,8 +19944,67 @@ msgstr ""
 "αναθεώρηση #%(r2)d"
 
 
+# Privacy
+msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
+msgstr "ΠΟΛΙΤΙΚΗ ΠΡΟΣΤΑΣΙΑΣ ΠΡΟΣΩΠΙΚΩΝ ΔΕΔΟΜΕΝΩΝ-ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ"
+
+msgid "Business Against Slavery is a joint project by the Samilia Foundation and Not For Sale, co-funded by the Prevention of and Fight against Crime Programme of the European Union. The project aims to engage the European business community to address the of human trafficking by offering a set of resources to encourage awareness raising, employment of survivors, and increased supply chain responsibility."
+msgstr "Η παρούσα Πολιτική Προστασίας Προσωπικών Δεδομένων («Πολιτική Απορρήτου») περιγράφει τις πληροφορίες που συλλέγονται κατά τη διεξαγωγή ΕΠΙΧΕΙΡΗΜΑΤΙΚΩΝ ΔΡΑΣΕΩΝ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ («ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ») μέσω της διαδικτυακής πλατφόρμας εκπαίδευσης που διαθέτουμε και πώς χρησιμοποιούμε τις πληροφορίες αυτές."
+
+msgid "The Samilia Foundation is responsible for the implementation of this e-learning platform in collaboration with the developer."
+msgstr "Το Business Against Slavery είναι ένα κοινό πρόγραμμα των Samilia Foundation and Not For Sale, συνχρηματοδοτούμενο από το πρόγραμμα της Ευρωπαικής ‘Ενωσης “πρόληψη και καταπολέμηση της εγκλήματικότητας” . Στόχος του πρόγραμματος είναι η συμμετοχή της Ευρωπαικής Επιχειρήματικής κοινότητας στην αντιμετώπιση της Εμπορίας Ανθρώπων προσφέροντας προγράμματα ενημέρωσης και απασχόλησης σε θύματα εμπορίας ανθρώπων και ενδυναμώνοντας  τις κοινωνικά υπεύθυνες πρακτικές στην εφοδιαστική αλυσίδα."
+
+msgid "For purposes of this agreement, the terms “we,” “us,” and “our” refer to BUSINESS AGAINST SLAVERY. “You” refers to you, as a user of the BUSINESS AGAINST SLAVERY training platform. By accepting our Privacy Policy and Terms of Use, you consent to our collection and use of your information as described in this Privacy Policy."
+msgstr "Για τους σκοπούς της παρούσας συμφωνίας, οι όροι «εμείς», «εμάς» και «δικό μας» αναφέρονται στις ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ. Ο όρος «Εσείς» αναφέρεται σε εσάς, ως χρήστης της πλατφόρμας εκπαίδευσης με τίτλο ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ. Με την αποδοχή της Πολιτικής Προστασίας Προσωπικών Δεδομένων και των Όρων Χρήσης, συναινείτε στη συλλογή και τη χρήση των πληροφοριών σας, όπως περιγράφεται στην παρούσα Πολιτική Απορρήτου."
+
+msgid "Information We Collect"
+msgstr "Πληροφορίες που συλλέγουμε"
+
+msgid "We collect information from and about you and your device. The personal information we collect is the information that you voluntarily provide to us during your creation of an account. Users cannot access the training platform without creating an account. We collect from you your first name, last name, user name, email address, country of residence, and age. We also collect from you information about your gender and highest level of education completed, if you have elected to disclose this information."
+msgstr "Συλλέγουμε δικές σας πληροφορίες καθώς και στοιχεία που αφορούν εσάς και τη συσκευή σας. Οι προσωπικές πληροφορίες που συλλέγουμε είναι οι πληροφορίες που παρέχετε οικειοθελώς σε εμάς κατά τη δημιουργία ενός λογαριασμού. Οι χρήστες δεν μπορούν να αποκτήσουν πρόσβαση στην πλατφόρμα εκπαίδευσης χωρίς να δημιουργήσουν ένα λογαριασμό. Εμείς συλλέγουμε από εσάς το όνομα, το επώνυμο, το όνομα χρήστη, τη διεύθυνση ηλεκτρονικού ταχυδρομείου, τη χώρα διαμονής, και την ηλικία. Επίσης, συλλέγουμε από εσάς στοιχεία σχετικά με το φύλο σας και το επίπεδο τριτοβάθμιας εκπαίδευσης που έχετε ολοκληρώσει, αν έχετε επιλέξει να γνωστοποιήσετε τις εν λόγω πληροφορίες."
+
+msgid "How We Use And Share Information"
+msgstr "Πώς χρησιμοποιούμε και κοινοποιούμε τις πληροφορίες"
+
+msgid "We use the personal information you provide to us to create an account through which you can utilize BUSINESS AGAINST SLAVERY services. We collect data on the general usage of the training platform. This data is used to provide The Samilia Foundation and Not For Sale with statistical analysis for how the training platform is used. This data may be used by The Samilia Foundation, Not For Sale, or third parties to make decisions about technical improvements to the training platform."
+msgstr "Χρησιμοποιούμε τα προσωπικά δεδομένα που παρέχετε σε εμάς για να δημιουργήσετε ένα λογαριασμό μέσω του οποίου μπορείτε να χρησιμοποιήσετε τις υπηρεσίες ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ. Συλλέγουμε δεδομένα σχετικά με τη γενική χρήση της πλατφόρμας εκπαίδευσης. Τα δεδομένα αυτά χρησιμοποιούνται για την αποστολή στατιστικών αναλύσεων The Samilia Foundation σχετικά με τον τρόπο χρήσης της πλατφόρμας εκπαίδευσης. Τα δεδομένα αυτά μπορούν να χρησιμοποιηθούν από τους οργανισμούς The Samilia Foundation με στόχο τη λήψη αποφάσεων σχετικά με τις τεχνικές βελτιώσεις στην πλατφόρμα εκπαίδευσης. Εκτός αν δηλώνεται διαφορετικά στην παρούσα Πολιτική Απορρήτου, απαγορεύεται η πώληση, εμπορία, ενοικίαση ή κοινοποίηση με οιονδήποτε άλλο τρόπο, για σκοπούς προώθησης στην αγορά, τα προσωπικά δεδομένα που συλλέγονται με τρίτους χωρίς τη συναίνεσή σας."
+
+msgid "Except as otherwise stated in this Privacy Policy, we do not sell, trade, rent, or otherwise share for marketing purposes the Personal Information that we collect with third parties without your consent."
+msgstr "Σε γενικές γραμμές, η παρούσα Πολιτική Απορρήτου δεν περιορίζει επουδενί τη χρήση ή τη δημοσίευση εκ μέρους μας οποιωνδήποτε μη-προσωπικών δεδομένων. Διατηρούμε το δικαίωμα να χρησιμοποιούμε και να γνωστοποιούμε τα εν λόγω μη προσωπικά δεδομένα στους εταίρους και διαφημιστές μας, καθώς και σε άλλα τρίτα μέρη κατά την κρίση μας."
+
+msgid "How We Protect Information"
+msgstr "Πώς προστατεύουμε τις πληροφορίες"
+
+msgid "We strive to protect your information from unauthorized access, and take precautions against security breaches of our customer databases. We collect only limited personal information, and that information is housed within a dedicated server that has been encrypted using technological measures, including encryption, firewalls, and secure socket layer technology, to ensure security."
+msgstr "Προσπαθούμε να προστατεύουμε τα δεδομένα σας από μη εξουσιοδοτημένη πρόσβαση, και να λαμβάνουμε προληπτικά μέτρα κατά των παραβιάσεων της ασφάλειας των βάσεων δεδομένων των πελατών μας. Συλλέγουμε μόνο περιορισμένο όγκο προσωπικών δεδομένων, τα οποία τηρούνται σε ειδικό διακομιστή που έχει κρυπτογραφηθεί με χρήση τεχνολογικών μέτρων, συμπεριλαμβανομένης της κρυπτογράφησης, firewall, και ασφαλής τεχνολογίας ώστε να εξασφαλίζεται η ασφάλεια."
+
+msgid "This is not a guarantee that your information may not be accessed, disclosed, or altered by breach of such firewalls and secure server software. By using our training platform, you acknowledge that you understand and agree to assume these risks."
+msgstr "Ωστόσο, αυτό δεν αποτελεί εγγύηση για τη μη πρόσβαση, γνωστοποίηση ή τροποποίηση των δεδομένων σας σε περίπτωση παραβίασης των firewall και της ασφάλειας του λογισμικού του διακομιστή. Με τη χρήση της εκπαιδευτικής πλατφόρμας μας, αναγνωρίζετε ότι έχετε κατανοήσει και συμφωνείτε το ενδεχόμενο των κινδύνων αυτών."
+
+msgid "Your Rights and Correcting Your Information"
+msgstr "Δικαιώματα και διόρθωση των δεδομένων σας"
+
+msgid "You have a right at any time to stop us from contacting you with additional information about the initiatives of BUSINESS AGAINST SLAVERY and The Samilia Foundation and Not For Sale. If you receive Promotional Communications from us, you will be able to indicate a preference to stop receiving further Promotional Communications from us and will have the opportunity to “opt-out” by following the unsubscribe instructions provided in the e-mail."
+msgstr "Έχετε το δικαίωμα ανά πάσα στιγμή να διακόψετε την επικοινωνία μαζί μας ως προς την αποστολή πρόσθετων πληροφοριών σχετικά με τις πρωτοβουλίες του προγράμματος ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ και των οργανισμών The Samilia Foundation και Not For Sale. Εάν λαμβάνετε διαφημιστικά μηνύματα από εμάς, θα είστε σε θέση να επιλέξετε τη μη λήψη περαιτέρω διαφημιστικών μηνυμάτων από εμάς καθώς και τη δυνατότητα να «καταργήσετε την εν λόγω επιλογή αποστολής», ακολουθώντας τις οδηγίες διαγραφής που παρέχονται στο e-mail."
+
+msgid "Please note that despite any indicated email marketing preferences, we may send you administrative emails regarding BUSINESS AGAINST SLAVERY, including, for example, notices of material updates to our Privacy Policy."
+msgstr "Επισημαίνεται ότι, παρά τις όποιες ενδεικνυόμενες προτιμήσεις μάρκετινγκ μέσω ηλεκτρονικού ταχυδρομείου, ενδέχεται να σας αποστείλουμε e-mail σχετικά με το πρόγραμμα ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ, συμπεριλαμβανομένων, για παράδειγμα, ειδοποιήσεις ενημέρωσης υλικού στην Πολιτική Προστασίας Προσωπικών Δεδομένων."
+
+msgid "Modifications to Our Privacy Policy"
+msgstr "Τροποποιήσεις στην Πολιτική Απορρήτου μας"
+
+msgid "We may revise our Privacy Policy at any time. We will notify you about any significant changes to our policy by sending a notice to users via email. Non material changes or clarifications will take effect immediately; significant changes will go into effect 30 days after we notify. You should periodically check this privacy policy for updates."
+msgstr "Ενδέχεται να προβούμε σε αναθεώρηση της πολιτικής απορρήτου ανά πάσα στιγμή. Θα σας ενημερώσουμε για τυχόν σημαντικές αλλαγές στην πολιτική μας με αποστολή ειδοποίησης προς τους χρήστες μέσω ηλεκτρονικού ταχυδρομείου. Μη ουσιώδεις αλλαγές ή διευκρινίσεις θα εκτελούνται άμεσα, ενώ οι σημαντικές αλλαγές θα τίθενται σε ισχύ μετά από διάστημα 30 ημερών από την ημερομηνία ενημέρωσης. Θα πρέπει να ελέγχετε περιοδικά αυτήν την πολιτική απορρήτου για ενημερώσεις."
+
+msgid "Contact Us"
+msgstr "Επικοινωνήστε μαζί μας"
+
+msgid "You can contact us about this privacy statement by writing us via email at: "
+msgstr "Μπορείτε να επικοινωνήσετε μαζί μας σχετικά με την παρούσα δήλωση απορρήτου γράφοντας μας μέσω e-mail στη διεύθυνση: "
+
+# About
 msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group and with financial support from the European Commission. By completing this short course, you will learn about what human trafficking is and why it occurs. You will also find out what you and your company can do to help fight trafficking. We hope that you finish this course feeling empowered to help create a world where no one is for sale."
-msgstr "Το παρόν διαδικτυακό μάθημα σχεδιάστηκε από τη Not For Sale και το Ίδρυμα Samilia, σε συνεργασία με τον Όμιλο Delhaize και πραγματοποιείται μέ τη χρηματοοικονομική συνεισφορά της Ευρωπαϊκής Επιτροπής. Μετά την ολοκλήρωση του σύντομου αυτού μαθήματος, θα γνωρίζετε τι είναι η εμπορία ανθρώπων και γιατί συμβαίνει. Θα ενημερωθείτε επίσης σχετικά με τον τρόπο με τον οποίο μπορείτε, εσείς και η εταιρεία σας, να βοηθήσετε στην καταπολέμηση της εμπορίας ανθρώπων. Ελπίζουμε ότι με το πέρας του παρόντος μαθήματος θα αισθανθείτε την ανάγκη να βοηθήστε στη δημιουργία μιας κοινωνίας μέσα στην οποία κανείς δεν είναι προς πώληση."
+msgstr "Το παρόν διαδικτυακό μάθημα σχεδιάστηκε από τη Not For Sale και το Ίδρυμα Samilia, σε συνεργασία με τον Όμιλο Delhaize και πραγματοποιείται μέ τη χρηματοοικονομική συνεισφορά της Ευρωπαϊκής Επιτροπής. Μετά την ολοκλήρωση του σύντομου αυτού μαθήματος, θα γνωρίζετε τι είναι η εμπορία ανθρώπων και γιατί συμβαίνει. Θα ενημερωθείτε επίσης σχετικά με τον τρόπο με τον οποίο μπορείτε, εσείς και η εταιρεία σας, να βοηθήσετε στην καταπολέμηση της εμπορίας ανθρώπων. Ελπίζουμε ότι με το πέρας του παρόντος μαθήματος θα αισθανθείτε την ανάγκη να βοηθήστε στη δημιουργία μιας κοινωνίας μέσα στην οποία κανείς δεν είναι προς πώληση."
 
 msgid "About Samilia"
 msgstr "Για Samilia"
@@ -19954,26 +20013,26 @@ msgid "Samilia Foundation was created in 2007 in order to alert and raise awaren
 msgstr "Το ίδρυμα Samilia ιδρύθηκε το 2007 με σκοπό την ενημέρωση και ευαισθητοποίηση στο θέμα της εμπορίας ανθρώπων στο Βέλγιο. Δημιουργεί προγράμματα κοινωνικής ένταξης και πρόληψης σε χώρες προέλευσης θυμάτων, θύματα σεξουαλικής εκμετάλλευσης ή καταναγκαστικής εργασίας. Συνεργάζεται με εταιρίες ιδιωτικού τομέα, τοπικές και διεθνείς ΜΚΟ αλλά και με κυβερνήσεις για την ανάπτυξη ενεργειών για την αντιμετώπιση των βασικών αιτιών της εμπορίας ανθρώπων."
 
 msgid "Samilia offers corporate workshops on human trafficking in order to raise awareness on slavery in supply chains and get the private sector involved in the fight against this growing phenomenon."
-msgstr "Η Samilia προσφέρει εταιρικά προγράμματα σχετικά με την εμπορία ανθρώπων με στόχο την ενημέρωση για τη δουλεία ανθρώπων στην εφοδιαστικη αλυσίδα και τη συμμετοχή του ιδιωτικού τομέα στον αγώνα κατά του φαινόμενου που αναπτύσσεται ραγδαία"
+msgstr "Η Samilia προσφέρει εταιρικά προγράμματα σχετικά με την εμπορία ανθρώπων με στόχο την ενημέρωση για τη δουλεία ανθρώπων στην εφοδιαστικη αλυσίδα και τη συμμετοχή του ιδιωτικού τομέα στον αγώνα κατά του φαινόμενου που αναπτύσσεται ραγδαία."
 
 msgid "You can support and find out more on Samilia on"
 msgstr "Μπορείτε να υποστηρίξετε την οργάνωση και να βρείτε περισσότερες πληροφορίες στο"
 
 msgid "About Not For Sale"
-msgstr "Για Not For Sale"
+msgstr ""
 
 msgid "Founded in 2007, Not For Sale works to protect, equip and empower survivors of human trafficking and those at risk of exploitation. With headquarters in San Francisco, California, the international nonprofit manages projects with children and adults in North America, Europe and Asia."
-msgstr "Η Not For Sales ιδρύθηκε το 2007 και στοχεύει στην προστασία και ενδυνάμωση πρώην θυμάτων εμπορίας ανθρώπων καθώς και αυτών που αποτελούν πιθανά θύματα εκμετάλλευσης. Διατηρώντας γραφεία στο Σαν Φραντσίσκο, στην Καλιφόρνια, αυτή η διεθνής ΜΚΟ χειρίζεται έργα που αφορούν παιδιά αλλά και ενηλίκους στη νότια Αμερική, Ευρώπη και Ασία."
+msgstr "Για Not For Sale"
 
 msgid "Not For Sale also works to engage businesses in the fight against human trafficking with awareness raising, supply chain responsibility, and survivor training and employment programs."
-msgstr "Η Not For Sale στοχεύει στην εμπλοκή και συμμετοχή των ιδιωτικών εταιριών στην καταπολέμηση της εμπορίας ανθρώπων με εκστρατείες ενημέρωσης, με εφαρμογή υπεύθυνων πρακτικών στην εφοδιαστική αλυσίδα και την ανάπτυξη προγραμμάτων εκπαίδευσης και απασχόλησης για πρώην θύματα εμπορίας ανθρώπων."
+msgstr "Η Not For Sales ιδρύθηκε το 2007 και στοχεύει στην προστασία και ενδυνάμωση πρώην θυμάτων εμπορίας ανθρώπων καθώς και αυτών που αποτελούν πιθανά θύματα εκμετάλλευσης. Διατηρώντας γραφεία στο Σαν Φραντσίσκο, στην Καλιφόρνια, αυτή η διεθνής ΜΚΟ χειρίζεται έργα που αφορούν παιδιά αλλά και ενηλίκους στη νότια Αμερική, Ευρώπη και Ασία. Η Not For Sale στοχεύει στην εμπλοκή και συμμετοχή των ιδιωτικών εταιριών στην καταπολέμηση της εμπορίας ανθρώπων με εκστρατείες ενημέρωσης, με εφαρμογή υπεύθυνων πρακτικών στην εφοδιαστική αλυσίδα και την ανάπτυξη προγραμμάτων εκπαίδευσης και απασχόλησης για πρώην θύματα εμπορίας ανθρώπων."
 
 msgid "To date, Not For Sale has provided services to more than 10,000 people in 11 countries. Learn more at "
 msgstr "Μέχρι σήμερα, έχει προσφέρει υπηρεσίες σε περισσότερους απο 10.000 ανθρώπους σε 11 χώρες. Μάθε περισσότερα στο "
 
 # FAQ
-#msgid "FAQ"
-#msgstr "ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ"
+msgid "FAQ"
+msgstr "FAQ"
 
 msgid "Who created this course?"
 msgstr "Ποιος δημιούργησε το παρόν εκπαιδευτικό πρόγραμμα;"
@@ -20011,59 +20070,5 @@ msgstr "Αντιμετωπίζω προβλήματα με τον λογαρια
 msgid "If you are having problems with the course you can contact"
 msgstr "Αν αντιμετωπίζετε προβλήματα με το εκπαιδευτικό πρόγραμμα, μπορείτε να επικοινωνήσετε μαζί μας στο"
 
-msgid " We will make every attempt to respond to your concern in a timely manner."
-msgstr " Θα καταβάλουμε κάθε προσπάθεια να απαντήσουμε εγκαίρως στην ερώτηση ή την απορία σας."
-
-msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
-msgstr "ΠΟΛΙΤΙΚΗ ΠΡΟΣΤΑΣΙΑΣ ΠΡΟΣΩΠΙΚΩΝ ΔΕΔΟΜΕΝΩΝ­ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ"
-
-msgid "This Privacy Policy (“Privacy Policy”) describes the information that BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) collects through our online training platform and how we use it. For purposes of this agreement, the terms “we,” “us,” and “our” refer to BUSINESS AGAINST SLAVERY. “You” refers to you, as a user of the BUSINESS AGAINST SLAVERY training platform. By accepting our Privacy Policy and Terms of Use, you consent to our collection and use of your information as described in this Privacy Policy."
-msgstr "Η παρούσα Πολιτική Προστασίας Προσωπικών Δεδομένων («Πολιτική Απορρήτου») περιγράφει τις πληροφορίες που συλλέγονται κατά τη διεξαγωγή ΕΠΙΧΕΙΡΗΜΑΤΙΚΩΝ ΔΡΑΣΕΩΝ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ («ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ») μέσω της διαδικτυακής πλατφόρμας εκπαίδευσης που διαθέτουμε και πώς χρησιμοποιούμε τις πληροφορίες αυτές. Για τους σκοπούς της παρούσας συμφωνίας, οι όροι «εμείς», «εμάς» και «δικό μας» αναφέρονται στις ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ. Ο όρος «Εσείς» αναφέρεται σε εσάς, ως χρήστης της πλατφόρμας εκπαίδευσης με τίτλο ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ. Με την αποδοχή της Πολιτικής Προστασίας Προσωπικών Δεδομένων και των Όρων Χρήσης, συναινείτε στη συλλογή και τη χρήση των πληροφοριών σας, όπως περιγράφεται στην παρούσα Πολιτική Απορρήτου."
-
-msgid "Information We Collect"
-msgstr "Πληροφορίες που συλλέγουμε"
-
-msgid "We collect information from and about you and your device. The personal information we collect is the information that you voluntarily provide to us during your creation of an account. Users cannot access the training platform without creating an account. We collect from you your first name, last name, user name, email address, country of residence, and age. We also collect from you information about your gender and highest level of education completed, if you have elected to disclose this information."
-msgstr "Συλλέγουμε δικές σας πληροφορίες καθώς και στοιχεία που αφορούν εσάς και τη συσκευή σας. Οι προσωπικές πληροφορίες που συλλέγουμε είναι οι πληροφορίες που παρέχετε οικειοθελώς σε εμάς κατά τη δημιουργία ενός λογαριασμού. Οι χρήστες δεν μπορούν να αποκτήσουν πρόσβαση στην πλατφόρμα εκπαίδευσης χωρίς να δημιουργήσουν ένα λογαριασμό. Εμείς συλλέγουμε από εσάς το όνομα, το επώνυμο, το όνομα χρήστη, τη διεύθυνση ηλεκτρονικού ταχυδρομείου, τη χώρα διαμονής, και την ηλικία. Επίσης, συλλέγουμε από εσάς στοιχεία σχετικά με το φύλο σας και το επίπεδο τριτοβάθμιας εκπαίδευσης που έχετε ολοκληρώσει, αν έχετε επιλέξει να γνωστοποιήσετε τις εν λόγω πληροφορίες."
-
-msgid "How We Use And Share Information"
-msgstr "Πώς χρησιμοποιούμε και κοινοποιούμε τις πληροφορίες"
-
-msgid "We use the personal information you provide to us to create an account through which you can utilize BUSINESS AGAINST SLAVERY services. Further, by creating an account and providing us with your email address, you agree to receive email communications to provide you additional information about BUSINESS AGAINST SLAVERY and The Samilia Foundation's and Not For Sale’s initiatives (“Promotional Communications”). We collect data on the general usage of the training platform. This data is used to provide The Samilia Foundation and Not For Sale with statistical analysis for how the training platform is used. This data may be used by The Samilia Foundation, Not For Sale, or third parties to make decisions about technical improvements to the training platform."
-msgstr "Χρησιμοποιούμε τα προσωπικά δεδομένα που παρέχετε σε εμάς για να δημιουργήσετε ένα λογαριασμό μέσω του οποίου μπορείτε να χρησιμοποιήσετε τις υπηρεσίες ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ. Επιπλέον, με τη δημιουργία ενός λογαριασμού και παρέχοντάς μας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας, συμφωνείτε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου με στόχο την αποστολή πρόσθετων πληροφοριών σχετικά με το πρόγραμμα ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ καθώς και με τις πρωτοβουλίες του Ιδρύματος Samilia και Not For Sale («Διαφημιστικά μηνύματα»). Συλλέγουμε δεδομένα σχετικά με τη γενική χρήση της πλατφόρμας εκπαίδευσης. Τα δεδομένα αυτά χρησιμοποιούνται για την αποστολή στατιστικών αναλύσεων στους οργανισμούς The Samilia Foundation και Not For Sale σχετικά με τον τρόπο χρήσης της πλατφόρμας εκπαίδευσης. Τα δεδομένα αυτά μπορούν να χρησιμοποιηθούν από τους οργανισμούς The Samilia Foundation, Not For Sale ή από τρίτους με στόχο τη λήψη αποφάσεων σχετικά με τις τεχνικές βελτιώσεις στην πλατφόρμα εκπαίδευσης."
-
-msgid "Except as otherwise stated in this Privacy Policy, we do not sell, trade, rent, or otherwise share for marketing purposes the Personal Information that we collect with third parties without your consent."
-msgstr "Εκτός αν δηλώνεται διαφορετικά στην παρούσα Πολιτική Απορρήτου, απαγορεύεται η πώληση, εμπορία, ενοικίαση ή κοινοποίηση με οιονδήποτε άλλο τρόπο, για σκοπούς προώθησης στην αγορά, τα προσωπικά δεδομένα που συλλέγονται με τρίτους χωρίς τη συναίνεσή σας."
-
-msgid "In general, this Privacy Policy does not limit our use or disclosure of any non­personal information in any way. We reserve the right to use and disclose such non­personal information to our partners, advertisers, and other third parties at our discretion."
-msgstr "Σε γενικές γραμμές, η παρούσα Πολιτική Απορρήτου δεν περιορίζει επουδενί τη χρήση ή τη δημοσίευση εκ μέρους μας οποιωνδήποτε μη­προσωπικών δεδομένων. Διατηρούμε το δικαίωμα να χρησιμοποιούμε και να γνωστοποιούμε τα εν λόγω μη προσωπικά δεδομένα στους εταίρους και διαφημιστές μας, καθώς και σε άλλα τρίτα μέρη κατά την κρίση μας."
-
-msgid "How We Protect Information"
-msgstr "Πώς προστατεύουμε τις πληροφορίες"
-
-msgid "We strive to protect your information from unauthorized access, and take precautions against security breaches of our customer databases. We collect only limited personal information, and that information is housed within a dedicated server that has been encrypted using technological measures, including encryption, firewalls, and secure socket layer technology, to ensure security."
-msgstr "Προσπαθούμε να προστατεύουμε τα δεδομένα σας από μη εξουσιοδοτημένη πρόσβαση, και να λαμβάνουμε προληπτικά μέτρα κατά των παραβιάσεων της ασφάλειας των βάσεων δεδομένων των πελατών μας. Συλλέγουμε μόνο περιορισμένο όγκο προσωπικών δεδομένων, τα οποία τηρούνται σε ειδικό διακομιστή που έχει κρυπτογραφηθεί με χρήση τεχνολογικών μέτρων, συμπεριλαμβανομένης της κρυπτογράφησης, firewall, και ασφαλής τεχνολογίας ώστε να εξασφαλίζεται η ασφάλεια."
-
-msgid "This is not a guarantee that your information may not be accessed, disclosed, or altered by breach of such firewalls and secure server software. By using our training platform, you acknowledge that you understand and agree to assume these risks."
-msgstr "Ωστόσο, αυτό δεν αποτελεί εγγύηση για τη μη πρόσβαση, γνωστοποίηση ή τροποποίηση των δεδομένων σας σε περίπτωση παραβίασης των firewall και της ασφάλειας του λογισμικού του διακομιστή. Με τη χρήση της εκπαιδευτικής πλατφόρμας μας, αναγνωρίζετε ότι έχετε κατανοήσει και συμφωνείτε το ενδεχόμενο των κινδύνων αυτών."
-
-msgid "Your Rights and Correcting Your Information"
-msgstr "Δικαιώματα και διόρθωση των δεδομένων σας"
-
-msgid "You have a right at any time to stop us from contacting you with additional information about the initiatives of BUSINESS AGAINST SLAVERY and The Samilia Foundation and Not For Sale. If you receive Promotional Communications from us, you will be able to indicate a preference to stop receiving further Promotional Communications from us and will have the opportunity to “opt­out” by following the unsubscribe instructions provided in the e­mail."
-msgstr "Έχετε το δικαίωμα ανά πάσα στιγμή να διακόψετε την επικοινωνία μαζί μας ως προς την αποστολή πρόσθετων πληροφοριών σχετικά με τις πρωτοβουλίες του προγράμματος ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ και των οργανισμών The Samilia Foundation και Not For Sale. Εάν λαμβάνετε διαφημιστικά μηνύματα από εμάς, θα είστε σε θέση να επιλέξετε τη μη λήψη περαιτέρω διαφημιστικών μηνυμάτων από εμάς καθώς και τη δυνατότητα να «καταργήσετε την εν λόγω επιλογή αποστολής», ακολουθώντας τις οδηγίες διαγραφής που παρέχονται στο e­mail."
-
-msgid "Please note that despite any indicated email marketing preferences, we may send you administrative emails regarding BUSINESS AGAINST SLAVERY, including, for example, notices of material updates to our Privacy Policy."
-msgstr "Επισημαίνεται ότι, παρά τις όποιες ενδεικνυόμενες προτιμήσεις μάρκετινγκ μέσω ηλεκτρονικού ταχυδρομείου, ενδέχεται να σας αποστείλουμε e­mail σχετικά με το πρόγραμμα ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ, συμπεριλαμβανομένων, για παράδειγμα, ειδοποιήσεις ενημέρωσης υλικού στην Πολιτική Προστασίας Προσωπικών Δεδομένων."
-
-msgid "Modifications to Our Privacy Policy"
-msgstr "Τροποποιήσεις στην Πολιτική Απορρήτου μας"
-
-msgid "We may revise our Privacy Policy at any time. We will notify you about any significant changes to our policy by sending a notice to users via email. Non material changes or clarifications will take effect immediately; significant changes will go into effect 30 days after we notify. You should periodically check this privacy policy for updates."
-msgstr "Ενδέχεται να προβούμε σε αναθεώρηση της πολιτικής απορρήτου ανά πάσα στιγμή. Θα σας ενημερώσουμε για τυχόν σημαντικές αλλαγές στην πολιτική μας με αποστολή ειδοποίησης προς τους χρήστες μέσω ηλεκτρονικού ταχυδρομείου. Μη ουσιώδεις αλλαγές ή διευκρινίσεις θα εκτελούνται άμεσα, ενώ οι σημαντικές αλλαγές θα τίθενται σε ισχύ μετά από διάστημα 30 ημερών από την ημερομηνία ενημέρωσης. Θα πρέπει να ελέγχετε περιοδικά αυτήν την πολιτική απορρήτου για ενημερώσεις."
-
-#msgid "Contact Us"
-#msgstr "Επικοινωνήστε μαζί μας"
-
-msgid "You can contact us about this privacy statement by writing us via email at: "
-msgstr "Μπορείτε να επικοινωνήσετε μαζί μας σχετικά με την παρούσα δήλωση απορρήτου γράφοντας μας μέσω e­mail στη διεύθυνση: "
+msgid "We will make every attempt to respond to your concern in a timely manner."
+msgstr "Θα καταβάλουμε κάθε προσπάθεια να απαντήσουμε εγκαίρως στην ερώτηση ή την απορία σας."

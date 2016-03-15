@@ -18,10 +18,10 @@ $fg-min-width: 810px;
 // ====================
 
 // FONTS
-$sans-serif: 'Open Sans', $verdana, sans-serif;
-$monospace: 'Open Sans';//Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
-$body-font-family: 'Open Sans';//$sans-serif;
-$serif: 'Open Sans';//$georgia;
+$sans-serif: 'Helvetica', $verdana, sans-serif;
+$monospace: 'Helvetica';//Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+$body-font-family: 'Helvetica';//$sans-serif;
+$serif: 'Helvetica';//$georgia;
 
 // FONT-WEIGHTS
 $font-light: 300;
@@ -428,11 +428,11 @@ $video-thumb-url: '../images/homepage-hero-video-thumb.jpg';
 
 // SPLINT: fonts
 $f-serif: 'Bree Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
-$f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+$f-sans-serif: 'Helvetica','Helvetica Neue', Helvetica, Arial, sans-serif;
 $f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
 
 // Header specific sans-serif
-$header-sans-serif: 'Open Sans', Arial, Helvetica, sans-serif;
+$header-sans-serif: 'Helvetica', Arial, Helvetica, sans-serif;
 
 // SPLINT: colors
 

@@ -21406,8 +21406,67 @@ msgstr ""
 "Une nouvelle révision a été créée : Fusion entre la révision #%(r1)d et la "
 "révision #%(r2)d"
 
+# Privacy
+msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
+msgstr "POLITIQUE DE CONFIDENTIALITE DE BUSINESS AGAINST SLAVERY"
+
+msgid "Business Against Slavery is a joint project by the Samilia Foundation and Not For Sale, co-funded by the Prevention of and Fight against Crime Programme of the European Union. The project aims to engage the European business community to address the of human trafficking by offering a set of resources to encourage awareness raising, employment of survivors, and increased supply chain responsibility."
+msgstr "Cette Politique de Confidentialité (« Politique de Confidentialité ») décrit les informations que BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) recueille au travers de notre plate-forme de formation en ligne ainsi que l’utilisation de ces informations."
+
+msgid "The Samilia Foundation is responsible for the implementation of this e-learning platform in collaboration with the developer."
+msgstr "Business Against Slavery est un projet conjoint de Not For Sale et la Fondation Samilia, co-financé par le programme de Prévention et Lutte contre le Crime de l’Union Européenne. Ce projet a pour but d’engager le secteur privé européen dans la lutte contre la traite des êtres humains en proposant une série d’outils qui encouragent la sensibilisation, l’offre d’emplois aux victimes de traite et qui augmentent la responsabilité sociale dans les chaînes de production."
+
+msgid "For purposes of this agreement, the terms “we,” “us,” and “our” refer to BUSINESS AGAINST SLAVERY. “You” refers to you, as a user of the BUSINESS AGAINST SLAVERY training platform. By accepting our Privacy Policy and Terms of Use, you consent to our collection and use of your information as described in this Privacy Policy."
+msgstr "Aux fins de ce présent accord, les termes « nous » , « nos », et notre », se réfèrent à BUSINESS AGAINST SLAVERY. « Vous » se réfère à vous, en tant qu’utilisateur de la plate-forme de formation BUSINESS AGAINST SLAVERY . En acceptant notre Politique de Confidentialité et les Termes d’Utilisation, vous marquez votre accord pour la collecte et l’utilisation des informations vous concernant comme décrit dans la Politique de Confidentialité."
+
+msgid "Information We Collect"
+msgstr "Les informations que nous recueillons"
+
+msgid "We collect information from and about you and your device. The personal information we collect is the information that you voluntarily provide to us during your creation of an account. Users cannot access the training platform without creating an account. We collect from you your first name, last name, user name, email address, country of residence, and age. We also collect from you information about your gender and highest level of education completed, if you have elected to disclose this information."
+msgstr "Nous recueillons des informations que vous nous donnez sur vous. Les informations personnelles que nous recueillons sont des informations que vous nous donnez volontairement lors de la création de votre compte. Les utilisateurs ne peuvent pas accéder à la plate-forme de formation sans créer un compte. Nous recueillons les informations suivantes vous concernant : votre prénom, votre nom de famille, votre nom d’utilisateur, votre adresse mail, votre pays de résidence et votre âge. Si vous avez choici cette option, nous recueillons également des informations sur votre genre et votre plus haut degré d&#39;étude."
+
+msgid "How We Use And Share Information"
+msgstr "Utilisation et Partage de ces informations"
+
+msgid "We use the personal information you provide to us to create an account through which you can utilize BUSINESS AGAINST SLAVERY services. We collect data on the general usage of the training platform. This data is used to provide The Samilia Foundation and Not For Sale with statistical analysis for how the training platform is used. This data may be used by The Samilia Foundation, Not For Sale, or third parties to make decisions about technical improvements to the training platform."
+msgstr "Nous utilisons les informations personnelles que vous nous procurez afin de créer votre compte via lequel vous pourrez utiliser les services de BUSINESS AGAINST SLAVERY. Nous recueillons les données relatives à l’utilisation globale de la plate-forme de formation. Ces données sont utilisées pour permettre à la Fondation Samilia de procéder à une analyse statistique sur la façon dont la plate-forme est utilisée. Ces données pourront être utilisées par la Fondation Samilia afin d&#39;apporter des améliorations techniques à la plate-forme de formation."
+
+msgid "Except as otherwise stated in this Privacy Policy, we do not sell, trade, rent, or otherwise share for marketing purposes the Personal Information that we collect with third parties without your consent."
+msgstr "Sauf indication contraire mentionnée dans cette Politique de Confidentialité, nous ne vendons, n’échangeons, ne louons ni ne partageons sans votre consentement les informations personnelles que nous recueillons dans un but de marketing avec des tiers."
+
+msgid "How We Protect Information"
+msgstr "Protection des informations"
+
+msgid "We strive to protect your information from unauthorized access, and take precautions against security breaches of our customer databases. We collect only limited personal information, and that information is housed within a dedicated server that has been encrypted using technological measures, including encryption, firewalls, and secure socket layer technology, to ensure security."
+msgstr "Nous nous efforçons de protéger vos informations de tout accès non autorisé et nous prenons nos précautions contre toute violation de sécurité des bases de données de nos clients. Nous ne recueillons que des informations personnelles limitées et ces informations sont hébergées dans un serveur spécialement conçu à cet effet qui a été crypté en utilisant des mesures technologiques, dont le cryptage, des pare-feux et des protocoles sécurisés de cryptage afin d’en garantir la sécurité."
+
+msgid "This is not a guarantee that your information may not be accessed, disclosed, or altered by breach of such firewalls and secure server software. By using our training platform, you acknowledge that you understand and agree to assume these risks."
+msgstr "Ceci ne constitue pas une garantie que vos informations ne seront pas accessibles, divulguées ou altérées par violation de ces pare-feux ou du logiciel de serveur sécurisé. En utilisant notre plate-forme de formation, vous reconnaissez et acceptez d’en assumer les risques."
+
+msgid "Your Rights and Correcting Your Information"
+msgstr "Vos Droits et Correction de Vos Informations"
+
+msgid "You have a right at any time to stop us from contacting you with additional information about the initiatives of BUSINESS AGAINST SLAVERY and The Samilia Foundation and Not For Sale. If you receive Promotional Communications from us, you will be able to indicate a preference to stop receiving further Promotional Communications from us and will have the opportunity to “opt-out” by following the unsubscribe instructions provided in the e-mail."
+msgstr "Vous avez le droit, à tout moment, de nous demander d’arrêter de vous contacter pour vous donner des informations complémentaires sur les initiatives de la BUSINESS AGAINST SLAVERY, de la Fondation Samilia et de Not For Sale. Si vous recevez des Communications Promotionnelles de notre part, vous aurez la possibilité d’indiquer votre souhait de ne plus recevoir ce type d’informations et vous aurez la possibilité de vous désinscrire en suivant les instructions d’annulation comprises dans l’e-mail."
+
+msgid "Please note that despite any indicated email marketing preferences, we may send you administrative emails regarding BUSINESS AGAINST SLAVERY, including, for example, notices of material updates to our Privacy Policy."
+msgstr "Veuillez noter que malgré des indications de préférence quant aux e-mails de marketing, il est possible que nous vous envoyions des emails administratifs concernant la BUSINESS AGAINST SLAVERY, comprenant, par exemple, des indications de mise à jour du matériel de notre Politique de Confidentialité."
+
+msgid "Modifications to Our Privacy Policy"
+msgstr "Modifications de Notre Politique de Confidentialité"
+
+msgid "We may revise our Privacy Policy at any time. We will notify you about any significant changes to our policy by sending a notice to users via email. Non material changes or clarifications will take effect immediately; significant changes will go into effect 30 days after we notify. You should periodically check this privacy policy for updates."
+msgstr "Il est possible que nous révisions notre Politique de Confidentialité à tout moment. Nous communiquerons tout changement important de notre politique en envoyant une note aux utilisateurs par email. Les changements non liés au matériel ou les clarifications auront un effet immédiat ; les changements significatifs entreront en vigueur 30 jours après avoir été notifiés. Nous vous conseillons de vérifier régulièrement les mises à jour de cette politique de confidentialité."
+
+msgid "Contact Us"
+msgstr "Contact"
+
+msgid "You can contact us about this privacy statement by writing us via email at: "
+msgstr "Vous pouvez nous contacter sur la politique de confidentialité en nous écrivant un email directement à "
+
+# About
 msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group and with financial support from the European Commission. By completing this short course, you will learn about what human trafficking is and why it occurs. You will also find out what you and your company can do to help fight trafficking. We hope that you finish this course feeling empowered to help create a world where no one is for sale."
-msgstr "Ce cours a été développé par Not For Sale et la Fondation Samilia, en partenariat avec Delhaize Group et avec le soutien financier de la Commission Européenne. En suivant cette courte formation, vous allez apprendre ce qu’est la traite des êtres humains et comment elle se manifeste. Vous allez aussi découvrir ce que vous et la société pour laquelle vous travaillez peut faire dans la lutte contre la traite. Nous espérons que vous terminerez ce cours avec le sentiment d’avoir des outils pour aider à la construction d’un monde où personne ne sera à vendre."
+msgstr "Ce cours a été développé par Not For Sale et la Fondation Samilia en consultation avec le Groupe Delhaize et avec le soutien financier de la Commission Européenne. En complétant ce cours, vous allez apprendre ce qu’est la traite des êtres humains et comment elle se produit. Vous allez également apprendre ce que vous et votre entreprise pouvez faire pour lutter contre la traite des êtres humains. Nous espérons que vous terminerez cette formation avec l’envie de nous aider à créer un monde sans esclaves."
 
 msgid "About Samilia"
 msgstr "A propos de Samilia"
@@ -21425,13 +21484,13 @@ msgid "About Not For Sale"
 msgstr "A propos de Not For Sale"
 
 msgid "Founded in 2007, Not For Sale works to protect, equip and empower survivors of human trafficking and those at risk of exploitation. With headquarters in San Francisco, California, the international nonprofit manages projects with children and adults in North America, Europe and Asia."
-msgstr "Fondé en 2007, Not For Sale s’emploie à protéger, équiper et rendre confiance aux ex­victimes de traite des êtres humains et les personnes à haut risque d’exploitation. Le quartier général de Not For Sale se trouve à San Francisco, en Californie, mais l’organisation non gouvernementale internationale gère des projets impliquant enfants et adultes en Amérique du Nord, en Europe et en Asie."
+msgstr "Fondé en 2007, Not For Sale s’emploie à protéger, équiper et rendre confiance aux ex-victimes de traite des êtres humains et les personnes à haut risque d’exploitation. Le quartier général de Not For Sale se trouve à San Francisco, en Californie, mais l’organisation non gouvernementale internationale gère des projets impliquant enfants et adultes en Amérique du Nord, en Europe et en Asie."
 
 msgid "Not For Sale also works to engage businesses in the fight against human trafficking with awareness raising, supply chain responsibility, and survivor training and employment programs."
-msgstr "Not For Sale s’atèle également à engager le secteur privé dans la lutte contre la traite des êtres humains en sensibilisant, en travaillant sur la responsabilité sociale des entreprises et en offrant des formations et des opportunités de travail pour des ex­victimes de traite des êtres humains."
+msgstr "Not For Sale s’atèle également à engager le secteur privé dans la lutte contre la traite des êtres humains en sensibilisant, en travaillant sur la responsabilité sociale des entreprises et en offrant des formations et des opportunités de travail pour des ex-victimes de traite des êtres humains."
 
 msgid "To date, Not For Sale has provided services to more than 10,000 people in 11 countries. Learn more at "
-msgstr "Jusqu’à ce jour, Not For Sale a aidé plus de 10.000 personnes dans 11 pays différents. Pour en savoir plus "
+msgstr "Jusqu’à ce jour, Not For Sale a aidé plus de 10.000 personnes dans 11 pays différents. Pour en savoir plus "
 
 # FAQ
 msgid "FAQ"
@@ -21441,7 +21500,7 @@ msgid "Who created this course?"
 msgstr "Qui a créé ce cours?"
 
 msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group, and with financial support from the European Commission."
-msgstr "Ce cours a été développé par Not For Sale et la Fondation Samilia en consultation avec le Groupe Delhaize et avec le soutien financier de la Commission Européenne."
+msgstr "Ce cours a été développé par Not For Sale et la Fondation Samilia en consultation avec le Groupe Delhaize et avec le soutien financier de la Commission Européenne."
 
 msgid "What is the purpose of this course?"
 msgstr "Quel est le but de ce cours?"
@@ -21456,76 +21515,22 @@ msgid "Completing this course should take you no more than 40 minutes. However, 
 msgstr "Compléter ce cours ne devrait pas prendre plus de 20 minutes. Cependant, si vous allez dans les sections en option afin d’approfondir vos connaissances sur le sujet, cela vous prendra un peu plus de temps pour tout compléter."
 
 msgid "Do I need to know anything about human trafficking before taking this course?"
-msgstr "Est­ce que je dois déjà savoir des choses sur la traite des êtres humains avant de suivre ce cours?"
+msgstr "Est-ce que je dois déjà savoir des choses sur la traite des êtres humains avant de suivre ce cours?"
 
 msgid "No, this course is an introductory course designed to educate and inform you about human trafficking. Previous knowledge is not required."
 msgstr "Non, ce cours est une introduction dans le but d’éduquer et d’informer sur la traite des êtres humains. Des connaissances préalables ne sont pas nécessaires."
 
 msgid "If I see an instance of human trafficking taking place, what should I do?"
-msgstr "Si je suis témoin de traite des êtres humains, que dois­je faire?"
+msgstr "Est-ce que je dois déjà savoir des choses sur la traite des êtres humains avant de suivre ce cours?"
 
 msgid "Do not intervene to try rescue someone you suspect of being a victim of human trafficking or confront a trafficker, as this can put you, the potential victim, and the people around you in danger. If you suspect a case of human trafficking is taking place, call the local police for help."
-msgstr "N’intervenez surtout pas en essayant de sauver quelqu’un qui pourrait être une victime de traite des êtres humains et ne confrontez pas le trafiquant car cela pourrait vous mettre en danger ainsi que la victime potentielle et les personnes autour de vous. Si vous suspectez un cas de victime de traite des êtres humains, appelez la police locale pour demander de l’aide."
+msgstr "Non, ce cours est une introduction dans le but d’éduquer et d’informer sur la traite des êtres humains. Des connaissances préalables ne sont pas nécessaires."
 
 msgid "I’m having problems with my account, who can I contact?"
-msgstr "J’ai un problème technique avec ce cours, qui puis­je contacter."
+msgstr "J’ai un problème technique avec ce cours, qui puis-je contacter."
 
 msgid "If you are having problems with the course you can contact"
-msgstr "Si vous avez un problème technique avec ce cours, vous pouvez contacter "
+msgstr "Si vous avez un problème technique avec ce cours, vous pouvez contacter"
 
 msgid "We will make every attempt to respond to your concern in a timely manner."
 msgstr "Nous ferons tout notre possible pour vous aider dans les plus brefs délais."
-
-msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
-msgstr "POLITIQUE DE CONFIDENTIALITE DE BUSINESS AGAINST SLAVERY"
-
-msgid "This Privacy Policy (“Privacy Policy”) describes the information that BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) collects through our online training platform and how we use it. For purposes of this agreement, the terms “we,” “us,” and “our” refer to BUSINESS AGAINST SLAVERY. “You” refers to you, as a user of the BUSINESS AGAINST SLAVERY training platform. By accepting our Privacy Policy and Terms of Use, you consent to our collection and use of your information as described in this Privacy Policy."
-msgstr "Cette Politique de Confidentialité (« Politique de Confidentialité ») décrit les informations que BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) recueille au travers de notre plate­forme de formation en ligne ainsi que l’utilisation de ces informations. Aux fins de ce présent accord, les termes « nous » , « nos », et notre », se réfèrent à BUSINESS AGAINST SLAVERY. « Vous » se réfère à vous, en tant qu’utilisateur de la plate­forme de formation BUSINESS AGAINST SLAVERY . En acceptant notre Politique de Confidentialité et les Termes d’Utilisation, vous marquez votre accord pour la collecte et l’utilisation des informations vous concernant comme décrit dans la Politique de Confidentialité."
-
-msgid "Information We Collect"
-msgstr "Les informations que nous recueillons"
-
-msgid "We collect information from and about you and your device. The personal information we collect is the information that you voluntarily provide to us during your creation of an account. Users cannot access the training platform without creating an account. We collect from you your first name, last name, user name, email address, country of residence, and age. We also collect from you information about your gender and highest level of education completed, if you have elected to disclose this information."
-msgstr "Nous recueillons des informations que vous nous donnez sur vous. Les informations personnelles que nous recueillons sont des informations que vous nous donnez volontairement lors de la création de votre compte. Les utilisateurs ne peuvent pas accéder à la plate­forme de formation sans créer un compte. Nous recueillons les informations suivantes vous concernant : votre prénom, votre nom de famille, votre nom d’utilisateur, votre adresse mail, votre pays de résidence et votre âge. Nous recueillons également des informations sur votre genre et votre plus haut degré d'étude dans le cas où vous seriez choisi pour divulguer ces informations."
-
-msgid "How We Use And Share Information"
-msgstr "Comment Nous Utilisons et nous Partageons ces informations"
-
-msgid "We use the personal information you provide to us to create an account through which you can utilize BUSINESS AGAINST SLAVERY services. Further, by creating an account and providing us with your email address, you agree to receive email communications to provide you additional information about BUSINESS AGAINST SLAVERY and The Samilia Foundation's and Not For Sale’s initiatives (“Promotional Communications”). We collect data on the general usage of the training platform. This data is used to provide The Samilia Foundation and Not For Sale with statistical analysis for how the training platform is used. This data may be used by The Samilia Foundation, Not For Sale, or third parties to make decisions about technical improvements to the training platform."
-msgstr "Nous utilisons les informations personnelles que vous nous procurez afin de créer votre compte via lequel vous pourrez utiliser les services de BUSINESS AGAINST SLAVERY . De plus, en créant un compte et en nous procurant votre adresse mail, vous acceptez de recevoir des emails de communication supplémentaires à propos des initiatives de BUSINESS AGAINST SLAVERY, de la Fondation Samilia et de Not For Sale. (« Communications Promotionnelles »). Nous recueillons les données relatives à l’utilisation globale de la plate­forme de formation. Ces données sont utilisées pour permettre à la Fondation Samilia et à Not For Sale de procéder à une analyse statistique sur la façon dont la plate­forme est utilisée. Ces données pourront être utilisées par la Fondation Samilia, Not For Sale ou un tiers afin d'apporter des améliorations techniques à la plate­forme de formation."
-
-msgid "Except as otherwise stated in this Privacy Policy, we do not sell, trade, rent, or otherwise share for marketing purposes the Personal Information that we collect with third parties without your consent."
-msgstr "Sauf indication contraire mentionnée dans cette Politique de Confidentialité, nous ne vendons, échangeons, louons ou partageons à des fins de marketing avec des tiers, sans votre consentement, les informations personnelles que nous recueillons."
-
-msgid "In general, this Privacy Policy does not limit our use or disclosure of any non­personal information in any way. We reserve the right to use and disclose such non­personal information to our partners, advertisers, and other third parties at our discretion."
-msgstr "De façon générale, cette Politique de Confidentialité ne limite en aucune façon notre utilisation ou notre divulgation des informations non personnelles recueillies. Nous nous réservons le droit d’utiliser et de divulguer toute information non personnelle à nos partenaires, annonceurs et tiers de notre choix."
-
-msgid "How We Protect Information"
-msgstr "Comment nous protégeons les informations"
-
-msgid "We strive to protect your information from unauthorized access, and take precautions against security breaches of our customer databases. We collect only limited personal information, and that information is housed within a dedicated server that has been encrypted using technological measures, including encryption, firewalls, and secure socket layer technology, to ensure security."
-msgstr "Nous nous efforçons de protéger vos informations de tout accès non autorisé et nous prenons nos précautions contre toute violation de sécurité des bases de données de nos clients. Nous ne recueillons que des informations personnelles limitées et ces informations sont hébergées dans un serveur spécialement conçu à cet effet qui a été crypté en utilisant des mesures technologiques, dont le cryptage, des pare­feux et des protocoles sécurisés de cryptage afin d’en garantir la sécurité."
-
-msgid "This is not a guarantee that your information may not be accessed, disclosed, or altered by breach of such firewalls and secure server software. By using our training platform, you acknowledge that you understand and agree to assume these risks."
-msgstr "Ceci ne constitue pas une garantie que vos informations ne seront pas accessibles, divulguées ou altérées par violation de ces pare­feux ou du logiciel de serveur sécurisé. En utilisant notre plate­forme de formation, vous reconnaissez et acceptez d’en assumer les risques."
-
-msgid "Your Rights and Correcting Your Information"
-msgstr "Vos Droits et Correction de Vos Informations"
-
-msgid "You have a right at any time to stop us from contacting you with additional information about the initiatives of BUSINESS AGAINST SLAVERY and The Samilia Foundation and Not For Sale. If you receive Promotional Communications from us, you will be able to indicate a preference to stop receiving further Promotional Communications from us and will have the opportunity to “opt­out” by following the unsubscribe instructions provided in the e­mail."
-msgstr "Vous avez le droit, à tout moment, de nous demander d’arrêter de vous contacter pour vous donner des informations complémentaires sur les initiatives de la BUSINESS AGAINST SLAVERY, de la Fondation Samilia et de Not For Sale. Si vous recevez des Communications Promotionnelles de notre part, vous aurez la possibilité d’indiquer votre préférence à ne plus recevoir ce type d’informations et vous aurez la possibilité de vous en désinscrire en suivant les instructions d’annulation comprises dans l’e­mail."
-
-msgid "Please note that despite any indicated email marketing preferences, we may send you administrative emails regarding BUSINESS AGAINST SLAVERY, including, for example, notices of material updates to our Privacy Policy."
-msgstr "Veuillez noter que malgré des indications de préférence quant aux e­mails de marketing, il est possible que nous vous envoyions des emails administratifs concernant la BUSINESS AGAINST SLAVERY, comprenant, par exemple, des indications de mise à jour du matériel de notre Politique de Confidentialité."
-
-msgid "Modifications to Our Privacy Policy"
-msgstr "Modifications de Notre Politique de Confidentialité"
-
-msgid "We may revise our Privacy Policy at any time. We will notify you about any significant changes to our policy by sending a notice to users via email. Non material changes or clarifications will take effect immediately; significant changes will go into effect 30 days after we notify. You should periodically check this privacy policy for updates."
-msgstr "Il est possible que nous révisions notre Politique de Confidentialité à tout moment. Nous vous communiquerons tout changement important de notre politique en envoyant une note aux utilisateurs par email. Les changements non liés au matériel ou les clarifications auront un effet immédiat ; les changements significatifs entreront en vigueur 30 jours après avoir été notifiés. Nous vous conseillons de vérifier régulièrement les mises à jour de cette politique de confidentialité."
-
-#msgid "Contact Us"
-#msgstr "Nous Contacter"
-
-msgid "You can contact us about this privacy statement by writing us via email at: "
-msgstr "Vous pouvez nous contacter sur la politique de confidentialité en nous écrivant un email directement à "
