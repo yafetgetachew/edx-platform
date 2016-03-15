@@ -7728,14 +7728,17 @@ msgstr "Termenii de serviciu"
 msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
 msgstr "POLITICA DE CONFIDENȚIALITATE BUSINESS AGAINST SLAVERY"
 
-msgid "Business Against Slavery is a joint project by the Samilia Foundation and Not For Sale, co-funded by the Prevention of and Fight against Crime Programme of the European Union. The project aims to engage the European business community to address the of human trafficking by offering a set of resources to encourage awareness raising, employment of survivors, and increased supply chain responsibility."
+msgid "This Privacy Policy (“Privacy Policy”) describes the information that BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) collects through our online training platform and how we use it."
 msgstr "Această politică de confidențialitate (&quot;Politica de confidențialitate&quot;) descrie informațiile pe care BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) le colectează prin intermediul platformei noastre de formare online și modul în care le folosim."
 
-msgid "The Samilia Foundation is responsible for the implementation of this e-learning platform in collaboration with the developer."
+msgid "Business Against Slavery is a joint project by the Samilia Foundation and Not For Sale, co-funded by the Prevention of and Fight against Crime Programme of the European Union. The project aims to engage the European business community to address the of human trafficking by offering a set of resources to encourage awareness raising, employment of survivors, and increased supply chain responsibility."
 msgstr "BUSINESS AGAINST SLAVERY este un proiect comun derulat de catre Fundatiile Samilia si Not For Sale, co-finantat prin Programul de Preventie si Lupta Impotriva Crimei Organizate al Uniunii Europene. Proiectul urmareste sa implice comunitatea europeana de business si sa abordeze chestiunea traficului de fiinte umane oferind un set de resurse care sa incurajeze cresterea constientizarii, angajarea supravietuitorilor acestui flagel si cresterea responsabilitatii intregului lant comercial."
 
-msgid "For purposes of this agreement, the terms “we,” “us,” and “our” refer to BUSINESS AGAINST SLAVERY. “You” refers to you, as a user of the BUSINESS AGAINST SLAVERY training platform. By accepting our Privacy Policy and Terms of Use, you consent to our collection and use of your information as described in this Privacy Policy."
+msgid "The Samilia Foundation is responsible for the implementation of this e-learning platform in collaboration with the developer."
 msgstr "Pentru scopurile prezentului acord, termenii &quot;noi&quot;, și &quot;nostru&quot; se referă la BUSINESS AGAINST SLAVERY. &quot;Dumneavoastră&quot; se referă la dumneavoastră, ca utilizator al platformei de formare BUSINESS AGAINST SLAVERY. Prin acceptarea Politicii noastre de confidențialitate și Termenii de utilizare, sunteți de acord cu privire la colectarea și utilizarea informațiilor dumneavoastră așa cum este descris în această politică de confidențialitate."
+
+msgid "For purposes of this agreement, the terms “we,” “us,” and “our” refer to BUSINESS AGAINST SLAVERY. “You” refers to you, as a user of the BUSINESS AGAINST SLAVERY training platform. By accepting our Privacy Policy and Terms of Use, you consent to our collection and use of your information as described in this Privacy Policy."
+msgstr " "
 
 msgid "Information We Collect"
 msgstr "Informații colectate"
@@ -7784,7 +7787,7 @@ msgstr "Ne puteți contacta cu privire la această declarație de confidențiali
 
 # About
 msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group and with financial support from the European Commission. By completing this short course, you will learn about what human trafficking is and why it occurs. You will also find out what you and your company can do to help fight trafficking. We hope that you finish this course feeling empowered to help create a world where no one is for sale."
-msgstr ""
+msgstr " "
 
 msgid "About Samilia"
 msgstr "Despre Samilia Foundation"

@@ -15914,8 +15914,6 @@ msgstr ""
 #: lms/templates/static_templates/faq.html
 #: lms/templates/static_templates/faq.html
 #: themes/red-theme/lms/templates/footer.html
-msgid "FAQ"
-msgstr "ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ"
 
 #: lms/templates/static_templates/media-kit.html
 #: lms/templates/static_templates/media-kit.html
@@ -19276,8 +19274,6 @@ msgid "Send an email to {email}"
 msgstr ""
 
 #: cms/templates/widgets/sock.html
-msgid "Contact Us"
-msgstr "Επικοινωνήστε μαζί μας"
 
 #: cms/templates/widgets/tabs-aggregator.html
 msgid "name"
@@ -19948,6 +19944,9 @@ msgstr ""
 msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
 msgstr "ΠΟΛΙΤΙΚΗ ΠΡΟΣΤΑΣΙΑΣ ΠΡΟΣΩΠΙΚΩΝ ΔΕΔΟΜΕΝΩΝ-ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ"
 
+msgid "This Privacy Policy (“Privacy Policy”) describes the information that BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) collects through our online training platform and how we use it."
+msgstr " "
+
 msgid "Business Against Slavery is a joint project by the Samilia Foundation and Not For Sale, co-funded by the Prevention of and Fight against Crime Programme of the European Union. The project aims to engage the European business community to address the of human trafficking by offering a set of resources to encourage awareness raising, employment of survivors, and increased supply chain responsibility."
 msgstr "Η παρούσα Πολιτική Προστασίας Προσωπικών Δεδομένων («Πολιτική Απορρήτου») περιγράφει τις πληροφορίες που συλλέγονται κατά τη διεξαγωγή ΕΠΙΧΕΙΡΗΜΑΤΙΚΩΝ ΔΡΑΣΕΩΝ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ («ΕΠΙΧΕΙΡΗΜΑΤΙΚΕΣ ΔΡΑΣΕΙΣ ΚΑΤΑ ΤΗΣ ΔΟΥΛΕΙΑΣ») μέσω της διαδικτυακής πλατφόρμας εκπαίδευσης που διαθέτουμε και πώς χρησιμοποιούμε τις πληροφορίες αυτές."
 
@@ -20019,13 +20018,13 @@ msgid "You can support and find out more on Samilia on"
 msgstr "Μπορείτε να υποστηρίξετε την οργάνωση και να βρείτε περισσότερες πληροφορίες στο"
 
 msgid "About Not For Sale"
-msgstr ""
-
-msgid "Founded in 2007, Not For Sale works to protect, equip and empower survivors of human trafficking and those at risk of exploitation. With headquarters in San Francisco, California, the international nonprofit manages projects with children and adults in North America, Europe and Asia."
 msgstr "Για Not For Sale"
 
+msgid "Founded in 2007, Not For Sale works to protect, equip and empower survivors of human trafficking and those at risk of exploitation. With headquarters in San Francisco, California, the international nonprofit manages projects with children and adults in North America, Europe and Asia."
+msgstr "Η Not For Sales ιδρύθηκε το 2007 και στοχεύει στην προστασία και ενδυνάμωση πρώην θυμάτων εμπορίας ανθρώπων καθώς και αυτών που αποτελούν πιθανά θύματα εκμετάλλευσης. Διατηρώντας γραφεία στο Σαν Φραντσίσκο, στην Καλιφόρνια, αυτή η διεθνής ΜΚΟ χειρίζεται έργα που αφορούν παιδιά αλλά και ενηλίκους στη νότια Αμερική, Ευρώπη και Ασία."
+
 msgid "Not For Sale also works to engage businesses in the fight against human trafficking with awareness raising, supply chain responsibility, and survivor training and employment programs."
-msgstr "Η Not For Sales ιδρύθηκε το 2007 και στοχεύει στην προστασία και ενδυνάμωση πρώην θυμάτων εμπορίας ανθρώπων καθώς και αυτών που αποτελούν πιθανά θύματα εκμετάλλευσης. Διατηρώντας γραφεία στο Σαν Φραντσίσκο, στην Καλιφόρνια, αυτή η διεθνής ΜΚΟ χειρίζεται έργα που αφορούν παιδιά αλλά και ενηλίκους στη νότια Αμερική, Ευρώπη και Ασία. Η Not For Sale στοχεύει στην εμπλοκή και συμμετοχή των ιδιωτικών εταιριών στην καταπολέμηση της εμπορίας ανθρώπων με εκστρατείες ενημέρωσης, με εφαρμογή υπεύθυνων πρακτικών στην εφοδιαστική αλυσίδα και την ανάπτυξη προγραμμάτων εκπαίδευσης και απασχόλησης για πρώην θύματα εμπορίας ανθρώπων."
+msgstr "Η Not For Sale στοχεύει στην εμπλοκή και συμμετοχή των ιδιωτικών εταιριών στην καταπολέμηση της εμπορίας ανθρώπων με εκστρατείες ενημέρωσης, με εφαρμογή υπεύθυνων πρακτικών στην εφοδιαστική αλυσίδα και την ανάπτυξη προγραμμάτων εκπαίδευσης και απασχόλησης για πρώην θύματα εμπορίας ανθρώπων."
 
 msgid "To date, Not For Sale has provided services to more than 10,000 people in 11 countries. Learn more at "
 msgstr "Μέχρι σήμερα, έχει προσφέρει υπηρεσίες σε περισσότερους απο 10.000 ανθρώπους σε 11 χώρες. Μάθε περισσότερα στο "

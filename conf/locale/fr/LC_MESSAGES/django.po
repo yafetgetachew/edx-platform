@@ -20735,8 +20735,6 @@ msgid "Send an email to {email}"
 msgstr "Envoyer un email à {email}"
 
 #: cms/templates/widgets/sock.html
-msgid "Contact Us"
-msgstr "Nous contacter"
 
 #: cms/templates/widgets/tabs-aggregator.html
 msgid "name"
@@ -21409,6 +21407,9 @@ msgstr ""
 # Privacy
 msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
 msgstr "POLITIQUE DE CONFIDENTIALITE DE BUSINESS AGAINST SLAVERY"
+
+msgid "This Privacy Policy (“Privacy Policy”) describes the information that BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) collects through our online training platform and how we use it."
+msgstr " "
 
 msgid "Business Against Slavery is a joint project by the Samilia Foundation and Not For Sale, co-funded by the Prevention of and Fight against Crime Programme of the European Union. The project aims to engage the European business community to address the of human trafficking by offering a set of resources to encourage awareness raising, employment of survivors, and increased supply chain responsibility."
 msgstr "Cette Politique de Confidentialité (« Politique de Confidentialité ») décrit les informations que BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) recueille au travers de notre plate-forme de formation en ligne ainsi que l’utilisation de ces informations."
