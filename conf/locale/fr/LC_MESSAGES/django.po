@@ -21479,7 +21479,7 @@ msgid "Samilia offers corporate workshops on human trafficking in order to raise
 msgstr "Samilia organise des workshops de sensibilisation en entreprise afin d’aborder le problème de l’esclavage dans les chaînes de production et d’impliquer le secteur privé dans la lutte contre ce crime en expansion."
 
 msgid "You can support and find out more on Samilia on"
-msgstr "Vous pouvez soutenir la Fondation Samilia et avoir plus d’informations en cliquant sur le lien suivant"
+msgstr "Vous pouvez soutenir la Fondation Samilia et avoir plus d’informations en cliquant sur le lien suivant:"
 
 msgid "About Not For Sale"
 msgstr "A propos de Not For Sale"
@@ -21491,38 +21491,38 @@ msgid "Not For Sale also works to engage businesses in the fight against human t
 msgstr "Not For Sale s’atèle également à engager le secteur privé dans la lutte contre la traite des êtres humains en sensibilisant, en travaillant sur la responsabilité sociale des entreprises et en offrant des formations et des opportunités de travail pour des ex-victimes de traite des êtres humains."
 
 msgid "To date, Not For Sale has provided services to more than 10,000 people in 11 countries. Learn more at "
-msgstr "Jusqu’à ce jour, Not For Sale a aidé plus de 10.000 personnes dans 11 pays différents. Pour en savoir plus "
+msgstr "Jusqu’à ce jour, Not For Sale a aidé plus de 10.000 personnes dans 11 pays différents. Pour en savoir plus: "
 
 # FAQ
 msgid "FAQ"
 msgstr "FAQ"
 
 msgid "Who created this course?"
-msgstr "Qui a créé ce cours?"
+msgstr "Qui a créé ce cours ?"
 
 msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group, and with financial support from the European Commission."
 msgstr "Ce cours a été développé par Not For Sale et la Fondation Samilia en consultation avec le Groupe Delhaize et avec le soutien financier de la Commission Européenne."
 
 msgid "What is the purpose of this course?"
-msgstr "Quel est le but de ce cours?"
+msgstr "Quel est le but de ce cours ?"
 
 msgid "This course is designed to raise awareness about human trafficking. Its intention is to inform and educate users about the issue and what they can do to be part of the solution."
 msgstr "Ce cours a pour but de sensibiliser au problème de la traite des êtres humains. L’intention est d’informer et d’éduquer les utilisateurs au problème et également leur donner des outils pour faire partie de la solution."
 
 msgid "How long is this course?"
-msgstr "Quelle est la longueur de ce cours?"
+msgstr "Quelle est la longueur de ce cours ?"
 
 msgid "Completing this course should take you no more than 40 minutes. However, there are optional sections and resources that you can access to gain a deeper knowledge on the issue, which might add to the total time for completing this course."
 msgstr "Compléter ce cours ne devrait pas prendre plus de 20 minutes. Cependant, si vous allez dans les sections en option afin d’approfondir vos connaissances sur le sujet, cela vous prendra un peu plus de temps pour tout compléter."
 
 msgid "Do I need to know anything about human trafficking before taking this course?"
-msgstr "Est-ce que je dois déjà savoir des choses sur la traite des êtres humains avant de suivre ce cours?"
+msgstr "Est-ce que je dois déjà savoir des choses sur la traite des êtres humains avant de suivre ce cours ?"
 
 msgid "No, this course is an introductory course designed to educate and inform you about human trafficking. Previous knowledge is not required."
 msgstr "Non, ce cours est une introduction dans le but d’éduquer et d’informer sur la traite des êtres humains. Des connaissances préalables ne sont pas nécessaires."
 
 msgid "If I see an instance of human trafficking taking place, what should I do?"
-msgstr "Est-ce que je dois déjà savoir des choses sur la traite des êtres humains avant de suivre ce cours?"
+msgstr "Est-ce que je dois déjà savoir des choses sur la traite des êtres humains avant de suivre ce cours ?"
 
 msgid "Do not intervene to try rescue someone you suspect of being a victim of human trafficking or confront a trafficker, as this can put you, the potential victim, and the people around you in danger. If you suspect a case of human trafficking is taking place, call the local police for help."
 msgstr "Non, ce cours est une introduction dans le but d’éduquer et d’informer sur la traite des êtres humains. Des connaissances préalables ne sont pas nécessaires."
