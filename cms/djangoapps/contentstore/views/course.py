@@ -900,11 +900,15 @@ def settings_handler(request, course_key_string):
 
             # see if the ORG of this course can be attributed to a 'Microsite'. In that case, the
             # course about page should be editable in Studio
-            about_page_editable = not microsite.get_value_for_org(
-                course_module.location.org,
-                'ENABLE_MKTG_SITE',
-                settings.FEATURES.get('ENABLE_MKTG_SITE', False)
-            )
+
+            # Changed for showing course overview fields
+
+            # about_page_editable = not microsite.get_value_for_org(
+            #     course_module.location.org,
+            #     'ENABLE_MKTG_SITE',
+            #     settings.FEATURES.get('ENABLE_MKTG_SITE', False)
+            # )
+            about_page_editable = True
 
             short_description_editable = settings.FEATURES.get('EDITABLE_SHORT_DESCRIPTION', True)
             settings_context = {
