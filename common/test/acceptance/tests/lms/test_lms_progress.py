@@ -92,20 +92,21 @@ class ProgressTest(UniqueCourseTest):
         """
         GradingConfigFixture(self.course_id, {'graders': assignments}).install()
 
-    def test_passing_info_table_is_hidden_when_all_passing_grades_equal_zero(self):
+    def test_passing_info_table_is_hidden_when_all_passing_grade_enabled_checkboxes_disabled(self):
         """
-        Ensures that the passing information table is hidden when all passing grades equal 0.
+        Ensures that the passing information table is hidden when all `passing grade enabled`
+        checkboxes are disabled.
         """
         self.set_assignments([
             {
-                'type': 'Homework', 'passing_grade': 0, 'weight': 50,
+                'type': 'Homework', 'weight': 50,
                 'min_count': 2, 'drop_count': 0, 'short_label': 'HW',
-                'passing_grade_enabled': True
+                'passing_grade_enabled': False
             },
             {
-                'type': 'Exam', 'passing_grade': 0, 'weight': 50,
+                'type': 'Exam', 'weight': 50,
                 'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
-                'passing_grade_enabled': True
+                'passing_grade_enabled': False
             },
         ])
 
