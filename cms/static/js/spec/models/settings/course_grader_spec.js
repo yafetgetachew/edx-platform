@@ -85,28 +85,28 @@ define([
                 expect(errors.weight).toBe('Please enter an integer between 0 and 100.');
             });
 
-            it('gives an error if passing_grade is less than 0 or higher than 100', function() {
+            it('gives an error if passing_grade is less than 1 or higher than 100', function() {
                 var model = new CourseGrader(), errors;
                 // don't allow negative integers
                 errors = model.validate({passing_grade: -12}, {validate:true});
-                expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
+                expect(errors.passing_grade).toBe('Please enter an integer between 1 and 100.');
                 // don't allow value more then 100
                 errors = model.validate({passing_grade: 101}, {validate:true});
-                expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
+                expect(errors.passing_grade).toBe('Please enter an integer between 1 and 100.');
             });
 
             it('gives an error if passing_grade is not a number', function() {
                 var model = new CourseGrader(), errors;
                 errors = model.validate({passing_grade: 'abc'}, {validate:true});
-                expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
+                expect(errors.passing_grade).toBe('Please enter an integer between 1 and 100.');
             });
 
             it('gives an error if passing_grade is empty or string with only spaces', function() {
                 var model = new CourseGrader(), errors;
                 errors = model.validate({passing_grade: ''}, {validate:true});
-                expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
+                expect(errors.passing_grade).toBe('Please enter an integer between 1 and 100.');
                 errors = model.validate({passing_grade: '  '}, {validate:true});
-                expect(errors.passing_grade).toBe('Please enter an integer between 0 and 100.');
+                expect(errors.passing_grade).toBe('Please enter an integer between 1 and 100.');
             });
 
             it('gives an error if min_count is less than 1 or drop_count is NaN', function() {

@@ -73,7 +73,7 @@ def grader_from_conf(conf):
     for subgraderconf in conf:
         subgraderconf = subgraderconf.copy()
         weight = subgraderconf.pop("weight", 0)
-        passing_grade = subgraderconf.pop("passing_grade", 0)
+        passing_grade = subgraderconf.pop("passing_grade", 1)
         # NOTE: 'name' used to exist in SingleSectionGrader. We are deprecating SingleSectionGrader
         # and converting everything into an AssignmentFormatGrader by adding 'min_count' and
         # 'drop_count'. AssignmentFormatGrader does not expect 'name', so if it appears

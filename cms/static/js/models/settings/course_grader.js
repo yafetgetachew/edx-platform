@@ -7,7 +7,7 @@ var CourseGrader = Backbone.Model.extend({
         "drop_count" : 0,
         "short_label" : "", // what to use in place of type if space is an issue
         "weight" : 0, // int 0..100,
-        "passing_grade": 0, // int 0..100
+        "passing_grade": 1, // int 1..100
         "passing_grade_enabled": false
     },
     parse : function(attrs) {
@@ -68,8 +68,8 @@ var CourseGrader = Backbone.Model.extend({
         if (_.has(attrs, 'passing_grade')) {
             var passingGrade = attrs.passing_grade,
                 intPsGrade = Math.round(passingGrade); // see if this ensures value saved is int
-            if (!isFinite(intPsGrade) || /\D+/.test(passingGrade) || (_.isString(passingGrade) && _.isEmpty(passingGrade.trim())) || intPsGrade < 0 || intPsGrade > 100) {
-                errors.passing_grade = gettext("Please enter an integer between 0 and 100.");
+            if (!isFinite(intPsGrade) || /\D+/.test(passingGrade) || (_.isString(passingGrade) && _.isEmpty(passingGrade.trim())) || intPsGrade < 1 || intPsGrade > 100) {
+                errors.passing_grade = gettext("Please enter an integer between 1 and 100.");
             }
             else attrs.passing_grade = intPsGrade;
         }
