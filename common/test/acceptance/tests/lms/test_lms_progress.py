@@ -92,10 +92,10 @@ class ProgressTest(UniqueCourseTest):
         """
         GradingConfigFixture(self.course_id, {'graders': assignments}).install()
 
-    def test_passing_info_table_is_hidden_when_all_passing_grade_enabled_checkboxes_disabled(self):
+    def test_passing_info_table_is_hidden_when_all_assignments_has_passing_grade_disabled(self):
         """
-        Ensures that the passing information table is hidden when all `passing grade enabled`
-        checkboxes are disabled.
+        Ensures that the passing information table is hidden when all Assignments has
+        passing grade disabled.
         """
         self.set_assignments([
             {
@@ -115,8 +115,8 @@ class ProgressTest(UniqueCourseTest):
 
     def test_passing_info_table_is_visible(self):
         """
-        Ensures that the passing information table is visible when at least one passing grade
-        is greater than 0 and it does not dispaly Assignments with 0 passing grade.
+        Ensures that the passing information table is visible when at least one Assignment has
+        passing grade enabled and it does not dispaly Assignments with passing grade disabled.
         """
         self.set_assignments([
             {
@@ -125,9 +125,9 @@ class ProgressTest(UniqueCourseTest):
                 'passing_grade_enabled': True
             },
             {
-                'type': 'Exam', 'passing_grade': 0, 'weight': 50,
+                'type': 'Exam', 'weight': 50,
                 'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
-                'passing_grade_enabled': True
+                'passing_grade_enabled': False
             },
         ])
 
@@ -143,7 +143,7 @@ class ProgressTest(UniqueCourseTest):
         Scenario: Ensures that the passing information table has correct values
         Given I have a course with 2 categories ("Homework", "Exam")
         And "Homework" has passing grade "70" and contains 2 problems
-        And "Exam" has passing grade "0" and contains 1 problem
+        And "Exam" has passing grade disabled and contains 1 problem
         When I pass the 1st Homework's problem (current grade for the category is 50)
         And I go to the Progress page
         Then I see that "Homework" category is not passed in the passing information table
@@ -158,9 +158,9 @@ class ProgressTest(UniqueCourseTest):
                 'passing_grade_enabled': True
             },
             {
-                'type': 'Exam', 'passing_grade': 0, 'weight': 50,
+                'type': 'Exam', 'weight': 50,
                 'min_count': 1, 'drop_count': 0, 'short_label': 'EX',
-                'passing_grade_enabled': True
+                'passing_grade_enabled': False
             },
         ])
 
