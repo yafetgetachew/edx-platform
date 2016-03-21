@@ -1,20 +1,26 @@
 <%! from django.utils.translation import ugettext as _ %>
 
-${_("Dear {full_name}").format(full_name=full_name)}
+Dear Associates, 
 
-${_("You have been enrolled in {course_name} at {site_name} by a member "
-	"of the course staff. The course should now appear on your {site_name} "
-	"dashboard.").format(
-		course_name=course.display_name_with_default,
-		site_name=site_name
-	)}
+Welcome to the on line training for the human trafficking issue! It is part of a big European project funded by the European Commission that aims to raise awareness around Human Trafficking.
 
-${_("To start accessing course materials, please visit {course_url}").format(
-		course_url=course_url
-	)}
-
-----
-${_("This email was automatically sent from {site_name} to "
-	"{full_name}").format(
-		site_name=site_name, full_name=full_name
-	)}
+The core period is scheduled from March 30th through April 15th across DG Europe companies.  However, you been selected to join a testing that begins on March 21st    for a working week till March 25th.The training is being administered by an independent company , Raccoon Gang. 
+Please note that all responses are confidential, and no one from Delhaize Group will have access to individual data.
+The on line training will take about 20 minutes to complete. In the pure training, which lasts about 12 minutes you will have the opportunity to get overall information about Human Trafficking. In the remaining time you will watch real testimonials from victims and a message from Marc Croonen, EVP HR, Internal Communications & Sustainability DG, underlining company’s role in addressing human trafficking. For those who are interested in learning more about the issue, there is a set of optional materials to review.
+Any personal data that will be used, including e-mail addresses and names which are required to register for the training, as well as information on your country of residence, age group, gender (optional) and education (optional) will only be used for your participation in the training and to compile a report containing anonymous, statistical data to be shared with the European Commission. For these purposes, external service providers assisting DG in the training may have access to your personal data. DG shall ensure that these service providers protect your personal data at all time. You have the right to access, and if needed, request rectification or erasure of your personal data. To use this right, please contact yana.lovyagina@raccoongang.com. Furthermore, for data protection, the training course is accessible only from the DG Intranet network (HQ, Stores, Warehouses).
+ 
+To attend the course, follow the instructions below
+ 
+-       Visit https://training.businessagainstslavery.org/dashboard  
+-       login with your email address and insert HUMANTRAFFICKING2016 as password
+ 
+When you begin the course, you will see the sections of the content in the left pane of the course window. You can use the left pane to view the sections and subsections of the course content and to open them in the course page.
+In case you can’t login or having problems during the trainings, please contact yana.lovyagina@raccoongang.com or send a message to human.trafficking@raccoongang.com.
+ 
+We are looking forward to your participation!
+ 
+Best regards,
+ 
+Costas Kalargyros
+ 
+OD & Sustainability Director SEE Region
