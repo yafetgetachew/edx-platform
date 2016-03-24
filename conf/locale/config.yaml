@@ -25,7 +25,7 @@ locales:
     # - es_AR  # Spanish (Argentina)
     # - es_EC  # Spanish (Ecuador)
     # - es_ES  # Spanish (Spain)
-    # - es_MX  # Spanish (Mexico)
+    - es_MX  # Spanish (Mexico)
     # - es_PE  # Spanish (Peru)
     # - et_EE  # Estonian (Estonia)
     # - eu_ES  # Basque (Spain)
