@@ -121,7 +121,7 @@ class TestLetterCutoffPolicy(TestGradebook):
                 "min_count": 1,
                 "drop_count": 0,
                 "short_label": "HW",
-                "passing_grade": 0,
+                "passing_grade_enabled": False,
                 "weight": 1
             },
         ],
@@ -185,6 +185,7 @@ class TestPassingGrade(TestGradebook):
                 "drop_count": 0,
                 "short_label": "HW",
                 "passing_grade": .9,
+                "passing_grade_enabled": True,
                 "weight": 1
             },
         ],

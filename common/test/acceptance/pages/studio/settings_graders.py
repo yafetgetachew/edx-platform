@@ -266,7 +266,7 @@ class Assignment(object):
         """
         Clicks the 'Passing Grade Enabled' checkbox.
         """
-        self.find_css(self.get_selector('#assignment-passing-grade-enabled')).first.click()
+        self.page.q(css=self.selector+' #assignment-passing-grade-enabled').click()
 
     def __repr__(self):
         return "<{}:{}>".format(self.__class__.__name__, self.name)

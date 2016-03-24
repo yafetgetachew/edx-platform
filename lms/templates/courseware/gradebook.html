@@ -98,7 +98,7 @@ from django.core.urlresolvers import reverse
                 if conf['type'] != category:
                   continue
                 else:
-                  return conf['passing_grade_enabled']
+                  return conf.get('passing_grade_enabled', False)
 
             letter_grade = 'None'
             passing_grade_enabled = is_passing_grade_enabled(section['category'])
@@ -151,5 +151,3 @@ from django.core.urlresolvers import reverse
   </section>
 </div>
 </section>
-
-
