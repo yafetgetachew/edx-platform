@@ -180,7 +180,8 @@ from edxmako.shortcuts import marketing_link
         </div>
 
       </section>
-      % if get_course_about_section(course, "video"):
+        ## added method strip() because whene video has been deleted this function return u'\n\n\n\n\n'
+      % if get_course_about_section(course, "video").strip():
       <a href="#video-modal" class="media" rel="leanModal">
         <div class="hero">
           <img src="${course_image_url(course)}" alt="" />
