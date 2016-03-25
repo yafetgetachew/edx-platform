@@ -106,7 +106,9 @@ class CourseDetails(object):
         store = modulestore()
         if data is None:
             try:
-                store.delete_item(temploc, user.id)
+                about_item = store.get_item(temploc)
+                about_item.data = ''
+                store.update_item(about_item, user.id, allow_not_found=True)
             # Ignore an attempt to delete an item that doesn't exist
             except ValueError:
                 pass
