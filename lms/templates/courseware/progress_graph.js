@@ -90,7 +90,11 @@ $(function () {
             detail_tooltips[section['category'] + "-grade_breakdown"] = [ section['detail'] ]
   
     totalLabel = _("Total")
-    if not grade_summary['sections_passed']:
+    passing_grade_enabled = filter(
+        lambda x: x,
+        [item['passing_grade_enabled'] for item in course.raw_grader]
+    )
+    if not grade_summary['sections_passed'] and passing_grade_enabled:
         totalLabel += "<br><span style=\"color: #b60000;white-space: nowrap;\">({status})</span>" .format(
         status = _('not pass')
     )
