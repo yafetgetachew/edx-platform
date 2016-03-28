@@ -372,7 +372,7 @@ class LocalFSReportStore(ReportStore):
         full_path = self.path_to(course_id, filename)
         directory = os.path.dirname(full_path)
         if not os.path.exists(directory):
-            os.mkdir(directory)
+            os.makedirs(directory)
 
         with open(full_path, "wb") as f:
             f.write(buff.getvalue())
@@ -402,8 +402,9 @@ class LocalFSReportStore(ReportStore):
         files = [(filename, os.path.join(course_dir, filename)) for filename in os.listdir(course_dir)]
         files.sort(key=lambda (filename, full_path): os.path.getmtime(full_path), reverse=True)
 
+        mroot_len = len(settings.MEDIA_ROOT)
+        _build_url = lambda fp: os.path.join(settings.MEDIA_URL, urllib.quote(fp[mroot_len:]))
         return [
-            ## "file://"
-            (filename, (urllib.quote(full_path)))
+            (filename, (_build_url(full_path)))
             for filename, full_path in files
         ]
