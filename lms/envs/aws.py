@@ -744,3 +744,7 @@ AZURE_AD_ID = AUTH_TOKENS.get('AZURE_AD_ID', '')
 ROOT_URLCONF = 'sso_edx_microsoft.lms_urls'
 
 STATICFILES_DIRS = ['/edx/app/edxapp/venvs/edxapp/src/microsoft-oauth2/sso_edx_microsoft/static'] + STATICFILES_DIRS
+
+################ CUSTOM CONFIGURATIONS ################
+
+COPYRIGHT_YEAR = ENV_TOKENS.get('COPYRIGHT_YEAR', COPYRIGHT_YEAR)
