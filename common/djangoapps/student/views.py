@@ -1715,6 +1715,12 @@ def create_account_with_params(request, params):
                 mail.send_mail(subject, message, from_address, [dest_addr], fail_silently=False)
             else:
                 user.email_user(subject, message, from_address)
+
+            if (request.META['HTTP_HOST'] == getattr(settings, 'CMS_BASE', None)
+            or request.META['HTTP_HOST'] != getattr(settings, 'LMS_BASE', None)):
+                mail.send_mail('New user registered in studio',
+                               'Registered user: %s (%s): %s\n' % (user, user.email, profile.name),
+                               from_address, [settings.DEFAULT_FEEDBACK_EMAIL], fail_silently=False)
         except Exception:  # pylint: disable=broad-except
             log.error(u'Unable to send activation email to user from "%s"', from_address, exc_info=True)
     else:
