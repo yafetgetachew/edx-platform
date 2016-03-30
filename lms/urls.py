@@ -42,7 +42,7 @@ urlpatterns = (
     url(r'^accounts/disable_account_ajax$', 'student.views.disable_account_ajax',
         name="disable_account_ajax"),
 
-    url(r'^logout$', 'student.views.logout_user', name='logout'),
+    url(r'^logout$', RedirectView.as_view(url='http://javacademy.ru/wp-login.php?action=logout'), name='logout'),
     url(r'^create_account$', 'student.views.create_account', name='create_account'),
     url(r'^activate/(?P<key>[^/]*)$', 'student.views.activate_account', name="activate"),
 
