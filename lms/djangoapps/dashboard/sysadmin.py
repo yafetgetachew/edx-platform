@@ -306,9 +306,47 @@ class Users(SysadminDashboardView):
         track.views.server_track(request, action, {}, page='user_sysdashboard')
 
         if action == 'download_users':
-            header = [_('username'), _('email'), ]
-            data = ([u.username, u.email] for u in
-                    (User.objects.all().iterator()))
+            header = [
+                _('username'),
+                _('email'),
+                _('full_name'),
+                _('registration_date'),
+                _('global_staff'),
+                _('country'),
+                _('mailing_address'),
+                _('gender'),
+                _('level_of_education')
+            ]
+
+            data = []
+            user_ids = []
+            for up in UserProfile.objects.select_related('user').all().iterator():
+                user_ids.append(up.user_id)
+                data.append([
+                    up.user.username,
+                    up.user.email,
+                    up.name,
+                    up.user.date_joined.__str__(),
+                    up.user.is_staff and 'YES' or 'NO',
+                    up.get_country_display(),
+                    up.mailing_address,
+                    up.gender_display,
+                    up.level_of_education_display
+                ])
+            # Add users withouth profile
+            for u in User.objects.exclude(id__in=user_ids).iterator():
+                data.append([
+                    u.username,
+                    u.email,
+                    u.get_full_name(),
+                    u.date_joined.__str__(),
+                    u.is_staff and 'YES' or 'NO',
+                    '',
+                    '',
+                    '',
+                    ''
+                ])
+            data.sort(key=lambda x: x[3])
             return self.return_csv('users_{0}.csv'.format(
                 request.META['SERVER_NAME']), header, data)
         elif action == 'repair_eamap':
