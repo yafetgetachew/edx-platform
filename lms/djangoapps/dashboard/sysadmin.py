@@ -80,6 +80,10 @@ class SysadminDashboardView(TemplateView):
 
         return self.def_ms.get_courses()
 
+    @classmethod
+    def convert_row(cls, row):
+        return map(lambda v: type(v) is unicode and v.encode('utf-8') or v, row)
+
     def return_csv(self, filename, header, data):
         """
         Convenient function for handling the http response of a csv.
@@ -90,7 +94,7 @@ class SysadminDashboardView(TemplateView):
         writer = csv.writer(csv_file, dialect='excel', quotechar='"',
                             quoting=csv.QUOTE_ALL)
 
-        writer.writerow(header)
+        writer.writerow(self.convert_row(header))
 
         # Setup streaming of the data
         def read_and_flush():
@@ -104,7 +108,7 @@ class SysadminDashboardView(TemplateView):
         def csv_data():
             """Generator for handling potentially large CSVs"""
             for row in data:
-                writer.writerow(row)
+                writer.writerow(self.convert_row(row))
             csv_data = read_and_flush()
             yield csv_data
         response = HttpResponse(csv_data(), content_type='text/csv')
