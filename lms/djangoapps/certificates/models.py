@@ -745,6 +745,7 @@ class CertificateHtmlViewConfiguration(ConfigurationModel):
         }
     """
     _links = getattr(settings, "MKTG_URL_LINK_MAP", {})
+    _footer_logo = getattr(settings, "FOOTER_ORGANIZATION_IMAGE", 'images/logo.png')
     default_config = {
         "default": {
             "accomplishment_class_append": "accomplishment-certificate",
@@ -753,7 +754,7 @@ class CertificateHtmlViewConfiguration(ConfigurationModel):
             "company_privacy_url": '/%s' % _links.get("PRIVACY", ''),
             "company_tos_url": '/%s' % _links.get("TOS", ''),
             "company_verified_certificate_url": "https://edx.org/verified-certificate",
-            "logo_src": os.path.join(settings.STATIC_URL, settings.FOOTER_ORGANIZATION_IMAGE),
+            "logo_src": os.path.join(settings.STATIC_URL, _footer_logo),
             "logo_url": ""
         },
         "honor": {
