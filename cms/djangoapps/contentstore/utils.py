@@ -148,7 +148,7 @@ def get_lms_link_for_certificate_web_view(user_id, course_key, mode):
     if settings.LMS_BASE is None:
         return None
 
-    return u"//{certificate_web_base}/certificates/user/{user_id}/course/{course_id}?preview={mode}".format(
+    return u"//{certificate_web_base}/certificates/user/{user_id}/course/{course_id}?preview_mode={mode}".format(
         certificate_web_base=settings.LMS_BASE,
         user_id=user_id,
         course_id=unicode(course_key),
