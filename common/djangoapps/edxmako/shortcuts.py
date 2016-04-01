@@ -25,7 +25,7 @@ from django.core.urlresolvers import reverse
 log = logging.getLogger(__name__)
 
 
-def marketing_link(name):
+def marketing_link(name, studio=False):
     """Returns the correct URL for a link to the marketing site
     depending on if the marketing site is enabled
 
@@ -33,7 +33,6 @@ def marketing_link(name):
     possible URLs for certain links. This function is to decides
     which URL should be provided.
     """
-
     # link_map maps URLs from the marketing site to the old equivalent on
     # the Django site
     link_map = settings.MKTG_URL_LINK_MAP
@@ -41,8 +40,7 @@ def marketing_link(name):
         'ENABLE_MKTG_SITE',
         settings.FEATURES.get('ENABLE_MKTG_SITE', False)
     )
-
-    if enable_mktg_site and name in settings.MKTG_URLS:
+    if enable_mktg_site and name in settings.MKTG_URLS or studio and name in settings.MKTG_URLS:
         # special case for when we only want the root marketing URL
         if name == 'ROOT':
             return settings.MKTG_URLS.get('ROOT')
