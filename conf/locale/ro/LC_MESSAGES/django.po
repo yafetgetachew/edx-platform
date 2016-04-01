@@ -7729,61 +7729,61 @@ msgid "BUSINESS AGAINST SLAVERY PRIVACY POLICY"
 msgstr "POLITICA DE CONFIDENȚIALITATE BUSINESS AGAINST SLAVERY"
 
 msgid "This Privacy Policy (“Privacy Policy”) describes the information that BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) collects through our online training platform and how we use it."
-msgstr "Această politică de confidențialitate (&quot;Politica de confidențialitate&quot;) descrie informațiile pe care BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) le colectează prin intermediul platformei noastre de formare online și modul în care le folosim."
+msgstr "Politica de confidențialitate (&quot;Politica de confidențialitate&quot;) descrie informațiile pe care BUSINESS AGAINST SLAVERY (“BUSINESS AGAINST SLAVERY”) le colectează prin intermediul platformei noastre de formare online și modul în care le folosim."
 
 msgid "Business Against Slavery is a joint project by the Samilia Foundation and Not For Sale, co-funded by the Prevention of and Fight against Crime Programme of the European Union. The project aims to engage the European business community to address the of human trafficking by offering a set of resources to encourage awareness raising, employment of survivors, and increased supply chain responsibility."
-msgstr "BUSINESS AGAINST SLAVERY este un proiect comun derulat de catre Fundatiile Samilia si Not For Sale, co-finantat prin Programul de Preventie si Lupta Impotriva Crimei Organizate al Uniunii Europene. Proiectul urmareste sa implice comunitatea europeana de business si sa abordeze chestiunea traficului de fiinte umane oferind un set de resurse care sa incurajeze cresterea constientizarii, angajarea supravietuitorilor acestui flagel si cresterea responsabilitatii intregului lant comercial."
+msgstr "BUSINESS AGAINST SLAVERY este un proiect comun, derulat de catre Fundatiile Samilia si Not For Sale, co-finantat prin Programul de Preventie si Lupta Impotriva Crimei Organizate, al Uniunii Europene. Proiectul urmăreste să implice comunitatea europeană de business și să abordeze chestiunea traficului de ființe umane, oferind un set de resurse care să încurajeze creșterea conștientizării, angajarea supraviețuitorilor acestui flagel și creșterea responsabilității întregului lanț comercial."
 
 msgid "The Samilia Foundation is responsible for the implementation of this e-learning platform in collaboration with the developer."
-msgstr "Pentru scopurile prezentului acord, termenii &quot;noi&quot;, și &quot;nostru&quot; se referă la BUSINESS AGAINST SLAVERY. &quot;Dumneavoastră&quot; se referă la dumneavoastră, ca utilizator al platformei de formare BUSINESS AGAINST SLAVERY. Prin acceptarea Politicii noastre de confidențialitate și Termenii de utilizare, sunteți de acord cu privire la colectarea și utilizarea informațiilor dumneavoastră așa cum este descris în această politică de confidențialitate."
+msgstr " "
 
 msgid "For purposes of this agreement, the terms “we,” “us,” and “our” refer to BUSINESS AGAINST SLAVERY. “You” refers to you, as a user of the BUSINESS AGAINST SLAVERY training platform. By accepting our Privacy Policy and Terms of Use, you consent to our collection and use of your information as described in this Privacy Policy."
-msgstr " "
+msgstr "Pentru scopurile prezentului acord, termenii &quot;noi&quot; și &quot;nostru&quot; se referă la BUSINESS AGAINST SLAVERY. &quot;Dumneavoastră&quot; se referă la dumneavoastră, ca utilizator al platformei de formare BUSINESS AGAINST SLAVERY. Prin acceptarea Politicii noastre de confidențialitate și a Termenilor de utilizare, sunteți de acord cu privire la colectarea și utilizarea informațiilor dumneavoastră, așa cum este descris în această politică de confidențialitate."
 
 msgid "Information We Collect"
 msgstr "Informații colectate"
 
 msgid "We collect information from and about you and your device. The personal information we collect is the information that you voluntarily provide to us during your creation of an account. Users cannot access the training platform without creating an account. We collect from you your first name, last name, user name, email address, country of residence, and age. We also collect from you information about your gender and highest level of education completed, if you have elected to disclose this information."
-msgstr "Colectăm informații de la și despre dumneavoastră și dispozitivul dumneavoastră. Informațiile cu caracter personal pe care le colectăm sunt informațiile pe care le furnizați în mod voluntar în timpul creării unui cont. Utilizatorii nu pot accesa platforma de formare, fără a crea un cont. Colectăm de la dvs. prenumele, numele de familie, numele de utilizator, adresa de email, țara de reședință și vârsta. De asemenea, colectăm informații despre gen și cel mai înalt nivel de educație finalizat, dacă ați ales să dezvăluiți aceste informații."
+msgstr "Colectăm informații de la și despre dumneavoastră și compania dumneavoastră. Informațiile cu caracter personal pe care le colectăm sunt informațiile pe care le furnizați, în mod voluntar, în timpul creării unui cont. Utilizatorii nu pot accesa platforma de formare, fără a crea un cont. Colectăm de la dvs. prenumele, numele de familie, numele de utilizator, adresa de email, țara de reședință și vârsta. De asemenea, colectăm informații despre gen și cel mai înalt nivel de educație finalizat, dacă ați ales să dezvăluiți aceste informații."
 
 msgid "How We Use And Share Information"
 msgstr "Cum folosim și partajăm informațiile"
 
 msgid "We use the personal information you provide to us to create an account through which you can utilize BUSINESS AGAINST SLAVERY services. We collect data on the general usage of the training platform. This data is used to provide The Samilia Foundation and Not For Sale with statistical analysis for how the training platform is used. This data may be used by The Samilia Foundation, Not For Sale, or third parties to make decisions about technical improvements to the training platform."
-msgstr "Folosim informațiile personale pe care le furnizați pentru a crea un cont prin care puteți utiliza serviciile BUSINESS AGAINST SLAVERY. Colectăm date privind utilizarea generală a platformei de formare. Aceste date sunt utilizate pentru a oferi Fundației Samilia și „Not For Sale” analize statistice despre modul în care este utilizată platforma de formare. Aceste date pot fi utilizate de către Fundația Samilia pentru a lua decizii cu privire la îmbunătățiri tehnice ale platformei de instruire."
+msgstr "Folosim informațiile personale pe care le furnizați pentru a crea un cont prin care puteți utiliza serviciile BUSINESS AGAINST SLAVERY. Colectăm date privind utilizarea generală a platformei de formare. Aceste date sunt utilizate pentru a oferi Fundației Samilia și Not For Sale analize statistice despre modul în care este utilizată platforma de formare. Aceste date pot fi utilizate de către Fundația Samilia pentru a lua decizii cu privire la îmbunătățiri tehnice ale platformei de instruire."
 
 msgid "Except as otherwise stated in this Privacy Policy, we do not sell, trade, rent, or otherwise share for marketing purposes the Personal Information that we collect with third parties without your consent."
-msgstr "Cu excepția situațiilor prezentate altfel în această politică de confidențialitate, nu vindem, nu comercializăm, nu închiriem și nu împărtășim în alt fel pentru scopuri de marketing informațiile personale pe care le colectăm cu terțe părți fără consimțământul dumneavoastră."
+msgstr "Cu excepția situațiilor prezentate altfel în această politică de confidențialitate, nu vindem, nu comercializăm, nu închiriem și nu împărtășim, în alt fel, pentru scopuri de marketing informațiile personale, pe care le colectăm cu terțe părți, fără consimțământul dumneavoastră."
 
 msgid "How We Protect Information"
 msgstr "Cum protejăm informațiile"
 
 msgid "We strive to protect your information from unauthorized access, and take precautions against security breaches of our customer databases. We collect only limited personal information, and that information is housed within a dedicated server that has been encrypted using technological measures, including encryption, firewalls, and secure socket layer technology, to ensure security."
-msgstr "Ne străduim să vă protejăm informațiile împotriva accesului neautorizat și luăm măsuri de precauție împotriva breșelor de securitate a bazelor cu datele clienților noștri. Colectăm doar informații personale limitate, iar respectivele informații se află într-un server dedicat care a fost criptat folosind măsuri tehnologice, inclusiv criptarea, firewall-uri și tehnologia Secure Socket Layer, pentru a asigura securitatea."
+msgstr "Ne străduim să vă protejăm informațiile împotriva accesului neautorizat și luăm măsuri de precauție împotriva breșelor de securitate a bazelor cu datele ale clienților noștri. Colectăm doar informații personale limitate, iar respectivele informații se află într-un server dedicat, care a fost criptat, folosind măsuri tehnologice, inclusiv criptarea, firewall-uri și tehnologia Secure Socket Layer, pentru a asigura securitatea."
 
 msgid "This is not a guarantee that your information may not be accessed, disclosed, or altered by breach of such firewalls and secure server software. By using our training platform, you acknowledge that you understand and agree to assume these risks."
-msgstr "Aceasta nu este o garanție că informațiile nu pot fi accesate, divulgate sau modificate prin încălcarea acestor firewall-uri și software-ului serverului securizat. Prin utilizarea platformei noastre de formare, confirmați că ați înțeles și sunteți de acord să vă asumați aceste riscuri."
+msgstr "Aceasta nu este o garanție că informațiile nu pot fi accesate, divulgate sau modificate prin încălcarea acestor firewall-uri și a software-ului serverului securizat. Prin utilizarea platformei noastre de formare, confirmați că ați înțeles și sunteți de acord să vă asumați aceste riscuri."
 
 msgid "Your Rights and Correcting Your Information"
 msgstr "Drepturile dvs. și corectarea informațiile dvs."
 
 msgid "You have a right at any time to stop us from contacting you with additional information about the initiatives of BUSINESS AGAINST SLAVERY and The Samilia Foundation and Not For Sale. If you receive Promotional Communications from us, you will be able to indicate a preference to stop receiving further Promotional Communications from us and will have the opportunity to “opt-out” by following the unsubscribe instructions provided in the e-mail."
-msgstr "Aveți dreptul în orice moment să opriți primirea de informații suplimentare despre inițiativele BUSINESS AGAINST SLAVERY și ale Fundației Samilia. Dacă primiți comunicări promoționale de la noi, puteți indica preferința pentru a nu mai primi alte comunicări promoționale de la noi și veți avea posibilitatea de a &quot;renunța&quot;, urmând instrucțiunile de dezabonare furnizate în e-mail."
+msgstr "Aveți dreptul, în orice moment, să opriți primirea de informații suplimentare despre inițiativele BUSINESS AGAINST SLAVERY și ale Fundației Samilia. Dacă primiți comunicări promoționale de la noi, puteți indica preferința pentru a nu mai primi alte comunicări promoționale de la noi și veți avea posibilitatea de a &quot;renunța&quot;, urmând instrucțiunile de dezabonare furnizate în e-mail."
 
 msgid "Please note that despite any indicated email marketing preferences, we may send you administrative emails regarding BUSINESS AGAINST SLAVERY, including, for example, notices of material updates to our Privacy Policy."
-msgstr "Vă rugăm să rețineți că în ciuda oricăror preferințe de marketing indicate în e-mail, este posibil să vă trimitem e-mailuri administrative privind BUSINESS AGAINST SLAVERY, incluzând de exemplu, anunțuri de actualizări materiale ale Politicii de confidențialitate."
+msgstr "Vă rugăm să rețineți că, în ciuda oricăror preferințe de marketing indicate în e-mail, este posibil să vă trimitem e-mailuri administrative privind BUSINESS AGAINST SLAVERY, incluzând de exemplu, anunțuri de actualizări ale Politicii de confidențialitate."
 
 msgid "Modifications to Our Privacy Policy"
 msgstr "Modificările aduse Politicii noastre de confidențialitate"
 
 msgid "We may revise our Privacy Policy at any time. We will notify you about any significant changes to our policy by sending a notice to users via email. Non material changes or clarifications will take effect immediately; significant changes will go into effect 30 days after we notify. You should periodically check this privacy policy for updates."
-msgstr "Putem revizui politica noastră de confidențialitate în orice moment. Vă vom anunța cu privire la orice modificări semnificative aduse politicii noastre printr-o notificare către utilizatori prin e-mail. Schimbările nemateriale sau clarificările vor avea efect imediat; schimbările semnificative vor intra în vigoare după 30 de zile de la notificare. Trebuie să verificați periodic această politică de confidențialitate pentru actualizări."
+msgstr "Putem revizui politica noastră de confidențialitate, în orice moment. Vă vom anunța cu privire la orice modificări semnificative aduse politicii noastre, printr-o notificare către utilizatori, prin e-mail. Schimbările nemateriale sau clarificările vor avea efect imediat; schimbările semnificative vor intra în vigoare după 30 de zile de la notificare. Trebuie să verificați periodic această politică de confidențialitate, pentru actualizări."
 
 msgid "Contact Us"
 msgstr "Contact"
 
 msgid "You can contact us about this privacy statement by writing us via email at: "
-msgstr "Ne puteți contacta cu privire la această declarație de confidențialitate în scris prin e-mail la: "
+msgstr "Ne puteți contacta cu privire la această declarație de confidențialitate, în scris, prin e-mail, la: "
 
 # About
 msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group and with financial support from the European Commission. By completing this short course, you will learn about what human trafficking is and why it occurs. You will also find out what you and your company can do to help fight trafficking. We hope that you finish this course feeling empowered to help create a world where no one is for sale."
@@ -7793,25 +7793,25 @@ msgid "About Samilia"
 msgstr "Despre Samilia Foundation"
 
 msgid "Samilia Foundation was created in 2007 in order to alert and raise awareness on human trafficking in Belgium. Samilia develops prevention and social inclusion projects in countries of origin of victims of trafficking, whether victims of sexual exploitation or forced labour, and collaborates with the private sector, local and international NGOs and governments in order to efficiently set actions to combat the root causes of human trafficking."
-msgstr "Fundația Samilia a fost creată în 2007 cu scopul de a alerta şi de a sensibiliza persoanele în Belgia despre traficului de persoane. Samilia dezvoltă proiecte de prevenire și de incluziune socială în țările de origine ale victimelor, (indiferent dacă victimele sunt exploatate din punct de vedere sexual sau prin muncă forțată), și colaborează cu sectorul privat, ONG-uri și guvernele locale și internaționale, în scopul de a stabili în mod eficient acțiuni de combatere împotriva cauzelor profunde al traficul de fiînte umane."
+msgstr "Fundația Samilia a fost creată în 2007 cu scopul de a alerta şi de a sensibiliza persoanele, în Belgia, despre traficul de persoane. Samilia dezvoltă proiecte de prevenire și de incluziune socială, în țările de origine ale victimelor, (indiferent dacă victimele sunt exploatate din punct de vedere sexual sau prin muncă forțată), și colaborează cu sectorul privat, ONG-uri și cu guvernele locale și internaționale, în scopul de a stabili, în mod eficient, acțiuni de combatere a cauzelor profunde ale traficulului de fiinte umane."
 
 msgid "Samilia offers corporate workshops on human trafficking in order to raise awareness on slavery in supply chains and get the private sector involved in the fight against this growing phenomenon."
-msgstr "Samilia oferă ateliere de lucru corporative privind traficul de persoane cu scopul de a sensibiliza persoanele despre sclavia în lanțurile de aprovizionare și pentru a incentiva sectorul privat în lupta acest fenomen în creștere."
+msgstr "Samilia oferă ateliere de lucru corporative privind traficul de persoane, cu scopul de a sensibiliza persoanele cu privire la sclavia din lanțurile de aprovizionare și pentru a motiva sectorul privat, în lupta împotriva acestui fenomen, în creștere."
 
 msgid "You can support and find out more on Samilia on"
-msgstr "Puteți suporta și afla mai multe despre Samilia pe"
+msgstr "Puteți susține și afla mai multe informții despre Samilia accesând"
 
 msgid "About Not For Sale"
 msgstr "Despre Not For Sale"
 
 msgid "Founded in 2007, Not For Sale works to protect, equip and empower survivors of human trafficking and those at risk of exploitation. With headquarters in San Francisco, California, the international nonprofit manages projects with children and adults in North America, Europe and Asia."
-msgstr "Fondată în anul 2007, Not for Sale lucrează pentru a proteja, echipa și reabilita supravietuitorii traficului de ființe umane și persoanele cu risc de exploatare. Cu sediul central in San Francisco, California, Not For Sale este o organizatie internațională non profit care administreaza proiecte cu copii si adulti, in America de Nord, Europa și Asia."
+msgstr "Fondată în anul 2007, Not for Sale lucrează pentru a proteja, echipa și reabilita supravietuitorii traficului de ființe umane și persoanele cu risc de exploatare. Cu sediul central in San Francisco, California, Not For Sale este o organizație internațională non-profit, care administrează proiecte pentru copii și adulți, în America de Nord, Europa și Asia."
 
 msgid "Not For Sale also works to engage businesses in the fight against human trafficking with awareness raising, supply chain responsibility, and survivor training and employment programs."
-msgstr "Not For Sale lucrează pentru angajarea afacerilor in lupta împotriva traficului de ființe umane cu scopul de a-crește gradul de conștientizare asupra responsabilitatea în lanțul de aprovizionare, precum și a-forma şi angaja supravietuitori prin programe."
+msgstr "Not For Sale lucrează pentru angajarea mediului de afaceri în lupta împotriva traficului de ființe umane, cu scopul de a crește gradul de conștientizare asupra responsabilității în lanțul de aprovizionare, precum și a forma şi angaja supraviețuitori, prin programe de reabilitare."
 
 msgid "To date, Not For Sale has provided services to more than 10,000 people in 11 countries. Learn more at "
-msgstr "Până în prezent, Not For Sale, a oferit servicii pentru 10.000 de persoane în 11 de țări. Puteți suporta și afla mai multe despre Not For Sale pe "
+msgstr "Până în prezent, Not For Sale, a oferit servicii pentru 10.000 de persoane, în 11 de țări. Puteți susține și afla mai multe informații despre Not For Sale accesând "
 
 # FAQ
 msgid "FAQ"
@@ -7821,13 +7821,13 @@ msgid "Who created this course?"
 msgstr "Cine a conceput acest curs?"
 
 msgid "This training course was developed by Not For Sale and the Samilia Foundation, in consultation with Delhaize Group, and with financial support from the European Commission."
-msgstr "Acest curs de instruire a fost dezvoltat de către Not For Sale și Fundația Samilia, în consultare cu Delhaize Group si cu sprijin financiar din partea Comisiei Europene."
+msgstr "Acest curs a fost dezvoltat de către Not For Sale și Fundația Samilia, în colaborare cu Delhaize Group si cu sprijin financiar din partea Comisiei Europene."
 
 msgid "What is the purpose of this course?"
 msgstr "Care este scopul acestui curs?"
 
 msgid "This course is designed to raise awareness about human trafficking. Its intention is to inform and educate users about the issue and what they can do to be part of the solution."
-msgstr "Acest curs este conceput pentru a spori gradul de conştientizare cu privire la traficul de ființe umane. Intenția sa este de a informa și de a educa utilizatorii despre problemă și de a le spune ce pot face pentru a căuta o soluție."
+msgstr "Acest curs este conceput pentru a spori gradul de conştientizare cu privire la traficul de ființe umane. Intenția sa este de a informa și de a educa utilizatorii despre problemă și de a le spune ce pot face pentru a găsi o soluție."
 
 msgid "How long is this course?"
 msgstr "Cât durează acest curs?"
@@ -7836,10 +7836,10 @@ msgid "Completing this course should take you no more than 40 minutes. However, 
 msgstr "Finalizarea acestui curs nu ar trebui să vă ia mai mult de 40 de minute. Însă, există secțiuni opționale și resurse pe care le puteți accesa pentru a aprofunda problema, fapt care ar putea prelungi durata totală necesară pentru finalizarea acestui curs."
 
 msgid "Do I need to know anything about human trafficking before taking this course?"
-msgstr "Trebuie să știu ceva despre traficul de persoane înainte de a urma acest curs?"
+msgstr "Trebuie să știu ceva despre traficul de persoane, înainte de a urma acest curs?"
 
 msgid "No, this course is an introductory course designed to educate and inform you about human trafficking. Previous knowledge is not required."
-msgstr "Nu, acesta este un curs introductiv conceput special pentru a educa și a vă informa în privința traficului de persoane. Nu sunt necesare cunoștințe anterioare."
+msgstr "Nu, acesta este un curs introductiv, conceput special pentru a educa și a vă informa în privința traficului de persoane. Nu sunt necesare cunoștințe anterioare."
 
 msgid "If I see an instance of human trafficking taking place, what should I do?"
 msgstr "Dacă sesizez un caz de trafic de persoane, ce ar trebui să fac?"
@@ -7854,4 +7854,4 @@ msgid "If you are having problems with the course you can contact"
 msgstr "Dacă aveți probleme legate de curs, contactați-ne la"
 
 msgid "We will make every attempt to respond to your concern in a timely manner."
-msgstr "Vom face toate eforturile pentru a răspunde la problema dvs. în timp util."
+msgstr "Vom face toate eforturile pentru a răspunde problemei dvs., în timp util."
