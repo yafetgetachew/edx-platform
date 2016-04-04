@@ -842,7 +842,7 @@ STATICFILES_DIRS = [
     PROJECT_ROOT / "static",
 ]
 
-FAVICON_PATH = 'images/favicon.ico'
+FAVICON_PATH = 'themes/default/images/favicon.ico'
 DEFAULT_COURSE_ABOUT_IMAGE_URL = 'images/pencils.jpg'
 
 # User-uploaded content
