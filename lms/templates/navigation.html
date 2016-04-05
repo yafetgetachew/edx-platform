@@ -36,8 +36,16 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
+<%
+  if course and not_class_slim:
+    slim = ""
+  elif course:
+    slim = "slim"
+  else:
+    slim = ""
+%>
 
-  <header id="global-navigation" class="global ${"slim" if course else ""}" >
+  <header id="global-navigation" class="global ${slim}" >
     <nav class="nav-wrapper" aria-label="${_('Global')}">
     <h1 class="logo">
       <a href="${marketing_link('ROOT')}">
