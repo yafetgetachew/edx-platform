@@ -336,7 +336,7 @@ def _get_user_certificate(request, user, course_key, course, preview_mode=None):
     user_certificate = None
     if preview_mode:
         # certificate is being previewed from studio
-        if has_access(request.user, 'instructor', course) or has_access(request.user, 'staff', course):
+        if has_access(user, 'instructor', course) or has_access(user, 'staff', course):
             user_certificate = GeneratedCertificate(
                 mode=preview_mode,
                 verify_uuid=unicode(uuid4().hex),
@@ -474,14 +474,14 @@ def render_cert_by_uuid(request, certificate_uuid):
 
 @handle_500(
     template_path="certificates/server-error.html",
-    test_func=lambda request: request.GET.get('preview', None)
+    test_func=lambda request: request.GET.get('preview_mode', None)
 )
 def render_html_view(request, user_id, course_id):
     """
     This public view generates an HTML representation of the specified user and course
     If a certificate is not available, we display a "Sorry!" screen instead
     """
-    preview_mode = request.GET.get('preview', None)
+    preview_mode = request.GET.get('preview_mode', None)
     platform_name = microsite.get_value("platform_name", settings.PLATFORM_NAME)
     configuration = CertificateHtmlViewConfiguration.get_config()
     # Create the initial view context, bootstrapping with Django settings and passed-in values
