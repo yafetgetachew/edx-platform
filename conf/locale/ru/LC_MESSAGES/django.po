@@ -11503,7 +11503,7 @@ msgid ""
 "You can now start learning with {platform_name} by logging in with your <a "
 "rel=\"external\" href=\"http://openid.net/\">OpenID account</a>."
 msgstr ""
-"Теперь вы можете начать изучать курсы {platform name}, используя свой "
+"Теперь вы можете начать изучать курсы {platform_name}, используя свой "
 "внешний <a rel=\"external\" href=\"http://openid.net/\">аккаунт OpenID "
 "account</a>."
 
@@ -11517,7 +11517,7 @@ msgstr "Зарегистрируйтесь для доступа к {platform_na
 
 #: lms/templates/login-sidebar.html
 msgid "Looking for help in logging in or with your {platform_name} account?"
-msgstr "Нужна помощь при входе или с вашим   {platform name} аккаунтом?"
+msgstr "Нужна помощь при входе или с вашим   {platform_name} аккаунтом?"
 
 #: lms/templates/login-sidebar.html
 msgid "View our help section for answers to commonly asked questions."
