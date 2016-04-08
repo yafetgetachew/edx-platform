@@ -21,7 +21,7 @@ define(['jquery', 'jquery.cookie'], function($) {
                 notifyOnError: false,
                 data: submit_data,
                 success: function(json) {
-                   location.href = '/course/';
+                   location.href = json['redirect_url'];
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                    var json = $.parseJSON(jqXHR.responseText);

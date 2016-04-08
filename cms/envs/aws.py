@@ -370,3 +370,57 @@ PROCTORING_SETTINGS = ENV_TOKENS.get("PROCTORING_SETTINGS", PROCTORING_SETTINGS)
 
 # OpenID Connect issuer ID. Normally the URL of the authentication endpoint.
 OAUTH_OIDC_ISSUER = ENV_TOKENS['OAUTH_OIDC_ISSUER']
+
+AZURE_RESOURCE_ENDPOINT = "https://graph.windows.net/"
+AZURE_LOGIN_ENDPOINT = "https://login.microsoftonline.com/"
+AZURE_AD_ID = AUTH_TOKENS.get('AZURE_AD_ID', '')
+
+# Add extra dir for mako templates finder
+# '/edx/app/edxapp/venvs/edxapp/src/microsoft-oauth2/sso_edx_microsoft/templates')
+MICROSOFT_MAKO_TEMPLATES = ENV_TOKENS.get('MICROSOFT_MAKO_TEMPLATES', [])
+MAKO_TEMPLATES['main'] = MICROSOFT_MAKO_TEMPLATES + MAKO_TEMPLATES['main']
+
+##### Third-party auth options ################################################
+if FEATURES.get('ENABLE_THIRD_PARTY_AUTH'):
+    import datetime
+    AUTHENTICATION_BACKENDS = (
+        ENV_TOKENS.get('THIRD_PARTY_AUTH_BACKENDS', [
+            'social.backends.google.GoogleOAuth2',
+            'social.backends.linkedin.LinkedinOAuth2',
+            'social.backends.facebook.FacebookOAuth2',
+            'third_party_auth.saml.SAMLAuthBackend',
+            'third_party_auth.lti.LTIAuthBackend',
+        ]) + list(AUTHENTICATION_BACKENDS)
+    )
+
+    # The reduced session expiry time during the third party login pipeline. (Value in seconds)
+    SOCIAL_AUTH_PIPELINE_TIMEOUT = ENV_TOKENS.get('SOCIAL_AUTH_PIPELINE_TIMEOUT', 600)
+
+    # Most provider configuration is done via ConfigurationModels but for a few sensitive values
+    # we allow configuration via AUTH_TOKENS instead (optionally).
+    # The SAML private/public key values do not need the delimiter lines (such as
+    # "-----BEGIN PRIVATE KEY-----", "-----END PRIVATE KEY-----" etc.) but they may be included
+    # if you want (though it's easier to format the key values as JSON without the delimiters).
+    SOCIAL_AUTH_SAML_SP_PRIVATE_KEY = AUTH_TOKENS.get('SOCIAL_AUTH_SAML_SP_PRIVATE_KEY', '')
+    SOCIAL_AUTH_SAML_SP_PUBLIC_CERT = AUTH_TOKENS.get('SOCIAL_AUTH_SAML_SP_PUBLIC_CERT', '')
+    SOCIAL_AUTH_OAUTH_SECRETS = AUTH_TOKENS.get('SOCIAL_AUTH_OAUTH_SECRETS', {})
+    SOCIAL_AUTH_LTI_CONSUMER_SECRETS = AUTH_TOKENS.get('SOCIAL_AUTH_LTI_CONSUMER_SECRETS', {})
+
+    # third_party_auth config moved to ConfigurationModels. This is for data migration only:
+    THIRD_PARTY_AUTH_OLD_CONFIG = AUTH_TOKENS.get('THIRD_PARTY_AUTH', None)
+
+    #if ENV_TOKENS.get('THIRD_PARTY_AUTH_SAML_FETCH_PERIOD_HOURS', 24) is not None:
+    #    CELERYBEAT_SCHEDULE['refresh-saml-metadata'] = {
+    #        'task': 'third_party_auth.fetch_saml_metadata',
+    #        'schedule': datetime.timedelta(hours=ENV_TOKENS.get('THIRD_PARTY_AUTH_SAML_FETCH_PERIOD_HOURS', 24)),
+    #    }
+
+    # The following can be used to integrate a custom login form with third_party_auth.
+    # It should be a dict where the key is a word passed via ?auth_entry=, and the value is a
+    # dict with an arbitrary 'secret_key' and a 'url'.
+    THIRD_PARTY_AUTH_CUSTOM_AUTH_FORMS = AUTH_TOKENS.get('THIRD_PARTY_AUTH_CUSTOM_AUTH_FORMS', {})
+    INSTALLED_APPS += ('third_party_auth', )
+
+SOCIAL_AUTH_STRATEGY = 'third_party_auth.strategy.ConfigurationModelStrategy'
+ROOT_URLCONF = 'sso_edx_microsoft.cms_urls'
+STATICFILES_DIRS = ['/edx/app/edxapp/venvs/edxapp/src/microsoft-oauth2/sso_edx_microsoft/static'] + STATICFILES_DIRS
