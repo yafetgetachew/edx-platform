@@ -37,7 +37,7 @@ locales:
     # - gl  # Galician
     # - gu  # Gujarati
     - he  # Hebrew
-    - hi  # Hindi
+    #- hi  # Hindi
     # - hr  # Croatian
     # - hu  # Hungarian
     # - hy_AM  # Armenian (Armenia)
@@ -86,7 +86,7 @@ locales:
 dummy_locales:
     - eo
     - fake2
-    - rtl  # Fake testing language for Arabic
+    #- rtl  # Fake testing language for Arabic
 
 # Directories we don't search for strings.
 ignore_dirs:

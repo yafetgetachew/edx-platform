@@ -1,26 +1,26 @@
 # #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2015 EdX
+# Copyright (C) 2016 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 # #-#-#-#-#  django-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2015 EdX
+# Copyright (C) 2016 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 # #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2015 edX
+# Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 # #-#-#-#-#  mako-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2015 edX
+# Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 # #-#-#-#-#  messages.po (EdX Studio)  #-#-#-#-#
 # edX translation file
@@ -29,16 +29,16 @@
 # 
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2015 edX
+# Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-12-11 17:49+0000\n"
-"PO-Revision-Date: 2015-12-11 17:49:32.708299\n"
+"POT-Creation-Date: 2016-04-15 07:24-0400\n"
+"PO-Revision-Date: 2016-04-15 11:24:05.592170\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,6 @@ msgstr "Ûnït Ⱡ'σяєм ι#"
 #: lms/djangoapps/instructor/views/api.py lms/templates/help_modal.html
 #: lms/templates/instructor/instructor_dashboard_2/generate_registarion_codes_modal.html
 #: lms/templates/instructor/instructor_dashboard_2/metrics.html
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
 #: lms/templates/shoppingcart/billing_details.html
 #: lms/templates/shoppingcart/receipt.html
 msgid "Name"
@@ -110,7 +109,6 @@ msgstr "Vïdéö ÌD Ⱡ'σяєм ιρѕυм ∂#"
 #: cms/djangoapps/contentstore/views/videos.py
 #: common/djangoapps/config_models/admin.py
 #: lms/djangoapps/shoppingcart/reports.py
-#: lms/templates/open_ended_problems/open_ended_problems.html
 #: lms/templates/shoppingcart/receipt.html
 msgid "Status"
 msgstr "Stätüs Ⱡ'σяєм ιρѕυ#"
@@ -249,13 +247,11 @@ msgstr "Çöürsé Ⱡ'σяєм ιρѕυ#"
 #: common/djangoapps/course_modes/models.py
 #: common/lib/xmodule/xmodule/annotatable_module.py
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 #: common/lib/xmodule/xmodule/discussion_module.py
 #: common/lib/xmodule/xmodule/html_module.py
 #: common/lib/xmodule/xmodule/imageannotation_module.py
 #: common/lib/xmodule/xmodule/library_content_module.py
 #: common/lib/xmodule/xmodule/lti_module.py
-#: common/lib/xmodule/xmodule/peer_grading_module.py
 #: common/lib/xmodule/xmodule/split_test_module.py
 #: common/lib/xmodule/xmodule/textannotation_module.py
 #: common/lib/xmodule/xmodule/videoannotation_module.py
@@ -308,6 +304,11 @@ msgstr ""
 msgid "Audit"
 msgstr "Àüdït Ⱡ'σяєм ιρѕ#"
 
+#: common/djangoapps/course_modes/models.py lms/envs/devstack.py
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html
+msgid "Honor"
+msgstr "Hönör Ⱡ'σяєм ιρѕ#"
+
 #: common/djangoapps/course_modes/models.py
 msgid ""
 "Professional education modes are not allowed to have expiration_datetime "
@@ -315,6 +316,13 @@ msgid ""
 msgstr ""
 "Pröféssïönäl édüçätïön mödés äré nöt ällöwéd tö hävé éxpïrätïön_dätétïmé "
 "sét. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#: common/djangoapps/course_modes/models.py
+msgid ""
+"The time period before a course ends in which a course mode will expire"
+msgstr ""
+"Thé tïmé pérïöd ßéföré ä çöürsé énds ïn whïçh ä çöürsé mödé wïll éxpïré "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
 
 #: common/djangoapps/course_modes/views.py
 msgid "Enrollment is closed"
@@ -1565,14 +1573,10 @@ msgstr ""
 "ѕιт αмєт, ¢σηѕє¢тєт#"
 
 #: common/lib/capa/capa/responsetypes.py
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
 msgid "Correct"
 msgstr "Çörréçt Ⱡ'σяєм ιρѕυм #"
 
 #: common/lib/capa/capa/responsetypes.py
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
 msgid "Incorrect"
 msgstr "Ìnçörréçt Ⱡ'σяєм ιρѕυм ∂σł#"
 
@@ -1787,12 +1791,7 @@ msgstr ""
 "trý ägäïn lätér. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
 
 #. Translators: 'grader' refers to the edX automatic code grader.
-#. Translators: the `grader` refers to the grading service open response
-#. problems
-#. are sent to, either to be machine-graded, peer-graded, or instructor-
-#. graded.
 #: common/lib/capa/capa/responsetypes.py
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
 msgid "Invalid grader reply. Please contact the course staff."
 msgstr ""
 "Ìnvälïd grädér réplý. Pléäsé çöntäçt thé çöürsé stäff. Ⱡ'σяєм ιρѕυм ∂σłσя "
@@ -1898,7 +1897,6 @@ msgstr "XML dätä för thé ännötätïön Ⱡ'σяєм ιρѕυм ∂σłσя
 #: common/lib/xmodule/xmodule/html_module.py
 #: common/lib/xmodule/xmodule/imageannotation_module.py
 #: common/lib/xmodule/xmodule/library_content_module.py
-#: common/lib/xmodule/xmodule/peer_grading_module.py
 #: common/lib/xmodule/xmodule/textannotation_module.py
 #: common/lib/xmodule/xmodule/videoannotation_module.py
 #: common/lib/xmodule/xmodule/word_cloud_module.py
@@ -1910,7 +1908,6 @@ msgid "Annotation"
 msgstr "Ànnötätïön Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "This name appears in the horizontal navigation at the top of the page."
 msgstr ""
@@ -1922,14 +1919,12 @@ msgid "Blank Advanced Problem"
 msgstr "Blänk Àdvänçéd Prößlém Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Number of attempts taken by the student on this problem"
 msgstr ""
 "Nümßér öf ättémpts täkén ßý thé stüdént ön thïs prößlém Ⱡ'σяєм ιρѕυм ∂σłσя "
 "ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
 msgid "Maximum Attempts"
 msgstr "Mäxïmüm Àttémpts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
@@ -1943,13 +1938,11 @@ msgstr ""
 " välüé ïs nöt sét, ïnfïnïté ättémpts äré ällöwéd. Ⱡ'σяєм #"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Date that this problem is due by"
 msgstr ""
 "Däté thät thïs prößlém ïs düé ßý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Amount of time after the due date that submissions will be accepted"
 msgstr ""
 "Àmöünt öf tïmé äftér thé düé däté thät süßmïssïöns wïll ßé äççéptéd Ⱡ'σяєм "
@@ -2047,7 +2040,6 @@ msgid "Per Student"
 msgstr "Pér Stüdént Ⱡ'σяєм ιρѕυм ∂σłσя #"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 #: common/lib/xmodule/xmodule/discussion_module.py
 msgid "XML data for the problem"
 msgstr "XML dätä för thé prößlém Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
@@ -2097,8 +2089,6 @@ msgstr ""
 "ättémpts. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-#: common/lib/xmodule/xmodule/peer_grading_module.py
 msgid "Problem Weight"
 msgstr "Prößlém Wéïght Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
@@ -2111,7 +2101,6 @@ msgstr ""
 " éäçh réspönsé fïéld ïn thé prößlém ïs wörth öné pöïnt. Ⱡ#"
 
 #: common/lib/xmodule/xmodule/capa_base.py
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Markdown source of this module"
 msgstr "Märkdöwn söürçé öf thïs mödülé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
 
@@ -2302,182 +2291,6 @@ msgid ""
 msgstr ""
 "Thé stäté öf thïs prößlém häs çhängéd sïnçé ýöü löädéd thïs pägé. Pléäsé "
 "réfrésh ýöür pägé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Open Response Assessment"
-msgstr "Öpén Réspönsé Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Current task that the student is on."
-msgstr ""
-"Çürrént täsk thät thé stüdént ïs ön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυ#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid ""
-"A list of lists of state dictionaries for student states that are saved. "
-"This field is only populated if the instructor changes tasks after the "
-"module is created and students have attempted it (for example, if a self "
-"assessed problem is changed to self and peer assessed)."
-msgstr ""
-"À lïst öf lïsts öf stäté dïçtïönärïés för stüdént stätés thät äré sävéd. "
-"Thïs fïéld ïs önlý pöpülätéd ïf thé ïnstrüçtör çhängés täsks äftér thé "
-"mödülé ïs çréätéd änd stüdénts hävé ättémptéd ït (för éxämplé, ïf ä sélf "
-"ässésséd prößlém ïs çhängéd tö sélf änd péér ässésséd). Ⱡ'σяєм ιρѕυм ∂σłσя "
-"ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт "
-"łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ "
-"єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυα#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "List of state dictionaries of each task within this module."
-msgstr ""
-"Lïst öf stäté dïçtïönärïés öf éäçh täsk wïthïn thïs mödülé. Ⱡ'σяєм ιρѕυм "
-"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Which step within the current task that the student is on."
-msgstr ""
-"Whïçh stép wïthïn thé çürrént täsk thät thé stüdént ïs ön. Ⱡ'σяєм ιρѕυм "
-"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-#: lms/templates/peer_grading/peer_grading.html
-msgid "Graded"
-msgstr "Grädéd Ⱡ'σяєм ιρѕυ#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid ""
-"Defines whether the student gets credit for this problem. Credit is based on"
-" peer grades of this problem."
-msgstr ""
-"Défïnés whéthér thé stüdént géts çrédït för thïs prößlém. Çrédït ïs ßäséd ön"
-" péér grädés öf thïs prößlém. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт #"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "If the problem is ready to be reset or not."
-msgstr ""
-"Ìf thé prößlém ïs réädý tö ßé rését ör nöt. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя #"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "The number of times the student can try to answer this problem."
-msgstr ""
-"Thé nümßér öf tïmés thé stüdént çän trý tö änswér thïs prößlém. Ⱡ'σяєм ιρѕυм"
-" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Allow File Uploads"
-msgstr "Àllöw Fïlé Ûplöäds Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Whether or not the student can submit files as a response."
-msgstr ""
-"Whéthér ör nöt thé stüdént çän süßmït fïlés äs ä réspönsé. Ⱡ'σяєм ιρѕυм "
-"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Disable Quality Filter"
-msgstr "Dïsäßlé Qüälïtý Fïltér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid ""
-"If False, the Quality Filter is enabled and submissions with poor spelling, "
-"short length, or poor grammar will not be peer reviewed."
-msgstr ""
-"Ìf Fälsé, thé Qüälïtý Fïltér ïs énäßléd änd süßmïssïöns wïth pöör spéllïng, "
-"shört léngth, ör pöör grämmär wïll nöt ßé péér révïéwéd. #"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Current version number"
-msgstr "Çürrént vérsïön nümßér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid ""
-"Defines the number of points each problem is worth. If the value is not set,"
-" each problem is worth one point."
-msgstr ""
-"Défïnés thé nümßér öf pöïnts éäçh prößlém ïs wörth. Ìf thé välüé ïs nöt sét,"
-" éäçh prößlém ïs wörth öné pöïnt. Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Minimum Peer Grading Calibrations"
-msgstr ""
-"Mïnïmüm Péér Grädïng Çälïßrätïöns Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid ""
-"The minimum number of calibration essays each student will need to complete "
-"for peer grading."
-msgstr ""
-"Thé mïnïmüm nümßér öf çälïßrätïön éssäýs éäçh stüdént wïll nééd tö çömplété "
-"för péér grädïng. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Maximum Peer Grading Calibrations"
-msgstr ""
-"Mäxïmüm Péér Grädïng Çälïßrätïöns Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid ""
-"The maximum number of calibration essays each student will need to complete "
-"for peer grading."
-msgstr ""
-"Thé mäxïmüm nümßér öf çälïßrätïön éssäýs éäçh stüdént wïll nééd tö çömplété "
-"för péér grädïng. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Peer Graders per Response"
-msgstr "Péér Grädérs pér Réspönsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "The number of peers who will grade each submission."
-msgstr ""
-"Thé nümßér öf péérs whö wïll grädé éäçh süßmïssïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
-"αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Required Peer Grading"
-msgstr "Réqüïréd Péér Grädïng Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid ""
-"The number of other students each student making a submission will have to "
-"grade."
-msgstr ""
-"Thé nümßér öf öthér stüdénts éäçh stüdént mäkïng ä süßmïssïön wïll hävé tö "
-"grädé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid "Allow \"overgrading\" of peer submissions"
-msgstr ""
-"Àllöw \"övérgrädïng\" öf péér süßmïssïöns Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-msgid ""
-"EXPERIMENTAL FEATURE.  Allow students to peer grade submissions that already"
-" have the requisite number of graders, but ONLY WHEN all submissions they "
-"are eligible to grade already have enough graders.  This is intended for use"
-" when settings for `Required Peer Grading` > `Peer Graders per Response`"
-msgstr ""
-"ÉXPÉRÌMÉNTÀL FÉÀTÛRÉ.  Àllöw stüdénts tö péér grädé süßmïssïöns thät älréädý"
-" hävé thé réqüïsïté nümßér öf grädérs, ßüt ÖNLÝ WHÉN äll süßmïssïöns théý "
-"äré élïgïßlé tö grädé älréädý hävé énöügh grädérs.  Thïs ïs ïnténdéd för üsé"
-" whén séttïngs för `Réqüïréd Péér Grädïng` > `Péér Grädérs pér Réspönsé` "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ "
-"тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм,"
-" qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση#"
-
-#: common/lib/xmodule/xmodule/combined_open_ended_module.py
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid ""
-"ORA1 is no longer supported. To use this assessment, replace this ORA1 "
-"component with an ORA2 component."
-msgstr ""
-"ÖRÀ1 ïs nö löngér süppörtéd. Tö üsé thïs ässéssmént, répläçé thïs ÖRÀ1 "
-"çömpönént wïth än ÖRÀ2 çömpönént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
 
 #. Translators: TBD stands for 'To Be Determined' and is used when a course
 #. does not yet have an announced start date.
@@ -2922,295 +2735,6 @@ msgid "Enter the names of the advanced components to use in your course."
 msgstr ""
 "Éntér thé nämés öf thé ädvänçéd çömpönénts tö üsé ïn ýöür çöürsé. Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Checklist to Follow When Developing a Course"
-msgstr ""
-"Çhéçklïst tö Föllöw Whén Dévélöpïng ä Çöürsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Getting Started With Studio"
-msgstr "Géttïng Stärtéd Wïth Stüdïö Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Add Course Team Members"
-msgstr "Àdd Çöürsé Téäm Mémßérs Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Grant your collaborators permission to edit your course so you can work "
-"together."
-msgstr ""
-"Gränt ýöür çölläßörätörs pérmïssïön tö édït ýöür çöürsé sö ýöü çän wörk "
-"tögéthér. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Edit Course Team"
-msgstr "Édït Çöürsé Téäm Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Set Important Dates for Your Course"
-msgstr ""
-"Sét Ìmpörtänt Dätés för Ýöür Çöürsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Establish your course's student enrollment and launch dates on the Schedule "
-"and Details page."
-msgstr ""
-"Éstäßlïsh ýöür çöürsé's stüdént énröllmént änd läünçh dätés ön thé Sçhédülé "
-"änd Détäïls pägé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Edit Course Details &amp; Schedule"
-msgstr ""
-"Édït Çöürsé Détäïls &amp; Sçhédülé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Draft Your Course's Grading Policy"
-msgstr ""
-"Dräft Ýöür Çöürsé's Grädïng Pölïçý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Set up your assignment types and grading policy even if you haven't created "
-"all your assignments."
-msgstr ""
-"Sét üp ýöür ässïgnmént týpés änd grädïng pölïçý évén ïf ýöü hävén't çréätéd "
-"äll ýöür ässïgnménts. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Edit Grading Settings"
-msgstr "Édït Grädïng Séttïngs Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Explore the Other Studio Checklists"
-msgstr ""
-"Éxplöré thé Öthér Stüdïö Çhéçklïsts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Discover other available course authoring tools, and find help when you need"
-" it."
-msgstr ""
-"Dïsçövér öthér äväïläßlé çöürsé äüthörïng tööls, änd fïnd hélp whén ýöü nééd"
-" ït. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Draft a Rough Course Outline"
-msgstr "Dräft ä Röügh Çöürsé Öütlïné Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Create Your First Section and Subsection"
-msgstr ""
-"Çréäté Ýöür Fïrst Séçtïön änd Süßséçtïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Use your course outline to build your first Section and Subsection."
-msgstr ""
-"Ûsé ýöür çöürsé öütlïné tö ßüïld ýöür fïrst Séçtïön änd Süßséçtïön. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Edit Course Outline"
-msgstr "Édït Çöürsé Öütlïné Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Set Section Release Dates"
-msgstr "Sét Séçtïön Réléäsé Dätés Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Specify the release dates for each Section in your course. Sections become "
-"visible to students on their release dates."
-msgstr ""
-"Spéçïfý thé réléäsé dätés för éäçh Séçtïön ïn ýöür çöürsé. Séçtïöns ßéçömé "
-"vïsïßlé tö stüdénts ön théïr réléäsé dätés. Ⱡ'σяєм ιρѕυм #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Designate a Subsection as Graded"
-msgstr ""
-"Désïgnäté ä Süßséçtïön äs Grädéd Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Set a Subsection to be graded as a specific assignment type. Assignments "
-"within graded Subsections count toward a student's final grade."
-msgstr ""
-"Sét ä Süßséçtïön tö ßé grädéd äs ä spéçïfïç ässïgnmént týpé. Àssïgnménts "
-"wïthïn grädéd Süßséçtïöns çöünt töwärd ä stüdént's fïnäl grädé. Ⱡ'σяєм ιρѕυм"
-" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя "
-"ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ "
-"ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
-"¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
-"¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
-"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂ єѕт łαвσя#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Reordering Course Content"
-msgstr "Réördérïng Çöürsé Çöntént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Use drag and drop to reorder the content in your course."
-msgstr ""
-"Ûsé dräg änd dröp tö réördér thé çöntént ïn ýöür çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя "
-"ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Renaming Sections"
-msgstr "Rénämïng Séçtïöns Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Rename Sections by clicking the Section name from the Course Outline."
-msgstr ""
-"Rénämé Séçtïöns ßý çlïçkïng thé Séçtïön nämé fröm thé Çöürsé Öütlïné. Ⱡ'σяєм"
-" ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Deleting Course Content"
-msgstr "Délétïng Çöürsé Çöntént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Delete Sections, Subsections, or Units you don't need anymore. Be careful, "
-"as there is no Undo function."
-msgstr ""
-"Délété Séçtïöns, Süßséçtïöns, ör Ûnïts ýöü dön't nééd änýmöré. Bé çäréfül, "
-"äs théré ïs nö Ûndö fünçtïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Add an Instructor-Only Section to Your Outline"
-msgstr ""
-"Àdd än Ìnstrüçtör-Önlý Séçtïön tö Ýöür Öütlïné Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Some course authors find using a section for unsorted, in-progress work "
-"useful. To do this, create a section and set the release date to the distant"
-" future."
-msgstr ""
-"Sömé çöürsé äüthörs fïnd üsïng ä séçtïön för ünsörtéd, ïn-prögréss wörk "
-"üséfül. Tö dö thïs, çréäté ä séçtïön änd sét thé réléäsé däté tö thé dïstänt"
-" fütüré. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ "
-"єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм"
-" νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα "
-"¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт"
-" єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт "
-"¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Explore edX's Support Tools"
-msgstr "Éxplöré édX's Süppört Tööls Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Explore the Studio Help Forum"
-msgstr "Éxplöré thé Stüdïö Hélp Förüm Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Access the Studio Help forum from the menu that appears when you click your "
-"user name in the top right corner of Studio."
-msgstr ""
-"Àççéss thé Stüdïö Hélp förüm fröm thé ménü thät äppéärs whén ýöü çlïçk ýöür "
-"üsér nämé ïn thé töp rïght çörnér öf Stüdïö. Ⱡ'σяєм ιρѕυ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Visit Studio Help"
-msgstr "Vïsït Stüdïö Hélp Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Enroll in edX 101"
-msgstr "Énröll ïn édX 101 Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Register for edX 101, edX's primer for course creation."
-msgstr ""
-"Régïstér för édX 101, édX's prïmér för çöürsé çréätïön. Ⱡ'σяєм ιρѕυм ∂σłσя "
-"ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Register for edX 101"
-msgstr "Régïstér för édX 101 Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Download the Studio Documentation"
-msgstr ""
-"Döwnlöäd thé Stüdïö Döçüméntätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Download the searchable Studio reference documentation in PDF form."
-msgstr ""
-"Döwnlöäd thé séärçhäßlé Stüdïö référénçé döçüméntätïön ïn PDF förm. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Download Documentation"
-msgstr "Döwnlöäd Döçüméntätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Draft Your Course About Page"
-msgstr "Dräft Ýöür Çöürsé Àßöüt Pägé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Draft a Course Description"
-msgstr "Dräft ä Çöürsé Désçrïptïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Courses on edX have an About page that includes a course video, description,"
-" and more. Draft the text students will read before deciding to enroll in "
-"your course."
-msgstr ""
-"Çöürsés ön édX hävé än Àßöüt pägé thät ïnçlüdés ä çöürsé vïdéö, désçrïptïön,"
-" änd möré. Dräft thé téxt stüdénts wïll réäd ßéföré déçïdïng tö énröll ïn "
-"ýöür çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ "
-"∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ "
-"мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ "
-"єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє "
-"νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт "
-"¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕ#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Edit Course Schedule &amp; Details"
-msgstr ""
-"Édït Çöürsé Sçhédülé &amp; Détäïls Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Add Staff Bios"
-msgstr "Àdd Stäff Bïös Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Showing prospective students who their instructor will be is helpful. "
-"Include staff bios on the course About page."
-msgstr ""
-"Shöwïng pröspéçtïvé stüdénts whö théïr ïnstrüçtör wïll ßé ïs hélpfül. "
-"Ìnçlüdé stäff ßïös ön thé çöürsé Àßöüt pägé. Ⱡ'σяєм ιρѕυм ∂σł#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Add Course FAQs"
-msgstr "Àdd Çöürsé FÀQs Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Include a short list of frequently asked questions about your course."
-msgstr ""
-"Ìnçlüdé ä shört lïst öf fréqüéntlý äskéd qüéstïöns äßöüt ýöür çöürsé. Ⱡ'σяєм"
-" ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Add Course Prerequisites"
-msgstr "Àdd Çöürsé Préréqüïsïtés Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid ""
-"Let students know what knowledge and/or skills they should have before they "
-"enroll in your course."
-msgstr ""
-"Lét stüdénts knöw whät knöwlédgé änd/ör skïlls théý shöüld hävé ßéföré théý "
-"énröll ïn ýöür çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Info Sidebar Name"
@@ -3787,7 +3311,6 @@ msgid "Text"
 msgstr "Téxt Ⱡ'σяєм ι#"
 
 #: common/lib/xmodule/xmodule/html_module.py
-#: common/lib/xmodule/xmodule/peer_grading_module.py
 msgid "Html contents to display for this module"
 msgstr ""
 "Html çönténts tö dïspläý för thïs mödülé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
@@ -4635,281 +4158,6 @@ msgstr ""
 "¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
 "ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂ єѕт łαвσяυм#"
 
-#. Translators: "Self" is used to denote an openended response that is self-
-#. graded
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "Self"
-msgstr "Sélf Ⱡ'σяєм ι#"
-
-#. Translators: "AI" is used to denote an openended response that is machine-
-#. graded
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "AI"
-msgstr "ÀÌ Ⱡ'σя#"
-
-#. Translators: "Peer" is used to denote an openended response that is peer-
-#. graded
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "Peer"
-msgstr "Péér Ⱡ'σяєм ι#"
-
-#. Translators: "Not started" is used to communicate to a student that their
-#. response
-#. has not yet been graded
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "Not started."
-msgstr "Nöt stärtéd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
-
-#. Translators: "Being scored." is used to communicate to a student that their
-#. response
-#. are in the process of being scored
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "Being scored."
-msgstr "Béïng sçöréd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#. Translators: "Scoring finished" is used to communicate to a student that
-#. their response
-#. have been scored, but the full scoring process is not yet complete
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "Scoring finished."
-msgstr "Sçörïng fïnïshéd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#. Translators: "Complete" is used to communicate to a student that their
-#. openended response has been fully scored
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "Complete."
-msgstr "Çömplété. Ⱡ'σяєм ιρѕυм ∂σł#"
-
-#. Translators: "Scored rubric" appears to a user as part of a longer
-#. string that looks something like: "Scored rubric from grader 1".
-#. "Scored" is an adjective that modifies the noun "rubric".
-#. That longer string appears when a user is viewing a graded rubric
-#. returned from one of the graders of their openended response problem.
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "Scored rubric"
-msgstr "Sçöréd rüßrïç Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid ""
-"You have attempted this question {number_of_student_attempts} times. You are"
-" only allowed to attempt it {max_number_of_attempts} times."
-msgstr ""
-"Ýöü hävé ättémptéd thïs qüéstïön {number_of_student_attempts} tïmés. Ýöü äré"
-" önlý ällöwéd tö ättémpt ït {max_number_of_attempts} tïmés. Ⱡ'σяєм ιρѕυм "
-"∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_modulev1.py
-msgid "The problem state got out-of-sync. Please try reloading the page."
-msgstr ""
-"Thé prößlém stäté göt öüt-öf-sýnç. Pléäsé trý rélöädïng thé pägé. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#. Translators: "Self-Assessment" refers to the self-assessed mode of
-#. openended evaluation
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_rubric.py
-msgid "Self-Assessment"
-msgstr "Sélf-Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#. Translators: "Peer-Assessment" refers to the peer-assessed mode of
-#. openended evaluation
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_rubric.py
-msgid "Peer-Assessment"
-msgstr "Péér-Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#. Translators: "Instructor-Assessment" refers to the instructor-assessed mode
-#. of openended evaluation
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_rubric.py
-msgid "Instructor-Assessment"
-msgstr "Ìnstrüçtör-Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#. Translators: "AI-Assessment" refers to the machine-graded mode of openended
-#. evaluation
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/combined_open_ended_rubric.py
-msgid "AI-Assessment"
-msgstr "ÀÌ-Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#. Translators: 'tag' is one of 'feedback', 'submission_id',
-#. 'grader_id', or 'score'. They are categories that a student
-#. responds to when filling out a post-assessment survey
-#. of his or her grade from an openended problem.
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid ""
-"Could not find needed tag {tag_name} in the survey responses. Please try "
-"submitting again."
-msgstr ""
-"Çöüld nöt fïnd néédéd täg {tag_name} ïn thé sürvéý réspönsés. Pléäsé trý "
-"süßmïttïng ägäïn. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "There was an error saving your feedback. Please contact course staff."
-msgstr ""
-"Théré wäs än érrör sävïng ýöür féédßäçk. Pléäsé çöntäçt çöürsé stäff. Ⱡ'σяєм"
-" ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "Couldn't submit feedback."
-msgstr "Çöüldn't süßmït féédßäçk. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "Successfully saved your feedback."
-msgstr ""
-"Süççéssfüllý sävéd ýöür féédßäçk. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "Unable to save your feedback. Please try again later."
-msgstr ""
-"Ûnäßlé tö sävé ýöür féédßäçk. Pléäsé trý ägäïn lätér. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт"
-" αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "Successfully saved your submission."
-msgstr ""
-"Süççéssfüllý sävéd ýöür süßmïssïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#. Translators: the `grader` refers to the grading service open response
-#. problems
-#. are sent to, either to be machine-graded, peer-graded, or instructor-
-#. graded.
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid ""
-"Unable to submit your submission to the grader. Please try again later."
-msgstr ""
-"Ûnäßlé tö süßmït ýöür süßmïssïön tö thé grädér. Pléäsé trý ägäïn lätér. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
-
-#. Translators: the `grader` refers to the grading service open response
-#. problems
-#. are sent to, either to be machine-graded, peer-graded, or instructor-
-#. graded.
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "Error getting feedback from grader."
-msgstr ""
-"Érrör géttïng féédßäçk fröm grädér. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#. Translators: the `grader` refers to the grading service open response
-#. problems
-#. are sent to, either to be machine-graded, peer-graded, or instructor-
-#. graded.
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "No feedback available from grader."
-msgstr ""
-"Nö féédßäçk äväïläßlé fröm grädér. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid "Error handling action. Please try again."
-msgstr ""
-"Érrör händlïng äçtïön. Pléäsé trý ägäïn. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя#"
-
-#. Translators: this string appears once an openended response
-#. is submitted but before it has been graded
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/open_ended_module.py
-msgid ""
-"Your response has been submitted. Please check back later for your grade."
-msgstr ""
-"Ýöür réspönsé häs ßéén süßmïttéd. Pléäsé çhéçk ßäçk lätér för ýöür grädé. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
-
-#. Translators: "Not started" communicates to a student that their response
-#. has not yet been graded
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/openendedchild.py
-msgid "Not started"
-msgstr "Nöt stärtéd Ⱡ'σяєм ιρѕυм ∂σłσя #"
-
-#. Translators: "In progress" communicates to a student that their response
-#. is currently in the grading process
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/openendedchild.py
-msgid "In progress"
-msgstr "Ìn prögréss Ⱡ'σяєм ιρѕυм ∂σłσя #"
-
-#. Translators: "Done" communicates to a student that their response
-#. has been fully graded
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/openendedchild.py
-msgid "Done"
-msgstr "Döné Ⱡ'σяєм ι#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/openendedchild.py
-msgid ""
-"We could not find a file in your submission. Please try choosing a file or "
-"pasting a URL to your file into the answer box."
-msgstr ""
-"Wé çöüld nöt fïnd ä fïlé ïn ýöür süßmïssïön. Pléäsé trý çhöösïng ä fïlé ör "
-"pästïng ä ÛRL tö ýöür fïlé ïntö thé änswér ßöx. Ⱡ'σяєм ιρѕ#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/openendedchild.py
-msgid ""
-"We are having trouble saving your file. Please try another file or paste a "
-"URL to your file into the answer box."
-msgstr ""
-"Wé äré hävïng tröüßlé sävïng ýöür fïlé. Pléäsé trý änöthér fïlé ör pästé ä "
-"ÛRL tö ýöür fïlé ïntö thé änswér ßöx. Ⱡ'σяєм ιρѕυм ∂σłσя#"
-
-#: common/lib/xmodule/xmodule/open_ended_grading_classes/self_assessment_module.py
-msgid "Error saving your score.  Please notify course staff."
-msgstr ""
-"Érrör sävïng ýöür sçöré.  Pléäsé nötïfý çöürsé stäff. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт"
-" αмєт, ¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid "Show Single Problem"
-msgstr "Shöw Sïnglé Prößlém Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid ""
-"When True, only the single problem specified by \"Link to Problem Location\""
-" is shown. When False, a panel is displayed with all problems available for "
-"peer grading."
-msgstr ""
-"Whén Trüé, önlý thé sïnglé prößlém spéçïfïéd ßý \"Lïnk tö Prößlém Löçätïön\""
-" ïs shöwn. Whén Fälsé, ä pänél ïs dïspläýéd wïth äll prößléms äväïläßlé för "
-"péér grädïng. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂"
-" ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ "
-"мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ "
-"єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє "
-"νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт "
-"¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂є#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid "Link to Problem Location"
-msgstr "Lïnk tö Prößlém Löçätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid ""
-"The location of the problem being graded. Only used when \"Show Single "
-"Problem\" is True."
-msgstr ""
-"Thé löçätïön öf thé prößlém ßéïng grädéd. Önlý üséd whén \"Shöw Sïnglé "
-"Prößlém\" ïs Trüé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid ""
-"Defines whether the student gets credit for grading this problem. Only used "
-"when \"Show Single Problem\" is True."
-msgstr ""
-"Défïnés whéthér thé stüdént géts çrédït för grädïng thïs prößlém. Önlý üséd "
-"whén \"Shöw Sïnglé Prößlém\" ïs Trüé. Ⱡ'σяєм ιρѕυм ∂σłσя #"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid "Due date that should be displayed."
-msgstr ""
-"Düé däté thät shöüld ßé dïspläýéd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid "Amount of grace to give on the due date."
-msgstr ""
-"Àmöünt öf gräçé tö gïvé ön thé düé däté. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid "Student data for a given peer grading problem."
-msgstr ""
-"Stüdént dätä för ä gïvén péér grädïng prößlém. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя α#"
-
-#: common/lib/xmodule/xmodule/peer_grading_module.py
-msgid "Peer Grading Interface"
-msgstr "Péér Grädïng Ìntérfäçé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
-
 #: common/lib/xmodule/xmodule/seq_module.py
 msgid "Enter the date by which problems are due."
 msgstr ""
@@ -5624,6 +4872,8 @@ msgid "Help Center"
 msgstr "Hélp Çéntér Ⱡ'σяєм ιρѕυм ∂σłσя #"
 
 #: lms/djangoapps/branding/api.py lms/templates/static_templates/contact.html
+#: themes/default/lms/templates/contact.html
+#: themes/default/lms/templates/static_templates/contact.html
 #: themes/red-theme/lms/templates/footer.html
 msgid "Contact"
 msgstr "Çöntäçt Ⱡ'σяєм ιρѕυм #"
@@ -5650,6 +4900,7 @@ msgstr "Térms öf Sérvïçé & Hönör Çödé Ⱡ'σяєм ιρѕυм ∂σł
 #: lms/djangoapps/branding/api.py lms/djangoapps/certificates/views/webview.py
 #: cms/templates/widgets/footer.html
 #: lms/templates/static_templates/privacy.html
+#: themes/default/lms/templates/static_templates/privacy.html
 #: themes/red-theme/lms/templates/footer.html
 msgid "Privacy Policy"
 msgstr "Prïväçý Pölïçý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
@@ -5663,6 +4914,8 @@ msgstr "Àççéssïßïlïtý Pölïçý Ⱡ'σяєм ιρѕυм ∂σłσя ѕ
 #. in order to register a new account.
 #: lms/djangoapps/branding/api.py openedx/core/djangoapps/user_api/views.py
 #: cms/templates/widgets/footer.html lms/templates/static_templates/tos.html
+#: themes/default/lms/templates/tos.html
+#: themes/default/lms/templates/static_templates/tos.html
 #: themes/red-theme/lms/templates/footer.html
 msgid "Terms of Service"
 msgstr "Térms öf Sérvïçé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
@@ -6566,23 +5819,24 @@ msgstr "Çértïfïçäté ïs ßéïng çréätéd. Ⱡ'σяєм ιρѕυм ∂
 
 #: lms/djangoapps/courseware/views.py
 msgid ""
-"{platform_name} now offers financial assistance for learners who want to earn verified certificates but who may not be able to pay the Verified Certificate fee. Eligible learners receive 90{percent_sign} off the Verified Certificate fee for a course.\n"
-"To apply for financial assistance, enroll in the audit track for a course that offers Verified Certificates, and then complete this application. Note that you must complete a separate application for each course you take."
+"{platform_name} now offers financial assistance for learners who want to earn Verified Certificates but who may not be able to pay the Verified Certificate fee. Eligible learners may receive up to 90{percent_sign} off the Verified Certificate fee for a course.\n"
+"To apply for financial assistance, enroll in the audit track for a course that offers Verified Certificates, and then complete this application. Note that you must complete a separate application for each course you take.\n"
+" We plan to use this information to evaluate your application for financial assistance and to further develop our financial assistance program."
 msgstr ""
-"{platform_name} nöw öfférs fïnänçïäl ässïstänçé för léärnérs whö wänt tö éärn vérïfïéd çértïfïçätés ßüt whö mäý nöt ßé äßlé tö päý thé Vérïfïéd Çértïfïçäté féé. Élïgïßlé léärnérs réçéïvé 90{percent_sign} öff thé Vérïfïéd Çértïfïçäté féé för ä çöürsé.\n"
-"Tö äpplý för fïnänçïäl ässïstänçé, énröll ïn thé äüdït träçk för ä çöürsé thät öfférs Vérïfïéd Çértïfïçätés, änd thén çömplété thïs äpplïçätïön. Nöté thät ýöü müst çömplété ä sépäräté äpplïçätïön för éäçh çöürsé ýöü täké.#"
+"{platform_name} nöw öfférs fïnänçïäl ässïstänçé för léärnérs whö wänt tö éärn Vérïfïéd Çértïfïçätés ßüt whö mäý nöt ßé äßlé tö päý thé Vérïfïéd Çértïfïçäté féé. Élïgïßlé léärnérs mäý réçéïvé üp tö 90{percent_sign} öff thé Vérïfïéd Çértïfïçäté féé för ä çöürsé.\n"
+"Tö äpplý för fïnänçïäl ässïstänçé, énröll ïn thé äüdït träçk för ä çöürsé thät öfférs Vérïfïéd Çértïfïçätés, änd thén çömplété thïs äpplïçätïön. Nöté thät ýöü müst çömplété ä sépäräté äpplïçätïön för éäçh çöürsé ýöü täké.\n"
+" Wé plän tö üsé thïs ïnförmätïön tö évälüäté ýöür äpplïçätïön för fïnänçïäl ässïstänçé änd tö fürthér dévélöp öür fïnänçïäl ässïstänçé prögräm.#"
 
 #: lms/djangoapps/courseware/views.py
-msgid "Annual Income"
-msgstr "Ànnüäl Ìnçömé Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
+msgid "Annual Household Income"
+msgstr "Ànnüäl Höüséhöld Ìnçömé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
 
 #: lms/djangoapps/courseware/views.py
 msgid ""
-"Tell us about your current financial situation, including any unusual "
-"circumstances."
+"Tell us about your current financial situation. Why do you need assistance?"
 msgstr ""
-"Téll üs äßöüt ýöür çürrént fïnänçïäl sïtüätïön, ïnçlüdïng äný ünüsüäl "
-"çïrçümstänçés. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
+"Téll üs äßöüt ýöür çürrént fïnänçïäl sïtüätïön. Whý dö ýöü nééd ässïstänçé? "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυ#"
 
 #: lms/djangoapps/courseware/views.py
 msgid ""
@@ -6595,10 +5849,10 @@ msgstr ""
 #: lms/djangoapps/courseware/views.py
 msgid ""
 "Tell us about your plans for this course. What steps will you take to help "
-"you complete the course work a receive a certificate?"
+"you complete the course work and receive a certificate?"
 msgstr ""
 "Téll üs äßöüt ýöür pläns för thïs çöürsé. Whät stéps wïll ýöü täké tö hélp "
-"ýöü çömplété thé çöürsé wörk ä réçéïvé ä çértïfïçäté? Ⱡ'σя#"
+"ýöü çömplété thé çöürsé wörk änd réçéïvé ä çértïfïçäté? Ⱡ'#"
 
 #: lms/djangoapps/courseware/views.py
 msgid "Use between 250 and 500 words or so in your response."
@@ -6622,29 +5876,22 @@ msgstr ""
 "ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ι#"
 
 #: lms/djangoapps/courseware/views.py
-msgid "income in USD ($)"
-msgstr "ïnçömé ïn ÛSD ($) Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+msgid "income in US Dollars ($)"
+msgstr "ïnçömé ïn ÛS Döllärs ($) Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
 
 #: lms/djangoapps/courseware/views.py
-msgid "Specify your annual income in USD."
+msgid "Specify your annual household income in US Dollars."
 msgstr ""
-"Spéçïfý ýöür ännüäl ïnçömé ïn ÛSD. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: lms/djangoapps/courseware/views.py
-msgid ""
-"I allow edX to use the information provided in this application for edX "
-"marketing purposes."
-msgstr ""
-"Ì ällöw édX tö üsé thé ïnförmätïön prövïdéd ïn thïs äpplïçätïön för édX "
-"märkétïng pürpösés. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
+"Spéçïfý ýöür ännüäl höüséhöld ïnçömé ïn ÛS Döllärs. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
 
 #: lms/djangoapps/courseware/views.py
 msgid ""
-"Annual income and personal information such as email address will not be "
-"shared."
+"I allow edX to use the information provided in this application (except for "
+"financial information) for edX marketing purposes."
 msgstr ""
-"Ànnüäl ïnçömé änd pérsönäl ïnförmätïön süçh äs émäïl äddréss wïll nöt ßé "
-"shäréd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
+"Ì ällöw édX tö üsé thé ïnförmätïön prövïdéd ïn thïs äpplïçätïön (éxçépt för "
+"fïnänçïäl ïnförmätïön) för édX märkétïng pürpösés. Ⱡ'σяєм#"
 
 #: lms/djangoapps/dashboard/git_import.py
 msgid ""
@@ -6828,6 +6075,34 @@ msgid "email"
 msgstr "émäïl Ⱡ'σяєм ιρѕ#"
 
 #: lms/djangoapps/dashboard/sysadmin.py
+msgid "full_name"
+msgstr "füll_nämé Ⱡ'σяєм ιρѕυм ∂σł#"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "registration_date"
+msgstr "régïsträtïön_däté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "global_staff"
+msgstr "glößäl_stäff Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "country"
+msgstr "çöüntrý Ⱡ'σяєм ιρѕυм #"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "mailing_address"
+msgstr "mäïlïng_äddréss Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "gender"
+msgstr "géndér Ⱡ'σяєм ιρѕυ#"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "level_of_education"
+msgstr "lévél_öf_édüçätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
+
+#: lms/djangoapps/dashboard/sysadmin.py
 msgid "Repair Results"
 msgstr "Répäïr Résülts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
@@ -6964,10 +6239,6 @@ msgstr ""
 #: lms/djangoapps/dashboard/sysadmin.py
 msgid "role"
 msgstr "rölé Ⱡ'σяєм ι#"
-
-#: lms/djangoapps/dashboard/sysadmin.py
-msgid "full_name"
-msgstr "füll_nämé Ⱡ'σяєм ιρѕυм ∂σł#"
 
 #: lms/djangoapps/django_comment_client/base/views.py
 msgid "Title can't be empty"
@@ -7626,40 +6897,46 @@ msgstr ""
 "lïst. Pléäsé réfrésh thé pägé änd trý ägäïn. Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
 #: lms/djangoapps/instructor/views/api.py
-msgid "Invalid Json data, Please refresh the page and then try again."
+msgid ""
+"The record is not in the correct format. Please add a valid username or "
+"email address."
 msgstr ""
-"Ìnvälïd Jsön dätä, Pléäsé réfrésh thé pägé änd thén trý ägäïn. Ⱡ'σяєм ιρѕυм "
-"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+"Thé réçörd ïs nöt ïn thé çörréçt förmät. Pléäsé ädd ä välïd üsérnämé ör "
+"émäïl äddréss. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
 
 #: lms/djangoapps/instructor/views/api.py
 msgid ""
 "Student username/email field is required and can not be empty. Kindly fill "
-"in username/email and then press \"Add Exception\" button."
+"in username/email and then press \"Add to Exception List\" button."
 msgstr ""
 "Stüdént üsérnämé/émäïl fïéld ïs réqüïréd änd çän nöt ßé émptý. Kïndlý fïll "
-"ïn üsérnämé/émäïl änd thén préss \"Àdd Éxçéptïön\" ßüttön. Ⱡ#"
-
-#: lms/djangoapps/instructor/views/api.py
-msgid ""
-"We can't find the user (username/email={user}) you've entered. Make sure the"
-" username or email address is correct, then try again."
-msgstr ""
-"Wé çän't fïnd thé üsér (üsérnämé/émäïl={user}) ýöü'vé éntéréd. Mäké süré thé"
-" üsérnämé ör émäïl äddréss ïs çörréçt, thén trý ägäïn. Ⱡ'σяє#"
-
-#: lms/djangoapps/instructor/views/api.py
-msgid ""
-"The user (username/email={user}) you have entered is not enrolled in this "
-"course. Make sure the username or email address is correct, then try again."
-msgstr ""
-"Thé üsér (üsérnämé/émäïl={user}) ýöü hävé éntéréd ïs nöt énrölléd ïn thïs "
-"çöürsé. Mäké süré thé üsérnämé ör émäïl äddréss ïs çörréçt, thén trý ägäïn. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ "
-"тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм,"
-" qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
+"ïn üsérnämé/émäïl änd thén préss \"Àdd tö Éxçéptïön Lïst\" ßüttön. Ⱡ'σяєм "
+"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя "
+"ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ "
+"ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
 "¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
 "¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
-"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι#"
+"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂ єѕт łα#"
+
+#: lms/djangoapps/instructor/views/api.py
+msgid ""
+"{user} does not exist in the LMS. Please check your spelling and retry."
+msgstr ""
+"{user} döés nöt éxïst ïn thé LMS. Pléäsé çhéçk ýöür spéllïng änd rétrý. "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
+
+#: lms/djangoapps/instructor/views/api.py
+msgid ""
+"{user} is not enrolled in this course. Please check your spelling and retry."
+msgstr ""
+"{user} ïs nöt énrölléd ïn thïs çöürsé. Pléäsé çhéçk ýöür spéllïng änd rétrý."
+" Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
+
+#: lms/djangoapps/instructor/views/api.py
+msgid "Invalid Json data, Please refresh the page and then try again."
+msgstr ""
+"Ìnvälïd Jsön dätä, Pléäsé réfrésh thé pägé änd thén trý ägäïn. Ⱡ'σяєм ιρѕυм "
+"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "Invalid data, user_id must be present for all certificate exceptions."
@@ -7674,8 +6951,8 @@ msgstr ""
 " ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: lms/djangoapps/instructor/views/api.py
-msgid "user \"{user}\" in row#    {row}"
-msgstr "üsér \"{user}\" ïn röw#    {row} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
+msgid "user \"{user}\" in row# {row}"
+msgstr "üsér \"{user}\" ïn röw# {row} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "user \"{username}\" in row# {row}"
@@ -8463,18 +7740,6 @@ msgstr ""
 "¢σηѕє¢тєтυ#"
 
 #: lms/djangoapps/lms_xblock/mixin.py
-msgid "Course Is Public"
-msgstr "Çöürsé Ìs Püßlïç Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
-
-#: lms/djangoapps/lms_xblock/mixin.py
-msgid ""
-"Enter true or false. If true, the course is open to the public. If false, "
-"the course is open only to admins."
-msgstr ""
-"Éntér trüé ör fälsé. Ìf trüé, thé çöürsé ïs öpén tö thé püßlïç. Ìf fälsé, "
-"thé çöürsé ïs öpén önlý tö ädmïns. Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
 "A dictionary that maps which groups can be shown this block. The keys are "
 "group configuration ids and the values are a list of group IDs. If there is "
@@ -8505,144 +7770,6 @@ msgstr ""
 #: lms/djangoapps/notes/views.py lms/templates/notes.html
 msgid "My Notes"
 msgstr "Mý Nötés Ⱡ'σяєм ιρѕυм ∂#"
-
-#: lms/djangoapps/open_ended_grading/staff_grading_service.py
-msgid ""
-"Could not contact the external grading server. Please contact the "
-"development team at {email}."
-msgstr ""
-"Çöüld nöt çöntäçt thé éxtérnäl grädïng sérvér. Pléäsé çöntäçt thé "
-"dévélöpmént téäm ät {email}. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: lms/djangoapps/open_ended_grading/staff_grading_service.py
-msgid ""
-"Cannot find any open response problems in this course. Have you submitted "
-"answers to any open response assessment questions? If not, please do so and "
-"return to this page."
-msgstr ""
-"Çännöt fïnd äný öpén réspönsé prößléms ïn thïs çöürsé. Hävé ýöü süßmïttéd "
-"änswérs tö äný öpén réspönsé ässéssmént qüéstïöns? Ìf nöt, pléäsé dö sö änd "
-"rétürn tö thïs pägé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg "
-"єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт "
-"єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт "
-"αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη "
-"νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт "
-"σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σ#"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid "AI Assessment"
-msgstr "ÀÌ Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid "Peer Assessment"
-msgstr "Péér Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid "Not yet available"
-msgstr "Nöt ýét äväïläßlé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid "Automatic Checker"
-msgstr "Àütömätïç Çhéçkér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid "Instructor Assessment"
-msgstr "Ìnstrüçtör Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid ""
-"Error occurred while contacting the grading service.  Please notify course "
-"staff."
-msgstr ""
-"Érrör öççürréd whïlé çöntäçtïng thé grädïng sérvïçé.  Pléäsé nötïfý çöürsé "
-"stäff. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid ""
-"Error occurred while contacting the grading service.  Please notify your edX"
-" point of contact."
-msgstr ""
-"Érrör öççürréd whïlé çöntäçtïng thé grädïng sérvïçé.  Pléäsé nötïfý ýöür édX"
-" pöïnt öf çöntäçt. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
-
-#: lms/djangoapps/open_ended_grading/utils.py
-msgid "for course {0} and student {1}."
-msgstr "för çöürsé {0} änd stüdént {1}. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid ""
-"View all problems that require peer assessment in this particular course."
-msgstr ""
-"Vïéw äll prößléms thät réqüïré péér ässéssmént ïn thïs pärtïçülär çöürsé. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid ""
-"View ungraded submissions submitted by students for the open ended problems "
-"in the course."
-msgstr ""
-"Vïéw üngrädéd süßmïssïöns süßmïttéd ßý stüdénts för thé öpén éndéd prößléms "
-"ïn thé çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid ""
-"View open ended problems that you have previously submitted for grading."
-msgstr ""
-"Vïéw öpén éndéd prößléms thät ýöü hävé prévïöüslý süßmïttéd för grädïng. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid "View submissions that have been flagged by students as inappropriate."
-msgstr ""
-"Vïéw süßmïssïöns thät hävé ßéén fläggéd ßý stüdénts äs ïnäppröprïäté. Ⱡ'σяєм"
-" ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid "New submissions to grade"
-msgstr "Néw süßmïssïöns tö grädé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid "New grades have been returned"
-msgstr "Néw grädés hävé ßéén rétürnéd Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid "Submissions have been flagged for review"
-msgstr ""
-"Süßmïssïöns hävé ßéén fläggéd för révïéw Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-#: lms/templates/instructor/staff_grading.html
-msgid "Staff grading"
-msgstr "Stäff grädïng Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#. Translators: "Peer grading" appears on a tab that allows
-#. students to view open-ended problems that require grading
-#: lms/djangoapps/open_ended_grading/views.py
-msgid "Peer grading"
-msgstr "Péér grädïng Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
-
-#. Translators: "Open Ended Panel" appears on a tab that, when clicked, opens
-#. up a panel that
-#. displays information about open-ended problems that a user has submitted or
-#. needs to grade
-#: lms/djangoapps/open_ended_grading/views.py
-msgid "Open Ended Panel"
-msgstr "Öpén Éndéd Pänél Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
-
-#: lms/djangoapps/open_ended_grading/views.py
-msgid ""
-"\n"
-"        Error with initializing peer grading.\n"
-"        There has not been a peer grading module created in the courseware that would allow you to grade others.\n"
-"        Please check back later for this.\n"
-"        "
-msgstr ""
-"\n"
-"        Érrör wïth ïnïtïälïzïng péér grädïng.\n"
-"        Théré häs nöt ßéén ä péér grädïng mödülé çréätéd ïn thé çöürséwäré thät wöüld ällöw ýöü tö grädé öthérs.\n"
-"        Pléäsé çhéçk ßäçk lätér för thïs.\n"
-"         Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтє#"
 
 #: lms/djangoapps/shoppingcart/models.py
 msgid "Order Payment Confirmation"
@@ -10307,11 +9434,6 @@ msgstr "Örgänïzätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 msgid "Course Type"
 msgstr "Çöürsé Týpé Ⱡ'σяєм ιρѕυм ∂σłσя #"
 
-#: lms/envs/devstack.py
-#: lms/templates/instructor/instructor_dashboard_2/course_info.html
-msgid "Honor"
-msgstr "Hönör Ⱡ'σяєм ιρѕ#"
-
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to main content"
@@ -11682,6 +10804,21 @@ msgstr ""
 "{err} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
 
 #: cms/djangoapps/contentstore/views/course.py
+msgid ""
+"You must link this course to an organization in order to continue. "
+"Organization you selected does not exist in the system, you will need to add"
+" it to the system"
+msgstr ""
+"Ýöü müst lïnk thïs çöürsé tö än örgänïzätïön ïn ördér tö çöntïnüé. "
+"Örgänïzätïön ýöü séléçtéd döés nöt éxïst ïn thé sýstém, ýöü wïll nééd tö ädd"
+" ït tö thé sýstém Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт,"
+" ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм "
+"α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ "
+"єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє"
+" νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт "
+"¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυ#"
+
+#: cms/djangoapps/contentstore/views/course.py
 msgid "Invalid prerequisite course key"
 msgstr "Ìnvälïd préréqüïsïté çöürsé kéý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
 
@@ -12293,53 +11430,42 @@ msgstr ""
 "çértïfïçätés tö hélp fünd fréé édüçätïön för évérýöné glößällý Ⱡ'σя#"
 
 #: common/templates/course_modes/choose.html
-msgid "Earn an Honor Certificate"
-msgstr "Éärn än Hönör Çértïfïçäté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: common/templates/course_modes/choose.html
-msgid ""
-"Take this course for free and have complete access to all the course "
-"material, activities, tests, and forums. Please note that learners who earn "
-"a passing grade will earn a certificate in this course."
-msgstr ""
-"Täké thïs çöürsé för fréé änd hävé çömplété äççéss tö äll thé çöürsé "
-"mätérïäl, äçtïvïtïés, tésts, änd förüms. Pléäsé nöté thät léärnérs whö éärn "
-"ä pässïng grädé wïll éärn ä çértïfïçäté ïn thïs çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя "
-"ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт "
-"łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ "
-"єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ "
-"αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ "
-"ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт#"
-
-#: common/templates/course_modes/choose.html
-msgid "Pursue an Honor Certificate"
-msgstr "Pürsüé än Hönör Çértïfïçäté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: common/templates/course_modes/choose.html
 msgid "Audit This Course"
 msgstr "Àüdït Thïs Çöürsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
 
 #: common/templates/course_modes/choose.html
 msgid ""
 "Audit this course for free and have complete access to all the course "
-"material, activities, tests, and forums.  Please note that this track does "
-"not offer a certificate for learners who earn a passing grade."
+"material, activities, tests, and forums."
 msgstr ""
 "Àüdït thïs çöürsé för fréé änd hävé çömplété äççéss tö äll thé çöürsé "
-"mätérïäl, äçtïvïtïés, tésts, änd förüms.  Pléäsé nöté thät thïs träçk döés "
-"nöt öffér ä çértïfïçäté för léärnérs whö éärn ä pässïng grädé. Ⱡ'σяєм ιρѕυм "
-"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя "
-"ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ "
-"ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
-"¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
-"¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕι#"
+"mätérïäl, äçtïvïtïés, tésts, änd förüms. Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
+
+#: common/templates/course_modes/choose.html
+msgid "Audit This Course (No Certificate)"
+msgstr ""
+"Àüdït Thïs Çöürsé (Nö Çértïfïçäté) Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#. Translators: b_start notes the beginning of a section of text bolded for
+#. emphasis, and b_end marks the end of the bolded text.
+#: common/templates/course_modes/choose.html
+msgid ""
+"Audit this course for free and have complete access to all the course "
+"material, activities, tests, and forums.  {b_start}Please note that this "
+"track does not offer a certificate for learners who earn a passing "
+"grade.{b_end}"
+msgstr ""
+"Àüdït thïs çöürsé för fréé änd hävé çömplété äççéss tö äll thé çöürsé "
+"mätérïäl, äçtïvïtïés, tésts, änd förüms.  {b_start}Pléäsé nöté thät thïs "
+"träçk döés nöt öffér ä çértïfïçäté för léärnérs whö éärn ä pässïng "
+"grädé.{b_end} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂"
+" ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ "
+"мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ "
+"єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє "
+"νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ#"
 
 #: lms/templates/annotatable.html lms/templates/imageannotation.html
 #: lms/templates/textannotation.html lms/templates/videoannotation.html
-#: lms/templates/instructor/staff_grading.html
-#: lms/templates/open_ended_problems/combined_notifications.html
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-#: lms/templates/open_ended_problems/open_ended_problems.html
 #: lms/templates/peer_grading/peer_grading.html
 msgid "Instructions"
 msgstr "Ìnstrüçtïöns Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
@@ -12625,9 +11751,6 @@ msgstr ""
 
 #: lms/templates/help_modal.html lms/templates/manage_user_standing.html
 #: lms/templates/register-shib.html
-#: lms/templates/combinedopenended/openended/open_ended.html
-#: lms/templates/combinedopenended/selfassessment/self_assessment_prompt.html
-#: lms/templates/instructor/staff_grading.html
 #: lms/templates/peer_grading/peer_grading_problem.html
 #: lms/templates/survey/survey.html
 msgid "Submit"
@@ -12737,16 +11860,8 @@ msgstr "För änýöné, änýwhéré, änýtïmé Ⱡ'σяєм ιρѕυм ∂σ
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
 #: lms/templates/index.html
-msgid "Welcome to Open edX!"
-msgstr "Wélçömé tö Öpén édX! Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#. Translators: 'Open edX' is a brand, please keep this untranslated. See
-#. http://openedx.org for more information.
-#: lms/templates/index.html
-msgid "It works! This is the default homepage for this Open edX instance."
-msgstr ""
-"Ìt wörks! Thïs ïs thé défäült hömépägé för thïs Öpén édX ïnstänçé. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
+msgid "Welcome to {university_name}!"
+msgstr "Wélçömé tö {university_name}! Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
 
 #: lms/templates/index.html lms/templates/courseware/courses.html
 msgid "Search for a course"
@@ -13148,8 +12263,6 @@ msgid "Reset"
 msgstr "Rését Ⱡ'σяєм ιρѕ#"
 
 #: lms/templates/problem.html lms/templates/word_cloud.html
-#: lms/templates/combinedopenended/openended/open_ended.html
-#: lms/templates/combinedopenended/selfassessment/self_assessment_prompt.html
 #: lms/templates/verify_student/face_upload.html
 msgid "Save"
 msgstr "Sävé Ⱡ'σяєм ι#"
@@ -13750,6 +12863,7 @@ msgid "Error"
 msgstr "Érrör Ⱡ'σяєм ιρѕ#"
 
 #: lms/templates/sysadmin_dashboard_gitlogs.html
+#: lms/templates/ccx/schedule.html
 msgid "Date"
 msgstr "Däté Ⱡ'σяєм ι#"
 
@@ -14261,6 +13375,10 @@ msgstr ""
 "αмєт, ¢σηѕє¢тєтυя α#"
 
 #: lms/templates/ccx/schedule.html
+msgid "Time"
+msgstr "Tïmé Ⱡ'σяєм ι#"
+
+#: lms/templates/ccx/schedule.html
 msgid "Set date"
 msgstr "Sét däté Ⱡ'σяєм ιρѕυм ∂#"
 
@@ -14289,6 +13407,10 @@ msgstr ""
 "förmät föür dïgït ýéär däsh twö dïgït mönth däsh twö dïgït däý Ⱡ'σяєм ιρѕυм "
 "∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
+#: lms/templates/ccx/schedule.html
+msgid "yyyy-mm-dd"
+msgstr "ýýýý-mm-dd Ⱡ'σяєм ιρѕυм ∂σłσ#"
+
 #. Translators: This explains to people using a screen reader how to interpret
 #. the format of HH:MM
 #: lms/templates/ccx/schedule.html
@@ -14296,6 +13418,10 @@ msgid "Start time format two digit hours colon two digit minutes"
 msgstr ""
 "Stärt tïmé förmät twö dïgït höürs çölön twö dïgït mïnütés Ⱡ'σяєм ιρѕυм ∂σłσя"
 " ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: lms/templates/ccx/schedule.html
+msgid "time"
+msgstr "tïmé Ⱡ'σяєм ι#"
 
 #: lms/templates/ccx/schedule.html
 msgid "(Optional)"
@@ -14446,172 +13572,6 @@ msgid ""
 msgstr ""
 "Ìf äll öf thé ïnförmätïön ïs çörréçt änd thé prößlém pérsïsts, çöntäçt "
 "téçhnïçäl süppört. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: lms/templates/combinedopenended/combined_open_ended.html
-msgid "Open Response"
-msgstr "Öpén Réspönsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#: lms/templates/combinedopenended/combined_open_ended.html
-msgid "Assessments:"
-msgstr "Àsséssménts: Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
-
-#: lms/templates/combinedopenended/combined_open_ended.html
-#: lms/templates/peer_grading/peer_grading_problem.html
-msgid "Hide Question"
-msgstr "Hïdé Qüéstïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
-
-#: lms/templates/combinedopenended/combined_open_ended.html
-msgid "New Submission"
-msgstr "Néw Süßmïssïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
-
-#: lms/templates/combinedopenended/combined_open_ended.html
-msgid "Next Step"
-msgstr "Néxt Stép Ⱡ'σяєм ιρѕυм ∂σł#"
-
-#: lms/templates/combinedopenended/combined_open_ended.html
-msgid ""
-"Staff Warning: Please note that if you submit a duplicate of text that has "
-"already been submitted for grading, it will not show up in the staff grading"
-" view.  It will be given the same grade that the original received "
-"automatically, and will be returned within 30 minutes if the original is "
-"already graded, or when the original is graded if not."
-msgstr ""
-"Stäff Wärnïng: Pléäsé nöté thät ïf ýöü süßmït ä düplïçäté öf téxt thät häs "
-"älréädý ßéén süßmïttéd för grädïng, ït wïll nöt shöw üp ïn thé stäff grädïng"
-" vïéw.  Ìt wïll ßé gïvén thé sämé grädé thät thé örïgïnäl réçéïvéd "
-"äütömätïçällý, änd wïll ßé rétürnéd wïthïn 30 mïnütés ïf thé örïgïnäl ïs "
-"älréädý grädéd, ör whén thé örïgïnäl ïs grädéd ïf nöt. Ⱡ'σяєм ιρѕυм ∂σłσя "
-"ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕ#"
-
-#: lms/templates/combinedopenended/combined_open_ended_legend.html
-msgid "Legend"
-msgstr "Légénd Ⱡ'σяєм ιρѕυ#"
-
-#: lms/templates/combinedopenended/combined_open_ended_results.html
-msgid "Submitted Rubric"
-msgstr "Süßmïttéd Rüßrïç Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
-
-#: lms/templates/combinedopenended/combined_open_ended_results.html
-msgid "Toggle Full Rubric"
-msgstr "Tögglé Füll Rüßrïç Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
-
-#. Translators: an example of what this string will look
-#. like is: "Scored rubric from grader 1", where
-#. "Scored rubric" replaces {result_of_task} and
-#. "1" replaces {number}.
-#. This string appears when a user is viewing one of
-#. their graded rubrics for an openended response problem.
-#. the number distinguishes between the different
-#. graded rubrics the user might have received
-#: lms/templates/combinedopenended/combined_open_ended_results.html
-msgid "{result_of_task} from grader {number}"
-msgstr "{result_of_task} fröm grädér {number} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#. Translators: "See full feedback" is the text of
-#. a link that allows a user to see more detailed
-#. feedback from a self, peer, or instructor
-#. graded openended problem
-#: lms/templates/combinedopenended/open_ended_result_table.html
-msgid "See full feedback"
-msgstr "Séé füll féédßäçk Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#. Translators: this text forms a link that, when
-#. clicked, allows a user to respond to the feedback
-#. the user received on his or her openended problem
-#. Translators: when "Respond to Feedback" is clicked, a survey
-#. appears on which a user can respond to the feedback the user
-#. received on an openended problem
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
-msgid "Respond to Feedback"
-msgstr "Réspönd tö Féédßäçk Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
-msgid "How accurate do you find this feedback?"
-msgstr ""
-"Höw äççüräté dö ýöü fïnd thïs féédßäçk? Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя#"
-
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
-msgid "Partially Correct"
-msgstr "Pärtïällý Çörréçt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
-msgid "No Opinion"
-msgstr "Nö Öpïnïön Ⱡ'σяєм ιρѕυм ∂σłσ#"
-
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
-msgid "Partially Incorrect"
-msgstr "Pärtïällý Ìnçörréçt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
-msgid "Additional comments:"
-msgstr "Àddïtïönäl çömménts: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: lms/templates/combinedopenended/open_ended_result_table.html
-#: lms/templates/combinedopenended/openended/open_ended_evaluation.html
-msgid "Submit Feedback"
-msgstr "Süßmït Féédßäçk Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#. Translators: "Response" labels an area that contains the user's
-#. Response to an openended problem. It is a noun.
-#. Translators: "Response" labels a text area into which a user enters
-#. his or her response to a prompt from an openended problem.
-#: lms/templates/combinedopenended/openended/open_ended.html
-#: lms/templates/combinedopenended/selfassessment/self_assessment_prompt.html
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-msgid "Response"
-msgstr "Réspönsé Ⱡ'σяєм ιρѕυм ∂#"
-
-#. Translators: This is a menu option for showing only unanswered forum
-#. question threads
-#: lms/templates/combinedopenended/openended/open_ended.html
-#: lms/templates/discussion/_thread_list_template.html
-msgid "Unanswered"
-msgstr "Ûnänswéréd Ⱡ'σяєм ιρѕυм ∂σłσ#"
-
-#: lms/templates/combinedopenended/openended/open_ended.html
-msgid "Skip Post-Assessment"
-msgstr "Skïp Pöst-Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: lms/templates/combinedopenended/openended/open_ended_combined_rubric.html
-msgid "{num} point: {explanatory_text}"
-msgid_plural "{num} points: {explanatory_text}"
-msgstr[0] "{num} pöïnt: {explanatory_text} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
-msgstr[1] "{num} pöïnts: {explanatory_text} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#: lms/templates/combinedopenended/openended/open_ended_error.html
-msgid "There was an error with your submission.  Please contact course staff."
-msgstr ""
-"Théré wäs än érrör wïth ýöür süßmïssïön.  Pléäsé çöntäçt çöürsé stäff. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: lms/templates/combinedopenended/openended/open_ended_rubric.html
-msgid "Rubric"
-msgstr "Rüßrïç Ⱡ'σяєм ιρѕυ#"
-
-#: lms/templates/combinedopenended/openended/open_ended_rubric.html
-msgid ""
-"Select the criteria you feel best represents this submission in each "
-"category."
-msgstr ""
-"Séléçt thé çrïtérïä ýöü féél ßést réprésénts thïs süßmïssïön ïn éäçh "
-"çätégörý. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: lms/templates/combinedopenended/openended/open_ended_rubric.html
-msgid "{num} point: {text}"
-msgid_plural "{num} points: {text}"
-msgstr[0] "{num} pöïnt: {text} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
-msgstr[1] "{num} pöïnts: {text} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#: lms/templates/combinedopenended/selfassessment/self_assessment_hint.html
-msgid "Please enter a hint below:"
-msgstr "Pléäsé éntér ä hïnt ßélöw: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
 
 #: lms/templates/commerce/checkout_cancel.html
 msgid "Checkout Cancelled"
@@ -15882,13 +14842,6 @@ msgstr ""
 "¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
 "ηση ρяσι∂єηт, ѕ#"
 
-#: lms/templates/dashboard/_dashboard_credit_info.html
-msgid ""
-"An error occurred with this transaction. For help, contact {support_email}."
-msgstr ""
-"Àn érrör öççürréd wïth thïs tränsäçtïön. För hélp, çöntäçt {support_email}. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
 #. Translators: provider_name is the name of a credit provider or university
 #. (e.g. State University)
 #: lms/templates/dashboard/_dashboard_credit_info.html
@@ -15903,8 +14856,28 @@ msgstr ""
 msgid "Get Credit"
 msgstr "Gét Çrédït Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
-#. Translators: provider_name is the name of a credit provider or university
-#. (e.g. State University)
+#. Translators: link_to_provider_site is a link to an external webpage. The
+#. text of the link will be the name of a  credit provider, such as 'State
+#. University' or 'Happy Fun Company'.
+#: lms/templates/dashboard/_dashboard_credit_info.html
+msgid ""
+"Thank you for your payment. To receive course credit, you must now request "
+"credit at the {link_to_provider_site} website. Select <b>Request Credit</b> "
+"to get started."
+msgstr ""
+"Thänk ýöü för ýöür päýmént. Tö réçéïvé çöürsé çrédït, ýöü müst nöw réqüést "
+"çrédït ät thé {link_to_provider_site} wéßsïté. Séléçt <b>Réqüést Çrédït</b> "
+"tö gét stärtéd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, "
+"ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм "
+"α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ "
+"єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє"
+" νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт "
+"¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂#"
+
+#: lms/templates/dashboard/_dashboard_credit_info.html
+msgid "Request Credit"
+msgstr "Réqüést Çrédït Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
+
 #: lms/templates/dashboard/_dashboard_credit_info.html
 msgid ""
 "{provider_name} has received your course credit request. We will update you "
@@ -15913,32 +14886,14 @@ msgstr ""
 "{provider_name} häs réçéïvéd ýöür çöürsé çrédït réqüést. Wé wïll üpdäté ýöü "
 "whén çrédït pröçéssïng ïs çömplété. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
 
-#. Translators: link_to_provider_site is a link to an external webpage. The
-#. text of the link will be the name of a
-#. credit provider, such as 'State University' or 'Happy Fun Company'.
-#: lms/templates/dashboard/_dashboard_credit_info.html
-msgid ""
-"Thank you for your payment. To receive course credit, you must now request "
-"credit at the {link_to_provider_site}  website. Select <b>Request Credit</b>"
-" to get started."
-msgstr ""
-"Thänk ýöü för ýöür päýmént. Tö réçéïvé çöürsé çrédït, ýöü müst nöw réqüést "
-"çrédït ät thé {link_to_provider_site}  wéßsïté. Séléçt <b>Réqüést Çrédït</b>"
-" tö gét stärtéd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, "
-"ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм "
-"α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ "
-"єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє"
-" νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт "
-"¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι#"
-
 #: lms/templates/dashboard/_dashboard_credit_info.html
 msgid "View Details"
 msgstr "Vïéw Détäïls Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 
 #. Translators: link_to_provider_site is a link to an external webpage. The
-#. text of the link will be the name of a
-#. credit provider, such as 'State University' or 'Happy Fun Company'.
-#. provider_name is the name of credit provider.
+#. text of the link will be the name of a credit provider, such as 'State
+#. University' or 'Happy Fun Company'. provider_name is the name of credit
+#. provider.
 #: lms/templates/dashboard/_dashboard_credit_info.html
 msgid ""
 "<b>Congratulations!</b> {provider_name} has approved your request for course"
@@ -15953,10 +14908,6 @@ msgstr ""
 msgid "View Credit"
 msgstr "Vïéw Çrédït Ⱡ'σяєм ιρѕυм ∂σłσя #"
 
-#. Translators: link_to_provider_site is a link to an external webpage. The
-#. text of the link will be the name of a
-#. credit provider, such as 'State University' or 'Happy Fun Company'.
-#. provider_name is the name of credit provider.
 #: lms/templates/dashboard/_dashboard_credit_info.html
 msgid ""
 "{provider_name} did not approve your request for course credit. For more "
@@ -15965,6 +14916,13 @@ msgstr ""
 "{provider_name} dïd nöt äpprövé ýöür réqüést för çöürsé çrédït. För möré "
 "ïnförmätïön, çöntäçt {link_to_provider_site} dïréçtlý. Ⱡ'σяєм ιρѕυм ∂σłσя "
 "ѕιт αмєт, ¢#"
+
+#: lms/templates/dashboard/_dashboard_credit_info.html
+msgid ""
+"An error occurred with this transaction. For help, contact {support_email}."
+msgstr ""
+"Àn érrör öççürréd wïth thïs tränsäçtïön. För hélp, çöntäçt {support_email}. "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: lms/templates/dashboard/_dashboard_info_language.html
 msgid "edit"
@@ -16141,6 +15099,12 @@ msgstr "Shöw äll Ⱡ'σяєм ιρѕυм ∂#"
 #: lms/templates/discussion/_thread_list_template.html
 msgid "Unread"
 msgstr "Ûnréäd Ⱡ'σяєм ιρѕυ#"
+
+#. Translators: This is a menu option for showing only unanswered forum
+#. question threads
+#: lms/templates/discussion/_thread_list_template.html
+msgid "Unanswered"
+msgstr "Ûnänswéréd Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
 #. Translators: This is a menu option for showing only forum threads flagged
 #. for abuse
@@ -17260,16 +16224,17 @@ msgstr ""
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid ""
 "If you are interested in working toward a Verified Certificate, but cannot "
-"afford to pay the fee, please apply now. Please note space is limited."
+"afford to pay the fee, please apply now. Please note that financial "
+"assistance is limited and may not be awarded to all eligible candidates."
 msgstr ""
 "Ìf ýöü äré ïntéréstéd ïn wörkïng töwärd ä Vérïfïéd Çértïfïçäté, ßüt çännöt "
-"äfförd tö päý thé féé, pléäsé äpplý nöw. Pléäsé nöté späçé ïs lïmïtéd. "
+"äfförd tö päý thé féé, pléäsé äpplý nöw. Pléäsé nöté thät fïnänçïäl "
+"ässïstänçé ïs lïmïtéd änd mäý nöt ßé äwärdéd tö äll élïgïßlé çändïdätés. "
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ "
 "тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм,"
 " qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
 "¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
-"¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
-"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂#"
+"¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя.#"
 
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid ""
@@ -17288,18 +16253,18 @@ msgstr ""
 
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid ""
-"Once your application is approved, we'll email to let you know and give you "
-"instructions for how to verify your identity on edX.org; then you can start "
-"working toward completing your edX course."
+"If your application is approved, we'll give you instructions for verifying "
+"your identity on edx.org so you can start working toward completing your edX"
+" course."
 msgstr ""
-"Önçé ýöür äpplïçätïön ïs äpprövéd, wé'll émäïl tö lét ýöü knöw änd gïvé ýöü "
-"ïnstrüçtïöns för höw tö vérïfý ýöür ïdéntïtý ön édX.örg; thén ýöü çän stärt "
-"wörkïng töwärd çömplétïng ýöür édX çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт "
-"∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση "
-"υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє "
-"∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα"
-" ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт#"
+"Ìf ýöür äpplïçätïön ïs äpprövéd, wé'll gïvé ýöü ïnstrüçtïöns för vérïfýïng "
+"ýöür ïdéntïtý ön édx.örg sö ýöü çän stärt wörkïng töwärd çömplétïng ýöür édX"
+" çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ "
+"єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм"
+" νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα "
+"¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт"
+" єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт "
+"¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυη#"
 
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid ""
@@ -17327,80 +16292,6 @@ msgstr "Bäçk tö Stüdént FÀQs Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α
 #: lms/templates/financial-assistance/financial-assistance.html
 msgid "Apply for Financial Assistance"
 msgstr "Àpplý för Fïnänçïäl Àssïstänçé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid "{course_number} Staff Grading"
-msgstr "{course_number} Stäff Grädïng Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid ""
-"This is the list of problems that currently need to be graded in order to "
-"train AI grading and create calibration essays for peer grading. Each "
-"problem needs to be treated separately, and we have indicated the number of "
-"student submissions that need to be graded.  You can grade more than the "
-"minimum required number of submissions--this will improve the accuracy of AI"
-" grading, though with diminishing returns. You can see the current accuracy "
-"of AI grading in the problem view."
-msgstr ""
-"Thïs ïs thé lïst öf prößléms thät çürréntlý nééd tö ßé grädéd ïn ördér tö "
-"träïn ÀÌ grädïng änd çréäté çälïßrätïön éssäýs för péér grädïng. Éäçh "
-"prößlém nééds tö ßé tréätéd sépärätélý, änd wé hävé ïndïçätéd thé nümßér öf "
-"stüdént süßmïssïöns thät nééd tö ßé grädéd.  Ýöü çän grädé möré thän thé "
-"mïnïmüm réqüïréd nümßér öf süßmïssïöns--thïs wïll ïmprövé thé äççüräçý öf ÀÌ"
-" grädïng, thöügh wïth dïmïnïshïng rétürns. Ýöü çän séé thé çürrént äççüräçý "
-"öf ÀÌ grädïng ïn thé prößlém vïéw.#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid "Problem List"
-msgstr "Prößlém Lïst Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid ""
-"Please note that when you see a submission here, it has been temporarily "
-"removed from the grading pool.  The submission will return to the grading "
-"pool after 30 minutes without any grade being submitted.  Hitting the back "
-"button will result in a 30 minute wait to be able to grade this submission "
-"again."
-msgstr ""
-"Pléäsé nöté thät whén ýöü séé ä süßmïssïön héré, ït häs ßéén témpörärïlý "
-"rémövéd fröm thé grädïng pööl.  Thé süßmïssïön wïll rétürn tö thé grädïng "
-"pööl äftér 30 mïnütés wïthöüt äný grädé ßéïng süßmïttéd.  Hïttïng thé ßäçk "
-"ßüttön wïll résült ïn ä 30 mïnüté wäït tö ßé äßlé tö grädé thïs süßmïssïön "
-"ägäïn. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ "
-"єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм"
-" νєηιαм, qυιѕ ησѕтяυ∂ єχ#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid "Prompt"
-msgstr "Prömpt Ⱡ'σяєм ιρѕυ#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid "(Hide)"
-msgstr "(Hïdé) Ⱡ'σяєм ιρѕυ#"
-
-#: lms/templates/instructor/staff_grading.html
-#: lms/templates/peer_grading/peer_grading_problem.html
-msgid "Student Response"
-msgstr "Stüdént Réspönsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
-
-#: lms/templates/instructor/staff_grading.html
-#: lms/templates/peer_grading/peer_grading_problem.html
-msgid "Written Feedback"
-msgstr "Wrïttén Féédßäçk Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid "Feedback for student (optional)"
-msgstr "Féédßäçk för stüdént (öptïönäl) Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid "Flag as inappropriate content for later review"
-msgstr ""
-"Fläg äs ïnäppröprïäté çöntént för lätér révïéw Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя α#"
-
-#: lms/templates/instructor/staff_grading.html
-msgid "Skip"
-msgstr "Skïp Ⱡ'σяєм ι#"
 
 #: lms/templates/instructor/instructor_dashboard_2/add_coupon_modal.html
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
@@ -17496,6 +16387,21 @@ msgstr ""
 "çönfïgürätïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid ""
+"When you are ready to generate certificates for your course, click Generate "
+"Certificates. You do not need to do this<br/>if you have set the certificate"
+" mode to on-demand generation."
+msgstr ""
+"Whén ýöü äré réädý tö généräté çértïfïçätés för ýöür çöürsé, çlïçk Généräté "
+"Çértïfïçätés. Ýöü dö nöt nééd tö dö thïs<br/>ïf ýöü hävé sét thé çértïfïçäté"
+" mödé tö ön-démänd générätïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя "
+"α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα"
+" αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ "
+"ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη "
+"яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα "
+"ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт #"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
@@ -17520,37 +16426,60 @@ msgstr "Régénéräté Çértïfïçätés Ⱡ'σяєм ιρѕυм ∂σłσя 
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
-"Select one or more certificate statuses below using your mouse and ctrl or "
-"command key."
+"To regenerate certificates for your course, chose the learners who will "
+"receive regenerated certificates and click <br/> Regenerate Certificates."
 msgstr ""
-"Séléçt öné ör möré çértïfïçäté stätüsés ßélöw üsïng ýöür möüsé änd çtrl ör "
-"çömmänd kéý. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: lms/templates/instructor/instructor_dashboard_2/certificates.html
-msgid ""
-"Select certificate statuses that need regeneration and click Regenerate "
-"Certificates button."
-msgstr ""
-"Séléçt çértïfïçäté stätüsés thät nééd régénérätïön änd çlïçk Régénéräté "
-"Çértïfïçätés ßüttön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
-
-#: lms/templates/instructor/instructor_dashboard_2/certificates.html
-msgid "Certificate Exceptions"
-msgstr "Çértïfïçäté Éxçéptïöns Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
-
-#: lms/templates/instructor/instructor_dashboard_2/certificates.html
-msgid ""
-"Use this to generate certificates for users who did not pass the course but "
-"have been given an exception by the Course Team to earn a certificate."
-msgstr ""
-"Ûsé thïs tö généräté çértïfïçätés för üsérs whö dïd nöt päss thé çöürsé ßüt "
-"hävé ßéén gïvén än éxçéptïön ßý thé Çöürsé Téäm tö éärn ä çértïfïçäté. "
+"Tö régénéräté çértïfïçätés för ýöür çöürsé, çhösé thé léärnérs whö wïll "
+"réçéïvé régénérätéd çértïfïçätés änd çlïçk <br/> Régénéräté Çértïfïçätés. "
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ "
 "тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм,"
 " qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
 "¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
 "¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
-"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι#"
+"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂ єѕ#"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid ""
+"Regenerate for learners who have already received certificates. ({count})"
+msgstr ""
+"Régénéräté för léärnérs whö hävé älréädý réçéïvéd çértïfïçätés. ({count}) "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid "Regenerate for learners who have not received certificates. ({count})"
+msgstr ""
+"Régénéräté för léärnérs whö hävé nöt réçéïvéd çértïfïçätés. ({count}) Ⱡ'σяєм"
+" ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid "Regenerate for learners in an error state. ({count})"
+msgstr ""
+"Régénéräté för léärnérs ïn än érrör stäté. ({count}) Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid "Certificate Generation History"
+msgstr "Çértïfïçäté Générätïön Hïstörý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid "SET CERTIFICATE EXCEPTIONS"
+msgstr "SÉT ÇÉRTÌFÌÇÀTÉ ÉXÇÉPTÌÖNS Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificates.html
+msgid ""
+"Set exceptions to generate certificates for learners who did not qualify for"
+" a certificate but have been given an exception by the course team. After "
+"you add learners to the exception list, click Generate Exception "
+"Certificates below."
+msgstr ""
+"Sét éxçéptïöns tö généräté çértïfïçätés för léärnérs whö dïd nöt qüälïfý för"
+" ä çértïfïçäté ßüt hävé ßéén gïvén än éxçéptïön ßý thé çöürsé téäm. Àftér "
+"ýöü ädd léärnérs tö thé éxçéptïön lïst, çlïçk Généräté Éxçéptïön "
+"Çértïfïçätés ßélöw. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg "
+"єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт "
+"єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт "
+"αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη "
+"νσłυρтαтє νєłιт єѕѕє ¢ιłłυм#"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Enrollment Information"
@@ -19284,86 +18213,6 @@ msgstr "ÖK Ⱡ'σя#"
 msgid "open"
 msgstr "öpén Ⱡ'σяєм ι#"
 
-#: lms/templates/open_ended_problems/combined_notifications.html
-msgid "{course_number} Combined Notifications"
-msgstr ""
-"{course_number} Çömßïnéd Nötïfïçätïöns Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: lms/templates/open_ended_problems/combined_notifications.html
-msgid "Open Ended Console"
-msgstr "Öpén Éndéd Çönsölé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
-
-#: lms/templates/open_ended_problems/combined_notifications.html
-msgid "Here are items that could potentially need your attention."
-msgstr ""
-"Héré äré ïtéms thät çöüld pöténtïällý nééd ýöür ätténtïön. Ⱡ'σяєм ιρѕυм "
-"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: lms/templates/open_ended_problems/combined_notifications.html
-msgid "No items require attention at the moment."
-msgstr ""
-"Nö ïtéms réqüïré ätténtïön ät thé mömént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя #"
-
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-msgid "{course_number} Flagged Open Ended Problems"
-msgstr ""
-"{course_number} Fläggéd Öpén Éndéd Prößléms Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢т#"
-
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-msgid "Flagged Open Ended Problems"
-msgstr "Fläggéd Öpén Éndéd Prößléms Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-msgid ""
-"Here is a list of open ended problems for this course that have been flagged"
-" by students as potentially inappropriate."
-msgstr ""
-"Héré ïs ä lïst öf öpén éndéd prößléms för thïs çöürsé thät hävé ßéén fläggéd"
-" ßý stüdénts äs pöténtïällý ïnäppröprïäté. Ⱡ'σяєм ιρѕυм #"
-
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-msgid "No flagged problems exist."
-msgstr "Nö fläggéd prößléms éxïst. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-msgid "Unflag"
-msgstr "Ûnfläg Ⱡ'σяєм ιρѕυ#"
-
-#: lms/templates/open_ended_problems/open_ended_flagged_problems.html
-msgid "Ban"
-msgstr "Bän Ⱡ'σяєм#"
-
-#: lms/templates/open_ended_problems/open_ended_problems.html
-msgid "{course_number} Open Ended Problems"
-msgstr "{course_number} Öpén Éndéd Prößléms Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
-
-#: lms/templates/open_ended_problems/open_ended_problems.html
-msgid "Open Ended Problems"
-msgstr "Öpén Éndéd Prößléms Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: lms/templates/open_ended_problems/open_ended_problems.html
-msgid "Here is a list of open ended problems for this course."
-msgstr ""
-"Héré ïs ä lïst öf öpén éndéd prößléms för thïs çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя "
-"ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: lms/templates/open_ended_problems/open_ended_problems.html
-msgid "You have not attempted any open ended problems yet."
-msgstr ""
-"Ýöü hävé nöt ättémptéd äný öpén éndéd prößléms ýét. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
-"αмєт, ¢σηѕє¢тєтυя α#"
-
-#: lms/templates/open_ended_problems/open_ended_problems.html
-#: lms/templates/peer_grading/peer_grading.html
-msgid "Problem Name"
-msgstr "Prößlém Nämé Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
-
-#: lms/templates/open_ended_problems/open_ended_problems.html
-msgid "Grader Type"
-msgstr "Grädér Týpé Ⱡ'σяєм ιρѕυм ∂σłσя #"
-
 #: lms/templates/peer_grading/peer_grading.html
 msgid ""
 "\n"
@@ -19401,8 +18250,16 @@ msgstr ""
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
 
 #: lms/templates/peer_grading/peer_grading.html
+msgid "Problem Name"
+msgstr "Prößlém Nämé Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
+
+#: lms/templates/peer_grading/peer_grading.html
 msgid "Due date"
 msgstr "Düé däté Ⱡ'σяєм ιρѕυм ∂#"
+
+#: lms/templates/peer_grading/peer_grading.html
+msgid "Graded"
+msgstr "Grädéd Ⱡ'σяєм ιρѕυ#"
 
 #: lms/templates/peer_grading/peer_grading.html
 #: lms/templates/shoppingcart/receipt.html
@@ -19434,6 +18291,18 @@ msgstr ""
 #: lms/templates/peer_grading/peer_grading_problem.html
 msgid "Learning to Grade"
 msgstr "Léärnïng tö Grädé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: lms/templates/peer_grading/peer_grading_problem.html
+msgid "Hide Question"
+msgstr "Hïdé Qüéstïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
+
+#: lms/templates/peer_grading/peer_grading_problem.html
+msgid "Student Response"
+msgstr "Stüdént Réspönsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
+
+#: lms/templates/peer_grading/peer_grading_problem.html
+msgid "Written Feedback"
+msgstr "Wrïttén Féédßäçk Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
 
 #: lms/templates/peer_grading/peer_grading_problem.html
 msgid "Please include some written feedback as well."
@@ -20111,6 +18980,16 @@ msgstr ""
 #: lms/templates/static_templates/press.html
 #: lms/templates/static_templates/privacy.html
 #: lms/templates/static_templates/tos.html
+#: themes/default/lms/templates/contact.html
+#: themes/default/lms/templates/faq.html
+#: themes/default/lms/templates/honor.html
+#: themes/default/lms/templates/tos.html
+#: themes/default/lms/templates/static_templates/about.html
+#: themes/default/lms/templates/static_templates/blog.html
+#: themes/default/lms/templates/static_templates/contact.html
+#: themes/default/lms/templates/static_templates/donate.html
+#: themes/default/lms/templates/static_templates/faq.html
+#: themes/default/lms/templates/static_templates/honor.html
 msgid ""
 "This page left intentionally blank. It is not used by edx.org but is left "
 "here for possible use by installations of Open edX."
@@ -20139,6 +19018,8 @@ msgstr ""
 "¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя#"
 
 #: lms/templates/static_templates/faq.html
+#: themes/default/lms/templates/faq.html
+#: themes/default/lms/templates/static_templates/faq.html
 #: themes/red-theme/lms/templates/footer.html
 msgid "FAQ"
 msgstr "FÀQ Ⱡ'σяєм#"
@@ -20460,6 +19341,920 @@ msgstr "{span_start}äçtïvé{span_end} Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#
 #: lms/templates/wiki/includes/breadcrumbs.html
 msgid "Add article"
 msgstr "Àdd ärtïçlé Ⱡ'σяєм ιρѕυм ∂σłσя #"
+
+#: themes/default/lms/templates/honor.html
+#: themes/default/lms/templates/static_templates/honor.html
+msgid "Terms of Service and Honor Code."
+msgstr ""
+"Térms öf Sérvïçé änd Hönör Çödé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
+
+#: themes/default/lms/templates/static_templates/about.html
+msgid "About."
+msgstr "Àßöüt. Ⱡ'σяєм ιρѕυ#"
+
+#: themes/default/lms/templates/static_templates/blog.html
+msgid "Blog."
+msgstr "Blög. Ⱡ'σяєм ιρѕ#"
+
+#: themes/default/lms/templates/static_templates/donate.html
+msgid "Donate."
+msgstr "Dönäté. Ⱡ'σяєм ιρѕυм #"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+"At the Raccoon Gang, we care about the confidentiality and security of your "
+"personal information. We will use commercially reasonable efforts to keep "
+"your Personal Information secure in compliance with this Privacy Policy. "
+"Personal Information is defined below. As used in this Privacy Policy, we, "
+"us, and our refer to the Raccoon Gang. This Privacy Policy only applies to "
+"information that we collect through the "
+msgstr ""
+"Àt thé Räççöön Gäng, wé çäré äßöüt thé çönfïdéntïälïtý änd séçürïtý öf ýöür "
+"pérsönäl ïnförmätïön. Wé wïll üsé çömmérçïällý réäsönäßlé éfförts tö kéép "
+"ýöür Pérsönäl Ìnförmätïön séçüré ïn çömplïänçé wïth thïs Prïväçý Pölïçý. "
+"Pérsönäl Ìnförmätïön ïs défïnéd ßélöw. Às üséd ïn thïs Prïväçý Pölïçý, wé, "
+"üs, änd öür référ tö thé Räççöön Gäng. Thïs Prïväçý Pölïçý önlý äpplïés tö "
+"ïnförmätïön thät wé çölléçt thröügh thé #"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+"Website (the Site, which consists of all content and pages located within "
+"the "
+msgstr ""
+"Wéßsïté (thé Sïté, whïçh çönsïsts öf äll çöntént änd pägés löçätéd wïthïn "
+"thé  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+" web domain) and does not apply to information that we may collect from you "
+"in other ways (for example, this policy does not apply to information that "
+"you may provide to us over the phone, by fax, or through conventional mail)."
+msgstr ""
+" wéß dömäïn) änd döés nöt äpplý tö ïnförmätïön thät wé mäý çölléçt fröm ýöü "
+"ïn öthér wäýs (för éxämplé, thïs pölïçý döés nöt äpplý tö ïnförmätïön thät "
+"ýöü mäý prövïdé tö üs övér thé phöné, ßý fäx, ör thröügh çönvéntïönäl mäïl)."
+" Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ "
+"тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм,"
+" qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
+"¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
+"¢ιłłυм ∂σłσяє єυ ƒυ#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid "USERNAMES AND POSTINGS"
+msgstr "ÛSÉRNÀMÉS ÀND PÖSTÌNGS Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+"Comments or other information posted by you to our forums, wikis or other "
+"areas of the Site designed for public communications or communications among"
+" registered class members may be viewed and downloaded by others who visit "
+"the Site. For this reason, we encourage you to use discretion when deciding "
+"whether to post any information that can be used to identify you to those "
+"forums (or other public or classwide areas)."
+msgstr ""
+"Çömménts ör öthér ïnförmätïön pöstéd ßý ýöü tö öür förüms, wïkïs ör öthér "
+"äréäs öf thé Sïté désïgnéd för püßlïç çömmünïçätïöns ör çömmünïçätïöns ämöng"
+" régïstéréd çläss mémßérs mäý ßé vïéwéd änd döwnlöädéd ßý öthérs whö vïsït "
+"thé Sïté. För thïs réäsön, wé énçöürägé ýöü tö üsé dïsçrétïön whén déçïdïng "
+"whéthér tö pöst äný ïnförmätïön thät çän ßé üséd tö ïdéntïfý ýöü tö thösé "
+"förüms (ör öthér püßlïç ör çlässwïdé äréäs).#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid "PERSONAL INFORMATION"
+msgstr "PÉRSÖNÀL ÌNFÖRMÀTÌÖN Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+"As used in this Privacy Policy, Personal Information means any information "
+"about yourself that you may provide to us when using the Site, such as when "
+"you sign up for a user account or enter into a transaction through the Site,"
+" which may include (but is not limited to) your name, contact information, "
+"gender, date of birth, occupation, and if you register for an ID Verified "
+"Certificate of Achievement, a drivers license or other government issued "
+"identification. We endeavor to limit the collection of Personal Information "
+"to what we need with respect to specific Site activities in order to satisfy"
+" business, legal, research or regulatory requirements. We will anonymize all"
+" the data for research purposes."
+msgstr ""
+"Às üséd ïn thïs Prïväçý Pölïçý, Pérsönäl Ìnförmätïön méäns äný ïnförmätïön "
+"äßöüt ýöürsélf thät ýöü mäý prövïdé tö üs whén üsïng thé Sïté, süçh äs whén "
+"ýöü sïgn üp för ä üsér äççöünt ör éntér ïntö ä tränsäçtïön thröügh thé Sïté,"
+" whïçh mäý ïnçlüdé (ßüt ïs nöt lïmïtéd tö) ýöür nämé, çöntäçt ïnförmätïön, "
+"géndér, däté öf ßïrth, öççüpätïön, änd ïf ýöü régïstér för än ÌD Vérïfïéd "
+"Çértïfïçäté öf Àçhïévémént, ä drïvérs lïçénsé ör öthér gövérnmént ïssüéd "
+"ïdéntïfïçätïön. Wé éndéävör tö lïmït thé çölléçtïön öf Pérsönäl Ìnförmätïön "
+"tö whät wé nééd wïth réspéçt tö spéçïfïç Sïté äçtïvïtïés ïn ördér tö sätïsfý"
+" ßüsïnéss, légäl, réséärçh ör régülätörý réqüïréménts. Wé wïll änönýmïzé äll"
+" thé dätä för réséärçh pürpösés.#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid "LINKS TO OTHER WEBSITES"
+msgstr "LÌNKS TÖ ÖTHÉR WÉBSÌTÉS Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+"The Site contains links to websites published by third parties, including "
+"other content providers as well as certain service providers. These other "
+"websites are not under our control, and you acknowledge and agree that we "
+"are not responsible for the collection and use of your information by such "
+"websites, unless we have otherwise indicated in this Privacy Policy. We "
+"encourage you to be aware when you are be redirected to a third party "
+"website and review the privacy policies of each website you visit and use."
+msgstr ""
+"Thé Sïté çöntäïns lïnks tö wéßsïtés püßlïshéd ßý thïrd pärtïés, ïnçlüdïng "
+"öthér çöntént prövïdérs äs wéll äs çértäïn sérvïçé prövïdérs. Thésé öthér "
+"wéßsïtés äré nöt ündér öür çöntröl, änd ýöü äçknöwlédgé änd ägréé thät wé "
+"äré nöt réspönsïßlé för thé çölléçtïön änd üsé öf ýöür ïnförmätïön ßý süçh "
+"wéßsïtés, ünléss wé hävé öthérwïsé ïndïçätéd ïn thïs Prïväçý Pölïçý. Wé "
+"énçöürägé ýöü tö ßé äwäré whén ýöü äré ßé rédïréçtéd tö ä thïrd pärtý "
+"wéßsïté änd révïéw thé prïväçý pölïçïés öf éäçh wéßsïté ýöü vïsït änd üsé.#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid "SECURITY"
+msgstr "SÉÇÛRÌTÝ Ⱡ'σяєм ιρѕυм ∂#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+#, python-format
+msgid ""
+"Raccoon Gang has a program designed to protect Personal Information in its "
+"possession or control. This is done through a variety of privacy and "
+"security policies, processes, and procedures, including administrative, "
+"physical, and technical safeguards that reasonably and appropriately protect"
+" the confidentiality, integrity, and availability of the Personal "
+"Information that it creates, receives, maintains, or transmits. Nonetheless,"
+" no method of transmission over the Internet, or method of electronic "
+"storage, is 100% secure; and therefore, Raccoon Gang cannot guarantee its "
+"absolute security."
+msgstr ""
+"Räççöön Gäng häs ä prögräm désïgnéd tö prötéçt Pérsönäl Ìnförmätïön ïn ïts "
+"pösséssïön ör çöntröl. Thïs ïs döné thröügh ä värïétý öf prïväçý änd "
+"séçürïtý pölïçïés, pröçéssés, änd pröçédürés, ïnçlüdïng ädmïnïsträtïvé, "
+"phýsïçäl, änd téçhnïçäl säfégüärds thät réäsönäßlý änd äppröprïätélý prötéçt"
+" thé çönfïdéntïälïtý, ïntégrïtý, änd äväïläßïlïtý öf thé Pérsönäl "
+"Ìnförmätïön thät ït çréätés, réçéïvés, mäïntäïns, ör tränsmïts. Nönéthéléss,"
+" nö méthöd öf tränsmïssïön övér thé Ìntérnét, ör méthöd öf éléçtrönïç "
+"störägé, ïs 100% séçüré; änd théréföré, Räççöön Gäng çännöt güäräntéé ïts "
+"äßsölüté séçürïtý.#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid "CHANGING OUR PRIVACY POLICY"
+msgstr "ÇHÀNGÌNG ÖÛR PRÌVÀÇÝ PÖLÌÇÝ Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+"Please note that we review and may make changes to this Privacy Policy from "
+"time to time. When changes are made, the Privacy Policy link will include a "
+"notation Revised date. indicating that you should review the new terms, "
+"which will be effective immediately upon posting on this page, with an "
+"updated effective date. The notation will be included in the Privacy Policy "
+"link for at least seven days after the update has been made. By accessing "
+"the Site after any changes have been made, you signify your agreement on a "
+"prospective basis to the modified Privacy Policy and any changes contained "
+"therein. In case you miss the notification referenced above, be sure to "
+"return to this page periodically to ensure familiarity with the most current"
+" version of this Privacy Policy."
+msgstr ""
+"Pléäsé nöté thät wé révïéw änd mäý mäké çhängés tö thïs Prïväçý Pölïçý fröm "
+"tïmé tö tïmé. Whén çhängés äré mädé, thé Prïväçý Pölïçý lïnk wïll ïnçlüdé ä "
+"nötätïön Révïséd däté. ïndïçätïng thät ýöü shöüld révïéw thé néw térms, "
+"whïçh wïll ßé éfféçtïvé ïmmédïätélý üpön pöstïng ön thïs pägé, wïth än "
+"üpdätéd éfféçtïvé däté. Thé nötätïön wïll ßé ïnçlüdéd ïn thé Prïväçý Pölïçý "
+"lïnk för ät léäst sévén däýs äftér thé üpdäté häs ßéén mädé. Bý äççéssïng "
+"thé Sïté äftér äný çhängés hävé ßéén mädé, ýöü sïgnïfý ýöür ägréémént ön ä "
+"pröspéçtïvé ßäsïs tö thé mödïfïéd Prïväçý Pölïçý änd äný çhängés çöntäïnéd "
+"théréïn. Ìn çäsé ýöü mïss thé nötïfïçätïön référénçéd äßövé, ßé süré tö "
+"rétürn tö thïs pägé pérïödïçällý tö énsüré fämïlïärïtý wïth thé möst çürrént"
+" vérsïön öf thïs Prïväçý Pölïçý.#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid "PRIVACY CONCERNS"
+msgstr "PRÌVÀÇÝ ÇÖNÇÉRNS Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
+
+#: themes/default/lms/templates/static_templates/privacy.html
+msgid ""
+"If you have privacy concerns, have disclosed data you would prefer to keep "
+"private, or would like to access the information we maintain about you, "
+"please contact us at "
+msgstr ""
+"Ìf ýöü hävé prïväçý çönçérns, hävé dïsçlöséd dätä ýöü wöüld préfér tö kéép "
+"prïväté, ör wöüld lïké tö äççéss thé ïnförmätïön wé mäïntäïn äßöüt ýöü, "
+"pléäsé çöntäçt üs ät  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg "
+"єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт "
+"єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт "
+"αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη "
+"νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт "
+"σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒ#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Raccoon University (sandbox) is owned by Raccoon Gang Ltd. (\"Raccoon "
+"Gang\") and operated by Raccoon Gang or its service providers."
+msgstr ""
+"Räççöön Ûnïvérsïtý (sändßöx) ïs öwnéd ßý Räççöön Gäng Ltd. (\"Räççöön "
+"Gäng\") änd öpérätéd ßý Räççöön Gäng ör ïts sérvïçé prövïdérs. Ⱡ'#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "Please read these Terms of Service (\"TOS\") and the Raccoon Gang  "
+msgstr ""
+"Pléäsé réäd thésé Térms öf Sérvïçé (\"TÖS\") änd thé Räççöön Gäng   Ⱡ'σяєм "
+"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid " prior to registering for "
+msgstr " prïör tö régïstérïng för  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+" or using any portion of the Raccoon University (sandbox) website (the "
+"\"Site,\" which consists of all content and pages located within the "
+msgstr ""
+" ör üsïng äný pörtïön öf thé Räççöön Ûnïvérsïtý (sändßöx) wéßsïté (thé "
+"\"Sïté,\" whïçh çönsïsts öf äll çöntént änd pägés löçätéd wïthïn thé  Ⱡ'σяєм"
+" ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя "
+"ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ "
+"ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
+"¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
+"¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
+"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂ єѕт łαв#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+" web domain, including accessing any course material, chat rooms, or other "
+"electronic services. These TOS, the Privacy Policy are agreements (the "
+"\"Agreements\") between you and Raccoon Gang. By using the Site, you accept "
+"and agree to be legally bound by the Agreements, whether or not you are a "
+"registered user. If you do not understand or do not wish to be bound by the "
+"terms of the Agreements, you should not use the Site"
+msgstr ""
+" wéß dömäïn, ïnçlüdïng äççéssïng äný çöürsé mätérïäl, çhät rööms, ör öthér "
+"éléçtrönïç sérvïçés. Thésé TÖS, thé Prïväçý Pölïçý äré ägrééménts (thé "
+"\"Àgrééménts\") ßétwéén ýöü änd Räççöön Gäng. Bý üsïng thé Sïté, ýöü äççépt "
+"änd ägréé tö ßé légällý ßöünd ßý thé Àgrééménts, whéthér ör nöt ýöü äré ä "
+"régïstéréd üsér. Ìf ýöü dö nöt ündérständ ör dö nöt wïsh tö ßé ßöünd ßý thé "
+"térms öf thé Àgrééménts, ýöü shöüld nöt üsé thé Sïté#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"The Raccoon Gang reserves the right to modify these TOS at any time. Any "
+"changes to TOS will be announced to all customers in 2 weeks before posting "
+"to the site. Any changes to these TOS will be effective immediately upon "
+"posting on this page, with an updated effective date. By accessing the Site "
+"after any changes have been made, you signify your agreement on a "
+"prospective basis to the modified TOS and all of the changes. Be sure to "
+"return to this page periodically to ensure familiarity with the most current"
+" version of these TOS."
+msgstr ""
+"Thé Räççöön Gäng résérvés thé rïght tö mödïfý thésé TÖS ät äný tïmé. Àný "
+"çhängés tö TÖS wïll ßé ännöünçéd tö äll çüstömérs ïn 2 wééks ßéföré pöstïng "
+"tö thé sïté. Àný çhängés tö thésé TÖS wïll ßé éfféçtïvé ïmmédïätélý üpön "
+"pöstïng ön thïs pägé, wïth än üpdätéd éfféçtïvé däté. Bý äççéssïng thé Sïté "
+"äftér äný çhängés hävé ßéén mädé, ýöü sïgnïfý ýöür ägréémént ön ä "
+"pröspéçtïvé ßäsïs tö thé mödïfïéd TÖS änd äll öf thé çhängés. Bé süré tö "
+"rétürn tö thïs pägé pérïödïçällý tö énsüré fämïlïärïtý wïth thé möst çürrént"
+" vérsïön öf thésé TÖS.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "DESCRIPTION OF THE RACCOON UNIVERSITY (SANDBOX)"
+msgstr ""
+"DÉSÇRÌPTÌÖN ÖF THÉ RÀÇÇÖÖN ÛNÌVÉRSÌTÝ (SÀNDBÖX) Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,"
+" ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"The Raccoon University (sandbox) offers online courses, via open-sourced "
+"online education platform developed by edX Inc. (“edX”), that include "
+"opportunities for professor-to-student and student-to-student interactivity,"
+" individual assessment of a student`s work and, for students who demonstrate"
+" their mastery of subjects, a certificate of completion or other "
+"acknowledgment."
+msgstr ""
+"Thé Räççöön Ûnïvérsïtý (sändßöx) öfférs önlïné çöürsés, vïä öpén-söürçéd "
+"önlïné édüçätïön plätförm dévélöpéd ßý édX Ìnç. (“édX”), thät ïnçlüdé "
+"öppörtünïtïés för pröféssör-tö-stüdént änd stüdént-tö-stüdént ïntéräçtïvïtý,"
+" ïndïvïdüäl ässéssmént öf ä stüdént`s wörk änd, för stüdénts whö démönsträté"
+" théïr mästérý öf süßjéçts, ä çértïfïçäté öf çömplétïön ör öthér "
+"äçknöwlédgmént.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "GENERAL DISCLAIMER"
+msgstr "GÉNÉRÀL DÌSÇLÀÌMÉR Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"The Site is only a place for Instructors and Students. Raccoon Gang do not "
+"hire or employ Instructors nor are Raccoon Gang responsible or liable for "
+"any interactions involved between the Instructors and their respective "
+"Students. Raccoon Gang are not responsible for disputes, claims, losses, "
+"injuries, or damage of any kind that might arise out of or relate to conduct"
+" of Instructors or Students, including, but not limited to, any Student`s "
+"reliance upon any information provided by an Instructor."
+msgstr ""
+"Thé Sïté ïs önlý ä pläçé för Ìnstrüçtörs änd Stüdénts. Räççöön Gäng dö nöt "
+"hïré ör émplöý Ìnstrüçtörs nör äré Räççöön Gäng réspönsïßlé ör lïäßlé för "
+"äný ïntéräçtïöns ïnvölvéd ßétwéén thé Ìnstrüçtörs änd théïr réspéçtïvé "
+"Stüdénts. Räççöön Gäng äré nöt réspönsïßlé för dïspütés, çläïms, lössés, "
+"ïnjürïés, ör dämägé öf äný kïnd thät mïght ärïsé öüt öf ör réläté tö çöndüçt"
+" öf Ìnstrüçtörs ör Stüdénts, ïnçlüdïng, ßüt nöt lïmïtéd tö, äný Stüdént`s "
+"rélïänçé üpön äný ïnförmätïön prövïdéd ßý än Ìnstrüçtör.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Raccoon Gang do not control Submitted Content (as defined below) posted on "
+"the Site and, as such, do not guarantee in any manner the reliability, "
+"validity, accuracy or truthfulness of such Submitted Content. You also "
+"understand that by using the Site may expose You to Submitted Content that "
+"You consider offensive, indecent, or objectionable. Raccoon Gang has no "
+"responsibility to keep such content from You and no liability for Your "
+"access or use of any Submitted Content, to the extent permissible under "
+"applicable law."
+msgstr ""
+"Räççöön Gäng dö nöt çöntröl Süßmïttéd Çöntént (äs défïnéd ßélöw) pöstéd ön "
+"thé Sïté änd, äs süçh, dö nöt güäräntéé ïn äný männér thé rélïäßïlïtý, "
+"välïdïtý, äççüräçý ör trüthfülnéss öf süçh Süßmïttéd Çöntént. Ýöü älsö "
+"ündérständ thät ßý üsïng thé Sïté mäý éxpösé Ýöü tö Süßmïttéd Çöntént thät "
+"Ýöü çönsïdér öffénsïvé, ïndéçént, ör ößjéçtïönäßlé. Räççöön Gäng häs nö "
+"réspönsïßïlïtý tö kéép süçh çöntént fröm Ýöü änd nö lïäßïlïtý för Ýöür "
+"äççéss ör üsé öf äný Süßmïttéd Çöntént, tö thé éxtént pérmïssïßlé ündér "
+"äpplïçäßlé läw.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"The Site may give You access to links to third-party Websites (\"Third Party"
+" Sites\"), either directly or through Courses or Instructors. Raccoon Gang "
+"does not endorse any of these Third Party Sites and does not control them in"
+" any manner. Accordingly, Raccoon Gang does not assume any liability "
+"associated with Third Party Sites. You need to take appropriate steps to "
+"determine whether accessing a Third Party Site is appropriate, and to "
+"protect Your personal information and privacy on such Third Party Site."
+msgstr ""
+"Thé Sïté mäý gïvé Ýöü äççéss tö lïnks tö thïrd-pärtý Wéßsïtés (\"Thïrd Pärtý"
+" Sïtés\"), éïthér dïréçtlý ör thröügh Çöürsés ör Ìnstrüçtörs. Räççöön Gäng "
+"döés nöt éndörsé äný öf thésé Thïrd Pärtý Sïtés änd döés nöt çöntröl thém ïn"
+" äný männér. Àççördïnglý, Räççöön Gäng döés nöt ässümé äný lïäßïlïtý "
+"ässöçïätéd wïth Thïrd Pärtý Sïtés. Ýöü nééd tö täké äppröprïäté stéps tö "
+"détérmïné whéthér äççéssïng ä Thïrd Pärtý Sïté ïs äppröprïäté, änd tö "
+"prötéçt Ýöür pérsönäl ïnförmätïön änd prïväçý ön süçh Thïrd Pärtý Sïté.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "RULES FOR ONLINE CONDUCT"
+msgstr "RÛLÉS FÖR ÖNLÌNÉ ÇÖNDÛÇT Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You agree that you are responsible for your own use of the Site and for your"
+" User Postings. User Postings include all content submitted, posted, "
+"published or distributed on the Site by you or other users of the Site, "
+"including but not limited to all forum posts, wiki edits, notes, questions, "
+"comments, videos and file uploads. You agree that you will use the Site in "
+"compliance with these Agreements  and all applicable local, state, national "
+"and international laws, rules and regulations, including copyright laws, any"
+" laws regarding the transmission of technical data exported from your "
+"country of residence."
+msgstr ""
+"Ýöü ägréé thät ýöü äré réspönsïßlé för ýöür öwn üsé öf thé Sïté änd för ýöür"
+" Ûsér Pöstïngs. Ûsér Pöstïngs ïnçlüdé äll çöntént süßmïttéd, pöstéd, "
+"püßlïshéd ör dïstrïßütéd ön thé Sïté ßý ýöü ör öthér üsérs öf thé Sïté, "
+"ïnçlüdïng ßüt nöt lïmïtéd tö äll förüm pösts, wïkï édïts, nötés, qüéstïöns, "
+"çömménts, vïdéös änd fïlé üplöäds. Ýöü ägréé thät ýöü wïll üsé thé Sïté ïn "
+"çömplïänçé wïth thésé Àgrééménts  änd äll äpplïçäßlé löçäl, stäté, nätïönäl "
+"änd ïntérnätïönäl läws, rülés änd régülätïöns, ïnçlüdïng çöpýrïght läws, äný"
+" läws régärdïng thé tränsmïssïön öf téçhnïçäl dätä éxpörtéd fröm ýöür "
+"çöüntrý öf résïdénçé.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"As a condition of your use of the Open edX services, you will not use the "
+"Site in any manner intended to damage, disable, overburden or impair the "
+"server or the network connected to any Raccoon University  Open edX server "
+"or to interfere with any other party`s use and enjoyment of the Site. You "
+"may not attempt to gain unauthorized access to the Site, other accounts, "
+"computer systems or networks connected to any Raccoon University Open edX "
+"server through hacking, password mining or any other means. You may not "
+"obtain or attempt to obtain any materials or information stored on the Site,"
+" its servers or associated computers through any means not intentionally "
+"made available through the Site."
+msgstr ""
+"Às ä çöndïtïön öf ýöür üsé öf thé Öpén édX sérvïçés, ýöü wïll nöt üsé thé "
+"Sïté ïn äný männér ïnténdéd tö dämägé, dïsäßlé, övérßürdén ör ïmpäïr thé "
+"sérvér ör thé nétwörk çönnéçtéd tö äný Räççöön Ûnïvérsïtý  Öpén édX sérvér "
+"ör tö ïntérféré wïth äný öthér pärtý`s üsé änd énjöýmént öf thé Sïté. Ýöü "
+"mäý nöt ättémpt tö gäïn ünäüthörïzéd äççéss tö thé Sïté, öthér äççöünts, "
+"çömpütér sýstéms ör nétwörks çönnéçtéd tö äný Räççöön Ûnïvérsïtý Öpén édX "
+"sérvér thröügh häçkïng, pässwörd mïnïng ör äný öthér méäns. Ýöü mäý nöt "
+"ößtäïn ör ättémpt tö ößtäïn äný mätérïäls ör ïnförmätïön störéd ön thé Sïté,"
+" ïts sérvérs ör ässöçïätéd çömpütérs thröügh äný méäns nöt ïnténtïönällý "
+"mädé äväïläßlé thröügh thé Sïté.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "THE FOLLOWING LIST OF ITEMS IS STRICTLY PROHIBITED ON THE SITE:"
+msgstr ""
+"THÉ FÖLLÖWÌNG LÌST ÖF ÌTÉMS ÌS STRÌÇTLÝ PRÖHÌBÌTÉD ÖN THÉ SÌTÉ: Ⱡ'σяєм ιρѕυм"
+" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "Content that defames, harasses or threatens others;"
+msgstr ""
+"Çöntént thät défämés, härässés ör thréäténs öthérs; Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Content that discusses illegal activities with the intent to commit them;"
+msgstr ""
+"Çöntént thät dïsçüssés ïllégäl äçtïvïtïés wïth thé ïntént tö çömmït thém; "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Content that infringes another`s intellectual property, including, but not "
+"limited to, copyrights or trademarks;"
+msgstr ""
+"Çöntént thät ïnfrïngés änöthér`s ïntélléçtüäl pröpértý, ïnçlüdïng, ßüt nöt "
+"lïmïtéd tö, çöpýrïghts ör trädémärks; Ⱡ'σяєм ιρѕυм ∂σłσя#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "Profane, pornographic, obscene, indecent or unlawful content;"
+msgstr ""
+"Pröfäné, pörnögräphïç, ößsçéné, ïndéçént ör ünläwfül çöntént; Ⱡ'σяєм ιρѕυм "
+"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "Advertising or any form of commercial solicitation;"
+msgstr ""
+"Àdvértïsïng ör äný förm öf çömmérçïäl sölïçïtätïön; Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "Content related to partisan political activities;"
+msgstr ""
+"Çöntént rélätéd tö pärtïsän pölïtïçäl äçtïvïtïés; Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Viruses, trojan horses, worms, time bombs, corrupted files, malware, spyware"
+" or any other similar software that may damage the operation of another`s "
+"computer or property; and"
+msgstr ""
+"Vïrüsés, tröjän hörsés, wörms, tïmé ßömßs, çörrüptéd fïlés, mälwäré, spýwäré"
+" ör äný öthér sïmïlär söftwäré thät mäý dämägé thé öpérätïön öf änöthér`s "
+"çömpütér ör pröpértý; änd Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя "
+"α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα"
+" αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ "
+"ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη "
+"яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα "
+"ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρ#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Content that contains intentionally inaccurate information or that is posted"
+" with the intent of misleading others."
+msgstr ""
+"Çöntént thät çöntäïns ïnténtïönällý ïnäççüräté ïnförmätïön ör thät ïs pöstéd"
+" wïth thé ïntént öf mïsléädïng öthérs. Ⱡ'σяєм ιρѕυм ∂σł#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Furthermore, you agree not to scrape, or otherwise download in bulk, any "
+"Site content, including but not limited to a list or directory of users on "
+"the system, on-line textbooks, User Postings or user information. You agree "
+"not to misrepresent or attempt to misrepresent your identity while using the"
+" Site -although you are welcome and encouraged to use an anonymous username "
+"in the forums and to act in a manner that keeps your identity concealed)."
+msgstr ""
+"Fürthérmöré, ýöü ägréé nöt tö sçräpé, ör öthérwïsé döwnlöäd ïn ßülk, äný "
+"Sïté çöntént, ïnçlüdïng ßüt nöt lïmïtéd tö ä lïst ör dïréçtörý öf üsérs ön "
+"thé sýstém, ön-lïné téxtßööks, Ûsér Pöstïngs ör üsér ïnförmätïön. Ýöü ägréé "
+"nöt tö mïsréprésént ör ättémpt tö mïsréprésént ýöür ïdéntïtý whïlé üsïng thé"
+" Sïté -älthöügh ýöü äré wélçömé änd énçöürägéd tö üsé än änönýmöüs üsérnämé "
+"ïn thé förüms änd tö äçt ïn ä männér thät kééps ýöür ïdéntïtý çönçéäléd).#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "USER ACCOUNTS AND AUTHORITY"
+msgstr "ÛSÉR ÀÇÇÖÛNTS ÀND ÀÛTHÖRÌTÝ Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"In order to participate fully in Site activities, you must provide your "
+"name, an email address and a user password in order to create a user "
+"account. You agree that you will never divulge or share access or access "
+"information for your User Account with any third party for any reason. In "
+"setting up your User Account, you may be prompted to enter additional "
+"optional information. You represent that all information provided by you is "
+"accurate and current. You agree to maintain and update your information to "
+"keep it accurate and current."
+msgstr ""
+"Ìn ördér tö pärtïçïpäté füllý ïn Sïté äçtïvïtïés, ýöü müst prövïdé ýöür "
+"nämé, än émäïl äddréss änd ä üsér pässwörd ïn ördér tö çréäté ä üsér "
+"äççöünt. Ýöü ägréé thät ýöü wïll névér dïvülgé ör shäré äççéss ör äççéss "
+"ïnförmätïön för ýöür Ûsér Àççöünt wïth äný thïrd pärtý för äný réäsön. Ìn "
+"séttïng üp ýöür Ûsér Àççöünt, ýöü mäý ßé prömptéd tö éntér äddïtïönäl "
+"öptïönäl ïnförmätïön. Ýöü réprésént thät äll ïnförmätïön prövïdéd ßý ýöü ïs "
+"äççüräté änd çürrént. Ýöü ägréé tö mäïntäïn änd üpdäté ýöür ïnförmätïön tö "
+"kéép ït äççüräté änd çürrént.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "LICENCE TO USE SITE MATERIALS"
+msgstr "LÌÇÉNÇÉ TÖ ÛSÉ SÌTÉ MÀTÉRÌÀLS Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Unless otherwise indicated, the Site and all its content, such as text, "
+"images, and the HTML used to generate the pages (\"Material\") are the "
+"property of  Raccoon Gang or that our suppliers or licensors and are "
+"protected by patent, trademark and/or copyright under UA or foreign laws. In"
+" consideration for your agreement to the terms and conditions contained "
+"here, Raccoon Gang grants you a personal, non-exclusive, non-transferable "
+"license to access and use the Site and the Material. Registered users may "
+"download Material from the Site only for such user`s own personal, non-"
+"commercial use. No user may otherwise copy, reproduce, duplicate, "
+"retransmit, distribute, publish, scrape, download in bulk, sell, resell, "
+"commercially exploit or otherwise transfer any Material or modify or create "
+"derivative works of the Material. The burden of determining that use of any "
+"information, software, material or any other content on the Site is "
+"permissible rests with User. Some content on the Site is provided by third "
+"parties, and the use of that content is subject to rules and restrictions as"
+" indicated on the Site. You agree to be bound by all such rules and "
+"restrictions."
+msgstr ""
+"Ûnléss öthérwïsé ïndïçätéd, thé Sïté änd äll ïts çöntént, süçh äs téxt, "
+"ïmägés, änd thé HTML üséd tö généräté thé pägés (\"Mätérïäl\") äré thé "
+"pröpértý öf  Räççöön Gäng ör thät öür süpplïérs ör lïçénsörs änd äré "
+"prötéçtéd ßý pätént, trädémärk änd/ör çöpýrïght ündér ÛÀ ör föréïgn läws. Ìn"
+" çönsïdérätïön för ýöür ägréémént tö thé térms änd çöndïtïöns çöntäïnéd "
+"héré, Räççöön Gäng gränts ýöü ä pérsönäl, nön-éxçlüsïvé, nön-tränsféräßlé "
+"lïçénsé tö äççéss änd üsé thé Sïté änd thé Mätérïäl. Régïstéréd üsérs mäý "
+"döwnlöäd Mätérïäl fröm thé Sïté önlý för süçh üsér`s öwn pérsönäl, nön-"
+"çömmérçïäl üsé. Nö üsér mäý öthérwïsé çöpý, réprödüçé, düplïçäté, "
+"rétränsmït, dïstrïßüté, püßlïsh, sçräpé, döwnlöäd ïn ßülk, séll, réséll, "
+"çömmérçïällý éxplöït ör öthérwïsé tränsfér äný Mätérïäl ör mödïfý ör çréäté "
+"dérïvätïvé wörks öf thé Mätérïäl. Thé ßürdén öf détérmïnïng thät üsé öf äný "
+"ïnförmätïön, söftwäré, mätérïäl ör äný öthér çöntént ön thé Sïté ïs "
+"pérmïssïßlé résts wïth Ûsér. Sömé çöntént ön thé Sïté ïs prövïdéd ßý thïrd "
+"pärtïés, änd thé üsé öf thät çöntént ïs süßjéçt tö rülés änd réstrïçtïöns äs"
+" ïndïçätéd ön thé Sïté. Ýöü ägréé tö ßé ßöünd ßý äll süçh rülés änd "
+"réstrïçtïöns.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "SUBMITTED CONTENT"
+msgstr "SÛBMÌTTÉD ÇÖNTÉNT Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Content uploaded, transmitted or posted to the Site by a User is \"Submitted"
+" Content.\" Submitted Content remains the proprietary property of the person"
+" or entity supplying it (or their affiliated and/or third party providers "
+"and suppliers) and is protected, without limitation, pursuant to UA and "
+"foreign copyright and other intellectual property laws. You represent and "
+"warrant that any material you submit to the Site is accurate and complete "
+"and will not violate or infringe the rights of any third party, including "
+"without limitation privacy, publicity, intellectual property and any other "
+"proprietary rights, such as copyright, trademark and patent rights."
+msgstr ""
+"Çöntént üplöädéd, tränsmïttéd ör pöstéd tö thé Sïté ßý ä Ûsér ïs \"Süßmïttéd"
+" Çöntént.\" Süßmïttéd Çöntént rémäïns thé pröprïétärý pröpértý öf thé pérsön"
+" ör éntïtý süpplýïng ït (ör théïr äffïlïätéd änd/ör thïrd pärtý prövïdérs "
+"änd süpplïérs) änd ïs prötéçtéd, wïthöüt lïmïtätïön, pürsüänt tö ÛÀ änd "
+"föréïgn çöpýrïght änd öthér ïntélléçtüäl pröpértý läws. Ýöü réprésént änd "
+"wärränt thät äný mätérïäl ýöü süßmït tö thé Sïté ïs äççüräté änd çömplété "
+"änd wïll nöt vïöläté ör ïnfrïngé thé rïghts öf äný thïrd pärtý, ïnçlüdïng "
+"wïthöüt lïmïtätïön prïväçý, püßlïçïtý, ïntélléçtüäl pröpértý änd äný öthér "
+"pröprïétärý rïghts, süçh äs çöpýrïght, trädémärk änd pätént rïghts.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You agree that, if a third party claims that any material you have "
+"contributed to a Site is unlawful, you will bear the burden of establishing "
+"that the material complies with all applicable laws."
+msgstr ""
+"Ýöü ägréé thät, ïf ä thïrd pärtý çläïms thät äný mätérïäl ýöü hävé "
+"çöntrïßütéd tö ä Sïté ïs ünläwfül, ýöü wïll ßéär thé ßürdén öf éstäßlïshïng "
+"thät thé mätérïäl çömplïés wïth äll äpplïçäßlé läws. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт "
+"łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ "
+"єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ "
+"αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ "
+"ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αт#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"Raccoon Gang has the right to remove material from the Site, block access, "
+"or take other action with respect to the material in its sole discretion "
+"after notifying the User."
+msgstr ""
+"Räççöön Gäng häs thé rïght tö rémövé mätérïäl fröm thé Sïté, ßlöçk äççéss, "
+"ör täké öthér äçtïön wïth réspéçt tö thé mätérïäl ïn ïts sölé dïsçrétïön "
+"äftér nötïfýïng thé Ûsér. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя "
+"α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα"
+" αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ "
+"ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη "
+"яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα "
+"ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα q#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "Grant of license."
+msgstr "Gränt öf lïçénsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+" You hereby grant Raccoon Gang a non-exclusive right and license to "
+"reproduce, distribute, publicly perform and otherwise use and exploit the "
+"User Content on the Site, and sublicense it to Instructors and Users for "
+"these purposes directly or through third parties. Notwithstanding the "
+"foregoing."
+msgstr ""
+" Ýöü héréßý gränt Räççöön Gäng ä nön-éxçlüsïvé rïght änd lïçénsé tö "
+"réprödüçé, dïstrïßüté, püßlïçlý pérförm änd öthérwïsé üsé änd éxplöït thé "
+"Ûsér Çöntént ön thé Sïté, änd süßlïçénsé ït tö Ìnstrüçtörs änd Ûsérs för "
+"thésé pürpösés dïréçtlý ör thröügh thïrd pärtïés. Nötwïthständïng thé "
+"förégöïng. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ"
+" єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ "
+"мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "SPECIFIC OBLIGATIONS OF STAFF"
+msgstr "SPÉÇÌFÌÇ ÖBLÌGÀTÌÖNS ÖF STÀFF Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"If You instruct Students regarding your Course, You are a \"Staff\" and the "
+"following additional terms and conditions apply, and You represent, warrant "
+"and covenant that:"
+msgstr ""
+"Ìf Ýöü ïnstrüçt Stüdénts régärdïng ýöür Çöürsé, Ýöü äré ä \"Stäff\" änd thé "
+"föllöwïng äddïtïönäl térms änd çöndïtïöns äpplý, änd Ýöü réprésént, wärränt "
+"änd çövénänt thät: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg "
+"єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт "
+"єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт "
+"αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη "
+"νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт "
+"σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒ#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "You need to visit "
+msgstr "Ýöü nééd tö vïsït  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid " and complete the Staff enrollment form."
+msgstr ""
+" änd çömplété thé Stäff énröllmént förm. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σηѕє¢тєтυя#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will be responsible for all of Your Submitted Content that You own or "
+"have the necessary licenses, rights, consents, and permissions, and have the"
+" authority to authorize Raccoon Gang, to reproduce, distribute, publicly "
+"perform (including by means of a digital audio transmission), publicly "
+"display, communicate to the public, promote, market and otherwise use and "
+"exploit any of Your Submitted Content on the Site in the manner contemplated"
+" by these Agreements, and that no Submitted Content shall infringe or "
+"misappropriate any intellectual property right of a third party."
+msgstr ""
+"Ýöü wïll ßé réspönsïßlé för äll öf Ýöür Süßmïttéd Çöntént thät Ýöü öwn ör "
+"hävé thé néçéssärý lïçénsés, rïghts, çönsénts, änd pérmïssïöns, änd hävé thé"
+" äüthörïtý tö äüthörïzé Räççöön Gäng, tö réprödüçé, dïstrïßüté, püßlïçlý "
+"pérförm (ïnçlüdïng ßý méäns öf ä dïgïtäl äüdïö tränsmïssïön), püßlïçlý "
+"dïspläý, çömmünïçäté tö thé püßlïç, prömöté, märkét änd öthérwïsé üsé änd "
+"éxplöït äný öf Ýöür Süßmïttéd Çöntént ön thé Sïté ïn thé männér çöntémplätéd"
+" ßý thésé Àgrééménts, änd thät nö Süßmïttéd Çöntént shäll ïnfrïngé ör "
+"mïsäppröprïäté äný ïntélléçtüäl pröpértý rïght öf ä thïrd pärtý.#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You have the required qualifications, credentials and expertise, including "
+"without limitation, education, training, knowledge, and skill sets, to teach"
+" and offer the services You offer on and through the Site."
+msgstr ""
+"Ýöü hävé thé réqüïréd qüälïfïçätïöns, çrédéntïäls änd éxpértïsé, ïnçlüdïng "
+"wïthöüt lïmïtätïön, édüçätïön, träïnïng, knöwlédgé, änd skïll séts, tö téäçh"
+" änd öffér thé sérvïçés Ýöü öffér ön änd thröügh thé Sïté. Ⱡ'σяєм ιρѕυм "
+"∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя "
+"ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ "
+"ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
+"¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
+"¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not post any inappropriate, offensive, racist, hateful, sexist, "
+"pornographic, false, misleading, infringing, defamatory or libelous content."
+msgstr ""
+"Ýöü wïll nöt pöst äný ïnäppröprïäté, öffénsïvé, räçïst, hätéfül, séxïst, "
+"pörnögräphïç, fälsé, mïsléädïng, ïnfrïngïng, défämätörý ör lïßélöüs çöntént."
+" Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ "
+"тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм,"
+" qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ "
+"¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє "
+"¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
+"ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηι#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not upload, post or otherwise transmit any unsolicited or "
+"unauthorized advertising, promotional materials, junk mail, spam, chain "
+"letters, pyramid schemes or any other form of solicitation (commercial or "
+"otherwise) through the Site or to any User."
+msgstr ""
+"Ýöü wïll nöt üplöäd, pöst ör öthérwïsé tränsmït äný ünsölïçïtéd ör "
+"ünäüthörïzéd ädvértïsïng, prömötïönäl mätérïäls, jünk mäïl, späm, çhäïn "
+"léttérs, pýrämïd sçhémés ör äný öthér förm öf sölïçïtätïön (çömmérçïäl ör "
+"öthérwïsé) thröügh thé Sïté ör tö äný Ûsér. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт "
+"∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση "
+"υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє "
+"∂σłσя ιη яєρ#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not use the Site  for any business other than for providing "
+"tutoring, teaching and instructional services to Students."
+msgstr ""
+"Ýöü wïll nöt üsé thé Sïté  för äný ßüsïnéss öthér thän för prövïdïng "
+"tütörïng, téäçhïng änd ïnstrüçtïönäl sérvïçés tö Stüdénts. Ⱡ'σяє#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not engage in any activity that will require Raccoon Gang to obtain"
+" any licenses from or pay any royalties to any third party, including, by "
+"way of example and not limitation, the payment of royalties for the public "
+"performance of any musical works or sound recordings."
+msgstr ""
+"Ýöü wïll nöt éngägé ïn äný äçtïvïtý thät wïll réqüïré Räççöön Gäng tö ößtäïn"
+" äný lïçénsés fröm ör päý äný röýältïés tö äný thïrd pärtý, ïnçlüdïng, ßý "
+"wäý öf éxämplé änd nöt lïmïtätïön, thé päýmént öf röýältïés för thé püßlïç "
+"pérförmänçé öf äný müsïçäl wörks ör söünd réçördïngs. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт"
+" αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт "
+"łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ "
+"єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σмм#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not copy, modify or distribute Raccoon Gang Content except as "
+"permitted in these Agreements."
+msgstr ""
+"Ýöü wïll nöt çöpý, mödïfý ör dïstrïßüté Räççöön Gäng Çöntént éxçépt äs "
+"pérmïttéd ïn thésé Àgrééménts. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not interfere with or otherwise prevent other Staff from providing "
+"their services or Courses."
+msgstr ""
+"Ýöü wïll nöt ïntérféré wïth ör öthérwïsé prévént öthér Stäff fröm prövïdïng "
+"théïr sérvïçés ör Çöürsés. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will maintain Your enrollment and account information, and all such "
+"enrollment and account information shall be accurate."
+msgstr ""
+"Ýöü wïll mäïntäïn Ýöür énröllmént änd äççöünt ïnförmätïön, änd äll süçh "
+"énröllmént änd äççöünt ïnförmätïön shäll ßé äççüräté. Ⱡ'σяєм #"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You may be permitted to upload materials for unlimited quantity of online "
+"courses with up to 1000 enrolled students."
+msgstr ""
+"Ýöü mäý ßé pérmïttéd tö üplöäd mätérïäls för ünlïmïtéd qüäntïtý öf önlïné "
+"çöürsés wïth üp tö 1000 énrölléd stüdénts. Ⱡ'σяєм ιρѕυм ∂σ#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You have the right to remove or replace all or any portion of Your Submitted"
+" Content from the Site at any time."
+msgstr ""
+"Ýöü hävé thé rïght tö rémövé ör répläçé äll ör äný pörtïön öf Ýöür Süßmïttéd"
+" Çöntént fröm thé Sïté ät äný tïmé. Ⱡ'σяєм ιρѕυм ∂σłσя #"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "To move your course from Raccoon University Sandbox "
+msgstr ""
+"Tö mövé ýöür çöürsé fröm Räççöön Ûnïvérsïtý Sändßöx  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid " to Raccoon University site "
+msgstr " tö Räççöön Ûnïvérsïtý sïté  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid " , you will need to contact us at "
+msgstr ""
+" , ýöü wïll nééd tö çöntäçt üs ät  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+" and Raccoon Gang will help you to transfer all necessary course content."
+msgstr ""
+" änd Räççöön Gäng wïll hélp ýöü tö tränsfér äll néçéssärý çöürsé çöntént. "
+"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "SPECIFIC OBLIGATIONS FOR STUDENTS USING THE SITE"
+msgstr ""
+"SPÉÇÌFÌÇ ÖBLÌGÀTÌÖNS FÖR STÛDÉNTS ÛSÌNG THÉ SÌTÉ Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"If You are a User in search of or participating in a Course, You are a "
+"Student and the following additional terms and conditions apply, and You "
+"represent, warrant and covenant that:"
+msgstr ""
+"Ìf Ýöü äré ä Ûsér ïn séärçh öf ör pärtïçïpätïng ïn ä Çöürsé, Ýöü äré ä "
+"Stüdént änd thé föllöwïng äddïtïönäl térms änd çöndïtïöns äpplý, änd Ýöü "
+"réprésént, wärränt änd çövénänt thät: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт "
+"∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση "
+"υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє "
+"∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα"
+" ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not upload, post or otherwise transmit any unsolicited or "
+"unauthorized advertising, promotional materials, junk mail, spam, chain "
+"letters, pyramid schemes or any other form of solicitation (commercial or "
+"otherwise) through the Site."
+msgstr ""
+"Ýöü wïll nöt üplöäd, pöst ör öthérwïsé tränsmït äný ünsölïçïtéd ör "
+"ünäüthörïzéd ädvértïsïng, prömötïönäl mätérïäls, jünk mäïl, späm, çhäïn "
+"léttérs, pýrämïd sçhémés ör äný öthér förm öf sölïçïtätïön (çömmérçïäl ör "
+"öthérwïsé) thröügh thé Sïté. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя "
+"α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα"
+" αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ "
+"ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη "
+"яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not reproduce, distribute, publicly display, publicly perform, "
+"communicate to the public, create derivative works from or otherwise use and"
+" exploit any Raccoon Gang Content, the Products or Courses or Submitted "
+"Content except as permitted by these Terms or the relevant Instructor as "
+"applicable."
+msgstr ""
+"Ýöü wïll nöt réprödüçé, dïstrïßüté, püßlïçlý dïspläý, püßlïçlý pérförm, "
+"çömmünïçäté tö thé püßlïç, çréäté dérïvätïvé wörks fröm ör öthérwïsé üsé änd"
+" éxplöït äný Räççöön Gäng Çöntént, thé Prödüçts ör Çöürsés ör Süßmïttéd "
+"Çöntént éxçépt äs pérmïttéd ßý thésé Térms ör thé rélévänt Ìnstrüçtör äs "
+"äpplïçäßlé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ "
+"∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ "
+"мιηιм νєηιαм, qυιѕ ησѕтяυ∂#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not disclose any personal information to an Instructor, and "
+"otherwise will assume responsibility for controlling how Your personal "
+"information is disclosed or used, including, without limitation, taking "
+"appropriate steps to protect such information. "
+msgstr ""
+"Ýöü wïll nöt dïsçlösé äný pérsönäl ïnförmätïön tö än Ìnstrüçtör, änd "
+"öthérwïsé wïll ässümé réspönsïßïlïtý för çöntröllïng höw Ýöür pérsönäl "
+"ïnförmätïön ïs dïsçlöséd ör üséd, ïnçlüdïng, wïthöüt lïmïtätïön, täkïng "
+"äppröprïäté stéps tö prötéçt süçh ïnförmätïön.  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,"
+" ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт"
+" ∂σłσяє мαgηα αłιqυα. υт єηιм α∂ мιηιм νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση "
+"υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє "
+"∂σłσя ι#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not solicit personal information from any Instructor or other User."
+msgstr ""
+"Ýöü wïll nöt sölïçït pérsönäl ïnförmätïön fröm äný Ìnstrüçtör ör öthér Ûsér."
+" Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυ#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"You will not engage in any activity that would dishonestly improve Your "
+"results, or improve or affect the results of others."
+msgstr ""
+"Ýöü wïll nöt éngägé ïn äný äçtïvïtý thät wöüld dïshönéstlý ïmprövé Ýöür "
+"résülts, ör ïmprövé ör äfféçt thé résülts öf öthérs. Ⱡ'σяєм ι#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid "You will not submit the work of any other person."
+msgstr ""
+"Ýöü wïll nöt süßmït thé wörk öf äný öthér pérsön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+"We care about the confidentiality and security of your personal information."
+" Please see our "
+msgstr ""
+"Wé çäré äßöüt thé çönfïdéntïälïtý änd séçürïtý öf ýöür pérsönäl ïnförmätïön."
+" Pléäsé séé öür  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
+
+#: themes/default/lms/templates/static_templates/tos.html
+msgid ""
+" for more information about your personal details which Raccoon Gang "
+"collects and uses."
+msgstr ""
+" för möré ïnförmätïön äßöüt ýöür pérsönäl détäïls whïçh Räççöön Gäng "
+"çölléçts änd üsés. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
 
 #. Translators: 'EdX', 'edX', and 'Open edX' are trademarks of 'edX Inc.'.
 #. Please do not translate any of these trademarks and company names.
@@ -20840,44 +20635,6 @@ msgstr "Çöürsé Téäm Ⱡ'σяєм ιρѕυм ∂σłσя #"
 #: cms/templates/settings_graders.html cms/templates/widgets/header.html
 msgid "Advanced Settings"
 msgstr "Àdvänçéd Séttïngs Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: cms/templates/checklists.html
-msgid "Course Checklists"
-msgstr "Çöürsé Çhéçklïsts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: cms/templates/checklists.html cms/templates/export.html
-#: cms/templates/export_git.html cms/templates/import.html
-#: cms/templates/widgets/header.html
-msgid "Tools"
-msgstr "Tööls Ⱡ'σяєм ιρѕ#"
-
-#: cms/templates/checklists.html
-msgid "Current Checklists"
-msgstr "Çürrént Çhéçklïsts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
-
-#: cms/templates/checklists.html
-msgid "What are course checklists?"
-msgstr "Whät äré çöürsé çhéçklïsts? Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: cms/templates/checklists.html
-msgid ""
-"Course checklists are tools to help you understand and keep track of all the"
-" steps necessary to get your course ready for students."
-msgstr ""
-"Çöürsé çhéçklïsts äré tööls tö hélp ýöü ündérständ änd kéép träçk öf äll thé"
-" stéps néçéssärý tö gét ýöür çöürsé réädý för stüdénts. Ⱡ#"
-
-#: cms/templates/checklists.html
-msgid ""
-"Any changes you make to these checklists are saved automatically and are "
-"immediately visible to other course team members."
-msgstr ""
-"Àný çhängés ýöü mäké tö thésé çhéçklïsts äré sävéd äütömätïçällý änd äré "
-"ïmmédïätélý vïsïßlé tö öthér çöürsé téäm mémßérs. Ⱡ'σяєм ιρѕ#"
-
-#: cms/templates/checklists.html
-msgid "{studio_name} checklists"
-msgstr "{studio_name} çhéçklïsts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
 #: cms/templates/component.html cms/templates/studio_xblock_wrapper.html
 msgid "Duplicate"
@@ -21587,6 +21344,11 @@ msgstr "Lïßrärý Éxpört Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 #: cms/templates/export.html
 msgid "Course Export"
 msgstr "Çöürsé Éxpört Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
+
+#: cms/templates/export.html cms/templates/export_git.html
+#: cms/templates/import.html cms/templates/widgets/header.html
+msgid "Tools"
+msgstr "Tööls Ⱡ'σяєм ιρѕ#"
 
 #: cms/templates/export.html
 msgid "About Exporting Libraries"
@@ -22642,12 +22404,10 @@ msgstr ""
 "αмєт, ¢σηѕє¢тєтυя α#"
 
 #: cms/templates/index.html
-msgid ""
-"Note: This is part of your course URL, so no spaces or special characters "
-"are allowed."
+msgid "Note: The organization name is part of the course URL"
 msgstr ""
-"Nöté: Thïs ïs pärt öf ýöür çöürsé ÛRL, sö nö späçés ör spéçïäl çhäräçtérs "
-"äré ällöwéd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
+"Nöté: Thé örgänïzätïön nämé ïs pärt öf thé çöürsé ÛRL Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт"
+" αмєт, ¢σηѕє¢тєтυя α#"
 
 #: cms/templates/index.html
 msgid ""
@@ -24509,10 +24269,6 @@ msgstr "Ûpdätés Ⱡ'σяєм ιρѕυм #"
 #: cms/templates/widgets/header.html
 msgid "Schedule &amp; Details"
 msgstr "Sçhédülé &amp; Détäïls Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
-
-#: cms/templates/widgets/header.html
-msgid "Checklists"
-msgstr "Çhéçklïsts Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
 #: cms/templates/widgets/header.html
 msgid "Import"
