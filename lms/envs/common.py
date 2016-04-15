@@ -2015,3 +2015,5 @@ PDF_RECEIPT_COBRAND_LOGO_HEIGHT_MM = 12
 
 
 OAUTH_OIDC_ISSUER = "https://kilian-lms.raccoongang.com/oauth2"
+
+SESSION_COOKIE_AGE = 60 * 60 * 2
