@@ -52,6 +52,8 @@ def marketing_link(name):
         # don't try to reverse disabled marketing links
         if link_map[name] is not None:
             return reverse(link_map[name])
+    elif not enable_mktg_site and name in settings.CMS_MKTG_URLS:
+        return settings.CMS_MKTG_URLS.get(name) or '#'
     else:
         log.debug("Cannot find corresponding link for name: %s", name)
         return '#'
