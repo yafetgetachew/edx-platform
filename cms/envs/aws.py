@@ -428,3 +428,8 @@ STATICFILES_DIRS = ['/edx/app/edxapp/venvs/edxapp/src/microsoft-oauth2/sso_edx_m
 ################ CUSTOM CONFIGURATIONS ################
 
 COPYRIGHT_YEAR = ENV_TOKENS.get('COPYRIGHT_YEAR', COPYRIGHT_YEAR)
+
+for middleware in ENV_TOKENS.get('ADDL_CMS_MIDDLEWARE_CLASSES', []):
+    MIDDLEWARE_CLASSES += (middleware,)
+
+CMS_MKTG_URLS = ENV_TOKENS.get('CMS_MKTG_URLS', {})
