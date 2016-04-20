@@ -218,6 +218,16 @@ class UserProfile(models.Model):
     this_year = datetime.now(UTC).year
     # VALID_YEARS = range(this_year, this_year - 120, -1)
     VALID_YEARS = ('Below 25', '25-34', '35-44', '45-54', 'Above 55')
+    AGE_RANGE_CHOICES = (
+        ('Below 25', ugettext_noop('Below 25')),
+        ('25-34', ugettext_noop('25-34')),
+        ('35-44', ugettext_noop('35-44')),
+        ('45-54', ugettext_noop('45-54')),
+        ('Above 55', ugettext_noop('Above 55')),
+    )
+    age_range = models.CharField(
+        blank=True, null=True, max_length=12, db_index=True, choices=AGE_RANGE_CHOICES
+    )
     year_of_birth = models.IntegerField(blank=True, null=True, db_index=True)
     GENDER_CHOICES = (
         ('m', ugettext_noop('Male')),

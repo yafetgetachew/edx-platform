@@ -1406,6 +1406,7 @@ def _do_create_account(post_vars, extended_profile=None):
     profile.city = post_vars.get('city')
     profile.country = post_vars.get('country')
     profile.goals = post_vars.get('goals')
+    profile.age_range = post_vars.get('age_range')
 
     # add any extended profile information in the denormalized 'meta' field in the profile
     if extended_profile:
@@ -1527,7 +1528,7 @@ def create_account(request, post_override=None):  # pylint: disable-msg=too-many
                 'honor_code': _('Agreeing to the Honor Code is required'),
                 'level_of_education': _('A level of education is required'),
                 'gender': _('Your gender is required'),
-                'year_of_birth': _('Your year of birth is required'),
+                'age_range': _('Your age range is required'),
                 'mailing_address': _('Your mailing address is required'),
                 'goals': _('A description of your goals is required'),
                 'city': _('A city is required'),

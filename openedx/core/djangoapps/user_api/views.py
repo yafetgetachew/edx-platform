@@ -161,7 +161,7 @@ class RegistrationView(APIView):
         "city",
         "country",
         "gender",
-        "year_of_birth",
+        "age_range",
         "level_of_education",
         "mailing_address",
         "goals",
@@ -475,7 +475,7 @@ class RegistrationView(APIView):
 
         options = [(unicode(year), unicode(year)) for year in UserProfile.VALID_YEARS]
         form_desc.add_field(
-            "year_of_birth",
+            "age_range",
             label=yob_label,
             field_type="select",
             options=options,

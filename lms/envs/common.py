@@ -1674,7 +1674,7 @@ if FEATURES.get('AUTH_USE_CAS'):
 REGISTRATION_EXTRA_FIELDS = {
     'level_of_education': 'optional',
     'gender': 'optional',
-    'year_of_birth': 'optional',
+    'age_range': 'optional',
     'mailing_address': 'optional',
     'goals': 'optional',
     'honor_code': 'required',
