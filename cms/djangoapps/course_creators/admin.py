@@ -43,7 +43,7 @@ class CourseCreatorAdmin(admin.ModelAdmin):
     # Fields that search supports.
     search_fields = ['user__username', 'user__email', 'state', 'note']
     # Turn off the action bar (we have no bulk actions)
-    actions = None
+#    actions = None
 
     def username(self, inst):
         """
@@ -56,10 +56,10 @@ class CourseCreatorAdmin(admin.ModelAdmin):
     username.admin_order_field = 'user__username'
 
     def has_add_permission(self, request):
-        return False
+        return True
 
     def has_delete_permission(self, request, obj=None):
-        return False
+        return True
 
     def has_change_permission(self, request, obj=None):
         return request.user.is_staff
