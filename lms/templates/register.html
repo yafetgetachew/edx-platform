@@ -265,7 +265,7 @@
           % endif
           % if settings.REGISTRATION_EXTRA_FIELDS['year_of_birth'] != 'hidden':
           <li class="field-group field-yob">
-            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['year_of_birth']} select" id="field-yob">
+            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['age_range']} select" id="field-yob">
               <label for="yob">${_("Age Range")}</label>
               <select id="yob" name="age_range" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['age_range'] == 'required' else ''}>
                 <option value="">--</option>

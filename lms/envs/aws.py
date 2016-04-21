@@ -508,8 +508,8 @@ XBLOCK_SETTINGS.setdefault("VideoModule", {})['YOUTUBE_API_KEY'] = AUTH_TOKENS.g
 OAUTH_OIDC_ISSUER = "https://kilian-lms.raccoongang.com/oauth2"
 
 
-REGISTRATION_EXTRA_FIELDS['level_of_education'] = 'optional'
-REGISTRATION_EXTRA_FIELDS['gender'] = 'optional'
+REGISTRATION_EXTRA_FIELDS['level_of_education'] = 'required'
+REGISTRATION_EXTRA_FIELDS['gender'] = 'required'
 REGISTRATION_EXTRA_FIELDS['age_range'] = 'required'
 REGISTRATION_EXTRA_FIELDS['mailing_address'] = 'hidden'
 REGISTRATION_EXTRA_FIELDS['goals'] = 'hidden'
