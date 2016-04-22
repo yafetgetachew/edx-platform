@@ -1141,6 +1141,8 @@ MIDDLEWARE_CLASSES = (
     # Must be after DarkLangMiddleware.
     'django.middleware.locale.LocaleMiddleware',
 
+    'lang_pref.middleware.LanguageActivateMiddleware',
+
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 
     'django_comment_client.utils.ViewNameMiddleware',
