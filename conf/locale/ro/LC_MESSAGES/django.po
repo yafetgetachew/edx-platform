@@ -4637,7 +4637,7 @@ msgstr ""
 #: lms/djangoapps/instructor/views/api.py:961
 #: openedx/core/djangoapps/user_api/views.py:451
 msgid "Gender"
-msgstr "Genul"
+msgstr "Sexul"
 
 #: lms/djangoapps/instructor/views/api.py:962
 msgid "Level of Education"
@@ -6847,7 +6847,7 @@ msgstr ""
 #. meant to hold the user's public username.
 #: openedx/core/djangoapps/user_api/views.py:372
 msgid "Public username"
-msgstr ""
+msgstr "Utilizator"
 
 #: openedx/core/djangoapps/user_api/views.py:377
 msgid "The name that will identify you in your courses"
@@ -6857,7 +6857,7 @@ msgstr ""
 #. form used to select the user's highest completed level of education.
 #: openedx/core/djangoapps/user_api/views.py:428
 msgid "Highest level of education completed"
-msgstr ""
+msgstr "Ultimul nivel de educaţie absolvit"
 
 #. Translators: This label appears above a dropdown menu on the registration
 #. form used to select the user's year of birth.
@@ -6885,7 +6885,7 @@ msgstr "Oraș"
 #. form used to select the country in which the user lives.
 #: openedx/core/djangoapps/user_api/views.py:562
 msgid "Country"
-msgstr ""
+msgstr "Ţara"
 
 #: openedx/core/djangoapps/user_api/views.py:572
 msgid "Please select your Country."
@@ -6939,7 +6939,7 @@ msgstr "Termenii de serviciu"
 #~ msgstr "Anul nașterii"
 
 #~ msgid "Remember me"
-#~ msgstr "Păstrează-mă minte"
+#~ msgstr "Ţine-mă minte"
 
 #~ msgid "Page Not Found"
 #~ msgstr "Pagina nu a fost găsită"
@@ -6975,7 +6975,7 @@ msgstr "Termenii de serviciu"
 #~ msgstr "exemplu: username@domain.com"
 
 #~ msgid "Forgot password?"
-#~ msgstr "Ți-ai uitat parola?"
+#~ msgstr "Ai uitat parola?"
 
 #~ msgid "example: Jane Doe"
 #~ msgstr "exemplu: Jane Doe"
@@ -7134,16 +7134,16 @@ msgstr "Termenii de serviciu"
 #~ msgstr "Autentificare via OpenID"
 
 #~ msgid "Not Enrolled?"
-#~ msgstr "Nu v-ați înscris?"
+#~ msgstr "Nu eşti încă înregistrat?"
 
-#~ msgid "Access My Courses"
-#~ msgstr "Accesează Cursurile mele"
+msgid "Access My Courses"
+msgstr "accesează cursurile"
 
 #~ msgid "Please log in"
-#~ msgstr "Vă rugăm autentificați-vă"
+#~ msgstr "Vă rugăm să vă logaţi"
 
 #~ msgid "to access your account and courses"
-#~ msgstr "pentru a vă accesa contul și cursurile"
+#~ msgstr "pentru a accesa contul si cursurile"
 
 #~ msgid "Your email or password is incorrect"
 #~ msgstr "Adresa de e-mail sau parola este incorectă."
@@ -7220,8 +7220,8 @@ msgstr "Termenii de serviciu"
 #~ msgid "Welcome {username}"
 #~ msgstr "Bine ai venit {username}"
 
-#~ msgid "Highest Level of Education Completed"
-#~ msgstr "Ultimul nivel de educație absolvit"
+msgid "Highest Level of Education Completed"
+msgstr "Ultimul nivel de educaţie absolvit"
 
 #~ msgid ""
 #~ "Please share with us your reasons for registering with {platform_name}"
@@ -7855,3 +7855,28 @@ msgstr "Dacă aveți probleme legate de curs, contactați-ne la"
 
 msgid "We will make every attempt to respond to your concern in a timely manner."
 msgstr "Vom face toate eforturile pentru a răspunde problemei dvs., în timp util."
+
+msgid "Age Range"
+msgstr "Grupa de vârstă"
+
+msgid "Sign up for {platform_name} today!"
+msgstr "Înregistrează-te astăzi pentru cursul “{platform_name}”!"
+
+msgid "Looking for help in logging in or with your {platform_name} account?"
+msgstr "Ai nevoie de ajutor pentru a te loga?"
+
+msgid "View our help section for answers to commonly asked questions."
+msgstr "Accesaţi secţiunea “Help” pentru a primi răspunsuri la intrebările cele mai frecvente."
+
+msgid "Log into My {platform_name} Account"
+msgstr "Logaţi-vă în contul vostru"
+
+msgid "+"
+msgstr "şi"
+
+msgid "Create My {platform_name} Account"
+msgstr "Creaza contul Traficul de persoane ca afacere"
+
+msgid "Highest Level of Education Completed"
+msgstr "Ultimul nivel de educaţie absolvit"
+
