@@ -523,7 +523,7 @@ msgstr "Feminin"
 #: common/djangoapps/student/models.py:225
 #: common/djangoapps/student/models.py:246
 msgid "Other"
-msgstr ""
+msgstr "Altele"
 
 #: common/djangoapps/student/models.py:236
 msgid "Doctorate"
@@ -531,11 +531,11 @@ msgstr "Doctorat"
 
 #: common/djangoapps/student/models.py:237
 msgid "Master's or professional degree"
-msgstr ""
+msgstr "Masterat"
 
 #: common/djangoapps/student/models.py:238
 msgid "Bachelor's degree"
-msgstr ""
+msgstr "Facultate"
 
 #: common/djangoapps/student/models.py:239
 msgid "Associate's degree"
@@ -543,21 +543,21 @@ msgstr ""
 
 #: common/djangoapps/student/models.py:240
 msgid "Secondary/high school"
-msgstr ""
+msgstr "Liceu"
 
 #: common/djangoapps/student/models.py:241
 msgid "Junior secondary/junior high/middle school"
-msgstr ""
+msgstr "Scoala profesionala"
 
 #: common/djangoapps/student/models.py:242
 msgid "Elementary/primary school"
-msgstr ""
+msgstr "Scoala primara"
 
 #. Translators: 'None' refers to the student's level of education
 #: common/djangoapps/student/models.py:244
 #: common/lib/xmodule/xmodule/course_module.py:778
 msgid "None"
-msgstr "Nimic"
+msgstr "Fara studii"
 
 #: common/djangoapps/student/views.py:856
 msgid "Course id not specified"
@@ -7876,4 +7876,10 @@ msgstr "şi"
 
 msgid "Create My {platform_name} Account"
 msgstr "Creaza contul Traficul de persoane ca afacere"
+
+msgid "Below 25"
+msgstr "Sub 25"
+
+msgid "Above 55"
+msgstr "Peste 55"
 
