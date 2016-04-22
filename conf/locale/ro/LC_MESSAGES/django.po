@@ -6859,6 +6859,9 @@ msgstr ""
 msgid "Highest level of education completed"
 msgstr "Ultimul nivel de educaţie absolvit"
 
+msgid "Highest Level of Education Completed"
+msgstr "Ultimul nivel de educaţie absolvit"
+
 #. Translators: This label appears above a dropdown menu on the registration
 #. form used to select the user's year of birth.
 #: openedx/core/djangoapps/user_api/views.py:474
@@ -6938,8 +6941,8 @@ msgstr "Termenii de serviciu"
 #~ msgid "Year of Birth"
 #~ msgstr "Anul nașterii"
 
-#~ msgid "Remember me"
-#~ msgstr "Ţine-mă minte"
+msgid "Remember me"
+msgstr "Ţine-mă minte"
 
 #~ msgid "Page Not Found"
 #~ msgstr "Pagina nu a fost găsită"
@@ -6974,8 +6977,8 @@ msgstr "Termenii de serviciu"
 #~ msgid "example: username@domain.com"
 #~ msgstr "exemplu: username@domain.com"
 
-#~ msgid "Forgot password?"
-#~ msgstr "Ai uitat parola?"
+msgid "Forgot password?"
+msgstr "Ai uitat parola?"
 
 #~ msgid "example: Jane Doe"
 #~ msgstr "exemplu: Jane Doe"
@@ -7133,17 +7136,17 @@ msgstr "Termenii de serviciu"
 #~ msgid "Login via OpenID"
 #~ msgstr "Autentificare via OpenID"
 
-#~ msgid "Not Enrolled?"
-#~ msgstr "Nu eşti încă înregistrat?"
+msgid "Not Enrolled?"
+msgstr "Nu eşti încă înregistrat?"
 
 msgid "Access My Courses"
 msgstr "accesează cursurile"
 
-#~ msgid "Please log in"
-#~ msgstr "Vă rugăm să vă logaţi"
+msgid "Please log in"
+msgstr "Vă rugăm să vă logaţi"
 
-#~ msgid "to access your account and courses"
-#~ msgstr "pentru a accesa contul si cursurile"
+msgid "to access your account and courses"
+msgstr "pentru a accesa contul si cursurile"
 
 #~ msgid "Your email or password is incorrect"
 #~ msgstr "Adresa de e-mail sau parola este incorectă."
@@ -7219,9 +7222,6 @@ msgstr "accesează cursurile"
 
 #~ msgid "Welcome {username}"
 #~ msgstr "Bine ai venit {username}"
-
-msgid "Highest Level of Education Completed"
-msgstr "Ultimul nivel de educaţie absolvit"
 
 #~ msgid ""
 #~ "Please share with us your reasons for registering with {platform_name}"
@@ -7876,7 +7876,4 @@ msgstr "şi"
 
 msgid "Create My {platform_name} Account"
 msgstr "Creaza contul Traficul de persoane ca afacere"
-
-msgid "Highest Level of Education Completed"
-msgstr "Ultimul nivel de educaţie absolvit"
 
