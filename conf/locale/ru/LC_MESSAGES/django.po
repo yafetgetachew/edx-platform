@@ -19799,6 +19799,14 @@ msgid "New Course"
 msgstr "Новый курс"
 
 #: cms/templates/index.html
+msgid "Advanced options"
+msgstr "Дополнительный функционал"
+
+#: cms/templates/index.html
+msgid "Add advanced options"
+msgstr "Включить дополнительный функционал"
+
+#: cms/templates/index.html
 msgid "Email staff to create course"
 msgstr "Отправьте электронное письмо сотрудникам для создания курса"
 

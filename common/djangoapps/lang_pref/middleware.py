@@ -5,6 +5,15 @@ Middleware for Language Preferences
 from openedx.core.djangoapps.user_api.preferences.api import get_user_preference
 from lang_pref import LANGUAGE_KEY
 from django.utils.translation import LANGUAGE_SESSION_KEY
+from django.utils import translation
+
+
+class LanguageActivateMiddleware(object):
+    def process_request(self, request):
+        language = request.session.get('django_language')
+        if language:
+            request.LANGUAGE_CODE = language
+            translation.activate(language)
 
 
 class LanguagePreferenceMiddleware(object):
