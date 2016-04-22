@@ -6983,8 +6983,8 @@ msgstr "Ai uitat parola?"
 #~ msgid "example: Jane Doe"
 #~ msgstr "exemplu: Jane Doe"
 
-#~ msgid "Public Username"
-#~ msgstr "Pseudonim public"
+msgid "Public Username"
+msgstr "Utilizator"
 
 #~ msgid "example: JaneDoe"
 #~ msgstr "exemplu: JaneDoe"
