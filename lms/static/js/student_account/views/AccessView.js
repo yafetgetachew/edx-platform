@@ -88,10 +88,9 @@ var edx = edx || {};
 
         postRender: function() {
             //get & check current url hash part & load form accordingly
+            this.loadForm(this.activeForm);
             if (Backbone.history.getHash() === "forgot-password-modal") {
                 this.resetPassword();
-            } else {
-                this.loadForm(this.activeForm);
             }
         },
 
