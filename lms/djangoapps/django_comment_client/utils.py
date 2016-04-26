@@ -3,6 +3,7 @@ from datetime import datetime
 import json
 import logging
 from django.conf import settings
+from bson import json_util
 
 import pytz
 from django.contrib.auth.models import User
@@ -429,7 +430,7 @@ class JsonResponse(HttpResponse):
         """
         Object constructor, converts data (if provided) to JSON
         """
-        content = json.dumps(data, cls=i4xEncoder)
+        content = json.dumps(data, cls=i4xEncoder, default=json_util.default)
         super(JsonResponse, self).__init__(content,
                                            content_type='application/json; charset=utf-8')
 
