@@ -227,6 +227,7 @@ def perform_delegate_email_batches(entry_id, course_id, task_input, action_name)
             task_id=subtask_id,
             routing_key=settings.BULK_EMAIL_ROUTING_KEY,
         )
+        new_subtask.apply_async = new_subtask.apply
         return new_subtask
 
     recipient_qset = _get_recipient_queryset(user_id, to_option, course_id, course.location)
