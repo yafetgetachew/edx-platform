@@ -397,7 +397,7 @@ def single_thread(request, course_key, discussion_id, thread_id):
             'user_cohort': user_cohort,
             'sort_preference': cc_user.default_sort_key,
             'category_map': course_settings["category_map"],
-            'course_settings': json.dumps(course_settings)
+            'course_settings': json.dumps(course_settings, default=json_util.default)
         }
         return render_to_response('discussion/index.html', context)
 
