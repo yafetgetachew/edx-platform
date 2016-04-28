@@ -8,6 +8,8 @@ from third_party_auth import pipeline
 from microsite_configuration import microsite
 from django.core.urlresolvers import reverse
 import json
+from django.conf import settings
+from edxmako.shortcuts import marketing_link
 %>
 
 <%
@@ -39,11 +41,39 @@ import json
   <%static:js group='dashboard'/>
   <script type="text/javascript">
     $(document).ready(function() {
+        ## making the conditional around this entire JS block for sanity
+        $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
+          if(xhr.status == 200) {
+            location.href = "${reverse('dashboard')}";
+          } else if (xhr.status == 403) {
+            $('#register_error').html("he currently logged-in user account does not have permission to enroll in this course.").css("display", "block");
+          } else if (xhr.status == 400) { //This means the user did not have permission
+            $('#register_error').html("he currently logged-in user account does not have permission to enroll in this course.").css("display", "block");
+          } else {
+            $('#register_error').html(
+              (xhr.responseText ? xhr.responseText : "${_("An error occurred. Please try again later.")}")
+            ).css("display", "block");
+          }
+        });
+
       edx.dashboard.legacy.init({
         dashboard: "${reverse('dashboard')}",
         signInUser: "${reverse('signin_user')}",
         changeEmailSettings: "${reverse('change_email_settings')}"
       });
+      if(localStorage["registerURLs"] != undefined){
+        var registerURL = localStorage["registerURLs"].split(",")[0];
+        var courseId = registerURL.substring(20, registerURL.indexOf("&"))
+        if(localStorage["registerURLs"].split(",").length == 1){
+          localStorage.removeItem("registerURLs");
+        }
+        else{
+          localStorage["registerURLs"] = localStorage["registerURLs"].substring(registerURL.length+1, localStorage["registerURLs"].length)
+        }
+        $("input[name='course_id'", $("#class_enroll_form")).val(courseId);
+        $("input[name='enrollment_action'", $("#class_enroll_form")).val("enroll")
+        $("#class_enroll_form").submit();
+      }
     });
   </script>
   % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
@@ -208,6 +238,38 @@ import json
       <label>${_("Receive course emails")} <input type="checkbox" id="receive_emails" name="receive_emails" /></label>
       <div class="submit">
         <input type="submit" id="submit" value="${_("Save Settings")}" />
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="reset-score-modal" class="modal" aria-hidden="true">
+  <div class="inner-wrapper" role="dialog" aria-labelledby="reset-score-title">
+    <button class="close-modal">
+      <i class="icon fa fa-remove"></i>
+      <span class="sr">
+        ## Translators: this is a control to allow users to exit out of this modal interface (a menu or piece of UI that takes the full focus of the screen)
+        ${_("Close")}
+      </span>
+    </button>
+
+    <header>
+      <h2 id="reset-score-title">
+        ${_("Are you sure you want to reset the attempts to course {course_number}?").format(course_number='<span id="reset-score-course_number"></span>')}
+        <span class="sr">,
+          ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
+          ${_("window open")}
+        </span>
+      </h2>
+      <hr/>
+    </header>
+    <div id="reset_error" class="modal-form-error"></div>
+
+    <form id="reset_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
+      <input name="course_id" id="reset_course_id" type="hidden" />
+      <input name="enrollment_action" type="hidden" value="reset" />
+      <div class="submit">
+        <input name="submit" type="submit" value="${_("Reset")}" />
       </div>
     </form>
   </div>
