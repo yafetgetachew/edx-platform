@@ -26,13 +26,13 @@ from microsite_configuration import microsite
             ${homepage_overlay_html}
           % else:
             % if self.stanford_theme_enabled():
-              <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="Stanford")}</h1>
+	      <h1>${_("Courses from <strong>{university_name}</strong>").format(university_name="Applied's Experts")}</h1>
               <h2>${_("For anyone, anywhere, anytime")}</h2>
             % else:
               ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
-              <h1>${_("Welcome to Open edX!")}</h1>
+              <h1>${_("Welcome to appliedX!")}</h1>
               ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
-              <h2>${_("It works! This is the default homepage for this Open edX instance.")}</h2>
+              <h2>${_("It works! This is the default homepage for this appliedX instance.")}</h2>
             % endif
           % endif
         </hgroup>
@@ -52,7 +52,7 @@ from microsite_configuration import microsite
       </div>
 
       % if show_homepage_promo_video:
-        <a href="#video-modal" class="media" rel="leanModal">
+        <a href="#video-modal" class="media" rel="leanModal" onclick="setTimeout(function() {$('video', $('#modal_clone'))[0].play()}, 4000);">
           <div class="hero">
             <div class="play-intro"></div>
           </div>
@@ -94,7 +94,7 @@ from microsite_configuration import microsite
       if self.stanford_theme_enabled():
         youtube_video_id = "2gmreZObCY4"
     %>
-    <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    <video  width="640" height="360" controls src="https://s3-us-west-2.amazonaws.com/nanolearningvideosamtv/appliedx_intro/demo_video.mp4"></video>  </div>
   </div>
 </section>
 
@@ -115,3 +115,14 @@ from microsite_configuration import microsite
   $(window).load(function() {$('#signup_action').trigger("click");});
 </script>
 % endif
+<script type="text/javascript">
+  $(document).ready(function(){
+    var len=$(".courses-listing-item").length;
+    for(i=0;i<len;i++){
+      for(j=0;j<i;j++){
+        if($("a", $($(".courses-listing-item")[i])).first().attr("href").split("/")[4] <= $("a", $($(".courses-listing-item")[j])).first().attr("href").split("/")[4])
+          $($(".courses-listing-item")[i]).insertBefore($(".courses-listing-item")[j])
+      }
+    }
+  });
+</script>
