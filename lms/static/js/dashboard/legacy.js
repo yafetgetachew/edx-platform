@@ -140,6 +140,11 @@
             $("#unenroll_course_id").val( element.data("course-id") );
         });
 
+	$(".action-reset-score").click(function(event) {
+	    $("#reset_course_id").val( $(event.target).data("course-id") );
+	    //$("#unenroll_course_number").text( $(event.target).data("course-number") );
+	});
+
         $('#unenroll_form').on('ajax:complete', function(event, xhr) {
             if(xhr.status === 200) {
                 location.href = urls.dashboard;
@@ -152,6 +157,17 @@
                 ).stop().css("display", "block");
             }
         });
+
+	$('#reset_form').on('ajax:complete', function(event, xhr) {
+    	    if(xhr.status === 200) {
+		location.href = urls.dashboard;
+	    }
+	    else {
+		$('#reset_error').html(
+		    xhr.responseText ? xhr.responseText : gettext("An error occurred. Please try again later.")
+		).stop().css("display", "block");
+	    }
+	});
 
         $("#email_settings_form").submit(function(){
             $.ajax({
