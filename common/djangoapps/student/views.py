@@ -1465,7 +1465,7 @@ def _do_create_account(form):
 
     profile_fields = [
         "name", "level_of_education", "gender", "mailing_address", "city", "country", "goals",
-        "year_of_birth"
+        "year_of_birth", 'company_name', 'position', 'work_email',
     ]
     profile = UserProfile(
         user=user,

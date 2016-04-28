@@ -190,6 +190,21 @@ import calendar
             <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
           </li>
 
+          <li class="field required text" id="field-work_email">
+            <label for="work_email">${_('Work E-mail')}</label>
+            <input class="" id="work_email" type="email" name="work_email" value="${work_email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
+          </li>
+          <li class="field required text" id="field-company_name">
+            <label for="company_name">${_('Company Name')}</label>
+            <input id="company_name" type="text" name="company_name" value="${company_name}" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="company_name-tip" />
+            <span class="tip tip-input" id="company_name-tip">${_("Your legal name, used for any certificates you earn.")}</span>
+          </li>
+          <li class="field required text" id="field-position">
+            <label for="position">${_('Position')}</label>
+            <input id="position" type="text" name="position" value="${position}" placeholder="${_('example: Teacher')}" required aria-required="true" aria-describedby="position-tip" />
+            <span class="tip tip-input" id="position-tip">${_("Your legal name, used for any certificates you earn.")}</span>
+          </li>
+
           % if third_party_auth.is_enabled() and running_pipeline:
 
           <li class="is-disabled field optional password" id="field-password" hidden>

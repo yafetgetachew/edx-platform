@@ -2151,6 +2151,9 @@ REGISTRATION_EXTRA_FIELDS = {
     'terms_of_service': 'hidden',
     'city': 'hidden',
     'country': 'hidden',
+    "company_name": "required",
+    "position": "required",
+    "work_email": "required"
 }
 
 ########################## CERTIFICATE NAME ########################
@@ -2540,6 +2543,9 @@ ACCOUNT_VISIBILITY_CONFIGURATION = {
     "admin_fields": [
         "username",
         "email",
+        "company_name",
+        "position",
+        "work_email",
         "date_joined",
         "is_active",
         "bio",

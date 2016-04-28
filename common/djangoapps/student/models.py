@@ -278,6 +278,11 @@ class UserProfile(models.Model):
     bio = models.CharField(blank=True, null=True, max_length=3000, db_index=False)
     profile_image_uploaded_at = models.DateTimeField(null=True)
 
+    # extra fields
+    company_name = models.CharField(max_length=255, blank=True, null=True)
+    position = models.CharField(max_length=255, blank=True, null=True)
+    work_email = models.EmailField(max_length=255, blank=True, null=True)
+
     @property
     def has_profile_image(self):
         """

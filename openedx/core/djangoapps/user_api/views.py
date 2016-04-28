@@ -157,6 +157,9 @@ class RegistrationView(APIView):
     DEFAULT_FIELDS = ["email", "name", "username", "password"]
 
     EXTRA_FIELDS = [
+        "company_name",
+        "position",
+        "work_email",
         "city",
         "country",
         "gender",
@@ -409,6 +412,45 @@ class RegistrationView(APIView):
                 "min_length": USERNAME_MIN_LENGTH,
                 "max_length": USERNAME_MAX_LENGTH,
             },
+            required=required
+        )
+
+    def _add_work_email_field(self, form_desc, required=True):
+        """
+        Add a work email field to a form description.
+        """
+        work_email_label = _(u"Work email")
+
+        form_desc.add_field(
+            "work_email",
+            label=work_email_label,
+            field_type="email",
+            required=required
+        )
+
+    def _add_company_name_field(self, form_desc, required=True):
+        """
+        Add a company name field to a form description.
+        """
+        company_name_label = _(u"Company name")
+
+        form_desc.add_field(
+            "company_name",
+            label=company_name_label,
+            field_type="textarea",
+            required=required
+        )
+
+    def _add_position_field(self, form_desc, required=True):
+        """
+        Add a position field to a form description.
+        """
+        position_label = _(u"Position")
+
+        form_desc.add_field(
+            "position",
+            label=position_label,
+            field_type="textarea",
             required=required
         )
 
