@@ -482,7 +482,8 @@ MAKO_TEMPLATES['main'] = [PROJECT_ROOT / 'templates',
                           COMMON_ROOT / 'templates',
                           COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
                           COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates']
-
+MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/edx-platform/edx_telegram_bot/edx_telegram_bot/templates/lms'] + \
+                         MAKO_TEMPLATES['main']
 # Django templating
 TEMPLATES = [
     {
@@ -806,7 +807,8 @@ CMS_BASE = 'localhost:8001'
 SITE_ID = 1
 SITE_NAME = "example.com"
 HTTPS = 'on'
-ROOT_URLCONF = 'lms.urls'
+#ROOT_URLCONF = 'lms.urls'
+ROOT_URLCONF = 'edx_telegram_bot.edx_telegram_bot.urls'
 # NOTE: Please set ALLOWED_HOSTS to some sane value, as we do not allow the default '*'
 
 # Platform Email
@@ -1763,6 +1765,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djcelery',
 
+    'edx_telegram_bot.edx_telegram_bot',    
+
     # Common views
     'openedx.core.djangoapps.common_views',
 
@@ -2685,3 +2689,9 @@ DEPRECATED_ADVANCED_COMPONENT_TYPES = []
 # Cutoff date for granting audit certificates
 
 AUDIT_CERT_CUTOFF_DATE = None
+
+TELEGRAM_BOT = {
+   'token': '181061228:AAHQc2_t-5NzauiskyXF_N9w606CYPtaYTE',
+   'bot_name': "RaccoonGangUniBot",
+   'course_bot_token': '187925341:AAFTaWDWkTDjFPOJLlA1ArRiK-Sviypx8QM'
+}
