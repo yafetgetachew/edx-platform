@@ -107,6 +107,9 @@ _USERNAME_TOO_SHORT_MSG = _("Username must be minimum of two characters long")
 _EMAIL_INVALID_MSG = _("A properly formatted e-mail is required")
 _PASSWORD_INVALID_MSG = _("A valid password is required")
 _NAME_TOO_SHORT_MSG = _("Your legal name must be a minimum of two characters long")
+_COMPANY_NAME_INVALID_MSG = _("Company Name is required")
+_POSITION_INVALID_MSG = _("Position is required")
+_WORK_EMAIL_INVALID_MSG = _("A properly formatted Work E-mail is required")
 
 
 class AccountCreationForm(forms.Form):
@@ -147,6 +150,29 @@ class AccountCreationForm(forms.Form):
             "min_length": _NAME_TOO_SHORT_MSG,
         }
     )
+    company_name = forms.CharField(
+        max_length=255,
+        error_messages={
+            "required": _COMPANY_NAME_INVALID_MSG,
+            "max_length": _("Company Name cannot be more than %(limit_value)s characters long"),
+        }
+    )
+    position = forms.CharField(
+        max_length=255,
+        error_messages={
+            "required": _POSITION_INVALID_MSG,
+            "max_length": _("Position cannot be more than %(limit_value)s characters long"),
+        }
+    )
+    work_email = forms.EmailField(
+        max_length=254,  # Limit per RFCs is 254
+        error_messages={
+            "required": _WORK_EMAIL_INVALID_MSG,
+            "invalid": _WORK_EMAIL_INVALID_MSG, 
+            "max_length": _("Work E-mail cannot be more than %(limit_value)s characters long"),
+        }
+    )
+
 
     def __init__(
             self,
