@@ -176,7 +176,7 @@ import calendar
         <ol class="list-input">
           <li class="field required text" id="field-email">
             <label for="email">${_('E-mail')}</label>
-            <input class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
+            <input ${request.session.get('third_party_auth_provider') and email and 'readonly="readonly"' or ''}  class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
           </li>
 
           <li class="field required text" id="field-name">

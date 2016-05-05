@@ -459,6 +459,9 @@ def register_user(request, extra_context=None):
             overrides['running_pipeline'] = running_pipeline
             overrides['selected_provider'] = current_provider.name
             context.update(overrides)
+            # Save email to session
+            request.session['{}-email'.format(current_provider.name)] = overrides.get('email')
+            request.session['third_party_auth_provider'] = current_provider.name
 
     return render_to_response('register.html', context)
 
@@ -1754,6 +1757,12 @@ def create_account(request, post_override=None):
     """
     warnings.warn("Please use RegistrationView instead.", DeprecationWarning)
 
+    third_party_auth_provider = request.session.get('third_party_auth_provider')
+    third_party_auth_email_field = '{}-email'.format(third_party_auth_provider)
+    third_party_auth_email = request.session.get(third_party_auth_email_field)
+    post_override = request.POST.copy()
+    post_override['email'] = third_party_auth_email or request.POST['email']
+
     try:
         user = create_account_with_params(request, post_override or request.POST)
     except AccountValidationError as exc:
@@ -1768,6 +1777,9 @@ def create_account(request, post_override=None):
             },
             status=400
         )
+    else:
+        request.session.pop(third_party_auth_email_field, None)
+        request.session.pop('third_party_auth_provider', None)
 
     redirect_url = None  # The AJAX method calling should know the default destination upon success
 
