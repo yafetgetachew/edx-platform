@@ -57,7 +57,7 @@
                         {
                             view: new FieldViews.TextFieldView({
                                 model: userAccountModel,
-                                title: gettext('Companyname'),
+                                title: gettext('Company Name'),
                                 valueAttribute: 'company_name',
                                 helpMessage: gettext('The company name wheare you work.'),
                                 persistChanges: true
@@ -75,7 +75,7 @@
                         {
                             view: new AccountSettingsFieldViews.EmailFieldView({
                                 model: userAccountModel,
-                                title: gettext('Work Email'),
+                                title: gettext('Work E-mail'),
                                 valueAttribute: 'work_email',
                                 helpMessage: gettext('The work email address you use on your job.'),
                                 persistChanges: true
