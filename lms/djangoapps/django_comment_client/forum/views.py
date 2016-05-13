@@ -80,7 +80,8 @@ def make_course_settings(course, user):
         'allow_anonymous': course.allow_anonymous,
         'allow_anonymous_to_peers': course.allow_anonymous_to_peers,
         'cohorts': [{"id": str(g.id), "name": g.name} for g in get_course_cohorts(course)],
-        'category_map': utils.get_discussion_category_map(course, user, exclude_unstarted=False)
+        'category_map': utils.get_discussion_category_map(course, user,
+                                                        exclude_unstarted=False)
     }
 
     return obj
