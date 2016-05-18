@@ -1,6 +1,4 @@
-from django.conf import settings
 from django.db import models
-from tinymce.models import HTMLField
 from hvad.models import TranslatableModel, TranslatedFields
 
 PAGES = (
@@ -13,7 +11,10 @@ PAGES = (
     ('theme-news.html', 'news'),
     ('theme-press.html', 'press'),
     ('theme-media-kit.html', 'media-kit'),
-    ('theme-tos.html', 'tos')
+    ('theme-tos.html', 'tos'),
+    ('theme-privacy.html', 'privacy'),
+    ('theme-about.html', 'about'),
+    ('theme-honor.html', 'honor')
 )
 
 
