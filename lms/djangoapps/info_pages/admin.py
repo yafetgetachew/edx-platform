@@ -1,7 +1,5 @@
-from django.contrib import admin
 from .models import InfoPage
 from django import forms
-from django.db import models
 from tinymce.widgets import TinyMCE
 from hvad.admin import TranslatableAdmin
 from hvad.forms import TranslatableModelForm
