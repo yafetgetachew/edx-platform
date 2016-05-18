@@ -46,7 +46,7 @@ def render(request, template):
     page = get_text_for_template(template, language)
     if page:
         log.info('Geting page "{page}" with language "{lang}" from "{db}"'.format(page=page.page, lang=page.language_code, db=page.from_db.im_self))
-        return render_to_response('static_templates/infopage.html', {'page': page})
+        return render_to_response('info_pages/infopage.html', {'page': page})
     return render_to_response('static_templates/' + template, {})
 
 
