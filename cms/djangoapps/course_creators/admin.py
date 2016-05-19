@@ -56,10 +56,10 @@ class CourseCreatorAdmin(admin.ModelAdmin):
     username.admin_order_field = 'user__username'
 
     def has_add_permission(self, request):
-        return False
+        return request.user.is_staff
 
     def has_delete_permission(self, request, obj=None):
-        return False
+        return request.user.is_staff
 
     def has_change_permission(self, request, obj=None):
         return request.user.is_staff
