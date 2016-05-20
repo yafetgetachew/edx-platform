@@ -27,6 +27,8 @@ def get_pages():
 
         pages += ((template, value),)
 
+    return pages
+
 
 class InfoPage(TranslatableModel):
     PAGES = get_pages()
