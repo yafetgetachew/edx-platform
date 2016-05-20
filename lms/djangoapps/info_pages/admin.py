@@ -6,6 +6,7 @@ from hvad.admin import TranslatableAdmin
 from hvad.forms import TranslatableModelForm
 
 class InfoPageFrom(TranslatableModelForm):
+    page = forms.ChoiceField(choices=InfoPage.PAGES)
     text = forms.CharField(widget=TinyMCE(attrs={'cols': 200, 'rows': 30}))
 
     class Meta:
