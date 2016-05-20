@@ -1,12 +1,13 @@
 from .models import InfoPage
 from django import forms
+from django.contrib import admin
 from tinymce.widgets import TinyMCE
 from hvad.admin import TranslatableAdmin
 from hvad.forms import TranslatableModelForm
 
 class InfoPageFrom(TranslatableModelForm):
     text = forms.CharField(widget=TinyMCE(attrs={'cols': 200, 'rows': 30}))
-    
+
     class Meta:
         model = InfoPage
         fields = ('page', 'title', 'text')
@@ -21,4 +22,3 @@ class AdminInfoPage(TranslatableAdmin):
         css = {'all': ('/static/css/tinymce-studio-content.css', '/static/css/tinymce-studio-content-fonts.css')}
 
 admin.site.register(InfoPage, AdminInfoPage)
-
