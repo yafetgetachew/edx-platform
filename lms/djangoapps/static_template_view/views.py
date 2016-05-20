@@ -5,13 +5,13 @@
 
 from edxmako.shortcuts import render_to_response, render_to_string
 from mako.exceptions import TopLevelLookupException
+from info_pages.models import InfoPage
 from django.shortcuts import redirect
 from django.conf import settings
 from django.http import HttpResponseNotFound, HttpResponseServerError, Http404
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 from util.cache import cache_if_anonymous
-from info_pages.utils import get_text_for_template
 import logging
 
 log = logging.getLogger(__name__)
@@ -42,8 +42,8 @@ def render(request, template):
 
     url(r'^jobs$', 'static_template_view.views.render', {'template': 'jobs.html'}, name="jobs")
     """
-    language = request.LANGUAGE_CODE or 'en'
-    page = get_text_for_template(template, language)
+    language = request.LANGUAGE_CODE or settings.LANGUAGE_CODE
+    page = InfoPage.objects.language(language).filter(page=template).first()
     if page:
         log.info('Geting page "{page}" with language "{lang}" from "{db}"'.format(page=page.page, lang=page.language_code, db=page.from_db.im_self))
         return render_to_response('info_pages/infopage.html', {'page': page})

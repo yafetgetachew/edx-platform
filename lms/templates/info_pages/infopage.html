@@ -1,7 +1,7 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%inherit file="../main.html" />
 
-<%block name="pagetitle">${_("Terms of Service")}</%block>
+<%block name="pagetitle">${page.title}</%block>
 <section class="container about" style="text-align: justify;">
   <h1>${page.title}</h1>
   ${page.text}
