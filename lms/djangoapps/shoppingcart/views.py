@@ -53,6 +53,8 @@ from .processors import (
 import json
 from .decorators import enforce_shopping_cart_enabled
 
+from liqpay.liqpay import LiqPay
+
 
 log = logging.getLogger("shoppingcart")
 AUDIT_LOG = logging.getLogger("audit")
@@ -660,7 +662,7 @@ def postpay_callback(request):
     If unsuccessful the order will be left untouched and HTML messages giving more detailed error info will be
     returned.
     """
-    if request.method == 'POST' and settings.CC_PROCESSOR_NAME in ['CyberSource2', 'CyberSource']:
+    if request.method == 'POST' and settings.CC_PROCESSOR_NAME in ['CyberSource2', 'CyberSource', 'Portmone']:
         params = request.POST.dict()
     elif request.method == 'GET' and settings.CC_PROCESSOR_NAME == 'PayPal':
         params = request.GET.dict()
@@ -1119,3 +1121,17 @@ def render_error_html(msg, order=None):
     error_html = u'<p class="error_msg">{msg}</p>'.format(msg=msg)
     return render_to_response('shoppingcart/error.html', {'order': order,
                                                           'error_html': error_html})
+
+
+@csrf_exempt
+@login_required
+def liqpay(request):
+    order = Order.objects.filter(user=request.user, status='cart').last()
+    if not order:
+        log.info('There is no cart for user {}, redirect to "/"'.format(request.user))
+        return redirect(reverse('dashboard'))
+    result = process_postpay_callback(request.user, order=order)
+    if result['success']:
+        return _show_receipt_html(request, result['order'])
+    else:
+        return render_to_response('shoppingcart/error.html', {'order': result['order'], 'error_html': result['error_html']})

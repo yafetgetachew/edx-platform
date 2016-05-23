@@ -21,7 +21,8 @@ urlpatterns = patterns(
     url(r'^verify_cart/$', 'verify_cart'),
     url(r'^paypal_create/$', 'paypal_create', name='paypal_create'),
     url(r'^paypal_cancel/$', 'paypal_cancel', name='paypal_cancel'),
-
+    ## Liqpay url
+    url(r'^liqpay/$', 'liqpay', name='liqpay'),
 )
 
 if settings.FEATURES.get('ENABLE_PAYMENT_FAKE'):
