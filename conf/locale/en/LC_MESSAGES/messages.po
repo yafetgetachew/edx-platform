@@ -18,3 +18,6 @@ msgstr ""
 # empty
 msgid "This is a key string."
 msgstr ""
+
+msgid "Sign Up &amp; Start Making an {platform_name} Course"
+msgstr "Sign Up &amp; Start Making a {platform_name} Course"
