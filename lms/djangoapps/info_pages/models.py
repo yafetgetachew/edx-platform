@@ -17,7 +17,7 @@ def get_pages():
     )
 
     for key, value in settings.MKTG_URL_LINK_MAP.items():
-        if value is None or key == "ROOT" or key == "COURSES":
+        if value is None or key == "ROOT" or key == "COURSES" or key == "FAQ": # Add condition 'or key == "FAQ"' for excluding dublicate of page 'help'
             continue
 
         template = "%s.html" % key.lower()
@@ -25,7 +25,9 @@ def get_pages():
         if settings.FEATURES.get("USE_CUSTOM_THEME"):
             template = "theme-" + template
 
-        pages += ((template, value),)
+        #Exclude a dublicates
+        if (template, value) not in pages:
+            pages += ((template, value),)
 
     return pages
 
@@ -41,3 +43,4 @@ class InfoPage(TranslatableModel):
 
     def __unicode__(self):
         return self.page
+
