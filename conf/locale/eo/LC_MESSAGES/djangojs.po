@@ -1,33 +1,33 @@
 # #-#-#-#-#  djangojs-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2015 EdX
+# Copyright (C) 2016 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 # #-#-#-#-#  djangojs-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2015 EdX
+# Copyright (C) 2016 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 # #-#-#-#-#  underscore.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2015 edX
+# Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 # #-#-#-#-#  underscore-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2015 edX
+# Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2015.
+# EdX Team <info@edx.org>, 2016.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-10-22 18:43+0000\n"
-"PO-Revision-Date: 2015-10-22 18:44:10.142616\n"
+"POT-Creation-Date: 2016-05-25 09:16+0000\n"
+"PO-Revision-Date: 2016-05-25 09:16:27.107319\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -130,7 +130,6 @@ msgstr "Ûplöädïng Ⱡ'σяєм ιρѕυм ∂σł#"
 #: cms/templates/js/asset-library.underscore
 #: cms/templates/js/previous-video-upload-list.underscore
 #: cms/templates/js/signatory-details.underscore
-#: cms/templates/js/signatory-editor.underscore
 msgid "Name"
 msgstr "Nämé Ⱡ'σяєм ι#"
 
@@ -1515,7 +1514,6 @@ msgstr ""
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: cms/templates/js/signatory-details.underscore
-#: cms/templates/js/signatory-editor.underscore
 #: common/static/common/templates/discussion/new-post.underscore
 #: common/static/common/templates/discussion/thread-edit.underscore
 msgid "Title"
@@ -2930,23 +2928,6 @@ msgid "Error generating problem grade report. Please try again."
 msgstr ""
 "Érrör générätïng prößlém grädé répört. Pléäsé trý ägäïn. Ⱡ'σяєм ιρѕυм ∂σłσя "
 "ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "Unavailable metric display."
-msgstr "Ûnäväïläßlé métrïç dïspläý. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "Error fetching grade distributions."
-msgstr ""
-"Érrör fétçhïng grädé dïstrïßütïöns. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
-
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "Last Updated: <%= timestamp %>"
-msgstr "Läst Ûpdätéd: <%= timestamp %> Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "<%= num_students %> students scored."
-msgstr "<%= num_students %> stüdénts sçöréd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 #: lms/static/js/student_account/views/account_settings_factory.js
@@ -6422,10 +6403,10 @@ msgid "Topic Area:"
 msgstr "Töpïç Àréä: Ⱡ'σяєм ιρѕυм ∂σłσя #"
 
 #: common/static/common/templates/discussion/topic.underscore
-msgid "Discussion topics; current selection is:"
+msgid "Discussion topics; current selection is: "
 msgstr ""
-"Dïsçüssïön töpïçs; çürrént séléçtïön ïs: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя#"
+"Dïsçüssïön töpïçs; çürrént séléçtïön ïs:  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σηѕє¢тєтυя #"
 
 #: common/static/common/templates/discussion/topic.underscore
 msgid "Filter topics"
@@ -8719,7 +8700,6 @@ msgid "View Live"
 msgstr "Vïéw Lïvé Ⱡ'σяєм ιρѕυм ∂σł#"
 
 #: cms/templates/js/signatory-details.underscore
-#: cms/templates/js/signatory-editor.underscore
 msgid "Organization"
 msgstr "Örgänïzätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 
@@ -8727,6 +8707,10 @@ msgstr "Örgänïzätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 msgid "Certificate Signatory Configuration"
 msgstr ""
 "Çértïfïçäté Sïgnätörý Çönfïgürätïön Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#: cms/templates/js/signatory-editor.underscore
+msgid "Name "
+msgstr "Nämé  Ⱡ'σяєм ιρѕ#"
 
 #: cms/templates/js/signatory-editor.underscore
 msgid "Name of the signatory"
@@ -8739,6 +8723,10 @@ msgstr ""
 " ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: cms/templates/js/signatory-editor.underscore
+msgid "Title "
+msgstr "Tïtlé  Ⱡ'σяєм ιρѕυ#"
+
+#: cms/templates/js/signatory-editor.underscore
 msgid "Title of the signatory"
 msgstr "Tïtlé öf thé sïgnätörý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
@@ -8749,6 +8737,10 @@ msgid ""
 msgstr ""
 "Tïtlés möré thän 100 çhäräçtérs mäý prévént stüdénts fröm prïntïng théïr "
 "çértïfïçäté ön ä sïnglé pägé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
+
+#: cms/templates/js/signatory-editor.underscore
+msgid "Organization "
+msgstr "Örgänïzätïön  Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
 #: cms/templates/js/signatory-editor.underscore
 msgid "Organization of the signatory"
