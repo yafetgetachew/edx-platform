@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-03-24 12:21+0000\n"
-"PO-Revision-Date: 2016-03-24 12:21:34.516911\n"
+"POT-Creation-Date: 2016-05-27 08:01+0000\n"
+"PO-Revision-Date: 2016-05-27 08:01:18.274371\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -10292,14 +10292,8 @@ msgstr "بخق شرغخرث, شرغصاثقث, شرغفهوث"
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
 #: lms/templates/index.html
-msgid "Welcome to Open edX!"
-msgstr "صثمذخوث فخ خحثر ثيط!"
-
-#. Translators: 'Open edX' is a brand, please keep this untranslated. See
-#. http://openedx.org for more information.
-#: lms/templates/index.html
-msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "هف صخقنس! فاهس هس فاث يثبشعمف اخوثحشلث بخق فاهس خحثر ثيط هرسفشرذث."
+msgid "Welcome to Reddin Consultants Courses!"
+msgstr "صثمذخوث فخ قثييهر ذخرسعمفشرفس ذخعقسثس!"
 
 #: lms/templates/index.html lms/templates/courseware/courses.html
 msgid "Search for a course"
