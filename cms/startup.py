@@ -95,4 +95,6 @@ def enable_third_party_auth():
 
     from third_party_auth import settings as auth_settings
     auth_settings.apply_settings(settings)
+    if 'third_party_auth.middleware.ExceptionMiddleware' in settings.MIDDLEWARE_CLASSES:
+        settings.MIDDLEWARE_CLASSES = settings.MIDDLEWARE_CLASSES[:-1] + ('sso_edx_microsoft.middleware.ExceptionMiddleware', )
 
