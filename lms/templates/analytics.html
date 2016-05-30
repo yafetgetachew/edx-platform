@@ -109,6 +109,27 @@
       </form>
       %if percentage_correct_answers is not None:
         <p>${_("Enrollment")}: ${enrollment}</p>
+        <hr/>
+        <p>${_("Male")}: ${percentage_male}%</p>
+        <p>${_("Female")}: ${percentage_female}%</p>
+        <p>${_("Other")}: ${percentage_other}%</p>
+        <hr />
+        <p>${_("Below 25")}: ${percentage_25}%</p>
+        <p>${_("25-34")}: ${percentage_25_34}%</p>
+        <p>${_("35-44")}: ${percentage_35_44}%</p>
+        <p>${_("45-54")}: ${percentage_45_54}%</p>
+        <p>${_("Above 55")}: ${percentage_55}%</p>
+        <hr />
+        <p>${_("Doctorate")}: ${percentage_p}%</p>
+        <p>${_("Master's or professional degree")}: ${percentage_m}%</p>
+        <p>${_("Bachelor's degree")}: ${percentage_b}%</p>
+        <p>${_("Associate's degree")}: ${percentage_a}%</p>
+        <p>${_("Secondary/high school")}: ${percentage_hs}%</p>
+        <p>${_("Junior secondary/junior high/middle school")}: ${percentage_jhs}%</p>
+        <p>${_("Elementary/primary school")}: ${percentage_el}%</p>
+        <p>${_("None")}: ${percentage_none}%</p>
+        <p>${_("Other")}: ${percentage_o}%</p>
+        <hr />
         <p>${_("Correct answers")}: ${percentage_correct_answers}%</p>
       %endif
 

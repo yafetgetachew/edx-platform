@@ -2329,7 +2329,24 @@ def analytics(request):
     percentage_correct_answers = None
     course = None
     questions = []
-    all_students =[]
+    enrollment = 0
+    percentage_male = 0
+    percentage_female = 0
+    percentage_other = 0
+    percentage_25 =0
+    percentage_25_34 = 0
+    percentage_35_44 = 0
+    percentage_45_54 = 0
+    percentage_55 = 0
+    percentage_p = 0
+    percentage_m = 0
+    percentage_b = 0
+    percentage_a = 0
+    percentage_hs = 0
+    percentage_jhs = 0
+    percentage_el = 0
+    percentage_none = 0
+    percentage_o = 0
 
     if course_key:
         course_key = CourseKey.from_string(course_key)
@@ -2349,11 +2366,36 @@ def analytics(request):
             all_students = all_students.filter(user__profile__age_range=age_range)
         if level_of_education:
             all_students = all_students.filter(user__profile__level_of_education=level_of_education)
+
         if all_students:
             students_correct_answer = StudentModule.objects.filter(student__in=list(all_students.values_list('user_id', flat=True)),
                                                                    module_state_key=question_key,
                                                                    grade__gt=0)
-            percentage_correct_answers = students_correct_answer.count() * 100 / len(all_students)
+            enrollment = len(all_students)
+            percentage_correct_answers = students_correct_answer.count() * 100 / enrollment
+
+            # percentage gender
+            percentage_male = all_students.filter(user__profile__gender='m').count() * 100 / enrollment
+            percentage_female = all_students.filter(user__profile__gender='f').count() * 100 / enrollment
+            percentage_other = all_students.filter(user__profile__gender='o').count() * 100 / enrollment
+
+            # percentage range
+            percentage_25 = all_students.filter(user__profile__age_range='Below 25').count() * 100 / enrollment
+            percentage_25_34 = all_students.filter(user__profile__age_range='25-34').count() * 100 / enrollment
+            percentage_35_44 = all_students.filter(user__profile__age_range='35-44').count() * 100 / enrollment
+            percentage_45_54 = all_students.filter(user__profile__age_range='45-54').count() * 100 / enrollment
+            percentage_55 = all_students.filter(user__profile__age_range='Above 55').count() * 100 / enrollment
+
+            # percentage level_of_education
+            percentage_p = all_students.filter(user__profile__level_of_education='p').count() * 100 / enrollment
+            percentage_m = all_students.filter(user__profile__level_of_education='m').count() * 100 / enrollment
+            percentage_b = all_students.filter(user__profile__level_of_education='b').count() * 100 / enrollment
+            percentage_a = all_students.filter(user__profile__level_of_education='a').count() * 100 / enrollment
+            percentage_hs = all_students.filter(user__profile__level_of_education='hs').count() * 100 / enrollment
+            percentage_jhs = all_students.filter(user__profile__level_of_education='jhs').count() * 100 / enrollment
+            percentage_el = all_students.filter(user__profile__level_of_education='el').count() * 100 / enrollment
+            percentage_none = all_students.filter(user__profile__level_of_education='none').count() * 100 / enrollment
+            percentage_o = all_students.filter(user__profile__level_of_education='other').count() * 100 / enrollment
 
     courses = modulestore().get_courses()
 
@@ -2371,7 +2413,24 @@ def analytics(request):
         'selected_gender': gender,
         'selected_age_range': age_range,
         'selected_level_of_education': level_of_education,
-        'enrollment': len(all_students),
+        'enrollment': enrollment,
+        'percentage_male': percentage_male,
+        'percentage_female': percentage_female,
+        'percentage_other': percentage_other,
+        'percentage_25': percentage_25,
+        'percentage_25_34': percentage_25_34,
+        'percentage_35_44': percentage_35_44,
+        'percentage_45_54': percentage_45_54,
+        'percentage_55': percentage_55,
+        'percentage_p' : percentage_p,
+        'percentage_m': percentage_m,
+        'percentage_b': percentage_b,
+        'percentage_a': percentage_a,
+        'percentage_hs': percentage_hs,
+        'percentage_jhs': percentage_jhs,
+        'percentage_el': percentage_el,
+        'percentage_none': percentage_none,
+        'percentage_o': percentage_o,
     }
 
     return render_to_response('analytics.html', context)
