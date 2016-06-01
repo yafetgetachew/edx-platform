@@ -75,7 +75,7 @@ urlpatterns = (
     url(r'^delete_search_tag$', 'util.views.rem_keyword'),
     url(r'^insert_search_tag$', 'util.views.add_keyword'),
     url(r'^token_auth$', 'util.views.get_auth_token'),
-
+    url(r'^latest_app_version$', 'util.views.latest_app_version'),
     # Feedback Form endpoint
     url(r'^submit_feedback$', 'util.views.submit_feedback'),
 

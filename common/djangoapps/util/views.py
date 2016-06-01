@@ -451,3 +451,17 @@ def rem_keyword(request):
         return HttpResponse(e)
     return HttpResponse(json.dumps(keywords))
 
+def latest_app_version(request):
+    try:
+        import os
+        from path import Path as path
+        SERVICE_VARIANT = os.environ.get('SERVICE_VARIANT', None)
+        CONFIG_ROOT = path(os.environ.get('CONFIG_ROOT', "/edx/app/edxapp/"))
+        CONFIG_PREFIX = SERVICE_VARIANT + "." if SERVICE_VARIANT else ""
+        with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
+            ENV_TOKENS = json.load(env_file)
+        version = ENV_TOKENS.get("MOBILE_APP_VERSION")
+    except Exception, e:
+        return HttpResponse(e)
+    return HttpResponse("{app_version:" + str(version) + "}")
+
