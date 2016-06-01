@@ -8,7 +8,7 @@ click==3.3
 
 # Third-party:
 -e git+https://github.com/doctoryes/code_block_timer.git@f3d0629f086bcc649c3c77f4bc5b9c2c8172c3bf#egg=code_block_timer
--e git+https://github.com/raccoongang/microsoft-oauth2-client.git@62571713ff7d2efbd109364da872f07826143b2d#egg=microsoft_oauth2_client-master
+-e git+https://github.com/raccoongang/microsoft-oauth2-client.git@9e9f03872cb6109f2658049e191b8d55c4edd465#egg=microsoft_oauth2_client-master
 -e git+https://github.com/raccoongang/open_edx_calendar_tab.git@2c188397f8ef7cdc165721cd58c38cd9dc6b694d#egg=edx_calendar_tab-master
 -e git+https://github.com/OfficeDev/xblock-officemix.git@3f876b5f0267b017812620239533a29c7d562d24#egg=xblock_officemix-master
 -e git+https://github.com/MSOpenTech/xblock-filestorage.git@bc77d294f34679898ae75ac77c1c180b3c390709#egg=xblock_filestorage-master
