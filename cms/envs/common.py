@@ -223,6 +223,9 @@ MAKO_TEMPLATES['main'] = [
     COMMON_ROOT / 'static',  # required to statically include common Underscore templates
 ]
 
+MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/edx-platform/edx-telegram-bot/edx_telegram_bot/templates/cms'] + \
+                         MAKO_TEMPLATES['main']
+
 for namespace, template_dirs in lms.envs.common.MAKO_TEMPLATES.iteritems():
     MAKO_TEMPLATES['lms.' + namespace] = template_dirs
 
