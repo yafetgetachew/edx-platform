@@ -22,13 +22,13 @@ def get_default_time_display(dtime):
     """
     if dtime is None:
         return u""
-    if dtime.tzinfo is not None:
-        try:
-            timezone = u" " + dtime.tzinfo.tzname(dtime)
-        except NotImplementedError:
-            timezone = dtime.strftime('%z')
-    else:
-        timezone = u" UTC"
+#    if dtime.tzinfo is not None:
+#        try:
+#            timezone = u" " + dtime.tzinfo.tzname(dtime)
+#        except NotImplementedError:
+  #          timezone = dtime.strftime('%z')
+   # else:
+    timezone = u" UTC"
 
     localized = strftime_localized(dtime, "DATE_TIME")
     return (localized + timezone).strip()
