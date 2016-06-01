@@ -74,6 +74,14 @@ site_status_msg = get_site_status_msg(course_id)
 			document.getElementById("updatedOnCourseReset").style.display="none";
 			localStorage["updatedOnShowcase"]=false;
 		}
+		function getPageTitle(){
+			return $(".provider").parent()[0].innerText.split(":")[1];
+		}
+
+		function getSubTitle() {
+			return $(".chapter-menu").length==0?$("li.active p")[0].innerText.replace($("li.active span.sr")[0].innerText,"").trim().split("(")[0]:$(".chapter-menu .active p")[0].innerText.replace($(".chapter-menu .active span.sr")[0].innerText,"").trim().split("(")[0].split("/n")[0];
+		}
+	
 	</script>
 </div>
 </div>
@@ -299,8 +307,8 @@ header.global .user>.primary:last-child>a {
 	You can contact help desk if you are having any issue related to login, register or AGU credit. You can also raise a ticket if you are facing problem in accessing the video or course content. Click here to raise a ticket using <a target="_blank" onclick="document.getElementById('customhelp').style.display='none'" href="https://amat.service-now.com/AMAT3/submit_ticket.do?sysparm_url=com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3Da9407bce8de239002043d9779f0438dd%26keyword%3DAll%20Summaries%26summary_category%3DAppliedX%26summary%3DAppliedX%20Application&step2=197062b144dc71001e5e858bd9ecf95b">SERVICE NOW </a>
 	<h2>Questions/ Feedback: Use Yammer Feature</h2>
 	You can enter your comments/feedback using yammer feature in appliedx. You can also ask questions to the instructor using yammer. 
-	<h2>Send us a mail</h2>
-	You can also raise a concern or issue by writing to us at <a href="mailto:appliedx_info@amat.com">appliedx_info@amat.com </a>
+<!--	<h2>Send us a mail</h2>
+	You can also raise a concern or issue by writing to us at <a href="mailto:appliedx_info@amat.com">appliedx_info@amat.com </a> --> <br/>
 	<div class='closebutton' onclick="document.getElementById('customhelp').style.display='none'" >Close Help</div>
 </div>
   </nav>
@@ -312,3 +320,4 @@ header.global .user>.primary:last-child>a {
 % endif
 
 <%include file="help_modal.html"/>
+
