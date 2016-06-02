@@ -226,8 +226,8 @@ MAKO_TEMPLATES['main'] = [
 for namespace, template_dirs in lms.envs.common.MAKO_TEMPLATES.iteritems():
     MAKO_TEMPLATES['lms.' + namespace] = template_dirs
 
-MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/edx-platform/edx-telegram-bot/edx_telegram_bot/templates/cms'] + \
-                         MAKO_TEMPLATES['main']
+#MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/edx-platform/edx_telegram_bot/edx_telegram_bot/templates/cms'] + \
+#                         MAKO_TEMPLATES['main']
 
 # Django templating
 TEMPLATES = [

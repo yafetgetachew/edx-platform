@@ -18,7 +18,7 @@ function check_course(method){
     var data = window.location.pathname;
  	$.ajax({
         // url: 'http://127.0.0.1:8000' + url,
-        url: '${Site.objects.get_current()}' + url,
+        url: 'https://sandbox.raccoongang.com' + url,
         data: {key: data},
         type: method,
         csrf: '${ csrf_token }',
