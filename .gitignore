@@ -108,3 +108,7 @@ autodeploy.properties
 .ws_migrations_complete
 dist
 
+###edx_telegram_bot
+edx_telegram_bot
+edx_telegram_bot_xblock
+

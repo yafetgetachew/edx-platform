@@ -223,11 +223,11 @@ MAKO_TEMPLATES['main'] = [
     COMMON_ROOT / 'static',  # required to statically include common Underscore templates
 ]
 
-MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/edx-platform/edx-telegram-bot/edx_telegram_bot/templates/cms'] + \
-                         MAKO_TEMPLATES['main']
-
 for namespace, template_dirs in lms.envs.common.MAKO_TEMPLATES.iteritems():
     MAKO_TEMPLATES['lms.' + namespace] = template_dirs
+
+MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/edx-platform/edx-telegram-bot/edx_telegram_bot/templates/cms'] + \
+                         MAKO_TEMPLATES['main']
 
 # Django templating
 TEMPLATES = [
@@ -448,6 +448,8 @@ STATICFILES_DIRS = [
     # This is how you would use the textbook images locally
     # ("book", ENV_ROOT / "book_images"),
 ]
+
+DEFAULT_COURSE_ABOUT_IMAGE_URL = 'images/pencils.jpg'
 
 # Locale/Internationalization
 TIME_ZONE = 'America/New_York'  # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
