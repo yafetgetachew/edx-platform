@@ -8,7 +8,7 @@ from ..profile_images.views import ProfileImageView
 from .accounts.views import AccountView
 from .preferences.views import PreferencesView, PreferencesDetailView
 
-USERNAME_PATTERN = r'(?P<username>[\w.+-]+)'
+USERNAME_PATTERN = r'(?P<username>[\w.+-@]+)'
 
 urlpatterns = patterns(
     '',

@@ -10,7 +10,7 @@ from django.conf.urls import patterns, url
 
 from .views import ProfileImageUploadView, ProfileImageRemoveView
 
-USERNAME_PATTERN = r'(?P<username>[\w.+-]+)'
+USERNAME_PATTERN = r'(?P<username>[\w.+-@]+)'
 
 urlpatterns = patterns(
     '',
