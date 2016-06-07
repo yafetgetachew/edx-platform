@@ -104,3 +104,6 @@ git+https://github.com/edx/xblock-lti-consumer.git@v1.0.0#egg=xblock-lti-consume
 #edx_xblock_scorm
 -e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx_xblock_scorm
 
+#oppia_xblock
+-e git+https://github.com/oppia/xblock.git#egg=oppia
+
