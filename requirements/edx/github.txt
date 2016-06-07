@@ -107,6 +107,3 @@ git+https://github.com/edx/xblock-lti-consumer.git@v1.0.0#egg=xblock-lti-consume
 #oppia_xblock
 -e git+https://github.com/oppia/xblock.git#egg=oppia
 
-#instant-hangouts
--e git+https://github.com/google/instant-hangouts.git#egg=instanthangouts
-
