@@ -107,3 +107,6 @@ git+https://github.com/edx/xblock-lti-consumer.git@v1.0.0#egg=xblock-lti-consume
 #oppia_xblock
 -e git+https://github.com/oppia/xblock.git#egg=oppia
 
+#open_edx_shindigwidget_tab
+-e git+https://github.com/raccoongang/open_edx_shindigwidget_tab.git#egg=shindigwidget_tab
+

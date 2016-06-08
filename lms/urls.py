@@ -734,6 +734,12 @@ if settings.FEATURES.get('ENABLE_DISCUSSION_SERVICE'):
 urlpatterns += (
     # This MUST be the last view in the courseware--it's a catch-all for custom tabs.
     url(
+        r'^courses/{}/shindigwidget/'.format(
+             settings.COURSE_ID_PATTERN,
+        ),
+        include('shindigwidget_tab.urls'),
+    ),
+    url(
         r'^courses/{}/(?P<tab_slug>[^/]+)/$'.format(
             settings.COURSE_ID_PATTERN,
         ),
