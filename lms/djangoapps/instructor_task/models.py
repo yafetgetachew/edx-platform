@@ -12,6 +12,7 @@ file and check it in at the same time as your model changes. To do that,
 ASSUMPTIONS: modules have unique IDs, even across different module_types
 
 """
+import os
 from cStringIO import StringIO
 from gzip import GzipFile
 from uuid import uuid4
@@ -29,6 +30,9 @@ from django.contrib.auth.models import User
 from django.db import models, transaction
 
 from xmodule_django.models import CourseKeyField
+
+
+os.environ['S3_USE_SIGV4'] = 'True'
 
 
 # define custom states used by InstructorTask
@@ -222,7 +226,8 @@ class S3ReportStore(ReportStore):
 
         conn = S3Connection(
             settings.AWS_ACCESS_KEY_ID,
-            settings.AWS_SECRET_ACCESS_KEY
+            settings.AWS_SECRET_ACCESS_KEY,
+            host='s3.eu-central-1.amazonaws.com'
         )
 
         self.bucket = conn.get_bucket(bucket_name)
