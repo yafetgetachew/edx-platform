@@ -1005,6 +1005,6 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
 
 #edx_telegram_bot
 urlpatterns += (
-    url(r'', include('edx_telegram_bot.edx_telegram_bot.urls')),
+    url(r'^bot/', include('edx_telegram_bot.edx_telegram_bot.urls')),
 )
 
