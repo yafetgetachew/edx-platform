@@ -1002,3 +1002,9 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+#edx_telegram_bot
+urlpatterns += (
+    url(r'', include('edx_telegram_bot.edx_telegram_bot.urls')),
+)
+

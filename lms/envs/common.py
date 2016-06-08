@@ -483,6 +483,9 @@ MAKO_TEMPLATES['main'] = [PROJECT_ROOT / 'templates',
                           COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
                           COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates']
 
+#edx_telegram_bot
+MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/edx-platform/edx-telegram-bot/edx_telegram_bot/templates/lms'] + \
+                         MAKO_TEMPLATES['main']
 # Django templating
 TEMPLATES = [
     {
@@ -1943,6 +1946,9 @@ INSTALLED_APPS = (
     'openedx.core.djangoapps.self_paced',
 
     'sorl.thumbnail',
+
+    #edx_telegram_bot
+    'edx_telegram_bot.edx_telegram_bot',
 )
 
 # Migrations which are not in the standard module "migrations"
@@ -2685,3 +2691,9 @@ DEPRECATED_ADVANCED_COMPONENT_TYPES = []
 # Cutoff date for granting audit certificates
 
 AUDIT_CERT_CUTOFF_DATE = None
+
+TELEGRAM_BOT = {
+   'token': '181061228:AAHQc2_t-5NzauiskyXF_N9w606CYPtaYTE',
+   'bot_name': "RaccoonGangUniBot",
+}
+
