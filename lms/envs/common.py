@@ -1863,6 +1863,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'openedx.core.djangoapps.user_api',
 
+    'open_edx_api_extension',
     # Shopping cart
     'shoppingcart',
 
