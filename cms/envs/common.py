@@ -1125,6 +1125,10 @@ MICROSITE_TEMPLATE_BACKEND = 'microsite_configuration.backends.filebased.Filebas
 # TTL for microsite database template cache
 MICROSITE_DATABASE_TEMPLATE_CACHE_TTL = 5 * 60
 
+################################ Deprecated Blocks Info ################################
+
+DEPRECATED_BLOCK_TYPES = ['peergrading', 'combinedopenended']
+
 ############################### PROCTORING CONFIGURATION DEFAULTS ##############
 
 PROCTORING_BACKEND_PROVIDERS = {
