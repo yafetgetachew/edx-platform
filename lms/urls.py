@@ -1002,3 +1002,8 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+urlpatterns += (
+    url(r'^contact_page$', 'contact_page.views.contact_page', name='contact_page'),
+)
+
