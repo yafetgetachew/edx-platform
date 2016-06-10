@@ -2687,3 +2687,8 @@ DEPRECATED_ADVANCED_COMPONENT_TYPES = []
 # Cutoff date for granting audit certificates
 
 AUDIT_CERT_CUTOFF_DATE = None
+
+EXAMUS_PROCTORING_AUTH = {
+    'username': 'proctor@raccoongang.com',
+    'password': '2X1kGNKCBl',
+}
