@@ -478,7 +478,8 @@ OAUTH_OIDC_USERINFO_HANDLERS = (
 import tempfile
 MAKO_MODULE_DIR = os.path.join(tempfile.gettempdir(), 'mako_lms')
 MAKO_TEMPLATES = {}
-MAKO_TEMPLATES['main'] = [PROJECT_ROOT / 'templates',
+MAKO_TEMPLATES['main'] = ['/edx/app/edxapp/venvs/edxapp/src/shindigwidget-tab/shindigwidget_tab/templates',
+                          PROJECT_ROOT / 'templates',
                           COMMON_ROOT / 'templates',
                           COMMON_ROOT / 'lib' / 'capa' / 'capa' / 'templates',
                           COMMON_ROOT / 'djangoapps' / 'pipeline_mako' / 'templates']
