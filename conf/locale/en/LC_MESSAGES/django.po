@@ -22,4 +22,4 @@ msgid "Welcome to Open edX!"
 msgstr "Welcome to Zitsung!"
 
 msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "Practice the language of your choice, joining conversation groups guided by teachers from certified schools."
+msgstr "Practice the language of your choice, joining conversation groups guided by teachers from certified schools"

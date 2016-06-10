@@ -3,8 +3,10 @@
 
 <%block name="pagetitle">${_("Contact us")}</%block>
 
-<section class="container about">
-    <div class="dashboard-notifications" tabindex="-1" style="padding-top: 10px;">
+<div class="login-register">
+  <section class="form-type">
+    <div class="form-wrapper">
+      <div class="dashboard-notifications" tabindex="-1" style="padding-top: 10px;">
       %if messages:
         %for message in messages:
           <section class="dashboard-banner">
@@ -12,30 +14,45 @@
           </section>
         %endfor
       %endif
-    </div>
-    <h1>${_("Contact us")}</h1>
-    <p>
-        ${_("Are you a Language student or Language Teacher?")}
-        <br />
-        ${_("Are you a Language institution?")}
-        <br />
-        ${_("Do you have questions, suggestions or issues?")}
-        <br />
-        ${_("Please let us know")}
-    </p>
-    <p>
-        <div class="group group-form group-form-requiredinformation">
-            <form action="" method="post" id="webform-client-form-285" accept-charset="UTF-8">
-                <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                <table>
-                    ${ form.as_table() }
-                    <tr>
-                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                        <td><button type="submit" class="action action-primary action-update" aria-disabled="false">${_("Submit")}</button></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-    </p>
+      </div>
+      <h1>${_("Contact us")}</h1>
+      <div class="inner-wrapper">
+        <ul class="custom-list">
+          <li>${_("Are you a Language student or Language Teacher?")}</li>
+          <li>${_("Are you a Language institution?")}</li>
+          <li>${_("Do you have questions, suggestions or issues?")}</li>
 
-</section>
+        </ul>
+        <p>${_("Please let us know!")}</p>
+        <p></p>
+      </div>
+
+      <div class="">
+
+        <form action="" method="post" class="register-form" accept-charset="UTF-8" autocomplete="off" tabindex="-1">
+          <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+          % for num, field in enumerate(form):
+             % if num == 1:
+              <div class="form-field">
+                <label for="field.id_for_label">${field.label}</label>
+                ${field}
+              </div>
+             % else:
+          <label for="${field.id_for_label}" style="font-style: normal;">
+            ${field.label}&#160;&#160;&#160;&#160;
+          </label>
+                ${field}
+             %endif
+          %endfor
+          <button type="submit" class="action action-primary action-update custom-action" aria-disabled="false">Submit</button>
+        </form>
+      </div>
+      </p>
+    </div>
+
+  </section>
+
+</div>
+
+
+

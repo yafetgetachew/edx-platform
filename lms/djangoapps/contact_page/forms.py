@@ -11,8 +11,19 @@ class ContactForm(forms.Form):
         (_('Teacher'),) * 2,
         (_('Language institution'),) * 2
     )
-    role = forms.CharField(widget=forms.Select(choices=ROLES), label=_("I am"))
-    text = forms.CharField(widget=forms.Textarea, label=_("Text"))
+    role = forms.CharField(
+        widget=forms.Select(choices=ROLES,), label=_("I am a:"))
+
+    text = forms.CharField(
+        widget=forms.Textarea(
+            attrs={'cols': 65,
+                   'rows': 20,
+                   'class': 'form-field',
+                   'style': 'height: 80px;'
+                   }
+                              ),
+        label=_("Comment:")
+    )
 
     def save(self):
         if self.cleaned_data['text'] and self.cleaned_data['role']:
