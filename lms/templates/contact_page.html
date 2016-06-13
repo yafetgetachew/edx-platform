@@ -23,11 +23,11 @@
           <li>${_("Do you have questions, suggestions or issues?")}</li>
 
         </ul>
-        <p>${_("Please let us know!")}</p>
+        <p>&#160;&#160;&#160;&#160;&#160;${_("Please let us know.")}</p>
         <p></p>
       </div>
 
-      <div class="">
+
 
         <form action="" method="post" class="register-form" accept-charset="UTF-8" autocomplete="off" tabindex="-1">
           <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
@@ -38,16 +38,21 @@
                 ${field}
               </div>
              % else:
-          <label for="${field.id_for_label}" style="font-style: normal;">
-            ${field.label}&#160;&#160;&#160;&#160;
-          </label>
+              <div style="font: inherit; margin-top: 10px;">
+                <label for="${field.id_for_label}" style="font: inherit;">
+                  ${field.label}&#160;&#160;&#160;&#160;
+                </label>
                 ${field}
+              </div>
              %endif
           %endfor
-          <button type="submit" class="action action-primary action-update custom-action" aria-disabled="false">Submit</button>
+          <button type="submit"
+                  class="action action-primary action-update custom-action"
+                  aria-disabled="false"
+                  style="text-shadow: none;">
+            Submit
+          </button>
         </form>
-      </div>
-      </p>
     </div>
 
   </section>
