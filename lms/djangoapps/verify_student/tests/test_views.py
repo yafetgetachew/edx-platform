@@ -37,6 +37,7 @@ from common.test.utils import XssTestMixin
 from commerce.tests import TEST_PAYMENT_DATA, TEST_API_URL, TEST_API_SIGNING_KEY
 from embargo.test_utils import restrict_course
 from openedx.core.djangoapps.user_api.accounts.api import get_account_settings
+from openedx.core.djangoapps.theming.test_util import with_is_edx_domain
 from shoppingcart.models import Order, CertificateItem
 from student.tests.factories import UserFactory, CourseEnrollmentFactory
 from student.models import CourseEnrollment
@@ -282,7 +283,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
         )
         self._assert_redirects_to_dashboard(response)
 
-    @patch.dict(settings.FEATURES, {"IS_EDX_DOMAIN": True})
+    @with_is_edx_domain(True)
     @ddt.data("verify_student_start_flow", "verify_student_begin_flow")
     def test_pay_and_verify_hides_header_nav(self, payment_flow):
         course = self._create_course("verified")
@@ -301,7 +302,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
         response = self._get_page('verify_student_verify_now', course.id)
 
         self._assert_messaging(response, PayAndVerifyView.VERIFY_NOW_MSG)
-        self.assert_xss(response, '<script>alert("XSS")</script>')
+        self.assert_no_xss(response, '<script>alert("XSS")</script>')
 
         # Expect that *all* steps are displayed,
         # but we start after the payment step (because it's already completed).
@@ -375,7 +376,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
 
         self._assert_messaging(response, PayAndVerifyView.PAYMENT_CONFIRMATION_MSG)
 
-        self.assert_xss(response, '<script>alert("XSS")</script>')
+        self.assert_no_xss(response, '<script>alert("XSS")</script>')
 
         # Expect that *all* steps are displayed,
         # but we start at the payment confirmation step
@@ -410,7 +411,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
 
         self._assert_messaging(response, PayAndVerifyView.FIRST_TIME_VERIFY_MSG)
 
-        self.assert_xss(response, '<script>alert("XSS")</script>')
+        self.assert_no_xss(response, '<script>alert("XSS")</script>')
 
         # Expect that *all* steps are displayed,
         # but we start on the first verify step
@@ -497,7 +498,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
             PayAndVerifyView.WEBCAM_REQ,
         ])
         self._assert_upgrade_session_flag(True)
-        self.assert_xss(response, '<script>alert("XSS")</script>')
+        self.assert_no_xss(response, '<script>alert("XSS")</script>')
 
     def test_upgrade_already_verified(self):
         course = self._create_course("verified")
@@ -673,7 +674,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
 
     @ddt.data("verify_student_start_flow", "verify_student_begin_flow")
     def test_verification_deadline(self, payment_flow):
-        deadline = datetime(2999, 1, 2, tzinfo=pytz.UTC)
+        deadline = datetime.now(tz=pytz.UTC) + timedelta(days=360)
         course = self._create_course("verified")
 
         # Set a deadline on the course mode AND on the verification deadline model.
@@ -686,10 +687,10 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
         # Expect that the expiration date is set
         response = self._get_page(payment_flow, course.id)
         data = self._get_page_data(response)
-        self.assertEqual(data['verification_deadline'], "Jan 02, 2999 at 00:00 UTC")
+        self.assertEqual(data['verification_deadline'], deadline.strftime("%b %d, %Y at %H:%M UTC"))
 
     def test_course_mode_expired(self):
-        deadline = datetime(1999, 1, 2, tzinfo=pytz.UTC)
+        deadline = datetime.now(tz=pytz.UTC) + timedelta(days=-360)
         course = self._create_course("verified")
 
         # Set the upgrade deadline (course mode expiration) and verification deadline
@@ -704,22 +705,32 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
         # to the student that the deadline has passed
         response = self._get_page("verify_student_verify_now", course.id)
         self.assertContains(response, "verification deadline")
-        self.assertContains(response, "Jan 02, 1999 at 00:00 UTC")
+        self.assertContains(response, deadline.strftime("%b %d, %Y at %H:%M UTC"))
 
-    @ddt.data(datetime(2999, 1, 2, tzinfo=pytz.UTC), None)
+    @ddt.data(datetime.now(tz=pytz.UTC) + timedelta(days=360), None)
     def test_course_mode_expired_verification_deadline_in_future(self, verification_deadline):
-        course = self._create_course("verified")
+        """Verify that student can not upgrade in expired course mode."""
+        course_modes = ("verified", "credit")
+        course = self._create_course(*course_modes)
 
-        # Set the upgrade deadline in the past, but the verification
+        # Set the upgrade deadline of verified mode in the past, but the verification
         # deadline in the future.
         self._set_deadlines(
             course.id,
-            upgrade_deadline=datetime(1999, 1, 2, tzinfo=pytz.UTC),
+            upgrade_deadline=datetime.now(tz=pytz.UTC) + timedelta(days=-360),
             verification_deadline=verification_deadline,
+        )
+        # Set the upgrade deadline for credit mode in future.
+        self._set_deadlines(
+            course.id,
+            upgrade_deadline=datetime.now(tz=pytz.UTC) + timedelta(days=360),
+            verification_deadline=verification_deadline,
+            mode_slug="credit"
         )
 
         # Try to pay or upgrade.
-        # We should get an error message since the deadline has passed.
+        # We should get an error message since the deadline has passed and did not allow
+        # directly sale of credit mode.
         for page_name in ["verify_student_start_flow",
                           "verify_student_begin_flow",
                           "verify_student_upgrade_and_verify"]:
@@ -737,9 +748,13 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
         data = self._get_page_data(response)
         self.assertEqual(data['message_key'], PayAndVerifyView.VERIFY_NOW_MSG)
 
+        # Check that the mode selected is expired verified mode not the credit mode
+        # because the direct enrollment to the credit mode is not allowed.
+        self.assertEqual(data['course_mode_slug'], "verified")
+
         # Check that the verification deadline (rather than the upgrade deadline) is displayed
         if verification_deadline is not None:
-            self.assertEqual(data["verification_deadline"], "Jan 02, 2999 at 00:00 UTC")
+            self.assertEqual(data["verification_deadline"], verification_deadline.strftime("%b %d, %Y at %H:%M UTC"))
         else:
             self.assertEqual(data["verification_deadline"], "")
 
@@ -752,10 +767,12 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
         # since it's a bad user experience
         # to purchase a verified track and then not be able to verify,
         # but if it happens we need to handle it gracefully.
+        upgrade_deadline_in_future = datetime.now(tz=pytz.UTC) + timedelta(days=360)
+        verification_deadline_in_past = datetime.now(tz=pytz.UTC) + timedelta(days=-360)
         self._set_deadlines(
             course.id,
-            upgrade_deadline=datetime(2999, 1, 2, tzinfo=pytz.UTC),
-            verification_deadline=datetime(1999, 1, 2, tzinfo=pytz.UTC),
+            upgrade_deadline=upgrade_deadline_in_future,
+            verification_deadline=verification_deadline_in_past,
         )
 
         # Enroll as verified (simulate purchasing the verified enrollment)
@@ -766,7 +783,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
         # message when we go to verify.
         response = self._get_page("verify_student_verify_now", course.id)
         self.assertContains(response, "verification deadline")
-        self.assertContains(response, "Jan 02, 1999 at 00:00 UTC")
+        self.assertContains(response, verification_deadline_in_past.strftime("%b %d, %Y at %H:%M UTC"))
 
     @mock.patch.dict(settings.FEATURES, {'EMBARGO': True})
     @ddt.data("verify_student_start_flow", "verify_student_begin_flow")
@@ -840,7 +857,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
             attempt.created_at = datetime.now(pytz.UTC) - timedelta(days=(days_good_for + 1))
             attempt.save()
 
-    def _set_deadlines(self, course_key, upgrade_deadline=None, verification_deadline=None):
+    def _set_deadlines(self, course_key, upgrade_deadline=None, verification_deadline=None, mode_slug="verified"):
         """
         Set the upgrade and verification deadlines.
 
@@ -857,7 +874,7 @@ class TestPayAndVerifyView(UrlResetMixin, ModuleStoreTestCase, XssTestMixin):
 
         """
         # Set the course mode expiration (same as the "upgrade" deadline)
-        mode = CourseMode.objects.get(course_id=course_key, mode_slug="verified")
+        mode = CourseMode.objects.get(course_id=course_key, mode_slug=mode_slug)
         mode.expiration_datetime = upgrade_deadline
         mode.save()
 
@@ -1410,7 +1427,8 @@ class TestSubmitPhotosForVerification(TestCase):
             "AWS_ACCESS_KEY": "c987c7efe35c403caa821f7328febfa1",
             "AWS_SECRET_KEY": "fc595fc657c04437bb23495d8fe64881",
             "S3_BUCKET": "test.example.com",
-        }
+        },
+        "DAYS_GOOD_FOR": 10,
     })
     @httpretty.activate
     @moto.mock_s3
@@ -1452,6 +1470,16 @@ class TestSubmitPhotosForVerification(TestCase):
         self.assertEqual(reverification_photo_response.status_code, 200)
 
         self.assertNotEqual(initial_photo_response.content, reverification_photo_response.content)
+
+        # Submit a new face photo and photo id for verification
+        self._submit_photos(
+            face_image=self.IMAGE_DATA + "9999",
+            photo_id_image=self.IMAGE_DATA + "1111",
+        )
+        two_photo_reverification_data = self._get_post_data()
+
+        # Verify that the initial attempt sent a new ID photo for the reverification attempt
+        self.assertNotEqual(initial_data["PhotoIDKey"], two_photo_reverification_data["PhotoIDKey"])
 
     @ddt.data('face_image', 'photo_id_image')
     def test_invalid_image_data(self, invalid_param):

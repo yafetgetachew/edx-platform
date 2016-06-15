@@ -16,8 +16,6 @@ from courseware.tests.factories import StudentModuleFactory
 from courseware.tests.helpers import LoginEnrollmentTestCase
 from courseware.tabs import get_course_tab_list
 from django.conf import settings
-from django.core.exceptions import ValidationError
-from django.core.validators import validate_email
 from django.core.urlresolvers import reverse, resolve
 from django.utils.timezone import UTC
 from django.test.utils import override_settings
@@ -38,7 +36,6 @@ from student.tests.factories import (
 
 from xmodule.x_module import XModuleMixin
 from xmodule.modulestore import ModuleStoreEnum
-from xmodule.modulestore.django import modulestore
 from xmodule.modulestore.tests.django_utils import (
     ModuleStoreTestCase,
     SharedModuleStoreTestCase,
@@ -52,6 +49,11 @@ from ccx_keys.locator import CCXLocator
 from lms.djangoapps.ccx.models import CustomCourseForEdX
 from lms.djangoapps.ccx.overrides import get_override_for_ccx, override_field_for_ccx
 from lms.djangoapps.ccx.tests.factories import CcxFactory
+from lms.djangoapps.ccx.tests.utils import (
+    CcxTestCase,
+    flatten,
+)
+from lms.djangoapps.ccx.utils import is_email
 from lms.djangoapps.ccx.views import get_date
 
 
@@ -114,96 +116,24 @@ def setup_students_and_grades(context):
                     )
 
 
-def is_email(identifier):
-    """
-    Checks if an `identifier` string is a valid email
-    """
-    try:
-        validate_email(identifier)
-    except ValidationError:
-        return False
-    return True
-
-
 @attr('shard_1')
 @ddt.ddt
-class TestCoachDashboard(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
+class TestCoachDashboard(CcxTestCase, LoginEnrollmentTestCase):
     """
     Tests for Custom Courses views.
     """
-    MODULESTORE = TEST_DATA_SPLIT_MODULESTORE
 
     @classmethod
     def setUpClass(cls):
         super(TestCoachDashboard, cls).setUpClass()
-        cls.course = course = CourseFactory.create()
-
-        # Create a course outline
-        cls.mooc_start = start = datetime.datetime(
-            2010, 5, 12, 2, 42, tzinfo=pytz.UTC
-        )
-        cls.mooc_due = due = datetime.datetime(
-            2010, 7, 7, 0, 0, tzinfo=pytz.UTC
-        )
-
-        cls.chapters = [
-            ItemFactory.create(start=start, parent=course) for _ in xrange(2)
-        ]
-        cls.sequentials = flatten([
-            [
-                ItemFactory.create(parent=chapter) for _ in xrange(2)
-            ] for chapter in cls.chapters
-        ])
-        cls.verticals = flatten([
-            [
-                ItemFactory.create(
-                    start=start, due=due, parent=sequential, graded=True, format='Homework', category=u'vertical'
-                ) for _ in xrange(2)
-            ] for sequential in cls.sequentials
-        ])
-
-        # Trying to wrap the whole thing in a bulk operation fails because it
-        # doesn't find the parents. But we can at least wrap this part...
-        with cls.store.bulk_operations(course.id, emit_signals=False):
-            blocks = flatten([  # pylint: disable=unused-variable
-                [
-                    ItemFactory.create(parent=vertical) for _ in xrange(2)
-                ] for vertical in cls.verticals
-            ])
 
     def setUp(self):
         """
         Set up tests
         """
         super(TestCoachDashboard, self).setUp()
-
-        # Create instructor account
-        self.coach = coach = AdminFactory.create()
-        self.client.login(username=coach.username, password="test")
-        # create an instance of modulestore
-        self.mstore = modulestore()
-
-    def make_coach(self):
-        """
-        create coach user
-        """
-        role = CourseCcxCoachRole(self.course.id)
-        role.add_users(self.coach)
-
-    def make_ccx(self, max_students_allowed=settings.CCX_MAX_STUDENTS_ALLOWED):
-        """
-        create ccx
-        """
-        ccx = CcxFactory(course_id=self.course.id, coach=self.coach)
-        override_field_for_ccx(ccx, self.course, 'max_student_enrollments_allowed', max_students_allowed)
-        return ccx
-
-    def get_outbox(self):
-        """
-        get fake outbox
-        """
-        from django.core import mail
-        return mail.outbox
+        # Login with the instructor account
+        self.client.login(username=self.coach.username, password="test")
 
     def assert_elements_in_schedule(self, url, n_chapters=2, n_sequentials=4, n_verticals=8):
         """
@@ -255,7 +185,7 @@ class TestCoachDashboard(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
             '<form action=".+create_ccx"',
             response.content))
 
-    def test_create_ccx(self):
+    def test_create_ccx(self, ccx_name='New CCX'):
         """
         Create CCX. Follow redirect to coach dashboard, confirm we see
         the coach dashboard for the new CCX.
@@ -266,7 +196,7 @@ class TestCoachDashboard(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
             'create_ccx',
             kwargs={'course_id': unicode(self.course.id)})
 
-        response = self.client.post(url, {'name': 'New CCX'})
+        response = self.client.post(url, {'name': ccx_name})
         self.assertEqual(response.status_code, 302)
         url = response.get('location')  # pylint: disable=no-member
         response = self.client.get(url)
@@ -289,7 +219,11 @@ class TestCoachDashboard(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
 
         # assert ccx creator has role=ccx_coach
         role = CourseCcxCoachRole(course_key)
-        self.assertTrue(role.has_user(self.coach))
+        self.assertTrue(role.has_user(self.coach, refresh=True))
+
+    @ddt.data("CCX demo 1", "CCX demo 2", "CCX demo 3")
+    def test_create_multiple_ccx(self, ccx_name):
+        self.test_create_ccx(ccx_name)
 
     def test_get_date(self):
         """
@@ -778,25 +712,28 @@ def patched_get_children(self, usage_key_filter=None):
 @override_settings(FIELD_OVERRIDE_PROVIDERS=(
     'ccx.overrides.CustomCoursesForEdxOverrideProvider',))
 @patch('xmodule.x_module.XModuleMixin.get_children', patched_get_children, spec=True)
-class TestCCXGrades(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
+class TestCCXGrades(ModuleStoreTestCase, LoginEnrollmentTestCase):
     """
     Tests for Custom Courses views.
     """
     MODULESTORE = TEST_DATA_SPLIT_MODULESTORE
 
-    @classmethod
-    def setUpClass(cls):
-        super(TestCCXGrades, cls).setUpClass()
-        cls._course = course = CourseFactory.create(enable_ccx=True)
+    def setUp(self):
+        """
+        Set up tests
+        """
+        super(TestCCXGrades, self).setUp()
+
+        self._course = CourseFactory.create(enable_ccx=True)
 
         # Create a course outline
-        cls.mooc_start = start = datetime.datetime(
+        self.start = datetime.datetime(
             2010, 5, 12, 2, 42, tzinfo=pytz.UTC
         )
         chapter = ItemFactory.create(
-            start=start, parent=course, category='sequential'
+            start=self.start, parent=self._course, category='sequential'
         )
-        cls.sections = sections = [
+        self.sections = [
             ItemFactory.create(
                 parent=chapter,
                 category="sequential",
@@ -804,7 +741,7 @@ class TestCCXGrades(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
             for _ in xrange(4)
         ]
         # making problems available at class level for possible future use in tests
-        cls.problems = [
+        self.problems = [
             [
                 ItemFactory.create(
                     parent=section,
@@ -812,14 +749,8 @@ class TestCCXGrades(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
                     data=StringResponseXMLFactory().build_xml(answer='foo'),
                     metadata={'rerandomize': 'always'}
                 ) for _ in xrange(4)
-            ] for section in sections
+            ] for section in self.sections
         ]
-
-    def setUp(self):
-        """
-        Set up tests
-        """
-        super(TestCCXGrades, self).setUp()
 
         # Create instructor account
         self.coach = coach = AdminFactory.create()
@@ -893,13 +824,18 @@ class TestCCXGrades(SharedModuleStoreTestCase, LoginEnrollmentTestCase):
         rows = response.content.strip().split('\r')
         headers = rows[0]
 
-        # picking first student records
-        data = dict(zip(headers.strip().split(','), rows[1].strip().split(',')))
-        self.assertNotIn('HW 04', data)
-        self.assertEqual(data['HW 01'], '0.75')
-        self.assertEqual(data['HW 02'], '0.5')
-        self.assertEqual(data['HW 03'], '0.25')
-        self.assertEqual(data['HW Avg'], '0.5')
+        records = dict()
+        for i in range(1, len(rows)):
+            data = dict(zip(headers.strip().split(','), rows[i].strip().split(',')))
+            records[data['username']] = data
+
+        student_data = records[self.student.username]  # pylint: disable=no-member
+
+        self.assertNotIn('HW 04', student_data)
+        self.assertEqual(student_data['HW 01'], '0.75')
+        self.assertEqual(student_data['HW 02'], '0.5')
+        self.assertEqual(student_data['HW 03'], '0.25')
+        self.assertEqual(student_data['HW Avg'], '0.5')
 
     @patch('courseware.views.render_to_response', intercept_renderer)
     def test_student_progress(self):
@@ -1005,23 +941,3 @@ class TestStudentDashboardWithCCX(ModuleStoreTestCase):
         response = self.client.get(reverse('dashboard'))
         self.assertEqual(response.status_code, 200)
         self.assertTrue(re.search('Test CCX', response.content))
-
-
-def flatten(seq):
-    """
-    For [[1, 2], [3, 4]] returns [1, 2, 3, 4].  Does not recurse.
-    """
-    return [x for sub in seq for x in sub]
-
-
-def iter_blocks(course):
-    """
-    Returns an iterator over all of the blocks in a course.
-    """
-    def visit(block):
-        """ get child blocks """
-        yield block
-        for child in block.get_children():
-            for descendant in visit(child):  # wish they'd backport yield from
-                yield descendant
-    return visit(course)

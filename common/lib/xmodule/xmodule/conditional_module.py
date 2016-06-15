@@ -38,12 +38,16 @@ class ConditionalFields(object):
     )
 
     sources_list = ReferenceList(
-        help=_("List of sources upon which this module is conditional"),
+        display_name=_("Source Components"),
+        help=_("The component location(s) whose attributes are used to determine whether a student "
+               "should be shown the content inside of this conditional block."),
         scope=Scope.content
     )
 
     condional_attr = String(
-        help=_("Tag attribute in xml"),
+        display_name=_("Conditional Attribute"),
+        help=_("The attribute from the source component used to determine whether students "
+               "should be shown the content in this conditional block."),
         scope=Scope.content,
         default='correct',
         values=lambda: [{'display_name': xml_attr, 'value': xml_attr}
@@ -51,15 +55,17 @@ class ConditionalFields(object):
     )
 
     conditional_value = String(
-        help=_("Value xml_attr in xml"),
+        display_name=_("Conditional Value"),
+        help=_("The value of the conditional attribute that needs to be true for a given student "
+               "to see the content in this conditional block."),
         scope=Scope.content,
         default='True'
     )
 
     conditional_message = String(
-        display_name=_("Message"),
-        help=_("Message for case, where one or more are not passed. "
-               "Here you can use variable {link}, which generate link to required module."),
+        display_name=_("Blocked content message"),
+        help=_("The message learners see when not all conditions are met for this block. "
+               "You can use the {link} variable to give learners a direct link to the required module."),
         scope=Scope.content,
         default=_('{link} must be attempted before this will become visible.')
     )
@@ -184,7 +190,7 @@ class ConditionalModule(ConditionalFields, XModule, StudioEditableModule):
         fragment = Fragment()
         root_xblock = context.get('root_xblock')
         is_root = root_xblock and root_xblock.location == self.location
-        if is_root or (not context.get('is_unit_page') and is_root is not None):
+        if is_root:
             self.render_children(context, fragment, can_reorder=True, can_add=True)
         return fragment
 
@@ -333,7 +339,7 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
             conditional_validation.add(
                 StudioValidationMessage(
                     StudioValidationMessage.NOT_CONFIGURED,
-                    _(u"Is not configured list of sources upon which this module is conditional."),
+                    _(u"This component has no source components configured yet."),
                     action_class='edit-button',
                     action_label=_(u"Configure list of sources")
                 )
@@ -352,5 +358,6 @@ class ConditionalDescriptor(ConditionalFields, SequenceDescriptor, StudioEditabl
             ConditionalDescriptor.is_time_limited,
             ConditionalDescriptor.default_time_limit_minutes,
             ConditionalDescriptor.show_tag_list,
+            ConditionalDescriptor.exam_review_rules,
         ])
         return non_editable_fields

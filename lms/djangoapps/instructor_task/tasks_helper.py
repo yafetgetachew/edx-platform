@@ -1448,7 +1448,7 @@ def generate_students_certificates(
             course=course
         )
 
-        if status in [CertificateStatuses.generating, CertificateStatuses.downloadable]:
+        if CertificateStatuses.is_passing_status(status):
             task_progress.succeeded += 1
         else:
             task_progress.failed += 1
@@ -1584,7 +1584,7 @@ def invalidate_generated_certificates(course_id, enrolled_students, certificate_
     :param enrolled_students: (queryset or list) students enrolled in the course
     :param certificate_statuses: certificates statuses for whom to remove generated certificate
     """
-    certificates = GeneratedCertificate.objects.filter(
+    certificates = GeneratedCertificate.objects.filter(  # pylint: disable=no-member
         user__in=enrolled_students,
         course_id=course_id,
         status__in=certificate_statuses,

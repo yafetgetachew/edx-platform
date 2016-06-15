@@ -43,10 +43,13 @@ XBLOCKS = [
     "vertical = xmodule.vertical_block:VerticalBlock",
     "wrapper = xmodule.wrapper_module:WrapperBlock",
 ]
+XBLOCKS_ASIDES = [
+    'tagging_aside = cms.lib.xblock.tagging:StructuredTagsAside',
+]
 
 setup(
     name="XModule",
-    version="0.1",
+    version="0.1.1",
     packages=find_packages(exclude=["tests"]),
     install_requires=[
         'setuptools',
@@ -54,7 +57,7 @@ setup(
         'capa',
         'path.py',
         'webob',
-        'opaque-keys',
+        'edx-opaque-keys>=0.2.1,<1.0.0',
     ],
     package_data={
         'xmodule': ['js/module/*'],
@@ -65,6 +68,7 @@ setup(
     entry_points={
         'xblock.v1': XMODULES + XBLOCKS,
         'xmodule.v1': XMODULES,
+        'xblock_asides.v1': XBLOCKS_ASIDES,
         'console_scripts': [
             'xmodule_assets = xmodule.static_content:main',
         ],

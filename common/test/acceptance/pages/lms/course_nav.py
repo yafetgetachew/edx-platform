@@ -57,7 +57,7 @@ class CourseNavPage(PageObject):
         Example return value:
             ['Chemical Bonds Video', 'Practice Problems', 'Homework']
         """
-        seq_css = 'ol#sequence-list>li>a>p'
+        seq_css = 'ol#sequence-list>li>a>.sequence-tooltip'
         return self.q(css=seq_css).map(self._clean_seq_titles).results
 
     def go_to_section(self, section_title, subsection_title):
@@ -126,6 +126,8 @@ class CourseNavPage(PageObject):
             # Convert the list index (starts at 0) to a CSS index (starts at 1)
             seq_css = "ol#sequence-list>li:nth-of-type({0})>a".format(seq_index + 1)
             self.q(css=seq_css).first.click()
+            # Click triggers an ajax event
+            self.wait_for_ajax()
 
     def _section_titles(self):
         """

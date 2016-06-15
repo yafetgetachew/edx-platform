@@ -233,7 +233,7 @@ class TestCourseIndex(CourseTestCase):
             # delete nofications that are dismissed
             CourseRerunState.objects.get(id=rerun_state.id)
 
-        self.assertFalse(has_course_author_access(user2, rerun_course_key))
+        self.assertTrue(has_course_author_access(user2, rerun_course_key))
 
     def assert_correct_json_response(self, json_response):
         """
@@ -288,6 +288,27 @@ class TestCourseIndex(CourseTestCase):
         course_outline_url_split = reverse_course_url('course_handler', split_course_key)
         response = self.client.get_html(course_outline_url_split)
         self.assertEqual(response.status_code, 404)
+
+    def test_course_outline_with_display_course_number_as_none(self):
+        """
+        Tests course outline when 'display_coursenumber' field is none.
+        """
+        # Change 'display_coursenumber' field to None and update the course.
+        self.course.display_coursenumber = None
+        updated_course = self.update_course(self.course, self.user.id)
+
+        # Assert that 'display_coursenumber' field has been changed successfully.
+        self.assertEqual(updated_course.display_coursenumber, None)
+
+        # Perform GET request on course outline url with the course id.
+        course_outline_url = reverse_course_url('course_handler', updated_course.id)
+        response = self.client.get_html(course_outline_url)
+
+        # Assert that response code is 200.
+        self.assertEqual(response.status_code, 200)
+
+        # Assert that 'display_course_number' is being set to "" (as display_coursenumber was None).
+        self.assertIn('display_course_number: ""', response.content)
 
 
 @ddt.ddt

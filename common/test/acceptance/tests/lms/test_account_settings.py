@@ -87,7 +87,7 @@ class AccountSettingsTestMixin(EventsTestMixin, WebAppTest):
         self.assert_no_matching_events_were_emitted({'event_type': self.USER_SETTINGS_CHANGED_EVENT_NAME})
 
 
-@attr('shard_5')
+@attr('shard_8')
 class DashboardMenuTest(AccountSettingsTestMixin, WebAppTest):
     """
     Tests that the dashboard menu works correctly with the account settings page.
@@ -110,7 +110,7 @@ class DashboardMenuTest(AccountSettingsTestMixin, WebAppTest):
         dashboard_page.click_account_settings_link()
 
 
-@attr('shard_5')
+@attr('shard_8')
 class AccountSettingsPageTest(AccountSettingsTestMixin, WebAppTest):
     """
     Tests that verify behaviour of the Account Settings page.
@@ -462,7 +462,6 @@ class AccountSettingsA11yTest(AccountSettingsTestMixin, WebAppTest):
         self.account_settings_page.a11y_audit.config.set_rules({
             'ignore': [
                 'link-href',  # TODO: AC-233, AC-238
-                'skip-link',  # TODO: AC-179
             ],
         })
         self.account_settings_page.a11y_audit.check_for_accessibility_errors()

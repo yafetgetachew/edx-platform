@@ -49,7 +49,7 @@
             'jasmine.async': 'xmodule_js/common_static/js/vendor/jasmine.async',
             'draggabilly': 'xmodule_js/common_static/js/vendor/draggabilly.pkgd',
             'domReady': 'xmodule_js/common_static/js/vendor/domReady',
-            'mathjax': '//cdn.mathjax.org/mathjax/2.5-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full&delayStartupUntil=configured', // jshint ignore:line
+            'mathjax': '//cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-MML-AM_SVG&delayStartupUntil=configured', // jshint ignore:line
             'youtube': '//www.youtube.com/player_api?noext',
             'coffee/src/ajax_prefix': 'xmodule_js/common_static/coffee/src/ajax_prefix',
             'coffee/src/instructor_dashboard/student_admin': 'coffee/src/instructor_dashboard/student_admin',
@@ -221,7 +221,7 @@
                 exports: 'Markdown.Converter'
             },
             'Markdown.Editor': {
-                deps: ['Markdown.Converter'],
+                deps: ['Markdown.Converter', 'gettext', 'underscore'],
                 exports: 'Markdown.Editor'
             },
             'Markdown.Sanitizer': {
@@ -655,6 +655,7 @@
         'lms/include/js/spec/instructor_dashboard/ecommerce_spec.js',
         'lms/include/js/spec/instructor_dashboard/student_admin_spec.js',
         'lms/include/js/spec/instructor_dashboard/certificates_exception_spec.js',
+        'lms/include/js/spec/instructor_dashboard/certificates_invalidation_spec.js',
         'lms/include/js/spec/instructor_dashboard/certificates_bulk_exception_spec.js',
         'lms/include/js/spec/instructor_dashboard/certificates_spec.js',
         'lms/include/js/spec/student_account/account_spec.js',
@@ -707,6 +708,7 @@
         'lms/include/js/spec/edxnotes/collections/notes_spec.js',
         'lms/include/js/spec/search/search_spec.js',
         'lms/include/js/spec/navigation_spec.js',
+        'lms/include/js/spec/courseware/updates_visibility.js',
         'lms/include/js/spec/discovery/collections/filters_spec.js',
         'lms/include/js/spec/discovery/models/course_card_spec.js',
         'lms/include/js/spec/discovery/models/course_directory_spec.js',
@@ -743,7 +745,8 @@
         'lms/include/js/spec/financial-assistance/financial_assistance_form_view_spec.js',
         'lms/include/js/spec/bookmarks/bookmarks_list_view_spec.js',
         'lms/include/js/spec/bookmarks/bookmark_button_view_spec.js',
-        'lms/include/js/spec/views/message_banner_spec.js'
+        'lms/include/js/spec/views/message_banner_spec.js',
+        'lms/include/js/spec/markdown_editor_spec.js'
     ]);
 
 }).call(this, requirejs, define);

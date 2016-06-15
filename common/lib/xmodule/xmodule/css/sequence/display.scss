@@ -1,5 +1,5 @@
 $sequence--border-color: #C8C8C8;
-$link-color: rgb(26, 161, 222);
+$link-color: rgb(26, 161, 222) !default;
 // repeated extends - needed since LMS styling was referenced
 .block-link {
   border-left: 1px solid lighten($sequence--border-color, 10%);
@@ -195,21 +195,22 @@ $link-color: rgb(26, 161, 222);
           }
         }
 
-        p {
+        .sequence-tooltip {
           @extend %ui-depth2;
+          display: none;
+          margin-top: ($baseline/5);
           background: #333;
           color: $white;
           font-family: $sans-serif;
           line-height: lh();
           right: 0;
-          opacity: 0.0;
           padding: 6px;
           position: absolute;
           top: 48px;
           text-shadow: 0 -1px 0 $black;
+          @include text-align(left);
           @include transition(all .1s $ease-in-out-quart 0s);
           white-space: pre;
-          visibility: hidden;
           pointer-events: none;
 
           &:empty {
@@ -234,11 +235,8 @@ $link-color: rgb(26, 161, 222);
         }
 
         &:hover, &:focus {
-          p {
+          .sequence-tooltip {
             display: block;
-            margin-top: ($baseline/5);
-            opacity: 1.0;
-            visibility: visible;
           }
         }
       }

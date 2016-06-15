@@ -21,7 +21,7 @@ import unicodecsv
 import uuid
 
 
-@attr('shard_6')
+@attr('shard_8')
 class CohortConfigurationTest(EventsTestMixin, UniqueCourseTest, CohortTestMixin):
     """
     Tests for cohort management on the LMS Instructor Dashboard
@@ -88,12 +88,12 @@ class CohortConfigurationTest(EventsTestMixin, UniqueCourseTest, CohortTestMixin
         """
         self.verify_cohort_description(
             self.manual_cohort_name,
-            'Students are added to this cohort only when you provide '
+            'Learners are added to this cohort only when you provide '
             'their email addresses or usernames on this page',
         )
         self.verify_cohort_description(
             self.auto_cohort_name,
-            'Students are added to this cohort automatically',
+            'Learners are added to this cohort automatically',
         )
 
     def test_no_content_groups(self):
