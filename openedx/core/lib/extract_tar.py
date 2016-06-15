@@ -19,12 +19,11 @@ def resolved(rpath):
     """
     return realpath(abspath(rpath))
 
-
 def _is_bad_path(path, base):
     """
     Is (the canonical absolute path of) `path` outside `base`?
     """
-    return not resolved(joinpath(base, path)).startswith(base)
+    return not resolved(joinpath(base, unicode(path, 'utf8'))).startswith(base)
 
 
 def _is_bad_link(info, base):

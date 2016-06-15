@@ -90,7 +90,7 @@ def import_static_content(
                 log.debug('importing static content %s...', content_path)
 
             try:
-                with open(content_path, 'rb') as f:
+                with open(content_path.encode('utf8'), 'rb') as f:
                     data = f.read()
             except IOError:
                 if filename.startswith('._'):
