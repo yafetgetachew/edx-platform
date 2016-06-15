@@ -413,7 +413,7 @@ class ConditionalModuleStudioTest(XModuleXmlImportTest):
         validation = self.conditional.validate()
         self.assertEqual(
             validation.summary.text,
-            u"Is not configured list of sources upon which this module is conditional."
+            u"This component has no source components configured yet."
         )
         self.assertEqual(validation.summary.type, StudioValidationMessage.NOT_CONFIGURED)
         self.assertEqual(validation.summary.action_class, 'edit-button')
