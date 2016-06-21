@@ -11,6 +11,17 @@
 	cursor: move;
 }
 
+.button-hangouts {
+        margin-right: 10px !important;
+}
+
+.large-hangouts-icon {
+        display: inline-block;
+        width: ($baseline*3);
+        height: ($baseline*3);
+        background: url('#{$static-path}/images/large-hangouts-icon.png') center no-repeat;
+}
+
 .large-advanced-icon {
 	display: inline-block;
 	width: ($baseline*3);

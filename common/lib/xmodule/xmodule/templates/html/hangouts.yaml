@@ -1,0 +1,19 @@
+---
+metadata:
+    display_name: Hangouts
+    editor: raw
+data: |
+      <!-- Do not remove this code. -->
+      <!-- BEGIN -->
+      <script>
+      $(".hangouts").each(function (i, div) {
+        var div = $(div);
+        var id = div.parent().parent().data('id');
+        var host = window.location.host;
+        var timestamp = Date.now();
+        var data = '<iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 188px;" tabindex="0" vspace="0" width="100%" id="I0_' + timestamp + '" name="I0_' + timestamp + '" src="https://talkgadget.google.com/u/0/talkgadget/_/widget?hangout_type=normal&amp;publisher_id=raccoongang&amp;render=hangout&amp;room_id=room_' + host + '/' + id + '&amp;origin=https%3A%2F%2Fhangouts.google.com&amp;topic=Instant%20Hangout&amp;widget_size=136&amp;width=300&amp;hl=en&amp;gsrc=3p&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.bBVQ4dZwKjw.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOTk2qFkPwb_b9sVA1qBE3hP6hJqg#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_'+ timestamp +'&amp;pfname=&amp;" allowtransparency="true" data-gapiattached="true"></iframe>';
+        div.html(data);
+      });
+      </script>
+      <div class="hangouts"></div>
+      <!-- END -->
