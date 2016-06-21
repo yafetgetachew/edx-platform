@@ -113,3 +113,6 @@ git+https://github.com/edx/xblock-lti-consumer.git@v1.0.0#egg=xblock-lti-consume
 #xblock-submit-and-compare
 -e git+https://github.com/openlearninginitiative/xblock-submit-and-compare.git#egg=submit-and-compare
 
+#flow-control-xblock
+-e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow-control
+
