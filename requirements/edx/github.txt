@@ -110,3 +110,6 @@ git+https://github.com/edx/xblock-lti-consumer.git@v1.0.0#egg=xblock-lti-consume
 #open_edx_shindigwidget_tab
 -e git+https://github.com/raccoongang/open_edx_shindigwidget_tab.git#egg=shindigwidget_tab
 
+#xblock-submit-and-compare
+-e git+https://github.com/openlearninginitiative/xblock-submit-and-compare.git#egg=submit-and-compare
+
