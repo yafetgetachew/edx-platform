@@ -52,6 +52,8 @@ from .processors import (
 import json
 from .decorators import enforce_shopping_cart_enabled
 
+import stripe
+from shoppingcart.processors.helpers import get_processor_config
 
 log = logging.getLogger("shoppingcart")
 AUDIT_LOG = logging.getLogger("audit")
@@ -1007,3 +1009,57 @@ def csv_report(request):
 
     else:
         return HttpResponseBadRequest("HTTP Method Not Supported")
+
+
+def get_description(shoppingcart_items):
+    description = u'Payment for:\n'
+    for item, course in shoppingcart_items:
+        if int(item.qty) > 1:
+            description += (u'course "{course}" - '
+                           u'{cost} {currency} * {qty} students '
+                           u'- {line_cost} {currency}\n').format(
+                               course=course.display_name,
+                               currency=item.currency.upper(),
+                               cost=item.unit_cost,
+                               qty=item.qty,
+                               line_cost=item.line_cost
+                               )
+        else:
+            description += (u'course "{course}", '
+                           u'cost {line_cost} {currency}\n').format(
+                               course=course.display_name,
+                               currency=item.currency.upper(),
+                               line_cost=item.line_cost
+                               )
+    return description
+
+
+@csrf_exempt
+@login_required
+def pay_stripe(request):
+    if request.method == 'POST':
+        token = request.POST['stripeToken']
+        order = Order.objects.filter(user=request.user, status='cart').last()
+        shoppingcart_items = verify_for_closed_enrollment(order.user, order)[-1]
+        stripe.api_key = get_processor_config().get('SECRET_KEY')
+        try:
+            charge = stripe.Charge.create(
+                amount=int(order.total_cost*100), # amount in cents, again
+                currency="usd",
+                source=token,
+                description=get_description(shoppingcart_items),
+                metadata={'order_id': order.id}
+            )
+            log.info('Charge info: {}'.format(charge))
+        except Exception as e: #stripe.error.CardError as e:
+            log.info('\nStripe payment exeption: \n{}'.format(e))
+            return redirect(reverse('shoppingcart.views.show_cart'))
+
+        result = process_postpay_callback(json.dumps(charge))
+        if result['success']:
+            return _show_receipt_html(request, result['order'])
+        else:
+            return render_to_response('shoppingcart/error.html', {'order': result['order'], 'error_html': result['error_html']})
+    else:
+        return redirect(reverse('shoppingcart.views.show_cart'))
+
