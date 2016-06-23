@@ -36,7 +36,7 @@ def render_purchase_form_html(cart, callback_url=''):
         'amount': int(cart.total_cost)*100, # amount in cents
         'name': 'Payment for:',
         'description': get_description(shoppingcart_items),
-        'image': '/static/themes/images/pay_logo.png'
+        'image': '/static/themes/default/images/pay_logo.png'
     })
 
 
