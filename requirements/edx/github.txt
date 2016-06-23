@@ -102,7 +102,8 @@ git+https://github.com/edx/xblock-utils.git@v1.0.2#egg=xblock-utils==1.0.2
 -e git+https://github.com/edx/edx-organizations.git#egg=edx-organizations
 
 #git+https://github.com/raccoongang/edx-proctoring.git@tests_rebase#egg=edx-proctoring
--e git+https://github.com/raccoongang/edx-proctoring.git#egg=edx-proctoring
+#-e git+https://github.com/raccoongang/edx-proctoring.git#egg=edx-proctoring
+-e git+https://github.com/raccoongang/edx-proctoring.git@d7ee46910ac5fc2f0b18cf8a6af2ab892b96a5de#egg=edx-proctoring
 
 -e git+https://github.com/raccoongang/open_edx_api_extension.git#egg=open_edx_api_extension
 
