@@ -1057,8 +1057,23 @@ def pay_stripe(request):
 
         result = process_postpay_callback(json.dumps(charge))
         if result['success']:
-            return _show_receipt_html(request, result['order'])
+            attempting_upgrade = request.session.get('attempting_upgrade', False)
+            if attempting_upgrade:
+                if result['order'].has_items(CertificateItem):
+                    course_id = result['order'].orderitem_set.all().select_subclasses("certificateitem")[0].course_id
+                    if course_id:
+                        course_enrollment = CourseEnrollment.get_enrollment(request.user, course_id)
+                        if course_enrollment:
+                            course_enrollment.emit_event(EVENT_NAME_USER_UPGRADED)
+
+                request.session['attempting_upgrade'] = False
+
+            verify_flow_redirect = _get_verify_flow_redirect(result['order'])
+            if verify_flow_redirect is not None:
+                return verify_flow_redirect
+            return HttpResponseRedirect(reverse('shoppingcart.views.show_receipt', args=[result['order'].id]))
         else:
+            request.session['attempting_upgrade'] = False
             return render_to_response('shoppingcart/error.html', {'order': result['order'], 'error_html': result['error_html']})
     else:
         return redirect(reverse('shoppingcart.views.show_cart'))
