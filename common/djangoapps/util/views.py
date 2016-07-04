@@ -1,6 +1,11 @@
 import json
 import logging
 import sys
+import boto
+import urllib2
+import requests
+import ssl
+
 from functools import wraps
 
 from django.conf import settings
@@ -8,7 +13,7 @@ from django.core.cache import caches
 from django.core.validators import ValidationError, validate_email
 from django.views.decorators.csrf import requires_csrf_token
 from django.views.defaults import server_error
-from django.http import (Http404, HttpResponse, HttpResponseNotAllowed,
+from django.http import (Http404, HttpResponse, HttpResponseNotAllowed, HttpResponseRedirect,
                          HttpResponseServerError)
 import dogstats_wrapper as dog_stats_api
 from edxmako.shortcuts import render_to_response
@@ -464,4 +469,64 @@ def latest_app_version(request):
     except Exception, e:
         return HttpResponse(e)
     return HttpResponse("{app_version:" + str(version) + "}")
+
+def video_upload(request):
+    if request.method == 'POST':
+        #if form.is_valid():
+	cloudFrontURL = "https://d2a8rd6kt4zb64.cloudfront.net/"
+	try:
+	    filename = request.FILES['file'].name
+            with open('/tmp/' + filename, 'wb+') as destination:
+                for chunk in request.FILES['file'].chunks():
+                    destination.write(chunk)
+    	    course_directory = request.POST['course_directory']
+    	    import os
+	    from path import Path as path
+	    SERVICE_VARIANT = os.environ.get('SERVICE_VARIANT', None)
+	    CONFIG_ROOT = path(os.environ.get('CONFIG_ROOT', "/edx/app/edxapp/"))
+	    CONFIG_PREFIX = SERVICE_VARIANT + "." if SERVICE_VARIANT else ""
+ 	    with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
+ 		ENV_TOKENS = json.load(env_file)
+	    aws_access_key_id = ENV_TOKENS.get("AWS_ACCESS_KEY_ID")
+	    aws_secret_access_key = ENV_TOKENS.get("AWS_SECRET_ACCESS_KEY")
+	    s3 = boto.connect_s3(aws_access_key_id, aws_secret_access_key)
+	    cf = boto.connect_cloudfront(aws_access_key_id, aws_secret_access_key)
+	    bucket_name = "edxvideo"
+	    bucket = s3.get_bucket(bucket_name)
+	    object_name = course_directory + "/" + filename
+	    key = bucket.new_key(object_name)
+	    key.set_contents_from_filename('/tmp/' + filename)
+            cloudFrontURL += object_name
+    	except Exception, e:
+            return HttpResponse(e)
+    return HttpResponse(cloudFrontURL)
+
+def upload(request):
+    ''' Info page (link from main header) '''
+    return render_to_response("upload.html", {})
+
+def s3_video_list(request):
+    video_list = "[]"
+    try:
+        foldername = request.GET['course_folder']
+        import os
+        from path import Path as path
+    	SERVICE_VARIANT = os.environ.get('SERVICE_VARIANT', None)
+    	CONFIG_ROOT = path(os.environ.get('CONFIG_ROOT', "/edx/app/edxapp/"))
+    	CONFIG_PREFIX = SERVICE_VARIANT + "." if SERVICE_VARIANT else ""
+    	with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
+            ENV_TOKENS = json.load(env_file)
+    	aws_access_key_id = ENV_TOKENS.get("AWS_ACCESS_KEY_ID")
+    	aws_secret_access_key = ENV_TOKENS.get("AWS_SECRET_ACCESS_KEY")
+        aws_video_bucket_name = ENV_TOKENS.get("AWS_BUCKET_NAME")
+    	s3 = boto.connect_s3(aws_access_key_id, aws_secret_access_key)
+	bucket = s3.get_bucket(aws_video_bucket_name)
+    	files = bucket.list(foldername)
+	filenames = []
+	for key in files:
+	    filenames.append(key.name)
+	video_list = json.dumps(filenames)
+    except Exception, e:
+        return HttpResponse(e)
+    return HttpResponse(video_list)
 
