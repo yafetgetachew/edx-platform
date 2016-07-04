@@ -31,7 +31,13 @@ define([
                 entrance_exam_enabled : '',
                 entrance_exam_minimum_score_pct: '50',
                 license: null,
-                language: ''
+                language: '',
+		level: null,
+		stream : null,
+		program : null,
+		topics : null,
+		subtopics : null,
+		verified : null,
             },
             mockSettingsPage = readFixtures('mock/mock-settings-page.underscore');
 

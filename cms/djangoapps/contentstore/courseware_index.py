@@ -569,6 +569,13 @@ class CourseAboutSearchIndexer(object):
         AboutInfo("org", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
         AboutInfo("modes", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_MODE),
         AboutInfo("language", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
+	AboutInfo("level", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
+	AboutInfo("stream", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
+	AboutInfo("program", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
+	AboutInfo("topics", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
+	AboutInfo("subtopics", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
+	AboutInfo("verified", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
+	AboutInfo("tags", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
     ]
 
     @classmethod
@@ -592,7 +599,7 @@ class CourseAboutSearchIndexer(object):
             'content': {},
             'image_url': course_image_url(course),
         }
-
+	
         # load data for all of the 'about' modules for this course into a dictionary
         about_dictionary = {
             item.location.name: item.data
@@ -644,7 +651,7 @@ class CourseAboutSearchIndexer(object):
     @classmethod
     def _get_location_info(cls, normalized_structure_key):
         """ Builds location info dictionary """
-        return {"course": unicode(normalized_structure_key), "org": normalized_structure_key.org}
+	return {"course": unicode(normalized_structure_key), "org": normalized_structure_key.org}
 
     @classmethod
     def remove_deleted_items(cls, structure_key):

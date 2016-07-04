@@ -24,6 +24,13 @@ ABOUT_ATTRIBUTES = [
     'entrance_exam_enabled',
     'entrance_exam_id',
     'entrance_exam_minimum_score_pct',
+    'level',
+    'stream',
+    'program',
+    'topics',
+    'subtopics',
+    'verified',
+    'tags'
 ]
 
 
@@ -38,6 +45,13 @@ class CourseDetails(object):
         self.course_id = course_id
         self.run = run
         self.language = None
+	self.level = None 
+	self.stream = None
+	self.program = None
+	self.topics = None
+	self.subtopics = None
+	self.verified = None
+	self.tags=None
         self.start_date = None  # 'start'
         self.end_date = None  # 'end'
         self.enrollment_start = None
@@ -102,7 +116,6 @@ class CourseDetails(object):
             value = cls.fetch_about_attribute(course_key, attribute)
             if value is not None:
                 setattr(course_details, attribute, value)
-
         return course_details
 
     @classmethod

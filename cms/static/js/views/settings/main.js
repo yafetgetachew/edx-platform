@@ -29,6 +29,7 @@ var DetailsView = ValidatingView.extend({
         // fill in fields
         this.$el.find("#course-language").val(this.model.get('language'));
         this.$el.find("#course-organization").val(this.model.get('org'));
+//	this.$el.find("#appliedx-custom-level").val(this.model.get('level'));
         this.$el.find("#course-number").val(this.model.get('course_id'));
         this.$el.find("#course-name").val(this.model.get('run'));
         this.$el.find('.set-date').datepicker({ 'dateFormat': 'm/d/yy' });
@@ -81,6 +82,12 @@ var DetailsView = ValidatingView.extend({
         else this.$el.find('.remove-course-introduction-video').hide();
 
         this.$el.find('#' + this.fieldToSelectorMap['effort']).val(this.model.get('effort'));
+	this.$el.find('#' + this.fieldToSelectorMap['level']).val(this.model.get('level'));
+	this.$el.find('#' + this.fieldToSelectorMap['stream']).val(this.model.get('stream'));
+	this.$el.find('#' + this.fieldToSelectorMap['program']).val(this.model.get('program'));
+	this.$el.find('#' + this.fieldToSelectorMap['topics']).val(this.model.get('topics'));
+	this.$el.find('#' + this.fieldToSelectorMap['subtopics']).val(this.model.get('subtopics'));
+	this.$el.find('#' + this.fieldToSelectorMap['verified']).val(this.model.get('verified'));
 
         var imageURL = this.model.get('course_image_asset_path');
         this.$el.find('#course-image-url').val(imageURL);
@@ -121,6 +128,12 @@ var DetailsView = ValidatingView.extend({
     },
     fieldToSelectorMap : {
         'language' : 'course-language',
+	'level' : 'appliedx-custom-level',
+	'stream' : 'appliedx-custom-stream',
+	'program' : 'appliedx-custom-program',
+	'topics' : 'appliedx-custom-topics',
+	'subtopics' : 'appliedx-custom-subtopics',
+	'verified' : 'appliedx-custom-verified'
         'start_date' : "course-start",
         'end_date' : 'course-end',
         'enrollment_start' : 'enrollment-start',
@@ -195,6 +208,24 @@ var DetailsView = ValidatingView.extend({
     updateModel: function(event) {
         switch (event.currentTarget.id) {
         case 'course-language':
+            this.setField(event);
+            break;
+	case 'appliedx-custom-level':
+	    this.setField(event);
+	    break;
+	case 'appliedx-custom-stream':
+            this.setField(event);
+            break;
+	case 'appliedx-custom-program':
+            this.setField(event);
+            break;
+	case 'appliedx-custom-topics':
+            this.setField(event);
+            break;
+	case 'appliedx-custom-subtopics':
+            this.setField(event);
+            break;
+	case 'appliedx-custom-verified':
             this.setField(event);
             break;
         case 'course-image-url':
