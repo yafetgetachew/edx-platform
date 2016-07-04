@@ -1118,11 +1118,34 @@ DEPRECATED_BLOCK_TYPES = ['peergrading', 'combinedopenended']
 
 #### PROCTORING CONFIGURATION DEFAULTS
 
-PROCTORING_BACKEND_PROVIDER = {
-    'class': 'edx_proctoring.backends.null.NullBackendProvider',
-    'options': {},
+PROCTORING_BACKEND_PROVIDERS = {
+    "NULL_PROCTOR": {
+        "class": "edx_proctoring.backends.null.NullBackendProvider",
+        "options": {
+            "crypto_key": "123456789012345678901234",
+            "exam_register_endpoint": "{add exam register endpoint}",
+            "exam_sponsor": "{add SoftwareSecure sponsor}",
+            "organization": "{add SoftwareSecure organization}",
+            "secret_key": "{add SoftwareSecure secret key}",
+            "secret_key_id": "{add SoftwareSecure secret key id}",
+            "software_download_url": "{add SoftwareSecure download url}"
+        },
+        "settings": {
+            "LINK_URLS": {
+                "ALLOW_CALLBACK_SIMULATION": False,
+                "CLIENT_TIMEOUT": 60,
+                "DEFAULT_REVIEW_POLICY": "Closed Book",
+                "REQUIRE_FAILURE_SECOND_REVIEWS": False,
+                "ALLOW_REVIEW_UPDATES": True,
+                "contact_us": "{add link here}",
+                "faq": "{add link here}",
+                "online_proctoring_rules": "{add link here}",
+                "tech_requirements": "{add link here}"
+            }
+        }
+    },
 }
-PROCTORING_SETTINGS = {}
+PROCTORING_SETTINGS = PROCTORING_BACKEND_PROVIDERS.get("NULL_PROCTOR", {}).get("settings", {})
 
 
 ############################ OAUTH2 Provider ###################################
