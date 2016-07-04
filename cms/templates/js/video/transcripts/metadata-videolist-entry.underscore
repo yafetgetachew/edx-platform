@@ -25,3 +25,304 @@
     <label class="label setting-label transcripts-label"><%= gettext("Default Timed Transcript") %></label>
     <div class="wrapper-transcripts-message"></div>
 </div>
+<script type="text/javascript">
+		$(".wrapper-videolist-url").append($("#s3-video-interface").html());
+		$(".wrapper-videolist-url #player-video-url").html($(".wrapper-videolist-url input").val());
+		InsertDropdown = function(parent, objects, onSelectHandler){
+			$("select", $(parent)).remove();
+			selectHTML = "<select style='width:100%'>"
+			for(object in objects){		
+				selectHTML += "<option value='" + objects[object].value + "'>" + objects[object].key + "</option>"
+			}
+			selectHTML += "<select>"	
+			$(parent).append(selectHTML)
+			$("select", $(parent)).change(onSelectHandler);
+		}
+		$(".video-action").click(function(e){
+			var target = $(e.currentTarget);
+			var optionContainer = $("#" + $(target).attr("data-option-container"));
+			$(optionContainer).show();
+			$(".action-box").hide();
+			$("#player-video-url").hide();
+			$(".wrapper-videolist-url input").hide();
+			switch ($(target).attr("data-option-container")) {
+				case "video_input_box":
+					$(".wrapper-videolist-url input").show()		
+					break;
+				case "video_select_box":
+					$("#video_select_box").show();
+					var courseId = $(".studio-xblock-wrapper").attr("data-course-key")
+
+					if(courseId != null)	courseId = courseId.replace(/[+:/]/g, '_'); 
+					folderName = courseId;
+					url = "/list_s3_videos?course_folder=" + folderName 
+					selectAction = function(e){
+						$(e.target).hide();
+	                                        showPopup($(e.target).val());
+						//$(".wrapper-videolist-url input[type='text']").val($(e.target).val());				
+						//$(".wrapper-videolist-url #player-video-url").html($(".wrapper-videolist-url input").val());
+						//$(".wrapper-videolist-url #player-video-url").attr("title", $(".wrapper-videolist-url input").val());
+						//$(".wrapper-videolist-url #player-video-url").show();				
+					}
+					$.ajax({
+               					url: url,
+	               				success: function(result){					
+							formattedResult = [];
+							for(key in result)
+								if(result[key].indexOf(result[key].length - 1) != "/")
+									formattedResult.push({"key" : result[key].replace(folderName + "/", ""), "value" :  "https://d2a8rd6kt4zb64.cloudfront.net/" + result[key]})
+                       					InsertDropdown(optionContainer, formattedResult, selectAction)
+                				},
+		                		error: function(result){
+							console.log("An error has occurred: " + result)
+               					}
+					});
+					break;
+				case "video_upload_box":
+					$("#video-file-upload").click();
+					break;
+			}	
+		});
+		/*$("#video-file-upload").change(function(){
+			var filename = $("#video-file-upload")[0].files[0].name;
+			if(filename != ""){
+				$("#upload-button").html("Click here to Upload " + filename);
+				$("#video_upload_box").show();
+			}
+		});*/
+		String.prototype.endsWithAny = String.prototype.endsWithAny || function(keyOrKeys){
+                        var doesEnd = false;
+                        if(keyOrKeys instanceof Array){
+                                for(key in keyOrKeys){
+                                        (doesEnd |= this.endsWithAny(keyOrKeys[key]));
+                                }
+                        }
+                        return (doesEnd || this.substring(this.length - keyOrKeys.length) == keyOrKeys) == true;
+		}
+		getMaxRecommenedBitRate = function(){
+			return 124;
+		}
+		getMaxAcceptableBitRate = function(){
+			return 186;
+		}
+                getRecommenedFileExtensions = function(){
+                        return [".mp4"];
+                }
+                getAcceptableFileExtensions = function(){
+                        return ["mp4", ".mpeg", ".webm", ".ogg"];
+                }
+		$("#video-file-upload").change(function(){
+			var filename = $("#video-file-upload")[0].files[0].name;
+			maxRecommenedBitRate = getMaxRecommenedBitRate()
+			maxAcceptableBitRate = getMaxAcceptableBitRate()
+			if(filename != ""){
+				if(!filename.endsWithAny(getAcceptableFileExtensions())) {
+					throwError("Sorry the file you are trying to upload is not valid. Please upload one of the following filetypes : (mpf, mpeg, webm, ogg)");
+					return;
+                                }
+                                if(!filename.endsWithAny(getRecommenedFileExtensions())) {
+
+                                }
+				reader = new FileReader();
+				reader.onload = function(e) {
+					var videoElement = document.createElement("video");
+					videoElement.src = e.target.result;
+					var timer = setInterval(function () {
+						if (videoElement.readyState === 4){
+							clearInterval(timer);
+							var duration = videoElement.duration.toFixed(2);
+							var size = $("#video-file-upload")[0].files[0].size;
+							var bitRateInKBps = size  / (duration * 1000) 
+							if (bitRateInKBps > maxRecommenedBitRate){
+								throwWarning("Bit rate of the video is higher than standard range.", uploaderProceed, null);
+							}
+							else if (bitRateInKBps > maxAcceptableBitRate){
+								throwError("Sorry, the video could not be uploaded since the bit rate of video is higher than the acceptable range.");
+							}
+							else {
+								uploaderProceed();
+							}
+							//clearInterval(tiimer);
+						}
+        				}, 500)
+        			};
+				reader.readAsDataURL($("#video-file-upload")[0].files[0]);
+			}
+		});
+		uploaderProceed = function (){
+			$("#upload-button").html("Click to Upload " + $("#video-file-upload")[0].files[0].name);
+			$("#video_upload_box").show();
+			$("#upload-button").show();
+		}
+		throwWarning = function(message, onYes, onNo){
+			if(confirm(message)) onYes();
+			else onNo();
+		}
+		throwError = function(message){
+			alert(message);
+		}
+		$("#upload-button").click(function(){
+			$("#upload-button").hide();
+			$(".uploader-progressbar-background").show()
+			var files =  $("#video-file-upload")[0].files;
+			var formData = new FormData();
+			var courseId = $(".studio-xblock-wrapper").attr("data-course-key")
+
+			if(courseId != null)	courseId = courseId.replace(/[+:/]/g, '_')
+			folderName = courseId;
+			formData.append('file', files[0], files[0].name);
+			formData.append('course_directory',  folderName);
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', '/upload_video', true);
+			var csrftoken = $.cookie('csrftoken');
+
+			xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			var eventSource = xhr.upload || xhr;
+			eventSource.addEventListener("progress", function(e){
+				var current = e.loaded || e.position ;
+				var total = e.total || e.totalSize;
+				var percent = parseInt((current/total)*100, 10);
+				$(".uploader-progressbar").css("width",   percent + "%");
+			});
+			xhr.onload = function (e) {
+				if (xhr.status === 200) {
+					$("#upload-button").show();
+					$("#video_upload_box").hide();
+					$(".uploader-progressbar-background").hide();
+					showPopup(e.currentTarget.responseText);
+				} else {
+					alert('An error occurred!');
+				}
+			};
+                        url = "/list_s3_videos?course_folder=" + folderName
+			$.ajax({
+				url: url,
+				success: function(result){
+					var keyFound = false;
+					var keyName = folderName + "/" + files[0].name;
+					for(key in result){
+						if(result[key] == keyName){
+							keyFound = true;
+							break;
+						}
+					}
+					if(keyFound){
+						alert("A file with the same name already exists");
+			                        $(".uploader-progressbar-background").hide()
+					}
+					else xhr.send(formData);
+				},
+				error: function(result){
+					console.log("An error has occurred: " + result)
+				}
+			});
+
+		});
+		$(".wrapper-videolist-url input").blur(function(){
+			$(".wrapper-videolist-url input").hide();
+			$(".wrapper-videolist-url #player-video-url").html($(".wrapper-videolist-url input").val());
+			$(".wrapper-videolist-url #player-video-url").attr("title", $(".wrapper-videolist-url input").val());
+			$(".wrapper-videolist-url #player-video-url").show();
+                        $(".videolist-url").removeClass("glow")
+		});
+		showPopup = function(videoURL){
+			$(".modal-type-video").hide();
+			$(document.body).append($("#url-popup").html())
+			$(".popup-url").html(videoURL)
+			$(".popup-btn").click(function(){
+	                        $(".modal-type-video").show();
+				$(".videolist-url").show();
+				$(".videolist-url").val($(".popup-url").html().trim());
+				$(".videolist-url").select();
+				document.execCommand("copy");
+				$(".videolist-url").val("");
+				$(".popup-overlay").remove();
+				$(".videolist-url").focus();
+				$(".videolist-url").addClass("glow")
+				$(".videolist-url").attr("placeholder", "Paste the URL Here")
+			});
+		}
+</script>
+<style>
+.wrapper-videolist-url input{
+        display:none; height:50px;
+}
+.video-action, #upload-button{
+        background: #009fe6; border-color: #009fe6; color: #fff; border-radius: 4px; padding: 10px 20px; text-align: center; margin: 10px 10px 10px 0px;
+        float: left;   font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold; cursor:pointer;
+}
+.video-action:hover{
+        background: rgb(51, 178, 235); border-color: rgb(51, 178, 235);
+}
+#player-video-url {
+        font-family: verdana; font-size: 12px; white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; color: rgb(0, 159, 230);
+}
+.uploader-progressbar-background{
+        display:none; width: 100%; height: 24px; font-family: calibri; color: white; text-align: center; box-shadow: 0px 0px 5px #aaa;
+        background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%);
+        background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%);
+}
+.uploader-progressbar{
+        height: 24px; margin: 10px 0px; background: -webkit-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%);
+        background: linear-gradient(to bottom,  #b4e391 0%,#61c419 50%,#b4e391 100%); color: white; box-shadow: 1px 0px 5px 2px #61C418; width:0%;
+}
+#upload-button{
+        float: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; font-weight: normal; margin-top: 0px; background:#9fd600; border-color:#9fd600; color: #444; font-weight: bold;
+}
+.action-box { display:none;}
+.popup-overlay { position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; z-index: 1000; background: rgba(100,100,100,0.5);}
+.popup-outline { background: white; position: fixed; margin: auto 0px; left: 30%; width: 40%; top: 100px; border: solid 5px #ccc; height: 200px;}
+.popup-heading { background: #CCC; padding: 10px; font-size: 14px; font-weight: bold; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+.popup-url { padding: 10px; height: 80px; font-family: calibri; font-size: 16px; text-align: center;}
+.popup-btn { background: #009fe6; border-color: #009fe6; color: #fff; width: 200px; text-align: center; padding: 10px; margin: auto; cursor:pointer;}
+.glow{
+  animation: glow 1s steps(2, start) infinite;
+  -webkit-animation: glow 1s steps(2, start) infinite;
+}
+@keyframes glow {
+  to {
+    box-shadow: 0px 0px 8px red;
+  }
+}
+@-webkit-keyframes glow {
+  to {
+
+    box-shadow: 0px 0px 1px red;
+  }
+}
+</style>
+<script id="s3-video-interface" type="text/template">
+        <div id="video_input_box" class="action-box">
+        </div>
+        <div id="video_select_box" class="action-box">
+        </div>
+        <div id="video_upload_box" class="action-box">
+                <div class="uploader-progressbar-background">
+                        <div class="uploader-progressbar"></div>
+                </div>
+                <input type="file" id="video-file-upload" style="display:none"/>
+                <div id="upload-filename" style="display:none"> </div>
+                <div id="upload-button" class="glow"> ??? </div>
+        </div>
+        <div id="player-video-url"></div>
+        <div style="height:80px">
+                <div  class="video-action" data-option-container="video_input_box">Enter URL</div>
+                <div  class="video-action" data-option-container="video_select_box">Choose</div>
+                <div  class="video-action" data-option-container="video_upload_box">Upload</div>
+        </div>
+</script>
+<script id="url-popup" type="text/template">>
+        <div class="popup-overlay">
+                <div class="popup-outline">
+                <div class="popup-heading">
+                CloudFront URL has been generated for the uploaded video
+                </div>
+                <div class="popup-url">
+                </div>
+                <div class="popup-btn glow">
+                       Click to Copy URL
+                </div>
+                </div>
+        </div>
+</script>
+
