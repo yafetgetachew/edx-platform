@@ -29,33 +29,41 @@
 
 <%block name="pagetitle">${_("Courses")}</%block>
 
-   <style>
+<style>
+.appliedx-custom-search-tags span:hover {
+    color: #00a9dC;
+}
+
 .appliedx-custom-search-tags span {
     float: left;
-    padding: 5px 11px !important;
+    padding: 0px;
     list-style-type: none;
-    color: white;
+    color: #333;
     border-radius: 1px;
     font-size: 12px;
-    background-color: #aaa;
-    margin: 2px;
-    box-shadow: 2px 2px 3px #ccc;
-    border-radius: 3px;
+    margin: 1px 5px;
+    font-family: trebuchet MS;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 48%;
+    text-overflow: ellipsis;
 }
-.appliedx-custom-search-tags span:hover {
-    color: greenyellow;
-    background-color: #555;
-}
+
 .appliedx-custom-search-tags {
-    height: 50px;
-    margin-top: -55px;
+    height: 60px;
+    padding: 4px 15px;
+    border-top: dotted 1px #ccc;
+    padding-top: 10px;
+    background: #f1f1f1;
+    /* linear-gradient(to top,#b8bac6 0%,#dbdce2 21%,#f1f1f1 49%,#dddfe3 80%,#f5f6f6 100%);*/
+    margin-top: -15px;
     margin-bottom: 5px;
-    padding: 5px;
 }
+
 .facet-option{ cursor:pointer;}
-.search-facets-lists{ display:none;}
+/*.search-facets-lists{ display:none;}
 .courses-listing{ display:none; }
-#discovery-message{ display:none; }
+#discovery-message{ display:none; }*/
 .verified-label{
     background-color: rgba(0,88,0,0.6);
     height: 15px;
@@ -77,7 +85,9 @@
     z-index: 1;
     float: left;
 }
+
 .cover-image{position:relative;height:148px !important;}
+
 .verified-button{
     padding: 6px 11px;
     font-size: 13px;
@@ -105,6 +115,32 @@
     position: absolute;
     background: white;
     margin-top: 15px;
+}
+.course-title {
+    font-size:16px;
+}
+
+.course-name {
+    margin-botton: 5px;
+}
+
+.course-date{
+    float: left;
+    position: absolute;
+    background: #6badc6;
+    padding: 5px 10px;
+    color: white !important;
+    font-size: 14px;
+    margin: -2px 0px 0px 10px;
+    border-radius: 0px 0px 3px 3px;
+    box-shadow: 2px 2px 5px #ccc; 
+    padding: 2px 15px;
+    position: absolute;
+    top: -2px;
+    z-index: 9;
+    padding: 2px 15px;
+    color: white;
+    text-shadow: 1px 1px#ccc;
 }
 </style>
 
@@ -155,17 +191,18 @@
         var filters = {};
         var filterList = {}
         $(document).ready(function(){
-                listAll = function(){$(".discovery-submit").length?$(".discovery-submit").click():setTimeout(listAll, 300);}
-                GenerateTagCloud()
-                setTimeout(listAll, 300);
-                var len=$(".courses-listing-item").length;
+                //listAll = function(){$(".discovery-submit").length?$(".discovery-submit").click():setTimeout(listAll, 300);}
+                GenerateInitialTagCloud();
+		setTimeout(organizeFilters, 1000);
+                //setTimeout(listAll, 300);
+                /*var len=$(".courses-listing-item").length;
                 for(i=0;i<len;i++){
                         for(j=0;j<i;j++){
                                 if($("a", $($(".courses-listing-item")[i])).first().attr("href").split("/")[4] <= $("a", $($(".courses-listing-item")[j])).first().attr("href").split("/")[4])
                                         $($(".courses-listing-item")[i]).insertBefore($(".courses-listing-item")[j])
                         }
-                }
-                setInterval(function(){
+                }*/
+                /*setInterval(function(){
                         $(".appliedx-custom-search-tags").each(function(){
                                 var searchTagMarkup = "";
                                 var courseCardTags = {};
@@ -189,24 +226,24 @@
                                                 console.log(courseCardTags[tag])
                                                 topics = courseCardTags[tag].split(",");
                                                 for(topic in topics){
-                                                        searchTagMarkup += "<span class='appliedx-custom-tag' data-tag-propertyname='" + tag + "'>"+ topics[topic] +"</span>";
+                                                        searchTagMarkup += "<span class='appliedx-custom-tag' data-tag-propertyname='" + tag + "' title='" + topics[topic] + "'>"+ topics[topic] +"</span>";
                                                 }
                                                 $(this).closest(".courses-listing-item").attr("data-" + tag, courseCardTags[tag]);
                                         }
                                         else {
                                                 if(courseCardTags[tag].trim() != ""){
-                                                        searchTagMarkup += "<span class='appliedx-custom-tag' data-tag-propertyname='" + tag + "'>"+ courseCardTags[tag] +"</span>";
+                                                        searchTagMarkup += "<span class='appliedx-custom-tag' data-tag-propertyname='" + tag + "' title='" + courseCardTags[tag] + "'>"+ courseCardTags[tag] +"</span>";
                                                         $(this).closest(".courses-listing-item").attr("data-"+tag, courseCardTags[tag]);
                                                 }
                                         }
                                 }
                                 $(this).html(searchTagMarkup);
                         });
-                }, 500);
-                $(".discovery-submit").click(function(){
+                }, 500);*/
+                /*$(".discovery-submit").click(function(){
                         filters = {}
                         filterList = {}
-                        $(".search-facets-lists").hide();
+                        //$(".search-facets-lists").hide();
                         $(".courses-listing").hide();
                         $("#discovery-message").hide();
                         setTimeout(function(){
@@ -227,8 +264,8 @@
                                 }
                                 $("#discovery-message").show();
                         }, 1000);
-                });
-                $(document).on("click", ".course a",  function(e){
+                });*/
+                /*$(document).on("click", ".course a",  function(e){
                         if($(e.target).hasClass("appliedx-custom-tag")){
                                 e.preventDefault();
                                 filterByTag({"type":$(e.target).attr("data-tag-propertyname"), "value":$(e.target).text()})
@@ -236,13 +273,13 @@
                                 //$(".discovery-submit").click();
                                 //$(".discovery-input").val($(e.target).attr("data-tag-propertyname") + ":" + $(e.target).text());
                         }
-                });
-                $(document).on("click", "#clear-all-filters", function(e){
+                });*/
+                /*$(document).on("click", "#clear-all-filters", function(e){
                         //console.log("dd");
                         $(".discovery-submit").click();
-                });
+                });*/
         });
-        var filterByTag = function(tag){
+        /*var filterByTag = function(tag){
                 $(".discovery-input").val(tag.value.replace("-", " "));
                 $(".discovery-submit").click();
                 $(".discovery-input").val(tag.type + ":" + tag.value);
@@ -254,38 +291,10 @@
                         else $(this).css("margin-right", "2.35765%");
                         index++;
                 });
-        }
-        var createFilters = function(){
+        }*/
+        /*var createFilters = function(){
                 var cardCount = 0;
                 filterList = {};
-                /*$(".appliedx-custom-search-tags", $(".courses-listing-item[data-visibility]")).each(function(){
-                        var currentFilterAttributes = {};
-                        try{
-                                currentFilterAttributes = JSON.parse($(this).attr("href"));
-                        }
-                        catch(err){}
-                        var currentFilterParam = $(".discovery-input").val().split(":");
-                        if(currentFilterAttributes[currentFilterParam[0]] != currentFilterParam[1]){
-                                $(this).closest(".courses-listing-item").hide();
-                                return;
-                        }
-                        cardCount++;
-                        for(var attribute in currentFilterAttributes){
-                                if(attribute == "verified" || currentFilterAttributes[attribute].toString().trim() == ""){
-                                }
-                                else{
-                                        trimmedCurrentFilterAttribute = currentFilterAttributes[attribute].toString().trim()
-                                        if(filterList[attribute] == undefined){
-                                                filterList[attribute] = {}
-                                                filterList[attribute][trimmedCurrentFilterAttribute] = 1;
-                                        }
-                                        else if(filterList[attribute][trimmedCurrentFilterAttribute] == undefined) {
-                                                filterList[attribute][trimmedCurrentFilterAttribute] = 1;
-                                        }
-                                        else filterList[attribute][trimmedCurrentFilterAttribute]++;
-                                }
-                        }
-                });*/
                 $(".appliedx-custom-search-tags", $(".courses-listing-item[data-visibility]")).each(function(){
                         var currentFilterAttributes = {};
                         try{
@@ -306,7 +315,6 @@
                                 }
                                 else{
                                         filterValues = currentFilterAttributes[attribute].toString().trim().split(",")
-                                        //console.log(filterValues)
                                         for(filtervalue in filterValues){
                                                 trimmedCurrentFilterAttribute = filterValues[filtervalue].toString().trim()
                                                 if(filterList[attribute] == undefined){
@@ -334,7 +342,7 @@
                                 filterHTML += "</li>  </ul>";
                         }
                 }
-                $(".search-facets-lists").html(filterHTML);
+               // $(".search-facets-lists").html(filterHTML);
                 $("*[data-value]").on("click", function(e){
                         if($(this).attr("data-type") == "search_query"){
                                 $(".discovery-input").val("")
@@ -361,8 +369,8 @@
                         }
                 });
                 return cardCount;
-        }
-        var GenerateTagCloud = function(){
+        }*/
+        var GenerateInitialTagCloud = function(){
                 $.ajax({
                         url: "/get_search_tags",
                         success: function(result){
@@ -384,7 +392,113 @@
                         filterByTag({"type":"tags", "value":$(e.target).text()})
                 });
         }
-        var applyFilters = function(){
+	filtersInOrder = ["verified", "level", "stream", "program", "topics", "subtopics"];
+	var appliedFilters = [];
+
+
+	organizeFilters = function(){
+		$(".search-facets-lists h3").hide();
+		$(".search-facets-lists ul").hide();
+		$(".search-facets-lists .toggle").hide();
+		setVerified();
+		$(filtersInOrder).each(function(){
+			var currentHeader = $(".search-facets-lists h3:contains('" + this + "')");
+			if(currentHeader.length > 0){
+				for(i=0;i<currentHeader.length; i++){
+					if(currentHeader[i].innerHTML.trim() == this){
+						currentHeader = currentHeader[i];
+						break;
+					}
+				}
+			}
+			var currentFilter = $(currentHeader).next();
+			var currentMore = $(currentFilter).next();
+			$(".search-facets-lists").append(currentHeader).append(currentFilter);
+			$(currentHeader).show();
+			$(currentFilter).show();
+			if($(currentMore).hasClass("toggle")) {
+				$(".search-facets-lists").append(currentMore);
+				$(currentMore).show();
+			}
+		});
+	}
+	$(document).on("click", "button[data-facet]", function(e){
+                                        if($(e.currentTarget).attr("data-type") == "search_query"){
+                                                collectAppliedFacets ();
+                                        }
+                                        onFilterApplied();
+	});
+
+	$(".discovery-submit").click(function(e){
+		collectAppliedFacets();
+		onFilterApplied();
+	});
+
+	onFilterApplied = function(){	
+		setTimeout(function(){
+			applyPreviousFacets();
+			setTimeout(function(){
+				renderTagCloud(renderTags());
+				setVerified();
+				$("button[data-facet]").click(function(e){
+					onFilterApplied();
+					console.log("clicked");
+				});
+				$("button[data-type]").click(function(e){
+					if($(e.currentTarget).attr("data-type") == "search_query"){
+						collectAppliedFacets ();
+					}			
+					onFilterApplied();
+				});
+			}, 1000);
+		}, 1000);
+	}
+
+	collectAppliedFacets = function(){
+		$(".active-filter button").each(function(){	
+			appliedFilters.push({"name":$(this).attr("data-type"), "value":$(this).attr("data-value")});
+		});
+	}
+
+	applyPreviousFacets = function(){
+		$(appliedFilters).each(function(){
+			$("*[data-value='" + this.value + "']", $("*[data-facet='" + this.name + "']")).click();
+		});
+		appliedFilters = [];
+	}
+
+	renderTags = function(){
+		var tagStore = {};
+		$(".appliedx-custom-search-tags").each(function(){
+			var course_item = $(this);
+			tags = JSON.parse($(this).attr("data-tags")).tags;
+			searchTagMarkup = "";
+			for(tag in tags){
+				if(tags[tag].trim() != ""){
+					if(tagStore[tags[tag]] == undefined) tagStore[tags[tag]] = 0;
+					tagStore[tags[tag]]++;
+					searchTagMarkup += "<span class='appliedx-custom-tag' data-tag-propertyname='" + tag + "' title='" + tags[tag] + "'>" + tags[tag] + "</span>";
+					$(this).closest(".courses-listing-item").attr("data-" + tag, tags[tag]);
+				}
+			}
+			$(this).html(searchTagMarkup);
+		});
+		return tagStore;
+	}
+
+	setVerified = function(){
+		$("button[data-facet='verified']").each(function(){debugger;
+			if($(this).attr("data-value") != "true")
+				$(this).parent().hide();
+			else{
+				$(this).html($(this).html().replace("true", "Show only verified"));
+				$(this).attr("data-text", "Show only verified");
+			}
+		});
+	}
+
+
+        /*var applyFilters = function(){
                 $('.filter-item-custom').remove();
                 function createFilterBarItem(key, value){
                         $("#filter-bar").removeClass("is-collapsed");
@@ -422,7 +536,7 @@
                }
                createFilters();
                rearrangeCourseCards()
-        }
+        }*/
       </script>
     </div>
 
