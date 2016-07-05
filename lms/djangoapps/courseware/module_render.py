@@ -12,6 +12,7 @@ import static_replace
 from collections import OrderedDict
 from functools import partial
 from requests.auth import HTTPBasicAuth
+import requests
 import dogstats_wrapper as dog_stats_api
 
 from django.conf import settings
@@ -284,7 +285,8 @@ def get_module_for_descriptor(user, request, descriptor, field_data_cache, cours
         user_location=user_location,
         request_token=xblock_request_token(request),
         disable_staff_debug_info=disable_staff_debug_info,
-        course=course
+        course=course,
+        request=request
     )
 
 
@@ -293,7 +295,7 @@ def get_module_system_for_user(user, field_data_cache,  # TODO  # pylint: disabl
                                descriptor, course_id, track_function, xqueue_callback_url_prefix,
                                request_token, position=None, wrap_xmodule_display=True, grade_bucket_type=None,
                                static_asset_path='', user_location=None, disable_staff_debug_info=False,
-                               course=None):
+                               course=None, request=None):
     """
     Helper function that returns a module system and student_data bound to a user and a descriptor.
 
@@ -388,7 +390,8 @@ def get_module_system_for_user(user, field_data_cache,  # TODO  # pylint: disabl
             static_asset_path=static_asset_path,
             user_location=user_location,
             request_token=request_token,
-            course=course
+            course=course,
+            request=request
         )
 
     def _fulfill_content_milestones(user, course_key, content_key):
@@ -474,6 +477,31 @@ def get_module_system_for_user(user, field_data_cache,  # TODO  # pylint: disabl
         """A function that allows XModules to publish events."""
         if event_type == 'grade':
             handle_grade_event(block, event_type, event)
+            if request:
+                from courseware import grades
+                from courseware.views import is_course_passed
+
+                course = modulestore().get_course(course_id)
+                student = User.objects.prefetch_related("groups").get(id=user.id)
+
+                grade_summary = grades.grade(student, request, course)
+
+                if is_course_passed(course, grade_summary):
+                    access_token = user.social_auth.extra()[0].access_token
+                    api_url = '{}/api/UpdateCourseStatus'.format(settings.SSO_ML_API_URL)
+                    headers = {'Authorization': 'Bearer {}'.format(access_token)}
+                    params = {
+                        'EdxCompleteCourseId': course_id.to_deprecated_string(),
+                        'status': 'Completed'
+                    }
+
+                    r = requests.get(api_url, headers=headers,
+                                     params=params, verify=False)
+
+                    if r.ok:
+                        log.info('Call millonligts API for user "{}" and course "{}"'.format(student, course_id))
+                    else:
+                        log.error('Millionlights API returned: "[{}] {}"'.format(r.status_code, r.text))
         else:
             track_function(event_type, event)
 
@@ -516,7 +544,8 @@ def get_module_system_for_user(user, field_data_cache,  # TODO  # pylint: disabl
             static_asset_path=static_asset_path,
             user_location=user_location,
             request_token=request_token,
-            course=course
+            course=course,
+            request=request
         )
 
         module.descriptor.bind_for_student(
@@ -695,7 +724,7 @@ def get_module_for_descriptor_internal(user, descriptor, field_data_cache, cours
                                        track_function, xqueue_callback_url_prefix, request_token,
                                        position=None, wrap_xmodule_display=True, grade_bucket_type=None,
                                        static_asset_path='', user_location=None, disable_staff_debug_info=False,
-                                       course=None):
+                                       course=None, request=None):
     """
     Actually implement get_module, without requiring a request.
 
@@ -719,7 +748,8 @@ def get_module_for_descriptor_internal(user, descriptor, field_data_cache, cours
         user_location=user_location,
         request_token=request_token,
         disable_staff_debug_info=disable_staff_debug_info,
-        course=course
+        course=course,
+        request=request
     )
 
     descriptor.bind_for_student(
