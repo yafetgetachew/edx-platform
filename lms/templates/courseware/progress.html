@@ -55,19 +55,44 @@ from django.utils.http import urlquote_plus
         <div id="course-success" style="padding-top:20px;"><!--removed class auto-cert-message -->
           <%
             SUCCESS_BUTTON_URL = _("http://agu.mis.amat.com/integ/finish.php?C={course_id}").format(course_id=course.id)
+            REDIRECT_URL = _("/agu_redirect?custom_credit_url={url}").format(url=course.cert_name_long)
           %>
-            <a href="${course.cert_name_long}"  data-curl="${SUCCESS_BUTTON_URL}" target="_blank">
+            <a href="#"  data-curl="${SUCCESS_BUTTON_URL}" target="_blank" id="credit_button">
               ${_("Get credit for the course")}
             </a>
-            <!--script type="text/javascript">
-            debugger;
-              var href = $("#course-success a").attr("href");
-              var crs_id = (href.split("?")[1].split("/")[1] + href.split("?")[1].split("/")[2]).toUpperCase();
-              href = href.split("?")[0] + "?C=EDX" + crs_id
-              $("#course-success a").attr("href", href);
-              $("#course-success").show();
-             // $("#course-success a").click(function(){window.open("https://survey.amat.com/survey/s?s=34513&opdata_name1=" + crs_id)});
-            </script-->
+
+<script type="text/javascript">
+	var creditURL = "${course.cert_name_long}";
+	var split = creditURL.split("C=");
+	courseID = split[1];
+	var getCurrentUserEmail = function(){
+		return "${student.email}";
+	}
+
+	var encryptToSequence = function(courseID){
+		var email = getCurrentUserEmail();
+		var len = courseID.length;
+		var creditKey = [];
+		for(var index=0; index<len; index++){
+			var keyIndex = index % len;
+			creditKey.push(courseID.charCodeAt(index) ^ email.charCodeAt(keyIndex));
+		}
+		return creditKey.join("-")
+	}
+
+	var decryptToSequence = function (creditKeySequence){
+		creditKey = creditKeySequence.split("-");
+		var email = getCurrentUserEmail();
+		var len = creditKey.length;
+		var courseID= "";
+		for(var index=0; index<len; index++){
+			var keyIndex = index % len;
+			courseID +=  String.fromCharCode(creditKey[index] ^ email.charCodeAt(keyIndex));
+		}
+		return courseID;
+	}
+        $("#credit_button").attr("href", split[0] + "C=" + encryptToSequence(courseID) + "&src=appliedx");
+</script>
           <!--div class="has-actions">
               <% post_url = reverse('generate_user_cert', args=[unicode(course.id)]) %>
               % if is_downloadable:
