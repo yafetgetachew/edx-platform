@@ -13,7 +13,8 @@
 		<span class="course-title"><%= content.display_name %></span>
             </h2>
             <div class="appliedx-custom-search-tags" data-tags="<%- content.short_description %>" ></div>
-            <div class="course-date" aria-hidden="true"><%= interpolate(gettext("Starts: %s"), [start]) %></div>
+            <div class="course-date" aria-hidden="true" style="display:none"><%= interpolate(gettext("Starts: %s"), [start]) %></div>
+            <% if (verified) { %> <div class="course-date" aria-hidden="true">Verified</div><% } %>
         </section>
         <div class="sr">
             <ul>
