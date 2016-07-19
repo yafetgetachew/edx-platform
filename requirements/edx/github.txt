@@ -116,3 +116,6 @@ git+https://github.com/edx/xblock-lti-consumer.git@v1.0.0#egg=xblock-lti-consume
 #flow-control-xblock
 -e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow-control
 
+#VectorDraw XBlock
+-e git+https://github.com/open-craft/xblock-vectordraw.git#egg=vectordraw
+
