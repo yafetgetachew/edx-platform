@@ -650,7 +650,7 @@ def _get_verify_flow_redirect(order):
 
 
 @csrf_exempt
-@require_POST
+#@require_POST
 def postpay_callback(request):
     """
     Receives the POST-back from processor.
@@ -661,7 +661,11 @@ def postpay_callback(request):
     If unsuccessful the order will be left untouched and HTML messages giving more detailed error info will be
     returned.
     """
-    params = request.POST.dict()
+    if settings.CC_PROCESSOR_NAME == 'Adyen':
+        params = request.GET.dict()
+    else:
+        params = request.POST.dict()
+
     result = process_postpay_callback(params)
 
     if result['success']:
