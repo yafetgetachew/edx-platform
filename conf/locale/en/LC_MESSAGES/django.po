@@ -19,3 +19,5 @@ msgstr ""
 msgid "This is a key string."
 msgstr ""
 
+msgid "Welcome to Open edX!"
+msgstr "Welcome to The Barwit School!"
