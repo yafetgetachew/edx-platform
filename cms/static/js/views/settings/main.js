@@ -133,7 +133,7 @@ var DetailsView = ValidatingView.extend({
 	'program' : 'appliedx-custom-program',
 	'topics' : 'appliedx-custom-topics',
 	'subtopics' : 'appliedx-custom-subtopics',
-	'verified' : 'appliedx-custom-verified'
+	'verified' : 'appliedx-custom-verified',
         'start_date' : "course-start",
         'end_date' : 'course-end',
         'enrollment_start' : 'enrollment-start',
