@@ -166,6 +166,11 @@ def create_ccx(request, course, ccx=None):
     Create a new CCX
     """
     name = request.POST.get('name')
+    if not name:
+        messages.error(request, _(
+            "Please enter a name of new Custom Course."))
+        url = reverse('ccx_coach_dashboard', kwargs={'course_id': course.id})
+        return redirect(url)
 
     # prevent CCX objects from being created for deprecated course ids.
     if course.id.deprecated:
