@@ -218,6 +218,7 @@ class LinkTab(CourseTab):
         return True
 
 
+
 class ExternalDiscussionCourseTab(LinkTab):
     """
     A course tab that links to an external discussion service.
@@ -302,10 +303,18 @@ def get_course_tab_list(request, course):
             if tab.type is not 'courseware':
                 continue
             tab.name = _("Entrance Exam")
-        course_tab_list.append(tab)
+	if not (tab.name == "Wiki" or tab.name == "Discussion"):
+            course_tab_list.append(tab)
 
     # Add in any dynamic tabs, i.e. those that are not persisted
     course_tab_list += _get_dynamic_tabs(course, user)
+   # tab_dict = dict()
+#    tab_dict['name'] = "About"
+    #tab_dict['link'] = "/about"
+    #tab_dict['type'] = "about"
+#    tab_dict['tab_id'] = "about"
+  #  tab_dict['is_hidden'] = False
+    #course_tab_list += LinkTab(tab_dict=tab_dict)#, name="About", link="/about")
     return course_tab_list
 
 
