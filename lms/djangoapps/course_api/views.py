@@ -13,6 +13,12 @@ from openedx.core.lib.api.paginators import NamespacedPageNumberPagination
 from .api import course_detail, list_courses
 from .serializers import CourseSerializer
 
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+
+from openedx.core.lib.api.authentication import (
+    OAuth2AuthenticationAllowInactiveUser,
+    SessionAuthenticationAllowInactiveUser,
+)
 
 class CourseDetailView(RetrieveAPIView):
     """
@@ -161,6 +167,7 @@ class CourseListView(ListAPIView):
               }
             ]
     """
+    authentication_classes = (SessionAuthentication, BasicAuthentication, OAuth2AuthenticationAllowInactiveUser)
 
     pagination_class = NamespacedPageNumberPagination
     serializer_class = CourseSerializer
