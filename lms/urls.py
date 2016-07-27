@@ -76,9 +76,14 @@ urlpatterns = (
     url(r'^insert_search_tag$', 'util.views.add_keyword'),
     url(r'^token_auth$', 'util.views.get_auth_token'),
     url(r'^latest_app_version$', 'util.views.latest_app_version'),
+    url(r'^credit_requested$', 'courseware.views.capture_credit_requested'),
+    url(r'^last_credit_request$', 'courseware.views.credit_requested_details'),
+    url(r'^capture_if_passed$', 'courseware.views.capture_pass_criteria_attained'),
     # Feedback Form endpoint
     url(r'^submit_feedback$', 'util.views.submit_feedback'),
-
+    url(r'^apple-app-site-association$', 'util.views.apple_app_site_association'),
+    url(r'^honor_code$', 'student.views.honorcode'),
+    url(r'^accept_honor_code$', 'student.views.accept_honorcode'),
     # Enrollment API RESTful endpoints
     url(r'^api/enrollment/v1/', include('enrollment.urls')),
 
