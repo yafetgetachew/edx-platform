@@ -93,6 +93,7 @@ class CourseDetailView(RetrieveAPIView):
                 "start_type": "timestamp"
             }
     """
+    authentication_classes = (SessionAuthentication, BasicAuthentication, OAuth2AuthenticationAllowInactiveUser)
 
     serializer_class = CourseSerializer
     lookup_url_kwarg = 'course_key_string'
