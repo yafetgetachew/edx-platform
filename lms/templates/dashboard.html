@@ -23,6 +23,11 @@ from edxmako.shortcuts import marketing_link
 <%block name="nav_skip">#my-courses</%block>
 
 <%block name="header_extras">
+% if not honor_code_accepted:
+<script type="text/javascript">
+if(localStorage["honor_code_skipped"] == undefined || localStorage["honor_code_skipped"] != new Date().getDate()) document.location.href = "/honor_code"
+</script>
+%endif
 % for template_name in ["donation"]:
 <script type="text/template" id="${template_name}-tpl">
   <%static:include path="dashboard/${template_name}.underscore" />
