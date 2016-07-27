@@ -54,7 +54,7 @@ from openedx.core.djangoapps.credit.api import (
     is_user_eligible_for_credit,
     is_credit_course
 )
-from courseware.models import StudentModuleHistory
+from courseware.models import StudentModuleHistory, StudentModule
 from courseware.model_data import FieldDataCache, ScoresClient
 from .module_render import toc_for_course, get_module_for_descriptor, get_module, get_module_by_usage_id
 from .entrance_exams import (
@@ -818,7 +818,7 @@ def course_about(request, course_id):
         studio_url = get_studio_url(course, 'settings/details')
 
         if has_access(request.user, 'load', course):
-            course_target = reverse('info', args=[course.id.to_deprecated_string()])
+            course_target = reverse('courseware', args=[course.id.to_deprecated_string()])
         else:
             course_target = reverse('about_course', args=[course.id.to_deprecated_string()])
 
@@ -1611,3 +1611,59 @@ def financial_assistance_form(request):
             }
         ],
     })
+
+@login_required
+def capture_credit_requested(request):
+    user = request.user
+    course_id_str = request.GET['course_id']
+    course_id = CourseKey.from_string(course_id_str.replace(" ", "+"))
+    for exam in StudentModule.objects.filter(student=user, course_id=course_id, module_type="course"):
+        state = json.loads(exam.state)
+        request_datetime = datetime.now()
+        if not state.get("credit_requested"):
+	    state["credit_requested"] = str(request_datetime)
+            exam.state = json.dumps(state)
+	exam.save()
+    return HttpResponse(request_datetime)
+
+def credit_requested_details(request):
+    user = request.user
+    course_id_str = request.GET['course_id']
+    #return HttpResponse(course_id_str)
+    course_id = CourseKey.from_string(course_id_str.replace(" ", "+"))
+    credit_requested = ""
+    for exam in StudentModule.objects.filter(student=user, course_id=course_id, module_type="course"):
+        state = json.loads(exam.state)
+        if state.get("credit_requested"):
+	    request_date = datetime.strptime(state["credit_requested"], "%Y-%m-%d %H:%M:%S.%f")
+    	    if(credit_requested == "" or credit_requested < request_date):
+		credit_requested = request_date
+    req_date = ""
+    if credit_requested <> "":
+        req_date = str(credit_requested.day) + " " +  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][credit_requested.month] + ", " + str(credit_requested.year) 
+    return HttpResponse(req_date)
+
+def capture_pass_criteria_attained(request):
+    user = request.user
+    course_id_str = request.GET['course_id']
+    course_id = CourseKey.from_string(course_id_str)
+    course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id_str)
+    course = get_course_with_access(request.user, 'load', course_key, depth=None, check_if_enrolled=True)
+    field_data_cache = grades.field_data_cache_for_grading(course, user)
+    scores_client = ScoresClient.from_field_data_cache(field_data_cache)
+    #grade_summary = grades.grade(
+    #    user, request, course, field_data_cache=field_data_cache, scores_client=scores_client
+    #)
+    return HttpResponse(is_course_passed(course))#, grade_summary))
+    
+    #for exam in StudentModule.objects.filter(student=user, course_id=course_id):
+    #    state = json.loads(exam.state)
+    #    from datetime import datetime
+    #    request_datetime = datetime.now()
+    #    if not state.get("min_score_achieved")
+    #        state["min_score_achieved"] = str(request_datetime)
+    #        exam.state = json.dumps(state)
+    #    exam.save()
+    #return HttpResponse(request_datetime)
+
+

@@ -57,11 +57,34 @@ from django.utils.http import urlquote_plus
             SUCCESS_BUTTON_URL = _("http://agu.mis.amat.com/integ/finish.php?C={course_id}").format(course_id=course.id)
             REDIRECT_URL = _("/agu_redirect?custom_credit_url={url}").format(url=course.cert_name_long)
           %>
-            <a href="#"  data-curl="${SUCCESS_BUTTON_URL}" target="_blank" id="credit_button">
+            <a href="#" data-curl="${SUCCESS_BUTTON_URL}" target="_blank" id="credit_button" style="display:none">
               ${_("Get credit for the course")}
             </a>
 
 <script type="text/javascript">
+        $(document).ready(function(){
+		var course_id = "${course.id}";
+		$.ajax({
+                        url: "/last_credit_request?course_id=${course.id}",
+                        success: function(result){
+				if(result != null) $("#course-success").prepend("You have requested credit for taking the course on " + result.responseText)
+				else $("#credit_button").show();
+                	},
+                        error: function(result){
+                                if(result != null) $("#course-success").prepend("<div>You have requested credit for taking the course on " + result.responseText + ". To reinitiate credit request, please click <a onclick='javascript:window.open($(\"#credit_button\").attr(\"href\"))'>here</a></div>")
+                                else $("#credit_button").show(); 
+                        }
+                });
+		$("#credit_button").click(function(){
+        	        $.ajax({
+	                        url: "/credit_requested?course_id=${course.id}",
+                	        success: function(result){
+	                        },
+        	                error: function(result){
+	                        }
+        	        });
+		});
+	});
 	var creditURL = "${course.cert_name_long}";
 	var split = creditURL.split("C=");
 	courseID = split[1];
