@@ -101,6 +101,13 @@ include_special_exams = settings.FEATURES.get('ENABLE_SPECIAL_EXAMS', False) and
                  %endif
              </a>
           </li>
+ 		% if tab.name == "Course Info":
+          <li>
+             <a href="${tab.link_func(course, reverse)[:tab.link_func(course, reverse).rindex('info')] + 'about'}">
+                About the Course
+             </a>
+          </li>
+		%endif		
       % endfor
       <%block name="extratabs" />
     </ol>
