@@ -511,6 +511,13 @@ def is_course_blocked(request, redeemed_registration_codes, course_key):
 
     return blocked
 
+def is_honor_code_accepted(request):
+    user = request.user
+    user_profile = UserProfile.objects.get(user=user)
+    meta = json.loads(user_profile.meta)
+    if meta.get("honor_code_accepted_on"):
+	return True
+    return False
 
 @login_required
 @ensure_csrf_cookie
@@ -705,6 +712,7 @@ def dashboard(request):
         'courses_requirements_not_met': courses_requirements_not_met,
         'nav_hidden': True,
         'course_programs': course_programs,
+    	'honor_code_accepted': is_honor_code_accepted(request),
     }
 
     return render_to_response('dashboard.html', context)
@@ -2352,3 +2360,17 @@ def _get_course_programs(user, user_enrolled_courses):  # pylint: disable=invali
                 log.warning('Program structure is invalid, skipping display: %r', program)
 
     return programs_data
+
+def honorcode(request):
+    return render_to_response("honor_code.html", {})
+
+@login_required
+def accept_honorcode(request):
+    user = request.user
+    user_profile = UserProfile.objects.get(user=user)
+    meta = json.loads(user_profile.meta)
+    accepted_on = datetime.datetime.now()
+    meta["honor_code_accepted_on"] = str(accepted_on)
+    user_profile.meta = json.dumps(meta)
+    user_profile.save()
+    return HttpResponse(accepted_on)
