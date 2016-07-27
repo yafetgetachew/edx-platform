@@ -181,6 +181,11 @@ def create_ccx(request, course, ccx=None):
     Create a new CCX
     """
     name = request.POST.get('name')
+    if not name:
+        messages.error(request, _(
+            "Please enter a name of new Custom Course."))
+        url = reverse('ccx_coach_dashboard', kwargs={'course_id': course.id})
+        return redirect(url)
 
     if hasattr(course, 'ccx_connector') and course.ccx_connector:
         # if ccx connector url is set in course settings then inform user that he can
