@@ -649,7 +649,8 @@ def _get_verify_flow_redirect(order):
 
 
 @csrf_exempt
-@require_POST
+@require_http_methods(["GET", "POST"])
+#@require_POST
 def postpay_callback(request):
     """
     Receives the POST-back from processor.
@@ -660,7 +661,7 @@ def postpay_callback(request):
     If unsuccessful the order will be left untouched and HTML messages giving more detailed error info will be
     returned.
     """
-    params = request.POST.dict()
+    params = request.POST.dict() or request.GET.dict()
     result = process_postpay_callback(params)
 
     if result['success']:
