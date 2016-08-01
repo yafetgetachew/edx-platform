@@ -21,3 +21,6 @@ msgstr ""
 
 msgid "Welcome to Open edX!"
 msgstr "Welcome to The Barwit School!"
+
+msgid "{studio_name} helps manage your online courses, so you can focus on teaching them"
+msgstr "A single point of truth for your brands story."
