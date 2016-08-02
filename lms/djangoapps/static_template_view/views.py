@@ -47,7 +47,10 @@ def render(request, template):
     if page:
         log.info('Geting page "{page}" with language "{lang}" from "{db}"'.format(page=page.page, lang=page.language_code, db=page.from_db.im_self))
         return render_to_response('info_pages/infopage.html', {'page': page})
-    return render_to_response('static_templates/' + template, {})
+    try:
+        return render_to_response('static_templates/' + template, {})
+    except TopLevelLookupException:
+        return render_404(request)
 
 
 @ensure_csrf_cookie
