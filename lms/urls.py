@@ -215,7 +215,7 @@ for key, value in settings.MKTG_URL_LINK_MAP.items():
         continue
 
     # The MKTG_URL_LINK_MAP key specifies the template filename
-    template = key.lower()
+    template = value.lower()
     if '.' not in template:
         # Append STATIC_TEMPLATE_VIEW_DEFAULT_FILE_EXTENSION if
         # no file extension was specified in the key
@@ -228,7 +228,7 @@ for key, value in settings.MKTG_URL_LINK_MAP.items():
 
     # Make the assumption that the URL we want is the lowercased
     # version of the map key
-    urlpatterns += (url(r'^%s$' % key.lower(),
+    urlpatterns += (url(r'^%s$' % value.lower().replace(' ', '_'),
                         'static_template_view.views.render',
                         {'template': template}, name=value),)
 
