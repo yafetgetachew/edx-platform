@@ -20,7 +20,7 @@ msgid "This is a key string."
 msgstr ""
 
 msgid "Welcome to Open edX!"
-msgstr "Welcome to The Barwit School!"
+msgstr "A single point of truth for your brands story."
 
 msgid "{studio_name} helps manage your online courses, so you can focus on teaching them"
 msgstr "A single point of truth for your brands story."
