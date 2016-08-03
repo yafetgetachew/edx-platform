@@ -24,3 +24,7 @@ msgstr "Continuous Skills Development"
 
 msgid "It works! This is the default homepage for this Open edX instance."
 msgstr "Learn something new everyday"
+
+#: cms/templates/howitworks.html
+msgid "Sign Up &amp; Start Making an {platform_name} Course"
+msgstr "Sign Up &amp; Start Making a {platform_name} Course"
