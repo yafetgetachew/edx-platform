@@ -204,7 +204,7 @@ for key, value in settings.MKTG_URL_LINK_MAP.items():
 
     # Make the assumptions that the templates are all in the same dir
     # and that they all match the name of the key (plus extension)
-    template = "%s.html" % key.lower()
+    template = "%s.html" % value.lower()
 
     # To allow theme templates to inherit from default templates,
     # prepend a standard prefix
@@ -213,7 +213,7 @@ for key, value in settings.MKTG_URL_LINK_MAP.items():
 
     # Make the assumption that the URL we want is the lowercased
     # version of the map key
-    urlpatterns += (url(r'^%s$' % key.lower(),
+    urlpatterns += (url(r'^%s$' % value.lower().replace(' ', '_'),
                         'static_template_view.views.render',
                         {'template': template}, name=value),)
 
