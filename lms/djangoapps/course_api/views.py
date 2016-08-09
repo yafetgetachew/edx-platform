@@ -170,4 +170,10 @@ class CourseListView(ListAPIView):
         Return a list of courses visible to the user.
         """
         username = self.request.query_params.get('username', self.request.user.username)
-        return list_courses(self.request, username)
+        courses = list()
+	if self.request.GET.get('mobile', "" )== "true":
+	    for course in list_courses(self.request, username):
+		if course.mobile_available:
+		    courses.append(course)
+	
+	return courses
