@@ -4090,7 +4090,7 @@ msgstr ""
 
 #: lms/djangoapps/branding/api.py
 msgid "Terms of Service & Honor Code"
-msgstr ""
+msgstr "Умови надання послуг та правила користування"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: A 'Privacy Policy' is a legal document/statement describing a
@@ -9876,13 +9876,13 @@ msgstr "Примітка: додати пояснення можуть тіль�
 #. http://openedx.org for more information.
 #: lms/templates/index.html
 msgid "Welcome to Open edX!"
-msgstr "Ласкаво просимо до Open edX!"
+msgstr "Дистанційні навчальні курси"
 
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
 #: lms/templates/index.html
 msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "Це працює! Ця сторінка є стандартною для нових курсів edX."
+msgstr ""
 
 #: lms/templates/index.html lms/templates/courseware/courses.html
 #: themes/stanford-style/lms/templates/index.html
@@ -15705,7 +15705,7 @@ msgstr ""
 #: lms/templates/static_templates/faq.html
 #: themes/red-theme/lms/templates/footer.html
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "Запитання та відповіді"
 
 #: lms/templates/static_templates/jobs.html
 #: themes/red-theme/lms/templates/footer.html
