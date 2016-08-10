@@ -1,7 +1,7 @@
 define([
-    'backbone', 
-    'jquery', 
-    'js/staff_debug_actions', 
+    'backbone',
+    'jquery',
+    'js/staff_debug_actions',
     'common/js/spec_helpers/ajax_helpers'
     ],
     function (Backbone, $, tmp, AjaxHelpers) {
@@ -15,7 +15,7 @@ define([
             var escapableFixture_id = 'sd_fu_' + escapableLocationName;
             var escapableFixture = $('<input>', {id: escapableFixture_id, placeholder: "userman"});
             var esclocationName = 'P2:problem_1';
-            var escapableId = 'result_' + esclocationName; 
+            var escapableId = 'result_' + esclocationName;
             var escapableResultArea = $('<div>', {id: escapableId});
 
             describe('get_url ', function () {
@@ -79,7 +79,7 @@ define([
                     expect($('#idash_msg').text()).toBe('Failed to reset attempts. ');
                     $('#result_' + locationName).remove();
                 });
-            });                    
+            });
             describe('reset', function () {
                 it('makes an ajax call with the expected parameters', function () {
                     $('body').append(fixture);
@@ -87,7 +87,7 @@ define([
                     spyOn($, 'ajax');
                     StaffDebug.reset(locationName, location);
 
-                    expect($.ajax.mostRecentCall.args[0]['type']).toEqual('GET');
+                    expect($.ajax.mostRecentCall.args[0]['type']).toEqual('POST');
                     expect($.ajax.mostRecentCall.args[0]['data']).toEqual({
                         'problem_to_reset': location,
                         'unique_student_identifier': 'userman',
@@ -106,7 +106,7 @@ define([
                     spyOn($, 'ajax');
                     StaffDebug.sdelete(locationName, location);
 
-                    expect($.ajax.mostRecentCall.args[0]['type']).toEqual('GET');
+                    expect($.ajax.mostRecentCall.args[0]['type']).toEqual('POST');
                     expect($.ajax.mostRecentCall.args[0]['data']).toEqual({
                         'problem_to_reset': location,
                         'unique_student_identifier': 'userman',
@@ -126,7 +126,7 @@ define([
                     spyOn($, 'ajax');
                     StaffDebug.rescore(locationName, location);
 
-                    expect($.ajax.mostRecentCall.args[0]['type']).toEqual('GET');
+                    expect($.ajax.mostRecentCall.args[0]['type']).toEqual('POST');
                     expect($.ajax.mostRecentCall.args[0]['data']).toEqual({
                         'problem_to_reset': location,
                         'unique_student_identifier': 'userman',
