@@ -164,7 +164,6 @@ from django.template.defaultfilters import truncatechars
           <div id="register_error"></div>
         %else:
           <a href="#" class="register">
-            ${_("Enroll in {course_name}").format(course_name=course.display_number_with_default) | h}
             ${_("Enroll in {course_name}").format(course_name=truncatechars(course.display_number_with_default, 20)) | h}
           </a>
           <div id="register_error"></div>
