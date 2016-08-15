@@ -2554,6 +2554,10 @@ ACCOUNT_VISIBILITY_CONFIGURATION = {
         "mailing_address",
         "requires_parental_consent",
         "account_privacy",
+        "phone",
+        "work",
+        "position",
+        "qualification",
     ]
 }
 

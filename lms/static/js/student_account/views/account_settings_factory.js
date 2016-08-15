@@ -130,6 +130,42 @@
                                 options: fieldsData.preferred_language.options,
                                 persistChanges: true
                             })
+                        },
+                        { 
+                            view: new FieldViews.TextFieldView({
+                                model: userAccountModel,
+                                title: gettext('Phone'),
+                                valueAttribute: 'phone',
+                                helpMessage: gettext('Phone number'),
+                                persistChanges: true
+                            })
+                        },
+                        { 
+                            view: new FieldViews.TextFieldView({
+                                model: userAccountModel,
+                                title: gettext('Work'),
+                                valueAttribute: 'work',
+                                helpMessage: gettext('Work company name.'),
+                                persistChanges: true
+                            })
+                        },
+                        { 
+                            view: new FieldViews.TextFieldView({
+                                model: userAccountModel,
+                                title: gettext('Position'),
+                                valueAttribute: 'position',
+                                helpMessage: gettext('Work position.'),
+                                persistChanges: true
+                            })
+                        },
+                        {
+                            view: new FieldViews.DropdownFieldView({
+                                model: userAccountModel,
+                                title: gettext('Qualification'),
+                                valueAttribute: 'qualification',
+                                options: fieldsData.qualification.options,
+                                persistChanges: true
+                            })
                         }
                     ]
                 }

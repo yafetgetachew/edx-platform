@@ -277,6 +277,21 @@ class UserProfile(models.Model):
     allow_certificate = models.BooleanField(default=1)
     bio = models.CharField(blank=True, null=True, max_length=3000, db_index=False)
     profile_image_uploaded_at = models.DateTimeField(null=True)
+    phone = models.CharField(max_length=13, null=True, blank=True)
+    work = models.CharField(max_length=255, null=True, blank=True)
+    position = models.CharField(max_length=255, null=True, blank=True)
+    QUALIFICATION_CHOICES = (
+        ('doctor', _('Doctor')),
+        ('nursing_staff', _('Nursing staff')),
+        ('nurses', _('Nurses')),
+        ('practical_psychologist', _('Practical psychologist')),
+        ('social_worker', _('Social Worker')),
+        ('not_medical_staff', _('Not medical staff'))
+    )
+    qualification = models.CharField(
+        blank=True, null=True, max_length=25, db_index=True,
+        choices=QUALIFICATION_CHOICES
+    )
 
     @property
     def has_profile_image(self):
@@ -299,6 +314,13 @@ class UserProfile(models.Model):
         """ Convenience method that returns the human readable level of education. """
         if self.level_of_education:
             return self.__enumerable_to_display(self.LEVEL_OF_EDUCATION_CHOICES, self.level_of_education)
+
+
+    @property
+    def qualification_display(self):
+        if self.qualification:
+            return self.__enumerable_to_display(self.QUALIFICATION_CHOICES, self.qualification)
+
 
     @property
     def gender_display(self):

@@ -19788,3 +19788,34 @@ msgstr "2016 © ДУ «Український центр контролю за �
 
 msgid "In collaboration with [UCDC, the Alliance for Public Health or the All Ukrainian Network of People Living with HIV], the USG-GF Country Collaboration Initiative/Leadership, Management & Governance – Ukraine provided technical support for this website development. The U.S. President’s Emergency Plan for AIDS Relief (PEPFAR) provided funding through the U.S. Agency for International Development, under the terms of the Leadership, Management and Governance Program, award number AID-OAA-A-11-00015. The opinions expressed herein are those of the authors and do not necessarily reflect the views of PEPFAR, USAID or the Global Fund."
 msgstr "Спільно з УЦКС, в рамках Ініціативи співробітництва Уряду США та Глобального фонду/Проекту «Лідерство, управління та врядування» в Україні було надано технічну допомогу у розробці цього веб-сайту. Фінансування надано Програмою Надзвичайного плану Президента США з надання допомоги у боротьбі зі СНІДом (PEPFAR) через Агентство США з міжнародного розвитку (USAID) згідно з умовами Проекту «Лідерство, управління та врядування», грант номер AID-OAA-A-11-00015. Позиції та окремі думки авторів, викладені на веб-сайті, не обов'язково відображають погляди PEPFAR, USAID чи Глобального фонду."
+
+
+msgid "Phone"
+msgstr "Контактний телефон"
+
+msgid "Work"
+msgstr "Місце роботи"
+
+msgid "Position"
+msgstr "Посада"
+
+msgid "Qualification"
+msgstr "Професійна кваліфікація"
+
+msgid "Doctor"
+msgstr "Лікар"
+
+msgid "Nursing staff"
+msgstr "Середній медичний персонал"
+
+msgid "Nurses"
+msgstr "Молодший медичний персонал"
+
+msgid "Practical psychologist"
+msgstr "Практичний психолог"
+
+msgid "Social Worker"
+msgstr "Соціальний працівник"
+
+msgid "Not medical staff"
+msgstr "Інший не медичний персонал"

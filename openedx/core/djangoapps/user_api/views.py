@@ -166,6 +166,10 @@ class RegistrationView(APIView):
         "goals",
         "honor_code",
         "terms_of_service",
+        "phone",
+        "work",
+        "position",
+        "qualification"
     ]
 
     # This end-point is available to anonymous users,
@@ -600,6 +604,46 @@ class RegistrationView(APIView):
             error_messages={
                 "required": error_msg
             }
+        )
+
+    def _add_phone_field(self, form_desc, required=True):
+        phone_label = _(u"Phone")
+
+        form_desc.add_field(
+            "phone",
+            label=phone_label,
+            required=required
+        )
+
+    def _add_work_field(self, form_desc, required=True):
+        work_label = _(u"Work")
+
+        form_desc.add_field(
+            "work",
+            label=work_label,
+            required=required
+        )
+
+    def _add_position_field(self, form_desc, required=True):
+        position_label = _(u"Position")
+
+        form_desc.add_field(
+            "position",
+            label=position_label,
+            required=required
+        )
+
+    def _add_qualification_field(self, form_desc, required=True):
+        qualification_label = _(u"Qualification")
+
+        options = [(name, _(label)) for name, label in UserProfile.QUALIFICATION_CHOICES]  # pylint: disable=translation-of-non-string
+        form_desc.add_field(
+            "qualification",
+            label=qualification_label,
+            field_type="select",
+            options=options,
+            include_default_option=True,
+            required=required
         )
 
     def _add_honor_code_field(self, form_desc, required=True):

@@ -12,6 +12,10 @@
                 level_of_education: '',
                 gender: '',
                 year_of_birth: '',
+                phone: '',
+                work: '',
+                position: '',
+                qualification: '',
                 mailing_address: '',
                 goals: ''
             },

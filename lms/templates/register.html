@@ -295,6 +295,37 @@ import calendar
             </div>
           </li>
           % endif
+          % if settings.REGISTRATION_EXTRA_FIELDS['phone'] != 'hidden':
+          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['phone']} text" id="field-phone">
+            <label for="phone">${_('Phone')}</label>
+            <input id="phone" type="text" name="phone" value="" placeholder="${_('example: +74955555555')}" aria-describedby="phone-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['phone'] == 'required' else ''} />
+          </li>  
+          % endif
+          % if settings.REGISTRATION_EXTRA_FIELDS['work'] != 'hidden':
+          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['work']} text" id="field-work">
+            <label for="work">${_('Work')}</label>
+            <input id="work" type="text" name="work" value="" placeholder="${_('example: Company Name')}" aria-describedby="work-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['work'] == 'required' else ''} />
+          </li>  
+          % endif
+          % if settings.REGISTRATION_EXTRA_FIELDS['position'] != 'hidden':
+          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['position']} text" id="field-position">
+            <label for="position">${_('Position')}</label>
+            <input id="position" type="text" name="position" value="" placeholder="${_('example: Director')}" aria-describedby="position-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['position'] == 'required' else ''} />
+          </li>  
+          % endif
+          % if settings.REGISTRATION_EXTRA_FIELDS['qualification'] != 'hidden':
+          <li class="field-group field-education-level">
+          <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['qualification']} select" id="field-qualification">
+              <label for="qualification">${_("Qualification")}</label>
+              <select id="qualification" name="qualification" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['qualification'] == 'required' else ''}>
+                <option value="">--</option>
+                %for code, qualification in UserProfile.QUALIFICATION_CHOICES:
+                <option value="${code}">${_(qualification)}</option>
+                %endfor
+              </select>
+            </div>
+          </li>
+          % endif
           % if settings.REGISTRATION_EXTRA_FIELDS['year_of_birth'] != 'hidden':
           <li class="field-group field-yob">
             <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['year_of_birth']} select" id="field-yob">

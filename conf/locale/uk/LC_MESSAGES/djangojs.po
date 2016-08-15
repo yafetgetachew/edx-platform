@@ -8843,3 +8843,33 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr ""
+
+msgid "Phone"
+msgstr "Контактний телефон"
+
+msgid "Work"
+msgstr "Місце роботи"
+
+msgid "Position"
+msgstr "Посада"
+
+msgid "Qualification"
+msgstr "Професійна кваліфікація"
+
+msgid "Doctor"
+msgstr "Лікар"
+
+msgid "Nursing staff"
+msgstr "Середній медичний персонал"
+
+msgid "Nurses"
+msgstr "Молодший медичний персонал"
+
+msgid "Practical psychologist"
+msgstr "Практичний психолог"
+
+msgid "Social Worker"
+msgstr "Соціальний працівник"
+
+msgid "Not medical staff"
+msgstr "Інший не медичний персонал"

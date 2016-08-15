@@ -96,6 +96,10 @@ class UserReadOnlySerializer(serializers.Serializer):
             "mailing_address": profile.mailing_address,
             "requires_parental_consent": profile.requires_parental_consent(),
             "account_privacy": self._get_profile_visibility(profile, user),
+            "phone": profile.phone,
+            "work": profile.work,
+            "position": profile.position,
+            "qualification": AccountLegacyProfileSerializer.convert_empty_to_None(profile.qualification),
         }
 
         return self._filter_fields(
@@ -167,7 +171,8 @@ class AccountLegacyProfileSerializer(serializers.HyperlinkedModelSerializer, Rea
         model = UserProfile
         fields = (
             "name", "gender", "goals", "year_of_birth", "level_of_education", "country",
-            "mailing_address", "bio", "profile_image", "requires_parental_consent", "language_proficiencies"
+            "mailing_address", "bio", "profile_image", "requires_parental_consent", "language_proficiencies",
+            "phone", "work", "position", "qualification"
         )
         # Currently no read-only field, but keep this so view code doesn't need to know.
         read_only_fields = ()

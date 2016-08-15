@@ -386,7 +386,9 @@ def account_settings_context(request):
                 'options': year_of_birth_options,
             }, 'preferred_language': {
                 'options': settings.ALL_LANGUAGES,
-            }
+            }, 'qualification': {
+                'options': [(choice[0], _(choice[1])) for choice in UserProfile.QUALIFICATION_CHOICES],  # pylint: disable=translation-of-non-string
+            },
         },
         'platform_name': settings.PLATFORM_NAME,
         'user_accounts_api_url': reverse("accounts_api", kwargs={'username': user.username}),
