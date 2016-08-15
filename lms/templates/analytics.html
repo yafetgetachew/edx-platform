@@ -1,0 +1,136 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from student.models import UserProfile %>
+<%! from django.core.urlresolvers import reverse %>
+
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+
+<%block name="pagetitle">${_("Analytics")}</%block>
+<%block name="bodyclass">view-dashboard is-authenticated</%block>
+<%block name="nav_skip">#my-courses</%block>
+
+<%block name="js_extra">
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var course= $('select#course');
+      var question = $('select#question');
+      course.change(function(ev){
+        question.empty();
+        $.ajax({
+          url: '${reverse('analytics')}',
+          type: "GET",
+          data: {course: $(ev.target).val()},
+          success: function(response){
+            var questions = response.questions;
+            var optionalHtml = '';
+            for (i = 0, len = questions.length; i < len; i++) {
+              optionalHtml += '<option value="' + questions[i][0] + '">' + questions[i][1] + '</option>';
+            }
+            question.html(optionalHtml);
+          }
+        })
+      })
+    });
+  </script>
+</%block>
+
+<section class="register container" style="padding: 1px 30px;">
+  <div class="theme-container">
+    <section class="contact-container">
+    <h1>${_("Analytics")}</h1>
+
+    <p></p>
+
+
+    <div class="group group-form group-form-requiredinformation">
+      <form method="get" action="" id="webform-client-form-285" accept-charset="UTF-8">
+        <ol class="list-input">
+
+          <li class="field-group field-gender">
+            <div class="field select" id="field-gender">
+              <label for="gender">${_("Gender")}</label>
+              <select id="gender" name="gender">
+                <option value="">--</option>
+                %for code, gender in UserProfile.GENDER_CHOICES:
+                <option ${'selected' if selected_gender == code else '' } value="${code}">${_(gender)}</option>
+                %endfor
+              </select>
+            </div>
+          </li>
+
+          <li class="field-group field-yob">
+            <div class="field select" id="field-yob">
+              <label for="yob">${_("Age Range")}</label>
+              <select id="yob" name="age_range">
+                <option value="">--</option>
+                %for code, age_range in ('0-25', _('Below 25')), ('25-34', _('25-34')), ('35-44', _('35-44')), ('45-54', _('45-54')), ('55-200', _('Above 55')):
+                <option ${'selected' if selected_age_range == code else ''} value="${code}">${_(age_range)}</option>
+                %endfor
+              </select>
+            </div>
+          </li>
+
+          <li class="field-group field-qualification">
+            <div class="field select" id="field-qualification">
+              <label for="qualification">${_("Qualification")}</label>
+              <select id="qualification" name="qualification">
+                <option value="">--</option>
+                %for code, qualification in UserProfile.QUALIFICATION_CHOICES:
+                <option ${'selected' if selected_qualification == code else ''} value="${code}">${_(qualification)}</option>
+                %endfor
+              </select>
+            </div>
+          </li>
+
+          <li class="field-group field-course">
+            <div class="field select" id="field-course">
+              <label for="course">${_("Course")}</label>
+              <select id="course" name="course">
+                %for course in courses:
+                <option ${'selected' if selected_course == course.location.course_key else ''} value="${course.location.course_key}">${course.display_name}</option>
+                %endfor
+              </select>
+            </div>
+          </li>
+
+          <li class="field-group field-question">
+            <div class="field select" id="field-question">
+              <label for="question">${_("Question")}</label>
+              <select id="question" name="question">
+                %for question in questions:
+                <option ${'selected' if selected_question == question.location else ''} value="${question.location}">${question.display_name}</option>
+                %endfor
+              </select>
+            </div>
+          </li>
+
+        </ol>
+        <input type="submit" value="${_("Submit")}" class="analytics-action" />
+      </form>
+      %if percentage_correct_answers is not None:
+        <p>${_("Enrollment")}: ${enrollment}</p>
+        <hr/>
+        <p>${_("Male")}: ${percentage_male}%</p>
+        <p>${_("Female")}: ${percentage_female}%</p>
+        <p>${_("Other")}: ${percentage_other}%</p>
+        <hr />
+        <p>${_("Below 25")}: ${percentage_25}%</p>
+        <p>${_("25-34")}: ${percentage_25_34}%</p>
+        <p>${_("35-44")}: ${percentage_35_44}%</p>
+        <p>${_("45-54")}: ${percentage_45_54}%</p>
+        <p>${_("Above 55")}: ${percentage_55}%</p>
+        <hr />
+        <p>${_("Doctor")}: ${percentage_q_doctor}%</p>
+        <p>${_("Nursing staff")}: ${percentage_q_nursing_staff}%</p>
+        <p>${_("Nurses")}: ${percentage_q_nurses}%</p>
+        <p>${_("Practical psychologist")}: ${percentage_q_practical_psychologist}%</p>
+        <p>${_("Social Worker")}: ${percentage_q_social_worker}%</p>
+        <p>${_("Not medical staff")}: ${percentage_q_not_medical_staff}%</p>
+        <hr />
+        <p>${_("Correct answers")}: ${percentage_correct_answers}%</p>
+      %endif
+
+    </div>
+  </section>
+  </div>
+</section>

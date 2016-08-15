@@ -47,6 +47,7 @@ from social.exceptions import AuthException, AuthAlreadyAssociated
 from edxmako.shortcuts import render_to_response, render_to_string
 
 from course_modes.models import CourseMode
+from courseware.models import StudentModule
 from shoppingcart.api import order_history
 from student.models import (
     Registration, UserProfile,
@@ -66,8 +67,9 @@ from certificates.api import (  # pylint: disable=import-error
 from xmodule.modulestore.django import modulestore
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
-from opaque_keys.edx.locations import SlashSeparatedCourseKey
+from opaque_keys.edx.locations import SlashSeparatedCourseKey, Location
 from opaque_keys.edx.locator import CourseLocator
+from opaque_keys.edx.keys import CourseKey
 from xmodule.modulestore import ModuleStoreEnum
 
 from collections import namedtuple
@@ -2346,3 +2348,134 @@ def _get_course_programs(user, user_enrolled_courses):  # pylint: disable=invali
                 log.warning('Program structure is invalid, skipping display: %r', program)
 
     return programs_data
+
+
+@login_required
+@ensure_csrf_cookie
+def analytics(request):
+    user = request.user
+
+    if not user.is_staff:
+        raise Http404
+
+    def get_questions(course):
+        questions = []
+        for section in course.get_children():
+            for subsection in section.get_children():
+                for unit in subsection.get_children():
+                    for xblock in unit.get_children():
+                        if xblock.location.block_type == 'problem':
+                            questions.append(xblock)
+
+        return questions
+
+    data = request.GET
+    course_key = data.get('course')
+    gender = data.get('gender') or None
+    age_range = map(int, (data.get('age_range') or '0-200').split('-'))
+    qualification = data.get('qualification') or None
+    question_key = data.get('question')
+    current_year = datetime.date.today().year
+    percentage_correct_answers = None
+    course = None
+    questions = []
+    enrollment = 0
+    percentage_male = 0
+    percentage_female = 0
+    percentage_other = 0
+    percentage_25 =0
+    percentage_25_34 = 0
+    percentage_35_44 = 0
+    percentage_45_54 = 0
+    percentage_55 = 0
+    percentage_q_doctor = 0
+    percentage_q_nursing_staff = 0
+    percentage_q_nurses = 0
+    percentage_q_practical_psychologist = 0
+    percentage_q_social_worker = 0
+    percentage_q_not_medical_staff = 0
+
+    if course_key:
+        course_key = CourseKey.from_string(course_key)
+        course = modulestore().get_course(course_key)
+
+        if request.is_ajax():
+            return JsonResponse({"questions": [[str(q.location), q.display_name]for q in get_questions(course)]})
+
+    if course_key and question_key:
+        percentage_correct_answers = 0
+        question_key = Location.from_deprecated_string(question_key)
+        all_students = CourseEnrollment.objects.filter(course_id=course_key)
+
+        if gender:
+            all_students = all_students.filter(user__profile__gender=gender)
+        if age_range:
+            all_students = all_students.filter(user__profile__year_of_birth__lte=(current_year - age_range[0]),
+                                               user__profile__year_of_birth__gte=(current_year - age_range[1]))
+        if qualification:
+            all_students = all_students.filter(user__profile__qualification=qualification)
+
+        if all_students:
+            students_correct_answer = StudentModule.objects.filter(student__in=list(all_students.values_list('user_id', flat=True)),
+                                                                   module_state_key=question_key,
+                                                                   grade__gt=0)
+            enrollment = len(all_students)
+            percentage_correct_answers = students_correct_answer.count() * 100 / enrollment
+
+            # percentage gender
+            percentage_male = all_students.filter(user__profile__gender='m').count() * 100 / enrollment
+            percentage_female = all_students.filter(user__profile__gender='f').count() * 100 / enrollment
+            percentage_other = all_students.filter(user__profile__gender='o').count() * 100 / enrollment
+
+            # percentage range
+            percentage_25 = all_students.filter(user__profile__year_of_birth__gte=(current_year - 25)).count() * 100 / enrollment
+            percentage_25_34 = all_students.filter(user__profile__year_of_birth__lte=(current_year - 25),
+                                                   user__profile__year_of_birth__gte=(current_year - 34)).count() * 100 / enrollment
+            percentage_35_44 = all_students.filter(user__profile__year_of_birth__lte=(current_year - 35),
+                                                   user__profile__year_of_birth__gte=(current_year - 44)).count() * 100 / enrollment
+            percentage_45_54 = all_students.filter(user__profile__year_of_birth__lte=(current_year - 45),
+                                                   user__profile__year_of_birth__gte=(current_year - 54)).count() * 100 / enrollment
+            percentage_55 = all_students.filter(user__profile__year_of_birth__lte=(current_year - 55)).count() * 100 / enrollment
+
+            # percentage qualification
+            percentage_q_doctor = all_students.filter(user__profile__qualification='doctor').count() * 100 / enrollment
+            percentage_q_nursing_staff = all_students.filter(user__profile__qualification='nursing_staff').count() * 100 / enrollment
+            percentage_q_nurses = all_students.filter(user__profile__qualification='nurses').count() * 100 / enrollment
+            percentage_q_practical_psychologist = all_students.filter(user__profile__qualification='practical_psychologist').count() * 100 / enrollment
+            percentage_q_social_worker = all_students.filter(user__profile__qualification='social_worker').count() * 100 / enrollment
+            percentage_q_not_medical_staff = all_students.filter(user__profile__qualification='not_medical_staff').count() * 100 / enrollment
+
+    courses = modulestore().get_courses()
+
+    if course:
+        questions = get_questions(course)
+    elif courses:
+        questions = get_questions(courses[0])
+
+    context = {
+        'courses': courses,
+        'questions': questions,
+        'percentage_correct_answers': percentage_correct_answers,
+        'selected_course': course_key,
+        'selected_question': question_key,
+        'selected_gender': gender,
+        'selected_age_range': age_range,
+        'selected_qualification': qualification,
+        'enrollment': enrollment,
+        'percentage_male': percentage_male,
+        'percentage_female': percentage_female,
+        'percentage_other': percentage_other,
+        'percentage_25': percentage_25,
+        'percentage_25_34': percentage_25_34,
+        'percentage_35_44': percentage_35_44,
+        'percentage_45_54': percentage_45_54,
+        'percentage_55': percentage_55,
+        'percentage_q_doctor' : percentage_q_doctor,
+        'percentage_q_nursing_staff': percentage_q_nursing_staff,
+        'percentage_q_nurses': percentage_q_nurses,
+        'percentage_q_practical_psychologist': percentage_q_practical_psychologist,
+        'percentage_q_social_worker': percentage_q_social_worker,
+        'percentage_q_not_medical_staff': percentage_q_not_medical_staff,
+    }
+
+    return render_to_response('analytics.html', context)
