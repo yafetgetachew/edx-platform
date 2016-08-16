@@ -10194,7 +10194,7 @@ msgstr "Увійти"
 #: lms/templates/register-form.html themes/edx.org/lms/templates/header.html
 #: themes/stanford-style/lms/templates/register-form.html
 msgid "Register"
-msgstr "Зареєструватися"
+msgstr "Реєстрація"
 
 #: lms/templates/navigation-edx.html lms/templates/navigation.html
 #: themes/edx.org/lms/templates/header.html
