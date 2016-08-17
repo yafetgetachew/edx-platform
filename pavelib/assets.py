@@ -195,7 +195,7 @@ def compile_sass(options):
     parts = ["sass"]
     parts.append("--update")
     parts.append("--cache-location {cache}".format(cache=SASS_CACHE_PATH))
-    parts.append("--default-encoding utf-8")
+    #parts.append("--default-encoding utf-8")
     if debug:
         parts.append("--sourcemap")
     else:
