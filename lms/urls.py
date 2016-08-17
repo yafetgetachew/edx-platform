@@ -9,7 +9,7 @@ from ratelimitbackend import admin
 from django.conf.urls.static import static
 
 from microsite_configuration import microsite
-import auth_exchange.views
+#import auth_exchange.views
 
 from config_models.views import ConfigurationModelCurrentAPIView
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
@@ -905,14 +905,14 @@ if settings.FEATURES.get('ENABLE_THIRD_PARTY_AUTH'):
     )
 
 # OAuth token exchange
-if settings.FEATURES.get('ENABLE_OAUTH2_PROVIDER'):
-    urlpatterns += (
-        url(
-            r'^oauth2/login/$',
-            auth_exchange.views.LoginWithAccessTokenView.as_view(),
-            name="login_with_access_token"
-        ),
-    )
+#if settings.FEATURES.get('ENABLE_OAUTH2_PROVIDER'):
+#    urlpatterns += (
+#        url(
+#            r'^oauth2/login/$',
+#            auth_exchange.views.LoginWithAccessTokenView.as_view(),
+#            name="login_with_access_token"
+#        ),
+#    )
 
 # Certificates
 urlpatterns += (
