@@ -24,3 +24,8 @@ msgstr "A single point of truth for your brands story."
 
 msgid "{studio_name} helps manage your online courses, so you can focus on teaching them"
 msgstr "A single point of truth for your brands story."
+
+#: cms/templates/howitworks.html
+msgid "Sign Up &amp; Start Making an {platform_name} Course"
+msgstr "Sign Up &amp; Start Making a {platform_name} Course"
+
