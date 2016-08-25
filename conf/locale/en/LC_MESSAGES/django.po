@@ -24,3 +24,6 @@ msgstr "Continuous Skills Development"
 
 msgid "It works! This is the default homepage for this Open edX instance."
 msgstr "Learn something new everyday"
+
+msgid "Add {course_name} to Cart <span>({price} USD)</span>"
+msgstr "Add {course_name} to Cart <span>({price} INR)</span>"
