@@ -341,10 +341,17 @@ def storage_service_bucket():
     """
     Returns an S3 bucket for video uploads.
     """
-    conn = s3.connection.S3Connection(
-        settings.AWS_ACCESS_KEY_ID,
-        settings.AWS_SECRET_ACCESS_KEY
-    )
+    if settings.FEATURES.get('S3_HOST') and settings.FEATURES.get('S3_USE_SIGV4'):
+        conn = S3Connection(
+            settings.AWS_ACCESS_KEY_ID,
+            settings.AWS_SECRET_ACCESS_KEY,
+            host=settings.FEATURES['S3_HOST']
+        )
+    else:
+        conn = S3Connection(
+            settings.AWS_ACCESS_KEY_ID,
+            settings.AWS_SECRET_ACCESS_KEY
+        )
     return conn.get_bucket(settings.VIDEO_UPLOAD_PIPELINE["BUCKET"])
 
 

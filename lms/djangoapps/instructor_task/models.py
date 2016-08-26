@@ -220,10 +220,17 @@ class S3ReportStore(ReportStore):
     def __init__(self, bucket_name, root_path):
         self.root_path = root_path
 
-        conn = S3Connection(
-            settings.AWS_ACCESS_KEY_ID,
-            settings.AWS_SECRET_ACCESS_KEY
-        )
+        if settings.FEATURES.get('S3_HOST') and settings.FEATURES.get('S3_USE_SIGV4'):
+            conn = S3Connection(
+                settings.AWS_ACCESS_KEY_ID,
+                settings.AWS_SECRET_ACCESS_KEY,
+                host=settings.FEATURES['S3_HOST']
+            )
+        else:
+            conn = S3Connection(
+                settings.AWS_ACCESS_KEY_ID,
+                settings.AWS_SECRET_ACCESS_KEY
+            )
 
         self.bucket = conn.get_bucket(bucket_name)
 
