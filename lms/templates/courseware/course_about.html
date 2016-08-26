@@ -259,13 +259,13 @@ from openedx.core.lib.courses import course_image_url
                     )
                 ).replace(u" ", u"%20")
               %>
-              <a href="${tweet_action}" class="share">
+              <a href="${tweet_action}" class="share disabled">
                 <i class="icon fa fa-twitter"></i><span class="sr">${_("Tweet that you've enrolled in this course")}</span>
               </a>
-              <a href="${facebook_link}" class="share">
+              <a href="${facebook_link}" class="share disabled">
                 <i class="icon fa fa-thumbs-up"></i><span class="sr">${_("Post a Facebook message to say you've enrolled in this course")}</span>
               </a>
-              <a href="${email_subject}" class="share">
+              <a href="${email_subject}" class="share disabled">
                 <i class="icon fa fa-envelope"></i><span class="sr">${_("Email someone to say you've enrolled in this course")}</span>
               </a>
             % endif
