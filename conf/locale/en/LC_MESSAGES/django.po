@@ -20,10 +20,10 @@ msgid "This is a key string."
 msgstr ""
 
 msgid "Welcome to Open edX!"
-msgstr "Continuous Skills Development"
+msgstr "Education for Your Future"
 
 msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "Learn something new everyday"
+msgstr "Anytime - Anywhere"
 
 msgid "Add {course_name} to Cart <span>({price} USD)</span>"
 msgstr "Add {course_name} to Cart <span>({price} INR)</span>"
