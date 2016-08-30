@@ -1950,6 +1950,8 @@ INSTALLED_APPS = (
 
     #edx_telegram_bot
     'edx_telegram_bot.edx_telegram_bot',
+
+    'gamification_metric',
 )
 
 # Migrations which are not in the standard module "migrations"
