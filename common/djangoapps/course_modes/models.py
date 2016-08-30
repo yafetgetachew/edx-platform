@@ -103,7 +103,7 @@ class CourseMode(models.Model):
     #DEFAULT_MODE = Mode(AUDIT, _('Audit'), 0, '', 'usd', None, None, None)
     #DEFAULT_MODE_SLUG = AUDIT
 
-    DEFAULT_MODE = Mode(HONOR, _('Honor'), 0, '', 'usd', None, None, None)
+    DEFAULT_MODE = Mode(HONOR, _('Honor'), 0, '', 'inr', None, None, None)
     DEFAULT_MODE_SLUG = HONOR
 
     # Modes that allow a student to pursue a verified certificate
