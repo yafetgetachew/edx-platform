@@ -10,6 +10,8 @@ from django.conf.urls.static import static
 
 import auth_exchange.views
 from courseware.views.views import EnrollStaffView
+import referrals.views
+
 from config_models.views import ConfigurationModelCurrentAPIView
 from courseware.views.index import CoursewareIndex
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
@@ -119,6 +121,12 @@ urlpatterns = (
 
 urlpatterns += (
     url(r'^dashboard/', include('learner_dashboard.urls')),
+    url(r'referral/', include('referrals.urls', app_name="referrals", namespace='referrals')),
+    url(
+        r'^api/get_referral_hash_key/',
+        referrals.views.GetHashKeyView.as_view(),
+        name="get_hash_key"
+    )
 )
 
 if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:

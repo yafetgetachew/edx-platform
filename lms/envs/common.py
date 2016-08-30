@@ -2088,6 +2088,12 @@ INSTALLED_APPS = (
 
     # Email marketing integration
     'email_marketing',
+
+    # additional release utilities to ease automation
+    'release_util',
+
+    'gamification_metric',
+    'referrals',
 )
 
 # Migrations which are not in the standard module "migrations"

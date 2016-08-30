@@ -908,6 +908,8 @@ INSTALLED_APPS = (
     # by installed apps.
     'lms.djangoapps.verify_student',
 
+    'lms.djangoapps.grades',
+
     # Microsite configuration application
     'microsite_configuration',
 
@@ -922,6 +924,12 @@ INSTALLED_APPS = (
 
     # Enables default site and redirects
     'django_sites_extensions',
+
+    # additional release utilities to ease automation
+    'release_util',
+
+    'gamification_metric',
+    'referrals',
 )
 
 
