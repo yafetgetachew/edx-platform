@@ -21628,3 +21628,12 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "Создана новая версия: слияние версий #%(r1)d и #%(r2)d"
+
+msgid "eeca_logo.png"
+msgstr "eeca_logo-ru.png"
+
+msgid "tech_support.png"
+msgstr "tech_support-ru.png"
+
+msgid "public_health.png"
+msgstr "public_health-ru.png"
