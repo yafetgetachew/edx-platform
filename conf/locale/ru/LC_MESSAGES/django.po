@@ -10766,13 +10766,13 @@ msgstr "Примечание. Только преподаватели могут
 #. http://openedx.org for more information.
 #: lms/templates/index.html
 msgid "Welcome to Open edX!"
-msgstr "Добро пожаловать в Open edX!"
+msgstr "Усиление потенциала гражданского общества и сообществ!"
 
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
 #: lms/templates/index.html
 msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "Работает!  Перед вами образец домашней страницы Open edX."
+msgstr "Повысьте свою осведомленность для более эффективного вовлечения в ответ на эпидемии."
 
 #: lms/templates/index.html lms/templates/courseware/courses.html
 #: themes/stanford-style/lms/templates/index.html

@@ -20,7 +20,7 @@ msgid "This is a key string."
 msgstr ""
 
 msgid "Welcome to Open edX!"
-msgstr "Continuous Skills Development"
+msgstr "Capacity building opportunities for civil society and communities!"
 
 msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "Learn something new everyday"
+msgstr "Raise your awareness for more effective engagement into the epidemics responses."
