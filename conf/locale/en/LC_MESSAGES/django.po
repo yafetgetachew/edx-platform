@@ -24,3 +24,16 @@ msgstr "Capacity building opportunities for civil society and communities!"
 
 msgid "It works! This is the default homepage for this Open edX instance."
 msgstr "Raise your awareness for more effective engagement into the epidemics responses."
+
+msgid "О Платформе"
+msgstr "About The Platform"
+
+msgid "Новости и События"
+msgstr "News & Events"
+
+msgid "Ресурсный Центр ВЕЦА"
+msgstr "Recourse Centre EECA"
+
+msgid "Информационно-Консультационный Центр"
+msgstr "Information Centre"
+
