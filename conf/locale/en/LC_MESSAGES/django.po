@@ -37,3 +37,5 @@ msgstr "Recourse Centre EECA"
 msgid "Информационно-Консультационный Центр"
 msgstr "Informational-Consultational Centre"
 
+msgid "style=\"\""
+msgstr "style=\"max-width: 90px;\""
