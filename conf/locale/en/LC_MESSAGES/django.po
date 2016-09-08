@@ -35,5 +35,5 @@ msgid "Ресурсный Центр ВЕЦА"
 msgstr "Recourse Centre EECA"
 
 msgid "Информационно-Консультационный Центр"
-msgstr "Information Centre"
+msgstr "Informational-Consultational Centre"
 
