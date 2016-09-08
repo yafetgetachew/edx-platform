@@ -10120,13 +10120,13 @@ msgstr "Hinweis: Nur Dozenten dürfen Anmerkungen schreiben."
 #. http://openedx.org for more information.
 #: lms/templates/index.html
 msgid "Welcome to Open edX!"
-msgstr "Willkommen zu Open edX!"
+msgstr "THE DO SCHOOL ONLINE LEARNING"
 
 #. Translators: 'Open edX' is a brand, please keep this untranslated. See
 #. http://openedx.org for more information.
 #: lms/templates/index.html
 msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "Erfolg! Dies ist die Standardhomepage für diese Open edX instance."
+msgstr "Turn Your Ideas Into Action"
 
 #: lms/templates/index.html lms/templates/courseware/courses.html
 #: themes/stanford-style/lms/templates/index.html
