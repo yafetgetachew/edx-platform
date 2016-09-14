@@ -873,13 +873,4 @@ DOC_LINK_BASE_URL = ENV_TOKENS.get('DOC_LINK_BASE_URL', DOC_LINK_BASE_URL)
 
 COPYRIGHT_YEAR = ENV_TOKENS.get('COPYRIGHT_YEAR', COPYRIGHT_YEAR)
 
-##################### Raccoongang changes #####################
-ELASTIC_SEARCH_HOST = ENV_TOKENS.get('ELASTIC_SEARCH_HOST', 'localhost')
-
-class ExtHostElasticsearch(Elasticsearch):
-    def __init__(self, *args, **kwargs):
-        kwargs['host'] = ELASTIC_SEARCH_HOST
-        super(ExtHostElasticsearch, self).__init__(*args, **kwargs)
-
-ELASTIC_SEARCH_IMPL = ExtHostElasticsearch
-
+SOCIAL_AUTH_GOOGLE_OAUTH2_USE_DEPRECATED_API = True
