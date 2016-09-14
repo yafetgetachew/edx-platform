@@ -16,6 +16,7 @@ from branding import api as branding_api
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="//noticeabilitytoolbar.speechstream.net/noticeability/standardconfigdemo.js"></script>
 
 ## Define a couple of helper functions to make life easier when
 ## embedding theme conditionals into templates. All inheriting
@@ -122,7 +123,7 @@ from branding import api as branding_api
 
 </head>
 
-<body class="${static.dir_rtl()} <%block name='bodyclass'/> lang_${LANGUAGE_CODE}">
+<body class="${static.dir_rtl()} <%block name='bodyclass'/> lang_${LANGUAGE_CODE}" onload="TexthelpSpeechStream.addToolbar('1','1');">
 <%static:optional_include_mako file="body-initial.html" with_microsite="True" />
 <div id="page-prompt"></div>
 % if not disable_window_wrap:
