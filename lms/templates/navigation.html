@@ -13,6 +13,7 @@ from lms.djangoapps.ccx.overrides import get_current_ccx
 import branding
 # app that handles site status messages
 from status.status import get_site_status_msg
+from openedx.core.djangoapps.user_api.accounts.image_helpers import get_profile_image_urls_for_user
 %>
 
 ## Provide a hook for themes to inject branding on top.
@@ -76,7 +77,16 @@ site_status_msg = get_site_status_msg(course_id)
         %endif
       </%block>
     </ol>
+    <ol class="marketing-links">
+      <li>
+        <a href="${reverse('contact')}">${_('Contact us')}</a>
+      </li>
+      <li>
+        <a href="${reverse('about')}">${_('About us')}</a>
+      </li>
+    </ol>
     <ol class="user">
+      <li class="primary"><img src="${get_profile_image_urls_for_user(user, request).get('medium')}" /></li>
       <li class="primary">
         <a href="${reverse('dashboard')}" class="user-link">
           <span class="sr">${_("Dashboard for:")}</span>

@@ -112,10 +112,22 @@ header.global {
     }
   }
 
+  .marketing-links {
+    float: right;
+    margin-top: -20px;
+    font-size: 10pt;
+
+    li {
+      display: inline;
+      margin: 0 5px;
+    }
+  }
+
   .user {
     @include float(right);
     @extend %ui-print-excluded;
-    margin-top: ($baseline/4);
+    margin-top: 14px;
+/*    margin-top: ($baseline/4); */
     padding-left: 0;
 
     > .primary {
@@ -127,6 +139,12 @@ header.global {
       > a {
         margin: 0;
         background-image: none;
+      }
+
+      img {
+        margin-top: -10px;
+        border-radius: 26px;
+        border: 1px solid #ccc;
       }
 
       &:last-child {
