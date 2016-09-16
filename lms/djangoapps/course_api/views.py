@@ -103,7 +103,8 @@ class CourseDetailView(RetrieveAPIView):
         permissions.
         """
 
-        username = self.request.query_params.get('username', self.request.user.username)
+#        username = self.request.query_params.get('username', self.request.user.username)
+        username = self.request.user.username
         course_key_string = self.kwargs[self.lookup_url_kwarg]
         try:
             course_key = CourseKey.from_string(course_key_string)
