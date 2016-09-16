@@ -69,6 +69,9 @@ site_status_msg = get_site_status_msg(course_id)
             <a href="${marketing_link('COURSES')}">${_('Find Courses')}</a>
           </li>
         % endif
+        <li class="nav-global-01">
+            <a href="http://kwn.education/">${_('Programs')}</a>
+        </li>
         %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
           <li>
             ## Translators: This is short for "System administration".
