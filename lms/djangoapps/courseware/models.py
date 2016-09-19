@@ -145,7 +145,7 @@ class StudentModule(models.Model):
             'state': str(self.state)[:20],
         },)
 
-    def __unicode__(self):
+    def __repr__(self):
         return unicode(repr(self))
 
 
