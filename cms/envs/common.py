@@ -1129,3 +1129,5 @@ PROCTORING_SETTINGS = {}
 
 # OpenID Connect issuer ID. Normally the URL of the authentication endpoint.
 OAUTH_OIDC_ISSUER = 'https://www.example.com/oauth2'
+
+DEFAULT_COURSE_ABOUT_IMAGE_URL = 'images/pencils.jpg'
