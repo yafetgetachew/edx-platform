@@ -138,10 +138,22 @@ site_status_msg = get_site_status_msg(course_id)
             <a class="cta cta-register" href="/register${login_query()}">${_("Register")}</a>
           </li>
           % endif
-
       % endif
     </ol>
-
+    <!--ol class="left nav-global search">
+      <li class="nav-global-03">
+        <div class="course-search">
+          <form method="get" action="/courses">
+            <label><span class="sr">Search for a course</span>
+              <input class="search-input" name="search_query" type="text" placeholder="Search for a course">
+            </label>
+            <button class="search-button" type="submit">
+              <i class="icon fa fa-search" aria-hidden="true"></i><span class="sr">Search</span>
+            </button>
+          </form>
+        </div>
+      </li>
+    </ol-->
     <ol class="right nav-courseware">
     <li class="nav-courseware-01">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
