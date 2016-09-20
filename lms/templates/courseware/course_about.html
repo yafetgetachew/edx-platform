@@ -118,6 +118,10 @@ from django.template.defaultfilters import truncatechars
             ${course.display_name_with_default_escaped}
             <a href="#">${course.display_org_with_default | h}</a>
           </h1>
+          <br>
+          <h3>
+            ${get_course_about_section(request, course, 'short_description')}
+          </h3>
         </div>
 
         <div class="main-cta">
