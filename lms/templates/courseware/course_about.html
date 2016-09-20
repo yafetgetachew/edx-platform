@@ -281,14 +281,6 @@ from django.template.defaultfilters import truncatechars
           % endif
         </ol>
     </div>
-
-      ## CourseTalk widget
-      % if show_coursetalk_widget:
-      <div class="coursetalk-read-reviews">
-          <div id="ct-custom-read-review-widget" data-provider="${platform_key}" data-course="${course_review_key}"></div>
-      </div>
-      % endif
-
       ## For now, ocw links are the only thing that goes in additional resources
       % if get_course_about_section(request, course, "ocw_links"):
       <div class="additional-resources">
@@ -303,7 +295,16 @@ from django.template.defaultfilters import truncatechars
         </div>
     </div>
       %endif
-
+## CourseTalk widget
+      % if show_coursetalk_widget:
+      <ul style="padding: 0 0 0 0;">
+      <li style="list-style: none;">
+      <div class="coursetalk-read-reviews">
+          <div id="ct-custom-read-review-widget" data-provider="${platform_key}" data-course="${course_review_key}"></div>
+      </div>
+      </li>
+      </ul>
+      % endif
   </div>
 
   </div>
