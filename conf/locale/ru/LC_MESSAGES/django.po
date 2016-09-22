@@ -21637,3 +21637,6 @@ msgstr "tech_support-ru.png"
 
 msgid "public_health.png"
 msgstr "public_health-ru.png"
+
+msgid "auc_logo.png"
+msgstr "auc_logo-ru.png"
