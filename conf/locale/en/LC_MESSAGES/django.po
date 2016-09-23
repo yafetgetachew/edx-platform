@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-07-07 14:15+0000\n"
-"PO-Revision-Date: 2016-07-07 14:15:58.774596\n"
+"POT-Creation-Date: 2016-09-23 13:25+0000\n"
+"PO-Revision-Date: 2016-09-23 13:25:22.318111\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -1312,7 +1312,7 @@ msgid "must be {0} characters or more"
 msgstr ""
 
 #: common/djangoapps/util/password_policy_validators.py
-msgid "must be {0} characters or less"
+msgid "must be {0} characters or fewer"
 msgstr ""
 
 #: common/djangoapps/util/password_policy_validators.py
@@ -9297,10 +9297,6 @@ msgstr ""
 msgid "Course End Date"
 msgstr ""
 
-#: cms/templates/settings.html lms/templates/courseware/course_about.html
-msgid "Requirements"
-msgstr ""
-
 #: cms/templates/studio_xblock_wrapper.html lms/templates/help_modal.html
 #: lms/templates/module-error.html
 msgid "Details"
@@ -16318,7 +16314,7 @@ msgstr ""
 #: themes/edx.org/lms/templates/header.html
 #: themes/red-theme/lms/templates/header.html
 msgid "Find Courses"
-msgstr "Subjects"
+msgstr ""
 
 #: themes/edx.org/lms/templates/header.html
 msgid "Schools & Partners"
@@ -18862,6 +18858,10 @@ msgstr ""
 
 #: cms/templates/settings.html
 msgid "Add Instructor"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "Requirements"
 msgstr ""
 
 #: cms/templates/settings.html
