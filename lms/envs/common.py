@@ -2958,3 +2958,6 @@ AFFILIATE_COOKIE_NAME = 'affiliate_id'
 # The cache is cleared when Redirect models are saved/deleted
 REDIRECT_CACHE_TIMEOUT = None  # The length of time we cache Redirect model data
 REDIRECT_CACHE_KEY_PREFIX = 'redirects'
+#####RACCOONGANG########
+DOC_LINK_BASE_URL = ''
+#####RACCOONGANG########
