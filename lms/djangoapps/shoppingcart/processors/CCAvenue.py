@@ -70,9 +70,9 @@ def render_purchase_form_html(cart, callback_url=''):
 
 def process_postpay_callback(params):
     data = dict(urlparse.parse_qsl(decrypt(params['encResp'], get_processor_config().get('working_key'))))
+    order = Order.objects.get(id=int(data['order_id']))
 
     if data['order_status'] == 'Success':
-        order = Order.objects.get(id=int(data['order_id']))
         log.info('Order "{}" and transaction "{}" is successed'.format(order, data['tracking_id']))
         order.purchase(
             country=data['billing_country'],
@@ -86,7 +86,7 @@ def process_postpay_callback(params):
         )
         return {'success': True, 'order': order, 'error_html': ''}
     else:
-        log.error('Order "{}" and transaction "{}" is failed'.format(order, data['tracking_id']))
+        log.error('Order "{}" and transaction "{}" is {}.'.format(order, data['tracking_id'], data['order_status']))
         return {'success': False, 'order': order,
-                'error_html': 'Transaction "{}" is filed.\nERROR:\n\t""'.format(data['tracking_id'],
-                                                                                data['failure_message'])}
+                'error_html': 'Transaction "{}" is filed.\nERROR:\n\t"{}"'.format(data['tracking_id'],
+                                                          data.get('failure_message', data.get('status_message')))}
