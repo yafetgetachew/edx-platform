@@ -146,6 +146,10 @@ def courses(request):
         else:
             courses_list = sort_by_announcement(courses_list)
 
+        if request.GET.get('last_courses'):
+            filter_func = lambda course: (not course.has_ended() and course.start is not None and course.start <= datetime.now(UTC()))
+            courses_list = filter(filter_func, courses_list)
+            courses_list = sort_by_start_date(courses_list, reverse=True)[:8]
     return render_to_response(
         "courseware/courses.html",
         {'courses': courses_list, 'course_discovery_meanings': course_discovery_meanings}
