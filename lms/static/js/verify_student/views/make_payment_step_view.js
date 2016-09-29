@@ -27,7 +27,7 @@ var edx = edx || {};
                 suggestedPrices: [],
                 minPrice: 0,
                 sku: '',
-                currency: 'usd',
+                currency: 'INR',
                 upgrade: false,
                 verificationDeadline: '',
                 courseName: '',
