@@ -908,7 +908,7 @@ INSTALLED_APPS = (
     # by installed apps.
     'lms.djangoapps.verify_student',
 
-    'lms.djangoapps.grades',
+    #'lms.djangoapps.grades',
 
     # Microsite configuration application
     'microsite_configuration',
