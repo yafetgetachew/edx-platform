@@ -53,6 +53,10 @@ COPYRIGHT_YEAR = "2015"
 
 PLATFORM_FACEBOOK_ACCOUNT = "http://www.facebook.com/YourPlatformFacebookAccount"
 PLATFORM_TWITTER_ACCOUNT = "@YourPlatformTwitterAccount"
+PLATFORM_LINKEDIN_ACCOUNT = 'https://www.linkedin.com/company/YourLinkedinCompany'
+PLATFORM_INSTAGRAM_ACCOUNT = 'https://www.instagram.com/YourInstagramAccount'
+PLATFORM_YOUTUBE_ACCOUNT = 'https://www.youtube.com/channel/YourYouTubeChannel'
+
 
 ENABLE_JASMINE = False
 
