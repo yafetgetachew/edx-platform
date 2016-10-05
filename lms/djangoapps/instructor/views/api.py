@@ -5,11 +5,15 @@ JSON views which the instructor dashboard requests.
 
 Many of these GETs may become PUTs in the future.
 """
+import os
 import StringIO
 import json
 import logging
 import re
 import time
+import md5
+import base64
+import urlparse
 from django.conf import settings
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
 from django.views.decorators.http import require_POST, require_http_methods
@@ -619,6 +623,9 @@ def students_update_enrollment(request, course_id):
     email_students = request.POST.get('email_students') in ['true', 'True', True]
     is_white_label = CourseMode.is_white_label(course_id)
     reason = request.POST.get('reason')
+    message = request.POST.get('message', '')
+    image_b64 = request.POST.get('image', '')
+
     if is_white_label:
         if not reason:
             return JsonResponse(
@@ -629,6 +636,29 @@ def students_update_enrollment(request, course_id):
                 }, status=400)
     enrollment_obj = None
     state_transition = DEFAULT_TRANSITION_STATE
+
+    image_url = ''
+    r = re.compile('data:image/(?P<extension>[a-z]+);base64,(?P<base64>.+)')
+    res = r.search(image_b64)
+
+    if res:
+        image_dict = res.groupdict()
+        image = base64.b64decode(image_dict['base64'])
+        m = md5.new()
+        m.update(image)
+        filename = '{}.{}'.format(m.hexdigest(), image_dict['extension'])
+        file_path = os.path.join(settings.MEDIA_ROOT, 'sponsors', filename)
+
+        if not os.path.isdir(os.path.dirname(file_path)):
+            os.mkdir(os.path.dirname(file_path))
+
+        with open(file_path, 'wb') as fd:
+            fd.write(image)
+
+        image_url = '{}://{}'.format(request.scheme, request.get_host())
+
+        for path in [settings.MEDIA_URL, 'sponsors/', filename]:
+            image_url = urlparse.urljoin(image_url, path)
 
     email_params = {}
     if email_students:
@@ -656,7 +686,7 @@ def students_update_enrollment(request, course_id):
             validate_email(email)  # Raises ValidationError if invalid
             if action == 'enroll':
                 before, after, enrollment_obj = enroll_email(
-                    course_id, email, auto_enroll, email_students, email_params, language=language
+                    course_id, email, auto_enroll, email_students, email_params, language=language, message=message, image_url=image_url
                 )
                 before_enrollment = before.to_dict()['enrollment']
                 before_user_registered = before.to_dict()['user']
@@ -679,7 +709,7 @@ def students_update_enrollment(request, course_id):
 
             elif action == 'unenroll':
                 before, after = unenroll_email(
-                    course_id, email, email_students, email_params, language=language
+                    course_id, email, email_students, email_params, language=language, message=message, image_url=image_url
                 )
                 before_enrollment = before.to_dict()['enrollment']
                 before_allowed = before.to_dict()['allowed']

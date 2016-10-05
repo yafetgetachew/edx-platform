@@ -375,6 +375,8 @@ class BatchEnrollment
     @$checkbox_emailstudents = @$container.find("input[name='email-students']")
     @$task_response          = @$container.find(".request-response")
     @$request_response_error = @$container.find(".request-response-error")
+    @$image                  = @$container.find("input[name='image']")
+    @$message                = @$container.find("textarea[name='message']")
 
     # attach click handler for enrollment buttons
     @$enrollment_button.click (event) =>
@@ -384,26 +386,48 @@ class BatchEnrollment
           return false
 
       emailStudents = @$checkbox_emailstudents.is(':checked')
-      send_data =
+      @post_url = $(event.target).data 'endpoint'
+      @send_data =
         action: $(event.target).data('action') # 'enroll' or 'unenroll'
         identifiers: @$identifier_input.val()
         auto_enroll: @$checkbox_autoenroll.is(':checked')
         email_students: emailStudents
         reason: @$reason_field.val()
+        message: CKEDITOR.instances.message.getData() or @$message.val()
 
-      $.ajax
-        dataType: 'json'
-        type: 'POST'
-        url: $(event.target).data 'endpoint'
-        data: send_data
-        success: (data) => @display_response data
-        error: std_ajax_err => @fail_with_error gettext "Error enrolling/unenrolling users."
+      if @$image[0].files.length
+        fr = new FileReader()
+        fr.onload = (event) =>
+          @send_data['image'] = event.target.result
 
+          $.ajax
+            dataType: 'json'
+            type: 'POST'
+            url: @post_url
+            data: @send_data
+            success: (data) => @display_response data
+            error: std_ajax_err => @fail_with_error gettext "Error enrolling/unenrolling users."
+
+        fr.readAsDataURL(@$image[0].files[0])
+      else
+        $.ajax
+          dataType: 'json'
+          type: 'POST'
+          url: @post_url
+          data: @send_data
+          success: (data) => @display_response data
+          error: std_ajax_err => @fail_with_error gettext "Error enrolling/unenrolling users."
 
   # clear the input text field
   clear_input: ->
     @$identifier_input.val ''
+    @$message.val ''
+    @$image[0].value = ''
     @$reason_field.val ''
+
+    CKEDITOR.instances.message.updateElement
+    CKEDITOR.instances.message.setData ''
+
     # default for the checkboxes should be checked
     @$checkbox_emailstudents.attr('checked', true)
     @$checkbox_autoenroll.attr('checked', true)

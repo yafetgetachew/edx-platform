@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _
 from courseware.courses import get_studio_url
 from openedx.core.djangoapps.course_groups.partition_scheme import get_cohorted_user_partition
 %>
+<script src="//cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
 <script type="text/template" id="member-list-widget-template">
   <div class="member-list-widget">
     <div class="header">
@@ -35,11 +36,34 @@ from openedx.core.djangoapps.course_groups.partition_scheme import get_cohorted_
 
 <fieldset class="batch-enrollment membership-section">
     <legend id="heading-batch-enrollment" class="hd hd-3">${_("Batch Enrollment")}</legend>
+    <div>
     <label>
         ${_("Enter email addresses and/or usernames separated by new lines or commas.")}
         ${_("You will not get notification for emails that bounce, so please double-check spelling.")}
         <textarea rows="6" name="student-ids" placeholder="${_("Email Addresses/Usernames")}" spellcheck="false"></textarea>
     </label>
+    </div>
+    <br />
+    <div>
+    <label>
+        ${_("Select image JPEG, PNG or GIF")}
+        <br />
+        <input name="image" type="file" accept="image/jpeg,image/png,image/gif">
+    </label>
+    </div>
+    <br />
+    <div>
+    <label>
+        ${_("Message")}
+        <br />
+        <textarea rows="6" name="message" id="message" placeholder="${_("Message")}" spellcheck="false"></textarea>
+    </label>
+    </div>
+    <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace('message');
+    </script>
     <input type="hidden" id="is_course_white_label" value="${section_data['is_white_label']}">
     % if section_data['is_white_label']:
         <label>

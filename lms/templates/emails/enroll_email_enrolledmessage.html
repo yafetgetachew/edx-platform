@@ -1,0 +1,36 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! import random %>
+<html>
+<body>
+% if image_url:
+<img src="${image_url}" style="height: 90px; margin: 10px; display: block;" />
+% endif
+
+${_("Dear {full_name}").format(full_name=full_name)}
+<br />
+<br />
+% if custom_message:
+${custom_message}
+% endif
+<p>&nbsp;</p>
+<p>
+${_("You have been enrolled in {course_name} at {site_name} by a member "
+	"of the course staff. The course should now appear on your {site_name} "
+	"dashboard.").format(
+		course_name=display_name or course.display_name_with_default_escaped,
+		site_name=site_name
+	)}
+<br />
+${_("To start accessing course materials, please visit {course_url}").format(
+		course_url=course_url
+	)}
+<br />
+<hr />
+${_("This email was automatically sent from {site_name} to "
+	"{full_name}").format(
+		site_name=site_name, full_name=full_name
+	)}
+<span style="font-size: 0px;">${random.random()}</span>
+</p>
+<html>
+<body>

@@ -91,7 +91,7 @@ def get_user_email_language(user):
     return UserPreference.get_value(user, LANGUAGE_KEY)
 
 
-def enroll_email(course_id, student_email, auto_enroll=False, email_students=False, email_params=None, language=None):
+def enroll_email(course_id, student_email, auto_enroll=False, email_students=False, email_params=None, language=None, message=None, image_url=None):
     """
     Enroll a student by email.
 
@@ -129,6 +129,8 @@ def enroll_email(course_id, student_email, auto_enroll=False, email_students=Fal
             email_params['message'] = 'enrolled_enroll'
             email_params['email_address'] = student_email
             email_params['full_name'] = previous_state.full_name
+            email_params['custom_message'] = message
+            email_params['image_url'] = image_url
             send_mail_to_student(student_email, email_params, language=language)
     else:
         cea, _ = CourseEnrollmentAllowed.objects.get_or_create(course_id=course_id, email=student_email)
@@ -137,6 +139,8 @@ def enroll_email(course_id, student_email, auto_enroll=False, email_students=Fal
         if email_students:
             email_params['message'] = 'allowed_enroll'
             email_params['email_address'] = student_email
+            email_params['custom_message'] = message
+            email_params['image_url'] = image_url
             send_mail_to_student(student_email, email_params, language=language)
 
     after_state = EmailEnrollmentState(course_id, student_email)
@@ -144,7 +148,7 @@ def enroll_email(course_id, student_email, auto_enroll=False, email_students=Fal
     return previous_state, after_state, enrollment_obj
 
 
-def unenroll_email(course_id, student_email, email_students=False, email_params=None, language=None):
+def unenroll_email(course_id, student_email, email_students=False, email_params=None, language=None, message=None, image_url=None):
     """
     Unenroll a student by email.
 
@@ -163,6 +167,8 @@ def unenroll_email(course_id, student_email, email_students=False, email_params=
             email_params['message'] = 'enrolled_unenroll'
             email_params['email_address'] = student_email
             email_params['full_name'] = previous_state.full_name
+            email_params['custom_message'] = message
+            email_params['image_url'] = image_url
             send_mail_to_student(student_email, email_params, language=language)
 
     if previous_state.allowed:
@@ -170,6 +176,8 @@ def unenroll_email(course_id, student_email, email_students=False, email_params=
         if email_students:
             email_params['message'] = 'allowed_unenroll'
             email_params['email_address'] = student_email
+            email_params['custom_message'] = message
+            email_params['image_url'] = image_url
             # Since no User object exists for this student there is no "full_name" available.
             send_mail_to_student(student_email, email_params, language=language)
 
@@ -386,39 +394,52 @@ def send_mail_to_student(student, param_dict, language=None):
     email_template_dict = {
         'allowed_enroll': (
             'emails/enroll_email_allowedsubject.txt',
-            'emails/enroll_email_allowedmessage.txt'
+            'emails/enroll_email_allowedmessage.txt',
+            'emails/enroll_email_allowedmessage.html'
         ),
         'enrolled_enroll': (
             'emails/enroll_email_enrolledsubject.txt',
-            'emails/enroll_email_enrolledmessage.txt'
+            'emails/enroll_email_enrolledmessage.txt',
+            'emails/enroll_email_enrolledmessage.html'
         ),
         'allowed_unenroll': (
             'emails/unenroll_email_subject.txt',
-            'emails/unenroll_email_allowedmessage.txt'
+            'emails/unenroll_email_allowedmessage.txt',
+            'emails/unenroll_email_allowedmessage.html'
         ),
         'enrolled_unenroll': (
             'emails/unenroll_email_subject.txt',
-            'emails/unenroll_email_enrolledmessage.txt'
+            'emails/unenroll_email_enrolledmessage.txt',
+            'emails/unenroll_email_enrolledmessage.html'
         ),
         'add_beta_tester': (
             'emails/add_beta_tester_email_subject.txt',
-            'emails/add_beta_tester_email_message.txt'
+            'emails/add_beta_tester_email_message.txt',
+            'emails/add_beta_tester_email_message.html'
         ),
         'remove_beta_tester': (
             'emails/remove_beta_tester_email_subject.txt',
-            'emails/remove_beta_tester_email_message.txt'
+            'emails/remove_beta_tester_email_message.txt',
+            'emails/remove_beta_tester_email_message.html'
         ),
         'account_creation_and_enrollment': (
             'emails/enroll_email_enrolledsubject.txt',
-            'emails/account_creation_and_enroll_emailMessage.txt'
+            'emails/account_creation_and_enroll_emailMessage.txt',
+            'emails/account_creation_and_enroll_emailMessage.html'
         ),
     }
 
-    subject_template, message_template = email_template_dict.get(message_type, (None, None))
+    subject_template, message_template, html_message_template = email_template_dict.get(message_type, (None, None, None))
     if subject_template is not None and message_template is not None:
         subject, message = render_message_to_string(
             subject_template, message_template, param_dict, language=language
         )
+
+    try:
+        subject, html_message = render_message_to_string(subject_template,
+                         html_message_template, param_dict, language=language)
+    except:
+        html_message = None
 
     if subject and message:
         # Remove leading and trailing whitespace from body
@@ -431,7 +452,7 @@ def send_mail_to_student(student, param_dict, language=None):
             settings.DEFAULT_FROM_EMAIL
         )
 
-        send_mail(subject, message, from_address, [student], fail_silently=False)
+        send_mail(subject, message, from_address, [student], fail_silently=False, html_message=html_message)
 
 
 def render_message_to_string(subject_template, message_template, param_dict, language=None):
