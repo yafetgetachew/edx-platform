@@ -205,7 +205,7 @@ FEATURES = {
     # Special Exams, aka Timed and Proctored Exams
     'ENABLE_SPECIAL_EXAMS': False,
 
-    'ORGANIZATIONS_APP': False,
+    'ORGANIZATIONS_APP': True,
 
     # Show Language selector
     'SHOW_LANGUAGE_SELECTOR': False,
