@@ -18719,7 +18719,7 @@ msgstr ""
 
 #: cms/templates/settings.html
 msgid "Course Short Description"
-msgstr ""
+msgstr "Prerequisites"
 
 #: cms/templates/settings.html
 msgid ""
