@@ -151,7 +151,7 @@ $light-border: 1px solid $gray-l5;
     background-image: linear-gradient($blue2, $blue2);
     background-clip: padding-box;
     padding: ($baseline*0.35) ($baseline*0.9);
-    width: ($baseline*22.5);
+    width: 220px; // ($baseline*22.5);
     height: ($baseline*3.5);
     text-shadow: 0 1px 0 $blue2;
     text-transform: none;

@@ -154,13 +154,13 @@ from openedx.core.lib.courses import course_image_url
                     ## Translators: currency_symbol is a symbol indicating type of currency, ex "$". currency_abbr is
                     ## an abbreviation for the currency, ex "USD". This string would look like this when all variables are in:
                     ## "$500.00 USD"
-                    ${_("{currency_symbol}{price} {currency_abbr}").format(currency_symbol=currency_symbol, price="{0:0.2f}".format(amount), currency_abbr=currency.upper())}
+                    ${_("{currency_symbol}{price} {currency_abbr} (excl. VAT)").format(currency_symbol=currency_symbol, price="{0:0.2f}".format(amount), currency_abbr=currency.upper())}
                   </b>
                 </span>
             </div>
         </div>
         <div class="col-two">
-            <div class="col-2 relative">
+            <div class="col-12 relative">
                % if order_type == 'business':
                   <div name="billing">
                       <button type="submit" name="billing-details" aria-describedby="billing_business_helper_text">
@@ -182,8 +182,15 @@ from openedx.core.lib.courses import course_image_url
                % else:
                   <div name="payment" aria-describedby="payment_helper_text">
                     ${form_html}
+                    <p style="color: red;">
+                      IMPORTANT: Our E-Commerce system can only handle net payments temporarily.
+                      If you are an individual or a company from Switzerland please contact us at
+                      <a href="mailto:info@flane.ch">info@flane.ch</a>
+                      and we will process the booking manually providing a VAT compliant invoice within 24h. Thank you for your patience.
+                    </p>
                     <p id="payment_helper_text">
-                        ${_('After this purchase is complete, {username} will be enrolled in this course.').format(username=u'<br/><b>{username}</b>'.format(username=order.user.username))}
+
+                        ${_('After this purchase is complete, {username} will be enrolled in this course.').format(username=u'<b>{username}</b>'.format(username=order.user.username))}
                     </p>
                   </div>
                   <div name="billing" class="hidden">

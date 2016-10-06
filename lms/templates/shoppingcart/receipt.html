@@ -375,7 +375,26 @@ from openedx.core.lib.courses import course_image_url
             ${_("Note: items with strikethough like <del>this</del> have been refunded.")}
           </span>
         % endif
-        <span class="pull-right">${_("Total")}: <b> ${currency_symbol}${"{0:0.2f}".format(order.total_cost)}  ${currency.upper()}</b></span>
+        <span style="color: red;">
+          IMPORTANT: Our E-Commerce system can only handle net payments temporarily.
+          If you are an individual or a company from Switzerland please contact us at
+          <a href="mailto:info@flane.ch">info@flane.ch</a>
+          and we will process the booking manually providing a VAT compliant invoice within 24h. Thank you for your patience. <br>
+            <span style="color: grey;">
+
+            Fast Lane Institute for Knowledge Transfer (Switzerland) AG <br>
+            Richtistr. 5<br>
+            8304 Wallisellen (Zürich)<br>
+            P+41 448325080<br>
+            P+41 448325085<br>
+            info@fastlane.live<br>
+            www.flane.ch<br>
+            VAT No.: 652 475<br>
+            UID No.: CHE-112.839.731
+          </span>
+        </span>
+
+        <span class="pull-right">${_("Total")}: <b> ${currency_symbol}${"{0:0.2f}".format(order.total_cost)}  ${currency.upper()} (excl. VAT)</b></span>
       </div>
     </div>
     ## Allow for a theming to be able to insert additional text at the bottom of the page
