@@ -122,7 +122,7 @@ FEATURES = {
     'ENABLE_XBLOCK_VIEW_ENDPOINT': False,
 
     # Allows to configure the LMS to provide CORS headers to serve requests from other domains
-    'ENABLE_CORS_HEADERS': False,
+    'ENABLE_CORS_HEADERS': True,
 
     # Can be turned off if course lists need to be hidden. Effects views and templates.
     'COURSES_ARE_BROWSABLE': True,
@@ -423,7 +423,7 @@ OPENID_PROVIDER_TRUSTED_ROOTS = ['cs50.net', '*.cs50.net']
 
 # OpenID Connect issuer ID. Normally the URL of the authentication endpoint.
 
-OAUTH_OIDC_ISSUER = 'https:/example.com/oauth2'
+OAUTH_OIDC_ISSUER = 'https://edx-stage.cloudapp.net/oauth2'
 
 # OpenID Connect claim handlers
 
