@@ -1030,6 +1030,7 @@ OPTIONAL_APPS = (
 
     # Organizations App (http://github.com/edx/edx-organizations)
     'organizations',
+    'rest_framework',
 )
 
 
