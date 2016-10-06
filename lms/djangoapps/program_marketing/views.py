@@ -1,26 +1,28 @@
-from django.db import transaction
-from django.db.models import Prefetch
-from django.db.models.functions import Lower
-from django.utils.decorators import method_decorator
-from rest_framework import (
-    mixins,
-    parsers as drf_parsers,
-    viewsets,
+"""Learner dashboard views"""
+from urlparse import urljoin
+
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
+from django.http import Http404
+from django.views.decorators.http import require_GET
+
+from edxmako.shortcuts import render_to_response
+from openedx.core.djangoapps.credentials.utils import get_programs_credentials
+from openedx.core.djangoapps.programs.models import ProgramsApiConfig
+from openedx.core.djangoapps.programs import utils
+from lms.djangoapps.learner_dashboard.utils import (
+    FAKE_COURSE_KEY,
+    strip_course_id
 )
 
-from programs.apps.programs import models
-from programs.apps.api import (
-    filters,
-    parsers as edx_parsers,
-    permissions as edx_permissions,
-    serializers,
-)
+from .models import ProgramMarketing
 
 
-def program_marketing(request, slug):
-    """
-    Return marketing page for program.
-    """
+@login_required
+@require_GET
+def marketing(request, program_id):
+    """View details about a specific program."""
     programs_config = ProgramsApiConfig.current()
     if not programs_config.show_program_details:
         raise Http404
@@ -29,6 +31,15 @@ def program_marketing(request, slug):
 
     if not program_data:
         raise Http404
+
+    marketing = ProgramMarketing.objects.filter(
+        marketing_slug=program_data.get('marketing_slug')
+    ).first()
+
+    if not marketing:
+        raise Http404
+
+    marketing_data = {'description': marketing.description}
 
     program_data = utils.supplement_program_data(program_data, request.user)
 
@@ -41,6 +52,7 @@ def program_marketing(request, slug):
     }
 
     context = {
+        'marketing_data': marketing_data,
         'program_data': program_data,
         'urls': urls,
         'show_program_listing': programs_config.show_program_listing,
@@ -49,5 +61,4 @@ def program_marketing(request, slug):
         'uses_pattern_library': True
     }
 
-    return render_to_response('learner_dashboard/program_details.html', context)
-    return render(request, template_name='program_marketing/marketing_page.html')
+    return render_to_response('program_marketing/marketing_page.html', context)

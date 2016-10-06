@@ -1030,7 +1030,6 @@ OPTIONAL_APPS = (
 
     # Organizations App (http://github.com/edx/edx-organizations)
     'organizations',
-    'rest_framework',
 )
 
 
@@ -1208,4 +1207,3 @@ AFFILIATE_COOKIE_NAME = 'affiliate_id'
 #####RACCOONGANG########
 DOC_LINK_BASE_URL = ''
 #####RACCOONGANG########
-

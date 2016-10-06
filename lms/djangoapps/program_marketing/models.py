@@ -5,4 +5,6 @@ class ProgramMarketing(models.Model):
     """
     Contains program marketing attributes.
     """
-    pass
+    marketing_slug = models.SlugField(max_length=64)
+    description = models.TextField()
+    promo_video_url = models.URLField()
