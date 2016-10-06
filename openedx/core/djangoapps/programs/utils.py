@@ -202,6 +202,7 @@ class ProgramProgressMeter(object):
         self.course_ids = None
 
         self.programs = get_programs(self.user)
+
         self.course_certs = get_completed_courses(self.user)
 
     @cached_property
