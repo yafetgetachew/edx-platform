@@ -82,3 +82,45 @@ def program_details(request, program_id):
     }
 
     return render_to_response('learner_dashboard/program_details.html', context)
+
+
+@login_required
+@require_GET
+def explore_programs(request, category):
+    """Explore programs by MKTG_URLS."""
+    error_msg = None
+    programs_config = ProgramsApiConfig.current()
+    if not programs_config.show_program_listing:
+        error_msg = 'Programs listing is disabled on {}'.format(settings.PLATFORM_NAME)
+
+    meter = utils.ProgramProgressMeter(request.user)
+    programs = meter.programs
+
+    # TODO: Pull 'xseries' string from configuration model.
+    marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), 'xseries').rstrip('/')
+
+    for program in programs:
+        program['detail_url'] = utils.get_program_detail_url(program, marketing_root)
+        program['display_category'] = utils.get_display_category(program)
+
+    programs_by_category = [i for i in programs if i['category'] == category]
+    if not programs_by_category:
+        error_msg = 'There are no programs found on {}'.format(settings.PLATFORM_NAME)
+
+    context = {
+        'programs': programs_by_category,
+        'progress': meter.progress,
+        'xseries_url': marketing_root if programs_config.show_xseries_ad else None,
+        'nav_hidden': True,
+        'show_program_listing': programs_config.show_program_listing,
+        'credentials': get_programs_credentials(request.user, category='xseries'),
+        'disable_courseware_js': True,
+        'uses_pattern_library': True,
+        'error_msg': error_msg,
+    }
+
+    template_to_render = (
+        'learner_dashboard/programs_error.html' if error_msg else
+        'learner_dashboard/explore_programs.html'
+    )
+    return render_to_response(template_to_render, context)
