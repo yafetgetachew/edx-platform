@@ -2092,6 +2092,7 @@ INSTALLED_APPS = (
     'course_category',
 
     'django_mptt_admin',
+    'program_marketing',
 )
 
 # Migrations which are not in the standard module "migrations"
