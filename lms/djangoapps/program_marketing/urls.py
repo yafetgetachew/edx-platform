@@ -17,4 +17,9 @@ urlpatterns = patterns(
         'program_marketing.views.marketing',
         name='program_marketing'
     ),
+    url(
+        r'^curriculum/(?P<slug>[\w\-]*)/?$',
+        'program_marketing.views.curriculum',
+        name='curriculum'
+    ),
 )
