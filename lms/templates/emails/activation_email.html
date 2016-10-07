@@ -6,11 +6,8 @@
 
 ${_("Thank you for signing up for {platform_name}.").format(platform_name=settings.PLATFORM_NAME)}
 <br />
-${_("Change your life and start learning today by activating your "
-    "{platform_name} account. Click on the link below or copy and "
-    "paste it into your browser's address bar.").format(
-      platform_name=settings.PLATFORM_NAME
-    )}
+${_("Start DOing today by activating your {platform_name} account. "
+    "Click on the link below or copy and paste it into your browser's address bar:").format(platform_name=settings.PLATFORM_NAME)}
 <br />
 % if is_secure:
   https://${ site }/activate/${ key }
