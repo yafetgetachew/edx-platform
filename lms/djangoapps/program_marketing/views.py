@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.views.decorators.http import require_GET
+from django.shortcuts import render
 
 from edxmako.shortcuts import render_to_response
 from openedx.core.djangoapps.credentials.utils import get_programs_credentials
@@ -17,7 +18,7 @@ from lms.djangoapps.learner_dashboard.utils import (
     strip_course_id
 )
 
-from .models import ProgramMarketing
+from .models import ProgramMarketing, CurriculumCMSPage
 
 
 @require_GET
@@ -109,3 +110,44 @@ def explore_programs(request):
     }
 
     return render_to_response('program_marketing/explore_programs.html', context)
+
+
+@require_GET
+def curriculum(request, slug=None):
+    """
+    Render curriculum with a programs list.
+    """
+    programs_config = ProgramsApiConfig.current()
+    if not programs_config.show_program_listing:
+        raise Http404
+
+    if slug:
+        curriculum = CurriculumCMSPage.objects.filter(slug=slug).first()
+    else:
+        curriculum = CurriculumCMSPage.objects.all().first()
+    if not curriculum:
+        raise Http404
+
+    programs = curriculum.programs.all()
+
+    if not request.user.is_authenticated():
+        user, _ = User.objects.get_or_create(
+            username='programs_dummy_user_for_api'
+        )
+    else:
+        user = request.user
+
+    programs_data = {
+        program.marketing_slug: utils.get_programs(user, program_id=program.program_id)
+        for program in programs
+    }
+
+    return render(
+        request,
+        'program_marketing/curriculum.html',
+        {
+            'curriculum': curriculum,
+            'programs_data': programs_data,
+            'programs': programs
+        }
+    )
