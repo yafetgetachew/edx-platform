@@ -3,6 +3,7 @@ from urlparse import urljoin
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.views.decorators.http import require_GET
@@ -19,7 +20,6 @@ from lms.djangoapps.learner_dashboard.utils import (
 from .models import ProgramMarketing
 
 
-@login_required
 @require_GET
 def marketing(request, program_id):
     """View details about a specific program."""
@@ -27,7 +27,14 @@ def marketing(request, program_id):
     if not programs_config.show_program_details:
         raise Http404
 
-    program_data = utils.get_programs(request.user, program_id=program_id)
+    if not request.user.is_authenticated():
+        user, _ = User.objects.get_or_create(
+            username='programs_dummy_user_for_api'
+        )
+    else:
+        user = request.user
+
+    program_data = utils.get_programs(user, program_id=program_id)
 
     if not program_data:
         raise Http404
@@ -41,7 +48,7 @@ def marketing(request, program_id):
 
     marketing_data = {'description': marketing.description}
 
-    program_data = utils.supplement_program_data(program_data, request.user)
+    program_data = utils.supplement_program_data(program_data, user)
 
     urls = {
         'program_listing_url': reverse('program_listing_view'),
@@ -62,3 +69,43 @@ def marketing(request, program_id):
     }
 
     return render_to_response('program_marketing/marketing_page.html', context)
+
+
+@require_GET
+def explore_programs(request):
+    """Explore programs by MKTG_URLS."""
+    programs_config = ProgramsApiConfig.current()
+    if not programs_config.show_program_listing:
+        raise Http404
+
+    if not request.user.is_authenticated():
+        user, _ = User.objects.get_or_create(
+            username='programs_dummy_user_for_api'
+        )
+    else:
+        user = request.user
+
+    meter = utils.ProgramProgressMeter(user)
+    programs = meter.programs
+
+    # TODO: Pull 'xseries' string from configuration model.
+    marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), 'xseries').rstrip('/')
+
+    for program in programs:
+        program['detail_url'] = reverse(
+            'program_marketing',
+            kwargs={'program_id': program['id']}
+        ).rstrip('/')
+        program['display_category'] = utils.get_display_category(program)
+
+    context = {
+        'programs': programs,
+        'xseries_url': marketing_root if programs_config.show_xseries_ad else None,
+        'nav_hidden': True,
+        'show_program_listing': programs_config.show_program_listing,
+        'credentials': get_programs_credentials(request.user, category='xseries'),
+        'disable_courseware_js': True,
+        'uses_pattern_library': True
+    }
+
+    return render_to_response('program_marketing/explore_programs.html', context)
