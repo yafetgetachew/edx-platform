@@ -80,6 +80,7 @@ import json
       <h2 class="header-courses">${_("My Courses")}</h2>
     </header>
 
+    % if user.is_active:
 
     % if len(course_enrollments) > 0:
       <ul class="listing-courses">
@@ -179,6 +180,9 @@ import json
 
       </ul>
     </section>
+  % else:
+    ${_("To see your courses you need to finish registration. Please follow the instructions sent to your e-mail.")}
+  % endif
   </section>
 </section>
 
