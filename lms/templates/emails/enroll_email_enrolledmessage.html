@@ -3,22 +3,22 @@
 
 <%block name="message">
 
+<p>
 ${_("Dear {full_name}").format(full_name=full_name)},
-<br />
-<br />
+</p>
+<p>
 ${_("You have been enrolled in Future Compass Challenge at {site_name}. "
     "The course should now appear on your {site_name} dashboard.").format(site_name=site_name)}
-
-<br />
+</p>
+<p>
 ${_("To start accessing course materials, please visit {course_url}").format(
 		course_url=course_url
 	)}
-
-<br />
-<hr />
+</p>
+<p>
 ${_("This email was automatically sent from {site_name} to "
 	"{full_name}").format(
 		site_name=site_name, full_name=full_name
 	)}
-
+</p>
 </%block>

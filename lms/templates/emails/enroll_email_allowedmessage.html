@@ -2,14 +2,16 @@
 <%! from django.utils.translation import ugettext as _ %>
 
 <%block name="message">
+<p>
 ${_("Dear student,")}
-<br />
-<br />
-${_("You have been invited to join {course_name} at {site_name}.").format(
+</p>
+<p>
+${_("You have been invited to join the {course_name} at {site_name}.").format(
 		course_name=display_name or course.display_name_with_default,
 		site_name=site_name
 	)}
-<br />
+</p>
+<p>
 % if is_shib_course:
 % if auto_enroll:
 
@@ -26,7 +28,8 @@ ${_("To finish your registration, please visit {registration_url} and fill "
 		registration_url=registration_url,
 		email_address=email_address
 	)}
-<br />
+</p>
+<p>
 % if auto_enroll:
 ${_("Once you have registered and activated your account, you will see "
 	"{course_name} listed on your dashboard.").format(
@@ -39,11 +42,12 @@ ${_("Once you have registered and activated your account, visit {course_about_ur
 ${_("You can then enroll in {course_name}.").format(course_name=display_name or course.display_name_with_default)}
 % endif
 % endif
-<br />
+</p>
+<p>
 <hr />
 ${_("This email was automatically sent from {site_name} to "
 	"{email_address}").format(
 		site_name=site_name, email_address=email_address
 	)}
-
+</p>
 </%block>
