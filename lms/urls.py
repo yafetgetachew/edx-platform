@@ -15,6 +15,8 @@ import auth_exchange.views
 from config_models.views import ConfigurationModelCurrentAPIView
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
+from courseware.decorators import course_filtering
+from search.views import course_discovery
 
 # Uncomment the next two lines to enable the admin:
 if settings.DEBUG or settings.FEATURES.get('ENABLE_DJANGO_ADMIN_SITE'):
@@ -78,6 +80,7 @@ urlpatterns = (
     url(r'^api/enrollment/v1/', include('enrollment.urls')),
 
     # Courseware search endpoints
+    url(r'^search/course_discovery/$', course_filtering(course_discovery), name='course_discovery'),
     url(r'^search/', include('search.urls')),
 
     # Course content API
