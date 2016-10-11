@@ -26,37 +26,45 @@ from django.core.urlresolvers import reverse
         is_edx_domain = settings.FEATURES.get('IS_EDX_DOMAIN', False)
         partner_email = settings.FEATURES.get('PARTNER_SUPPORT_EMAIL', '')
 
-        links = [{
-            'href': 'http://docs.edx.org',
-            'sr_mouseover_text': _('Access documentation on http://docs.edx.org'),
-            'text': _('edX Documentation'),
+        links = [
+          {
+            'href': 'https://barwit.com/knowledge-base/',
+            'sr_mouseover_text': _('Knowledge Base'),
+            'text': _('Knowledge Base'),
             'condition': True
-        }, {
-            'href': 'https://partners.edx.org',
-            'sr_mouseover_text': _('Access Course Staff Support on the Partner Portal to submit or review support tickets'),
-            'text': _('edX Partner Portal'),
-            'condition': is_edx_domain
-        }, {
-            'href': 'https://open.edx.org',
-            'sr_mouseover_text': _('Access the Open edX Portal'),
-            'text': _('Open edX Portal'),
-            'condition': not is_edx_domain
-        }, {
-            'href': 'https://www.edx.org/course/overview-creating-edx-course-edx-edx101#.VO4eaLPF-n1',
-            'sr_mouseover_text': _('Enroll in edX101: Overview of Creating an edX Course'),
-            'text': _('Enroll in edX101'),
-            'condition': True
-        }, {
-            'href': 'https://www.edx.org/course/creating-course-edx-studio-edx-studiox',
-            'sr_mouseover_text': _('Enroll in StudioX: Creating a Course with edX Studio'),
-            'text': _('Enroll in StudioX'),
-            'condition': True
-        }, {
-            'href': 'mailto:{email}'.format(email=partner_email),
-            'sr_mouseover_text': _('Send an email to {email}').format(email=partner_email),
-            'text': _('Contact Us'),
-            'condition': 'PARTNER_SUPPORT_EMAIL' in settings.FEATURES
-        }]
+          }
+##        {
+##            'href': 'http://docs.edx.org',
+##            'sr_mouseover_text': _('Access documentation on http://docs.edx.org'),
+##            'text': _('edX Documentation'),
+##            'condition': True
+##        }, {
+##            'href': 'https://partners.edx.org',
+##            'sr_mouseover_text': _('Access Course Staff Support on the Partner Portal to submit or review support tickets'),
+##            'text': _('edX Partner Portal'),
+##            'condition': is_edx_domain
+##        }, {
+##            'href': 'https://open.edx.org',
+##            'sr_mouseover_text': _('Access the Open edX Portal'),
+##            'text': _('Open edX Portal'),
+##            'condition': not is_edx_domain
+##        }, {
+##            'href': 'https://www.edx.org/course/overview-creating-edx-course-edx-edx101#.VO4eaLPF-n1',
+##            'sr_mouseover_text': _('Enroll in edX101: Overview of Creating an edX Course'),
+##            'text': _('Enroll in edX101'),
+##            'condition': True
+##        }, {
+##            'href': 'https://www.edx.org/course/creating-course-edx-studio-edx-studiox',
+##            'sr_mouseover_text': _('Enroll in StudioX: Creating a Course with edX Studio'),
+##            'text': _('Enroll in StudioX'),
+##            'condition': True
+##        }, {
+##            'href': 'mailto:{email}'.format(email=partner_email),
+##            'sr_mouseover_text': _('Send an email to {email}').format(email=partner_email),
+##            'text': _('Contact Us'),
+##            'condition': 'PARTNER_SUPPORT_EMAIL' in settings.FEATURES
+##        }
+        ]
         %>
 
         <ul class="list-actions">
