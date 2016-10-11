@@ -54,10 +54,14 @@ define(['jquery', 'backbone', 'gettext'], function ($, Backbone, gettext) {
         },
 
         showNotFoundMessage: function (term) {
-            var msg = interpolate(
-                gettext('We couldn\'t find any results for "%s".'),
-                [_.escape(term)]
-            );
+            if (term) {
+                var msg = interpolate(
+                    gettext('We couldn\'t find any results for "%s".'),
+                    [_.escape(term)]
+                );
+            } else {
+                var msg = gettext('We couldn\'t find any results.');
+            }
             this.$message.html(msg);
             this.clearSearch();
         },
