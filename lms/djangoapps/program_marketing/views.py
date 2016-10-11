@@ -17,6 +17,7 @@ from lms.djangoapps.learner_dashboard.utils import (
     FAKE_COURSE_KEY,
     strip_course_id
 )
+from opaque_keys.edx.keys import CourseKey
 
 from .models import ProgramMarketing, CurriculumCMSPage
 
@@ -137,13 +138,23 @@ def curriculum(request, slug=None):
     else:
         user = request.user
 
-    programs_data = {
-        program.marketing_slug: utils.get_programs(user, program_id=program.program_id)
-        for program in programs
-    }
+    programs_data = {}
+    for program in programs:
+        data = []
+        for code in utils.get_programs(
+            user, program_id=program.program_id
+        )['course_codes']:
+            for run_mode in code['run_modes']:
+                course_key = CourseKey.from_string(run_mode['course_key'])
+                data.append(
+                    (
+                        code['display_name'],
+                        reverse('course_root', args=[course_key])
+                    )
+                )
+                programs_data[program.marketing_slug] = data
 
-    return render(
-        request,
+    return render_to_response(
         'program_marketing/curriculum.html',
         {
             'curriculum': curriculum,
