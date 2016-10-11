@@ -120,7 +120,7 @@ urlpatterns = (
 
 urlpatterns += (
     url(r'^dashboard/', include('learner_dashboard.urls')),
-    url(r'^xseries/', include('program_marketing.urls')),
+    url(r'^xseries/', include('program_marketing.urls', namespace='xseries')),
 )
 
 if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
