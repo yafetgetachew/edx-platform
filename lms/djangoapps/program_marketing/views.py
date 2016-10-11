@@ -95,7 +95,7 @@ def explore_programs(request):
 
     for program in programs:
         program['detail_url'] = reverse(
-            'program_marketing',
+            'xseries:program_marketing',
             kwargs={'program_id': program['id']}
         ).rstrip('/')
         program['display_category'] = utils.get_display_category(program)
