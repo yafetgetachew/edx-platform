@@ -7,8 +7,9 @@
 ${_("Dear {full_name}").format(full_name=full_name)},
 </p>
 <p>
-${_("You have been enrolled in Future Compass Challenge at {site_name}. "
-    "The course should now appear on your {site_name} dashboard.").format(site_name=site_name)}
+${_("You have been enrolled into the {course_name} at {site_name}. </p><p>"
+    "The course should now appear on your {site_name} dashboard.").format(site_name=site_name,
+                                    course_name=display_name or course.display_name_with_default)}
 </p>
 <p>
 ${_("To start accessing course materials, please visit {course_url}").format(
