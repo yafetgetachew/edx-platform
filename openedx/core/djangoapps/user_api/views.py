@@ -620,7 +620,7 @@ class RegistrationView(APIView):
         else:
             # Translators: This is a legal document users must agree to
             # in order to register a new account.
-            terms_text = _(u"Terms of Service")
+            terms_text = _(u"Terms of Service and Privacy Policy")
 
         terms_link = u"<a href=\"{url}\" target=\"_blank\">{terms_text}</a>".format(
             url=marketing_link("TOS"),
@@ -664,7 +664,7 @@ class RegistrationView(APIView):
         """
         # Translators: This is a legal document users must agree to
         # in order to register a new account.
-        terms_text = _(u"Terms of Service")
+        terms_text = _(u"Terms of Service and Privacy Policy")
         terms_link = u"<a href=\"{url}\">{terms_text}</a>".format(
             url=marketing_link("TOS"),
             terms_text=terms_text
