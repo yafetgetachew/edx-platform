@@ -79,3 +79,11 @@
     font-weight: 700;
     font-style: italic;
 }
+
+@font-face {
+  font-family: 'DIN';
+  font-style: normal;
+  font-weight: 400;
+  src: local('DIN'), url("#{$static-path}/fonts/DIN.ttf") format('truetype');
+}
+

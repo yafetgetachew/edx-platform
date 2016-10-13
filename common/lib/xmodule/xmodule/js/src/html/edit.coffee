@@ -10,6 +10,7 @@ class @HTMLEditingDescriptor
     "Book Antiqua=book antiqua,palatino;"+
     "Comic Sans MS=comic sans ms,sans-serif;"+
     "Courier New=courier new,courier;"+
+    "DIN=DIN, helvetica, Geneva;"+
     "Georgia=georgia,palatino;"+
     "Helvetica=helvetica;"+
     "Impact=impact,chicago;"+
