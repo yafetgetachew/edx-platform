@@ -1,9 +1,9 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%! import random %>
 <html>
-<body>
+<body style="text-align: right;">
 % if image_url:
-<img src="${image_url}" style="height: 90px; margin: 10px; display: block;" />
+<img src="${image_url}" style="height: 90px; margin: 10px 10px 10px auto; display: block;" />
 % endif
 
 ${_("Dear student,")}
