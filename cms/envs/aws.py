@@ -380,5 +380,9 @@ for middleware in ENV_TOKENS.get('ADDL_CMS_MIDDLEWARE_CLASSES', []):
 CMS_MKTG_URLS = ENV_TOKENS.get('CMS_MKTG_URLS', {})
 
 MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB = ENV_TOKENS.get('MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB',
-                                                  FEATURES.get('MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB',
-                                                                MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB))
+                                                   FEATURES.get('MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB',
+                                                                 MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB))
+
+UPLOAD_CHUNK_SIZE_IN_MB = ENV_TOKENS.get('UPLOAD_CHUNK_SIZE_IN_MB',
+                                          FEATURES.get('UPLOAD_CHUNK_SIZE_IN_MB',
+                                                        UPLOAD_CHUNK_SIZE_IN_MB))
