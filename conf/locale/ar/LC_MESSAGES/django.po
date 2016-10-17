@@ -18313,7 +18313,7 @@ msgstr ""
 #: themes/edx.org/lms/templates/header.html
 #: themes/red-theme/lms/templates/header.html
 msgid "Find Courses"
-msgstr "إيجاد المساقات"
+msgstr "المواد"
 
 #: themes/edx.org/lms/templates/header.html
 msgid "Schools & Partners"
