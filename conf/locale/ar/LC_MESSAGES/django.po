@@ -22751,3 +22751,36 @@ msgstr "البحث"
 
 msgid "Message"
 msgstr "إنشاء رسالة"
+
+msgid "I agree to the {platform_name} {terms_of_service}."
+msgstr "أوافق على {platform_name} {terms_of_service}."
+
+msgid "You must agree to the {platform_name} {terms_of_service}."
+msgstr "الموافقة على {platform_name} {terms_of_service}."
+
+
+msgid "pass"
+msgstr "اجتياز بنجاح"
+
+msgid "Pass:"
+msgstr "اجتياز بنجاح"
+
+msgid "pass:"
+msgstr "اجتياز بنجاح"
+
+
+msgid ""
+"Generate certificates for all users on the Exception list who do not yet "
+"have a certificate"
+msgstr "إصدار شهادات لجميع المستخدمين ضمن قائمة المستثنين ممن ليس لديهم شهادة بعد."
+
+
+msgid "Generate a Certificate for all users on the Exception list"
+msgstr "إصدار شهادات لكل المستخدمين باستثناء من هم على قائمة المستثنين."
+
+msgid "Use the Discussion Topics menu to find specific topics."
+msgstr "قم بإستخدام قائمة المحتويات للبحث عن منشورات محددة"
+
+msgid "Filter topics"
+msgstr "فلترة المواضيع"
+

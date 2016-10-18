@@ -10098,3 +10098,55 @@ msgstr "قم بإستخدام قائمة المحتويات للبحث عن من
 
 msgid "Filter topics"
 msgstr "فلترة المواضيع"
+
+
+
+msgid ""
+"This password reset link is invalid. It may have been used already. To reset your password, "
+"go to the {start_link}sign-in{end_link} page and select {start_strong}Forgot password{end_strong}."
+msgstr "الرابط الخاص باستعادة كلمة المرور غير صالح. قد يكون مُستَخدَم من قِبَل مُستخدِم آخر. لإسترجاع كلمة المرور الخاصة بك، قم بالدخول على{start_link} صفحة التسجيل{end_link} وإختيار{start_strong} نسيت كلمة المرور{end_strong}"
+
+msgid "Pass"
+msgstr "اجتياز بنجاح"
+
+
+msgid "Group"
+msgstr "مجموعة،"
+
+msgid "Select image JPEG, PNG or GIF"
+msgstr "قم بإختيار صورة (JPEG, PNG أو GIF)"
+
+msgid "Your enrollment: Audit track"
+msgstr "تسجيلك: فعال، لا يشمل رسوم الاعتماد"
+
+
+msgid ""
+"You are enrolled in the audit track for this course. The audit track does "
+"not include a certificate."
+msgstr "يتطلب الحصول على الإعتماد رسوم إضافية."
+
+
+msgid "search"
+msgstr "البحث"
+
+msgid "Message"
+msgstr "إنشاء رسالة"
+
+msgid "I agree to the {platform_name} {terms_of_service}."
+msgstr "أوافق على {platform_name} {terms_of_service}."
+
+msgid "You must agree to the {platform_name} {terms_of_service}."
+msgstr "الموافقة على {platform_name} {terms_of_service}."
+
+
+msgid "pass"
+msgstr "اجتياز بنجاح"
+
+msgid "Pass:"
+msgstr "اجتياز بنجاح"
+
+msgid "pass:"
+msgstr "اجتياز بنجاح"
+
+
+
