@@ -19,6 +19,8 @@ if Backbone?
         @page = parseInt(match[1])
       else
         @page = 1
+      if not @showed
+        @toggleDiscussion()
 
     toggleNewPost: (event) =>
       event.preventDefault()
