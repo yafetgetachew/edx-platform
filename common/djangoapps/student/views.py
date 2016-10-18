@@ -2495,7 +2495,8 @@ def _get_course_programs(user, user_enrolled_courses):  # pylint: disable=invali
                         #     'xseries' + '/{}'
                         # ).format(program['marketing_slug'])
                         'program_marketing_url': reverse(
-                            'program_details_view', kwargs={'program_id': 2}
+                            'program_details_view',
+                            kwargs={'program_id': program['id']}
                         )
                     })
                     programs_for_course['category'] = program.get('category')

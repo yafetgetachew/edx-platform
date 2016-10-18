@@ -72,7 +72,7 @@ from django.utils.translation import ugettext as _
     <article class="unit-section_box">
         <img class="unit-section_img" width="279" height="157"  src="${ program.promo_image_url }" alt="course img">
         <div class="unit-section_content">
-            <h1 class="unit-section_heading">Unit ${loop.index + 1} - ${ program.marketing_slug }</h1>
+            <h1 class="unit-section_heading">Unit ${loop.index + 1} - ${ program.title }</h1>
             <p class="unit-section_text">${ program.description }</p>
             <ul class="unit-section_list">
                 % for i in programs_data[program.marketing_slug]:
