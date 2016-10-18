@@ -6290,7 +6290,7 @@ msgstr "الحالة"
 #: cms/templates/js/staff-lock-editor.underscore
 #: common/static/common/templates/discussion/new-post-alert.underscore
 msgid "message"
-msgstr ""
+msgstr "إنشاء رسالة"
 
 #: common/static/common/templates/image-modal.underscore
 msgid "Large"
@@ -6341,7 +6341,7 @@ msgstr "استخدم قائمة الموضوعات لتجد موضوعات مع�
 #: common/static/common/templates/discussion/discussion-home.underscore
 #: lms/djangoapps/discussion/static/discussion/templates/search.underscore
 msgid "Search all posts"
-msgstr "البحث في كافّة المنشورات"
+msgstr "البحث في كافة المنشورات"
 
 #: common/static/common/templates/discussion/discussion-home.underscore
 msgid "Filter and sort topics"
@@ -6463,7 +6463,7 @@ msgstr "أضِف عنوانًا واضحًا ومعبّرًا لتشجيع ال�
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Enter your question or comment."
-msgstr ""
+msgstr "أضف سؤال أو تعليق"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
@@ -7330,11 +7330,11 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
 msgid "Student email or username"
-msgstr "اسم أو عنوان الطالب البريدي"
+msgstr "البريد الإلكتروني أو إسم المستخدم الخاص بالطالب"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
 msgid "Free text notes"
-msgstr "ملاحظات مكتوبة حرة"
+msgstr "تدوين الملاحظات"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Generate Exception Certificates"
@@ -7578,7 +7578,8 @@ msgid ""
 "To review student cohort assignments or see the results of uploading a CSV "
 "file, download course profile information or cohort results on the "
 "{link_start}Data Download{link_end} page."
-msgstr ""
+msgstr "لمراجعة واجبات طالب معين من بين دفعة محددة أو إستعراض نتيجة تحميل ملف CSV، أو تحميل تعريف المادة أو تحميل نتائج دفعة محددة من الطلاب على"
+"{link_start}صفحة تحميل البيانات{link_end} ."
 
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Used"
@@ -10081,3 +10082,19 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "استخدم النص الحالي"
+
+
+msgid ""
+"Generate certificates for all users on the Exception list who do not yet "
+"have a certificate"
+msgstr "إصدار شهادات لجميع المستخدمين ضمن قائمة المستثنين ممن ليس لديهم شهادة بعد."
+
+
+msgid "Generate a Certificate for all users on the Exception list"
+msgstr "إصدار شهادات لكل المستخدمين باستثناء من هم على قائمة المستثنين."
+
+msgid "Use the Discussion Topics menu to find specific topics."
+msgstr "قم بإستخدام قائمة المحتويات للبحث عن منشورات محددة"
+
+msgid "Filter topics"
+msgstr "فلترة المواضيع"

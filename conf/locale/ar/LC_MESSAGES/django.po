@@ -9933,7 +9933,7 @@ msgstr ""
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "I agree to the {platform_name} {terms_of_service}"
-msgstr ""
+msgstr "أوافق على {platform_name} {terms_of_service}"
 
 #. Translators: "Terms of Service" is a legal document users must agree to
 #. in order to register a new account.
@@ -9941,7 +9941,7 @@ msgstr ""
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "You must agree to the {platform_name} {terms_of_service}"
-msgstr ""
+msgstr "الموافقة على {platform_name} {terms_of_service}"
 
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Review the Terms of Service"
@@ -13662,7 +13662,7 @@ msgstr "الجهد المقدَّر"
 
 #: lms/templates/courseware/course_about.html
 msgid "Prerequisites"
-msgstr "المتطلّبات الأساسية"
+msgstr "متطلبات مسبقة"
 
 #: lms/templates/courseware/course_about.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -14222,7 +14222,7 @@ msgstr "يبدأ - {start_date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "View Archived Course"
-msgstr "استعراض المساق"
+msgstr "إظهار المواد المدرجة مسبق"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Share on Facebook"
@@ -16304,7 +16304,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/extensions.html
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid "Student Email or Username"
-msgstr "عنوان البريد الإلكتروني أو اسم المستخدم للطالب"
+msgstr "البريد الإلكتروني أو إسم المستخدم الخاص"
 
 #: lms/templates/instructor/instructor_dashboard_2/extensions.html
 msgid "Choose the graded unit:"
@@ -21204,7 +21204,7 @@ msgstr ""
 
 #: cms/templates/settings.html
 msgid "Course Short Description"
-msgstr "الوصف المختصر للمساق"
+msgstr "متطلبات مسبقة"
 
 #: cms/templates/settings.html
 msgid ""
@@ -22720,3 +22720,34 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "أُنشأت مراجعة جديدة: الدمج بين المراجعة #%(r1)d والمراجعة #%(r2)d "
+
+msgid ""
+"This password reset link is invalid. It may have been used already. To reset your password, "
+"go to the {start_link}sign-in{end_link} page and select {start_strong}Forgot password{end_strong}."
+msgstr "الرابط الخاص باستعادة كلمة المرور غير صالح. قد يكون مُستَخدَم من قِبَل مُستخدِم آخر. لإسترجاع كلمة المرور الخاصة بك، قم بالدخول على{start_link} صفحة التسجيل{end_link} وإختيار{start_strong} نسيت كلمة المرور{end_strong}"
+
+msgid "Pass"
+msgstr "اجتياز بنجاح"
+
+
+msgid "Group"
+msgstr "مجموعة،"
+
+msgid "Select image JPEG, PNG or GIF"
+msgstr "قم بإختيار صورة (JPEG, PNG أو GIF)"
+
+msgid "Your enrollment: Audit track"
+msgstr "تسجيلك: فعال، لا يشمل رسوم الاعتماد"
+
+
+msgid ""
+"You are enrolled in the audit track for this course. The audit track does "
+"not include a certificate."
+msgstr "يتطلب الحصول على الإعتماد رسوم إضافية."
+
+
+msgid "search"
+msgstr "البحث"
+
+msgid "Message"
+msgstr "إنشاء رسالة"
