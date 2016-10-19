@@ -437,7 +437,7 @@ def send_mail_to_student(student, param_dict, language=None):
 
     try:
         subject, html_message = render_message_to_string(subject_template,
-                         html_message_template, param_dict, language=language)
+                                html_message_template, param_dict, language=language)
     except:
         html_message = None
 

@@ -1,14 +1,14 @@
+<%inherit file="main.html" />
 <%! from django.utils.translation import ugettext as _ %>
 <%! import random %>
-<html>
-<body style="text-align: right;">
+
+<%block name="message">
 % if image_url:
 <img src="${image_url}" style="height: 90px; margin: 10px 10px 10px auto; display: block;" />
 % endif
-
+<p>
 ${_("Dear {full_name}").format(full_name=full_name)}
-<br />
-<br />
+</p>
 % if custom_message:
 ${custom_message}
 % endif
@@ -19,9 +19,11 @@ ${_("You have been un-enrolled in {course_name} at {site_name} by a member "
     "{site_name} dashboard.").format(
         course_name=display_name or course.display_name_with_default_escaped, site_name=site_name
     )}
-<br />
+</p>
+<p>
 ${_("Your other courses have not been affected.")}
-<br />
+</p>
+<p>
 <hr />
 ${_("This email was automatically sent from {site_name} to "
     "{full_name}").format(
@@ -29,5 +31,4 @@ ${_("This email was automatically sent from {site_name} to "
     )}
 <span style="font-size: 0px;">${random.random()}</span>
 </p>
-</html>
-</body>
+</%block>
