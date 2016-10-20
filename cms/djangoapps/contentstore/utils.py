@@ -97,7 +97,11 @@ def get_lms_link_for_item(location, preview=False):
     else:
         lms_base = settings.LMS_BASE
 
-    return u"//{lms_base}/courses/{course_key}/jump_to/{location}".format(
+    protocol = settings.FEATURES.get('PREVIEW_LMS_PROTOCOL', '')
+    protocol += protocol and ':' or ''
+
+    return u"{protocol}//{lms_base}/courses/{course_key}/jump_to/{location}".format(
+        protocol=protocol,
         lms_base=lms_base,
         course_key=location.course_key.to_deprecated_string(),
         location=location.to_deprecated_string(),
