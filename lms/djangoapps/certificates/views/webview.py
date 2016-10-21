@@ -6,6 +6,7 @@ from datetime import datetime
 from uuid import uuid4
 import logging
 import urllib
+import locale
 
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -48,6 +49,7 @@ from certificates.models import (
 
 log = logging.getLogger(__name__)
 
+locale.setlocale(locale.LC_ALL,'ar_SY.UTF-8')
 
 def get_certificate_description(mode, certificate_type, platform_name):
     """
@@ -97,8 +99,8 @@ def _update_certificate_context(context, user_certificate, platform_name):
     )
 
     # Translators:  The format of the date includes the full name of the month
-    context['certificate_date_issued'] = _('{month} {day}, {year}').format(
-        month=user_certificate.modified_date.strftime("%B"),
+    context['certificate_date_issued'] = _(u'{month} {day}, {year}').format(
+        month=user_certificate.modified_date.strftime("%B").decode('utf8'),
         day=user_certificate.modified_date.day,
         year=user_certificate.modified_date.year
     )

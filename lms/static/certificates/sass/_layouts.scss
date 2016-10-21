@@ -207,7 +207,7 @@
     .accomplishment-orgs {
 
         .wrapper-orgs {
-            @include text-align(left);
+            @include text-align(center);
         }
 
         .wrapper-organization {
@@ -247,6 +247,7 @@
             top: 50%;
             @include left(50%);
             transform: translate(-50%, -50%);
+            margin-right: -72px;
         }
     }
 
