@@ -2538,6 +2538,8 @@ class LogoutView(TemplateView):
 
         logout(request)
 
+        redirect_to = get_next_url_for_login_page(request)
+
         # If we don't need to deal with OIDC logouts, just redirect the user.
         if LogoutViewConfiguration.current().enabled and self.oauth_client_ids:
             response = super(LogoutView, self).dispatch(request, *args, **kwargs)
@@ -2546,6 +2548,11 @@ class LogoutView(TemplateView):
 
         # Clear the cookie used by the edx.org marketing site
         delete_logged_in_cookies(response)
+
+        if redirect_to:
+            log.info('After logout redirect to: %s', redirect_to)
+            response.status_code = 302
+            response['Location'] = redirect_to
 
         return response
 
