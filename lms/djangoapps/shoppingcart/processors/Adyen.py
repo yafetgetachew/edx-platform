@@ -21,6 +21,21 @@ current_tz = pytz.timezone(settings.TIME_ZONE)
 def escapeVal(val):
     return val.replace('\\','\\\\').replace(':','\\:')
 
+def get_purchase_params(cart):
+    current_date = current_tz.localize(datetime.now())
+    sessionValidity = current_date + timedelta(minutes=15)
+    params = {
+            'skinCode': get_processor_config().get('SKIN_CODE'),
+            'paymentAmount': str(int(cart.total_cost*100)), # amount in cents
+            'merchantAccount': get_processor_config().get('MERCHANT_ACCOUNT'),
+            'currencyCode': cart.currency.upper(),
+            'merchantReference': 'edx_fastlane-{}'.format(cart.id),
+            'shipBeforeDate': sessionValidity.isoformat(),
+            'sessionValidity': sessionValidity.isoformat()
+        }
+    params = OrderedDict(sorted(params.items(), key=lambda t: t[0]))
+    return params
+
 
 def signParams(params):
     signing_string = ':'.join(map(escapeVal, params.keys() + params.values()))
@@ -28,26 +43,14 @@ def signParams(params):
     params['merchantSig'] =  base64.b64encode(hm.digest())
     return params
 
+def get_signed_purchase_params(cart, **kwargs):
+    return signParams(get_purchase_params(cart))
+
 
 def render_purchase_form_html(cart, callback_url=''):
-    current_date = current_tz.localize(datetime.now())
-    sessionValidity = current_date + timedelta(minutes=15)
-
-    params = {
-        'skinCode': get_processor_config().get('SKIN_CODE'),
-        'paymentAmount': str(int(cart.total_cost*100)), # amount in cents
-        'merchantAccount': get_processor_config().get('MERCHANT_ACCOUNT'),
-        'currencyCode': cart.currency.upper(),
-        'merchantReference': 'edx_fastlane-{}'.format(cart.id),
-        'shipBeforeDate': sessionValidity.isoformat(),
-        'sessionValidity': sessionValidity.isoformat()
-    }
-
-    params = OrderedDict(sorted(params.items(), key=lambda t: t[0]))
-
     return render_to_string('shoppingcart/cybersource_form.html', {
         'action': get_processor_config().get('ACTION_URL'),
-        'params': signParams(params)
+        'params': get_signed_purchase_params(cart)
     })
 
 
@@ -89,3 +92,6 @@ def _record_purchase(params, order):
         country=params['shopperLocale'],
         processor_reply_dump=params
     )
+
+def get_purchase_endpoint():
+    return get_processor_config().get('ACTION_URL', '')
