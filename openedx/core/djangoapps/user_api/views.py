@@ -324,7 +324,7 @@ class RegistrationView(APIView):
         """
         # Translators: This label appears above a field on the registration form
         # meant to hold the user's email address.
-        email_label = _(u"Email")
+        email_label = _("Parent/Guardian's Email")
 
         # Translators: This example email address is used as a placeholder in
         # a field on the registration form meant to hold the user's email address.
@@ -354,7 +354,7 @@ class RegistrationView(APIView):
         """
         # Translators: This label appears above a field on the registration form
         # meant to hold the user's full name.
-        name_label = _(u"Full name")
+        name_label = _("Parent/Guardian's Full Name")
 
         # Translators: This example name is used as a placeholder in
         # a field on the registration form meant to hold the user's name.
@@ -362,7 +362,7 @@ class RegistrationView(APIView):
 
         # Translators: These instructions appear on the registration form, immediately
         # below a field meant to hold the user's full name.
-        name_instructions = _(u"Your legal name, used for any certificates you earn.")
+        name_instructions = _(u"Your legal name as it appears on your drivers license, passport or photo ID.")
 
         form_desc.add_field(
             "name",
@@ -387,13 +387,12 @@ class RegistrationView(APIView):
         """
         # Translators: This label appears above a field on the registration form
         # meant to hold the user's public username.
-        username_label = _(u"First 2 letters the student's first name followed by the first 2 letters of the student's last name (eg. John Smith would be \"JOSM\").")
+        username_label = _(u"Student Username: First 2 letters the student's first name followed by the first 2 letters of the student's last name (eg. John Smith would be \"JOSM\")")
 
         username_instructions = _(
             # Translators: These instructions appear on the registration form, immediately
             # below a field meant to hold the user's public username.
-            u"The name that will identify you in your courses - "
-            u"{bold_start}(cannot be changed later){bold_end}"
+            u"Important: The student will use this username each time they log in to the course."
         ).format(bold_start=u'<strong>', bold_end=u'</strong>')
 
         # Translators: This example username is used as a placeholder in
@@ -424,11 +423,14 @@ class RegistrationView(APIView):
         """
         # Translators: This label appears above a field on the registration form
         # meant to hold the user's password.
-        password_label = _(u"Password")
+        password_label = _(u"Student Password")
+       
+        name_password = _(u"Important: The student will use this password each time they log in to the course.") 
 
         form_desc.add_field(
             "password",
             label=password_label,
+            instructions=name_password,
             field_type="password",
             restrictions={
                 "min_length": PASSWORD_MIN_LENGTH,
