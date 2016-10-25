@@ -90,8 +90,19 @@ def add_course_to_cart(request, course_id):
     cart = Order.get_cart_for_user(request.user)
     course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
     # All logging from here handled by the model
+    course_mode = None
+    for i, mode in enumerate(CourseMode.modes_for_course(course_key)):
+        if i == 0:
+            course_mode = mode
+            continue
+        if mode.min_price < course_mode.min_price:
+            course_mode = mode
+    if not course_mode:
+        mode_slug = CourseMode.DEFAULT_SHOPPINGCART_MODE_SLUG
+    else:
+        mode_slug = course_mode.slug
     try:
-        paid_course_item = PaidCourseRegistration.add_to_order(cart, course_key)
+        paid_course_item = PaidCourseRegistration.add_to_order(cart, course_key, mode_slug=mode_slug)
     except CourseDoesNotExistException:
         return HttpResponseNotFound(_('The course you requested does not exist.'))
     except ItemAlreadyInCartException:
