@@ -205,9 +205,9 @@ def strftime_localized(dtime, format):      # pylint: disable=redefined-builtin
             # care of them.
             part = dtime.strftime(code)
 
-        return part
+        return type(part) == str and part.decode('utf8') or part
 
-    formatted_date = re.sub(ur"%-.|%.|%", unicode(process_percent_code), unicode(format))
+    formatted_date = re.sub(ur"%-.|%.|%", process_percent_code, unicode(format))
     return formatted_date
 
 
