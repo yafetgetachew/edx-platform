@@ -1,0 +1,5 @@
+msgid "The email address you used to register with {platform_name}"
+msgstr "The username or email address you used to register with {platform_name}"
+
+msgid "Email or password is incorrect."
+msgstr "Username or email or password is incorrect."
