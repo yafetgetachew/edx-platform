@@ -423,7 +423,7 @@ OPENID_PROVIDER_TRUSTED_ROOTS = ['cs50.net', '*.cs50.net']
 
 # OpenID Connect issuer ID. Normally the URL of the authentication endpoint.
 
-OAUTH_OIDC_ISSUER = 'https://edx-stage.cloudapp.net/oauth2'
+OAUTH_OIDC_ISSUER = 'https://www.fastlane.live/oauth2'
 
 # OpenID Connect claim handlers
 
