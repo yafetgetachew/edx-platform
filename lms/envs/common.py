@@ -51,11 +51,11 @@ CC_MERCHANT_NAME = PLATFORM_NAME
 # Shows up in the platform footer, eg "(c) COPYRIGHT_YEAR"
 COPYRIGHT_YEAR = "2015"
 
-PLATFORM_TWITTER_ACCOUNT: '@kwneducation'
-PLATFORM_FACEBOOK_ACCOUNT: 'https://www.facebook.com/kwneducation/'
-PLATFORM_LINKEDIN_ACCOUNT: 'https://www.linkedin.com/company/kwn-education'
-PLATFORM_INSTAGRAM_ACCOUNT: 'https://www.instagram.com/kwneducation/'
-PLATFORM_YOUTUBE_ACCOUNT: 'https://www.youtube.com/channel/UCrg6-OFF92tEo1mW5sJZ3Qw'
+PLATFORM_TWITTER_ACCOUNT = "@kwneducation"
+PLATFORM_FACEBOOK_ACCOUNT = "https://www.facebook.com/kwneducation/"
+PLATFORM_LINKEDIN_ACCOUNT = "https://www.linkedin.com/company/kwn-education"
+PLATFORM_INSTAGRAM_ACCOUNT = "https://www.instagram.com/kwneducation/"
+PLATFORM_YOUTUBE_ACCOUNT = "https://www.youtube.com/channel/UCrg6-OFF92tEo1mW5sJZ3Qw"
 
 ENABLE_JASMINE = False
 
