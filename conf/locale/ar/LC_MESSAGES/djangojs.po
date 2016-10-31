@@ -4490,7 +4490,7 @@ msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Full Name"
-msgstr "الاسم الكامل باللغة العربية"
+msgstr "الاسم الكامل"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""

@@ -6987,7 +6987,7 @@ msgstr "لم يجرِ تمديد تاريخ الاستحقاق لذلك الطا
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "Full Name"
-msgstr "الاسم الكامل"
+msgstr "الاسم الكامل باللغة العربية"
 
 #: lms/djangoapps/instructor/views/tools.py
 msgid "Extended Due Date"
