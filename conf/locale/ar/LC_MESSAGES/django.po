@@ -602,7 +602,7 @@ msgid ""
 "password."
 msgstr ""
 "لا يمكن لحساب المستخدم المرتبط بعنوان البريد الإلكتروني هذا إعادة تهيئة كلمة"
-" المرور."
+".المرور "
 
 #: common/djangoapps/student/forms.py
 msgid "Username must be minimum of two characters long"
@@ -1151,7 +1151,7 @@ msgstr "سبق أن سُجّل حساب بعنوان البريد الإلكتر
 msgid "Unable to send email activation link. Please try again later."
 msgstr ""
 "نأسف لتعذّر إرسال رسالة بريد إلكتروني تحوي رابط التفعيل. يُرجى إعادة "
-"المحاولة لاحقًا. "
+" .المحاولة لاحقًا"
 
 #: common/djangoapps/third_party_auth/models.py
 msgid "Authentication with {} is currently unavailable."
@@ -8852,11 +8852,11 @@ msgid ""
 " user account at %(site_name)s."
 msgstr ""
 "وصلتك رسالة البريد الالكتروني هذه بناءً على طلبك بتغيير كلمة المرور لحسابك "
-"على %(site_name)s."
+".%(site_name)s على "
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
-msgstr "يُرجى زيارة الصفحة التالية واختيار كلمة مرور جديدة:"
+msgstr ":يُرجى زيارة الصفحة التالية واختيار كلمة مرور جديدة"
 
 #: lms/templates/registration/password_reset_email.html
 msgid ""
@@ -8864,11 +8864,11 @@ msgid ""
 "not yet reset your password."
 msgstr ""
 "إذا لم تطلب هذا التغيير، يمكنك تجاهل هذه الرسالة - لم نقم بعد بتغيير كلمة "
-"المرور الخاصة بك."
+".المرور الخاصة بك"
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Thanks for using our site!"
-msgstr "شكرًا لك على استخدام موقعنا!"
+msgstr "!شكرًا لك على استخدام موقعنا"
 
 #: lms/templates/registration/password_reset_email.html
 #, python-format
@@ -8877,7 +8877,7 @@ msgstr "فريق %(platform_name)s"
 
 #: lms/templates/wiki/article.html
 msgid "Last modified:"
-msgstr "تاريخ التعديل الأخير:"
+msgstr ":تاريخ التعديل الأخير"
 
 #: lms/templates/wiki/article.html
 msgid "See all children"
@@ -10674,24 +10674,24 @@ msgstr "إعادة الضبط"
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "Thanks for activating your account."
-msgstr "نشكرك على تفعيل حسابك."
+msgstr ".نشكرك على تفعيل حسابك"
 
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "This account has already been activated."
-msgstr "سبق أن جرى تفعيل هذا الحساب."
+msgstr ".سبق أن جرى تفعيل هذا الحساب"
 
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "Visit your {link_start}dashboard{link_end} to see your courses."
 msgstr ""
 "تفضّل بزيارة {link_start}لوحة المعلومات{link_end} الخاصة بحسابك لرؤية "
-"مساقاتك."
+".مساقاتك"
 
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "You can now {link_start}sign in{link_end}."
-msgstr "بإمكانك الآن {link_start}تسجيل الدخول{link_end}. "
+msgstr ".بإمكانك الآن {link_start}تسجيل الدخول{link_end} "
 
 #: cms/templates/widgets/header.html lms/templates/navigation.html
 msgid "Choose Language"
@@ -14687,7 +14687,7 @@ msgstr "إظهار الملاحظات"
 
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "Welcome to {course_name}"
-msgstr "مرحبًا بك في {course_name}"
+msgstr "{course_name} مرحبًا بك في"
 
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid ""
@@ -14695,27 +14695,27 @@ msgid ""
 "your account follows."
 msgstr ""
 "يُرجى زيارة الموقع https://{site_name} للبدء، ثمّ إدخال معلومات تسجيل الدخول"
-" الخاصة بحسابك."
+". الخاصة بحسابك"
 
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "email: {email}"
-msgstr "عنوان البريد الإلكتروني: {email}"
+msgstr "{email} :عنوان البريد الإلكتروني"
 
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "password: {password}"
-msgstr "كلمة المرور: {password}"
+msgstr "{password} :كلمة المرور"
 
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "It is recommended that you change your password."
-msgstr "نوصيك بتغيير كلمة المرور."
+msgstr ".نوصيك بتغيير كلمة المرور"
 
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "Sincerely yours,The {course_name} Team"
-msgstr "مع خالص التقدير، فريق {course_name} "
+msgstr " {course_name} مع خالص التقدير، فريق "
 
 #: lms/templates/emails/activation_email.txt
 msgid "Thank you for creating an account with {platform_name}!"
-msgstr "شكراً على تسجيلك في {platform_name}!"
+msgstr "!{platform_name} شكراً على تسجيلك في"
 
 #: lms/templates/emails/activation_email.txt
 msgid ""
@@ -14725,7 +14725,7 @@ msgid ""
 "browser's address bar."
 msgstr ""
 "بقيت خطوة واحدة قبل تمكنك من التسجيل في المساقات:عليك أن تفعل حسابك على "
-"{platform_name}. لتفعيل حسابك، اضغط على الرابط التالي. إن لم يعمل، انسخ "
+".{platform_name} لتفعيل حسابك، اضغط على الرابط التالي. إن لم يعمل، انسخ "
 "والصق الرابط في شريط العنوان في متصفحك."
 
 #: lms/templates/emails/activation_email.txt
@@ -14737,18 +14737,18 @@ msgid ""
 msgstr ""
 "إن لم تكن قد سجلت حساباً، ليس عليك فعل أي شيء. ولن تصلك أي رسائل أخرى منّا. "
 "إن احتجت مساعدة، لا ترد على هذه الرسالة، بل اذهب لقسم المساعدة في موقع "
-"{platform_name}."
+".{platform_name}"
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Activate Your {platform_name} Account"
-msgstr "تفعيل حسابك في {platform_name}"
+msgstr "{platform_name} تفعيل حسابك في"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 #: lms/templates/emails/remove_beta_tester_email_message.txt
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "Dear {full_name}"
-msgstr "مرحباً {full_name}،"
+msgstr " ،{full_name} مرحباً"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid ""
@@ -14756,12 +14756,12 @@ msgid ""
 "by a member of the course staff."
 msgstr ""
 "لقد دعاك أحد أعضاء طاقم المساق لتكون أحد مختبري النسخة التجريبية للمساق "
-"{course_name} على الموقع {site_name}."
+".{site_name} على الموقع {course_name}"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 msgid "To start accessing course materials, please visit {course_url}"
-msgstr "للبدء بالاطلاع على مواد المساق، يُرجى زيارة الصفحة {course_url}"
+msgstr "{course_url} للبدء بالاطلاع على مواد المساق، يُرجى زيارة الصفحة"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid "Visit {course_about_url} to join the course and begin the beta test."
@@ -14782,11 +14782,11 @@ msgstr ""
 msgid "This email was automatically sent from {site_name} to {email_address}"
 msgstr ""
 "أُرسِلت هذه الرسالة الإلكترونية تلقائيًّا من الموقع {site_name} إلى عنوان "
-"البريد الإلكتروني {email_address}"
+"{email_address} البريد الإلكتروني "
 
 #: lms/templates/emails/add_beta_tester_email_subject.txt
 msgid "You have been invited to a beta test for {course_name}"
-msgstr "جرت دعوتك لاختبار النسخة التجريبية للمساق {course_name}"
+msgstr "{course_name} جرت دعوتك لاختبار النسخة التجريبية للمساق "
 
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Thank you for your purchase of "
@@ -14794,7 +14794,7 @@ msgstr "شكرًا لشرائك"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Your payment was successful."
-msgstr "نجح إجراء دفعتك."
+msgstr ".نجح إجراء دفعتك"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
 #: lms/templates/emails/order_confirmation_email.txt
@@ -15010,18 +15010,18 @@ msgid ""
 "the course staff."
 msgstr ""
 "لقد تم دعوتك للانضمام للمساق {course_name} على الموقع {site_name} من قبل أحد"
-" أعضاء طاقم المساق. "
+".أعضاء طاقم المساق "
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "To access the course visit {course_url} and login."
-msgstr "للدخول إلى المساق يرجي زيارة الصفحة {course_url} وتسجيل الدخول."
+msgstr ".للدخول إلى المساق يرجي زيارة الصفحة {course_url} وتسجيل الدخول"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "To access the course visit {course_about_url} and register for the course."
 msgstr ""
 "للدخول إلى المساق يرجي زيارة الصفحة {course_about_url} والقيام بالتسجيل في "
-"المساق."
+".المساق"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -15031,7 +15031,7 @@ msgid ""
 msgstr ""
 "لإتمام عملية التسجيل الخاصة بك، يرجى زيارة الصفحة {registration_url} وتعبئة "
 "بيانات نموذج التسجيل مع التأكد من استخدام {email_address} في حقل البريد "
-"الإلكتروني."
+".الإلكتروني"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -15039,7 +15039,7 @@ msgid ""
 "{course_name} listed on your dashboard."
 msgstr ""
 "بمجرد قيامك بالتسجيل وبتفعيل حسابك، ستتمكن من رؤية المساق {course_name} على "
-"لوحة المعلومات الخاصة بك."
+".لوحة المعلومات الخاصة بك"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -15047,15 +15047,15 @@ msgid ""
 "{course_about_url} to join the course."
 msgstr ""
 "بمجرد قيامك بالتسجيل وبتفعيل حسابك، يرجى زيارة صفحة {course_about_url} "
-"للانضمام إلى المساق."
+".للانضمام إلى المساق"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "You can then enroll in {course_name}."
-msgstr "يمكنك بعدها التسجيل بـ {course_name}."
+msgstr ".{course_name} يمكنك بعدها التسجيل بـ"
 
 #: lms/templates/emails/enroll_email_allowedsubject.txt
 msgid "You have been invited to register for {course_name}"
-msgstr "لقد تم دعوتك للتسجيل في مساق {course_name}"
+msgstr "{course_name} لقد تم دعوتك للتسجيل في مساق"
 
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 msgid ""
@@ -15064,7 +15064,7 @@ msgid ""
 msgstr ""
 "لقد تم تسجيلك في المساق {course_name} على الموقع {site_name} من قبل أحد "
 "أعضاء طاقم المساق. يجب أن يكون المساق قد أصبح ظاهراً الآن على لوحة المعلومات"
-" الخاصة بك على موقع {site_name}."
+".{site_name} الخاصة بك على موقع "
 
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
@@ -15075,7 +15075,7 @@ msgstr ""
 
 #: lms/templates/emails/enroll_email_enrolledsubject.txt
 msgid "You have been enrolled in {course_name}"
-msgstr "لقد تم تسجيلك إلى مساق {course_name}"
+msgstr "{course_name} لقد تم تسجيلك إلى مساق "
 
 #: lms/templates/emails/order_confirmation_email.txt
 msgid ""
@@ -15083,7 +15083,7 @@ msgid ""
 "credit or debit card statement under the company name {merchant_name}."
 msgstr ""
 "جرت عملية الدفع بنجاح. سترى قيمة السداد أدناه على كشف الحساب الخاص ببطاقتك "
-"الإئتمانية أو بطاقة الخصومات تحت اسم الشركة {merchant_name}."
+".{merchant_name} الإئتمانية أو بطاقة الخصومات تحت اسم الشركة "
 
 #: lms/templates/emails/order_confirmation_email.txt
 #: lms/templates/emails/photo_submission_confirmation.txt
@@ -15096,11 +15096,11 @@ msgstr "رقم طلبك هو : {order_number}"
 
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid "Hi {full_name},"
-msgstr "مرحبًا {full_name}،"
+msgstr "،{full_name} مرحبًا"
 
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid "Thanks for submitting your photos!"
-msgstr "شكرًا لك على تقديم صورك!"
+msgstr "!شكرًا لك على تقديم صورك"
 
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid ""
@@ -15108,12 +15108,12 @@ msgid ""
 "can check the status of the verification process on your dashboard."
 msgstr ""
 "لقد استلمنا معلوماتك وقد بدأت عملية التحقق. يمكنك متابعة سير عملية التحقق "
-"على لوحة معلوماتك."
+".على لوحة معلوماتك"
 
 #: lms/templates/emails/photo_submission_confirmation.txt
 #: lms/templates/emails/reverification_processed.txt
 msgid "The {platform_name} team"
-msgstr "فريق المساق {platform_name}"
+msgstr "{platform_name} فريق المساق"
 
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "Thank you for purchasing enrollments in {course_name}."
@@ -15275,7 +15275,7 @@ msgstr ""
 #: lms/templates/emails/remove_beta_tester_email_message.txt
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "Your other courses have not been affected."
-msgstr "لم يؤثر ذلك على باقي المساقات."
+msgstr ".لم يؤثر ذلك على باقي المساقات"
 
 #: lms/templates/emails/remove_beta_tester_email_subject.txt
 msgid "You have been removed from a beta test for {course_name}"
@@ -15286,7 +15286,7 @@ msgid ""
 "We have successfully verified your identity for the {assessment} assessment "
 "in the {course_name} course."
 msgstr ""
-"لقد تحققنا بنجاح من هويتك من أجل تقدير {assessment} في مساق {course_name}."
+".{course_name} لقد تحققنا بنجاح من هويتك من أجل تقدير {assessment} في مساق"
 
 #: lms/templates/emails/reverification_processed.txt
 msgid ""
@@ -15295,8 +15295,8 @@ msgid ""
 "{allowed_attempts} attempts to verify your identity."
 msgstr ""
 "لم نتمكن من التحقق من هويتك من أجل تقدير {assessment} في المساق "
-"{course_name}. لقد حاولت {used_attempts} من أصل {allowed_attempts} محاولات "
-"للتحقق من هويتك."
+".{course_name} لقد حاولت {used_attempts} من أصل {allowed_attempts} محاولات "
+".للتحقق من هويتك"
 
 #: lms/templates/emails/reverification_processed.txt
 msgid ""
@@ -18544,11 +18544,11 @@ msgstr ""
 
 #: cms/templates/activation_active.html cms/templates/activation_complete.html
 msgid "Sign into {studio_name}"
-msgstr "تسجيل الدخول في {studio_name}"
+msgstr "{studio_name} تسجيل الدخول في"
 
 #: cms/templates/activation_complete.html
 msgid "Your account activation is complete!"
-msgstr "استُكمِل تفعيل حسابك!"
+msgstr "!استُكمِل تفعيل حسابك"
 
 #: cms/templates/activation_complete.html
 msgid ""
@@ -18556,7 +18556,7 @@ msgid ""
 "{studio_name} to author courses."
 msgstr ""
 "شكرًا لك على تفعيل حسابك. يمكنك الآن تسجيل دخولك والبدء باستخدام "
-"{studio_name} لتأليف المساقات. "
+".لتأليف المساقات {studio_name}"
 
 #: cms/templates/activation_invalid.html
 msgid "Your account activation is invalid"
