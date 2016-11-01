@@ -8851,8 +8851,7 @@ msgid ""
 "You're receiving this e-mail because you requested a password reset for your"
 " user account at %(site_name)s."
 msgstr ""
-"وصلتك رسالة البريد الالكتروني هذه بناءً على طلبك بتغيير كلمة المرور لحسابك "
-".%(site_name)s على "
+".%(site_name)s على ﻮﺼﻠﺘﻛ ﺮﺳﺎﻟﺓ ﺎﻠﺑﺮﻳﺩ ﺍﻼﻠﻜﺗﺭﻮﻨﻳ ﻩﺬﻫ ﺐﻧﺍﺀً ﻊﻟﻯ ﻂﻠﺒﻛ ﺐﺘﻐﻴﻳﺭ ﻚﻠﻣﺓ ﺎﻠﻣﺭﻭﺭ ﻞﺤﺳﺎﺒﻛ  ﻊﻟﻯ"
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
@@ -13641,10 +13640,6 @@ msgid "Add {course_name} to Cart <span>({price} USD)</span>"
 msgstr "إضافة {course_name} إلى السلّة <span>({price} دولار أمريكي)</span>"
 
 #: lms/templates/courseware/course_about.html
-msgid "Enroll in {course_name}"
-msgstr "التسجيل في {course_name}"
-
-#: lms/templates/courseware/course_about.html
 msgid "View About Page in studio"
 msgstr "استعراض صفحة اللمحة في استوديو"
 
@@ -14724,9 +14719,9 @@ msgid ""
 "following link. If that doesn't work, copy and paste the link into your "
 "browser's address bar."
 msgstr ""
-"بقيت خطوة واحدة قبل تمكنك من التسجيل في المساقات:عليك أن تفعل حسابك على "
+". بقيت خطوة واحدة قبل تمكنك من التسجيل في المساقات:عليك أن تفعل حسابك على "
 ".{platform_name} لتفعيل حسابك، اضغط على الرابط التالي. إن لم يعمل، انسخ "
-"والصق الرابط في شريط العنوان في متصفحك."
+"والصق الرابط في شريط العنوان في متصفحك"
 
 #: lms/templates/emails/activation_email.txt
 msgid ""
@@ -14766,8 +14761,8 @@ msgstr "{course_url} للبدء بالاطلاع على مواد المساق، 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid "Visit {course_about_url} to join the course and begin the beta test."
 msgstr ""
-"تفضّل بزيارة هذه الصفحة {course_about_url} للانضمام إلى المساق والبدء "
-"باختبار نسخته التجريبية."
+".تفضّل بزيارة هذه الصفحة {course_about_url} للانضمام إلى المساق والبدء "
+"باختبار نسخته التجريبية"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid "Visit {site_name} to enroll in the course and begin the beta test."
@@ -22783,4 +22778,16 @@ msgstr "قم بإستخدام قائمة المحتويات للبحث عن من
 
 msgid "Filter topics"
 msgstr "فلترة المواضيع"
+
+#: lms/templates/courseware/course_about_sidebar_header.html
+msgid "I just enrolled in {title} : {url}"
+msgstr "{url} :{title} ﺲﺠّﻠﺗُ ﻞﺗﻮّﻳ ﻒﻳ"
+
+#: lms/templates/courseware/course_about_sidebar_header.html
+msgid "I just enrolled in {title}: "
+msgstr " :{title} ﺲﺠّﻠﺗُ ﻞﺗﻮّﻳ ﻒﻳ"
+
+#: lms/templates/courseware/course_about.html
+msgid "Enroll in {course_name}"
+msgstr "ﺲﺠﻟ ﺍﻶﻧ"
 
