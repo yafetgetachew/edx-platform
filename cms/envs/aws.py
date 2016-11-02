@@ -371,7 +371,21 @@ PROCTORING_SETTINGS = ENV_TOKENS.get("PROCTORING_SETTINGS", PROCTORING_SETTINGS)
 # OpenID Connect issuer ID. Normally the URL of the authentication endpoint.
 OAUTH_OIDC_ISSUER = ENV_TOKENS['OAUTH_OIDC_ISSUER']
 
-################ CUSTOM CONFIGURATIONS ################
+AZURE_RESOURCE_ENDPOINT = "https://graph.windows.net/"
+AZURE_LOGIN_ENDPOINT = "https://login.microsoftonline.com/"
+AZURE_AD_ID = AUTH_TOKENS.get('AZURE_AD_ID', '')
+
+# Add extra dir for mako templates finder
+# '/edx/app/edxapp/venvs/edxapp/src/microsoft-oauth2/sso_edx_microsoft/templates')
+MICROSOFT_MAKO_TEMPLATES = ENV_TOKENS.get('MICROSOFT_MAKO_TEMPLATES', [])
+MAKO_TEMPLATES['main'] = MICROSOFT_MAKO_TEMPLATES + MAKO_TEMPLATES['main']
+
+######################## CUSTOM COURSES for EDX CONNECTOR ######################
+if FEATURES.get('CUSTOM_COURSES_EDX'):
+    INSTALLED_APPS += ('openedx.core.djangoapps.ccxcon',)
+
+# Partner support link for CMS footer
+PARTNER_SUPPORT_EMAIL = ENV_TOKENS.get('PARTNER_SUPPORT_EMAIL', PARTNER_SUPPORT_EMAIL)
 
 COPYRIGHT_YEAR = ENV_TOKENS.get('COPYRIGHT_YEAR', COPYRIGHT_YEAR)
 for middleware in ENV_TOKENS.get('ADDL_CMS_MIDDLEWARE_CLASSES', []):
