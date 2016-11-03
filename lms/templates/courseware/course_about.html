@@ -1,5 +1,6 @@
 <%namespace name='static' file='../static_content.html'/>
 <%!
+from django.template.defaultfilters import truncatechars
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from courseware.courses import get_course_about_section
@@ -115,7 +116,7 @@ from django.template.defaultfilters import truncatechars
       <section class="intro">
         <div class="heading-group">
           <h1>
-            ${course.display_name_with_default_escaped}
+            ${truncatechars(course.display_name_with_default_escaped, 20)}
             <a href="#">${course.display_org_with_default | h}</a>
           </h1>
           <br>
