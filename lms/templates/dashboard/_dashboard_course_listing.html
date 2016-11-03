@@ -2,7 +2,8 @@
 
 <%!
 import urllib
-
+import re
+from django.template.defaultfilters import truncatechars
 from django.utils.translation import ugettext as _
 from django.utils.translation import ungettext
 from django.core.urlresolvers import reverse
@@ -11,6 +12,7 @@ from course_modes.helpers import enrollment_mode_display
 from openedx.core.djangolib.js_utils import dump_js_escaped_json
 from openedx.core.djangolib.markup import HTML, Text
 from openedx.core.lib.time_zone_utils import get_user_time_zone
+
 from student.helpers import (
   VERIFY_STATUS_NEED_TO_VERIFY,
   VERIFY_STATUS_SUBMITTED,
@@ -93,16 +95,16 @@ from student.helpers import (
         <h3 class="course-title">
           % if show_courseware_link:
             % if not is_course_blocked:
-              <a data-course-key="${enrollment.course_id}" href="${course_target}">${course_overview.display_name_with_default}</a>
+              <a data-course-key="${enrollment.course_id}" href="${course_target}">${truncatechars(course_overview.display_name_with_default, 20)}</a>
             % else:
-              <a class="disable-look" data-course-key="${enrollment.course_id}">${course_overview.display_name_with_default}</a>
+              <a class="disable-look" data-course-key="${enrollment.course_id}">${truncatechars(course_overview.display_name_with_default, 20)}</a>
             % endif
           % else:
-            <span>${course_overview.display_name_with_default}</span>
+            <span>${truncatechars(course_overview.display_name_with_default, 20)}</span>
           % endif
         </h3>
         <div class="course-info">
-          <span class="info-university">${course_overview.display_org_with_default} - </span>
+          <span class="info-university">${re.sub("(.{25})", "\\1\n", course_overview.display_org_with_default, 0, re.DOTALL)} - </span>
           <span class="info-course-id">${course_overview.display_number_with_default}</span>
           <span class="info-date-block" data-tooltip="Hi">
           <% time_zone = get_user_time_zone(user) %>
