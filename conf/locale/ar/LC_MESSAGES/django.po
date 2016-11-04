@@ -2,7 +2,7 @@
 # edX translation file.
 # Copyright (C) 2016 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Abdallah Nassif <abdoosh00@gmail.com>, 2013
 # abdallah.nassif <abdallah_n@hotmail.com>, 2013
@@ -45,7 +45,7 @@
 # edX translation file.
 # Copyright (C) 2016 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Abdallah Nassif <abdoosh00@gmail.com>, 2013
 # abdallah.nassif <abdallah_n@hotmail.com>, 2013
@@ -70,7 +70,7 @@
 # edX translation file
 # Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Abdallah Nassif <abdoosh00@gmail.com>, 2013
 # abdallah.nassif <abdallah_n@hotmail.com>, 2013
@@ -109,7 +109,7 @@
 # edX translation file
 # Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Abdallah Nassif <abdoosh00@gmail.com>, 2013
 # abdallah.nassif <abdallah_n@hotmail.com>, 2013
@@ -137,7 +137,7 @@
 # edX translation file
 # Copyright (C) 2016 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Almaazon <Ahmed.Almaazon@hotmail.com>, 2014
 # Ahmed Jazzar <ajazzar@qrf.org>, 2015
@@ -22781,13 +22781,12 @@ msgstr "فلترة المواضيع"
 
 #: lms/templates/courseware/course_about_sidebar_header.html
 msgid "I just enrolled in {title} : {url}"
-msgstr "{url} :{title} ﺲﺠّﻠﺗُ ﻞﺗﻮّﻳ ﻒﻳ"
+msgstr "{url} :{title} سجلت لتوي في"
 
 #: lms/templates/courseware/course_about_sidebar_header.html
 msgid "I just enrolled in {title}: "
-msgstr " :{title} ﺲﺠّﻠﺗُ ﻞﺗﻮّﻳ ﻒﻳ"
+msgstr " :{title} سجلت لتوي في"
 
 #: lms/templates/courseware/course_about.html
 msgid "Enroll in {course_name}"
-msgstr "ﺲﺠﻟ ﺍﻶﻧ"
-
+msgstr "سجل الآن"
