@@ -16,7 +16,7 @@
                 <%- interpolate(
                       gettext("Starts: %(start_date)s"),
                       { start_date: start }, true
-                    ) %>
+                    ).strip %>
             </div>
         </section>
         <div class="sr">
