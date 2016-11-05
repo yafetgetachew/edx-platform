@@ -22790,3 +22790,7 @@ msgstr " :{title} سجلت لتوي في"
 #: lms/templates/courseware/course_about.html
 msgid "Enroll in {course_name}"
 msgstr "سجل الآن"
+
+#: lms/templates/courseware/info.html
+msgid "Welcome to {org}'s!"
+msgstr "ﻡﺮﺤﺑًﺍ ﺐﻛ ﻒﻳ ﺎﻠﻤﺳﺎﻗ ﺎﻠﺗﺎﺒﻋ ﻞﻠﻣﺆﺴﺳﺓ {org}!"
