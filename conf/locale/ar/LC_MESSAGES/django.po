@@ -22803,3 +22803,7 @@ msgstr "ﺎﻠﻋﺮﺒﻳّﺓ"
 msgid "الإنجليزيّة"
 msgstr "ﺍﻺﻨﺠﻠﻳﺰﻳّﺓ"
 
+#platform-course-org
+msgid "kwn-education-course-org"
+msgstr "كوِّن الرقمية"
+
