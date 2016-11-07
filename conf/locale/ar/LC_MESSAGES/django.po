@@ -22794,3 +22794,12 @@ msgstr "سجل الآن"
 #: lms/templates/courseware/info.html
 msgid "Welcome to {org}'s!"
 msgstr "ﻡﺮﺤﺑًﺍ ﺐﻛ ﻒﻳ ﺎﻠﻤﺳﺎﻗ ﺎﻠﺗﺎﺒﻋ ﻞﻠﻣﺆﺴﺳﺓ {org}!"
+
+#Arabic
+msgid "ﺎﻠﻋﺮﺒﻳّﺓ"
+msgstr "ﺎﻠﻋﺮﺒﻳّﺓ"
+
+#English
+msgid "الإنجليزيّة"
+msgstr "ﺍﻺﻨﺠﻠﻳﺰﻳّﺓ"
+

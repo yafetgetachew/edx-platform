@@ -2397,8 +2397,8 @@ ALL_LANGUAGES = (
 #    [u'ak', u'Akan'],
 #    [u'sq', u'Albanian'],
 #    [u'am', u'Amharic'],
-    [u'ar', u'Arabic'],
-    [u'en', u'English']
+    [u'ar', u'العربيّة'],
+    [u'en', u'الإنجليزيّة']
 #    [u'an', u'Aragonese'],
 #    [u'hy', u'Armenian'],
 #    [u'as', u'Assamese'],
