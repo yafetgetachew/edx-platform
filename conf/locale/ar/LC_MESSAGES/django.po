@@ -10739,7 +10739,7 @@ msgstr "سجّل في edX101: نبذة حول إنشاء مساق edX"
 
 #: cms/templates/widgets/sock.html
 #: themes/edx.org/cms/templates/widgets/sock.html
-msgid "Enroll in edX101"
+msgid " edX101"
 msgstr "التسجيل في مساق edX101 "
 
 #: cms/templates/widgets/sock.html
@@ -10984,7 +10984,7 @@ msgstr "العودة إلى {link_start}الصفحة الرئيسية{link_end}.
 #: lms/templates/email_change_successful.html
 #: lms/templates/emails_change_successful.html
 msgid "E-mail change successful!"
-msgstr "جرت عملية تغيير عنوان البريد الإلكتروني بنجاح!"
+msgstr "تم إجراء عملية تغيير عنوان البريد الإلكتروني بنجاح!"
 
 #: lms/templates/email_change_successful.html
 #: lms/templates/emails_change_successful.html
@@ -11920,7 +11920,7 @@ msgstr "أهداف تسجيل العضوية لدى {platform_name} "
 
 #: lms/templates/signup_modal.html
 msgid "Already have an account?"
-msgstr "لديك حساب على إدراك؟"
+msgstr "لديك حساب على كوّنِ الرقمية؟"
 
 #: lms/templates/signup_modal.html
 msgid "Login."
@@ -14719,9 +14719,9 @@ msgid ""
 "following link. If that doesn't work, copy and paste the link into your "
 "browser's address bar."
 msgstr ""
-". بقيت خطوة واحدة قبل تمكنك من التسجيل في المساقات:عليك أن تفعل حسابك على "
-".{platform_name} لتفعيل حسابك، اضغط على الرابط التالي. إن لم يعمل، انسخ "
-"والصق الرابط في شريط العنوان في متصفحك"
+" {platform_name} أنت على بعد خطوة واحدة فقط من تفعيل حسابك لتتمكن من التسجيل في المساقات المطروحة على منصة"
+"لتفعيل حسابك، اضغط على الرابط التالي. إن لم يعمل، يرجى نسخ الرابط أدناه ولصقه في شريط العنوان في متصفحك"
+
 
 #: lms/templates/emails/activation_email.txt
 msgid ""
@@ -14730,13 +14730,12 @@ msgid ""
 "to this email message. Check the help section of the {platform_name} "
 "website."
 msgstr ""
-"إن لم تكن قد سجلت حساباً، ليس عليك فعل أي شيء. ولن تصلك أي رسائل أخرى منّا. "
-"إن احتجت مساعدة، لا ترد على هذه الرسالة، بل اذهب لقسم المساعدة في موقع "
-".{platform_name}"
+"إن لم تقم بالتسجيل على منصة كوِّن، فيرجى تجاهل هذه الرسالة حيث لن نقوم بمراسلتك مرة آخرى. "
+"إن كانت بحاجة للمساعدة، يرجى عدم الرد على هذه الرسالة بل الذهاب لقسم المساعدة في الموقع "
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Activate Your {platform_name} Account"
-msgstr "{platform_name} تفعيل حسابك في"
+msgstr "فعّل حسابك على {platform_name}"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
@@ -22791,9 +22790,10 @@ msgstr " :{title} سجلت لتوي في"
 msgid "Enroll in {course_name}"
 msgstr "سجل الآن"
 
-#: lms/templates/courseware/info.html
+
+#: lms/templates/courseware/info.html 
 msgid "Welcome to {org}'s!"
-msgstr "ﻡﺮﺤﺑًﺍ ﺐﻛ ﻒﻳ ﺎﻠﻤﺳﺎﻗ ﺎﻠﺗﺎﺒﻋ ﻞﻠﻣﺆﺴﺳﺓ {org}!"
+msgstr "مرحباً بك في المساق التابع لمنصة {org}!"
 
 #Arabic
 msgid "ﺎﻠﻋﺮﺒﻳّﺓ"
