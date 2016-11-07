@@ -764,7 +764,7 @@ class RegistrationView(APIView):
             terms_text = _(u"Terms of Service and Honor Code")
 
         terms_link = u"<a href=\"{url}\" target=\"_blank\">{terms_text}</a>".format(
-            url='http://kwn.education/terms-and-conditions/',
+            url='http://kwn.education/terms-of-service-and-honor-code/',
             terms_text=terms_text
         )
 
