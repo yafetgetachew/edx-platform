@@ -235,9 +235,7 @@
                 accountUserId: accountUserId,
                 el: accountSettingsElement,
                 tabSections: {
-                    aboutTabSections: aboutSectionsData,
-                    accountsTabSections: accountsSectionData,
-                    ordersTabSections: ordersSectionData
+                    aboutTabSections: aboutSectionsData
                 },
                 userPreferencesModel: userPreferencesModel
             });
