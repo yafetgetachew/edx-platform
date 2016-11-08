@@ -549,7 +549,7 @@ class RegistrationView(APIView):
             field_type="select",
             options=options,
             include_default_option=True,
-            required=required
+            required= True
         )
 
     def _add_mailing_address_field(self, form_desc, required=True):
