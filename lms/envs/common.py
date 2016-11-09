@@ -2157,6 +2157,12 @@ REGISTRATION_EXTRA_FIELDS = {
 # that match a regex in this list. Set to None to allow any email (default).
 REGISTRATION_EMAIL_PATTERNS_ALLOWED = None
 
+#Example REGISTRATION_EMAIL_PATTERNS_ALLOWED List
+#REGISTRATION_EMAIL_PATTERNS_ALLOWED=[
+#    r'.*@edx.org',  # Naive regex omitting '^', '$' and '\.' should still work.
+#    r'^.*@(.*\.)?example\.com$',
+#    r'^(^\w+\.\w+)@school.tld$',
+#]
 ########################## CERTIFICATE NAME ########################
 CERT_NAME_SHORT = "Certificate"
 CERT_NAME_LONG = "Certificate of Achievement"
