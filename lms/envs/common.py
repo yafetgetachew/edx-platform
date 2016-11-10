@@ -2155,7 +2155,7 @@ REGISTRATION_EXTRA_FIELDS = {
 
 # Optional setting to restrict registration / account creation to only emails
 # that match a regex in this list. Set to None to allow any email (default).
-REGISTRATION_EMAIL_PATTERNS_ALLOWED = None
+#REGISTRATION_EMAIL_PATTERNS_ALLOWED = None
 
 #Example REGISTRATION_EMAIL_PATTERNS_ALLOWED List
 #REGISTRATION_EMAIL_PATTERNS_ALLOWED=[
@@ -2163,6 +2163,9 @@ REGISTRATION_EMAIL_PATTERNS_ALLOWED = None
 #    r'^.*@(.*\.)?example\.com$',
 #    r'^(^\w+\.\w+)@school.tld$',
 #]
+REGISTRATION_EMAIL_PATTERNS_ALLOWED=[
+    r'^[a-zA-Z0-9_.+-]+@zsmu\.edu\.ua$',
+]
 ########################## CERTIFICATE NAME ########################
 CERT_NAME_SHORT = "Certificate"
 CERT_NAME_LONG = "Certificate of Achievement"
