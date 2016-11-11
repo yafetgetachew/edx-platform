@@ -116,7 +116,7 @@ from django.template.defaultfilters import truncatechars
         <div class="heading-group">
           <h1>
             ${course.display_name_with_default_escaped}
-            <a href="#">${course.display_org_with_default | h}</a>
+            <a href="#">${_(course.display_org_with_default) | h}</a>
           </h1>
           <br>
           <h3>
