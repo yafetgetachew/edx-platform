@@ -1541,7 +1541,6 @@ def _do_create_account(form, custom_form=None):
 
     return (user, profile, registration)
 
-
 def create_account_with_params(request, params):
     """
     Given a request and a dict of parameters (which may or may not have come
@@ -1818,6 +1817,8 @@ def create_account_with_params(request, params):
             new_user.is_active = True
             new_user.save()
             AUDIT_LOG.info(u"Login activated on extauth account - {0} ({1})".format(new_user.username, new_user.email))
+
+    logout(request)
 
     return new_user
 
