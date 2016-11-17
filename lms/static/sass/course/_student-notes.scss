@@ -186,7 +186,7 @@ $divider-visual-tertiary: ($baseline/20) solid $gray-l4;
           border: 0;
           background: transparent;
           padding: 0;
-          
+
           &:active {
             background: transparent;
             box-shadow: none;
@@ -368,7 +368,7 @@ $divider-visual-tertiary: ($baseline/20) solid $gray-l4;
         @include padding-right($baseline);
 
         color: $gray-l2;
-        font-weight: $font-semibold !important; // needed for poor base LMS styling scope
+        font-weight: $font-semibold; // needed for poor base LMS styling scope
       }
 
       .tabs {

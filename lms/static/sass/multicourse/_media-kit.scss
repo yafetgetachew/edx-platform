@@ -145,7 +145,7 @@ $white: rgb(255,255,255);
         text-transform: uppercase;
 
         .org-name {
-          color: $white !important;
+          color: $white;
           font-weight: bold;
           text-transform: none;
         }
@@ -207,7 +207,7 @@ $white: rgb(255,255,255);
         letter-spacing: 0;
 
         .org-name {
-          color: $dark-gray !important;
+          color: $dark-gray;
           font-weight: bold;
           text-transform: none;
         }
