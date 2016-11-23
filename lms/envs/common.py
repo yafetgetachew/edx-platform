@@ -2965,4 +2965,19 @@ REDIRECT_CACHE_TIMEOUT = None  # The length of time we cache Redirect model data
 REDIRECT_CACHE_KEY_PREFIX = 'redirects'
 #####RACCOONGANG########
 DOC_LINK_BASE_URL = ''
+ARABIC_MONTHS = [
+    None,
+    "يناير",
+    "فبراير",
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر"
+]
 #####RACCOONGANG########

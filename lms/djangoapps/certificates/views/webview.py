@@ -49,7 +49,7 @@ from certificates.models import (
 
 log = logging.getLogger(__name__)
 
-locale.setlocale(locale.LC_ALL,'ar_SY.UTF-8')
+locale.setlocale(locale.LC_ALL,'ar_SA.UTF-8')
 
 def get_certificate_description(mode, certificate_type, platform_name):
     """

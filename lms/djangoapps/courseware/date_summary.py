@@ -10,6 +10,7 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from django.utils.translation import to_locale, get_language
+from django.conf import settings
 from edxmako.shortcuts import render_to_string
 from lazy import lazy
 from pytz import utc
@@ -53,7 +54,7 @@ class DateSummary(object):
         The format to display this date in. By default, displays like Jan
         01, 2015.
         """
-        return u'%b %d, %Y'
+        return u'{month} %d, %Y'
 
     @property
     def link(self):
@@ -115,10 +116,12 @@ class DateSummary(object):
         # and if today were December 5th, 2020, 'relative' would be "1
         # month".
         date_format = _(u"{relative} ago - {absolute}") if date_has_passed else _(u"in {relative} - {absolute}")
-        return date_format.format(
+        date = date_format.format(
             relative=relative_date,
             absolute=self.date.astimezone(self.time_zone).strftime(self.date_format.encode('utf-8')).decode('utf-8'),
         )
+        month = settings.ARABIC_MONTHS[self.date.astimezone(self.time_zone).month].decode('utf-8')
+        return date.format(month=month)
 
     @property
     def is_enabled(self):
@@ -149,7 +152,7 @@ class TodaysDate(DateSummary):
 
     @property
     def date_format(self):
-        return u'%b %d, %Y (%H:%M {tz_abbr})'.format(tz_abbr=get_time_zone_abbr(self.time_zone))
+        return u'{{month}} %d, %Y (%H:%M {tz_abbr})'.format(tz_abbr=get_time_zone_abbr(self.time_zone))
 
     # The date is shown in the title, no need to display it again.
     def get_context(self):
@@ -163,8 +166,10 @@ class TodaysDate(DateSummary):
 
     @property
     def title(self):
+        date = self.date.astimezone(self.time_zone).strftime(self.date_format.encode('utf-8')).decode('utf-8')
+        month = settings.ARABIC_MONTHS[self.date.astimezone(self.time_zone).month].decode('utf-8')
         return _(u'Today is {date}').format(
-            date=self.date.astimezone(self.time_zone).strftime(self.date_format.encode('utf-8')).decode('utf-8')
+            date=date.format(month=month)
         )
 
 
