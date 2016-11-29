@@ -9867,7 +9867,7 @@ msgstr ""
 #. a field on the registration form meant to hold the user's username.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "JaneDoe"
-msgstr "فاطمة_الفهري"
+msgstr "Fatimah_AlFahri"
 
 #. Translators: This label appears above a dropdown menu on the registration
 #. form used to select the user's highest completed level of education.
@@ -22793,15 +22793,15 @@ msgstr "سجل الآن"
 # Additional RACCOONGAN
 #: lms/templates/courseware/info.html 
 msgid "Welcome to {org}'s!"
-msgstr "مرحباً بك في المساق التابع لمنصة!"
+msgstr "مرحباً بك في المساق التابع لمنصة كوِّن الرقمية"
 
 #Arabic
-msgid "ﺎﻠﻋﺮﺒﻳّﺓ"
-msgstr "ﺎﻠﻋﺮﺒﻳّﺓ"
+msgid "العربية"
+msgstr "العربية"
 
 #English
-msgid "الإنجليزيّة"
-msgstr "ﺍﻺﻨﺠﻠﻳﺰﻳّﺓ"
+msgid "الإنكليزية"
+msgstr "الإنكليزية"
 
 #platform-course-org
 msgid "kwn-education-course-org"
