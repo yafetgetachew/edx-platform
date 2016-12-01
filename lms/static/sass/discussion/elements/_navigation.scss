@@ -25,7 +25,8 @@
 .forum-nav-browse {
     box-sizing: border-box;
     // TODO: don't use table-cell for layout purposes as it switches the screenreader mode
-    display: table-cell;
+    white-space: nowrap;
+    align-items: center;
     vertical-align: middle;
     width: auto;
     padding: 11px;
@@ -47,11 +48,13 @@
   .icon {
     @include font-size(14);
     @include margin-right($baseline/4);
+    padding-top: 3px;
   }
 }
 
 .forum-nav-browse-current {
   @include font-size(12);
+  padding-top: 3px;
 }
 
 .forum-nav-browse-drop-arrow {
