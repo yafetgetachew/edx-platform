@@ -19708,7 +19708,7 @@ msgstr ""
 
 #: cms/templates/howitworks.html
 msgid "Welcome to {studio_name}"
-msgstr "Вітаємо на {platform_name}"
+msgstr "Вітаємо на {studio_name}"
 
 #: cms/templates/howitworks.html
 msgid ""
