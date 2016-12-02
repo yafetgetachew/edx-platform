@@ -22807,3 +22807,23 @@ msgstr "الإنكليزية"
 msgid "kwn-education-course-org"
 msgstr "كوِّن الرقمية"
 
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+msgid "Nationality"
+msgstr "الجنسية"
+
+msgid "Aim of studying"
+msgstr "هدفي من الدراسة"
+
+msgid "Entrepreneurship business"
+msgstr "ريادة عمل تجاري"
+
+msgid "Getting a job"
+msgstr "الحصول على وظيفة"
+
+msgid "Get promoted"
+msgstr "الحصول على ترقية"
+
+msgid "Skills development"
+msgstr "تنمية مهاراتي"

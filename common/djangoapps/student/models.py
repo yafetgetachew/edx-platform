@@ -294,6 +294,13 @@ class UserProfile(models.Model):
         # Translators: 'Other' refers to the student's level of education
         ('other', ugettext_noop("Other Education"))
     )
+
+    AIM_OF_STUDYING_CHOICES = (
+        ('buisness', ugettext_noop("Entrepreneurship business")),
+        ('job', ugettext_noop("Getting a job")),
+        ('promoted', ugettext_noop("Get promoted")),
+        ('skills', ugettext_noop("Skills development")),
+    )
     level_of_education = models.CharField(
         blank=True, null=True, max_length=6, db_index=True,
         choices=LEVEL_OF_EDUCATION_CHOICES
@@ -305,6 +312,14 @@ class UserProfile(models.Model):
     allow_certificate = models.BooleanField(default=1)
     bio = models.CharField(blank=True, null=True, max_length=3000, db_index=False)
     profile_image_uploaded_at = models.DateTimeField(null=True, blank=True)
+    phone_country_code = models.CharField(blank=True, null=True, max_length=5)
+    phone = models.CharField(blank=True, null=True, max_length=12)
+    nationality = CountryField(blank=True, null=True)
+    aim_of_studying = models.CharField(blank=True, null=True, choices=AIM_OF_STUDYING_CHOICES, max_length=10)
+
+    @property
+    def phone_number(self):
+        return '{}{}'.format(self.phone_country_code, self.phone)
 
     @property
     def has_profile_image(self):

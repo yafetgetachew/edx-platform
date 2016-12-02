@@ -174,6 +174,10 @@ class RegistrationView(APIView):
         "goals",
         "honor_code",
         "terms_of_service",
+        "phone_country_code",
+        "phone",
+        "nationality",
+        "aim_of_studying"
     ]
 
     # This end-point is available to anonymous users,
@@ -352,6 +356,50 @@ class RegistrationView(APIView):
         response = JsonResponse({"success": True})
         set_logged_in_cookies(request, response, user)
         return response
+
+
+    def _add_phone_country_code_field(self, form_desc, required=True):
+        label = _(u"Phone number")
+
+        form_desc.add_field(
+            "phone_country_code",
+            label=label,
+            required=required
+        )
+
+
+    def _add_phone_field(self, form_desc, required=True):
+        form_desc.add_field(
+            "phone",
+            label='',
+            required=required
+        )
+
+
+    def _add_nationality_field(self, form_desc, required=True):
+        label = _(u"Nationality")
+
+        form_desc.add_field(
+            "nationality",
+            field_type="select",
+            options=list(countries),
+            label=label,
+            required=required
+        )
+
+
+    def _add_aim_of_studying_field(self, form_desc, required=True):
+        label = _(u"Aim of studying")
+
+        options = [(name, _(title)) for name, title in UserProfile.AIM_OF_STUDYING_CHOICES]
+
+        form_desc.add_field(
+            "aim_of_studying",
+            field_type="select",
+            options=options,
+            label=label,
+            required=required
+        )
 
     def _add_email_field(self, form_desc, required=True):
         """Add an email field to a form description.
