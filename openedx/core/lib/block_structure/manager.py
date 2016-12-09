@@ -59,7 +59,8 @@ class BlockStructureManager(object):
             # Override the root_block_usage_key so traversals start at the
             # requested location.  The rest of the structure will be pruned
             # as part of the transformation.
-            if starting_block_usage_key not in block_structure:
+            if not (starting_block_usage_key in block_structure
+                or unicode(starting_block_usage_key) in map(unicode, block_structure)):
                 raise UsageKeyNotInBlockStructure(
                     "The requested usage_key '{0}' is not found in the block_structure with root '{1}'",
                     unicode(starting_block_usage_key),

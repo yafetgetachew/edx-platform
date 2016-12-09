@@ -14,7 +14,7 @@ from logging import getLogger
 from openedx.core.lib.graph_traversals import traverse_topologically, traverse_post_order
 
 from .exceptions import TransformerException
-
+from ccx_keys.locator import CCXBlockUsageLocator
 
 logger = getLogger(__name__)  # pylint: disable=invalid-name
 
@@ -60,7 +60,6 @@ class BlockStructure(object):
         # presence in this map.
         # dict {UsageKey: _BlockRelations}
         self._block_relations = {}
-
         # Add the root block.
         self._add_block(self._block_relations, root_block_usage_key)
 
@@ -119,7 +118,12 @@ class BlockStructure(object):
                 new root of the block structure.
         """
         self.root_block_usage_key = usage_key
-        self._block_relations[usage_key].parents = []
+
+        try:
+            self._block_relations[usage_key].parents = []
+        except KeyError:
+            usage_key = CCXBlockUsageLocator.from_string(str(usage_key))
+            self._block_relations[usage_key].parents = []
 
     def __contains__(self, usage_key):
         """

@@ -78,10 +78,14 @@ class UserPartitionTransformer(FilteringTransformerMixin, BlockStructureTransfor
         user_groups = _get_user_partition_groups(
             usage_info.course_key, user_partitions, usage_info.user
         )
-        group_access_filter = block_structure.create_removal_filter(
-            lambda block_key: not block_structure.get_transformer_block_field(
+        def _filter_access(block_key):
+            bs = block_structure.get_transformer_block_field(
                 block_key, self, 'merged_group_access'
-            ).check_group_access(user_groups)
+            )
+            return bs and bs.check_group_access(user_groups) or False
+
+        group_access_filter = block_structure.create_removal_filter(
+            _filter_access
         )
 
         result_list.append(group_access_filter)
