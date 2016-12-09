@@ -47,9 +47,11 @@ def get_id_token(user, client_name, secret_key=None):
 
     try:
         # Service users may not have user profiles.
-        full_name = UserProfile.objects.get(user=user).name
+        user_profile = UserProfile.objects.get(user_id=user.id)
     except UserProfile.DoesNotExist:
         full_name = None
+    else:
+        full_name = user_profile.name
 
     now = datetime.datetime.utcnow()
     expires_in = getattr(settings, 'OAUTH_ID_TOKEN_EXPIRATION', 30)
@@ -57,7 +59,7 @@ def get_id_token(user, client_name, secret_key=None):
     payload = {
         'preferred_username': user.username,
         'name': full_name,
-        'email': user.email,
+        'email': not user.is_anonymous() and user.email or None,
         'administrator': user.is_staff,
         'iss': settings.OAUTH_OIDC_ISSUER,
         'exp': now + datetime.timedelta(seconds=expires_in),

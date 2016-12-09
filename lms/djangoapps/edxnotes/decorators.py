@@ -5,6 +5,7 @@ Decorators related to edXNotes.
 import json
 
 from django.conf import settings
+from django.contrib.auth.models import AnonymousUser
 
 from edxnotes.helpers import (
     get_edxnotes_id_token,
@@ -36,6 +37,7 @@ def edxnotes(cls):
         if is_studio or not is_feature_enabled(course):
             return original_get_html(self, *args, **kwargs)
         else:
+            user = self.runtime.get_real_user(self.runtime.anonymous_student_id) or AnonymousUser()
             return render_to_string("edxnotes_wrapper.html", {
                 "content": original_get_html(self, *args, **kwargs),
                 "uid": generate_uid(),
@@ -46,7 +48,7 @@ def edxnotes(cls):
                     # Use camelCase to name keys.
                     "usageId": unicode(self.scope_ids.usage_id).encode("utf-8"),
                     "courseId": unicode(self.runtime.course_id).encode("utf-8"),
-                    "token": get_edxnotes_id_token(self.runtime.get_real_user(self.runtime.anonymous_student_id)),
+                    "token": get_edxnotes_id_token(user),
                     "tokenUrl": get_token_url(self.runtime.course_id),
                     "endpoint": get_public_endpoint(),
                     "debug": settings.DEBUG,
