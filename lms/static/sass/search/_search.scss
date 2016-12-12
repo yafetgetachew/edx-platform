@@ -78,6 +78,7 @@
 
     .result-excerpt {
       margin-bottom: $baseline;
+      margin-right: 100px;
     }
     .result-type {
       @include right($baseline/2);
