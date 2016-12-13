@@ -11450,7 +11450,7 @@ msgstr "Nota: somente os instrutores podem fazer anotações."
 #. untranslated. See http://open.edx.org for more information.
 #: lms/templates/index.html
 msgid "Welcome to the Open edX{registered_trademark} platform!"
-msgstr ""
+msgstr "Bem-vindo(a) ao EFx.Social!"
 
 #. Translators: 'Open edX' is a registered trademark, please keep this
 #. untranslated. See http://open.edx.org for more information.
