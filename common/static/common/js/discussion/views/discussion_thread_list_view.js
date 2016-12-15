@@ -523,9 +523,7 @@
 
             DiscussionThreadListView.prototype.fitName = function(name) {
                 var partialName, path, prefix, rawName, width, x;
-                this.maxNameWidth = this.$(".forum-nav-browse").width() -
-                    this.$(".forum-nav-browse .icon").outerWidth(true) -
-                    this.$(".forum-nav-browse-drop-arrow").outerWidth(true);
+                this.maxNameWidth = this.$(".forum-nav-browse-current").width();
                 width = this.getNameWidth(name);
                 if (width < this.maxNameWidth) {
                     return name;
