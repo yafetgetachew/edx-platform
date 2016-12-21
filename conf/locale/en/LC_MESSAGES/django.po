@@ -4138,8 +4138,8 @@ msgstr ""
 #: themes/red-theme/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
-msgid "Privacy Policy"
-msgstr ""
+# msgid "Privacy Policy"
+# msgstr ""
 
 #: lms/djangoapps/branding/api.py
 msgid "Accessibility Policy"
@@ -16392,8 +16392,8 @@ msgid "Put your Privacy Policy here!"
 msgstr ""
 
 #: themes/stanford-style/lms/templates/static_templates/tos.html
-msgid "Put your Privacy Policy here!"
-msgstr ""
+# msgid "Put your Privacy Policy here!"
+# msgstr ""
 
 #: themes/stanford-style/lms/templates/static_templates/tos.html
 msgid "Put your Copyright Text here!"
