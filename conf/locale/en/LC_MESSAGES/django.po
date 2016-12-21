@@ -224,7 +224,7 @@ msgid "ID Verified Ribbon/Badge"
 msgstr ""
 
 #: common/djangoapps/course_modes/helpers.py
-msgid "You're enrolled as an honor code student"
+msgid "You're enrolled as an Privacy Policy student"
 msgstr ""
 
 #: common/djangoapps/course_modes/helpers.py lms/djangoapps/branding/api.py
@@ -232,7 +232,7 @@ msgstr ""
 #: lms/templates/static_templates/honor.html
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
-msgid "Honor Code"
+msgid "Privacy Policy"
 msgstr ""
 
 #: common/djangoapps/course_modes/helpers.py
@@ -460,7 +460,7 @@ msgid "Email cannot be more than %(limit_value)s characters long"
 msgstr ""
 
 #: common/djangoapps/student/forms.py
-msgid "You must accept the terms of service."
+msgid "You must accept the Terms of Use."
 msgstr ""
 
 #: common/djangoapps/student/forms.py
@@ -492,7 +492,7 @@ msgid "A country is required"
 msgstr ""
 
 #: common/djangoapps/student/forms.py
-msgid "To enroll, you must follow the honor code."
+msgid "To enroll, you must follow the Privacy Policy."
 msgstr ""
 
 #: common/djangoapps/student/forms.py
@@ -665,7 +665,7 @@ msgid "Other Education"
 msgstr ""
 
 #: common/djangoapps/student/models.py
-msgid "{platform_name} Honor Code Certificate for {course_name}"
+msgid "{platform_name} Privacy Policy Certificate for {course_name}"
 msgstr ""
 
 #: common/djangoapps/student/models.py
@@ -4126,7 +4126,7 @@ msgid "Sitemap"
 msgstr ""
 
 #: lms/djangoapps/branding/api.py
-msgid "Terms of Service & Honor Code"
+msgid "Terms of Use & Privacy Policy"
 msgstr ""
 
 #. #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
@@ -4153,7 +4153,7 @@ msgstr ""
 #: themes/red-theme/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
-msgid "Terms of Service"
+msgid "Terms of Use"
 msgstr ""
 
 #: lms/djangoapps/branding/api.py
@@ -4338,7 +4338,7 @@ msgstr ""
 #: lms/djangoapps/certificates/views/webview.py
 msgid ""
 "An {cert_type} certificate signifies that a learner has agreed to abide by "
-"the honor code established by {platform_name} and has completed all of the "
+"the Privacy Policy established by {platform_name} and has completed all of the "
 "required tasks for this course under its guidelines."
 msgstr ""
 
@@ -4349,7 +4349,7 @@ msgstr ""
 #: lms/djangoapps/certificates/views/webview.py
 msgid ""
 "A {cert_type} certificate signifies that a learner has agreed to abide by "
-"the honor code established by {platform_name} and has completed all of the "
+"the Privacy Policy established by {platform_name} and has completed all of the "
 "required tasks for this course under its guidelines. A {cert_type} "
 "certificate also indicates that the identity of the learner has been checked"
 " and is valid."
@@ -4418,7 +4418,7 @@ msgstr ""
 #. Translators: The &amp; characters represent an ampersand character and can
 #. be ignored
 #: lms/djangoapps/certificates/views/webview.py
-msgid "Terms of Service &amp; Honor Code"
+msgid "Terms of Use &amp; Privacy Policy"
 msgstr ""
 
 #. Translators: This line appears as a byline to a header image and describes
@@ -6467,7 +6467,7 @@ msgid "Mode {mode} does not exist for {course_id}"
 msgstr ""
 
 #. Translators: In this particular case, mode_name refers to a
-#. particular mode (i.e. Honor Code Certificate, Verified Certificate, etc)
+#. particular mode (i.e. Privacy Policy Certificate, Verified Certificate, etc)
 #. by which a user could enroll in the given course.
 #: lms/djangoapps/shoppingcart/models.py
 msgid "{mode_name} for course {course}"
@@ -7217,7 +7217,7 @@ msgid "Audit Enrollment"
 msgstr ""
 
 #: lms/djangoapps/shoppingcart/reports.py
-msgid "Honor Code Enrollment"
+msgid "Privacy Policy Enrollment"
 msgstr ""
 
 #: lms/djangoapps/shoppingcart/reports.py
@@ -8643,20 +8643,20 @@ msgstr ""
 #. Translators: This is a legal document users must agree to
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/views.py
-msgid "Terms of Service and Honor Code"
+msgid "Terms of Use and Privacy Policy"
 msgstr ""
 
-#. Translators: "Terms of Service" is a legal document users must agree to
+#. Translators: "Terms of Use" is a legal document users must agree to
 #. in order to register a new account.
-#. Translators: "Terms of service" is a legal document users must agree to
+#. Translators: "Terms of Use" is a legal document users must agree to
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "I agree to the {platform_name} {terms_of_service}."
 msgstr ""
 
-#. Translators: "Terms of Service" is a legal document users must agree to
+#. Translators: "Terms of Use" is a legal document users must agree to
 #. in order to register a new account.
-#. Translators: "Terms of service" is a legal document users must agree to
+#. Translators: "Terms of Use" is a legal document users must agree to
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "You must agree to the {platform_name} {terms_of_service}."
@@ -10243,14 +10243,14 @@ msgstr ""
 #: lms/templates/signup_modal.html
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
-msgid "I agree to the {link_start}Terms of Service{link_end}"
+msgid "I agree to the {link_start}Terms of Use{link_end}"
 msgstr ""
 
 #: lms/templates/register-form.html lms/templates/register-shib.html
 #: lms/templates/signup_modal.html
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
-msgid "I agree to the {link_start}Honor Code{link_end}"
+msgid "I agree to the {link_start}Privacy Policy{link_end}"
 msgstr ""
 
 #: lms/templates/register-form.html lms/templates/signup_modal.html
@@ -10866,11 +10866,11 @@ msgid ""
 msgstr ""
 
 #: lms/templates/api_admin/terms_of_service.html
-msgid "API Terms of Service"
+msgid "API Terms of Use"
 msgstr ""
 
 #: lms/templates/api_admin/terms_of_service.html
-msgid "Terms of Service for {platform_name} APIs"
+msgid "Terms of Use for {platform_name} APIs"
 msgstr ""
 
 #: lms/templates/api_admin/terms_of_service.html
@@ -10881,8 +10881,8 @@ msgstr ""
 msgid ""
 "Welcome to {platform_name}. Thank you for using {platform_name}'s Course "
 "Discovery API and any additional APIs that we may offer from time to time "
-"(collectively, the \"APIs\"). Please read these Terms of Service prior to "
-"accessing or using the APIs. These Terms of Service, any additional terms "
+"(collectively, the \"APIs\"). Please read these Terms of Use prior to "
+"accessing or using the APIs. These Terms of Use, any additional terms "
 "within accompanying API documentation, and any applicable policies and "
 "guidelines that {platform_name} makes available and/or updates from time to "
 "time are agreements (collectively, the \"Terms\") between you and "
@@ -11017,7 +11017,7 @@ msgid ""
 "rights (including without limitation laws regarding the import or export of "
 "data or software, privacy, copyright, and local laws). You will not use the "
 "APIs to encourage or promote illegal activity or violation of third party "
-"rights. You will not violate any other terms of service with "
+"rights. You will not violate any other Terms of Use with "
 "{platform_name}. You will only access (or attempt to access) an API by the "
 "means described in the documentation of that API. You will not misrepresent "
 "or mask either your identity or yourApplication's identity when using the "
@@ -12578,7 +12578,7 @@ msgstr ""
 msgid ""
 "Since we did not have a valid set of verification photos from you when your "
 "{cert_name_long} was generated, we could not grant you a verified "
-"{cert_name_short}. An honor code {cert_name_short} has been granted instead."
+"{cert_name_short}. An Privacy Policy {cert_name_short} has been granted instead."
 msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -16340,8 +16340,8 @@ msgstr ""
 
 #: themes/red-theme/lms/templates/footer.html
 msgid ""
-"{tos_link_start}Terms of Service{tos_link_end} and {honor_link_start}Honor "
-"Code{honor_link_end}"
+"{tos_link_start}Terms of Use{tos_link_end} and {honor_link_start}Privacy "
+"Policy{honor_link_end}"
 msgstr ""
 
 #: themes/red-theme/lms/templates/header.html
@@ -16384,7 +16384,7 @@ msgid ""
 msgstr ""
 
 #: themes/stanford-style/lms/templates/static_templates/tos.html
-msgid "Put your Terms of Service here!"
+msgid "Put your Terms of Use here!"
 msgstr ""
 
 #: themes/stanford-style/lms/templates/static_templates/tos.html
@@ -16392,7 +16392,7 @@ msgid "Put your Privacy Policy here!"
 msgstr ""
 
 #: themes/stanford-style/lms/templates/static_templates/tos.html
-msgid "Put your Honor Code here!"
+msgid "Put your Privacy Policy here!"
 msgstr ""
 
 #: themes/stanford-style/lms/templates/static_templates/tos.html
@@ -18462,7 +18462,7 @@ msgid "Preferred Language"
 msgstr ""
 
 #: cms/templates/register.html
-msgid "I agree to the {a_start} Terms of Service {a_end}"
+msgid "I agree to the {a_start} Terms of Use {a_end}"
 msgstr ""
 
 #: cms/templates/register.html
