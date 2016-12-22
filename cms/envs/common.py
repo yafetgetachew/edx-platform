@@ -922,6 +922,10 @@ INSTALLED_APPS = (
 
     # Enables default site and redirects
     'django_sites_extensions',
+
+    'course_category',
+
+    'django_mptt_admin',
 )
 
 
