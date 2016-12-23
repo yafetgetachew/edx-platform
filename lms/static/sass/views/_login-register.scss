@@ -422,6 +422,26 @@
             }
         }
 
+        &.button-oa2-facebook-2 {
+            color: $facebook-blue;
+
+            .icon {
+                background: $facebook-blue;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $facebook-blue;
+                border: 1px solid #263A62;
+                color: $white;
+            }
+
+            &:hover {
+                box-shadow: 0 2px 1px 0 #30487C;
+            }
+        }
+
+
         &.button-oa2-facebook {
             color: $facebook-blue;
 
