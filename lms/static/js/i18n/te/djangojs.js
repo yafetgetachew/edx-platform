@@ -5,17 +5,78 @@
   var django = globals.django || (globals.django = {});
 
   
-  django.pluralidx = function (count) { return (count == 1) ? 0 : 1; };
+  django.pluralidx = function (n) {
+    var v=(n != 1);
+    if (typeof(v) == 'boolean') {
+      return v ? 1 : 0;
+    } else {
+      return v;
+    }
+  };
   
 
   
-  /* gettext identity library */
+  /* gettext library */
 
-  django.gettext = function (msgid) { return msgid; };
-  django.ngettext = function (singular, plural, count) { return (count == 1) ? singular : plural; };
+  django.catalog = {
+    "Actions": "\u0c1a\u0c30\u0c4d\u0c2f\u0c32\u0c41", 
+    "Cancel": "\u0c30\u0c26\u0c4d\u0c26\u0c41", 
+    "Country": "\u0c26\u0c47\u0c36\u0c02", 
+    "Delete": "\u0c24\u0c4a\u0c32\u0c17\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f", 
+    "Donate": "\u0c26\u0c3e\u0c28\u0c02", 
+    "Duplicate": "\u0c28\u0c15\u0c3f\u0c32\u0c40", 
+    "Gender": "\u0c32\u0c3f\u0c02\u0c17\u0c2e\u0c41", 
+    "Groups": "\u0c38\u0c2e\u0c42\u0c39\u0c3e\u0c32\u0c41", 
+    "Less": "\u0c24\u0c15\u0c4d\u0c15\u0c41\u0c35", 
+    "Middle": "\u0c2e\u0c27\u0c4d\u0c2f", 
+    "More": "\u0c0e\u0c15\u0c4d\u0c15\u0c41\u0c35", 
+    "Name": "\u0c2a\u0c47\u0c30\u0c41", 
+    "OK": "\u0c38\u0c30\u0c47", 
+    "Ok": "\u0c38\u0c30\u0c47", 
+    "Organization": "\u0c38\u0c02\u0c38\u0c4d\u0c25", 
+    "Other": "\u0c07\u0c24\u0c30", 
+    "Title": "\u0c36\u0c40\u0c30\u0c4d\u0c37\u0c3f\u0c15", 
+    "Warning": "\u0c39\u0c46\u0c1a\u0c4d\u0c1a\u0c30\u0c3f\u0c15", 
+    "anonymous": "\u0c05\u0c28\u0c3e\u0c2e\u0c15", 
+    "name": "\u0c2a\u0c47\u0c30\u0c41", 
+    "remove": "\u0c24\u0c4a\u0c32\u0c17\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f"
+  };
+
+  django.gettext = function (msgid) {
+    var value = django.catalog[msgid];
+    if (typeof(value) == 'undefined') {
+      return msgid;
+    } else {
+      return (typeof(value) == 'string') ? value : value[0];
+    }
+  };
+
+  django.ngettext = function (singular, plural, count) {
+    var value = django.catalog[singular];
+    if (typeof(value) == 'undefined') {
+      return (count == 1) ? singular : plural;
+    } else {
+      return value[django.pluralidx(count)];
+    }
+  };
+
   django.gettext_noop = function (msgid) { return msgid; };
-  django.pgettext = function (context, msgid) { return msgid; };
-  django.npgettext = function (context, singular, plural, count) { return (count == 1) ? singular : plural; };
+
+  django.pgettext = function (context, msgid) {
+    var value = django.gettext(context + '\x04' + msgid);
+    if (value.indexOf('\x04') != -1) {
+      value = msgid;
+    }
+    return value;
+  };
+
+  django.npgettext = function (context, singular, plural, count) {
+    var value = django.ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
+    if (value.indexOf('\x04') != -1) {
+      value = django.ngettext(singular, plural, count);
+    }
+    return value;
+  };
   
 
   django.interpolate = function (fmt, obj, named) {
