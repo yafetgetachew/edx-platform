@@ -2088,6 +2088,10 @@ INSTALLED_APPS = (
 
     # Email marketing integration
     'email_marketing',
+
+    'course_category',
+
+    'django_mptt_admin',
 )
 
 # Migrations which are not in the standard module "migrations"
