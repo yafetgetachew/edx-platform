@@ -259,7 +259,8 @@
         .signatory {
             display: inline-block;
             vertical-align: middle;
-            width: span(12);
+            //width: span(12);
+            width: 30% !important;
 
             @include susy-breakpoint($bp-medium, $susy) {
                 width: span(4);
@@ -276,8 +277,9 @@
             .signatory-signature {
                 display: block;
                 max-width: 100%;
-                max-height: rem(100);
-                padding: spacing-vertical(small) spacing-horizontal(small);
+                max-height: 180px;
+                padding: 5px;
+                //padding: spacing-vertical(small) spacing-horizontal(small);
             }
         }
     }

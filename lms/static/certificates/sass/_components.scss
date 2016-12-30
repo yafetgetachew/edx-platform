@@ -231,7 +231,8 @@
     }
 
     .accomplishment-type-symbol {
-        @include size(rem(100));
+//        @include size(rem(100));
+        width: 21rem;
         margin: 0 auto spacing-vertical(small) auto;
     }
 
