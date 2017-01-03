@@ -285,14 +285,10 @@ class UserProfile(models.Model):
         ('p', ugettext_noop('Doctorate')),
         ('m', ugettext_noop("Master's or professional degree")),
         ('b', ugettext_noop("Bachelor's degree")),
-        ('a', ugettext_noop("Associate degree")),
         ('hs', ugettext_noop("Secondary/high school")),
-        ('jhs', ugettext_noop("Junior secondary/junior high/middle school")),
-        ('el', ugettext_noop("Elementary/primary school")),
+        ('jhs', ugettext_noop("Junior secondary/junior high/middle school"))
         # Translators: 'None' refers to the student's level of education
-        ('none', ugettext_noop("No Formal Education")),
         # Translators: 'Other' refers to the student's level of education
-        ('other', ugettext_noop("Other Education"))
     )
     level_of_education = models.CharField(
         blank=True, null=True, max_length=6, db_index=True,
