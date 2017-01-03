@@ -94,7 +94,7 @@ def from_timestamp(timestamp):
         return None
 
 
-DEFAULT_SHORT_DATE_FORMAT = "%b %d, %Y"
+DEFAULT_SHORT_DATE_FORMAT = "%d %b, %Y"
 DEFAULT_LONG_DATE_FORMAT = "%A, %B %d, %Y"
 DEFAULT_TIME_FORMAT = "%I:%M:%S %p"
 DEFAULT_DATE_TIME_FORMAT = "%b %d, %Y at %H:%M"
