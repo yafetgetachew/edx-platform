@@ -60,7 +60,7 @@ msgstr ""
 #: openedx/core/lib/xblock_builtin/xblock_discussion/xblock_discussion.py
 #: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion"
-msgstr "Diskussion"
+msgstr "Diskussioner"
 
 #: cms/djangoapps/contentstore/views/component.py
 #: lms/djangoapps/class_dashboard/dashboard_data.py
@@ -4233,7 +4233,7 @@ msgstr "Presskit"
 
 #: lms/djangoapps/branding/api.py
 msgid "Terms of Service & Honor Code"
-msgstr ""
+msgstr "användarvillkor"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: A 'Privacy Policy' is a legal document/statement describing a
@@ -4840,15 +4840,15 @@ msgstr ""
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid "in {relative} - {absolute}"
-msgstr ""
+msgstr "om {relative} - {absolute}"
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid "Course Starts"
-msgstr ""
+msgstr "Kurs börjar"
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid "Course End"
-msgstr ""
+msgstr "Kursavslutning"
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid ""
@@ -8866,7 +8866,7 @@ msgstr ""
 #. meant to hold the user's full name.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Full name"
-msgstr ""
+msgstr "För- och efternamn"
 
 #. Translators: This example name is used as a placeholder in
 #. a field on the registration form meant to hold the user's name.
@@ -8887,7 +8887,7 @@ msgstr "Ditt fullständiga namn, används på alla certifikat."
 #. meant to hold the user's public username.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Public username"
-msgstr ""
+msgstr "Användarnamn"
 
 #. Translators: These instructions appear on the registration form,
 #. immediately
@@ -8896,7 +8896,7 @@ msgstr ""
 msgid ""
 "The name that will identify you in your courses - {bold_start}(cannot be "
 "changed later){bold_end}"
-msgstr ""
+msgstr "Namnet som syns när du är inloggad - {bold_start}(kan inte ändras senare){bold_end}"
 
 #. Translators: This example username is used as a placeholder in
 #. a field on the registration form meant to hold the user's username.
@@ -8908,7 +8908,7 @@ msgstr ""
 #. form used to select the user's highest completed level of education.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Highest level of education completed"
-msgstr ""
+msgstr "Högsta avslutad utbildning"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: This label appears above a dropdown menu on the registration
@@ -8967,7 +8967,7 @@ msgstr ""
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "I agree to the {platform_name} {terms_of_service}"
-msgstr ""
+msgstr "Jag godkänner {platform_name} {terms_of_service}"
 
 #. Translators: "Terms of Service" is a legal document users must agree to
 #. in order to register a new account.
@@ -9831,7 +9831,7 @@ msgstr ""
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 #: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion - {course_number}"
-msgstr "Diskussion - {course_number}"
+msgstr "Diskussioner - {course_number}"
 
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 msgid "Discussions"
@@ -9929,7 +9929,7 @@ msgstr ""
 #: lms/templates/dashboard.html lms/templates/navigation.html
 #: themes/edx.org/lms/templates/dashboard.html
 msgid "Explore courses"
-msgstr ""
+msgstr "UTFORSKA KURSER"
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "Course-loading errors"
@@ -12534,7 +12534,7 @@ msgstr "Kursen slutar"
 
 #: lms/templates/courseware/course_about.html
 msgid "Estimated Effort"
-msgstr "Uppskattad tidsåtgång"
+msgstr "Individuellt arbete (timmar per vecka)"
 
 #: lms/templates/courseware/course_about.html
 msgid "Prerequisites"
@@ -12739,7 +12739,7 @@ msgstr "Viktiga kursdatum"
 
 #: lms/templates/courseware/info.html
 msgid "Today is {date}"
-msgstr ""
+msgstr "Idag: {date}"
 
 #: lms/templates/courseware/news.html
 msgid "News - MITx 6.002x"
@@ -13045,11 +13045,19 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Started - {date}"
-msgstr ""
+msgstr "Började - {date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Starts - {date}"
-msgstr ""
+msgstr "Börjar - {date}"
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Started - {start_date}"
+msgstr "Började - {start_date}"
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Starts - {start_date}"
+msgstr "Börjar - {start_date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "View Archived Course"
@@ -13337,7 +13345,7 @@ msgstr ""
 
 #: lms/templates/discussion/_discussion_inline_studio.html
 msgid "Discussion ID: {discussion_id}"
-msgstr "Diskussions-ID: {discussion_id}"
+msgstr "Diskussioner-ID: {discussion_id}"
 
 #: lms/templates/discussion/_filter_dropdown.html
 msgid "Discussion topics list"
@@ -20661,3 +20669,7 @@ msgid ""
 msgstr ""
 "En ny revision skapades: Sammanslagning mellan revision #%(r1)d och revision"
 " #%(r2)d"
+
+#register page
+msgid "I agree to the {platform_name}"
+msgstr "Jag godkänner {platform_name}"

@@ -6263,7 +6263,7 @@ msgstr ""
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Discussion"
-msgstr "Diskussion"
+msgstr "Diskussioner"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid ""
@@ -6297,7 +6297,11 @@ msgstr ""
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Discussion Home"
-msgstr ""
+msgstr "Diskussions Forum"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "Use the Discussion Topics menu to find specific topics."
+msgstr "Använd 'Alla diskussioner' menyn för att finna specifika diskussionsämnen."
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #, python-format
@@ -6319,27 +6323,27 @@ msgstr "Sök bland alla inlägg"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Filter and sort topics"
-msgstr ""
+msgstr "Sortera ämnen"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Engage with posts"
-msgstr ""
+msgstr "Engagera dig i inlägg"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Vote for good posts and responses"
-msgstr ""
+msgstr "Rösta för bra inlägg och kommentarer"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Report abuse, topics, and responses"
-msgstr ""
+msgstr "Anmäl störande inlägg"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Follow or unfollow posts"
-msgstr ""
+msgstr "Följ inlägg eller avsluta 'följ inlägg'"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Receive updates"
-msgstr ""
+msgstr "Få uppdateringar"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Toggle Notifications Setting"
@@ -6349,7 +6353,7 @@ msgstr ""
 msgid ""
 "Check this box to receive an email digest once a day notifying you about "
 "new, unread activity from posts you are following."
-msgstr ""
+msgstr "Markera denna ruta för att få en daglig epost med uppdaterade inlägg i diskussioner du följer."
 
 #: lms/djangoapps/discussion/static/discussion/templates/user-profile.underscore
 msgid "Active Threads"
@@ -7482,7 +7486,11 @@ msgstr ""
 
 #: lms/templates/student_account/register.underscore
 msgid "Create an account using"
-msgstr ""
+msgstr "Skapa användarkonto via"
+
+#: lms/templates/student_account/register.underscore
+msgid "Opusplace is ment for primary and secondary school teachers"
+msgstr "Opusplace är avsett för lärare i grundskolan och gymnasiet"
 
 #: lms/templates/student_account/register.underscore
 #, python-format
@@ -7491,19 +7499,19 @@ msgstr ""
 
 #: lms/templates/student_account/register.underscore
 msgid "or create a new one here"
-msgstr ""
+msgstr "eller skapa ett nytt här"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create a new account"
-msgstr ""
+msgstr "Skapa användarkonto"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create your account"
-msgstr ""
+msgstr "Skapa ditt användarkonto"
 
 #: lms/templates/student_account/register.underscore
 msgid "Required field"
-msgstr ""
+msgstr "Obligatoriskt fält"
 
 #: lms/templates/student_account/register.underscore
 msgid "Already have an account?"
