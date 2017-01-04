@@ -290,6 +290,13 @@ class UserProfile(models.Model):
         # Translators: 'None' refers to the student's level of education
         # Translators: 'Other' refers to the student's level of education
     )
+    POSITION_CHOICES = (
+        ('primary_teacher', ugettext_noop("Primary school teacher")),
+        ('middle_teacher', ugettext_noop("Middle school teacher")),
+        ('secondary_teacher', ugettext_noop("Secondary school teacher")),
+        ('senior_teacher', ugettext_noop("Senior high school teacher")),
+        ('other_teacher', ugettext_noop("Other")),
+    )
     level_of_education = models.CharField(
         blank=True, null=True, max_length=6, db_index=True,
         choices=LEVEL_OF_EDUCATION_CHOICES
@@ -301,6 +308,10 @@ class UserProfile(models.Model):
     allow_certificate = models.BooleanField(default=1)
     bio = models.CharField(blank=True, null=True, max_length=3000, db_index=False)
     profile_image_uploaded_at = models.DateTimeField(null=True, blank=True)
+    position = models.CharField(blank=True, null=True, choices=POSITION_CHOICES, max_length=30)
+    school = models.CharField(blank=True, null=True, max_length=255)
+    municipality = models.CharField(blank=True, null=True, max_length=255)
+    other_position = models.CharField(blank=True, null=True, max_length=255)
 
     @property
     def has_profile_image(self):

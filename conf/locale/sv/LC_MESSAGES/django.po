@@ -8842,6 +8842,30 @@ msgstr "Den e-postadress du använde när du skapade ditt användarkonto"
 msgid "Password"
 msgstr "Lösenord"
 
+msgid "School"
+msgstr "Skola"
+
+msgid "Municipality"
+msgstr "Kommun"
+
+msgid "If you are not a teacher, what position do you have?"
+msgstr "Om du inte är lärare, vilken position har du?"
+
+msgid "Primary school teacher"
+msgstr "Lågstadielärare"
+
+msgid "Middle school teacher"
+msgstr "Mellanstadielärare"
+
+msgid "Secondary school teacher"
+msgstr "Högstadielärare"
+
+msgid "Senior high school teacher"
+msgstr "Gymnasielärare"
+
+msgid "Other"
+msgstr "Annan"
+
 #: openedx/core/djangoapps/user_api/views.py lms/templates/login.html
 msgid "Remember me"
 msgstr "Kom ihåg mig"

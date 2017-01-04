@@ -165,6 +165,10 @@ class RegistrationView(APIView):
         "city",
         "state",
         "country",
+        "school",
+        "municipality",
+        "position",
+        "other_position",
         "gender",
         "year_of_birth",
         "level_of_education",
@@ -173,7 +177,7 @@ class RegistrationView(APIView):
         "mailing_address",
         "goals",
         "honor_code",
-        "terms_of_service",
+        "terms_of_service"
     ]
 
     # This end-point is available to anonymous users,
@@ -352,6 +356,46 @@ class RegistrationView(APIView):
         response = JsonResponse({"success": True})
         set_logged_in_cookies(request, response, user)
         return response
+
+    def _add_position_field(self, form_desc, required=True):
+        label = _(u"Position")
+
+        options = [(name, _(title)) for name, title in UserProfile.POSITION_CHOICES]
+
+        form_desc.add_field(
+            "position",
+            field_type="select",
+            options=options,
+            label=label,
+            required=required
+        )
+
+    def _add_school_field(self, form_desc, required=True):
+        label = _(u"School")
+
+        form_desc.add_field(
+            "school",
+            label=label,
+            required=required
+        )
+
+    def _add_municipality_field(self, form_desc, required=True):
+        label = _(u"Municipality")
+
+        form_desc.add_field(
+            "municipality",
+            label=label,
+            required=required
+        )
+
+    def _add_other_position_field(self, form_desc, required=True):
+        label = _(u"If you are not a teacher, what position do you have?")
+
+        form_desc.add_field(
+            "other_position",
+            label=label,
+            required=required
+        )
 
     def _add_email_field(self, form_desc, required=True):
         """Add an email field to a form description.
