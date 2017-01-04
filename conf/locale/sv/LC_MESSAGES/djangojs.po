@@ -3628,6 +3628,10 @@ msgid "Click to add"
 msgstr "Klicka för att lägga till"
 
 #: lms/static/js/bookmarks/views/bookmark_button.js
+msgid "Bookmark"
+msgstr "Bokmärk"
+
+#: lms/static/js/bookmarks/views/bookmark_button.js
 msgid "Bookmark this page"
 msgstr ""
 
@@ -7428,12 +7432,12 @@ msgstr ""
 
 #: lms/templates/student_account/login.underscore
 msgid "or sign in with"
-msgstr ""
+msgstr "eller logga in via"
 
 #: lms/templates/student_account/login.underscore
 #, python-format
 msgid "Sign in with %(providerName)s"
-msgstr ""
+msgstr "Logga in via %(providerName)s"
 
 #: lms/templates/student_account/login.underscore
 #: lms/templates/student_account/register.underscore
@@ -7443,11 +7447,11 @@ msgstr ""
 #: lms/templates/student_account/login.underscore
 #, python-format
 msgid "New to %(platformName)s?"
-msgstr ""
+msgstr "Ny på %(platformName)s?"
 
 #: lms/templates/student_account/login.underscore
 msgid "Create an account"
-msgstr ""
+msgstr "Skapa användarkonto"
 
 #: lms/templates/student_account/password_reset.underscore
 #: lms/templates/student_account/register.underscore
@@ -7456,17 +7460,17 @@ msgstr ""
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "Password assistance"
-msgstr ""
+msgstr "Glömt lösenord?"
 
 #: lms/templates/student_account/password_reset.underscore
 msgid ""
 "Please enter your email address below and we will send you instructions for "
 "setting a new password."
-msgstr ""
+msgstr "Skriv in den e-postadress du använde när du skapade användarkontot så skickar vi instruktioner för hur du byter lösenord."
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "Reset my password"
-msgstr ""
+msgstr "Skicka"
 
 #: lms/templates/student_account/register.underscore
 msgid "We couldn't create your account."
@@ -7489,8 +7493,8 @@ msgid "Create an account using"
 msgstr "Skapa användarkonto via"
 
 #: lms/templates/student_account/register.underscore
-msgid "Opusplace is ment for primary and secondary school teachers"
-msgstr "Opusplace är avsett för lärare i grundskolan och gymnasiet"
+msgid "A meeting arena for teachers"
+msgstr "En mötesplats för lärare"
 
 #: lms/templates/student_account/register.underscore
 #, python-format
@@ -9501,3 +9505,4 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr ""
+

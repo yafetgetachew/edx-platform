@@ -23,8 +23,9 @@
         <div class="login-providers">
             <div class="section-title lines">
                 <h2>
-                    <span class="text"><%- gettext("Opusplace is ment for primary and secondary school teachers") %></span>
+                    <span class="text"><%- gettext("A meeting arena for teachers") %></span>
                 </h2>
+                <br>
                 <h2>
                     <span class="text"><%- gettext("Create an account using") %></span>
                 </h2>
