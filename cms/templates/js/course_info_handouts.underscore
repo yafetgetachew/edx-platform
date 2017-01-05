@@ -1,11 +1,12 @@
 <a href="#" class="edit-button"><span class="edit-icon"></span><%= gettext("Edit") %></a>
 
-<h2 class="title"><%= gettext("Course Handouts") %></h2>
 <%if (model.get('data') != null) { %>
+  <h2 class="title"><%= gettext("Course Handouts") %></h2>
   <div class="handouts-content">
 
   </div>
 <% } else {%>
+  <h2 class="title"><%= gettext("Course Handouts") %></h2>
   <p><%= gettext("You have no handouts defined") %></p>
 <% } %>
 <form class="edit-handouts-form" style="display: block;">

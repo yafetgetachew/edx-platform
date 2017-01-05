@@ -6301,16 +6301,16 @@ msgstr ""
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Discussion Home"
-msgstr "Diskussions Forum"
+msgstr "Diskussionsforum"
 
 #: common/static/common/templates/discussion/discussion-home.underscore
 msgid "Use the Discussion Topics menu to find specific topics."
-msgstr "Använd 'Alla diskussioner' menyn för att finna specifika diskussionsämnen."
+msgstr "Använd 'Alla diskussioner' för att finna specifika diskussioner."
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #, python-format
 msgid "How to use %(platform_name)s discussions"
-msgstr ""
+msgstr "%(platform_name)s Diskussionsforum manual"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Find discussions"

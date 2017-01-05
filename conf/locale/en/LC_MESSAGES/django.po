@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-04 12:08+0000\n"
-"PO-Revision-Date: 2017-01-04 12:08:53.632113\n"
+"POT-Creation-Date: 2017-01-05 14:01+0000\n"
+"PO-Revision-Date: 2017-01-05 14:01:32.854353\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -621,11 +621,6 @@ msgstr ""
 msgid "Female"
 msgstr ""
 
-#. Translators: 'Other' refers to the student's gender
-#: common/djangoapps/student/models.py
-msgid "Other/Prefer Not to Say"
-msgstr ""
-
 #: common/djangoapps/student/models.py
 msgid "Doctorate"
 msgstr ""
@@ -644,6 +639,26 @@ msgstr ""
 
 #: common/djangoapps/student/models.py
 msgid "Junior secondary/junior high/middle school"
+msgstr ""
+
+#: common/djangoapps/student/models.py
+msgid "Primary school teacher"
+msgstr ""
+
+#: common/djangoapps/student/models.py
+msgid "Middle school teacher"
+msgstr ""
+
+#: common/djangoapps/student/models.py
+msgid "Secondary school teacher"
+msgstr ""
+
+#: common/djangoapps/student/models.py
+msgid "Senior high school teacher"
+msgstr ""
+
+#: common/djangoapps/student/models.py
+msgid "Other"
 msgstr ""
 
 #: common/djangoapps/student/models.py
@@ -8542,6 +8557,22 @@ msgid ""
 "different username."
 msgstr ""
 
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Position"
+msgstr ""
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "School"
+msgstr ""
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Municipality"
+msgstr ""
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "If you are not a teacher, what position do you have?"
+msgstr ""
+
 #. Translators: This label appears above a field on the registration form
 #. meant to hold the user's full name.
 #: openedx/core/djangoapps/user_api/views.py
@@ -12201,7 +12232,7 @@ msgid ""
 msgstr ""
 
 #: lms/templates/courseware/info.html
-msgid "Welcome to {org}'s {course_name}!"
+msgid "Welcome to {org}!"
 msgstr ""
 
 #: lms/templates/courseware/info.html
@@ -16055,7 +16086,6 @@ msgstr ""
 #: lms/templates/static_templates/donate.html
 #: lms/templates/static_templates/faq.html
 #: lms/templates/static_templates/help.html
-#: lms/templates/static_templates/honor.html
 #: lms/templates/static_templates/jobs.html
 #: lms/templates/static_templates/media-kit.html
 #: lms/templates/static_templates/news.html

@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-04 12:01+0000\n"
-"PO-Revision-Date: 2017-01-04 12:01:15.696396\n"
+"POT-Creation-Date: 2017-01-05 14:01+0000\n"
+"PO-Revision-Date: 2017-01-05 14:01:32.854353\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -754,11 +754,6 @@ msgstr "Mälé Ⱡ'σяєм ι#"
 msgid "Female"
 msgstr "Fémälé Ⱡ'σяєм ιρѕυ#"
 
-#. Translators: 'Other' refers to the student's gender
-#: common/djangoapps/student/models.py
-msgid "Other/Prefer Not to Say"
-msgstr "Öthér/Préfér Nöt tö Säý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
-
 #: common/djangoapps/student/models.py
 msgid "Doctorate"
 msgstr "Döçtöräté Ⱡ'σяєм ιρѕυм ∂σł#"
@@ -780,6 +775,26 @@ msgid "Junior secondary/junior high/middle school"
 msgstr ""
 "Jünïör séçöndärý/jünïör hïgh/mïddlé sçhööl Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тєтυя #"
+
+#: common/djangoapps/student/models.py
+msgid "Primary school teacher"
+msgstr "Prïmärý sçhööl téäçhér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
+
+#: common/djangoapps/student/models.py
+msgid "Middle school teacher"
+msgstr "Mïddlé sçhööl téäçhér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
+
+#: common/djangoapps/student/models.py
+msgid "Secondary school teacher"
+msgstr "Séçöndärý sçhööl téäçhér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
+
+#: common/djangoapps/student/models.py
+msgid "Senior high school teacher"
+msgstr "Sénïör hïgh sçhööl téäçhér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
+
+#: common/djangoapps/student/models.py
+msgid "Other"
+msgstr "Öthér Ⱡ'σяєм ιρѕ#"
 
 #: common/djangoapps/student/models.py
 msgid "{platform_name} Honor Code Certificate for {course_name}"
@@ -11073,6 +11088,24 @@ msgstr ""
 "Ìt lööks lïké {username} ßélöngs tö än éxïstïng äççöünt. Trý ägäïn wïth ä "
 "dïfférént üsérnämé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
 
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Position"
+msgstr "Pösïtïön Ⱡ'σяєм ιρѕυм ∂#"
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "School"
+msgstr "Sçhööl Ⱡ'σяєм ιρѕυ#"
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Municipality"
+msgstr "Münïçïpälïtý Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "If you are not a teacher, what position do you have?"
+msgstr ""
+"Ìf ýöü äré nöt ä téäçhér, whät pösïtïön dö ýöü hävé? Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
+
 #. Translators: This label appears above a field on the registration form
 #. meant to hold the user's full name.
 #: openedx/core/djangoapps/user_api/views.py
@@ -15627,8 +15660,8 @@ msgstr ""
 "nöw!{link_end} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: lms/templates/courseware/info.html
-msgid "Welcome to {org}'s {course_name}!"
-msgstr "Wélçömé tö {org}'s {course_name}! Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
+msgid "Welcome to {org}!"
+msgstr "Wélçömé tö {org}! Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
 
 #: lms/templates/courseware/info.html
 msgid "Resume Course"
@@ -20617,7 +20650,6 @@ msgstr ""
 #: lms/templates/static_templates/donate.html
 #: lms/templates/static_templates/faq.html
 #: lms/templates/static_templates/help.html
-#: lms/templates/static_templates/honor.html
 #: lms/templates/static_templates/jobs.html
 #: lms/templates/static_templates/media-kit.html
 #: lms/templates/static_templates/news.html

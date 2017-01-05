@@ -60,7 +60,7 @@ msgstr ""
 #: openedx/core/lib/xblock_builtin/xblock_discussion/xblock_discussion.py
 #: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion"
-msgstr "Diskussioner"
+msgstr "Diskussionsforum"
 
 #: cms/djangoapps/contentstore/views/component.py
 #: lms/djangoapps/class_dashboard/dashboard_data.py
@@ -4844,7 +4844,7 @@ msgstr "om {relative} - {absolute}"
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid "Course Starts"
-msgstr "Kurs börjar"
+msgstr "Kursen börjar"
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid "Course End"
@@ -4857,7 +4857,7 @@ msgstr ""
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid "After this date, course content will be archived."
-msgstr ""
+msgstr "Efter kursavslutning arkiveras innehållet"
 
 #: lms/djangoapps/courseware/date_summary.py
 msgid ""
@@ -9864,7 +9864,7 @@ msgstr ""
 
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 msgid "Add a Post"
-msgstr ""
+msgstr "Lägg till inlägg"
 
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 #: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
@@ -12745,6 +12745,10 @@ msgstr ""
 #: lms/templates/courseware/info.html
 msgid "Welcome to {org}'s {course_name}!"
 msgstr "Välkommen till {org}s {course_name}!"
+
+#: lms/templates/courseware/info.html
+msgid "Welcome to {org}!"
+msgstr "Välkommen till {org}!"
 
 #: lms/templates/courseware/info.html
 msgid "Resume Course"
