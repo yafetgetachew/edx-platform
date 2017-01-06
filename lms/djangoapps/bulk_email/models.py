@@ -303,6 +303,17 @@ class BulkEmailFlag(ConfigurationModel):
             current_model.require_course_email_auth
         )
 
+# Bulk email targets - the send to options that users can select from when they send email.
+SEND_TO_MYSELF = 'myself'
+SEND_TO_STAFF = 'staff'
+SEND_TO_LEARNERS = 'learners'
+SEND_TO_COHORT = 'cohort'
+EMAIL_TARGET_CHOICES = zip(
+    [SEND_TO_MYSELF, SEND_TO_STAFF, SEND_TO_LEARNERS, SEND_TO_COHORT],
+    ['Myself', 'Staff and instructors', 'All students', 'Specific cohort']
+)
+EMAIL_TARGETS = {target[0] for target in EMAIL_TARGET_CHOICES}
+
 class Target(models.Model):
     """
     A way to refer to a particular group (within a course) as a "Send to:" target.
