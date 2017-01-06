@@ -798,6 +798,7 @@ BUGS_EMAIL = 'bugs@example.com'
 UNIVERSITY_EMAIL = 'university@example.com'
 PRESS_EMAIL = 'press@example.com'
 FINANCE_EMAIL = ''
+BULK_EMAIL_FROM_DIFFERENT_ADDRESSES = DEFAULT_FROM_EMAIL
 
 # Platform mailing address
 CONTACT_MAILING_ADDRESS = ''
