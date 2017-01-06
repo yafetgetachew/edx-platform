@@ -16,6 +16,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models, transaction
 
+from config_models.models import ConfigurationModel
 from openedx.core.lib.html_to_text import html_to_text
 from openedx.core.lib.mail_utils import wrap_message
 
