@@ -122,7 +122,7 @@ import calendar
 
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Username')}</label>
-            <input id="username" type="text" name="username" value="${extauth_username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" />
+            <input id="username" type="text" name="username" value="${extauth_username}" required aria-required="true" />
             <span class="tip tip-input">${_('Will be shown in any discussions or forums you participate in')}</span>
           </li>
 
@@ -130,7 +130,7 @@ import calendar
 
           <li class="field required text" id="field-email">
             <label for="email">${_("E-mail")}</label>
-            <input class="" id="email" type="email" name="email" value="" placeholder="${_('example: username@domain.com')}" />
+            <input class="" id="email" type="email" name="email" value="" />
           </li>
 
           % endif
@@ -140,7 +140,7 @@ import calendar
 
           <li class="field required text" id="field-name">
             <label for="name">${_('Full Name')}</label>
-            <input id="name" type="text" name="name" value="" placeholder="$_('example: Jane Doe')}" />
+            <input id="name" type="text" name="name" value="" />
           </li>
 
           % endif

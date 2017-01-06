@@ -72,7 +72,7 @@ class LoginSessionView(APIView):
 
         # Translators: This example email address is used as a placeholder in
         # a field on the login form meant to hold the user's email address.
-        email_placeholder = _(u"username@domain.com")
+        email_placeholder = _(u"")
 
         # Translators: These instructions appear on the login form, immediately
         # below a field meant to hold the user's email address.
@@ -413,7 +413,7 @@ class RegistrationView(APIView):
 
         # Translators: This example email address is used as a placeholder in
         # a field on the registration form meant to hold the user's email address.
-        email_placeholder = _(u"username@domain.com")
+        email_placeholder = _(u"")
 
         form_desc.add_field(
             "email",
@@ -443,7 +443,7 @@ class RegistrationView(APIView):
 
         # Translators: This example name is used as a placeholder in
         # a field on the registration form meant to hold the user's name.
-        name_placeholder = _(u"Jane Doe")
+        name_placeholder = _(u"")
 
         # Translators: These instructions appear on the registration form, immediately
         # below a field meant to hold the user's full name.
@@ -483,7 +483,7 @@ class RegistrationView(APIView):
 
         # Translators: This example username is used as a placeholder in
         # a field on the registration form meant to hold the user's username.
-        username_placeholder = _(u"JaneDoe")
+        username_placeholder = _(u"")
 
         form_desc.add_field(
             "username",
@@ -959,7 +959,7 @@ class PasswordResetView(APIView):
 
         # Translators: This example email address is used as a placeholder in
         # a field on the password reset form meant to hold the user's email address.
-        email_placeholder = _(u"username@domain.com")
+        email_placeholder = _(u"")
 
         # Translators: These instructions appear on the password reset form,
         # immediately below a field meant to hold the user's email address.

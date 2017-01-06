@@ -53,7 +53,7 @@
                     submit_url: '/user_api/v1/account/registration/',
                     fields: [
                         {
-                            placeholder: 'username@domain.com',
+                            placeholder: '',
                             name: 'email',
                             label: 'Email',
                             defaultValue: '',

@@ -2,7 +2,13 @@
     <h4 class="message-title"><%- gettext("We couldn't create your account.") %></h4>
     <ul class="message-copy"></ul>
 </div>
-
+<div class="toggle-form">
+    <div class="section-title">
+        <h2>
+            <span class="text"><%- gettext("A meeting arena for teachers") %></span>
+        </h2>
+    </div>
+</div>
 <form id="register" class="register-form" autocomplete="off" tabindex="-1">
 
     <% if (context.errorMessage) { %>
@@ -22,10 +28,6 @@
     <% } else if ( context.providers.length > 0 || context.hasSecondaryProviders ) {  %>
         <div class="login-providers">
             <div class="section-title lines">
-                <h2>
-                    <span class="text"><%- gettext("A meeting arena for teachers") %></span>
-                </h2>
-                <br>
                 <h2>
                     <span class="text"><%- gettext("Create an account using") %></span>
                 </h2>

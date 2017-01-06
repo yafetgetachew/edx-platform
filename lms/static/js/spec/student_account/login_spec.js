@@ -48,7 +48,7 @@
                     submit_url: '/user_api/v1/account/login_session/',
                     fields: [
                         {
-                            placeholder: 'username@domain.com',
+                            placeholder: '',
                             name: 'email',
                             label: 'Email',
                             defaultValue: '',
