@@ -302,3 +302,69 @@ class BulkEmailFlag(ConfigurationModel):
             current_model.is_enabled(),
             current_model.require_course_email_auth
         )
+
+class Target(models.Model):
+    """
+    A way to refer to a particular group (within a course) as a "Send to:" target.
+
+    Django hackery in this class - polymorphism does not work well in django, for reasons relating to how
+    each class is represented by its own database table. Due to this, we can't just override
+    methods of Target in CohortTarget and get the child method, as one would expect. The
+    workaround is to check to see that a given target is a CohortTarget (self.target_type ==
+    SEND_TO_COHORT), then explicitly call the method on self.cohorttarget, which is created
+    by django as part of this inheritance setup. These calls require pylint disable no-member in
+    several locations in this class.
+    """
+    target_type = models.CharField(max_length=64, choices=EMAIL_TARGET_CHOICES)
+
+    class Meta(object):
+        app_label = "bulk_email"
+
+    def __unicode__(self):
+        return "CourseEmail Target: {}".format(self.short_display())
+
+    def short_display(self):
+        """
+        Returns a short display name
+        """
+        if self.target_type == SEND_TO_COHORT:
+            return self.cohorttarget.short_display()  # pylint: disable=no-member
+        else:
+            return self.target_type
+
+    def long_display(self):
+        """
+        Returns a long display name
+        """
+        if self.target_type == SEND_TO_COHORT:
+            return self.cohorttarget.long_display()  # pylint: disable=no-member
+        else:
+            return self.get_target_type_display()
+
+    def get_users(self, course_id, user_id=None):
+        """
+        Gets the users for a given target.
+
+        Result is returned in the form of a queryset, and may contain duplicates.
+        """
+        staff_qset = CourseStaffRole(course_id).users_with_role()
+        instructor_qset = CourseInstructorRole(course_id).users_with_role()
+        staff_instructor_qset = (staff_qset | instructor_qset)
+        enrollment_qset = User.objects.filter(
+            is_active=True,
+            courseenrollment__course_id=course_id,
+            courseenrollment__is_active=True
+        )
+        if self.target_type == SEND_TO_MYSELF:
+            if user_id is None:
+                raise ValueError("Must define self user to send email to self.")
+            user = User.objects.filter(id=user_id)
+            return use_read_replica_if_available(user)
+        elif self.target_type == SEND_TO_STAFF:
+            return use_read_replica_if_available(staff_instructor_qset)
+        elif self.target_type == SEND_TO_LEARNERS:
+            return use_read_replica_if_available(enrollment_qset.exclude(id__in=staff_instructor_qset))
+        elif self.target_type == SEND_TO_COHORT:
+            return self.cohorttarget.cohort.users.filter(id__in=enrollment_qset)  # pylint: disable=no-member
+        else:
+            raise ValueError("Unrecognized target type {}".format(self.target_type))
