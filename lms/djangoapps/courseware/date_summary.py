@@ -53,7 +53,7 @@ class DateSummary(object):
         The format to display this date in. By default, displays like Jan
         01, 2015.
         """
-        return u'%b %d, %Y'
+        return u'%d %b, %Y'
 
     @property
     def link(self):
@@ -149,7 +149,7 @@ class TodaysDate(DateSummary):
 
     @property
     def date_format(self):
-        return u'%b %d, %Y (%H:%M {tz_abbr})'.format(tz_abbr=get_time_zone_abbr(self.time_zone))
+        return u'%d %b, %Y (%H:%M {tz_abbr})'.format(tz_abbr=get_time_zone_abbr(self.time_zone))
 
     # The date is shown in the title, no need to display it again.
     def get_context(self):
