@@ -363,6 +363,9 @@ FEATURES = {
 
     # WIP -- will be removed in Ticket #TNL-4750.
     'ENABLE_TIME_ZONE_PREFERENCE': False,
+
+    # Disable send email from random addresses when 'False'
+    'BULK_EMAIL_FROM_DIFFERENT_ADDRESSES': False,
 }
 
 # Ignore static asset files on import which match this pattern
@@ -798,7 +801,6 @@ BUGS_EMAIL = 'bugs@example.com'
 UNIVERSITY_EMAIL = 'university@example.com'
 PRESS_EMAIL = 'press@example.com'
 FINANCE_EMAIL = ''
-BULK_EMAIL_FROM_DIFFERENT_ADDRESSES = False
 
 # Platform mailing address
 CONTACT_MAILING_ADDRESS = ''
