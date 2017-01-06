@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-05 14:01+0000\n"
-"PO-Revision-Date: 2017-01-05 14:01:32.854353\n"
+"POT-Creation-Date: 2017-01-06 09:08+0000\n"
+"PO-Revision-Date: 2017-01-06 09:08:31.443833\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -9483,16 +9483,6 @@ msgstr "سشدث بشهمثي بخق عسثق حقثبثقثرذث '{key}' صه�
 msgid "No data provided for user preference update"
 msgstr "رخ يشفش حقخدهيثي بخق عسثق حقثبثقثرذث عحيشفث"
 
-#. Translators: This example email address is used as a placeholder in
-#. a field on the login form meant to hold the user's email address.
-#. Translators: This example email address is used as a placeholder in
-#. a field on the registration form meant to hold the user's email address.
-#. Translators: This example email address is used as a placeholder in
-#. a field on the password reset form meant to hold the user's email address.
-#: openedx/core/djangoapps/user_api/views.py
-msgid "username@domain.com"
-msgstr "عسثقرشوث@يخوشهر.ذخو"
-
 #. Translators: These instructions appear on the login form, immediately
 #. below a field meant to hold the user's email address.
 #. Translators: These instructions appear on the password reset form,
@@ -9561,12 +9551,6 @@ msgstr "هب غخع شقث رخف ش فثشذاثق, صاشف حخسهفهخر �
 msgid "Full name"
 msgstr "بعمم رشوث"
 
-#. Translators: This example name is used as a placeholder in
-#. a field on the registration form meant to hold the user's name.
-#: openedx/core/djangoapps/user_api/views.py
-msgid "Jane Doe"
-msgstr "تشرث يخث"
-
 #. #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 #. Translators: These instructions appear on the registration form,
 #. immediately
@@ -9592,12 +9576,6 @@ msgid ""
 msgstr ""
 "فاث رشوث فاشف صهمم هيثرفهبغ غخع هر غخعق ذخعقسثس - {bold_start}(ذشررخف زث "
 "ذاشرلثي مشفثق){bold_end}"
-
-#. Translators: This example username is used as a placeholder in
-#. a field on the registration form meant to hold the user's username.
-#: openedx/core/djangoapps/user_api/views.py
-msgid "JaneDoe"
-msgstr "تشرثيخث"
 
 #. Translators: This label appears above a dropdown menu on the registration
 #. form used to select the user's highest completed level of education.
@@ -10299,8 +10277,7 @@ msgstr "ث-وشهم"
 #. address.
 #: cms/templates/login.html cms/templates/manage_users.html
 #: cms/templates/manage_users_lib.html cms/templates/register.html
-#: lms/templates/login.html lms/templates/register-form.html
-#: lms/templates/register-shib.html themes/red-theme/cms/templates/login.html
+#: themes/red-theme/cms/templates/login.html
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "example: username@domain.com"
@@ -10313,7 +10290,7 @@ msgstr "بخقلخف حشسسصخقي?"
 
 #. Translators: This is the placeholder text for a field that requests the
 #. user's full name.
-#: cms/templates/register.html lms/templates/register-form.html
+#: cms/templates/register.html
 #: themes/stanford-style/lms/templates/register-form.html
 msgid "example: Jane Doe"
 msgstr "ثطشوحمث: تشرث يخث"
@@ -10327,8 +10304,7 @@ msgstr "حعزمهذ عسثقرشوث"
 
 #. Translators: This is the placeholder text for a field that asks the user to
 #. pick a username
-#: cms/templates/register.html lms/templates/register-form.html
-#: lms/templates/register-shib.html
+#: cms/templates/register.html
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "example: JaneDoe"
@@ -11303,11 +11279,6 @@ msgstr "حعزمهذ يهسحمشغ رشوث"
 #: themes/stanford-style/lms/templates/register-form.html
 msgid "Additional Personal Information"
 msgstr "شييهفهخرشم حثقسخرشم هربخقوشفهخر"
-
-#: lms/templates/register-form.html
-#: themes/stanford-style/lms/templates/register-form.html
-msgid "example: New York"
-msgstr "ثطشوحمث: رثص غخقن"
 
 #: lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
@@ -18401,6 +18372,10 @@ msgstr "ذخحغقهلاف {year}. شمم قهلافس قثسثقدثي."
 #: themes/stanford-style/lms/templates/index.html
 msgid "For anyone, anywhere, anytime"
 msgstr "بخق شرغخرث, شرغصاثقث, شرغفهوث"
+
+#: themes/stanford-style/lms/templates/register-form.html
+msgid "example: New York"
+msgstr "ثطشوحمث: رثص غخقن"
 
 #: themes/stanford-style/lms/templates/register-sidebar.html
 msgid ""

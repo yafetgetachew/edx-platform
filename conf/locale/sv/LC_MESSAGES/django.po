@@ -9928,11 +9928,11 @@ msgstr "LÄS MER"
 
 #: lms/templates/course.html
 msgid "Starts"
-msgstr "Startar"
+msgstr "Börjar"
 
 #: lms/templates/course.html
 msgid "Starts: {date}"
-msgstr ""
+msgstr "Börjar: {date}"
 
 #: lms/templates/courses_list.html
 msgid "View all Courses"
@@ -13070,15 +13070,19 @@ msgstr "Kursregistrerad som:"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Coming Soon"
-msgstr "Kommer snart"
+msgstr "Börjar snart"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Ended - {date}"
-msgstr ""
+msgstr "Avslutade - {date}"
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid "Ended - {end_date}"
+msgstr "Avslutade - {end_date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Started - {date}"
-msgstr "Började - {date}"
+msgstr "Pågående - {date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Starts - {date}"
@@ -13086,7 +13090,7 @@ msgstr "Börjar - {date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Started - {start_date}"
-msgstr "Började - {start_date}"
+msgstr "Pågående - {start_date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Starts - {start_date}"
