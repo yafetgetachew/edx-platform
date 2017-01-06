@@ -7474,19 +7474,19 @@ msgstr "Skicka"
 
 #: lms/templates/student_account/register.underscore
 msgid "We couldn't create your account."
-msgstr ""
+msgstr "Du behöver först fylla i följande:"
 
 #: lms/templates/student_account/register.underscore
 #, python-format
 msgid "You've successfully signed into %(currentProvider)s."
-msgstr ""
+msgstr "Du har loggat in via %(currentProvider)s."
 
 #: lms/templates/student_account/register.underscore
 #, python-format
 msgid ""
 "We just need a little more information before you start learning with "
 "%(platformName)s."
-msgstr ""
+msgstr "Vi behöver bara lite ytterligare information innan du kommer igång på %(platformName)s."
 
 #: lms/templates/student_account/register.underscore
 msgid "Create an account using"

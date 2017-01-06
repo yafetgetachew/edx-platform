@@ -8851,6 +8851,9 @@ msgstr "Kommun"
 msgid "If you are not a teacher, what position do you have?"
 msgstr "Om du inte är lärare, vilken position har du?"
 
+msgid "If you are not a teacher, what position do you have?."
+msgstr "Om du inte är lärare, vilken position har du?"
+
 msgid "Primary school teacher"
 msgstr "Lågstadielärare"
 
@@ -10672,7 +10675,7 @@ msgstr ""
 #: lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
 msgid "You've successfully signed in with {selected_provider}."
-msgstr "Du har loggat in med {selected_provider}."
+msgstr "Du har loggat in via {selected_provider}."
 
 #: lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
@@ -10680,8 +10683,7 @@ msgid ""
 "We just need a little more information before you start learning with "
 "{platform_name}."
 msgstr ""
-"Vi behöver bara lite ytterligare information innan du kan påbörja ditt "
-"lärande med {platform_name}."
+"Vi behöver bara lite ytterligare information innan du kommer igång på {platform_name}."
 
 #: lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
