@@ -403,6 +403,7 @@
     "Please do not use any spaces or special characters in this field.": "Anv\u00e4nd inga blanksteg eller specialtecken i detta f\u00e4lt.", 
     "Please enter a username or email.": "V\u00e4nligen fyll i ett anv\u00e4ndarnamn eller en e-postaddress.", 
     "Please enter a valid email address": "V\u00e4nligen fyll i en giltig e-postaddress", 
+    "Please enter your %(field)s": "Fyll i %(field)s", 
     "Please enter your %(field)s.": "Fyll i %(field)s.", 
     "Please enter your email address below and we will send you instructions for setting a new password.": "Skriv in den e-postadress du anv\u00e4nde n\u00e4r du skapade anv\u00e4ndarkontot s\u00e5 skickar vi instruktioner f\u00f6r hur du byter l\u00f6senord.", 
     "Please print this page for your records; it serves as your receipt. You will also receive an email with the same information.": "V\u00e4nligen skriv ut den h\u00e4r sidan f\u00f6r din bokf\u00f6ring; den utg\u00f6r ditt kvitto. Du kommer ocks\u00e5 att f\u00e5 ett e-postmeddelande med samma information.", 

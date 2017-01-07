@@ -2171,6 +2171,10 @@ msgstr "%(field)s kan bara innehålla upp till %(count)d tecken."
 msgid "Please enter your %(field)s."
 msgstr "Fyll i %(field)s."
 
+#: common/static/common/js/utils/edx.utils.validate.js
+msgid "Please enter your %(field)s"
+msgstr "Fyll i %(field)s"
+
 #: common/static/js/capa/drag_and_drop/base_image.js
 msgid "Drop target image"
 msgstr ""

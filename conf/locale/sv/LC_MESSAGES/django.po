@@ -8851,9 +8851,6 @@ msgstr "Kommun"
 msgid "If you are not a teacher, what position do you have?"
 msgstr "Om du inte är lärare, vilken position har du?"
 
-msgid "If you are not a teacher, what position do you have?."
-msgstr "Om du inte är lärare, vilken position har du?"
-
 msgid "Primary school teacher"
 msgstr "Lågstadielärare"
 
@@ -9003,7 +9000,7 @@ msgstr "Jag godkänner {platform_name} {terms_of_service}."
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "You must agree to the {platform_name} {terms_of_service}"
-msgstr ""
+msgstr "Du måste godkänna den {platform_name} {terms_of_service}"
 
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Review the Terms of Service"
