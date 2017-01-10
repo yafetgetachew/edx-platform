@@ -4501,7 +4501,7 @@ msgstr ""
 msgid ""
 "successfully completed, received a passing grade, and was awarded this "
 "{platform_name} {certificate_type} Certificate of Completion in "
-msgstr ""
+msgstr "har slutfört nedanstående lärarfortbildning med godkänt resultat."
 
 #. Translators: This text describes the purpose (and therefore, value) of a
 #. course certificate
@@ -4619,7 +4619,7 @@ msgstr ""
 #. Translators:  This text represents the description of course
 #: lms/djangoapps/certificates/views/webview.py
 msgid "a course of study offered by {partner_short_name}."
-msgstr ""
+msgstr "en lärarfortbildning erbjuden av {partner_short_name}."
 
 #: lms/djangoapps/certificates/views/webview.py
 msgid "I completed the {course_title} course on {platform_name}."
