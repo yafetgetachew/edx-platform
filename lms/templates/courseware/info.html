@@ -12,6 +12,14 @@ from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from openedx.core.djangolib.markup import HTML, Text
 %>
 
+<%!
+    def not_empty_ol(html):
+        if ('<ol></ol>' in html):
+            return False
+        else:
+            return True
+%>
+
 <%block name="pagetitle">${_("{course_number} Course Info").format(course_number=course.display_number_with_default)}</%block>
 
 <%block name="headextra">
@@ -94,9 +102,11 @@ from openedx.core.djangolib.markup import HTML, Text
             <h1 class="handouts-header">${_("Important Course Dates")}</h1>
             ${HTML(get_course_date_summary(course, user))}
           % endif
-
+          <% handouts_html = HTML(get_course_info_section(request, masquerade_user, course, 'handouts')) %>
+          % if not_empty_ol(handouts_html):
           <h1 class="handouts-header">${_(course.info_sidebar_name)}</h1>
-          ${HTML(get_course_info_section(request, masquerade_user, course, 'handouts'))}
+          ${handouts_html}
+          % endif
         </section>
         % else:
         <section class="updates">
