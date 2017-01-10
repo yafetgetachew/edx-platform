@@ -53,6 +53,9 @@
             <h2>
                 <span class="text"><%- gettext("Create a new account") %></span>
             </h2>
+            <b>Parents/Guardians</b><p>Please follow the instructions below to register your student.</p>
+            <p></p>
+            <b>Instructors</b><p>Please use <i>your</i> personal information to create your account (name, email, username and password.</p>
         </div>
     <% } %>
 
