@@ -6089,19 +6089,19 @@ msgstr ""
 #: common/static/common/templates/discussion/new-post.underscore
 #: common/static/common/templates/discussion/thread-edit.underscore
 msgid "Add a clear and descriptive title to encourage participation."
-msgstr ""
+msgstr "Lägg gärna till en ämnesrubrik om du påbörjar en ny diskussion så andra deltagare lättare förstår vad inlägget handlar om."
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Enter your question or comment."
-msgstr ""
+msgstr "Fyll i din fråga eller ditt diskussionsinlägg."
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
-msgstr ""
+msgstr "följ denna diskussion"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "post anonymously"
-msgstr ""
+msgstr "lägg till anonymt"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "post anonymously to classmates"
@@ -6109,7 +6109,7 @@ msgstr ""
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Add Post"
-msgstr ""
+msgstr "Lägg till"
 
 #: common/static/common/templates/discussion/post-user-display.underscore
 #: common/static/common/templates/discussion/thread-list-item.underscore
@@ -6263,21 +6263,21 @@ msgstr "Det här meddelandet är synligt för alla."
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Post type:"
-msgstr ""
+msgstr "Form av inlägg"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Question"
-msgstr ""
+msgstr "Fråga"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Discussion"
-msgstr "Diskussioner"
+msgstr "Diskussionsinlägg"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid ""
 "Questions raise issues that need answers. Discussions share ideas and start "
 "conversations."
-msgstr ""
+msgstr "'Frågor' är inlägg som söker svar. 'Diskussionsinlägg' är inlägg för att påbörja en ny diskussion eller ett kompletterande inlägg i pågående diskussioner."
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Add a Response"
@@ -6289,7 +6289,7 @@ msgstr ""
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Expand discussion"
-msgstr ""
+msgstr "Visa mer"
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Collapse discussion"
