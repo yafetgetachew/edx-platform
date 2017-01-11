@@ -10,6 +10,28 @@
                 true
             );
             %>
+            <% if (thread_type == "discussion") { %>
+            <%=
+            interpolate(
+                // Translators: post_type describes the kind of post this is (e.g. "question" or "discussion");
+                // time_ago is how much time has passed since the post was created (e.g. "4 hours ago")
+                _.escape(gettext('discussion posted %(time_ago)s by %(author)s')),
+                {time_ago: timeAgoHtml, author: author_display},
+                true
+            )
+            %>
+            <% } %> 
+            <% if (thread_type == "question") { %>
+            interpolate(
+                // Translators: post_type describes the kind of post this is (e.g. "question" or "discussion");
+                // time_ago is how much time has passed since the post was created (e.g. "4 hours ago")
+                _.escape(gettext('question posted %(time_ago)s by %(author)s')),
+                {time_ago: timeAgoHtml, author: author_display},
+                true
+            )
+            <% } %>  
+            <% if (thread_type != "question") { %>
+            <% if (thread_type != "discussion") { %>
             <%=
             interpolate(
                 // Translators: post_type describes the kind of post this is (e.g. "question" or "discussion");
@@ -19,6 +41,8 @@
                 true
             )
             %>
+            <% } %>
+            <% } %> 
             </p>
             <div class="post-labels">
                 <span class="post-label-pinned"><span class="icon fa fa-thumb-tack" aria-hidden="true"></span><%- gettext("Pinned") %></span>

@@ -1996,10 +1996,12 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
-msgid "{numVotes} Vote"
-msgid_plural "{numVotes} Votes"
-msgstr[0] ""
-msgstr[1] ""
+msgid "%(numVotes)s Vote"
+msgid_plural "%(numVotes)s Votes"
+msgstr[0] "%(numVotes)s rösta"
+msgstr[1] "%(numVotes)s röster"
+msgstr[2] "%(numVotes)s röster"
+msgstr[3] "%(numVotes)s röster"
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "We had some trouble subscribing you to this thread. Please try again."
@@ -2106,10 +2108,25 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
+msgid "%(numResponses)s responses"
+msgstr "%(numResponses)s inägg"
+
+#: common/static/common/js/discussion/views/discussion_thread_view.js
+msgid "{numResponses} responses"
+msgstr "{numResponses} inägg"
+
+#: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} response"
-msgid_plural "{numResponses} responses"
-msgstr[0] ""
-msgstr[1] ""
+msgstr "{numResponses} svar"
+
+#: common/static/coffee/src/discussion/views/discussion_thread_view.js
+#: common/static/common/js/discussion/views/discussion_thread_view.js
+msgid "%(numResponses)s response"
+msgid_plural "%(numResponses)s responses"
+msgstr[0] "%(numResponses)s svar"
+msgstr[1] "%(numResponses)s inägg"
+msgstr[2] "%(numResponses)s inägg"
+msgstr[3] "%(numResponses)s inägg"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing all responses"
@@ -6096,6 +6113,10 @@ msgid "Enter your question or comment."
 msgstr "Fyll i din fråga eller ditt diskussionsinlägg."
 
 #: common/static/common/templates/discussion/new-post.underscore
+msgid "Enter your question or comment"
+msgstr "Fyll i din fråga eller ditt diskussionsinlägg"
+
+#: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
 msgstr "följ denna diskussion"
 
@@ -6244,6 +6265,16 @@ msgid "%(post_type)s posted %(time_ago)s by %(author)s"
 msgstr "%(post_type)s upplagt %(time_ago)s av %(author)s"
 
 #: common/static/common/templates/discussion/thread-show.underscore
+#, python-format
+msgid "discussion posted %(time_ago)s by %(author)s"
+msgstr "Diskussionsinlägg upplagt %(time_ago)s av %(author)s"
+
+#: common/static/common/templates/discussion/thread-show.underscore
+#, python-format
+msgid "question posted %(time_ago)s by %(author)s"
+msgstr "Kuestion upplagt %(time_ago)s av %(author)s"
+
+#: common/static/common/templates/discussion/thread-show.underscore
 msgid "Closed"
 msgstr "Stängd"
 
@@ -6285,7 +6316,7 @@ msgstr ""
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Add a response:"
-msgstr ""
+msgstr "Lägg till ett inlägg:"
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Expand discussion"
@@ -6297,11 +6328,11 @@ msgstr ""
 
 #: common/static/common/templates/discussion/topic.underscore
 msgid "Topic Area:"
-msgstr ""
+msgstr "Diskussionsforum:"
 
 #: common/static/common/templates/discussion/topic.underscore
 msgid "Add your post to a relevant topic to help others find it."
-msgstr ""
+msgstr "Lägg till ditt inlägg i önskat diskussionsforum så andra deltagare lättare finner det."
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Discussion Home"

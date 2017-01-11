@@ -24,36 +24,65 @@
     "%(field)s must have at least %(count)d characters.": "%(field)s m\u00e5ste ha minst %(count)d tecken.", 
     "%(memberCount)s / %(maxMemberCount)s Member": [
       "%(memberCount)s / %(maxMemberCount)s medlem", 
-      "%(memberCount)s / %(maxMemberCount)s medlemmar"
+      "%(memberCount)s / %(maxMemberCount)s medlemmar", 
+      "", 
+      ""
+    ], 
+    "%(numResponses)s response": [
+      "%(numResponses)s svar", 
+      "%(numResponses)s in\u00e4gg", 
+      "%(numResponses)s in\u00e4gg", 
+      "%(numResponses)s in\u00e4gg"
+    ], 
+    "%(numResponses)s responses": "%(numResponses)s in\u00e4gg", 
+    "%(numVotes)s Vote": [
+      "%(numVotes)s r\u00f6sta", 
+      "%(numVotes)s r\u00f6ster", 
+      "%(numVotes)s r\u00f6ster", 
+      "%(numVotes)s r\u00f6ster"
     ], 
     "%(post_type)s posted %(time_ago)s by %(author)s": "%(post_type)s upplagt %(time_ago)s av %(author)s", 
     "%(value)s hour": [
       "%(value)s timme", 
-      "%(value)s timmar"
+      "%(value)s timmar", 
+      "", 
+      ""
     ], 
     "%(value)s minute": [
       "%(value)s minut", 
-      "%(value)s minuter"
+      "%(value)s minuter", 
+      "", 
+      ""
     ], 
     "%(value)s second": [
       "%(value)s sekund", 
-      "%(value)s sekunder"
+      "%(value)s sekunder", 
+      "", 
+      ""
     ], 
     "%d day": [
       "%d dag", 
-      "%d dagar"
+      "%d dagar", 
+      "", 
+      ""
     ], 
     "%d minute": [
       "%d minut", 
-      "%d minuter"
+      "%d minuter", 
+      "", 
+      ""
     ], 
     "%d month": [
       "%d m\u00e5nad", 
-      "%d m\u00e5nader"
+      "%d m\u00e5nader", 
+      "", 
+      ""
     ], 
     "%d year": [
       "%d \u00e5r", 
-      "%d \u00e5r"
+      "%d \u00e5r", 
+      "", 
+      ""
     ], 
     "%s ago": "f\u00f6r %s sedan", 
     "%s from now": "%s fr\u00e5n nu", 
@@ -71,8 +100,10 @@
     "Add New Component": "L\u00e4gg till en ny komponent", 
     "Add Post": "L\u00e4gg till", 
     "Add a clear and descriptive title to encourage participation.": "L\u00e4gg g\u00e4rna till en \u00e4mnesrubrik om du p\u00e5b\u00f6rjar en ny diskussion s\u00e5 andra deltagare l\u00e4ttare f\u00f6rst\u00e5r vad inl\u00e4gget handlar om.", 
+    "Add a response:": "L\u00e4gg till ett inl\u00e4gg:", 
     "Add language": "L\u00e4gg till spr\u00e5k", 
     "Add to Dictionary": "L\u00e4gg till i ordlistan", 
+    "Add your post to a relevant topic to help others find it.": "L\u00e4gg till ditt inl\u00e4gg i \u00f6nskat diskussionsforum s\u00e5 andra deltagare l\u00e4ttare finner det.", 
     "Admin": "Administrat\u00f6r", 
     "Advanced": "Avancerat", 
     "Align center": "Centrera", 
@@ -130,11 +161,15 @@
     "Change image": "\u00c4ndra bild", 
     "Check the box to remove %(count)s flag.": [
       "Markera rutan f\u00f6r att ta bort %(count)s flaggning.", 
-      "Markera rutan f\u00f6r att ta bort %(count)s flaggningar."
+      "Markera rutan f\u00f6r att ta bort %(count)s flaggningar.", 
+      "", 
+      ""
     ], 
     "Check the box to remove %(totalFlags)s flag.": [
       "Markera rutan f\u00f6r att ta bort %(totalFlags)s flaggning.", 
-      "Markera rutan f\u00f6r att ta bort %(totalFlags)s flaggningar."
+      "Markera rutan f\u00f6r att ta bort %(totalFlags)s flaggningar.", 
+      "", 
+      ""
     ], 
     "Check the box to remove all flags.": "Markera rutan f\u00f6r att ta bort alla flaggningar.", 
     "Check the highlighted fields below and try again.": "Titta p\u00e5 de markerade f\u00e4lten nedan och f\u00f6rs\u00f6k igen.", 
@@ -233,6 +268,7 @@
     "Enter team description.": "Fyll i teambeskrivning.", 
     "Enter team name.": "Fyll i teamnamn.", 
     "Enter username or email": "Skriv anv\u00e4ndarnamn eller e-postadress", 
+    "Enter your question or comment": "Fyll i din fr\u00e5ga eller ditt diskussionsinl\u00e4gg", 
     "Enter your question or comment.": "Fyll i din fr\u00e5ga eller ditt diskussionsinl\u00e4gg.", 
     "Error": "Error", 
     "Error:": "Fel:", 
@@ -553,7 +589,9 @@
     "These settings include basic information about your account. You can also specify additional information and see your linked social accounts on this page.": "Dessa inst\u00e4llningar inneh\u00e5ller grundl\u00e4ggande information om ditt konto. Du kan ocks\u00e5 ange ytterligare information och se dina l\u00e4nkade sociala konton p\u00e5 denna sida.", 
     "This annotation has %(count)s flag.": [
       "Denna anteckning har %(count)s flaggning.", 
-      "Denna anteckning har %(count)s flaggningar."
+      "Denna anteckning har %(count)s flaggningar.", 
+      "", 
+      ""
     ], 
     "This browser cannot play .mp4, .ogg, or .webm files.": "Din webbl\u00e4sare kan inte spela upp filtyperna .mp4, .ogg eller .webm.", 
     "This learner will be removed from the team, allowing another learner to take the available spot.": "Denna elev kommer tas bort fr\u00e5n teamet, vilket l\u00e5ter en annan elev ta plats i teamet.", 
@@ -567,6 +605,7 @@
     "Tools": "Verktyg", 
     "Top": "Top", 
     "Topic": "\u00c4mne", 
+    "Topic Area:": "Diskussionsforum:", 
     "Topics": "\u00c4mnen", 
     "Total": "Totalt", 
     "Try using a different browser, such as Google Chrome.": "Testa en annan webbl\u00e4sare, som till exempel Google Chrome.", 
@@ -668,7 +707,9 @@
     "a day": "en dag", 
     "about %d hour": [
       "ungef\u00e4r %d timme", 
-      "ungef\u00e4r %d timmar"
+      "ungef\u00e4r %d timmar", 
+      "", 
+      ""
     ], 
     "about a minute": "ungef\u00e4r en minut", 
     "about a month": "ungef\u00e4r en m\u00e5nad", 
@@ -680,6 +721,7 @@
     "bytes": "byte", 
     "close": "st\u00e4ng", 
     "correct": "korrekt", 
+    "discussion posted %(time_ago)s by %(author)s": "Diskussionsinl\u00e4gg upplagt %(time_ago)s av %(author)s", 
     "follow this post": "f\u00f6lj denna diskussion", 
     "incorrect": "felaktigt", 
     "last activity": "senaste aktivitet", 
@@ -692,9 +734,12 @@
     "or create a new one here": "eller skapa ett nytt h\u00e4r", 
     "or sign in with": "eller logga in via", 
     "post anonymously": "l\u00e4gg till anonymt", 
+    "question posted %(time_ago)s by %(author)s": "Kuestion upplagt %(time_ago)s av %(author)s", 
     "remove": "ta bort", 
     "remove all": "ta bort alla", 
     "team count": "antal team", 
+    "{numResponses} response": "{numResponses} svar", 
+    "{numResponses} responses": "{numResponses} in\u00e4gg", 
     "{platform_name} learners can see my:": "Elever p\u00e5 {platform_name} kan se:", 
     "\u2026": "\u2026"
   };
