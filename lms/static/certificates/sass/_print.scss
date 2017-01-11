@@ -198,11 +198,13 @@
 
 
         .accomplishment-type {
+            margin-bottom: 1rem;
             margin-top: -(spacing-vertical(mid-large));
         }
 
         .accomplishment-type-symbol {
-            @include size(rem(75));
+//            @include size(rem(75));
+            width: 21rem;
             border: none !important;
         }
 
