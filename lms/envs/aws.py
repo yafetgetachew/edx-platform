@@ -883,3 +883,4 @@ class ExtHostElasticsearch(Elasticsearch):
 
 ELASTIC_SEARCH_IMPL = ExtHostElasticsearch
 
+SEARCH_SKIP_ENROLLMENT_START_DATE_FILTERING = True
