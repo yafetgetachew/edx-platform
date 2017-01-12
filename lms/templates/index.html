@@ -13,38 +13,42 @@ from openedx.core.djangolib.markup import HTML, Text
       <header>
         <div class="outer-wrapper">
           <div class="title">
-            <div class="heading-group">
-              % if homepage_overlay_html:
-                ${homepage_overlay_html | n, decode.utf8}
-              % else:
-                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
-                  <h1>${Text(_(u"Welcome to the Open edX{registered_trademark} platform!")).format(registered_trademark=HTML("<sup style='font-size: 65%'>&reg;</sup>"))}</h1>
-                  ## Translators: 'Open edX' is a registered trademark, please keep this untranslated. See http://open.edx.org for more information.
-                  <p>${_("It works! This is the default homepage for this Open edX instance.")}</p>
-              % endif
+                <hgroup>
+                    <H1>Открытый университет <br>Егора Гайдара</h1><h3>Бесплатные онлайн курсы по экономическим и социальным дисциплинам от лучших ВУЗов страны</h3>
+                </hgroup>
+                
+                ## Disable social buttons for non-edX sites
+ 
+                <section class="actions">
+                    <div class="main-cta">
+                        <a href="#signup-modal" id="signup_action" class="find-courses" rel="leanModal">${_("Sign Up")}</a>
+                    </div>
+                    
+                    <div class="secondary-actions">
+                        <div class="social-sharing">
+                            <div class="sharing-message">${_("Stay up to date with all {platform_name} has to offer!").format(platform_name=settings.PLATFORM_NAME)}</div>
+                            <a href="https://twitter.com/edXOnline" class="share">
+                                <img src="${static.url('images/social/twitter-sharing.png')}">
+                                    </a>
+                            <a href="http://www.facebook.com/EdxOnline" class="share">
+                                <img src="${static.url('images/social/facebook-sharing.png')}">
+                                    </a>
+                            <a href="https://plus.google.com/108235383044095082735/posts" class="share">
+                                <img src="${static.url('images/social/google-plus-sharing.png')}">
+                                    </a>
+                        </div>
+                    </div>
+                    
+                </section>
+     
             </div>
-            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-              <div class="course-search">
-                <form method="get" action="/courses">
-                  <label><span class="sr">${_("Search for a course")}</span>
-                    <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-                  </label>
-                  <button class="search-button" type="submit">
-                    <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-                  </button>
-                </form>
-              </div>
-            % endif
 
-          </div>
-
-          % if show_homepage_promo_video:
             <a href="#video-modal" class="media" rel="leanModal">
               <div class="hero">
                 <div class="play-intro"></div>
               </div>
             </a>
-          % endif
+
         </div>
 
       </header>
@@ -53,13 +57,13 @@ from openedx.core.djangolib.markup import HTML, Text
     </section>
 </main>
 
-% if show_homepage_promo_video:
+
   <section id="video-modal" class="modal home-page-video-modal video-modal">
     <div class="inner-wrapper">
       <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
-% endif
+
 
 <%block name="js_extra">
    <script type="text/javascript">

@@ -36,7 +36,7 @@ h1 {
   font: normal 2em/1.4em $sans-serif;
   letter-spacing: 1px;
   margin-bottom: ($baseline*1.5);
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
@@ -46,6 +46,8 @@ h2 {
   margin-bottom: ($baseline*0.75);
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
+  
+  
 }
 
 p + h2, ul + h2, ol + h2 {

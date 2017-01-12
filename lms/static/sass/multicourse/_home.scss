@@ -14,7 +14,7 @@ $course-search-input-height: ($button-size);
   }
 
   > header {
-    @include linear-gradient($homepage__header--gradient__color--alpha, $homepage__header--gradient__color--bravo);
+    background-color: rgb(181,205,227);
     @include clearfix();
     background-size: cover;
     background-image: $homepage-bg-image;
@@ -37,15 +37,12 @@ $course-search-input-height: ($button-size);
     }
 
     .title {
-      @include span-columns(8);
-      @include shift(2);
-      @include box-sizing(border-box);
-      @include transition(all 0.2s linear 0s);
+      min-height: 160px;
+      margin-left: grid-width(2) + $gw-gutter;
+      width: flex-grid(6);
+      float: left;
       position: relative;
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
-      background: $white;
-      padding: ($baseline) ($baseline*1.5);
-      min-height: ($baseline*6);
+      @include transition(all 0.2s linear 0s);
       vertical-align: top;
 
       // STATE: hover and focus
@@ -151,13 +148,14 @@ $course-search-input-height: ($button-size);
     }
 
     .media {
-      background: $white;
+      background: #FFF;
       background: $course-header-bg;
       border: 1px solid $border-color-3;
+      border-left: 1;
       @include border-left(0);
       @include box-sizing(border-box);
       // box-shadow: 0 4px 25px 0 rgba(0,0,0, 0.5);
-      height: 120px;
+      height: 150px;
       @include float(left);
       padding: 4px;
       position: relative;
@@ -174,18 +172,17 @@ $course-search-input-height: ($button-size);
         overflow: hidden;
         position: relative;
         background: url($video-thumb-url) center no-repeat;
-        background-size: cover;
 
         .play-intro {
           @include background-image(linear-gradient(-90deg, rgba(0,0,0, 0.65), rgba(0,0,0, 0.75)));
           border-radius: 4px;
-          box-shadow: 0 1px 12px 0 $shadow-d1;
+          box-shadow: 0 1px 12px 0 rgba(0,0,0,0.4);
           @include box-sizing(border-box);
           border: 2px solid rgba(255,255,255, 0.8);
           height: 60px;
           @include left(50%);
           margin-top: -30px;
-          @include margin-left(-($baseline*1.5));
+          margin-left: -30px;
           position: absolute;
           top: 50%;
           @include transition(all 0.15s linear 0s);
@@ -239,7 +236,7 @@ $course-search-input-height: ($button-size);
       border: 1px solid $border-color-2;
       border-radius: 4px;
       border-top-color: $border-color-1;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255, 0.4), 0 0px 12px 0 $shadow;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255, 0.4), 0 0px 12px 0 rgba(0,0,0,0.2);;
       color: $lighter-base-font-color;
       letter-spacing: 1px;
       margin-bottom: 0px;
@@ -375,7 +372,7 @@ $course-search-input-height: ($button-size);
 
         img {
           position: relative;
-          @include transition(all $tmg-f2 ease-in-out 0s);
+          @include transition(all 0.25s ease-in-out 0s);
           vertical-align: middle;
           z-index: 2;
         }
@@ -488,8 +485,8 @@ $course-search-input-height: ($button-size);
 
       .blog-posts {
         border-bottom: 1px solid $border-color-2;
-        margin-bottom: $baseline;
-        padding-bottom: $baseline;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
         @include clearfix();
 
         > article {
@@ -506,7 +503,7 @@ $course-search-input-height: ($button-size);
           &:hover, &:focus {
             background: $body-bg;
             border: 1px solid $border-color-2;
-            box-shadow: inset 0 0 3px 0 $shadow-l1;
+            box-shadow: inset 0 0 3px 0 rgba(0,0,0, 0.1);
           }
 
           &:last-child {
@@ -566,7 +563,7 @@ $course-search-input-height: ($button-size);
           line-height: 1.6em;
           font-family: $serif;
           font-style: italic;
-          @include margin-left($baseline/2);
+          margin-left: 10px;
 
           &.read-more {
             @include float(right);
