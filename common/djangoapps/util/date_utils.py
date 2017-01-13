@@ -7,7 +7,7 @@ import re
 
 from django.utils.translation import pgettext, ugettext
 from pytz import timezone, utc, UnknownTimeZoneError
-
+from django.conf import settings
 
 def get_default_time_display(dtime):
     """
@@ -99,7 +99,7 @@ DEFAULT_LONG_DATE_FORMAT = "%A, %B %d, %Y"
 DEFAULT_TIME_FORMAT = "%I:%M:%S %p"
 DEFAULT_DATE_TIME_FORMAT = "%b %d, %Y at %H:%M"
 DEFAULT_DAY_AND_TIME_FORMAT = "%A at %-I%P"
-
+DEFAULT_DAY_AND_TIME_FORMAT_SV = "%A kl. %H:%M"
 
 def strftime_localized(dtime, format):      # pylint: disable=redefined-builtin
     """
@@ -149,7 +149,10 @@ def strftime_localized(dtime, format):      # pylint: disable=redefined-builtin
         if format == "DATE_TIME_FORMAT":
             format = DEFAULT_DATE_TIME_FORMAT
     elif format == "DAY_AND_TIME":
-        format = DEFAULT_DAY_AND_TIME_FORMAT
+        if settings.LANGUAGE_CODE == 'sv':
+            format = DEFAULT_DAY_AND_TIME_FORMAT_SV
+        else:
+            format = DEFAULT_DAY_AND_TIME_FORMAT
     elif format == "TIME":
         format = "%X"
 
