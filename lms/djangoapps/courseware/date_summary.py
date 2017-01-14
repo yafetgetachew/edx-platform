@@ -19,7 +19,7 @@ from lms.djangoapps.commerce.utils import EcommerceService
 from lms.djangoapps.verify_student.models import VerificationDeadline, SoftwareSecurePhotoVerification
 from openedx.core.lib.time_zone_utils import get_time_zone_abbr, get_user_time_zone
 from student.models import CourseEnrollment
-
+from django.conf import settings
 
 class DateSummary(object):
     """Base class for all date summary blocks."""
@@ -163,10 +163,15 @@ class TodaysDate(DateSummary):
 
     @property
     def title(self):
-        return _(u'Today is {date}').format(
-            date=self.date.astimezone(self.time_zone).strftime(self.date_format.encode('utf-8')).decode('utf-8')
-        )
-
+        if settings.LANGUAGE_CODE == 'sv':
+            return _(u'Today is {date}').format(
+                date=self.date.astimezone(self.time_zone).strftime(self.date_format.encode('utf-8')).decode('utf-8').lower()
+                    .replace('mar', 'mars').replace('may', 'maj').replace('oct', 'okt')
+            )
+        else:
+            return _(u'Today is {date}').format(
+                date=self.date.astimezone(self.time_zone).strftime(self.date_format.encode('utf-8')).decode('utf-8')
+            )
 
 class CourseStartDate(DateSummary):
     """

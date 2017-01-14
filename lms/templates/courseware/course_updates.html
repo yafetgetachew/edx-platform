@@ -1,11 +1,17 @@
 <%! from django.utils.translation import ugettext as _ %>
+<%! from django.conf import settings %>
+<%! import re %>
 <section aria-labelledby="course-updates-heading">
     <h2 class="hd hd-2 sr" id="course-updates-heading">${_('All course updates')}</h2>
 <div class="recent-updates">
   % for index, update in enumerate(visible_updates):
     <article class="updates-article">
       % if not update.get("is_error"):
+        % if settings.LANGUAGE_CODE == 'sv':
+        <h2 class="date" id="msg-date-${index}">${re.sub(r"(\w+)\s(\d+),\s(\d\d\d\d)", r"\2 \1, \3",(update.get("date").lower().replace('january', 'januari').replace('february', 'februari').replace('march', 'rs').replace('april', 'apri').replace('may', 'maj').replace('june', 'juni').replace('july', 'juli').replace('august', 'augusti').replace('october', 'oktober').replace('mar', 'mars').replace('may', 'maj').replace('oct', 'okt')))}</h2>
+        % else:
         <h2 class="date" id="msg-date-${index}">${update.get("date")}</h2>
+        % endif
         <button
             class="toggle-visibility-button"
             data-hide="${_('Hide')}"
