@@ -476,3 +476,47 @@ class ExtHostElasticsearch(Elasticsearch):
 
 ELASTIC_SEARCH_IMPL = ExtHostElasticsearch
 
+COURSE_LANGUAGES = tuple((lang, display) for lang, display in ALL_LANGUAGES if lang in ('en', 'fr', 'es', 'ar', 'ru'))
+COURSE_LANGUAGES += (('other', 'Other'),)
+
+COURSE_TYPES = (
+    ('course', 'Course'),
+    ('policy', 'Policy'),
+    ('programmes', 'Programmes'),
+    ('guidelines_and_toolkits', 'Guidelines and Toolkits'),
+    ('other', 'Other')
+)
+
+COURSE_TOPICS = (
+    ('adults_in_scouting', 'Adults in Scouting'),
+    ('branding_and_copyright', 'Branding and Copyright'),
+    ('child_&_youth_protection', 'Child & Youth Protection'),
+    ('communication', 'Communication'),
+    ('diversity_&_inclusion', 'Diversity & Inclusion'),
+    ('education', 'Education'),
+    ('environment', 'Environment'),
+    ('events', 'Events'),
+    ('external_relations', 'External Relations'),
+    ('financial_management', 'Financial Management'),
+    ('fundamentals_of_scouting', 'Fundamentals of Scouting'),
+    ('gender', 'Gender'),
+    ('history', 'History'),
+    ('institutional_documents', 'Institutional Documents'),
+    ('managing_adults', 'Managing Adults'),
+    ('membership', 'Membership'),
+    ('organisational_development', 'Organisational Development'),
+    ('partnerships', 'Partnerships'),
+    ('peace', 'Peace'),
+    ('quality', 'Quality'),
+    ('recruitment', 'Recruitment'),
+    ('research', 'Research'),
+    ('social_impact', 'Social Impact'),
+    ('spiritual_development', 'Spiritual Development'),
+    ('strategic_planning', 'Strategic Planning'),
+    ('sustainable_development', 'Sustainable Development'),
+    ('training_&_learning', 'Training & Learning'),
+    ('volunteering', 'Volunteering'),
+    ('youth_involvement', 'Youth Involvement'),
+    ('youth_programme', 'Youth Programme'),
+)
+

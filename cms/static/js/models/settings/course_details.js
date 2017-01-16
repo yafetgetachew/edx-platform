@@ -7,6 +7,8 @@ var CourseDetails = Backbone.Model.extend({
         course_id: '',
         run: '',
         language: '',
+        type: '',
+        topic: '',
         start_date: null,	// maps to 'start'
         end_date: null,		// maps to 'end'
         enrollment_start: null,

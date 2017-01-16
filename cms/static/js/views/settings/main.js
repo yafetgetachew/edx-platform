@@ -29,6 +29,8 @@ var DetailsView = ValidatingView.extend({
     initialize : function(options) {
         options = options || {};
         // fill in fields
+        this.$el.find("#course-type").val(this.model.get('type'));
+        this.$el.find("#course-topic").val(this.model.get('topic'));
         this.$el.find("#course-language").val(this.model.get('language'));
         this.$el.find("#course-organization").val(this.model.get('org'));
         this.$el.find("#course-number").val(this.model.get('course_id'));
@@ -155,6 +157,8 @@ var DetailsView = ValidatingView.extend({
         return this;
     },
     fieldToSelectorMap : {
+        'type' : 'course-type',
+        'topic' : 'course-topic',
         'language' : 'course-language',
         'start_date' : "course-start",
         'end_date' : 'course-end',
@@ -299,6 +303,8 @@ var DetailsView = ValidatingView.extend({
             this.model.set('self_paced', JSON.parse(event.currentTarget.value));
             break;
         case 'course-language':
+        case 'course-type':
+        case 'course-topic':
         case 'course-effort':
         case 'course-title':
         case 'course-subtitle':

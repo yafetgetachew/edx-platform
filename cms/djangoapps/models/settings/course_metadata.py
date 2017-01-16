@@ -124,6 +124,8 @@ class CourseMetadata(object):
                 'help': _(field.help),                    # pylint: disable=translation-of-non-string
                 'deprecated': field.runtime_options.get('deprecated', False)
             }
+            if field.name in ('topic', 'type'):
+                result[field.name]['options'] = settings.__getattr__('COURSE_{}S'.format(field.name.upper()))
         return result
 
     @classmethod
