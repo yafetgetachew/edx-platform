@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-13 13:56+0000\n"
-"PO-Revision-Date: 2017-01-13 13:56:08.334785\n"
+"POT-Creation-Date: 2017-01-18 11:26+0000\n"
+"PO-Revision-Date: 2017-01-18 11:26:27.669246\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -11960,6 +11960,10 @@ msgid "due {date}"
 msgstr ""
 
 #: lms/templates/courseware/accordion.html
+msgid "Final Exam"
+msgstr ""
+
+#: lms/templates/courseware/accordion.html
 msgid "This content is graded"
 msgstr ""
 
@@ -13121,6 +13125,16 @@ msgid ""
 "receive any more email from us. If you need assistance, please do not reply "
 "to this email message. Check the help section of the {platform_name} "
 "website."
+msgstr ""
+
+#: lms/templates/emails/activation_email.html
+#: lms/templates/emails/activation_email.txt
+msgid "Best regards,"
+msgstr ""
+
+#: lms/templates/emails/activation_email.html
+#: lms/templates/emails/activation_email.txt
+msgid "Team {platform_name}"
 msgstr ""
 
 #: lms/templates/emails/activation_email_subject.txt

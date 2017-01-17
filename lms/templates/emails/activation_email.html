@@ -29,4 +29,11 @@ ${_("If you didn't create an account, you don't need to do anything; you "
       "do not reply to this email message. Check the help section of the "
       "{platform_name} website.").format(platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME))}
 </p>
+<p>
+${_("Best regards,")}
+</br>
+${_("Team {platform_name}").format(
+        platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
+   )}
+</p>
 </%block>

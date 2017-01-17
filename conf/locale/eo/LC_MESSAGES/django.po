@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-13 13:56+0000\n"
-"PO-Revision-Date: 2017-01-13 13:56:08.334785\n"
+"POT-Creation-Date: 2017-01-18 11:26+0000\n"
+"PO-Revision-Date: 2017-01-18 11:26:27.669246\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -15349,6 +15349,10 @@ msgid "due {date}"
 msgstr "düé {date} Ⱡ'σяєм ιρѕυм #"
 
 #: lms/templates/courseware/accordion.html
+msgid "Final Exam"
+msgstr "Fïnäl Éxäm Ⱡ'σяєм ιρѕυм ∂σłσ#"
+
+#: lms/templates/courseware/accordion.html
 msgid "This content is graded"
 msgstr "Thïs çöntént ïs grädéd Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
@@ -16797,6 +16801,16 @@ msgstr ""
 " νєηιαм, qυιѕ ησѕтяυ∂ єχєя¢ιтαтιση υłłαм¢σ łαвσяιѕ ηιѕι υт αłιqυιρ єχ єα "
 "¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт"
 " єѕѕє ¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя.#"
+
+#: lms/templates/emails/activation_email.html
+#: lms/templates/emails/activation_email.txt
+msgid "Best regards,"
+msgstr "Bést régärds, Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
+
+#: lms/templates/emails/activation_email.html
+#: lms/templates/emails/activation_email.txt
+msgid "Team {platform_name}"
+msgstr "Téäm {platform_name} Ⱡ'σяєм ιρѕυм ∂#"
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Activate Your {platform_name} Account"

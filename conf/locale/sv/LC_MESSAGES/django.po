@@ -1768,6 +1768,22 @@ msgid "Show Answer"
 msgstr "Visa facit"
 
 #: common/lib/xmodule/xmodule/capa_base.py
+msgid "Check"
+msgstr "Bekräfta"
+
+#: common/lib/xmodule/xmodule/capa_base.py
+msgid "Final Check"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/capa_base.py
+msgid "Checking..."
+msgstr "Bekräftande..."
+
+#: lms/templates/problem.html
+msgid "your answer"
+msgstr "ditt svar"
+
+#: common/lib/xmodule/xmodule/capa_base.py
 msgid ""
 "Defines when to show the answer to the problem. A default value can be set "
 "in Advanced Settings."
@@ -9949,7 +9965,7 @@ msgstr "Mina kurser"
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "You are not enrolled in any courses yet."
-msgstr ""
+msgstr "Du är inte anmäld i några fortbildningar ännu."
 
 #: lms/templates/dashboard.html lms/templates/navigation.html
 #: themes/edx.org/lms/templates/dashboard.html
@@ -12498,6 +12514,10 @@ msgstr ""
 msgid "This content is graded"
 msgstr "Detta innehåll betygsätts"
 
+#: lms/templates/courseware/accordion.html
+msgid "Final Exam"
+msgstr "Veckoenkät"
+
 #: lms/templates/courseware/course_about.html
 msgid "An error occurred. Please try again later."
 msgstr "Ett fel uppstod. Försök igen senare."
@@ -13559,7 +13579,7 @@ msgstr ""
 
 #: lms/templates/emails/activation_email.txt
 msgid "Thank you for creating an account with {platform_name}!"
-msgstr ""
+msgstr "Tack för att du skapat ett användarkonto på {platform_name}! Du är nu ett klick från att bli medlem."
 
 #: lms/templates/emails/activation_email.txt
 msgid ""
@@ -13567,7 +13587,7 @@ msgid ""
 "activate your {platform_name} account. To activate your account, click the "
 "following link. If that doesn't work, copy and paste the link into your "
 "browser's address bar."
-msgstr ""
+msgstr "För att aktivera ditt användarkonto behöver du klicka på länken nedan. Skulle den inte fungera får du kopiera länken och klistra in i adressfältet i din browser."
 
 #: lms/templates/emails/activation_email.txt
 msgid ""
@@ -13575,7 +13595,15 @@ msgid ""
 "receive any more email from us. If you need assistance, please do not reply "
 "to this email message. Check the help section of the {platform_name} "
 "website."
-msgstr ""
+msgstr "Om du inte skapat ett användarkonto behöver du inte göra någonting ytterligare, och kommer inte få fler e-post meddelanden från oss."
+
+#: lms/templates/emails/activation_email.txt
+msgid "Best regards,"
+msgstr "Bästa hälsningar,"
+
+#: lms/templates/emails/activation_email.txt
+msgid "Team {platform_name}"
+msgstr "Team {platform_name}"
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Activate Your {platform_name} Account"
@@ -15987,7 +16015,7 @@ msgstr ""
 
 #: lms/templates/registration/activate_account_notice.html
 msgid "You're almost there!"
-msgstr ""
+msgstr "Du är nästan färdig!"
 
 #: lms/templates/registration/activate_account_notice.html
 msgid ""
@@ -15995,7 +16023,11 @@ msgid ""
 "activate your account. We've sent an email message to "
 "{email_start}{email}{email_end} with instructions for activating your "
 "account. If you don't receive this message, check your spam folder."
-msgstr ""
+msgstr "Innan du kan anmäla dig till fortbildningar på Opusplace behöver du "
+"först aktivera ditt användarkonto. Vi har skickat dig en e-post till "
+"{email_start}{email}{email_end} med instruktioner för hur du aktiverar ditt konto. "
+"Om du inte finner e-posten, kolla gärna i skräpposten då den kan ha hamnat där. "
+"Bästa hälsningar, Team Opusplace."
 
 #: lms/templates/registration/activation_complete.html
 msgid "Account Activated"

@@ -20,6 +20,24 @@
 
   django.catalog = {
     "#Replies": "#Svar", 
+    "%(earned)s/%(possible)s point": [
+      "%(earned)s/%(possible)s po\u00e4ng", 
+      "%(earned)s/%(possible)s po\u00e4ng", 
+      "", 
+      ""
+    ], 
+    "%(earned)s/%(possible)s point (graded)": [
+      "%(earned)s/%(possible)s po\u00e4ng (graderade)", 
+      "%(earned)s/%(possible)s po\u00e4ng (graderade)", 
+      "", 
+      ""
+    ], 
+    "%(earned)s/%(possible)s point (ungraded)": [
+      "%(earned)s/%(possible)s po\u00e4ng (osorterade)", 
+      "%(earned)s/%(possible)s po\u00e4ng (osorterade)", 
+      "", 
+      ""
+    ], 
     "%(field)s can only contain up to %(count)d characters.": "%(field)s kan bara inneh\u00e5lla upp till %(count)d tecken.", 
     "%(field)s must have at least %(count)d characters.": "%(field)s m\u00e5ste ha minst %(count)d tecken.", 
     "%(memberCount)s / %(maxMemberCount)s Member": [
@@ -30,16 +48,34 @@
     ], 
     "%(numResponses)s response": [
       "%(numResponses)s svar", 
-      "%(numResponses)s in\u00e4gg", 
-      "%(numResponses)s in\u00e4gg", 
-      "%(numResponses)s in\u00e4gg"
+      "%(numResponses)s inl\u00e4gg", 
+      "%(numResponses)s inl\u00e4gg", 
+      "%(numResponses)s inl\u00e4gg"
     ], 
-    "%(numResponses)s responses": "%(numResponses)s in\u00e4gg", 
+    "%(numResponses)s responses": "%(numResponses)s inl\u00e4gg", 
     "%(numVotes)s Vote": [
       "%(numVotes)s r\u00f6sta", 
       "%(numVotes)s r\u00f6ster", 
       "%(numVotes)s r\u00f6ster", 
       "%(numVotes)s r\u00f6ster"
+    ], 
+    "%(num_points)s point possible": [
+      "%(num_points)s po\u00e4ng m\u00f6jligt", 
+      "%(num_points)s po\u00e4ng m\u00f6jligt", 
+      "", 
+      ""
+    ], 
+    "%(num_points)s point possible (graded)": [
+      "%(num_points)s po\u00e4ng m\u00f6jligt (graderade)", 
+      "%(num_points)s po\u00e4ng m\u00f6jligt (graderade)", 
+      "", 
+      ""
+    ], 
+    "%(num_points)s point possible (ungraded)": [
+      "%(num_points)s po\u00e4ng m\u00f6jligt (osorterade)", 
+      "%(num_points)s po\u00e4ng m\u00f6jligt (osorterade)", 
+      "", 
+      ""
     ], 
     "%(post_type)s posted %(time_ago)s by %(author)s": "%(post_type)s upplagt %(time_ago)s av %(author)s", 
     "%(value)s hour": [
@@ -86,6 +122,18 @@
     ], 
     "%s ago": "f\u00f6r %s sedan", 
     "%s from now": "%s fr\u00e5n nu", 
+    "(%(earned)s/%(possible)s point)": [
+      "(%(earned)s/%(possible)s po\u00e4ng)", 
+      "(%(earned)s/%(possible)s po\u00e4ng)", 
+      "", 
+      ""
+    ], 
+    "(%(num_points)s point possible)": [
+      "(%(num_points)s po\u00e4ng m\u00f6jligt)", 
+      "(%(num_points)s po\u00e4ng m\u00f6jligt)", 
+      "", 
+      ""
+    ], 
     "- Sortable": "- Sorteringsbar", 
     "A meeting arena for teachers": "En m\u00f6tesplats f\u00f6r l\u00e4rare", 
     "A name that identifies your team (maximum 255 characters).": "Ett namn som identifierar ditt team (h\u00f6gst 255 tecken)", 
@@ -99,6 +147,7 @@
     "Add Country": "L\u00e4gg till land", 
     "Add New Component": "L\u00e4gg till en ny komponent", 
     "Add Post": "L\u00e4gg till", 
+    "Add a Response": "L\u00e4gg till inl\u00e4gg", 
     "Add a clear and descriptive title to encourage participation.": "L\u00e4gg g\u00e4rna till en \u00e4mnesrubrik om du p\u00e5b\u00f6rjar en ny diskussion s\u00e5 andra deltagare l\u00e4ttare f\u00f6rst\u00e5r vad inl\u00e4gget handlar om.", 
     "Add a response:": "L\u00e4gg till ett inl\u00e4gg:", 
     "Add language": "L\u00e4gg till spr\u00e5k", 
@@ -244,7 +293,7 @@
     "Description": "Beskrivning", 
     "Dimensions": "Dimensioner", 
     "Disc": "Skiva", 
-    "Discussion": "Diskussionsinl\u00e4gg", 
+    "Discussion": "Inl\u00e4gg", 
     "Discussion Home": "Diskussionsforum", 
     "Div": "Div", 
     "Do not show again": "Visa inte igen", 
@@ -516,6 +565,8 @@
     "Show invisible characters": "Visa osynliga tecken", 
     "Show notes": "Visa anteckningar", 
     "Showing all responses": "Visar alla svar", 
+    "Showing first response": "De f\u00f6rsta inl\u00e4ggen", 
+    "Showing first {numResponses} responses": "De f\u00f6rsta {numResponses} inl\u00e4ggen", 
     "Sign in": "Logga in", 
     "Sign in with %(providerName)s": "Logga in via %(providerName)s", 
     "Skip": "Hoppa \u00f6ver", 
@@ -739,7 +790,7 @@
     "remove all": "ta bort alla", 
     "team count": "antal team", 
     "{numResponses} response": "{numResponses} svar", 
-    "{numResponses} responses": "{numResponses} in\u00e4gg", 
+    "{numResponses} responses": "{numResponses} inl\u00e4gg", 
     "{platform_name} learners can see my:": "Elever p\u00e5 {platform_name} kan se:", 
     "\u2026": "\u2026"
   };

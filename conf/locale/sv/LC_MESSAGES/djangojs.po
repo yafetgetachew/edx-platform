@@ -301,16 +301,28 @@ msgstr "Svara på annoteringen"
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(num_points)s point possible (graded)"
 msgid_plural "%(num_points)s points possible (graded)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num_points)s poäng möjligt (graderade)"
+msgstr[1] "%(num_points)s poäng möjligt (graderade)"
 
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(num_points)s point possible (ungraded)"
 msgid_plural "%(num_points)s points possible (ungraded)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num_points)s poäng möjligt (osorterade)"
+msgstr[1] "%(num_points)s poäng möjligt (osorterade)"
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "(%(num_points)s point possible)"
+msgid_plural "(%(num_points)s points possible)"
+msgstr[0] "(%(num_points)s poäng möjligt)"
+msgstr[1] "(%(num_points)s poäng möjligt)"
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "%(num_points)s point possible"
+msgid_plural "%(num_points)s points possible"
+msgstr[0] "%(num_points)s poäng möjligt"
+msgstr[1] "%(num_points)s poäng möjligt"
 
 #. Translators: %(earned)s is the number of points earned. %(possible)s is the
 #. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
@@ -319,8 +331,8 @@ msgstr[1] ""
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(earned)s/%(possible)s point (graded)"
 msgid_plural "%(earned)s/%(possible)s points (graded)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(earned)s/%(possible)s poäng (graderade)"
+msgstr[1] "%(earned)s/%(possible)s poäng (graderade)"
 
 #. Translators: %(earned)s is the number of points earned. %(possible)s is the
 #. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
@@ -329,8 +341,20 @@ msgstr[1] ""
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(earned)s/%(possible)s point (ungraded)"
 msgid_plural "%(earned)s/%(possible)s points (ungraded)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(earned)s/%(possible)s poäng (osorterade)"
+msgstr[1] "%(earned)s/%(possible)s poäng (osorterade)"
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "(%(earned)s/%(possible)s point)"
+msgid_plural "(%(earned)s/%(possible)s points)"
+msgstr[0] "(%(earned)s/%(possible)s poäng)"
+msgstr[1] "(%(earned)s/%(possible)s poäng)"
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "%(earned)s/%(possible)s point"
+msgid_plural "(%(earned)s/%(possible)s points"
+msgstr[0] "%(earned)s/%(possible)s poäng"
+msgstr[1] "%(earned)s/%(possible)s poäng"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "The grading process is still running. Refresh the page to see updates."
@@ -2109,11 +2133,11 @@ msgstr[1] ""
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "%(numResponses)s responses"
-msgstr "%(numResponses)s inägg"
+msgstr "%(numResponses)s inlägg"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} responses"
-msgstr "{numResponses} inägg"
+msgstr "{numResponses} inlägg"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} response"
@@ -2124,9 +2148,9 @@ msgstr "{numResponses} svar"
 msgid "%(numResponses)s response"
 msgid_plural "%(numResponses)s responses"
 msgstr[0] "%(numResponses)s svar"
-msgstr[1] "%(numResponses)s inägg"
-msgstr[2] "%(numResponses)s inägg"
-msgstr[3] "%(numResponses)s inägg"
+msgstr[1] "%(numResponses)s inlägg"
+msgstr[2] "%(numResponses)s inlägg"
+msgstr[3] "%(numResponses)s inlägg"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing all responses"
@@ -2134,9 +2158,11 @@ msgstr "Visar alla svar"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing first response"
-msgid_plural "Showing first {numResponses} responses"
-msgstr[0] ""
-msgstr[1] ""
+msgstr "De första inläggen"
+
+#: common/static/common/js/discussion/views/discussion_thread_view.js
+msgid "Showing first {numResponses} responses"
+msgstr "De första {numResponses} inläggen"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Load all responses"
@@ -6302,7 +6328,7 @@ msgstr "Fråga"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Discussion"
-msgstr "Diskussionsinlägg"
+msgstr "Inlägg"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid ""
@@ -6312,7 +6338,7 @@ msgstr "'Frågor' är inlägg som söker svar. 'Diskussionsinlägg' är inlägg 
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Add a Response"
-msgstr ""
+msgstr "Lägg till inlägg"
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Add a response:"

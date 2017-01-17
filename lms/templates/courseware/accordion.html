@@ -62,8 +62,15 @@ else:
                     % else:
                         ## non-proctored section, we just show the exam format and the due date
                         ## this is the standard case in edx-platform
+                        % if settings.LANGUAGE_CODE == 'sv':
+                        %if section['format'] == 'Final Exam':
+                        <span class="subtitle-name">${_("Final Exam")} ${due_date}</span>
+                        % else:
                         <span class="subtitle-name">${section['format']} ${due_date}</span>
-
+                        % endif
+                        % else:
+                        <span class="subtitle-name">${section['format']} ${due_date}</span>
+                        % endif
                         % if 'graded' in section and section['graded']:
                             <span class="menu-icon icon fa fa-pencil-square-o" aria-hidden="true"></span>
                             <span class="sr">${_("This content is graded")}</span>
