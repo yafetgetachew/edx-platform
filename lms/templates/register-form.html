@@ -247,11 +247,11 @@ from student.models import UserProfile
 
       % if settings.REGISTRATION_EXTRA_FIELDS['honor_code'] != 'hidden':
       ## check if we have an Privacy Policy link in our marketing map
-      % if marketing_link('HONOR') and marketing_link('HONOR') != '#':
+      % if marketing_link('PRIVACY') and marketing_link('PRIVACY') != '#':
       <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['honor_code']} checkbox" id="field-honorcode">
         <input id="honorcode-yes" type="checkbox" name="honor_code" value="true" />
         <%
-          honor_code_path = marketing_link('HONOR')
+          honor_code_path = marketing_link('PRIVACY')
         %>
         <label for="honorcode-yes">${_('I agree to the {link_start}Privacy Policy{link_end}').format(
           link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=honor_code_path),
