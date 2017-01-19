@@ -84,6 +84,7 @@ if Backbone?
         @$(".post-tools").hide()
       else # mode == "inline"
         @collapse()
+      setTimeout((=> @expand()), 100)
 
     attrRenderer: $.extend({}, DiscussionContentView.prototype.attrRenderer, {
       closed: (closed) ->
@@ -135,7 +136,7 @@ if Backbone?
       # element(TNL-1530)
       # - When viewing inline in courseware, user clicks 'expand' to open responses, Its ok to scroll to the
       # element (Default)
-      takeFocus = if @mode == "tab" then false else true
+      takeFocus = false #if @mode == "tab" then false else true
       @responsesRequest = DiscussionUtil.safeAjax
         url: DiscussionUtil.urlFor('retrieve_single_thread', @model.get('commentable_id'), @model.id)
         data:
@@ -162,7 +163,7 @@ if Backbone?
           )
           @trigger "thread:responses:rendered"
           @loadedResponses = true
-          @$el.find('.discussion-article[data-id="' + @model.id + '"]').focus() # Sends focus to the discussion once the thread loads
+          #@$el.find('.discussion-article[data-id="' + @model.id + '"]').focus() # Sends focus to the discussion once the thread loads
         error: (xhr, textStatus) =>
           return if textStatus == 'abort'
 

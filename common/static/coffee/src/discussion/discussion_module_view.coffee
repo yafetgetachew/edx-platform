@@ -82,7 +82,7 @@ if Backbone?
         error: error
 
     renderDiscussion: ($elem, response, textStatus, discussionId) =>
-      $elem.focus()
+      #$elem.focus()
       user = new DiscussionUser(response.user_info)
       window.user = user
       DiscussionUtil.setUser(user)
