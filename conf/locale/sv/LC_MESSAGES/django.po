@@ -9705,7 +9705,7 @@ msgstr "Återställ"
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "Thanks for activating your account."
-msgstr "Tack för att du aktiverade ditt konto"
+msgstr "Ditt användarkonto är nu aktiverat."
 
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
@@ -9720,7 +9720,7 @@ msgstr "Besök din {link_start}översikt{link_end} för att visa dina kurser."
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
 msgid "You can now {link_start}sign in{link_end}."
-msgstr ""
+msgstr "{link_start}Logga in{link_end}."
 
 #: cms/templates/widgets/header.html lms/templates/navigation.html
 msgid "Choose Language"
@@ -11283,6 +11283,10 @@ msgid "Download video file"
 msgstr ""
 
 #: lms/templates/video.html
+msgid "Download video"
+msgstr "Ladda ner video"
+
+#: lms/templates/video.html
 msgid "Transcripts"
 msgstr ""
 
@@ -11292,7 +11296,7 @@ msgstr ""
 
 #: lms/templates/video.html
 msgid "Download transcript"
-msgstr ""
+msgstr "Ladda ner transkriptet"
 
 #: lms/templates/video.html
 msgid "Handouts"
@@ -12562,7 +12566,7 @@ msgstr ""
 
 #: lms/templates/courseware/course_about.html
 msgid "Enroll in {course_name}"
-msgstr "Registrera dig på {course_name}"
+msgstr "Registrera dig"
 
 #: lms/templates/courseware/course_about.html
 msgid "View About Page in studio"
@@ -13413,7 +13417,7 @@ msgstr "Filtrera ämnen"
 
 #: lms/templates/discussion/_filter_dropdown.html
 msgid "filter topics"
-msgstr "filtrera ämnen"
+msgstr "sök ämnesrubrik"
 
 #: lms/templates/discussion/_filter_dropdown.html
 msgid "All Discussions"
@@ -16026,16 +16030,15 @@ msgid ""
 msgstr "Innan du kan anmäla dig till fortbildningar på Opusplace behöver du "
 "först aktivera ditt användarkonto. Vi har skickat dig en e-post till "
 "{email_start}{email}{email_end} med instruktioner för hur du aktiverar ditt konto. "
-"Om du inte finner e-posten, kolla gärna i skräpposten då den kan ha hamnat där. "
-"Bästa hälsningar, Team Opusplace."
+"Om du inte finner e-posten i din ordinarie inbox, kolla då gärna i \"skräpposten\", då den kan ha hamnat där. "
 
 #: lms/templates/registration/activation_complete.html
 msgid "Account Activated"
-msgstr ""
+msgstr "Välkommen!"
 
 #: lms/templates/registration/activation_complete.html
 msgid "Account already active"
-msgstr ""
+msgstr "Konto redan aktiv"
 
 #: lms/templates/registration/activation_invalid.html
 msgid "Activation Invalid"
@@ -16783,7 +16786,7 @@ msgstr "Verifiera dig för {course_name}"
 
 #: lms/templates/verify_student/pay_and_verify.html
 msgid "Enroll In {course_name}"
-msgstr "Registrera dig på {course_name}"
+msgstr "Registrera dig"
 
 #: lms/templates/verify_student/pay_and_verify.html
 msgid "Technical Requirements"

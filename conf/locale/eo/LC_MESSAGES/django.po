@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-18 11:26+0000\n"
-"PO-Revision-Date: 2017-01-18 11:26:27.669246\n"
+"POT-Creation-Date: 2017-01-24 09:07+0000\n"
+"PO-Revision-Date: 2017-01-24 09:07:08.424599\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -16804,11 +16804,13 @@ msgstr ""
 
 #: lms/templates/emails/activation_email.html
 #: lms/templates/emails/activation_email.txt
+#: lms/templates/registration/activate_account_notice.html
 msgid "Best regards,"
 msgstr "Bést régärds, Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
 #: lms/templates/emails/activation_email.html
 #: lms/templates/emails/activation_email.txt
+#: lms/templates/registration/activate_account_notice.html
 msgid "Team {platform_name}"
 msgstr "Téäm {platform_name} Ⱡ'σяєм ιρѕυм ∂#"
 

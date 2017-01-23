@@ -22,6 +22,10 @@ from openedx.core.djangolib.markup import HTML, Text
                                   platform_name=platform_name
                     )}
                 </p>
+                <p class='activation-message'>${Text(_("Best regards,"))}
+                </br>
+                ${Text(_("Team {platform_name}")).format(platform_name=platform_name)}
+                </p>
             </div>
         </div>
     </div>
