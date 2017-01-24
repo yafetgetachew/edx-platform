@@ -71,7 +71,8 @@
             },
 
             saveSuccess: function() {
-                this.trigger('auth-complete');
+                //this.trigger('auth-complete');
+                window.location.replace('/registration_complete');
             },
 
             saveError: function( error ) {

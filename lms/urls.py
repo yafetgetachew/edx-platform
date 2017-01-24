@@ -1022,3 +1022,11 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+
+
+urlpatterns += (
+    url(r'^registration_complete$', 'static_template_view.views.render',
+        {'template': 'registration_complete.html'}, name="registration-complete"),
+)
+

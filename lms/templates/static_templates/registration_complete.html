@@ -1,0 +1,18 @@
+<%page expression_filter="h"/>
+<%inherit file="../main.html" />
+<%namespace name='static' file='../static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+%>
+
+<section class="container">
+
+  <section class="message">
+    <h1 class="valid">${_("Registration Complete")}</h1>
+    <hr class="horizontal-divider">
+
+    <p>
+       ${_("Before you sign in, you need to activate your account. We have sent you an email message with instructions for activating your account.")}
+    </p>
+  </section>
+</section>
