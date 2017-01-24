@@ -299,7 +299,7 @@
     "Create Re-run": "Cr\u00e9er une relance", 
     "Create a New Team": "Cr\u00e9er une nouvelle \u00e9quipe", 
     "Create a content group": "Cr\u00e9er un groupe de contenu", 
-    "Create a new account": "Cr\u00e9er un nouveau compte", 
+    "Create a new account": "Inscription", 
     "Create a new team if you can't find an existing team to join, or if you would like to learn with friends you know.": "Cr\u00e9ez une nouvelle \u00e9quipe si vous ne trouvez pas une \u00e9quipe existante \u00e0 rejoindre, ou si vous d\u00e9sirez apprendre avec des amis que vous connaissez d\u00e9j\u00e0.", 
     "Create an account": "Cr\u00e9er un compte", 
     "Create an account using": "Cr\u00e9er un compte avec", 

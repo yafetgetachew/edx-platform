@@ -1,39 +1,39 @@
 # #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2016 EdX
+# Copyright (C) 2017 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  django-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2016 EdX
+# Copyright (C) 2017 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2016 edX
+# Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  mako-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2016 edX
+# Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2016 edX
+# Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-07-07 14:15+0000\n"
-"PO-Revision-Date: 2016-07-07 14:15:58.774596\n"
+"POT-Creation-Date: 2017-01-24 10:42+0200\n"
+"PO-Revision-Date: 2017-01-24 08:42:23.930075\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -1571,8 +1571,8 @@ msgid "must be {0} characters or more"
 msgstr "müst ßé {0} çhäräçtérs ör möré Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
 
 #: common/djangoapps/util/password_policy_validators.py
-msgid "must be {0} characters or less"
-msgstr "müst ßé {0} çhäräçtérs ör léss Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
+msgid "must be {0} characters or fewer"
+msgstr "müst ßé {0} çhäräçtérs ör féwér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
 
 #: common/djangoapps/util/password_policy_validators.py
 msgid "Must be more complex ({0})"
@@ -9971,6 +9971,7 @@ msgid "Skip to main content"
 msgstr "Skïp tö mäïn çöntént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
 
 #: lms/templates/registration/password_reset_email.html
+#: lms/templates/registration/password_reset_email.txt
 #, python-format
 msgid ""
 "You're receiving this e-mail because you requested a password reset for your"
@@ -9980,12 +9981,14 @@ msgstr ""
 " üsér äççöünt ät %(site_name)s. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
 
 #: lms/templates/registration/password_reset_email.html
+#: lms/templates/registration/password_reset_email.txt
 msgid "Please go to the following page and choose a new password:"
 msgstr ""
 "Pléäsé gö tö thé föllöwïng pägé änd çhöösé ä néw pässwörd: Ⱡ'σяєм ιρѕυм "
 "∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: lms/templates/registration/password_reset_email.html
+#: lms/templates/registration/password_reset_email.txt
 msgid ""
 "If you didn't request this change, you can disregard this email - we have "
 "not yet reset your password."
@@ -9994,10 +9997,12 @@ msgstr ""
 "nöt ýét rését ýöür pässwörd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
 
 #: lms/templates/registration/password_reset_email.html
+#: lms/templates/registration/password_reset_email.txt
 msgid "Thanks for using our site!"
 msgstr "Thänks för üsïng öür sïté! Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
 
 #: lms/templates/registration/password_reset_email.html
+#: lms/templates/registration/password_reset_email.txt
 #, python-format
 msgid "The %(platform_name)s Team"
 msgstr "Thé %(platform_name)s Téäm Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
@@ -11947,10 +11952,6 @@ msgstr "éxämplé: JänéDöé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#
 #: lms/templates/instructor/instructor_dashboard_2/executive_summary.html
 msgid "Course End Date"
 msgstr "Çöürsé Énd Däté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#: cms/templates/settings.html lms/templates/courseware/course_about.html
-msgid "Requirements"
-msgstr "Réqüïréménts Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 
 #: cms/templates/studio_xblock_wrapper.html lms/templates/help_modal.html
 #: lms/templates/module-error.html
@@ -15897,7 +15898,9 @@ msgstr ""
 "änöthér séçtïön ön thé léft. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σ#"
 
 #: lms/templates/credit_notifications/credit_eligibility_email.html
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "Hi {name},"
 msgstr "Hï {name}, Ⱡ'σяєм ιρѕυм #"
@@ -15972,6 +15975,7 @@ msgstr ""
 "{platform_name} çöürsés! Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
 
 #: lms/templates/credit_notifications/credit_eligibility_email.html
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "The {platform_name} Team"
 msgstr "Thé {platform_name} Téäm Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
@@ -16724,10 +16728,12 @@ msgstr "Hïdé nötés Ⱡ'σяєм ιρѕυм ∂σłσ#"
 msgid "Show notes"
 msgstr "Shöw nötés Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
+#: lms/templates/emails/account_creation_and_enroll_emailMessage.html
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "Welcome to {course_name}"
 msgstr "Wélçömé tö {course_name} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
+#: lms/templates/emails/account_creation_and_enroll_emailMessage.html
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid ""
 "To get started, please visit https://{site_name}. The login information for "
@@ -16736,31 +16742,37 @@ msgstr ""
 "Tö gét stärtéd, pléäsé vïsït https://{site_name}. Thé lögïn ïnförmätïön för "
 "ýöür äççöünt föllöws. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
 
+#: lms/templates/emails/account_creation_and_enroll_emailMessage.html
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "email: {email}"
 msgstr "émäïl: {email} Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
+#: lms/templates/emails/account_creation_and_enroll_emailMessage.html
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "password: {password}"
 msgstr "pässwörd: {password} Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
+#: lms/templates/emails/account_creation_and_enroll_emailMessage.html
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "It is recommended that you change your password."
 msgstr ""
 "Ìt ïs réçömméndéd thät ýöü çhängé ýöür pässwörd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
 "αмєт, ¢σηѕє¢тєтυя α#"
 
+#: lms/templates/emails/account_creation_and_enroll_emailMessage.html
 #: lms/templates/emails/account_creation_and_enroll_emailMessage.txt
 msgid "Sincerely yours,The {course_name} Team"
 msgstr ""
 "Sïnçérélý ýöürs,Thé {course_name} Téäm Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
 
+#: lms/templates/emails/activation_email.html
 #: lms/templates/emails/activation_email.txt
 msgid "Thank you for creating an account with {platform_name}!"
 msgstr ""
 "Thänk ýöü för çréätïng än äççöünt wïth {platform_name}! Ⱡ'σяєм ιρѕυм ∂σłσя "
 "ѕιт αмєт, ¢σηѕє¢тєтυя #"
 
+#: lms/templates/emails/activation_email.html
 #: lms/templates/emails/activation_email.txt
 msgid ""
 "There's just one more step before you can enroll in a course: you need to "
@@ -16777,6 +16789,7 @@ msgstr ""
 "αłιqυιρ єχ єα ¢σммσ∂σ ¢σηѕєqυαт. ∂υιѕ αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη "
 "νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσя#"
 
+#: lms/templates/emails/activation_email.html
 #: lms/templates/emails/activation_email.txt
 msgid ""
 "If you didn't create an account, you don't need to do anything; you won't "
@@ -16798,13 +16811,18 @@ msgid "Activate Your {platform_name} Account"
 msgstr ""
 "Àçtïväté Ýöür {platform_name} Àççöünt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
 
+#: lms/templates/emails/add_beta_tester_email_message.html
 #: lms/templates/emails/add_beta_tester_email_message.txt
+#: lms/templates/emails/enroll_email_enrolledmessage.html
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
+#: lms/templates/emails/remove_beta_tester_email_message.html
 #: lms/templates/emails/remove_beta_tester_email_message.txt
+#: lms/templates/emails/unenroll_email_enrolledmessage.html
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "Dear {full_name}"
 msgstr "Déär {full_name} Ⱡ'σяєм ιρѕυм ∂#"
 
+#: lms/templates/emails/add_beta_tester_email_message.html
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid ""
 "You have been invited to be a beta tester for {course_name} at {site_name} "
@@ -16813,28 +16831,36 @@ msgstr ""
 "Ýöü hävé ßéén ïnvïtéd tö ßé ä ßétä téstér för {course_name} ät {site_name} "
 "ßý ä mémßér öf thé çöürsé stäff. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
 
+#: lms/templates/emails/add_beta_tester_email_message.html
 #: lms/templates/emails/add_beta_tester_email_message.txt
+#: lms/templates/emails/enroll_email_enrolledmessage.html
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 msgid "To start accessing course materials, please visit {course_url}"
 msgstr ""
 "Tö stärt äççéssïng çöürsé mätérïäls, pléäsé vïsït {course_url} Ⱡ'σяєм ιρѕυм "
 "∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
+#: lms/templates/emails/add_beta_tester_email_message.html
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid "Visit {course_about_url} to join the course and begin the beta test."
 msgstr ""
 "Vïsït {course_about_url} tö jöïn thé çöürsé änd ßégïn thé ßétä tést. Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
+#: lms/templates/emails/add_beta_tester_email_message.html
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid "Visit {site_name} to enroll in the course and begin the beta test."
 msgstr ""
 "Vïsït {site_name} tö énröll ïn thé çöürsé änd ßégïn thé ßétä tést. Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
+#: lms/templates/emails/add_beta_tester_email_message.html
 #: lms/templates/emails/add_beta_tester_email_message.txt
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
+#: lms/templates/emails/remove_beta_tester_email_message.html
 #: lms/templates/emails/remove_beta_tester_email_message.txt
+#: lms/templates/emails/unenroll_email_allowedmessage.html
 #: lms/templates/emails/unenroll_email_allowedmessage.txt
 msgid "This email was automatically sent from {site_name} to {email_address}"
 msgstr ""
@@ -16847,15 +16873,19 @@ msgstr ""
 "Ýöü hävé ßéén ïnvïtéd tö ä ßétä tést för {course_name} Ⱡ'σяєм ιρѕυм ∂σłσя "
 "ѕιт αмєт, ¢σηѕє¢тєтυя #"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Thank you for your purchase of "
 msgstr "Thänk ýöü för ýöür pürçhäsé öf  Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Your payment was successful."
 msgstr "Ýöür päýmént wäs süççéssfül. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid ""
 "If you have billing questions, please read the FAQ ({faq_url}) or contact "
@@ -16864,13 +16894,16 @@ msgstr ""
 "Ìf ýöü hävé ßïllïng qüéstïöns, pléäsé réäd thé FÀQ ({faq_url}) ör çöntäçt "
 "{billing_email}. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "If you have billing questions, please contact {billing_email}."
 msgstr ""
 "Ìf ýöü hävé ßïllïng qüéstïöns, pléäsé çöntäçt {billing_email}. Ⱡ'σяєм ιρѕυм "
 "∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "{order_placed_by} placed an order and mentioned your name as the "
@@ -16879,6 +16912,7 @@ msgstr ""
 "{order_placed_by} pläçéd än ördér änd méntïönéd ýöür nämé äs thé "
 "Örgänïzätïön çöntäçt. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "{order_placed_by} placed an order and mentioned your name as the additional "
@@ -16887,58 +16921,74 @@ msgstr ""
 "{order_placed_by} pläçéd än ördér änd méntïönéd ýöür nämé äs thé äddïtïönäl "
 "réçéïpt réçïpïént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тє#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "The items in your order are:"
 msgstr "Thé ïtéms ïn ýöür ördér äré: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "Quantity - Description - Price"
 msgstr "Qüäntïtý - Désçrïptïön - Prïçé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "Total billed to credit/debit card: {currency_symbol}{total_cost}"
 msgstr ""
 "Tötäl ßïlléd tö çrédït/déßït çärd: {currency_symbol}{total_cost} Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Company Name:"
 msgstr "Çömpäný Nämé: Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Purchase Order Number:"
 msgstr "Pürçhäsé Ördér Nümßér: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Company Contact Name:"
 msgstr "Çömpäný Çöntäçt Nämé: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Company Contact Email:"
 msgstr "Çömpäný Çöntäçt Émäïl: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
 #. Translators: this will be the name of a person receiving an email
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Recipient Name:"
 msgstr "Réçïpïént Nämé: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
 
 #. Translators: this will be the email address of a person receiving an email
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Recipient Email:"
 msgstr "Réçïpïént Émäïl: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "#:"
 msgstr "#: Ⱡ'σя#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Order Number: {order_number}"
 msgstr "Ördér Nümßér: {order_number} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "A CSV file of your registration URLs is attached. Please distribute "
@@ -16956,6 +17006,7 @@ msgstr ""
 
 #. Translators: This is followed by the instructor or course team name (so
 #. could be singular or plural)
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Warm regards,"
 msgstr "Wärm régärds, Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
@@ -16963,6 +17014,7 @@ msgstr "Wärm régärds, Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 #. Translators: The <br> is a line break (empty line), please keep this html
 #. in
 #. the string after the sign off.
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Warm regards,<br>The {platform_name} Team"
 msgstr ""
@@ -16971,10 +17023,12 @@ msgstr ""
 
 #. Translators: please translate the text inside [[ ]]. This is meant as a
 #. template for course teams to use.
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Dear [[Name]]"
 msgstr "Déär [[Nämé]] Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "To enroll in {course_names} we have provided a registration URL for you.  "
@@ -16985,18 +17039,21 @@ msgstr ""
 
 #. Translators: please translate the text inside [[ ]]. This is meant as a
 #. template for course teams to use.
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Your redeem url is: [[Enter Redeem URL here from the attached CSV]]"
 msgstr ""
 "Ýöür rédéém ürl ïs: [[Éntér Rédéém ÛRL héré fröm thé ättäçhéd ÇSV]] Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "(1) Register for an account at {site_name}"
 msgstr ""
 "(1) Régïstér för än äççöünt ät {site_name} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тєт#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "(2) Once registered, copy the redeem URL and paste it in your web browser."
@@ -17004,6 +17061,7 @@ msgstr ""
 "(2) Önçé régïstéréd, çöpý thé rédéém ÛRL änd pästé ït ïn ýöür wéß ßröwsér. "
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυ#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "(3) On the enrollment confirmation page, Click the 'Activate Enrollment "
@@ -17012,6 +17070,7 @@ msgstr ""
 "(3) Ön thé énröllmént çönfïrmätïön pägé, Çlïçk thé 'Àçtïväté Énröllmént "
 "Çödé' ßüttön. Thïs wïll shöw thé énröllmént çönfïrmätïön. Ⱡ'σ#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "(4) You should be able to click on 'view course' button or see your course "
@@ -17020,6 +17079,7 @@ msgstr ""
 "(4) Ýöü shöüld ßé äßlé tö çlïçk ön 'vïéw çöürsé' ßüttön ör séé ýöür çöürsé "
 "ön ýöür stüdént däshßöärd ät {url} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
 "(5) Course materials will not be available until the course start date."
@@ -17030,12 +17090,14 @@ msgstr ""
 #. Translators: please translate the text inside [[ ]]. This is meant as a
 #. template for course teams to use. Please also keep the <p> and </p> HTML
 #. tags in place.
+#: lms/templates/emails/business_order_confirmation_email.html
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "<p>Sincerely,</p><p>[[Your Signature]]</p>"
 msgstr ""
 "<p>Sïnçérélý,</p><p>[[Ýöür Sïgnätüré]]</p> Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тєтυя#"
 
+#: lms/templates/emails/confirm_email_change.html
 #: lms/templates/emails/confirm_email_change.txt
 msgid ""
 "This is to confirm that you changed the e-mail associated with "
@@ -17052,6 +17114,7 @@ msgstr ""
 "¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
 "ηση ρяσι∂єηт, ѕυ#"
 
+#: lms/templates/emails/confirm_email_change.html
 #: lms/templates/emails/confirm_email_change.txt
 msgid ""
 "We keep a log of old e-mails, so if this request was unintentional, we can "
@@ -17060,6 +17123,7 @@ msgstr ""
 "Wé kéép ä lög öf öld é-mäïls, sö ïf thïs réqüést wäs ünïnténtïönäl, wé çän "
 "ïnvéstïgäté. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
 
+#: lms/templates/emails/email_change.html
 #: lms/templates/emails/email_change.txt
 msgid ""
 "We received a request to change the e-mail associated with your "
@@ -17076,6 +17140,7 @@ msgstr ""
 "ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт "
 "ιη ¢υłρα qυι σƒƒι¢ια ∂#"
 
+#: lms/templates/emails/email_change.html
 #: lms/templates/emails/email_change.txt
 msgid ""
 "If you didn't request this, you don't need to do anything; you won't receive"
@@ -17097,10 +17162,12 @@ msgstr ""
 "Réqüést tö çhängé {platform_name} äççöünt é-mäïl Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
 "αмєт, ¢σηѕє¢тєтυ#"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "Dear student,"
 msgstr "Déär stüdént, Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "You have been invited to join {course_name} at {site_name} by a member of "
@@ -17109,12 +17176,14 @@ msgstr ""
 "Ýöü hävé ßéén ïnvïtéd tö jöïn {course_name} ät {site_name} ßý ä mémßér öf "
 "thé çöürsé stäff. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "To access the course visit {course_url} and login."
 msgstr ""
 "Tö äççéss thé çöürsé vïsït {course_url} änd lögïn. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
 "αмєт, ¢σηѕє¢тєтυя #"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "To access the course visit {course_about_url} and register for the course."
@@ -17122,6 +17191,7 @@ msgstr ""
 "Tö äççéss thé çöürsé vïsït {course_about_url} änd régïstér för thé çöürsé. "
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "To finish your registration, please visit {registration_url} and fill out "
@@ -17132,6 +17202,7 @@ msgstr ""
 "thé régïsträtïön förm mäkïng süré tö üsé {email_address} ïn thé É-mäïl "
 "fïéld. Ⱡ'σяєм ι#"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "Once you have registered and activated your account, you will see "
@@ -17140,6 +17211,7 @@ msgstr ""
 "Önçé ýöü hävé régïstéréd änd äçtïvätéd ýöür äççöünt, ýöü wïll séé "
 "{course_name} lïstéd ön ýöür däshßöärd. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "Once you have registered and activated your account, visit "
@@ -17149,6 +17221,7 @@ msgstr ""
 "{course_about_url} tö jöïn thé çöürsé. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тє#"
 
+#: lms/templates/emails/enroll_email_allowedmessage.html
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "You can then enroll in {course_name}."
 msgstr ""
@@ -17160,6 +17233,7 @@ msgstr ""
 "Ýöü hävé ßéén ïnvïtéd tö régïstér för {course_name} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
 "αмєт, ¢σηѕє¢тєтυя #"
 
+#: lms/templates/emails/enroll_email_enrolledmessage.html
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 msgid ""
 "You have been enrolled in {course_name} at {site_name} by a member of the "
@@ -17169,7 +17243,9 @@ msgstr ""
 "çöürsé stäff. Thé çöürsé shöüld nöw äppéär ön ýöür {site_name} däshßöärd. "
 "Ⱡ'σяєм ιρѕυ#"
 
+#: lms/templates/emails/enroll_email_enrolledmessage.html
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
+#: lms/templates/emails/unenroll_email_enrolledmessage.html
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "This email was automatically sent from {site_name} to {full_name}"
 msgstr ""
@@ -17181,6 +17257,7 @@ msgid "You have been enrolled in {course_name}"
 msgstr ""
 "Ýöü hävé ßéén énrölléd ïn {course_name} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢#"
 
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid ""
 "Your payment was successful. You will see the charge below on your next "
@@ -17189,25 +17266,31 @@ msgstr ""
 "Ýöür päýmént wäs süççéssfül. Ýöü wïll séé thé çhärgé ßélöw ön ýöür néxt "
 "çrédït ör déßït çärd stätémént ündér thé çömpäný nämé {merchant_name}. Ⱡ'#"
 
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
+#: lms/templates/emails/photo_submission_confirmation.html
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid "Thank you,"
 msgstr "Thänk ýöü, Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
+#: lms/templates/emails/order_confirmation_email.html
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "Your order number is: {order_number}"
 msgstr ""
 "Ýöür ördér nümßér ïs: {order_number} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
 
+#: lms/templates/emails/photo_submission_confirmation.html
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid "Hi {full_name},"
 msgstr "Hï {full_name}, Ⱡ'σяєм ιρѕυм #"
 
+#: lms/templates/emails/photo_submission_confirmation.html
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid "Thanks for submitting your photos!"
 msgstr ""
 "Thänks för süßmïttïng ýöür phötös! Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
 
+#: lms/templates/emails/photo_submission_confirmation.html
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid ""
 "We've received your information and the verification process has begun. You "
@@ -17222,17 +17305,20 @@ msgstr ""
 "¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
 "ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂ єѕ#"
 
+#: lms/templates/emails/photo_submission_confirmation.html
 #: lms/templates/emails/photo_submission_confirmation.txt
 #: lms/templates/emails/reverification_processed.txt
 msgid "The {platform_name} team"
 msgstr "Thé {platform_name} téäm Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "Thank you for purchasing enrollments in {course_name}."
 msgstr ""
 "Thänk ýöü för pürçhäsïng énröllménts ïn {course_name}. Ⱡ'σяєм ιρѕυм ∂σłσя "
 "ѕιт αмєт, ¢σηѕє¢тєтυя #"
 
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid ""
 "An invoice for {currency_symbol}{total_price} is attached. Payment is due "
@@ -17242,6 +17328,7 @@ msgstr ""
 "üpön réçéïpt. Ýöü çän fïnd ïnförmätïön äßöüt päýmént méthöds ön thé ïnvöïçé."
 " Ⱡ'σяєм#"
 
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid ""
 "A .csv file that lists your enrollment codes is attached. You can use the "
@@ -17260,6 +17347,7 @@ msgstr ""
 #. Translators: This is the signature of an email.  "\n" is a newline
 #. character
 #. and should be placed between the closing word and the signature.
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid ""
 "Thanks,\n"
@@ -17270,12 +17358,14 @@ msgstr ""
 
 #. Translators: please translate the text inside [[ ]]. This is meant as a
 #. template for course teams to use.
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "Dear [[Name]]:"
 msgstr "Déär [[Nämé]]: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
 #. Translators: please translate the text inside [[ ]]. This is meant as a
 #. template for course teams to use.
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid ""
 "We have provided a course enrollment code for you in {course_name}. To "
@@ -17284,12 +17374,14 @@ msgstr ""
 "Wé hävé prövïdéd ä çöürsé énröllmént çödé för ýöü ïn {course_name}. Tö "
 "énröll ïn thé çöürsé, çlïçk thé föllöwïng lïnk: Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "HTML link from the attached CSV file"
 msgstr ""
 "HTML lïnk fröm thé ättäçhéd ÇSV fïlé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тєтυ#"
 
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid ""
 "After you enroll, you can see the course on your student dashboard. You can "
@@ -17302,6 +17394,7 @@ msgstr ""
 #. template for course teams to use.
 #. This is the signature of an email.  "\n" is a newline character
 #. and should be placed between the closing word and the signature.
+#: lms/templates/emails/registration_codes_sale_email.html
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid ""
 "Sincerely,\n"
@@ -17402,6 +17495,7 @@ msgstr ""
 "ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι "
 "σƒƒι¢#"
 
+#: lms/templates/emails/remove_beta_tester_email_message.html
 #: lms/templates/emails/remove_beta_tester_email_message.txt
 msgid ""
 "You have been removed as a beta tester for {course_name} at {site_name} by a"
@@ -17417,7 +17511,9 @@ msgstr ""
 "αυтє ιяυяє ∂σłσя ιη яєρяєнєη∂єяιт ιη νσłυρтαтє νєłιт єѕѕє ¢ιłłυм ∂σłσяє єυ "
 "ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт ηση ρяσι∂є#"
 
+#: lms/templates/emails/remove_beta_tester_email_message.html
 #: lms/templates/emails/remove_beta_tester_email_message.txt
+#: lms/templates/emails/unenroll_email_enrolledmessage.html
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "Your other courses have not been affected."
 msgstr ""
@@ -17502,10 +17598,12 @@ msgstr ""
 msgid "Thanks,"
 msgstr "Thänks, Ⱡ'σяєм ιρѕυм #"
 
+#: lms/templates/emails/unenroll_email_allowedmessage.html
 #: lms/templates/emails/unenroll_email_allowedmessage.txt
 msgid "Dear Student,"
 msgstr "Déär Stüdént, Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
+#: lms/templates/emails/unenroll_email_allowedmessage.html
 #: lms/templates/emails/unenroll_email_allowedmessage.txt
 msgid ""
 "You have been un-enrolled from course {course_name} by a member of the "
@@ -17514,6 +17612,7 @@ msgstr ""
 "Ýöü hävé ßéén ün-énrölléd fröm çöürsé {course_name} ßý ä mémßér öf thé "
 "çöürsé stäff. Pléäsé dïsrégärd thé ïnvïtätïön prévïöüslý sént. Ⱡ'σяєм ιρ#"
 
+#: lms/templates/emails/unenroll_email_enrolledmessage.html
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid ""
 "You have been un-enrolled in {course_name} at {site_name} by a member of the"
@@ -24478,6 +24577,10 @@ msgstr ""
 #: cms/templates/settings.html
 msgid "Add Instructor"
 msgstr "Àdd Ìnstrüçtör Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
+
+#: cms/templates/settings.html
+msgid "Requirements"
+msgstr "Réqüïréménts Ⱡ'σяєм ιρѕυм ∂σłσя ѕ#"
 
 #: cms/templates/settings.html
 msgid "Expectations of the students taking this course"

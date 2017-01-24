@@ -4361,6 +4361,7 @@ msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: lms/templates/student_account/account.underscore
+#: lms/static/js/spec/student_account/register_spec.js
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -7534,7 +7535,7 @@ msgstr "ou en créer un nouveau ici"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create a new account"
-msgstr "Créer un nouveau compte"
+msgstr "Inscription"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create your account"

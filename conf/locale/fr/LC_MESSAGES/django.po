@@ -8655,7 +8655,7 @@ msgstr ""
 #. a field on the password reset form meant to hold the user's email address.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "username@domain.com"
-msgstr "utilisateur@exemple.com"
+msgstr "Adresse e-mail"
 
 #. Translators: These instructions appear on the login form, immediately
 #. below a field meant to hold the user's email address.
@@ -8747,7 +8747,7 @@ msgstr ""
 #. a field on the registration form meant to hold the user's username.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "JaneDoe"
-msgstr ""
+msgstr "Pseudo"
 
 #. Translators: This label appears above a dropdown menu on the registration
 #. form used to select the user's highest completed level of education.

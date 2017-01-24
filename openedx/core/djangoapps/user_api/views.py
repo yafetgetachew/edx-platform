@@ -160,8 +160,6 @@ class RegistrationView(APIView):
     DEFAULT_FIELDS = ["email", "name", "username", "password"]
 
     EXTRA_FIELDS = [
-        "first_name",
-        "last_name",
         "city",
         "state",
         "country",
@@ -399,7 +397,7 @@ class RegistrationView(APIView):
 
         # Translators: This example name is used as a placeholder in
         # a field on the registration form meant to hold the user's name.
-        name_placeholder = _(u"Jane Doe")
+        name_placeholder = _(u"Full name")
 
         # Translators: These instructions appear on the registration form, immediately
         # below a field meant to hold the user's full name.
@@ -466,10 +464,12 @@ class RegistrationView(APIView):
         # Translators: This label appears above a field on the registration form
         # meant to hold the user's password.
         password_label = _(u"Password")
+        password_placeholder = _(u"Password")
 
         form_desc.add_field(
             "password",
             label=password_label,
+            placeholder=password_placeholder,
             field_type="password",
             restrictions={
                 "min_length": PASSWORD_MIN_LENGTH,
@@ -689,10 +689,12 @@ class RegistrationView(APIView):
         # Translators: This label appears above a field on the registration form
         # which allows the user to input the First Name
         first_name_label = _(u"First Name")
+        first_name_placeholder = _(u"First Name")
 
         form_desc.add_field(
             "first_name",
             label=first_name_label,
+            placeholder=first_name_placeholder,
             required=required
         )
 
@@ -709,9 +711,11 @@ class RegistrationView(APIView):
         # Translators: This label appears above a field on the registration form
         # which allows the user to input the First Name
         last_name_label = _(u"Last Name")
+        last_name_placeholder = _(u"Last Name")
 
         form_desc.add_field(
             "last_name",
+            placeholder=last_name_placeholder,
             label=last_name_label,
             required=required
         )

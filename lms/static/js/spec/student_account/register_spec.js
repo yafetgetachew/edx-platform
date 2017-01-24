@@ -83,7 +83,7 @@
                             restrictions: {}
                         },
                         {
-                            placeholder: '',
+                            placeholder: 'Password',
                             name: 'password',
                             label: 'Password',
                             defaultValue: '',
