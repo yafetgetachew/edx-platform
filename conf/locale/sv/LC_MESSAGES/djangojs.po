@@ -4367,7 +4367,7 @@ msgid ""
 " address for your {platform_name} account. Click the link in the message to "
 "reset your password."
 msgstr "Om du ändrar lösenord skickas ett meddelande till din valda e-post adress. "
-"Du behöver klicka på länken i e-post meddelandet för den önskade ändringen ska aktiveras."
+"Du behöver klicka på länken i e-post meddelandet för att den önskade ändringen ska aktiveras."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""

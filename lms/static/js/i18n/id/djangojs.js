@@ -745,7 +745,7 @@
     "We had some trouble unsubscribing you from this thread. Please try again.": "Vi lyckades inte ta bort din prenumeration p\u00e5 denna tr\u00e5d. F\u00f6rs\u00f6k igen.", 
     "We just need a little more information before you start learning with %(platformName)s.": "Vi beh\u00f6ver bara lite ytterligare information innan du kommer ig\u00e5ng p\u00e5 %(platformName)s.", 
     "Web:": "Webb:", 
-    "When you select \"Reset Your Password\", a message will be sent to the email address for your {platform_name} account. Click the link in the message to reset your password.": "Om du \u00e4ndrar l\u00f6senord skickas ett meddelande till din valda e-post adress. Du beh\u00f6ver klicka p\u00e5 l\u00e4nken i e-post meddelandet f\u00f6r den \u00f6nskade \u00e4ndringen ska aktiveras.", 
+    "When you select \"Reset Your Password\", a message will be sent to the email address for your {platform_name} account. Click the link in the message to reset your password.": "Om du \u00e4ndrar l\u00f6senord skickas ett meddelande till din valda e-post adress. Du beh\u00f6ver klicka p\u00e5 l\u00e4nken i e-post meddelandet f\u00f6r att den \u00f6nskade \u00e4ndringen ska aktiveras.", 
     "Whole words": "Hela ord", 
     "Width": "Bredd", 
     "Words: {0}": "Ord: {0}", 
