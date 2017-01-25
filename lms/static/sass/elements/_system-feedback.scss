@@ -101,6 +101,14 @@
     }
   }
 
+  &.urgency-high-green {
+    background: $notify-banner-bg-4;
+
+    .msg {
+      color: $white;
+    }
+  }
+
   &.urgency-mid {
     background: $notify-banner-bg-2;
 
