@@ -2046,6 +2046,8 @@ def activate_account(request, key):
     """When link in activation e-mail is clicked"""
     regs = Registration.objects.filter(activation_key=key)
     if len(regs) == 1:
+        regs[0].user.backend = 'ratelimitbackend.backends.RateLimitModelBackend'
+        login(request, regs[0].user)
         user_logged_in = request.user.is_authenticated()
         already_active = True
         if not regs[0].user.is_active:
