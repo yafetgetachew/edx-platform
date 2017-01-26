@@ -62,7 +62,7 @@
 
     <%= context.fields %>
 
-    <button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create your account") %></button>
+    <button type="submit" class="action action-primary action-update js-register register-button">Sign up</button>
     <p class="note">* <%- gettext("Required field") %></p>
 </form>
 
@@ -72,5 +72,5 @@
             <span class="text"><%- gettext("Already have an account?") %></span>
         </h2>
     </div>
-    <button class="nav-btn form-toggle" data-type="login"><%- gettext("Sign in") %></button>
+    <button class="nav-btn form-toggle" data-type="login">Log in</button>
 </div>
