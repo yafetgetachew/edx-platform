@@ -878,5 +878,7 @@ AUTH_SESSION_COOKIE_DOMAIN = ENV_TOKENS.get('AUTH_SESSION_COOKIE_DOMAIN','.kwn.e
 
 ROOT_URLCONF = ENV_TOKENS.get('ROOT_URLCONF', 'multi_cookies.lms_urls')
 
-MIDDLEWARE_CLASSES += tuple(ENV_TOKENS.get('ADD_MIDDLEWARE_CLASSES', ['multi_cookies.middleware.RemoteUserAuthMiddleware']))
+MIDDLEWARE_CLASSES += tuple(ENV_TOKENS.get('ADD_MIDDLEWARE_CLASSES',
+                            ['multi_cookies.middleware.RemoteUserAuthMiddleware',
+                             'multi_cookies.middleware.RedirectToPortal']))
 
