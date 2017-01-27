@@ -159,10 +159,12 @@ def index(request, extra_context=None, user=AnonymousUser()):
     extra_context is used to allow immediate display of certain modal windows, eg signup,
     as used by external_auth.
     """
+    category = request.GET.get('category')
     if extra_context is None:
         extra_context = {}
 
-    courses = get_courses(user)
+    filter = category and {'display_name__endswith': '[{}]'.format(category)} or {}
+    courses = get_courses(user, filter_=filter)
 
     if configuration_helpers.get_value(
             "ENABLE_COURSE_SORTING_BY_START_DATE",
@@ -172,7 +174,11 @@ def index(request, extra_context=None, user=AnonymousUser()):
     else:
         courses = sort_by_announcement(courses)
 
-    context = {'courses': courses}
+    context = {
+        'courses': courses,
+        'show_category_filter': True,
+        'category': category
+    }
 
     context['homepage_overlay_html'] = configuration_helpers.get_value('homepage_overlay_html')
 
@@ -260,7 +266,7 @@ def reverification_info(statuses):
     return reverifications
 
 
-def get_course_enrollments(user, org_to_include, orgs_to_exclude):
+def get_course_enrollments(user, org_to_include, orgs_to_exclude, filter_=None):
     """
     Given a user, return a filtered set of his or her course enrollments.
 
@@ -274,7 +280,10 @@ def get_course_enrollments(user, org_to_include, orgs_to_exclude):
         generator[CourseEnrollment]: a sequence of enrollments to be displayed
         on the user's dashboard.
     """
-    for enrollment in CourseEnrollment.enrollments_for_user(user):
+    filter = filter_ or {}
+    eqs = CourseEnrollment.enrollments_for_user(user)
+    eqs = eqs.filter(**filter)
+    for enrollment in eqs:
 
         # If the course is missing or broken, log an error and skip it.
         course_overview = enrollment.course_overview
@@ -546,6 +555,7 @@ def is_course_blocked(request, redeemed_registration_codes, course_key):
 @ensure_csrf_cookie
 def dashboard(request):
     user = request.user
+    category = request.GET.get('category')
 
     platform_name = configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME)
 
@@ -564,7 +574,8 @@ def dashboard(request):
     # Build our (course, enrollment) list for the user, but ignore any courses that no
     # longer exist (because the course IDs have changed). Still, we don't delete those
     # enrollments, because it could have been a data push snafu.
-    course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
+    filter = category and {'courseowerview__display_name__endswith': '[{}]'.format(category)} or {}
+    course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set, filter_=filter))
 
     # sort the enrollment pairs by the enrollment date
     course_enrollments.sort(key=lambda x: x.created, reverse=True)
@@ -739,6 +750,7 @@ def dashboard(request):
         'course_programs': course_programs,
         'disable_courseware_js': True,
         'show_program_listing': ProgramsApiConfig.current().show_program_listing,
+        'show_category_filter': True,
     }
 
     ecommerce_service = EcommerceService()

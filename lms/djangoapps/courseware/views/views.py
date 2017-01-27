@@ -128,15 +128,17 @@ def user_groups(user):
 
 
 @ensure_csrf_cookie
-@cache_if_anonymous()
+#@cache_if_anonymous()
 def courses(request):
     """
     Render "find courses" page.  The course selection work is done in courseware.courses.
     """
     courses_list = []
+    category = request.GET.get('category')
     course_discovery_meanings = getattr(settings, 'COURSE_DISCOVERY_MEANINGS', {})
     if not settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-        courses_list = get_courses(request.user)
+        filter = category and {'display_name__endswith': '[{}]'.format(category)} or {}
+        courses_list = get_courses(request.user, filter_=filter)
 
         if configuration_helpers.get_value(
                 "ENABLE_COURSE_SORTING_BY_START_DATE",
@@ -148,7 +150,12 @@ def courses(request):
 
     return render_to_response(
         "courseware/courses.html",
-        {'courses': courses_list, 'course_discovery_meanings': course_discovery_meanings}
+        {
+            'courses': courses_list,
+            'course_discovery_meanings': course_discovery_meanings,
+            'show_category_filter': True,
+            'category': category
+        }
     )
 
 
