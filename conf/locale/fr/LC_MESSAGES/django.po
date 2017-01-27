@@ -4277,7 +4277,7 @@ msgstr ""
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
 msgid "Privacy Policy"
-msgstr "Politique de confidentialité"
+msgstr "Mentions légales"
 
 #: lms/djangoapps/branding/api.py
 msgid "Accessibility Policy"

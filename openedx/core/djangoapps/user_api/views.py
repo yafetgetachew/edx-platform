@@ -100,6 +100,7 @@ class LoginSessionView(APIView):
             "password",
             label=password_label,
             field_type="password",
+            placeholder=_(u"Mot de passe"),
             restrictions={
                 "min_length": PASSWORD_MIN_LENGTH,
                 "max_length": PASSWORD_MAX_LENGTH,
