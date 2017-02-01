@@ -2064,7 +2064,8 @@ def activate_account(request, key):
                 'already_active': already_active
             }
         )
-        return resp
+        return redirect(reverse('dashboard'))
+        #return resp
     if len(regs) == 0:
         return render_to_response(
             "registration/activation_invalid.html",
