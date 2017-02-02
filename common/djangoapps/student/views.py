@@ -163,7 +163,7 @@ def index(request, extra_context=None, user=AnonymousUser()):
     if extra_context is None:
         extra_context = {}
 
-    filter = category and {'display_name__endswith': '[{}]'.format(category)} or {}
+    filter = category and {'display_name__endswith': u'[{}]'.format(category)} or {}
     courses = get_courses(user, filter_=filter)
 
     if configuration_helpers.get_value(
