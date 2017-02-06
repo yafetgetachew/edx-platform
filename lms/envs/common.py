@@ -1167,6 +1167,7 @@ MIDDLEWARE_CLASSES = (
 
     # This must be last
     'microsite_configuration.middleware.MicrositeSessionCookieDomainMiddleware',
+    'edx_oauth_client.middleware.SeamlessAuthorization'
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
@@ -2089,6 +2090,7 @@ INSTALLED_APPS = (
     # Email marketing integration
     'email_marketing',
     'program_marketing',
+    'edx_oauth_client'
 )
 
 # Migrations which are not in the standard module "migrations"
