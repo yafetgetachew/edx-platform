@@ -249,6 +249,20 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 <span class="tip tip-stacked timezone">${_("(UTC)")}</span>
               </div>
             </li>
+
+
+          <li class="field" id="field-course-hours">
+              <label for="course-hours">${_("Course Hours")}</label>
+              <input type="text"  dir="ltr" class="long" id="course-hours" value="" placeholder="${_("HHHH")}" autocomplete="off" />
+          </li>
+
+          <li class="field field-group" id="certificate-date">
+              <div class="field date">
+                  <label for="date">${_("Certificate Date")}</label>
+                  <input type="text" class="set-date date start" id="date" placeholder="MM/DD/YYYY" autocomplete="off" />
+              </div>
+          </li>
+
           </ol>
 
           % if not about_page_editable:

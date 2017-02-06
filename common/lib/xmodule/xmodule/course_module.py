@@ -708,6 +708,20 @@ class CourseFields(object):
         scope=Scope.settings
     )
 
+    course_hours = Integer(
+        display_name=_("Course Hours"),
+        help=_("Specify hours of your course."),
+        default=None,
+        scope=Scope.settings
+    )
+
+    certificate_date = Date(
+        display_name=_("Certificate Date"),
+        help=_("Specify the date of your certificate."),
+        default=None,
+        scope=Scope.settings
+    )
+
     teams_configuration = Dict(
         display_name=_("Teams Configuration"),
         # Translators: please don't translate "id".

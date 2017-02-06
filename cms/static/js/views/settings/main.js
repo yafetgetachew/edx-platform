@@ -29,6 +29,7 @@ var DetailsView = ValidatingView.extend({
     initialize : function(options) {
         options = options || {};
         // fill in fields
+        this.$el.find("#course-hours").val(this.model.get('course_hours'));
         this.$el.find("#course-language").val(this.model.get('language'));
         this.$el.find("#course-organization").val(this.model.get('org'));
         this.$el.find("#course-number").val(this.model.get('course_id'));
@@ -82,6 +83,7 @@ var DetailsView = ValidatingView.extend({
         DateUtils.setupDatePicker('end_date', this);
         DateUtils.setupDatePicker('enrollment_start', this);
         DateUtils.setupDatePicker('enrollment_end', this);
+        DateUtils.setupDatePicker('certificate_date', this);
 
         this.$el.find('#' + this.fieldToSelectorMap['overview']).val(this.model.get('overview'));
         this.codeMirrorize(null, $('#course-overview')[0]);
@@ -155,6 +157,8 @@ var DetailsView = ValidatingView.extend({
         return this;
     },
     fieldToSelectorMap : {
+        'course_hours': 'course-hours',
+        'certificate_date': 'certificate-date',
         'language' : 'course-language',
         'start_date' : "course-start",
         'end_date' : 'course-end',
@@ -298,6 +302,7 @@ var DetailsView = ValidatingView.extend({
         case 'course-pace-instructor-paced':
             this.model.set('self_paced', JSON.parse(event.currentTarget.value));
             break;
+        case 'course-hours':
         case 'course-language':
         case 'course-effort':
         case 'course-title':

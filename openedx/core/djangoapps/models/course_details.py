@@ -72,6 +72,8 @@ class CourseDetails(object):
         self.self_paced = None
         self.learning_info = []
         self.instructor_info = []
+        self.course_hours = None
+        self.certificate_date = None
 
     @classmethod
     def fetch_about_attribute(cls, course_key, attribute):
@@ -118,6 +120,8 @@ class CourseDetails(object):
         course_details.self_paced = course_descriptor.self_paced
         course_details.learning_info = course_descriptor.learning_info
         course_details.instructor_info = course_descriptor.instructor_info
+        course_details.course_hours = course_descriptor.course_hours
+        course_details.certificate_date = course_descriptor.certificate_date
 
         # Default course license is "All Rights Reserved"
         course_details.license = getattr(course_descriptor, "license", "all-rights-reserved")
@@ -264,6 +268,18 @@ class CourseDetails(object):
         if 'language' in jsondict and jsondict['language'] != descriptor.language:
             descriptor.language = jsondict['language']
             dirty = True
+
+        if 'course_hours' in jsondict and jsondict['course_hours'] != descriptor.course_hours:
+            descriptor.course_hours = jsondict['course_hours']
+            dirty = True
+
+        if 'certificate_date' in jsondict:
+            converted = date.from_json(jsondict['certificate_date'])
+        else:
+            converted = None
+        if converted != descriptor.certificate_date:
+            dirty = True
+            descriptor.certificate_date = converted
 
         if (SelfPacedConfiguration.current().enabled
                 and descriptor.can_toggle_course_pacing

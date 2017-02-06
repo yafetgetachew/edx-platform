@@ -7,6 +7,8 @@ var CourseDetails = Backbone.Model.extend({
         course_id: '',
         run: '',
         language: '',
+        course_hours: '',
+        certificate_date: null,
         start_date: null,	// maps to 'start'
         end_date: null,		// maps to 'end'
         enrollment_start: null,
@@ -39,7 +41,7 @@ var CourseDetails = Backbone.Model.extend({
         // A bit funny in that the video key validation is asynchronous; so, it won't stop the validation.
         var errors = {};
         newattrs = DateUtils.convertDateStringsToObjects(
-            newattrs, ["start_date", "end_date", "enrollment_start", "enrollment_end"]
+            newattrs, ["start_date", "end_date", "enrollment_start", "enrollment_end", "certificate_date"]
         );
 
         if (newattrs.start_date === null) {
