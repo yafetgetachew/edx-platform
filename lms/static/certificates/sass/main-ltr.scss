@@ -63,7 +63,7 @@ span.accomplishment-course-name {
 
 .accomplishment-rendering .accomplishment-signatories {
   border-bottom: none;
-  margin-top: 75px;
+  margin-top: 120px;
   margin-bottom: 0;
 }
 
@@ -124,4 +124,19 @@ p.organization {
 
 .layout-accomplishment .accomplishment-rendering .accomplishment-statement-detail {
   font-family: "Open Sans";
+}
+
+p.accomplishment-certificate-course-hours {
+  text-align: center;
+  font-size: 1.3125rem;
+}
+
+p.accomplishment-certificate-date {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.certificate .accomplishment-rendering .accomplishment-statement {
+  padding-bottom: 0;
 }
