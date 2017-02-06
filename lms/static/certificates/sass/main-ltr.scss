@@ -13,3 +13,115 @@ $pattern-library-path: '../../edx-pattern-library' !default;
 
 // Load the shared build
 @import 'build';
+
+.layout-accomplishment .accomplishment-rendering {
+  border: 0.25rem solid #586165;
+}
+
+.accomplishment-rendering .accomplishment-type-symbol {
+  margin-bottom: 0;
+}
+
+.accomplishment .accomplishment-type-symbol .src {
+  height: 90px;
+  width: initial;
+  display: inline;
+  margin-top: 40px;
+}
+
+.layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-type {
+  margin-bottom: 0;
+}
+
+#certificate-title {
+  text-align: center;
+}
+
+#course-title {
+  line-height: 150px;
+  font-size: 3em;
+}
+
+.accomplishment-rendering .accomplishment-statement-lead {
+  font-family: "Open Sans";
+}
+
+span.accomplishment-course-name {
+  font-size: 0.7em;
+  font-family: "Open Sans";
+}
+
+.accomplishment-rendering .accomplishment-statement {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.accomplishment-rendering .accomplishment-signatories .list-signatories {
+  display: flex;
+  justify-content: center;
+}
+
+.accomplishment-rendering .accomplishment-signatories {
+  border-bottom: none;
+  margin-top: 75px;
+  margin-bottom: 0;
+}
+
+#sign0 {
+  order: -3;
+}
+
+#sign1 {
+  order: -1;
+}
+
+div.organization {
+  order: -2;
+}
+
+img.organization-logo {
+  height: 175px;
+  margin-top: -70px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#line {
+  width: 250px;
+}
+
+#student-name {
+  margin-bottom: 50px;
+}
+
+.accomplishment-rendering .accomplishment-signatories .signatory-credentials  {
+  margin-bottom: 0;
+}
+
+.accomplishment-rendering .accomplishment-signatories .signatory-credentials .role {
+  display: inline;
+  font-style: italic;
+}
+
+.accomplishment-rendering .accomplishment-signatories .signatory-name {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+p.organization {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.certificate .accomplishment-rendering .accomplishment-recipient {
+  font-family: "Open Sans";
+}
+
+.layout-accomplishment .accomplishment-rendering .accomplishment-summary {
+  font-family: "Open Sans";
+  margin-bottom: 1rem;
+}
+
+.layout-accomplishment .accomplishment-rendering .accomplishment-statement-detail {
+  font-family: "Open Sans";
+}
