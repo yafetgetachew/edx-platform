@@ -57,16 +57,22 @@ function($, date, TriggerChangeEventOnEnter) {
             time = $(timepickerInput).timepicker("getTime");
         }
         if(date && time) {
-            return new Date(Date.UTC(
+            var d = new Date(Date.UTC(
                 date.getFullYear(), date.getMonth(), date.getDate(),
                 time.getHours(), time.getMinutes()
             ));
         } else if (date) { 
-            return new Date(Date.UTC(
+            var d = new Date(Date.UTC(
                 date.getFullYear(), date.getMonth(), date.getDate()));
         } else {
-            return null;
+            var d = null;
         }
+
+        if (d && d.getTimezoneOffset() != 0) {
+            d.setTime(d.getTime() - d.getTimezoneOffset()*60*1000);
+        }
+
+        return d;
     };
 
     var setDate = function (datepickerInput, timepickerInput, datetime) {
