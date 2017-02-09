@@ -128,7 +128,7 @@ class TodaysDate(DateSummary):
     """
     css_class = 'todays-date'
     is_enabled = True
-    date_format = '%b %d, %Y (%H:%M {utc})'.format(utc=_('UTC'))
+    date_format = '%b %d, %Y (%H:%M {utc})'.format(utc='UTC')
 
     # The date is shown in the title, no need to display it again.
     def get_context(self):
@@ -286,3 +286,4 @@ class VerificationDeadlineDate(DateSummary):
     def must_retry(self):
         """Return True if the user must re-submit verification, False otherwise."""
         return self.verification_status == 'must_reverify'
+
