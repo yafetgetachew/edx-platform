@@ -515,6 +515,7 @@ class VideoDescriptor(VideoFields, VideoTranscriptsMixin, VideoStudioViewHandler
                 video_url = "https://www.youtube.com/watch?v=" + str(self.youtube_id_1_0)
 
             if video_url:
+                
                 if not self.edx_video_id:
                     now = datetime.datetime.now()
                     hash_object = hashlib.sha256(str(now))
@@ -537,9 +538,10 @@ class VideoDescriptor(VideoFields, VideoTranscriptsMixin, VideoStudioViewHandler
 
                 # TODO: Change this try catch
                 try:
-                    edxval_api.get_video_info(hex_dig)
+                    edxval_api.get_video_info(self.edx_video_id)
                 except:
                     edxval_api.create_video(payload)
+                    
                 # with this
                 # edxval_api.create_video(payload)
                 # when edxval app is updated
