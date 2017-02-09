@@ -83,6 +83,7 @@ img.organization-logo {
 
 #line {
   width: 250px;
+  margin: 1px;
 }
 
 #student-name {
@@ -91,6 +92,7 @@ img.organization-logo {
 
 .accomplishment-rendering .accomplishment-signatories .signatory-credentials  {
   margin-bottom: 0;
+  font-family: "Gotham Narrow" !important;
 }
 
 .accomplishment-rendering .accomplishment-signatories .signatory-credentials .role {
@@ -106,6 +108,7 @@ img.organization-logo {
 p.organization {
   font-size: 0.75rem;
   font-style: italic;
+  font-family: "Gotham Narrow" !important;
 }
 
 .certificate .accomplishment-rendering .accomplishment-recipient {
@@ -213,4 +216,8 @@ p.accomplishment-certificate-date {
 
 #first-span {
   margin-bottom: 0;
+}
+
+.layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-signatories .signatory-signature {
+  padding: 0;
 }
