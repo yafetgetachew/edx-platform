@@ -28,6 +28,8 @@ import os
 from path import Path as path
 from xmodule.modulestore.modulestore_settings import convert_module_store_setting_if_needed
 
+from elasticsearch import Elasticsearch
+
 # SERVICE_VARIANT specifies name of the variant used, which decides what JSON
 # configuration files are read during startup.
 SERVICE_VARIANT = os.environ.get('SERVICE_VARIANT', None)
@@ -118,7 +120,6 @@ with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
 STATIC_ROOT_BASE = ENV_TOKENS.get('STATIC_ROOT_BASE', None)
 if STATIC_ROOT_BASE:
     STATIC_ROOT = path(STATIC_ROOT_BASE)
-
 
 # STATIC_URL_BASE specifies the base url to use for static files
 STATIC_URL_BASE = ENV_TOKENS.get('STATIC_URL_BASE', None)
@@ -757,3 +758,14 @@ for middleware in ENV_TOKENS.get('ADDL_LMS_MIDDLEWARE_CLASSES', []):
     MIDDLEWARE_CLASSES += (middleware,)
 if 'SOCIAL_AUTH_EXCLUDE_URL_PATTERN' in ENV_TOKENS:
     SOCIAL_AUTH_EXCLUDE_URL_PATTERN = ENV_TOKENS['SOCIAL_AUTH_EXCLUDE_URL_PATTERN']
+
+
+##################### Raccoongang changes #####################
+ELASTIC_SEARCH_HOST = ENV_TOKENS.get('ELASTIC_SEARCH_HOST', 'elasticsearch')
+
+class ExtHostElasticsearch(Elasticsearch):
+    def __init__(self, *args, **kwargs):
+        kwargs['host'] = ELASTIC_SEARCH_HOST
+        super(ExtHostElasticsearch, self).__init__(*args, **kwargs)
+
+ELASTIC_SEARCH_IMPL = ExtHostElasticsearch
