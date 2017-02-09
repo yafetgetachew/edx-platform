@@ -21,6 +21,8 @@ import os
 from path import Path as path
 from xmodule.modulestore.modulestore_settings import convert_module_store_setting_if_needed
 
+from elasticsearch import Elasticsearch
+
 # SERVICE_VARIANT specifies name of the variant used, which decides what JSON
 # configuration files are read during startup.
 SERVICE_VARIANT = os.environ.get('SERVICE_VARIANT', None)
@@ -378,3 +380,13 @@ for middleware in ENV_TOKENS.get('ADDL_CMS_MIDDLEWARE_CLASSES', []):
     MIDDLEWARE_CLASSES += (middleware,)
 
 CMS_MKTG_URLS = ENV_TOKENS.get('CMS_MKTG_URLS', {})
+
+ELASTIC_SEARCH_HOST = ENV_TOKENS.get('ELASTIC_SEARCH_HOST', 'localhost')
+
+class ExtHostElasticsearch(Elasticsearch):
+    def __init__(self, *args, **kwargs):
+        kwargs['host'] = ELASTIC_SEARCH_HOST
+        super(ExtHostElasticsearch, self).__init__(*args, **kwargs)
+
+ELASTIC_SEARCH_IMPL = ExtHostElasticsearch
+
