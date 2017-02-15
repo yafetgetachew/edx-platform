@@ -122,6 +122,43 @@
 // ------------------------------
 @media print {
 
+    .list-signatories {
+        text-align: center;
+        white-space: nowrap;
+        display: table;
+        max-width: 100%;
+        width: 968px;
+
+        .signatory {
+            display: inline-block;
+            vertical-align: top;
+            display: table-cell;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+        .organization {
+            vertical-align: top;
+            min-width: 145px;
+            text-align: center;
+            display: table-cell;
+
+            img.organization-logo {
+                margin: 0 auto;
+                display: block;
+                width: 145px;
+                height: 175px;
+            }
+        }
+        p.organization {
+            width: 100%;
+            display: block;
+            min-width: none;
+        }
+        #line {
+            width: 100%;
+        }
+    }
+
     // headings
     .hd-1 {
         font-size: font-size(x-large);
@@ -236,10 +273,6 @@
                 margin-bottom: spacing-vertical(mid-small) !important;
             }
 
-            .organization-logo {
-                max-width: 100%;
-                max-height: 80%;
-            }
         }
 
         .accomplishment-signatories {
