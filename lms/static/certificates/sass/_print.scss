@@ -121,6 +121,9 @@
 // #ELEMENTS
 // ------------------------------
 @media print {
+    .wrapper-signatories {
+        padding-bottom: 50px;
+    }
 
     .list-signatories {
         text-align: center;
@@ -135,6 +138,10 @@
             display: table-cell;
             padding: 0 40px;
             box-sizing: border-box;
+
+            .signatory-credentials {
+                font-family: "Gotham Narrow" !important;
+            }
         }
         .organization {
             vertical-align: top;
@@ -153,6 +160,10 @@
             width: 100%;
             display: block;
             min-width: none;
+            font: 1/1 "Gotham Narrow" !important;
+            font-weight: normal !important;
+            font-size: 0.75rem;
+            line-height: 1.5;
         }
         #line {
             width: 100%;
