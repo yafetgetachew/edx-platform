@@ -121,21 +121,9 @@
 // #ELEMENTS
 // ------------------------------
 @media print {
-    .top-right,
-    .bottom-right,
-    .bottom-left,
-    .top-left,
-    .bottom-line,
-    .right-line,
-    .left-line,
-    .top-line {
-        display: none;
-    }
+    
     .wrapper-signatories {
         padding-bottom: 50px;
-    }
-    .layout-accomplishment .accomplishment-rendering {
-        border: 4px double #000 !important;
     }
 
     .list-signatories {
