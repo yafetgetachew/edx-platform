@@ -50,18 +50,21 @@ import logging
 import uuid
 
 import os
+import md5
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models, transaction
 from django.db.models import Count
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.fields import CreationDateTimeField
+from django.core.urlresolvers import reverse
+from django.core.mail import send_mail
 from model_utils import Choices
 from model_utils.models import TimeStampedModel
 from openedx.core.djangoapps.signals.signals import COURSE_CERT_AWARDED
-
 
 from badges.events.course_complete import course_badge_check
 from badges.events.course_meta import completion_check, course_group_check
@@ -1090,3 +1093,27 @@ def create_course_group_badge(sender, user, course_key, status, **kwargs):  # py
     Standard signal hook to create badges when a user has completed a prespecified set of courses.
     """
     course_group_check(user, course_key)
+
+
+@receiver(post_save, sender=GeneratedCertificate)
+def generate_pdf(sender, instance, **kwargs):
+    if not instance.verify_uuid:
+        return None
+
+    token = md5.new('{}{}'.format(settings.SECRET_KEY, settings.SITE_NAME)).hexdigest()
+    kwargs = {'token': token, 'user_id': instance.user.id, 'course_id': unicode(instance.course_id)}
+    html_cert_url = 'https://{}{}'.format(settings.SITE_NAME, reverse('certificates:token_html_view', kwargs=kwargs))
+
+    pdf_filename = '{}.pdf'.format(instance.verify_uuid)
+    pdf_dir = os.path.join(settings.MEDIA_ROOT, 'certs')
+    pdf_url = 'https://{}{}'.format(settings.SITE_NAME, os.path.join(settings.MEDIA_URL, 'certs', pdf_filename))
+
+    if not os.path.exists(pdf_dir):
+        os.mkdir(pdf_dir)
+
+    os.system('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 0.9 -g {} {}'.format(html_cert_url,
+								                    os.path.join(pdf_dir, pdf_filename)))
+
+    send_mail('Certificate for course {}'.format(unicode(instance.course_id)),
+                                                 pdf_url, settings.DEFAULT_FROM_EMAIL,
+                                                 [instance.user.email], fail_silently=True)

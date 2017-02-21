@@ -4,6 +4,7 @@ URLs for the certificates app.
 
 from django.conf.urls import patterns, url
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 from certificates import views
 
@@ -13,15 +14,21 @@ urlpatterns = patterns(
     # Certificates HTML view end point to render web certs by user and course
     url(
         r'^user/(?P<user_id>[^/]*)/course/{course_id}'.format(course_id=settings.COURSE_ID_PATTERN),
-        views.render_html_view,
+        login_required(views.render_html_view),
         name='html_view'
     ),
 
     # Certificates HTML view end point to render web certs by certificate_uuid
     url(
         r'^(?P<certificate_uuid>[0-9a-f]{32})$',
-        views.render_cert_by_uuid,
+        login_required(views.render_cert_by_uuid),
         name='render_cert_by_uuid'
+    ),
+
+    url(
+        r'^token/(?P<token>[0-9a-f]{{32}})/user/(?P<user_id>[^/]*)/course/{course_id}'.format(course_id=settings.COURSE_ID_PATTERN),
+        views.render_html_view_with_token,
+        name='token_html_view'
     ),
 
     # End-points used by student support
