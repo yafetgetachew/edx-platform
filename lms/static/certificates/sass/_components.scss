@@ -616,3 +616,42 @@
     height: rem(2);
     width: 100%;
 }
+
+.signatory-table {
+    width: 100%;
+    overflow: hidden;
+
+    .signatory-col {
+        float: left;
+        width: 40%;
+        padding: 29px 0 0;
+
+        &_img {
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .organization-row {
+        width: 20%;
+        float: left;
+    }
+    .organization-img {
+        width: 124px;
+        margin: 0 auto;
+        display: block;
+    }
+    .signatory-holder {
+        padding: 1px 40px 0;
+        width: 300px;
+        float: right;
+
+        &__left {
+            float: left;
+        }
+    }
+    #line {
+        width: 100%;
+    }
+} 
+

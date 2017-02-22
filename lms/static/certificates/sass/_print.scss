@@ -240,10 +240,9 @@
 
     .accomplishment-rendering {
         top: 0 !important;
-        border: rem(1) solid palette(grayscale, light);
-        border-top: rem(2) solid $cert-base-color;
         box-shadow: none;
-        padding: spacing-vertical(small) spacing-horizontal(mid-large);
+        padding: 0;
+        border: none;
 
 
         .accomplishment-type {
@@ -256,7 +255,7 @@
         }
 
         .wrapper-statement-and-signatories {
-            border-bottom: rem(2) solid palette(grayscale-cool, x-light);
+            
         }
 
         .accomplishment-statement {
@@ -372,12 +371,24 @@
 // ------------------------------
 // certificate - distinguished
 @media print {
+    
+.signatory-table {
 
-    .certificate-distinguished {
+    .signatory-col {
 
-        .accomplishment-rendering {
-            border-top-color: $cert-distinguished-color;
+        &_img {
+            height: 20px;
+            display: block;
+            margin: 0 auto;
         }
     }
+    .signatory-holder {
+        width: 220px;
+    }
+}
+#student-name, 
+span.accomplishment-course-name {
+    letter-spacing: 0;
+}
 }
 
