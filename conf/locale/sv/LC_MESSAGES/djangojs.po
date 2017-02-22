@@ -6253,12 +6253,12 @@ msgstr ""
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #, python-format
 msgid "marked as answer %(time_ago)s by %(user)s"
-msgstr "frågan besvarade %(time_ago)s av %(user)s"
+msgstr "frågan besvarades %(time_ago)s av %(user)s"
 
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #, python-format
 msgid "marked as answer %(time_ago)s"
-msgstr "frågan besvaradde %(time_ago)s"
+msgstr "frågan besvarades %(time_ago)s"
 
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #, python-format
