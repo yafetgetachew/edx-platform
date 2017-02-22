@@ -2157,6 +2157,10 @@ INSTALLED_APPS = (
 
     # Unusual migrations
     'database_fixups',
+
+    # Gamification
+    'gamification_metric',
+    'referrals',
 )
 
 # Migrations which are not in the standard module "migrations"
