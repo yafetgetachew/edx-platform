@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-25 12:34+0200\n"
-"PO-Revision-Date: 2017-01-25 10:34:50.629407\n"
+"POT-Creation-Date: 2017-02-22 14:43+0200\n"
+"PO-Revision-Date: 2017-02-22 12:43:16.320099\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -2753,6 +2753,22 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Specify the language of your course."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
+msgid "Course Hours"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Specify hours of your course."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
+msgid "Certificate Date"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Specify the date of your certificate."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
@@ -11750,6 +11766,14 @@ msgid "{platform_name} Home"
 msgstr ""
 
 #: lms/templates/certificates/_accomplishment-rendering.html
+msgid "Motsvarande {course_hours} kurstimmar"
+msgstr ""
+
+#: lms/templates/certificates/_accomplishment-rendering.html
+msgid "Datum:"
+msgstr ""
+
+#: lms/templates/certificates/_accomplishment-rendering.html
 msgid "Noted by"
 msgstr ""
 
@@ -18757,6 +18781,10 @@ msgstr ""
 
 #: cms/templates/settings.html
 msgid "Enrollment End Time"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "HHHH"
 msgstr ""
 
 #: cms/templates/settings.html

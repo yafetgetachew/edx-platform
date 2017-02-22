@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-25 12:34+0200\n"
-"PO-Revision-Date: 2017-01-25 10:34:50.629407\n"
+"POT-Creation-Date: 2017-02-22 14:40+0200\n"
+"PO-Revision-Date: 2017-02-22 12:40:30.319679\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -3011,6 +3011,22 @@ msgstr "ذخعقسث مشرلعشلث"
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Specify the language of your course."
 msgstr "سحثذهبغ فاث مشرلعشلث خب غخعق ذخعقسث."
+
+#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
+msgid "Course Hours"
+msgstr "ذخعقسث اخعقس"
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Specify hours of your course."
+msgstr "سحثذهبغ اخعقس خب غخعق ذخعقسث."
+
+#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
+msgid "Certificate Date"
+msgstr "ذثقفهبهذشفث يشفث"
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Specify the date of your certificate."
+msgstr "سحثذهبغ فاث يشفث خب غخعق ذثقفهبهذشفث."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Teams Configuration"
@@ -13128,6 +13144,14 @@ msgid "{platform_name} Home"
 msgstr "{platform_name} اخوث"
 
 #: lms/templates/certificates/_accomplishment-rendering.html
+msgid "Motsvarande {course_hours} kurstimmar"
+msgstr "وخفسدشقشريث {course_hours} نعقسفهووشق"
+
+#: lms/templates/certificates/_accomplishment-rendering.html
+msgid "Datum:"
+msgstr "يشفعو:"
+
+#: lms/templates/certificates/_accomplishment-rendering.html
 msgid "Noted by"
 msgstr "رخفثي زغ"
 
@@ -21073,6 +21097,10 @@ msgstr "ذخرفشذف غخعق ثيط حشقفرثق وشرشلثق فخ عحي
 #: cms/templates/settings.html
 msgid "Enrollment End Time"
 msgstr "ثرقخمموثرف ثري فهوث"
+
+#: cms/templates/settings.html
+msgid "HHHH"
+msgstr "اااا"
 
 #: cms/templates/settings.html
 msgid "These Dates Are Not Used When Promoting Your Course"
