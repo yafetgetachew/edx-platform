@@ -30,7 +30,7 @@ ${_('    2. After registering, you will receive a 2nd email, also from support@n
 "Follow the link to activate your account. "
 "Note, this email may take a few minutes to come in and please check your spam folder if you do not see the email in your inbox.")}
 
-${_("    3. Your account is now active. Your child can find the course by signing in at http://workshop.noticeability.org/dashboard")}
+${_("    3. Your account is now active. You can find the course by signing in at http://workshop.noticeability.org/dashboard")}
 % elif course_about_url is not None:
 ${_("Once you have registered and activated your account, visit {course_about_url} "
 	"to join the course.").format(course_about_url=course_about_url)}
