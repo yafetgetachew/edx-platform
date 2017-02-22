@@ -30,6 +30,7 @@ from openedx.core.djangoapps.user_api.accounts.image_helpers import get_profile_
             <%block name="navigation_dropdown_menu_links" >
                 <li class="dropdown-item item has-block-link"><a href="${reverse('dashboard')}" class="action">${_("Dashboard")}</a></li>
                 <li class="dropdown-item item has-block-link"><a href="${reverse('learner_profile', kwargs={'username': user.username})}" class="action">${_("Profile")}</a></li>
+                <li class="dropdown-item item has-block-link"><a href="${reverse('gamification')}" class="action">${_("Performance")}</a></li>
                 <li class="dropdown-item item has-block-link"><a href="${reverse('account_settings')}" class="action">${_("Account")}</a></li>
             </%block>
             <li class="dropdown-item item has-block-link"><a href="${reverse('logout')}" role="menuitem" class="action">${_("Sign Out")}</a></li>

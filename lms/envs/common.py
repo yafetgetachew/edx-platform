@@ -2091,6 +2091,10 @@ INSTALLED_APPS = (
     # Email marketing integration
     'email_marketing',
     'program_marketing',
+
+    # Gamification
+    'gamification_metric',
+    'referrals',
 )
 
 # Migrations which are not in the standard module "migrations"

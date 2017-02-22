@@ -7,6 +7,7 @@ from django.conf.urls import patterns, include, url
 from django.views.generic.base import RedirectView
 from ratelimitbackend import admin
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
 
 import auth_exchange.views
 from courseware.views.views import EnrollStaffView
@@ -16,6 +17,9 @@ from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from student.views import LogoutView
+from gamification_metric.views import dashboard as gamification
+import referrals.views
+
 
 # Uncomment the next two lines to enable the admin:
 if settings.DEBUG or settings.FEATURES.get('ENABLE_DJANGO_ADMIN_SITE'):
@@ -115,6 +119,15 @@ urlpatterns = (
 
     # URLs for API access management
     url(r'^api-admin/', include('openedx.core.djangoapps.api_admin.urls', namespace='api_admin')),
+
+    # Gamification
+    url(r'referral/', include('referrals.urls', app_name="referrals", namespace='referrals')),
+    url(
+        r'^api/get_referral_hash_key/',
+        referrals.views.GetHashKeyView.as_view(),
+        name="get_hash_key"
+    ),
+    url(r'^gamification', gamification, name='gamification'),
 )
 
 urlpatterns += (
