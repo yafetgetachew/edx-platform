@@ -61,7 +61,7 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.fields import CreationDateTimeField
 from django.core.urlresolvers import reverse
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from model_utils import Choices
 from model_utils.models import TimeStampedModel
 from openedx.core.djangoapps.signals.signals import COURSE_CERT_AWARDED
@@ -1111,9 +1111,13 @@ def generate_pdf(sender, instance, **kwargs):
     if not os.path.exists(pdf_dir):
         os.mkdir(pdf_dir)
 
-    os.system('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 0.9 -g {} {}'.format(html_cert_url,
+    os.system('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf -s A4 -g {} {}'.format(html_cert_url,
 								                    os.path.join(pdf_dir, pdf_filename)))
 
-    send_mail('Certificate for course {}'.format(unicode(instance.course_id)),
-                                                 pdf_url, settings.DEFAULT_FROM_EMAIL,
-                                                 [instance.user.email], fail_silently=True)
+    subject = _(u'Certificate for course {course}').format(course=unicode(instance.course_id))
+    message = _(u'Certificate for course "{course}" is in attachment').format(course=unicode(instance.course_id))
+
+    mail = EmailMessage(subject, message, settings.DEFAULT_FROM_EMAIL, [instance.user.email])
+    with open(os.path.join(pdf_dir, pdf_filename), 'rb') as pdf_file:
+        mail.attach(_(u'Certificate.pdf'), pdf_file.read(), 'application/pdf')
+    mail.send()
