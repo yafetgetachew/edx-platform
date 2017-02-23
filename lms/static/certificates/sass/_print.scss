@@ -15,7 +15,8 @@
 
 // page set up - only available to modern browsers now
 @page {
-    size : portrait;
+    size : landscape;
+    margin: 0;
 }
 
 @media print {
@@ -68,12 +69,13 @@
     // reset body/view properties
     html,
     body {
-        @extend %print-black-on-white;
+        // @extend %print-black-on-white;
     }
 
     body {
         height: auto;
-        margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
+        // margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
+        margin: 15px;
         padding: 0;
     }
 
@@ -224,8 +226,7 @@
     }
 
     .copy-meta {
-        font-size: font-size(x-small);
-        line-height: line-height(small);
+        display: none;
     }
 
     .copy-micro {
@@ -329,8 +330,7 @@
         margin-bottom: 0;
 
         .wrapper-metadata {
-            @include clearfix();
-            margin-bottom: 0;
+            display: none;
 
             .metadata {
                 margin-bottom: 0;
@@ -377,14 +377,14 @@
     .signatory-col {
 
         &_img {
-            height: 20px;
+            height: 40px;
             display: block;
             margin: 0 auto;
         }
     }
-    .signatory-holder {
-        width: 220px;
-    }
+    // .signatory-holder {
+    //     width: 220px;
+    // }
 }
 #student-name, 
 span.accomplishment-course-name {
