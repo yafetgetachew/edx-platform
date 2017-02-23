@@ -213,6 +213,10 @@ FEATURES = {
 
 ENABLE_JASMINE = False
 
+# Needs for Microsoft XBlocks
+
+ALLOW_ALL_ADVANCED_COMPONENTS: True
+
 ############################# SOCIAL MEDIA SHARING #############################
 SOCIAL_SHARING_SETTINGS = {
     # Note: Ensure 'CUSTOM_COURSE_URLS' has a matching value in lms/envs/common.py
