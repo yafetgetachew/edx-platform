@@ -209,13 +209,12 @@ FEATURES = {
 
     # Show Language selector
     'SHOW_LANGUAGE_SELECTOR': False,
+
+    # Needs for Microsoft XBlocks
+    'ALLOW_ALL_ADVANCED_COMPONENTS': True,
 }
 
 ENABLE_JASMINE = False
-
-# Needs for Microsoft XBlocks
-
-ALLOW_ALL_ADVANCED_COMPONENTS: True
 
 ############################# SOCIAL MEDIA SHARING #############################
 SOCIAL_SHARING_SETTINGS = {
