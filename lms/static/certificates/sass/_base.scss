@@ -25,3 +25,33 @@ html, body {
 // ------------------------------
 // #TYPOGRAPHY
 // ------------------------------
+@font-face {
+    font-family: 'gotham-narrow-book';
+    src: url('/static/certificates/fonts/gotham-narrow-book/gotham-narrow-book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham-narrow-book-italic';
+    src: url('/static/certificates/fonts/gotham-narrow-book-italic/gotham-narrow-book-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham-narrow-light';
+    src: url('/static/certificates/fonts/gotham-narrow-light/gotham-narrow-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham-narrow-light-italic';
+    src: url('/static/certificates/fonts/gotham-narrow-light-italic/gotham-narrow-light-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'barmenoregular';
+    src: url('/static/certificates/fonts/barmeno-regular/barmeno-regular-58af156c58e64-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
