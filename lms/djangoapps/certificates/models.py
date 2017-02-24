@@ -1111,8 +1111,10 @@ def generate_pdf(sender, instance, **kwargs):
     if not os.path.exists(pdf_dir):
         os.mkdir(pdf_dir)
 
-    os.system('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.16 -s A4 -O Landscape --print-media-type {} {}'.format(html_cert_url,
-							                    os.path.join(pdf_dir, pdf_filename)))
+    cmd = ('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.27 '
+          '--margin-top 0 --margin-bottom 0 --margin-left 0 --margin-right 0 '
+          '-s A4 -O Landscape --print-media-type {} {}')
+    os.system(cmd.format(html_cert_url, os.path.join(pdf_dir, pdf_filename)))
 
     subject = _(u'Certificate for course {course}').format(course=unicode(instance.course_id))
     message = _(u'Certificate for course "{course}" is in attachment').format(course=unicode(instance.course_id))
