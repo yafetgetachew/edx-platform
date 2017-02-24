@@ -70,13 +70,13 @@
     html,
     body {
         // @extend %print-black-on-white;
+        background: none;
     }
 
     body {
         height: auto;
         // margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
         margin: 0;
-        background: none;
         padding: 0;
     }
 
@@ -393,6 +393,9 @@
 #student-name, 
 span.accomplishment-course-name {
     letter-spacing: 0;
+}
+.layout-accomplishment.certificate-honor .accomplishment-main {
+    background: none;
 }
 }
 
