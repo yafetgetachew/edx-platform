@@ -1111,7 +1111,7 @@ def generate_pdf(sender, instance, **kwargs):
     if not os.path.exists(pdf_dir):
         os.mkdir(pdf_dir)
 
-    os.system('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf -s A4 {} {}'.format(html_cert_url,
+    os.system('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf -s A4 -O Landscape {} {}'.format(html_cert_url,
 								                    os.path.join(pdf_dir, pdf_filename)))
 
     subject = _(u'Certificate for course {course}').format(course=unicode(instance.course_id))
