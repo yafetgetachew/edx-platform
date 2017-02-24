@@ -22,16 +22,17 @@ $pattern-library-path: '../../edx-pattern-library' !default;
   height: 90px;
   width: initial;
   display: inline;
-  margin-top: 35px;
+  // margin-top: 51px;
 }
 
 .layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-type {
   margin-bottom: 0;
+  padding: 44px 0 50px;
 }
 
 #certificate-title {
   text-align: center;
-  padding: 37px 40px 29px;
+  padding: 0 40px 21px;
 }
 
 #course-title {
@@ -39,6 +40,7 @@ $pattern-library-path: '../../edx-pattern-library' !default;
   font-size: 36pt;
   color: #6f6e61;
   font-family: gotham-narrow-book, serif;
+  display: block;
 }
 
 .accomplishment-rendering .accomplishment-statement-lead {
@@ -70,6 +72,7 @@ span.accomplishment-course-name {
 .accomplishment-rendering .accomplishment-signatories {
   border-bottom: none;
   margin-bottom: 0;
+  padding: 20px 0 25px;
 }
 
 #sign0 {
@@ -97,9 +100,10 @@ img.organization-logo {
 }
 
 #student-name {
-  margin-bottom: 35px;
+  margin-bottom: 0;
   font-family: barmenoregular, serif;
   font-size: 23pt;
+  padding: 0 0 28px;
 }
 
 .accomplishment-rendering .accomplishment-signatories .signatory-credentials  {
@@ -132,7 +136,7 @@ p.organization {
   font-family: "gotham-narrow-light", serif;
   font-size: 16pt;
   line-height: 1.3;
-  margin-bottom: 7px;
+  margin-bottom: 15px;
 }
 
 .layout-accomplishment .accomplishment-rendering .accomplishment-statement-detail {
@@ -143,15 +147,15 @@ p.accomplishment-certificate-course-hours {
   text-align: center;
   font-family: gotham-narrow-light, serif;
   font-size: 16pt;
-  padding: 15px 0 19px;
-  margin: 0;
+  // padding: 15px 0 19px;
+  margin: 0 0 18px;
 }
 
 p.accomplishment-certificate-date {
   text-align: center;
   font-size: 1.2rem;
   font-style: italic;
-  margin: 0 0 38px;
+  // margin: 0 0 38px;
 }
 
 .layout-accomplishment .accomplishment-rendering .accomplishment-course {
@@ -251,4 +255,9 @@ p.accomplishment-certificate-date {
   text-align: center;
   font-weight: 400;
   font-size: 0.75rem;
+}
+.accomplishment-course.hd-1.emphasized {
+  font-size: 19pt;
+  line-height: 1.3;
+  padding: 0 0 14px;
 }

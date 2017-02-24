@@ -76,7 +76,7 @@
     body {
         height: auto;
         // margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
-        margin: 0;
+        margin: 0 10px;
         padding: 0;
     }
 
@@ -254,6 +254,7 @@
         .accomplishment-type-symbol {
             @include size(rem(75));
             border: none !important;
+            padding-top: 10px;
         }
 
         .wrapper-statement-and-signatories {
@@ -372,30 +373,42 @@
 // ------------------------------
 // certificate - distinguished
 @media print {
-.divider.sr-only {
-    display: none;
-}
-    
-.signatory-table {
-
-    .signatory-col {
-
-        &_img {
-            height: 40px;
-            display: block;
-            margin: 0 auto;
-        }
+    .divider.sr-only {
+        display: none;
     }
-    // .signatory-holder {
-    //     width: 220px;
-    // }
-}
-#student-name, 
-span.accomplishment-course-name {
-    letter-spacing: 0;
-}
-.layout-accomplishment.certificate-honor .accomplishment-main {
-    background: none;
-}
+        
+    .signatory-table {
+
+        .signatory-col {
+
+            &_img {
+                height: 40px;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        // .signatory-holder {
+        //     width: 220px;
+        // }
+    }
+    #student-name, 
+    span.accomplishment-course-name {
+        letter-spacing: 0;
+    }
+    .layout-accomplishment.certificate-honor .accomplishment-main {
+        background: none;
+    }
+    .accomplishment .accomplishment-type-symbol .src {
+        // margin-top: 45px;
+    }
+    #certificate-title {
+        // padding: 0;
+    }
+    #student-name {
+        // margin-bottom: 15px;
+    }
+    .accomplishment-recipient.hd-1.emphasized {
+        // margin-bottom: 15px;
+    }
 }
 
