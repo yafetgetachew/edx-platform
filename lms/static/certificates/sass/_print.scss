@@ -76,6 +76,7 @@
         height: auto;
         // margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
         margin: 0;
+        background: none;
         padding: 0;
     }
 
@@ -236,7 +237,7 @@
 
     // accomplishment
     .accomplishment-main {
-        @extend %print-no-background;
+        background: none !important;
     }
 
     .accomplishment-rendering {
