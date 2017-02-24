@@ -22,7 +22,7 @@ $pattern-library-path: '../../edx-pattern-library' !default;
   height: 90px;
   width: initial;
   display: inline;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-type {
@@ -31,10 +31,11 @@ $pattern-library-path: '../../edx-pattern-library' !default;
 
 #certificate-title {
   text-align: center;
+  padding: 37px 40px 30px;
 }
 
 #course-title {
-  line-height: 150px;
+  line-height: 1.3;
   font-size: 36pt;
   color: #6f6e61;
   font-family: gotham-narrow-book, serif;
@@ -48,9 +49,8 @@ span.accomplishment-course-name {
   font-size: 19pt;
   font-family: barmenoregular, serif;
 }
-.accomplishment-certificate-course-hours {
-  font-family: gotham-narrow-light, serif;
-  font-size: 16pt;
+.certificate .accomplishment-rendering .accomplishment-statement-lead {
+  margin: 0;
 }
 .accomplishment-certificate-date {
   font-family: gotham-narrow-light-italic, serif;
@@ -97,7 +97,7 @@ img.organization-logo {
 }
 
 #student-name {
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   font-family: barmenoregular, serif;
   font-size: 23pt;
 }
@@ -131,7 +131,8 @@ p.organization {
 .layout-accomplishment .accomplishment-rendering .accomplishment-summary {
   font-family: "gotham-narrow-light", serif;
   font-size: 16pt;
-  margin-bottom: 1rem;
+  line-height: 1.3;
+  margin-bottom: 7px;
 }
 
 .layout-accomplishment .accomplishment-rendering .accomplishment-statement-detail {
@@ -140,13 +141,21 @@ p.organization {
 
 p.accomplishment-certificate-course-hours {
   text-align: center;
-  font-size: 1.3125rem;
+  font-family: gotham-narrow-light, serif;
+  font-size: 16pt;
+  padding: 15px 0 19px;
+  margin: 0;
 }
 
 p.accomplishment-certificate-date {
   text-align: center;
   font-size: 1.2rem;
   font-style: italic;
+  margin: 0 0 38px;
+}
+
+.layout-accomplishment .accomplishment-rendering .accomplishment-course {
+  margin-bottom: 0;
 }
 
 .certificate .accomplishment-rendering .accomplishment-statement {

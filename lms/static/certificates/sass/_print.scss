@@ -75,7 +75,7 @@
     body {
         height: auto;
         // margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
-        margin: 15px;
+        margin: 0;
         padding: 0;
     }
 
@@ -243,8 +243,8 @@
         top: 0 !important;
         box-shadow: none;
         padding: 0;
+        margin: 0;
         border: none;
-
 
         .accomplishment-type {
             margin-top: -(spacing-vertical(mid-large));
@@ -323,7 +323,7 @@
     }
 
     .layout-accomplishment .wrapper-accomplishment-metadata {
-        margin-bottom: 0;
+        display: none;
     }
 
     .accomplishment-metadata {
@@ -371,6 +371,9 @@
 // ------------------------------
 // certificate - distinguished
 @media print {
+.divider.sr-only {
+    display: none;
+}
     
 .signatory-table {
 
