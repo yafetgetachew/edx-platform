@@ -1111,7 +1111,7 @@ def generate_pdf(sender, instance, **kwargs):
     if not os.path.exists(pdf_dir):
         os.mkdir(pdf_dir)
 
-    cmd = ('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.27 '
+    cmd = ('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.288 '
           '--margin-top 0 --margin-bottom 0 --margin-left 0 --margin-right 0 '
           '-s A4 -O Landscape --print-media-type {} {}')
     os.system(cmd.format(html_cert_url, os.path.join(pdf_dir, pdf_filename)))
