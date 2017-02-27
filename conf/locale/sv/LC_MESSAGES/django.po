@@ -13097,11 +13097,11 @@ msgstr "Börjar snart"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Ended - {date}"
-msgstr "Avslutade - {date}"
+msgstr "Avslutades - {date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Ended - {end_date}"
-msgstr "Avslutade - {end_date}"
+msgstr "Avslutades - {end_date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Started - {date}"
