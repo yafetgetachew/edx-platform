@@ -71,18 +71,18 @@
     body {
         // @extend %print-black-on-white;
         background: none;
+        min-height: 100%;
     }
 
     body {
-        height: auto;
         // margin: spacing-vertical(mid-large) spacing-vertical(mid-small) 0 spacing-vertical(mid-small) !important;
-        margin: 0 10px;
+        margin: 0 5px;
         padding: 0;
     }
 
     .wrapper-view {
-        margin-bottom: 0 !important;
-
+        margin: 0 !important;
+        height: 100%;
     }
 }
 
@@ -246,6 +246,7 @@
         padding: 0;
         margin: 0;
         border: none;
+        height: 100%;
 
         .accomplishment-type {
             margin-top: -(spacing-vertical(mid-large));
@@ -396,7 +397,14 @@
         letter-spacing: 0;
     }
     .layout-accomplishment.certificate-honor .accomplishment-main {
+        height: 100%;
         background: none;
+    }
+    .layout-accomplishment .wrapper-accomplishment-rendering {
+        margin-bottom: 0;
+        padding: 0;
+        border: none;
+        height: 100%;
     }
     .accomplishment .accomplishment-type-symbol .src {
         // margin-top: 45px;
