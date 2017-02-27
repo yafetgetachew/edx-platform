@@ -1111,15 +1111,17 @@ def generate_pdf(sender, instance, **kwargs):
     if not os.path.exists(pdf_dir):
         os.mkdir(pdf_dir)
 
-    cmd = ('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.288 '
+    cmd = ('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.2887 '
           '--margin-top 0 --margin-bottom 0 --margin-left 0 --margin-right 0 '
           '-s A4 -O Landscape --print-media-type {} {}')
     os.system(cmd.format(html_cert_url, os.path.join(pdf_dir, pdf_filename)))
 
-    subject = _(u'Certificate for course {course}').format(course=unicode(instance.course_id))
-    message = _(u'Certificate for course "{course}" is in attachment').format(course=unicode(instance.course_id))
+    from courseware.courses import get_course_by_id
+    course = get_course_by_id(instance.course_id)
+    subject = _(u'Kurscertifikat')
+    message = _(u'Grattis! Du har slutfört fortbildningen {course} med godkänt resultat. Certifikatet är bifogat nedan:').format(course=course.display_name)
 
     mail = EmailMessage(subject, message, settings.DEFAULT_FROM_EMAIL, [instance.user.email])
     with open(os.path.join(pdf_dir, pdf_filename), 'rb') as pdf_file:
-        mail.attach(_(u'Certificate.pdf'), pdf_file.read(), 'application/pdf')
+        mail.attach(_(u'Kurscertifikat.pdf'), pdf_file.read(), 'application/pdf')
     mail.send()
