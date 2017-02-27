@@ -25,8 +25,9 @@ $pattern-library-path: '../../edx-pattern-library' !default;
   // margin-top: 51px;
 }
 
-.layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-type {
+.certificate .accomplishment-rendering .accomplishment-type {
   margin-bottom: 0;
+  margin-top: 0;
   padding: 44px 0 50px;
 }
 
@@ -237,7 +238,7 @@ p.accomplishment-certificate-date {
    background-repeat: repeat-y;
 }
 
-.layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-signatories .signatory-signature {
+.layout-accomplishment .accomplishment-rendering .accomplishment-signatories .signatory-signature {
   margin-bottom: 0;
 }
 
@@ -245,7 +246,7 @@ p.accomplishment-certificate-date {
   margin-bottom: 0;
 }
 
-.layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-signatories .signatory-signature {
+.layout-accomplishment .accomplishment-rendering .accomplishment-signatories .signatory-signature {
   padding-bottom: 0;
 }
 .organization-text {
