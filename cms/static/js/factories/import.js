@@ -1,7 +1,6 @@
 define([
     'domReady', 'js/views/import', 'jquery', 'gettext', 'jquery.fileupload', 'jquery.cookie'
 ], function(domReady, Import, $, gettext) {
-
     'use strict';
 
     return function (feedbackUrl, library) {
@@ -30,7 +29,7 @@ define([
         var onComplete = function () {
             bar.hide();
             chooseBtn
-                .find('.copy').html(gettext("Choose new file")).end()
+                .find('.copy').text(gettext('Choose new file')).end()
                 .show();
         }
 
@@ -39,7 +38,9 @@ define([
         // Display the status of last file upload on page load
         if (previousImport) {
             $('.file-name-block')
-                .find('.file-name').html(previousImport.file.name).end()
+                .find('.file-name')
+                .text(previousImport.file.name)
+                .end()
                 .show();
 
             if (previousImport.completed !== true) {
@@ -124,7 +125,7 @@ define([
                     setTimeout(function () { Import.pollStatus(); }, 3000);
                 } else {
                     bar.show();
-                    fill.width(percentVal).html(percentVal);
+                    fill.width(percentVal).text(percentVal);
                 }
             },
             sequentialUploads: true,
@@ -137,7 +138,7 @@ define([
 
             if (filepath.substr(filepath.length - 6, 6) === 'tar.gz') {
                 $('.error-block').hide();
-                $('.file-name').html($(this).val().replace('C:\\fakepath\\', ''));
+                $('.file-name').text($(this).val().replace('C:\\fakepath\\', ''));
                 $('.file-name-block').show();
                 chooseBtn.hide();
                 submitBtn.show();
@@ -146,7 +147,7 @@ define([
                 var msg = gettext('File format not supported. Please upload a file with a {file_extension} extension.')
                     .replace('{file_extension}', '<code>tar.gz</code>');
 
-                $('.error-block').html(msg).show();
+                $('.error-block').text(msg).show();
             }
         };
 
