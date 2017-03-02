@@ -51,7 +51,19 @@
                 var category_template = _.template($('#new-post-menu-category-template').html()),
                     entry_template = _.template($('#new-post-menu-entry-template').html());
 
-                return _.map(Array.from(new Set(map.children)), function(name) {
+                // Fix for IE
+                if (!Array.from) {
+                    var children_uniq = new Array();
+                    map.children.forEach(function (i) {
+                       if (children_uniq.indexOf(i) < 0) {
+                           children_uniq.push(i);
+                       }
+                    });
+                } else {
+                    var children_uniq = Array.from(new Set(map.children));
+                }
+
+                return _.map(children_uniq, function(name) {
                     var html = '', entry;
                     if (_.has(map.entries, name)) {
                         entry = map.entries[name];
