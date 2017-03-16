@@ -58,7 +58,7 @@ class RequestCache(object):
             if res:
                 cookies[res['key']] = res['value']
 
-        request.COOKIES = http.parse_cookie(cookies)
+#        request.COOKIES = http.parse_cookie(cookies)
 
         self.clear_request_cache()
         return None
