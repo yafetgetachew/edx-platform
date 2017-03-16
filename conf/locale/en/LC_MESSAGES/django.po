@@ -13702,6 +13702,11 @@ msgid ""
 " any more email from us. Please do not reply to this e-mail; if you require "
 "assistance, check the help section of the {platform_name} web site."
 msgstr ""
+"If you didn't request this, you don't need to do anything; "
+"you won't receive any more email from us. "
+"Please do not reply to this e-mail; if you require assistance, "
+"go to http://workshop.noticeability.org/contact "
+"and fill out the form and we will reply promptly. Thank you!"
 
 #: lms/templates/emails/email_change_subject.txt
 msgid "Request to change {platform_name} account e-mail"
