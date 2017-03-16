@@ -18,16 +18,19 @@ ${_("To access the course visit {course_about_url} and register for the course."
 % endif
 % else:
 
-${_("To finish your registration, please visit {registration_url} and fill "
+${_("Please follow the directions below to register.")}
+
+${_("    1. To finish your registration, please visit {registration_url} and fill "
 	"out the registration form making sure to use {email_address} in the E-mail field.").format(
 		registration_url=registration_url,
 		email_address=email_address
 	)}
 % if auto_enroll:
-${_("Once you have registered and activated your account, you will see "
-	"{course_name} listed on your dashboard.").format(
-		course_name=display_name or course.display_name_with_default_escaped
-	)}
+${_('    2. After registering, you will receive a 2nd email, also from support@noticeability.org, with the subject line "Activate Your NoticeAbility Account". '
+"Follow the link to activate your account. "
+"Note, this email may take a few minutes to come in and please check your spam folder if you do not see the email in your inbox.")}
+
+${_("    3. Your account is now active. Your child can find the course by signing in at http://workshop.noticeability.org/dashboard")}
 % elif course_about_url is not None:
 ${_("Once you have registered and activated your account, visit {course_about_url} "
 	"to join the course.").format(course_about_url=course_about_url)}
@@ -36,8 +39,11 @@ ${_("You can then enroll in {course_name}.").format(course_name=display_name or 
 % endif
 % endif
 
+${_("Thanks,")}
+
+${_("The NoticeAbility Team")}
+
 ----
-${_("This email was automatically sent from {site_name} to "
-	"{email_address}").format(
-		site_name=site_name, email_address=email_address
-	)}
+${_("This email was automatically sent from {site_name} to {email_address}").format(
+    site_name=site_name, email_address=email_address
+)}
