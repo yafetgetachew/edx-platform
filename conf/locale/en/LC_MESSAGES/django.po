@@ -4504,6 +4504,9 @@ msgid ""
 "successfully completed, received a passing grade, and was awarded this "
 "{platform_name} {certificate_type} Certificate of Completion in "
 msgstr ""
+"successfully completed, received a passing grade, and was awarded a "
+"{platform_name} Certificate of Completion in "
+
 
 #. Translators: This text describes the purpose (and therefore, value) of a
 #. course certificate
@@ -20520,3 +20523,7 @@ msgid ""
 "#%(r2)d"
 msgstr ""
 
+msgid ""
+"a course of study offered by {partner_short_name}, through {platform_name}."
+msgstr ""
+"a course of study offered through {platform_name}."

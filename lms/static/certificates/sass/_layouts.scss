@@ -259,7 +259,8 @@
         .signatory {
             display: inline-block;
             vertical-align: middle;
-            @include span(12);
+            // @include span(12);
+            width: 30% !important;
 
             @media(min-width: $bp-screen-md) {
                 @include span(4);
@@ -276,8 +277,8 @@
             .signatory-signature {
                 display: block;
                 max-width: 100%;
-                max-height: rem(100);
-                padding: spacing-vertical(small) spacing-horizontal(small);
+                max-height: 100%;
+                padding: 5px;
             }
         }
     }
