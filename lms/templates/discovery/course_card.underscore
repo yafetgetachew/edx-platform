@@ -6,6 +6,7 @@
                 <div class="learn-more" aria-hidden="true"><%- gettext("LEARN MORE") %></div>
             </div>
         </header>
+        <h2 class="course_heading">LOREM IPSUM</h2>
         <section class="course-info" aria-hidden="true">
             <h2 class="course-name">
                 <span class="course-organization"><%- org %></span>
