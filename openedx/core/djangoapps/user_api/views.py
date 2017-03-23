@@ -775,9 +775,10 @@ class RegistrationView(APIView):
 
         # Translators: "Terms of Service" is a legal document users must agree to
         # in order to register a new account.
-        label = _(u"I agree to the {platform_name} {terms_of_service}").format(
+        label = _(u"I agree to the {platform_name} <a href=\"{link}\">{terms_of_service}</a>").format(
             platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
-            terms_of_service=terms_label
+            terms_of_service=terms_label,
+            link=terms_link
         )
 
         # Translators: "Terms of Service" is a legal document users must agree to
@@ -797,7 +798,7 @@ class RegistrationView(APIView):
                 "required": error_msg
             },
             supplementalLink=terms_link,
-            supplementalText=terms_text
+            supplementalText='' #terms_text
         )
 
     def _add_terms_of_service_field(self, form_desc, required=True):
@@ -818,9 +819,10 @@ class RegistrationView(APIView):
 
         # Translators: "Terms of service" is a legal document users must agree to
         # in order to register a new account.
-        label = _(u"I agree to the {platform_name} {terms_of_service}").format(
+        label = _(u"I agree to the {platform_name} <a href=\"{link}\">{terms_of_service}</a>").format(
             platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
-            terms_of_service=terms_label
+            terms_of_service=terms_label,
+            link=terms_link
         )
 
         # Translators: "Terms of service" is a legal document users must agree to
@@ -840,7 +842,7 @@ class RegistrationView(APIView):
                 "required": error_msg
             },
             supplementalLink=terms_link,
-            supplementalText=terms_text
+            supplementalText='' #terms_text
         )
 
     def _apply_third_party_auth_overrides(self, request, form_desc):
