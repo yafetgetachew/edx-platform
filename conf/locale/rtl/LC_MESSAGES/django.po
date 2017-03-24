@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-24 10:42+0200\n"
-"PO-Revision-Date: 2017-01-24 08:42:23.930075\n"
+"POT-Creation-Date: 2017-03-24 12:03+0000\n"
+"PO-Revision-Date: 2017-03-24 12:03:28.677264\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -9518,6 +9518,10 @@ msgstr "فاث ثوشهم شييقثسس غخع عسثي فخ قثلهسفثق �
 msgid "Password"
 msgstr "حشسسصخقي"
 
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Mot de passe"
+msgstr "وخف يث حشسسث"
+
 #: openedx/core/djangoapps/user_api/views.py lms/templates/login.html
 msgid "Remember me"
 msgstr "قثوثوزثق وث"
@@ -9544,15 +9548,11 @@ msgstr ""
 
 #. Translators: This label appears above a field on the registration form
 #. meant to hold the user's full name.
-#: openedx/core/djangoapps/user_api/views.py
-msgid "Full name"
-msgstr "بعمم رشوث"
-
 #. Translators: This example name is used as a placeholder in
 #. a field on the registration form meant to hold the user's name.
 #: openedx/core/djangoapps/user_api/views.py
-msgid "Jane Doe"
-msgstr "تشرث يخث"
+msgid "Full name"
+msgstr "بعمم رشوث"
 
 #. #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 #. Translators: These instructions appear on the registration form,

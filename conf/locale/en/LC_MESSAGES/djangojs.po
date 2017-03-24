@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-01-24 10:41+0200\n"
-"PO-Revision-Date: 2017-01-24 08:42:24.172521\n"
+"POT-Creation-Date: 2017-03-24 12:18+0000\n"
+"PO-Revision-Date: 2017-03-24 12:19:04.697587\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -7057,10 +7057,6 @@ msgstr ""
 
 #: lms/templates/student_account/register.underscore
 msgid "Create your account"
-msgstr ""
-
-#: lms/templates/student_account/register.underscore
-msgid "Required field"
 msgstr ""
 
 #: lms/templates/student_account/register.underscore
