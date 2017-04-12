@@ -2161,6 +2161,9 @@ INSTALLED_APPS = (
     # Gamification
     'gamification_metric',
     'referrals',
+
+    # Features
+    'openedx.features.djangoapps.calendar_tab',
 )
 
 # Migrations which are not in the standard module "migrations"
