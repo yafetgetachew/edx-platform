@@ -249,6 +249,12 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 <span class="tip tip-stacked timezone">${_("(UTC)")}</span>
               </div>
             </li>
+            <li class="field" id="field-featured">
+                <div class="heading">
+                   <input type="checkbox" id="featured" />
+                   <label for="featured">${_("Featured.")}</label>
+                </div>
+            </li>
           </ol>
 
           % if not about_page_editable:
