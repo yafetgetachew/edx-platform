@@ -10604,7 +10604,7 @@ msgstr "Условия предоставления услуг и Кодекс �
 
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Review the Terms of Service and Honor Code"
-msgstr ""
+msgstr "Отобразить Условия предоставления услуг и Кодекс чести"
 
 #. Translators: "Terms of Service" is a legal document users must agree to
 #. in order to register a new account.

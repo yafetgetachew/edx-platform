@@ -6526,7 +6526,7 @@ msgstr "ID користувача"
 #: openedx/core/djangoapps/user_api/views.py
 #: lms/templates/instructor/instructor_dashboard_2/generate_registarion_codes_modal.html
 msgid "Email"
-msgstr "Email"
+msgstr "Поштова скринька"
 
 #: lms/djangoapps/instructor/views/api.py
 #: lms/djangoapps/instructor_task/tasks_helper.py
@@ -10406,7 +10406,7 @@ msgstr "Умови надання послуг та Кодекс Честі"
 
 #: openedx/core/djangoapps/user_api/views.py
 msgid "Review the Terms of Service and Honor Code"
-msgstr ""
+msgstr "Переглянути Умови надання послуг та Кодекс Честі"
 
 #. Translators: "Terms of Service" is a legal document users must agree to
 #. in order to register a new account.
@@ -14377,7 +14377,7 @@ msgstr ""
 
 #: lms/templates/courseware/info.html
 msgid "Resume Course"
-msgstr ""
+msgstr "Відновити Курс"
 
 #: lms/templates/courseware/info.html
 msgid "View Updates in Studio"

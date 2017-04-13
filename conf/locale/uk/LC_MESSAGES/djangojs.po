@@ -2142,16 +2142,18 @@ msgstr ""
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} other response"
 msgid_plural "{numResponses} other responses"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Ещё {numResponses} відповідь"
+msgstr[1] "Ещё {numResponses} відповіді"
+msgstr[2] "Ещё {numResponses} відповідей"
+msgstr[3] "Ещё {numResponses} відповідей"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} response"
 msgid_plural "{numResponses} responses"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{numResponses} відповідь"
+msgstr[1] "{numResponses} відповіді"
+msgstr[2] "{numResponses} відповідей"
+msgstr[3] "{numResponses} відповідей"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing all responses"
