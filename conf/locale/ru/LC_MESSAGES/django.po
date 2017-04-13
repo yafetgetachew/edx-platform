@@ -23756,3 +23756,89 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "Создана новая версия: слияние версий #%(r1)d и #%(r2)d"
+
+#honor page
+msgid "GENERAL PRINCIPLES"
+msgstr "ОБЩИЕ ПРИНЦИПЫ"
+
+msgid "Having created DESK, we give people the opportunity to get affordable education of high quality, and we strive to eliminate corruption, which unfortunately occurs in the Ukrainian education system."
+"Thanks to the experience of Western online platforms and advanced Internet technologies, we were able to make our dream come true."
+"Our project is not just a web site with a set of courses."
+"This is an opportunity for everyone to change themselves for the better."
+"DESK education system is based on the key principles of academic integrity."
+"When enrolling in any course or program at DESK you automatically become a member of the positive changes that will mark a new stage of development of the Ukrainian education system - with high quality and relevance of knowledge, lack of corruption and bribery"
+
+msgstr "Создав DESK, мы даем людям возможность получать доступное и качественное "
+"образование, а также стремимся искоренить коррупцию, которая, к сожалению, имеет "
+"место быть в украинской системе образования. Благодаря опыту западных онлайн-"
+"платформ и современных интернет-технологий мы смогли сделать нашу мечту "
+"реальностью. Наш проект - не просто сайт с набором курсов. Это возможность для "
+"каждого менять себя в лучшую сторону. Прохождение обучения на DESK базируется на "
+"ключевых принципах академической добросовестности. При зачислении на любой курс "
+"или программу на DESK Вы автоматически становитесь участниками позитивных "
+"изменений, которые ознаменуют новый этап развития украинской системы "
+"образования - с высоким уровнем качества и актуальности знаний, отсутствием "
+"коррупции и взяточничества."
+
+msgid "Before starting Your education You shall remember - DESK is not a forced learning, but a convenient tool, using which you can change your life."
+    "It all depends on you and your motivation, and we will do everything to make our learning platform the most convenient for you."
+msgstr "Перед началом обучения на DESK помните: наш проект - не принуждение к обучению, а "
+"удобный инструмент, с помощью которого Вы сможете изменить свою жизнь. Все "
+"зависит от Вас и Вашей мотивации, а мы, со своей стороны, сделаем все, чтобы "
+"обучение на нашей платформе было максимально удобным для Вас."
+
+msgid "HONOR CODE"
+msgstr "КОДЕКС ЧЕСТИ"
+
+msgid "By enrolling in any DESK course, You agree that You will:"
+msgstr "Регистрируясь на DESK, Вы автоматически соглашаетесь с тем, что:"
+
+
+msgid "Complete all tests and tasks on Your own without any help of other people unless such assistance is permitted"
+msgstr "Будете выполнять все тесты и задачи самостоятельно без помощи посторонних лиц."
+
+msgid "Not use or take part in generating plagiarism"
+msgstr "Будете сдавать работы только собственного авторства и без плагиата."
+
+msgid "Maintain only one user account and not let anyone else use Your username and/or password"
+msgstr "Будете вести только один аккаунт пользователя и не будете позволять никому "
+"использовать свое имя пользователя и / или пароль."
+
+msgid "Not engage in any activity that would dishonestly improve Your results, or improve or hurt the results of other people"
+msgstr "не будете принимать любые меры, которые бы нечестным путем улучшили Ваши "
+"собственные результаты или ухудшили результаты других пользователей."
+
+msgid "Not post answers to tasks that are being used to assess student performance."
+msgstr "не будете размещать ответы на вопросы, которые используются для контроля "
+"знаний и оценки успеваемости, в интернете или других средствах информации."
+
+msgid "VIOLATIONS"
+msgstr "НАРУШЕНИЕ КОДЕКСА ЧЕСТИ"
+
+msgid "If we find You in violation of User Agreement and the Honor Code, You may be subject to:"
+msgstr "Если мы обнаружили нарушение Вами Пользовательского Соглашения или Кодекса "
+"Чести, то мы можем:"
+
+msgid "Receiving a zero or no credit for an assignment or set of assignments;"
+msgstr "Аннулировать баллы за выполненное задание"
+
+msgid "Having any certificate earned in the course withheld or revoked;"
+msgstr "Аннулировать полученный сертификат за прохождение курса"
+
+msgid "Being unenrolled from a course;"
+msgstr "Исключить Вас из перечня лиц, которые могут проходить выбранный курс"
+
+msgid "Having Your Account banned."
+msgstr "Аннулировать Вашу учетную запись"
+
+msgid "The final decision will be taken by the administration of the project."
+      "In case of violation of the Honor Code, no compensations or refunds are possible."
+      "DESK Administration may make changes to the Honor Code, so please check the latest version of the Honor Code on this page."
+      "Any changes will come into force immediately after their placement on this page."
+msgstr "Окончательное решение будет приниматься администрацией проекта. В случае "
+"нарушения Кодекса Чести никакая компенсация не является возможной. "
+"Администрация проекта DESK может вносить изменения в Кодекс Чести, поэтому "
+"периодически просматривайте последнюю версию Кодекса Чести на этой странице. "
+"Любые изменения в Кодексе Чести будут вступать в силу сразу после их размещения на "
+"этой странице."
+
