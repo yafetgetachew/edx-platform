@@ -699,7 +699,7 @@ if settings.FEATURES.get('ENABLE_DISCUSSION_SERVICE'):
             name='resubscribe_forum_update',
         ),
     )
-print(settings.FEATURES.get('ENABLE_CALENDAR'), "CAL")
+
 if settings.FEATURES.get('ENABLE_CALENDAR'):
     urlpatterns += (
        url(
