@@ -699,6 +699,18 @@ if settings.FEATURES.get('ENABLE_DISCUSSION_SERVICE'):
             name='resubscribe_forum_update',
         ),
     )
+print(settings.FEATURES.get('ENABLE_CALENDAR'), "CAL")
+if settings.FEATURES.get('ENABLE_CALENDAR'):
+    urlpatterns += (
+       url(
+           r'^courses/{}/calendar/'.format(
+               settings.COURSE_ID_PATTERN,
+           ),
+           include('openedx.features.djangoapps.calendar_tab.urls'),
+           name='calendar_tab_endpoints',
+       ),
+    )
+
 urlpatterns += (
     # This MUST be the last view in the courseware--it's a catch-all for custom tabs.
     url(
@@ -978,14 +990,3 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
-
-# if settings.FEATURES.get('CALENDAR_ENABLED'):
-urlpatterns += (
-   url(
-       r'^courses/{}/calendar/'.format(
-           settings.COURSE_ID_PATTERN,
-       ),
-       include('openedx.features.djangoapps.calendar_tab.urls'),
-       name='calendar_tab_endpoints',
-   ),
-)
