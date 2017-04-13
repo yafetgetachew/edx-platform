@@ -1554,6 +1554,13 @@ PIPELINE_CSS = {
         ],
         'output_filename': 'css/lms-learner-dashboard-rtl.css',
     },
+    'style-calendar-tab': {
+        'source_filenames': [
+            'css/vendor/fullcalendar.min.css',
+            'css/vendor/fullcalendar.print.min.css'
+        ],
+        'output_filename': 'css/vendor/fullcalendar-styles.css',
+    },
 }
 
 
@@ -1655,6 +1662,15 @@ PIPELINE_JS = {
     'credit_wv': {
         'source_filenames': credit_web_view_js,
         'output_filename': 'js/credit/web_view.js'
+    },
+    'js-calendar-tab': {
+        'source_filenames': [
+            'js/vendor/moment.min.js',
+            'js/vendor/jquery.min.js',
+            'js/vendor/fullcalendar.min.js',
+            'js/vendor/gcal.min.js'
+        ],
+        'output_filename': 'js/vendor/fullcalendar.js'
     }
 }
 
