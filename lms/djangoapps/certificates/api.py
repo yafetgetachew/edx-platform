@@ -586,18 +586,18 @@ def get_certificate_footer_context():
     data = dict()
 
     # get Terms of Service and Honor Code page url
-    terms_of_service_and_honor_code = branding_api.get_tos_and_honor_code_url()
-    if terms_of_service_and_honor_code != branding_api.EMPTY_URL:
-        data.update({'company_tos_url': terms_of_service_and_honor_code})
+    #terms_of_service_and_honor_code = branding_api.get_tos_and_honor_code_url()
+    #if terms_of_service_and_honor_code != branding_api.EMPTY_URL:
+    #    data.update({'company_tos_url': terms_of_service_and_honor_code})
 
     # get Privacy Policy page url
-    privacy_policy = branding_api.get_privacy_url()
-    if privacy_policy != branding_api.EMPTY_URL:
-        data.update({'company_privacy_url': privacy_policy})
+    #privacy_policy = branding_api.get_privacy_url()
+    #if privacy_policy != branding_api.EMPTY_URL:
+    #    data.update({'company_privacy_url': privacy_policy})
 
     # get About page url
-    about = branding_api.get_about_url()
-    if about != branding_api.EMPTY_URL:
-        data.update({'company_about_url': about})
+    #about = branding_api.get_about_url()
+    #if about != branding_api.EMPTY_URL:
+    #    data.update({'company_about_url': about})
 
     return data
