@@ -15246,7 +15246,7 @@ msgstr "Щиро ваші, команда курсу {course_name}"
 
 #: lms/templates/emails/activation_email.txt
 msgid "Thank you for creating an account with {platform_name}!"
-msgstr ""
+msgstr "Дякуємо Вам за створення аккаунта з {platform_name}!"
 
 #: lms/templates/emails/activation_email.txt
 msgid ""
@@ -15266,7 +15266,10 @@ msgid ""
 "receive any more email from us. If you need assistance, please do not reply "
 "to this email message. Check the help section of the {platform_name} "
 "website."
-msgstr ""
+msgstr "Якщо Ви не створювали обліковий запис, подальших дій не потрібно; ви "
+"більше не будете отримувати від нас повідомлення. Якщо Вам потрібна допомога,"
+"будь ласка, не відповідайте на це повідомлення. Зверніться до розділу \" Допомога \" "
+"на веб-сайті {platform_name}."
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Activate Your {platform_name} Account"
