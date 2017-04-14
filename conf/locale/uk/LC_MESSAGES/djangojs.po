@@ -346,9 +346,10 @@ msgstr[2] ""
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(num_points)s point possible (ungraded)"
 msgid_plural "%(num_points)s points possible (ungraded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num_points)s можливий бал (не оцінюється)"
+msgstr[1] "%(num_points)s можливих балів (не оцінюється)"
+msgstr[2] "%(num_points)s можливих балів (не оцінюється)"
+msgstr[3] "%(num_points)s можливих балів (не оцінюється)"
 
 #. Translators: %(earned)s is the number of points earned. %(possible)s is the
 #. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
@@ -357,9 +358,10 @@ msgstr[2] ""
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(earned)s/%(possible)s point (graded)"
 msgid_plural "%(earned)s/%(possible)s points (graded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Отримано %(earned)s з можливих %(possible)s балла (оцінюється)"
+msgstr[1] "Отримано %(earned)s з можливих %(possible)s баллов (оцінюється)"
+msgstr[2] "Отримано %(earned)s з можливих %(possible)s баллов (оцінюється)"
+msgstr[3] "Отримано %(earned)s з можливих %(possible)s баллов (оцінюється)"
 
 #. Translators: %(earned)s is the number of points earned. %(possible)s is the
 #. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
@@ -3039,7 +3041,7 @@ msgstr "Виникла помилка. Будь ласка, спробуйте �
 
 #: lms/static/js/bookmarks/views/bookmark_button.js
 msgid "Bookmark this page"
-msgstr ""
+msgstr "Додати сторінку до моїх закладок"
 
 #: lms/static/js/bookmarks/views/bookmarks_list.js
 #: lms/static/js/instructor_dashboard/data_download.js
@@ -6095,11 +6097,18 @@ msgstr "Всі групи"
 #: common/static/common/templates/discussion/thread-edit.underscore
 msgid ""
 "Add a clear and descriptive title to encourage participation. (Required)"
-msgstr ""
+msgstr "Додайте чітку назву, щоб залучити учасників до обговорення. (Обов’язково)"
+
+msgid ""
+"Add a clear and descriptive title to encourage participation."
+msgstr "Додайте чітку назву, щоб залучити учасників до обговорення."
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Your question or idea (required)"
-msgstr ""
+msgstr "Ваше питання або ідея (required)"
+
+msgid "Your question or idea"
+msgstr "Ваше питання або ідея"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
@@ -6276,13 +6285,13 @@ msgstr "Цей пост видно всім."
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Post type"
-msgstr ""
+msgstr "Тип повідомлення"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid ""
 "Questions raise issues that need answers. Discussions share ideas and start "
-"conversations. (Required)"
-msgstr ""
+"conversations."
+msgstr "Питання піднімають проблеми, які потребують відповідей. Обговорення дозволяє ділитися ідеями бесіди."
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Question"

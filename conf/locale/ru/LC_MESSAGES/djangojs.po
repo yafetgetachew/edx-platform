@@ -6263,11 +6263,18 @@ msgstr "Все группы"
 #: common/static/common/templates/discussion/thread-edit.underscore
 msgid ""
 "Add a clear and descriptive title to encourage participation. (Required)"
-msgstr ""
+msgstr "Добавьте четкое и описательное название, чтобы привлечь участников к обсуждению. (Обязательно)"
+
+msgid ""
+"Add a clear and descriptive title to encourage participation."
+msgstr "Добавьте четкое и описательное название, чтобы привлечь участников к обсуждению."
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Your question or idea (required)"
-msgstr ""
+msgstr "Ваш вопрос или идея (required)"
+
+msgid "Your question or idea"
+msgstr "Ваш вопрос или идея"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
@@ -6445,13 +6452,18 @@ msgstr "Данное сообщение видно всем."
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Post type"
-msgstr ""
+msgstr "Тип сообщения"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid ""
 "Questions raise issues that need answers. Discussions share ideas and start "
 "conversations. (Required)"
-msgstr ""
+msgstr "Вопросы поднимают проблемы, которые нуждаются в ответах. Обсуждения позволяют делиться идеями беседы. (Обязательно)"
+
+msgid ""
+"Questions raise issues that need answers. Discussions share ideas and start "
+"conversations."
+msgstr "Вопросы поднимают проблемы, которые нуждаются в ответах. Обсуждения позволяют делиться идеями беседы."
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Question"
