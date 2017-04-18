@@ -24027,3 +24027,12 @@ msgid ""
 msgstr ""
 "Une nouvelle révision a été créée : Fusion entre la révision #%(r1)d et la "
 "révision #%(r2)d"
+
+#lms/templates/index.html
+
+msgid "Welcome to "
+msgstr "Bienvenue à "
+
+msgid "online courses"
+msgstr "cours en ligne"
+

@@ -24313,3 +24313,12 @@ msgid ""
 msgstr ""
 "Una nueva revisión ha sido creada: Fusión entre la revisión #%(r1)d y la "
 "revisión #%(r2)d"
+
+#lms/templates/index.html
+
+msgid "Welcome to "
+msgstr "Bienvenido a "
+
+msgid "online courses"
+msgstr "cursos online"
+

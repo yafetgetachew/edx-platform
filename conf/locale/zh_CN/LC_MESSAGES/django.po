@@ -21826,3 +21826,12 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "产生新的修订版本：合并修订版本#%(r1)d与#%(r2)d"
+
+#lms/templates/index.html
+
+msgid "Welcome to "
+msgstr "歡迎來到 "
+
+msgid "online courses"
+msgstr "在線課程"
+

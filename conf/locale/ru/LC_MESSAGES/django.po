@@ -9849,6 +9849,12 @@ msgstr ""
 #: lms/templates/edxnotes/edxnotes.html
 #: themes/edx.org/lms/templates/dashboard.html
 #: themes/stanford-style/lms/templates/index.html
+msgid "Welcome to "
+msgstr "Добро пожаловать в "
+
+msgid "online courses"
+msgstr "онлайн курсы"
+
 msgid "Search"
 msgstr "Поиск"
 
