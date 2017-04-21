@@ -1165,6 +1165,9 @@ MIDDLEWARE_CLASSES = (
     # Must be after DarkLangMiddleware.
     'django.middleware.locale.LocaleMiddleware',
 
+    #
+    'openedx.core.djangoapps.dark_lang.middleware.DarkLangMiddlewareSetLocaleAdditional',
+
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 
     'django_comment_client.utils.ViewNameMiddleware',
@@ -3042,3 +3045,4 @@ DOC_LINK_BASE_URL = None
 ############## Settings for the Enterprise App ######################
 
 ENTERPRISE_ENROLLMENT_API_URL = LMS_ROOT_URL + "/api/enrollment/v1/"
+
