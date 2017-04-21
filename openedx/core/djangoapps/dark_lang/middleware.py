@@ -12,6 +12,7 @@ from django.utils.translation.trans_real import parse_accept_lang_header
 from django.utils.translation import LANGUAGE_SESSION_KEY
 
 import locale
+import sys
 from django.utils import translation
 
 from openedx.core.djangoapps.dark_lang import DARK_LANGUAGE_KEY
@@ -145,6 +146,9 @@ class DarkLangMiddlewareSetLocaleAdditional(object):
         """
         if not DarkLangConfig.current().enabled:
             return
+
+        reload(sys)  
+        sys.setdefaultencoding('utf8')
 
         language = translation.get_language_from_request(request)
         try:
