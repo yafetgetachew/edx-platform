@@ -11453,6 +11453,10 @@ msgstr "Розпочинається"
 msgid "Starts: {date}"
 msgstr "Починається: {date}"
 
+#: lms/templates/course.html
+msgid "Course starts: "
+msgstr "Початок курсу: "
+
 #: lms/templates/courses_list.html
 msgid "View all Courses"
 msgstr "Показати усі курси"
