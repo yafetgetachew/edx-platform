@@ -15068,7 +15068,7 @@ msgstr "Результати:"
 
 #: lms/templates/discussion/_discussion_inline.html
 msgid "Topic:"
-msgstr ""
+msgstr "Тема:"
 
 #: lms/templates/discussion/_discussion_inline.html
 msgid "Show Discussion"

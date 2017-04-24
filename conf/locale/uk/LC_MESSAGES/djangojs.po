@@ -337,9 +337,10 @@ msgstr "Відповісти на анотацію"
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(num_points)s point possible (graded)"
 msgid_plural "%(num_points)s points possible (graded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num_points)s можливий бал (оцінюється)"
+msgstr[1] "%(num_points)s можливих балів (оцінюється)"
+msgstr[2] "%(num_points)s можливих балів (оцінюється)"
+msgstr[3] "%(num_points)s можливих балів (оцінюється)"
 
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
@@ -370,9 +371,10 @@ msgstr[3] "Отримано %(earned)s з можливих %(possible)s балл
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(earned)s/%(possible)s point (ungraded)"
 msgid_plural "%(earned)s/%(possible)s points (ungraded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Отримано %(earned)s з можливих %(possible)s балла (не оцінюється)"
+msgstr[1] "Отримано %(earned)s з можливих %(possible)s баллов (не оцінюється)"
+msgstr[2] "Отримано %(earned)s з можливих %(possible)s баллов (не оцінюється)"
+msgstr[3] "Отримано %(earned)s з можливих %(possible)s баллов (не оцінюється)"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "The grading process is still running. Refresh the page to see updates."
@@ -2819,6 +2821,10 @@ msgstr[2] "%(team_count)s команд"
 #: lms/djangoapps/teams/static/teams/js/views/topic_card.js
 msgid "Topic"
 msgstr "Тема"
+
+#: lms/djangoapps/teams/static/teams/js/views/topic_card.js
+msgid "Topic:"
+msgstr "Тема:"
 
 #: lms/djangoapps/teams/static/teams/js/views/topic_card.js
 msgid "View Teams in the %(topic_name)s Topic"
