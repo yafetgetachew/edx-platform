@@ -1553,6 +1553,12 @@ PIPELINE_CSS = {
             'css/lms-learner-dashboard-rtl.css',
         ],
         'output_filename': 'css/lms-learner-dashboard-rtl.css',
+    },
+    'style-calendar-tab': {
+        'source_filenames': [
+            'css/vendor/scheduler/dhtmlxscheduler.css',
+        ],
+        'output_filename': 'css/calendar-tab.css',
     }
 }
 
@@ -1658,6 +1664,7 @@ PIPELINE_JS = {
     },
     'calendar-tab': {
         'source_filenames': [
+            'js/vendor/scheduler/dhtmlxscheduler.js',
             'js/calendar-tab.js',
         ],
         'output_filename': 'js/calendar-tab.js',
