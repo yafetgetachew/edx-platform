@@ -97,7 +97,7 @@ FEATURES = {
 
     'ENABLE_MASQUERADE': True,  # allow course staff to change to student view of courseware
 
-    'ENABLE_SYSADMIN_DASHBOARD': True,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
+    'ENABLE_SYSADMIN_DASHBOARD': False,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
 
     'DISABLE_LOGIN_BUTTON': False,  # used in systems where login is automatic, eg MIT SSL
 
@@ -293,10 +293,10 @@ FEATURES = {
     'MODE_CREATION_FOR_TESTING': False,
 
     # Courseware search feature
-    'ENABLE_COURSEWARE_SEARCH': True,
+    'ENABLE_COURSEWARE_SEARCH': False,
 
     # Dashboard search feature
-    'ENABLE_DASHBOARD_SEARCH': True, #asdas
+    'ENABLE_DASHBOARD_SEARCH': False, #asdas
 
     # log all information from cybersource callbacks
     'LOG_POSTPAY_CALLBACKS': True,
