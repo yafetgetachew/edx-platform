@@ -317,7 +317,7 @@ FEATURES = {
     'CERTIFICATES_INSTRUCTOR_GENERATION': True, #asdasda
 
     # Course discovery feature
-    'ENABLE_COURSE_DISCOVERY': True, #sdaasdasd
+    'ENABLE_COURSE_DISCOVERY': False, #sdaasdasd
 
     # Setting for overriding default filtering facets for Course discovery
     # COURSE_DISCOVERY_FILTERS = ["org", "language", "modes"]
