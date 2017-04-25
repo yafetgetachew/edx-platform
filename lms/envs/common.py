@@ -88,7 +88,7 @@ FEATURES = {
     # It is not recommended to enable this feature if ENABLE_DISCUSSION_HOME_PANEL is not enabled, since
     # subscribers who receive digests in that case will only be able to unsubscribe via links embedded
     # in their emails, and they will have no way to resubscribe.
-    'ENABLE_DISCUSSION_EMAIL_DIGEST': False,
+    'ENABLE_DISCUSSION_EMAIL_DIGEST': True, #asddsadasdas
 
     'ENABLE_DJANGO_ADMIN_SITE': True,  # set true to enable django's admin site, even on prod (e.g. for course ops)
     'ENABLE_SQL_TRACKING_LOGS': False,
@@ -254,7 +254,7 @@ FEATURES = {
     # When a user goes to the homepage ('/') the user see the
     # courses listed in the announcement dates order - this is default Open edX behavior.
     # Set to True to change the course sorting behavior by their start dates, latest first.
-    'ENABLE_COURSE_SORTING_BY_START_DATE': True,
+    'ENABLE_COURSE_SORTING_BY_START_DATE': False,
 
     # Expose Mobile REST API. Note that if you use this, you must also set
     # ENABLE_OAUTH2_PROVIDER to True
@@ -296,7 +296,7 @@ FEATURES = {
     'ENABLE_COURSEWARE_SEARCH': False,
 
     # Dashboard search feature
-    'ENABLE_DASHBOARD_SEARCH': False,
+    'ENABLE_DASHBOARD_SEARCH': True, #asdas
 
     # log all information from cybersource callbacks
     'LOG_POSTPAY_CALLBACKS': True,
@@ -314,10 +314,10 @@ FEATURES = {
     'CERTIFICATES_HTML_VIEW': False,
 
     # Batch-Generated Certificates from Instructor Dashboard
-    'CERTIFICATES_INSTRUCTOR_GENERATION': False,
+    'CERTIFICATES_INSTRUCTOR_GENERATION': True, #asdasda
 
     # Course discovery feature
-    'ENABLE_COURSE_DISCOVERY': False,
+    'ENABLE_COURSE_DISCOVERY': False, #sdaasdasd
 
     # Setting for overriding default filtering facets for Course discovery
     # COURSE_DISCOVERY_FILTERS = ["org", "language", "modes"]
