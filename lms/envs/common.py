@@ -49,7 +49,7 @@ from lms.djangoapps.lms_xblock.mixin import LmsBlockMixin
 PLATFORM_NAME = "Your Platform Name Here"
 CC_MERCHANT_NAME = PLATFORM_NAME
 # Shows up in the platform footer, eg "(c) COPYRIGHT_YEAR"
-COPYRIGHT_YEAR = "2015"
+COPYRIGHT_YEAR = "2017"
 
 PLATFORM_FACEBOOK_ACCOUNT = "http://www.facebook.com/YourPlatformFacebookAccount"
 PLATFORM_TWITTER_ACCOUNT = "@YourPlatformTwitterAccount"
@@ -81,7 +81,7 @@ FEATURES = {
 
     # discussion home panel, which includes a subscription on/off setting for discussion digest emails.
     # this should remain off in production until digest notifications are online.
-    'ENABLE_DISCUSSION_HOME_PANEL': False,
+    'ENABLE_DISCUSSION_HOME_PANEL': True,
 
     # Set this to True if you want the discussion digest emails enabled automatically for new users.
     # This will be set on all new account registrations.
@@ -97,7 +97,7 @@ FEATURES = {
 
     'ENABLE_MASQUERADE': True,  # allow course staff to change to student view of courseware
 
-    'ENABLE_SYSADMIN_DASHBOARD': False,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
+    'ENABLE_SYSADMIN_DASHBOARD': True,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
 
     'DISABLE_LOGIN_BUTTON': False,  # used in systems where login is automatic, eg MIT SSL
 
@@ -125,7 +125,7 @@ FEATURES = {
     'ENABLE_CORS_HEADERS': False,
 
     # Can be turned off if course lists need to be hidden. Effects views and templates.
-    'COURSES_ARE_BROWSABLE': True,
+    'COURSES_ARE_BROWSABLE': False,
 
     # Enables ability to restrict enrollment in specific courses by the user account login method
     'RESTRICT_ENROLL_BY_REG_METHOD': False,
@@ -195,11 +195,11 @@ FEATURES = {
 
     # Disable instructor dash buttons for downloading course data
     # when enrollment exceeds this number
-    'MAX_ENROLLMENT_INSTR_BUTTONS': 200,
+    'MAX_ENROLLMENT_INSTR_BUTTONS': 1200,
 
     # Grade calculation started from the instructor dashboard will write grades
     # CSV files to the configured storage backend and give links for downloads.
-    'ENABLE_GRADE_DOWNLOADS': False,
+    'ENABLE_GRADE_DOWNLOADS': True,
 
     # whether to use password policy enforcement or not
     'ENFORCE_PASSWORD_POLICY': True,
@@ -293,7 +293,7 @@ FEATURES = {
     'MODE_CREATION_FOR_TESTING': False,
 
     # Courseware search feature
-    'ENABLE_COURSEWARE_SEARCH': False,
+    'ENABLE_COURSEWARE_SEARCH': True,
 
     # Dashboard search feature
     'ENABLE_DASHBOARD_SEARCH': True, #asdas
@@ -317,7 +317,7 @@ FEATURES = {
     'CERTIFICATES_INSTRUCTOR_GENERATION': True, #asdasda
 
     # Course discovery feature
-    'ENABLE_COURSE_DISCOVERY': False, #sdaasdasd
+    'ENABLE_COURSE_DISCOVERY': True, #sdaasdasd
 
     # Setting for overriding default filtering facets for Course discovery
     # COURSE_DISCOVERY_FILTERS = ["org", "language", "modes"]
