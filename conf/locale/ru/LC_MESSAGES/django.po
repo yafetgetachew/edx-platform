@@ -11682,8 +11682,8 @@ msgstr "Вы еще не зарегистрированы ни на один и�
 
 #: lms/templates/dashboard.html lms/templates/navigation.html
 #: themes/edx.org/lms/templates/dashboard.html
-msgid "Explore courses"
-msgstr "Просмотреть курсы"
+msgid "All courses"
+msgstr "Все курсы"
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "Course-loading errors"
