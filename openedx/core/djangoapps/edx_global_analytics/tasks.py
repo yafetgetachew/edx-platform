@@ -1,27 +1,25 @@
 """
-This file contains periodic tasks for global_statistics, which will collect data about Open eDX users
+This file contains periodic tasks for edx_global_statistics, which will collect data about Open eDX users
 and send this data to appropriate service for further processing.
 """
 
 import json
 import logging
 
-import requests
 from celery.task import task
-
 from django.conf import settings
 from django.contrib.sites.models import Site
-
 from xmodule.modulestore.django import modulestore
-from .models import TokenStorage
 
-from .utils import (
+from openedx.core.djangoapps.edx_global_analytics.utils.cache_utils import get_cache_week_key, get_cache_month_key
+from openedx.core.djangoapps.edx_global_analytics.utils.token_utils import get_acceptor_api_access_token
+from openedx.core.djangoapps.edx_global_analytics.utils.utilities import (
     fetch_instance_information,
     get_previous_day_start_and_end_dates,
     get_previous_week_start_and_end_dates,
     get_previous_month_start_and_end_dates,
-    cache_timeout_week,
-    cache_timeout_month
+    platform_coordinates,
+    send_instance_statistics_to_acceptor,
 )
 
 logger = logging.getLogger(__name__)
@@ -30,22 +28,19 @@ logger.setLevel(logging.INFO)
 
 def paranoid_level_statistics_bunch():
     """
-    Gathers particular bunch of instance data called `Paranoid`, that contains active students amount
+    Gather particular bunch of instance data called `Paranoid`, that contains active students amount
     for day, week and month.
     """
     active_students_amount_day = fetch_instance_information(
-        'active_students_amount_day', 'active_students_amount',
-        get_previous_day_start_and_end_dates(), cache_timeout=None
+        'active_students_amount', get_previous_day_start_and_end_dates(), name_to_cache=None
     )
 
     active_students_amount_week = fetch_instance_information(
-        'active_students_amount_week', 'active_students_amount',
-        get_previous_week_start_and_end_dates(), cache_timeout_week()
+        'active_students_amount', get_previous_week_start_and_end_dates(), name_to_cache=get_cache_week_key()
     )
 
     active_students_amount_month = fetch_instance_information(
-        'active_students_amount_month', 'active_students_amount',
-        get_previous_month_start_and_end_dates(), cache_timeout_month()
+        'active_students_amount', get_previous_month_start_and_end_dates(), name_to_cache=get_cache_month_key()
     )
 
     return active_students_amount_day, active_students_amount_week, active_students_amount_month
@@ -53,14 +48,29 @@ def paranoid_level_statistics_bunch():
 
 def enthusiast_level_statistics_bunch():
     """
-    Gathers particular bunch of instance data called `Enthusiast`, that contains students per country amount.
+    Gather particular bunch of instance data called `Enthusiast`, that contains students per country amount.
     """
     students_per_country = fetch_instance_information(
-        'students_per_country', 'students_per_country',
-        get_previous_day_start_and_end_dates(), cache_timeout=None
+        'students_per_country', get_previous_day_start_and_end_dates(), name_to_cache=None,
     )
 
     return students_per_country
+
+
+def get_olga_acceptor_url(olga_settings):
+    """
+    Return OLGA acceptor url that edX application needs to send statistics to.
+    """
+    acceptor_url = olga_settings.get('ACCEPTOR_URL')
+    acceptor_url_develop = olga_settings.get('ACCEPTOR_URL_DEVELOP')
+
+    olga_acceptor_url = acceptor_url or acceptor_url_develop
+
+    if not olga_acceptor_url:
+        logger.info('No OLGA periodic task URL.')
+        return
+
+    return olga_acceptor_url
 
 
 @task
@@ -71,91 +81,55 @@ def collect_stats():
 
     Sending information depends on statistics level in settings, that have an effect on bunch of data size.
     """
-
-    # OLGA settings
     if 'OPENEDX_LEARNERS_GLOBAL_ANALYTICS' not in settings.ENV_TOKENS:
-        return logger.info('No OpenEdX Learners Global Analytics settings in file `lms.env.json`.')
+        logger.info('No OpenEdX Learners Global Analytics settings in file `lms.env.json`.')
+        return
 
     olga_settings = settings.ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS')
 
-    # Secret token to authorize our platform on remote server.
-    try:
-        token_object = TokenStorage.objects.first()
-        secret_token = token_object.secret_token
-    except AttributeError:
-        secret_token = ""
+    olga_acceptor_url = get_olga_acceptor_url(olga_settings)
 
-    # Current edx-platform URL.
-    platform_url = "https://" + settings.SITE_NAME
+    access_token = get_acceptor_api_access_token(olga_acceptor_url)
 
-    # Predefined in the server settings url to send collected data to.
-    # For production development.
-    if olga_settings.get('OLGA_PERIODIC_TASK_POST_URL'):
-        post_url = olga_settings.get('OLGA_PERIODIC_TASK_POST_URL')
-    # For local development.
-    else:
-        post_url = olga_settings.get('OLGA_PERIODIC_TASK_POST_URL_LOCAL')
+    if not access_token:
+        logger.info('Access token was unsuccessfully authorized. Task will try to register a new token in next turn.')
+        return
 
-    # Posts desired data volume to receiving server.
     # Data volume depends on server settings.
     statistics_level = olga_settings.get("STATISTICS_LEVEL")
 
-    # Paranoid level basic data.
     courses_amount = len(modulestore().get_courses())
 
     (active_students_amount_day,
      active_students_amount_week,
      active_students_amount_month) = paranoid_level_statistics_bunch()
 
+    # Paranoid statistics level basic data.
     data = {
+        'access_token': access_token,
         'active_students_amount_day': active_students_amount_day,
         'active_students_amount_week': active_students_amount_week,
         'active_students_amount_month': active_students_amount_month,
         'courses_amount': courses_amount,
         'statistics_level': 'paranoid',
-        'secret_token': secret_token
     }
 
-    # Enthusiast level (extends Paranoid level)
-    if statistics_level == 1:
-        # Get IP address of the platform and convert it to latitude, longitude.
-        ip_data = requests.get('http://freegeoip.net/json')
-        ip_data_json = json.loads(ip_data.text)
-
-        platform_latitude = olga_settings.get("PLATFORM_LATITUDE")
-        platform_longitude = olga_settings.get("PLATFORM_LONGITUDE")
-
-        if platform_latitude and platform_longitude:
-            latitude, longitude = platform_latitude, platform_longitude
-        else:
-            latitude, longitude = ip_data_json['latitude'], ip_data_json['longitude']
-
-        # Platform name.
+    if statistics_level == 'enthusiast':
+        platform_url = "https://" + settings.SITE_NAME
         platform_name = settings.PLATFORM_NAME or Site.objects.get_current()
+        platform_city_name = olga_settings.get("PLATFORM_CITY_NAME")
 
-        # Get students per country.
+        latitude, longitude = platform_coordinates(platform_city_name)
+
         students_per_country = enthusiast_level_statistics_bunch()
 
-        # Update basic Paranoid`s data
         data.update({
             'latitude': latitude,
             'longitude': longitude,
             'platform_name': platform_name,
             'platform_url': platform_url,
             'statistics_level': 'enthusiast',
-            'students_per_country': json.dumps(students_per_country)
+            'students_per_country': json.dumps(students_per_country),
         })
 
-    try:
-        request = requests.post(post_url, data)
-        logger.info('Connected without error to {0}'.format(request.url))
-
-        if request.status_code == 201:
-            logger.info('Data were successfully transferred to Olga acceptor. Status code is 201.')
-        else:
-            logger.info('Data were not successfully transferred to Olga acceptor. Status code is {0}.'.format(
-                request.status_code
-            ))
-
-    except requests.RequestException as error:
-        logger.exception(error.message)
+    send_instance_statistics_to_acceptor(olga_acceptor_url, data)
