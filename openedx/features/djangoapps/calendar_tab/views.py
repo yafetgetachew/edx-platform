@@ -56,7 +56,6 @@ class InitCalendarView(View):
 
         try:
             created_calendar = gcal_service.calendars().insert(body=calendar_data).execute()
-            # publish_calendar(created_calendar['id'])
         except Exception as e:
             # TODO: handle errors
             print(e)
