@@ -113,7 +113,7 @@ $(function() {
                 function( data ) {
                     for (i in data) {
                         $('#container-badges').append(
-                            '<img src="'+data[i].url+'" alt="'+data[i].description+'" title="'+data[i].description+'"'+'" height="200" width="200">'
+                            '<img src="'+data[i].url+'" alt="'+data[i].description+'" title="'+data[i].description+'" height="200" width="200">'
                         );
                     }
                 }
@@ -187,8 +187,11 @@ $(function() {
                             shared: true,
                             useHTML: true,
                             formatter: function() {
-                                tooltip_html = 'Points to next status: '+'<b>'+points_to_status+'</b>';
-                                tooltip_html += "<table>";
+                                tooltip_html = ''
+                                if (points_to_status) {
+                                    tooltip_html += 'Points to next status: '+'<b>'+points_to_status+'</b>';
+                                }
+				tooltip_html += "<table>";
 
                                 this.points.forEach(function(entry) {
                                     tooltip_html += '<tr><td style="font-weight:bold; color:'+ entry.series.color +'">'+ entry.series.name +':</td><td style="text-align: right"> '+entry.y+'</td></tr>';
