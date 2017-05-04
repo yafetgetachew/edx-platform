@@ -81,16 +81,22 @@ def explore_programs(request):
         raise Http404
 
     if not request.user.is_authenticated():
+        #marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), '#').rstrip('/')
         user, _ = User.objects.get_or_create(
             username='programs_dummy_user_for_api'
         )
     else:
+        #marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), 'xseries').rstrip('/')
         user = request.user
 
     meter = utils.ProgramProgressMeter(user)
     programs = meter.programs
     # TODO: Pull 'xseries' string from configuration model.
-    marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), 'xseries').rstrip('/')
+    #marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), 'xseries').rstrip('/')
+    if urljoin(settings.MKTG_URLS.get('ROOT'), 'xseries').rstrip('/').split("/")[-1] == 'xseries':
+        marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), '#').rstrip('/')
+    else:
+        marketing_root = urljoin(settings.MKTG_URLS.get('ROOT'), 'xseries').rstrip('/')
 
     current_xseries_page_meter = []
 
