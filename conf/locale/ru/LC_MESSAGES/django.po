@@ -21640,3 +21640,25 @@ msgstr "public_health-ru.png"
 
 msgid "auc_logo.png"
 msgstr "auc_logo-ru.png"
+
+#: themes/eeca/templates/theme-header.html
+msgid "logo-header.jpg"
+msgstr "logo-header-ru.jpg"
+
+#: themes/eeca/templates/static_templates/theme-honor.html
+msgid ""
+"By enrolling in the course, participants agree to the following:"
+"Fulfilling the assignments and the final exams on their own, without any external help or sources."
+"Not sharing the course materials on other websites and/or in publications withoutreferring to the initial source."
+"Not sharing the responses to the course assignments and/or final exam questionswith current or potential course participants."
+"Giving feedback and engage in discussions in a respectful, friendly and factual manner."
+"Not sharing your login details and/or access to your course dashboard with other people."
+"Not discussing the solutions to the course assignment or final exam questions before their due date has passed."
+msgstr ""
+"Регистрируясь на этот курс, участники соглашаются со следующими правилами:"
+"Выполнять все промежуточные и финальный тесты самостоятельно, без внешней помощи или ресурсов."
+"Не распространять материалы курса на других сайтах и/или в публикациях без ссылки на оригинальный источник."
+"Не обмениваться ответами на промежуточные и/или финальный тесты с другими текущими или потенциальными участниками курса."
+"Предоставлять обратную связь и вовлекаться в обсуждения в уважительной и дружелюбной манере."
+"Не предоставлять другим людям доступ к своему профилю и/или не делиться данными для входа."
+"Не обсуждать ответы на промежуточные и/или финальный тесты с другими участниками до завершения крайнего срока выполнения задания."
