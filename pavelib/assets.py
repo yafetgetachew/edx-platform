@@ -483,7 +483,6 @@ def compile_sass(options):
     compilation_results = {'success': [], 'failure': []}
 
     print("\t\tStarted compiling Sass:")
-
     # compile common sass files
     is_successful = _compile_sass('common', None, debug, force, timing_info)
     if is_successful:
@@ -810,7 +809,6 @@ def watch_assets(options):
             observer.stop()
         print("\nStopped asset watcher.")
 
-
 @task
 @needs(
     'pavelib.prereqs.install_node_prereqs',
@@ -854,7 +852,10 @@ def update_assets(args):
         '--collect-log', dest=COLLECTSTATIC_LOG_DIR_ARG, default=None,
         help="When running collectstatic, direct output to specified log directory",
     )
+
     args = parser.parse_args(args)
+    if args.settings == 'aws':
+        args.settings = 'static_collector'
     collect_log_args = {}
 
     os.environ.setdefault("SERVICE_VARIANT","{sys}".format(sys=args.system[0]))
