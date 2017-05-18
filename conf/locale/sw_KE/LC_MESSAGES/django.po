@@ -5134,7 +5134,7 @@ msgstr ""
 #. certificate that a student has been awarded
 #: lms/djangoapps/certificates/views/webview.py
 msgid "More about {fullname}'s accomplishment"
-msgstr "Mengi kuhusu {full_name}'s mafanikio"
+msgstr "Mengi kuhusu {fullname}'s mafanikio"
 
 #: lms/djangoapps/class_dashboard/dashboard_data.py
 #: lms/djangoapps/instructor/views/api.py
