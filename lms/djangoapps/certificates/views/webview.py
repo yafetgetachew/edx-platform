@@ -91,6 +91,12 @@ def _update_certificate_context(context, course, user, user_certificate):
     user_fullname = user.profile.name
     platform_name = microsite.get_value("platform_name", settings.PLATFORM_NAME)
     certificate_type = context.get('certificate_type')
+    if user_certificate.mode == 'honor':
+        certificate_type = 'Honor Code'
+    elif user_certificate.mode == 'verified':
+         certificate_type = 'Verified'
+    elif user_certificate.mode == 'xseries':
+         certificate_type = 'XSeries'
     partner_short_name = course.display_organization if course.display_organization else course.org
     partner_long_name = None
     organizations = organization_api.get_course_organizations(course_id=course.id)
@@ -257,7 +263,7 @@ def _update_certificate_context(context, course, user, user_certificate):
                                                         "awarded a {platform_name} {certificate_type} "
                                                         "Certificate of Completion in ").format(
         platform_name=platform_name,
-        certificate_type=context.get("certificate_type")
+        certificate_type=certificate_type
     )
 
     certificate_type_description = get_certificate_description(user_certificate.mode, certificate_type, platform_name)
