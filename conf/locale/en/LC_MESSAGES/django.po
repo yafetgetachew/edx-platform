@@ -26,16 +26,16 @@ msgid "It works! This is the default homepage for this Open edX instance."
 msgstr "Raise your awareness for more effective engagement into the epidemics responses."
 
 msgid "О Платформе"
-msgstr "About The Platform"
+msgstr "About EECA Platform"
 
 msgid "Новости и События"
 msgstr "News & Events"
 
 msgid "Ресурсный Центр ВЕЦА"
-msgstr "Recourse Centre EECA"
+msgstr "EECA Resource Centre"
 
 msgid "Информационно-Консультационный Центр"
-msgstr "Informational-Consultational Centre"
+msgstr "Information & Consultation Centre"
 
 msgid "style=\"\""
 msgstr "style=\"max-width: 90px;\""
