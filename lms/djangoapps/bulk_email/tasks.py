@@ -477,8 +477,9 @@ def _send_course_email(entry_id, email_id, to_list, global_email_context, subtas
     course_title = global_email_context['course_title']
 
     # use the email from address in the CourseEmail, if it is present, otherwise compute it
-    from_addr = course_email.from_addr if course_email.from_addr else \
-        _get_source_address(course_email.course_id, course_title)
+    #from_addr = course_email.from_addr if course_email.from_addr else \
+    #    _get_source_address(course_email.course_id, course_title)
+    from_addr = settings.BULK_EMAIL_DEFAULT_FROM_EMAIL
 
     # use the CourseEmailTemplate that was associated with the CourseEmail
     course_email_template = course_email.get_template()
