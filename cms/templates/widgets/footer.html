@@ -9,7 +9,7 @@ from django.conf import settings
 
     <div class="footer-content-primary">
       <div class="colophon">
-        <p>&copy; ${settings.COPYRIGHT_YEAR} <a data-rel="edx.org" href="//:${settings.LMS_BASE}" rel="external">${settings.PLATFORM_NAME}</a>.</p>
+        <p>&copy; ${settings.COPYRIGHT_YEAR} <a href="//${settings.LMS_BASE}" target="_blank" >${settings.PLATFORM_NAME}</a>.</p>
       </div>
 
       % if is_any_marketing_link_set(['TOS', 'PRIVACY']):
