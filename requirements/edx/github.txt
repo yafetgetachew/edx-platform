@@ -98,5 +98,9 @@ git+https://github.com/edx/edx-proctoring.git@0.17.0#egg=edx-proctoring==0.17.0
 git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-drag-and-drop-v2==2.0.15
 
 #edx-search
+<<<<<<< Updated upstream
 -e git+https://github.com/edx/edx-search.git@513662f8ea722f8509cab6b1e82d2aea4f8f4379#egg=edx-search
+=======
+-e git+https://github.com/edx/edx-search.git@ae459ead41962c656ce794619f58cdae46eb7896#egg=edx-search
+>>>>>>> Stashed changes
 
