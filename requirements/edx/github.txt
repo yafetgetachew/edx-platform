@@ -99,3 +99,7 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 
 #edx-search
 -e git+https://github.com/edx/edx-search.git@ae459ead41962c656ce794619f58cdae46eb7896#egg=edx-search
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
