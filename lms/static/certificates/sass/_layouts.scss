@@ -359,3 +359,18 @@
         }
     }
 }
+.wrapper-view .btn-link,
+.wrapper-view .copy-meta a {
+    color: #f15a24;
+}
+.wrapper-view  .btn:active, 
+.wrapper-view .is-pressed.btn, 
+.wrapper-view .is-active.btn,
+.wrapper-view .btn:hover, 
+.wrapper-view .is-hovered.btn, 
+.wrapper-view .btn:focus, 
+.wrapper-view .is-focused.btn {
+    color: #f15a24;
+    background: transparent;
+    border-color: transparent;
+}
