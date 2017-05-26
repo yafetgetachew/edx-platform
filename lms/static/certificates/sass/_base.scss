@@ -16,7 +16,9 @@ html, body {
     padding: 0;
     background: $white;
 }
-
+.certificate *:not(.fa) {
+    font-family: 'Montserrat-Regular', Arial, Helvetica !important;
+}
 // ------------------------------
 // #TYPOGRAPHY
 // ------------------------------
