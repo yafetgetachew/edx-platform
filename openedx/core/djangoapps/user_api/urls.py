@@ -9,6 +9,7 @@ from ..profile_images.views import ProfileImageView
 from .accounts.views import AccountViewSet
 from .preferences.views import PreferencesView, PreferencesDetailView
 from .verification_api.views import PhotoVerificationStatusView
+from .views import TFAView
 
 ME = AccountViewSet.as_view({
     'get': 'get',
@@ -47,5 +48,10 @@ urlpatterns = patterns(
         r'^v1/preferences/{}/(?P<preference_key>[a-zA-Z0-9_]+)$'.format(settings.USERNAME_PATTERN),
         PreferencesDetailView.as_view(),
         name='preferences_detail_api'
+    ),
+    url(
+        r'^v1/tfa(/{})?$'.format(settings.USERNAME_PATTERN),
+        TFAView.as_view(),
+        name='tfa_api'
     ),
 )

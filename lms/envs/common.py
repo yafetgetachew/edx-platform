@@ -2815,6 +2815,7 @@ ACCOUNT_VISIBILITY_CONFIGURATION = {
         "requires_parental_consent",
         "account_privacy",
         "accomplishments_shared",
+        "tfa_enabled"
     ]
 }
 

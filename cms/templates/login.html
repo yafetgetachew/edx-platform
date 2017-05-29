@@ -36,6 +36,11 @@ from openedx.core.djangolib.js_utils import js_escaped_string
               <input id="password" type="password" name="password" />
               <a href="${forgot_password_link}" class="action action-forgotpassword">${_("Forgot password?")}</a>
             </li>
+            <li class="field text" id="field-tfa-code">
+              <label for="tfa-code">${_("Security code")}</label>
+              <input id="tfa-code" type="text" name="tfa_code" />
+              ${_("If you enabled two-factor authentication, please enter the security code from the Google Authenticator application, otherwise leave the field blank.")}
+            </li>
           </ol>
         </fieldset>
 

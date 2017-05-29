@@ -85,6 +85,23 @@
                             })
                         },
                         {
+                            view: new AccountSettingsFieldViews.TFAEnabledFieldView({
+                                model: userAccountModel,
+                                title: gettext('Two-factor authentication'),
+                                valueAttribute: 'tfa_enabled',
+                                required: true,
+                                refreshPageOnSave: false,
+                                helpMessage: StringUtils.interpolate(
+                                    gettext('Enable two-factor authentication')
+                                ),
+                                groupOptions: [{
+                                    selectOptions: [[1, gettext('On')]],
+                                    nullValueOptionLabel: gettext('Off')
+                                }],
+                                persistChanges: true
+                            })
+                        },
+                        {
                             view: new AccountSettingsFieldViews.LanguagePreferenceFieldView({
                                 model: userPreferencesModel,
                                 title: gettext('Language'),
