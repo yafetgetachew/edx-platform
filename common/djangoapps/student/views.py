@@ -1,3 +1,4 @@
+#-*- codding: utf-8 -*-
 """
 Student Views
 """
@@ -1796,8 +1797,8 @@ def create_account_with_params(request, params):
                 message = ("Activation for %s (%s): %s\n" % (user, user.email, profile.name) +
                            '-' * 80 + '\n\n' + message)
                 mail.send_mail(subject, message, from_address, [dest_addr], fail_silently=False, html_message=html_message)
-            else:
-                user.email_user(subject, message, from_address, html_message=html_message)
+            #else:
+                #user.email_user(subject, message, from_address, html_message=html_message)
         except Exception:  # pylint: disable=broad-except
             log.error(u'Unable to send activation email to user from "%s"', from_address, exc_info=True)
     else:
@@ -1808,7 +1809,18 @@ def create_account_with_params(request, params):
     # logged in until they close the browser. They can't log in again until they click
     # the activation link from the email.
     new_user = authenticate(username=user.username, password=params['password'])
-    login(request, new_user)
+    #login(request, new_user)
+
+    admin_from_address = configuration_helpers.get_value(
+        'email_from_address',
+        settings.DEFAULT_FROM_EMAIL
+    )
+
+    admin_dest_addr = User.objects.filter(is_active=True, is_superuser=True).values_list('email', flat=True)
+    admin_subject = _(u"[Notification] Vous avez une nouvelle inscription sur la plateforme {platform_name}").format(platform_name=settings.PLATFORM_NAME)
+    admin_message = _(u"Un nouvel utilisateur {email} s'est enregistr\xe9 sur la plateforme.").format(email=new_user.email)
+    mail.send_mail(admin_subject, admin_message, admin_from_address, admin_dest_addr, fail_silently=False)
+
     request.session.set_expiry(0)
 
     _record_registration_attribution(request, new_user)
