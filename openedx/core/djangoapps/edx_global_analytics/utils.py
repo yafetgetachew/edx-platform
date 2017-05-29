@@ -5,7 +5,6 @@ Helpers for the edX global analytics application.
 import calendar
 import datetime
 
-
 from django.core.cache import cache
 
 from django.db.models import Count
@@ -41,16 +40,16 @@ def fetch_instance_information(name_to_cache, query_type, activity_period, cache
 
 def cache_instance_data(name_to_cache, query_result, cache_timeout):
     """
-     Caches queries, that calculate particular instance data,
-     including long time unchangeable weekly and monthly statistics.
+    Caches queries, that calculate particular instance data,
+    including long time unchangeable weekly and monthly statistics.
 
-     Arguments:
+    Arguments:
          name_to_cache (str): Name of query.
          query_result (query result): Django-query result.
          cache_timeout (int/None): Caching for particular seconds amount.
 
-     Returns cached query result.
-     """
+    Returns cached query result.
+    """
     cached_query_result = cache.get(name_to_cache)
 
     if cached_query_result is not None:
