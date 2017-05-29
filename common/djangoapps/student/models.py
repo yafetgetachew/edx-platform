@@ -292,6 +292,9 @@ class UserProfile(models.Model):
     bio = models.CharField(blank=True, null=True, max_length=3000, db_index=False)
     profile_image_uploaded_at = models.DateTimeField(null=True, blank=True)
 
+    tfa_enabled = models.BooleanField(default=False)
+    _tfa_secret = models.CharField(blank=True, null=True, max_length=16, db_index=False)
+
     @property
     def has_profile_image(self):
         """

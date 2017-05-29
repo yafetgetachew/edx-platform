@@ -49,6 +49,72 @@
                     );
                 }
             }),
+            TFAEnabledFieldView: FieldViews.DropdownFieldView.extend({
+                fieldTemplate: field_dropdown_account_template,
+                saveValue: function(commit) {
+                    if (!this.fieldValue()) {
+                        $('div#qrcode').remove();
+                        var commit = true;
+                    }
+
+                    if (commit) {
+                        this._super();
+                        return
+                    }
+
+                    if ($('div#qrcode').length) {
+                        return
+                    }
+
+                    var view = this;
+                    $.ajax({
+                        url: '/api/user/v1/tfa/'+this.model.id,
+                        type: 'GET',
+                        success: function(data) {
+                            view.$el.append('<div id="qrcode">'
+                                            +'<form id="tfa-form">'
+                                            +'<div>'
+                                            //+'<img src="'+data.qrcode+'" />'
+                                            +'<div>To enable two-factor authentication, you need to install '
+                                            +'<a href="https://support.google.com/accounts/answer/1066447" target="_blank">Google Authenticator</a>'
+                                            +' on your phone, scan the qrcode and enter the secret code.</div>'
+                                            +'<img src="'+data.qrcode+'" />'
+                                            +'</div>'
+                                            +'<input name="tfa_code" id="tfa-code" type="text"></input>'
+                                            +'<button type="submit" name="tfa_code_submit" id="tfa-code-submit">'+gettext('Send')+'</button>'
+                                            +'</form>'
+                                            +'</div>');
+                            $('form#tfa-form').submit(function() {
+                                var code = $('input#tfa-code').val();
+                                $.ajax({
+                                    url: '/api/user/v1/tfa/'+view.model.id,
+                                    type: 'POST',
+                                    data: {'code': code},
+                                    success: function(response) {
+                                        $('div#qrcode').remove();
+                                        if (response.success == true) {
+                                            view.saveValue(true);
+                                        } else {
+                                            view.saveValue();
+                                            view.showNotificationMessage(
+                                                HtmlUtils.joinHtml(
+                                                    view.indicators.error,
+                                                    response.error
+                                                )
+                                            );
+                                        }
+                                    }
+                                });
+                                return false;
+                            });
+                        }
+                    });
+                },
+                saveSucceeded: function() {
+                    this.showSuccessMessage();
+                }
+
+            }),
             LanguagePreferenceFieldView: FieldViews.DropdownFieldView.extend({
                 fieldTemplate: field_dropdown_account_template,
                 saveSucceeded: function() {

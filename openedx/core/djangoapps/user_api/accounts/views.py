@@ -198,6 +198,9 @@ class AccountViewSet(ViewSet):
         https://tools.ietf.org/html/rfc7396. The content_type must be "application/merge-patch+json" or
         else an error response with status code 415 will be returned.
         """
+        if 'tfa_enabled' in request.data:
+            request.data['tfa_enabled'] = bool(request.data['tfa_enabled'])
+
         try:
             with transaction.atomic():
                 update_account_settings(request.user, request.data, username=username)

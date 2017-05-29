@@ -129,7 +129,6 @@ from openedx.core.djangoapps.theming import helpers as theming_helpers
 from openedx.core.djangoapps.user_api.preferences import api as preferences_api
 from openedx.core.djangoapps.catalog.utils import get_programs_data
 
-
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
 ReverifyInfo = namedtuple('ReverifyInfo', 'course_id course_name course_number date status display')  # pylint: disable=invalid-name
@@ -1232,6 +1231,7 @@ def login_user(request, error=""):  # pylint: disable=too-many-statements,unused
 
         email = request.POST['email']
         password = request.POST['password']
+        tfa_code = request.POST.get('tfa_code')
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
@@ -1346,6 +1346,14 @@ def login_user(request, error=""):  # pylint: disable=too-many-statements,unused
         )
 
     if user is not None and user.is_active:
+        from openedx.core.djangoapps.user_api.views import tfa_code_is_valid
+
+        if user.profile.tfa_enabled and not tfa_code_is_valid(tfa_code, user.profile._tfa_secret):
+            return JsonResponse({
+                "success": False,
+                "value": _('Security code is wrong or expired. Please try again.'),
+            })
+
         try:
             # We do not log here, because we have a handler registered
             # to perform logging on successful logins.

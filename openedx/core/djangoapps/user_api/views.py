@@ -16,12 +16,14 @@ from rest_framework import filters
 from rest_framework import generics
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework.exceptions import ParseError
 from django_countries import countries
 from opaque_keys.edx.locations import SlashSeparatedCourseKey
 
-from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
+from openedx.core.lib.api.permissions import ApiKeyHeaderPermission, IsUserInUrlOrStaff
 import third_party_auth
 from django_comment_common.models import Role
 from edxmako.shortcuts import marketing_link
@@ -41,7 +43,10 @@ from .accounts import (
 )
 from .accounts.api import check_account_exists
 from .serializers import CountryTimeZoneSerializer, UserSerializer, UserPreferenceSerializer
-
+import pyotp
+import cStringIO
+import qrcode
+import base64
 
 class LoginSessionView(APIView):
     """HTTP end-points for logging in users. """
@@ -112,6 +117,20 @@ class LoginSessionView(APIView):
             field_type="checkbox",
             label=_("Remember me"),
             default=False,
+            required=False,
+        )
+
+        form_desc.add_field(
+            "tfa_code",
+            field_type="text",
+            label=_("Security code"),
+            instructions=_("If you enabled two-factor authentication, "
+                           "please enter the security code from the Google Authenticator application, "
+                           "otherwise leave the field blank."),
+            restrictions={
+                "min_length": 6,
+                "max_length": 6,
+            },
             required=False,
         )
 
@@ -1075,3 +1094,59 @@ class CountryTimeZoneListView(generics.ListAPIView):
     def get_queryset(self):
         country_code = self.request.GET.get('country_code', None)
         return get_country_time_zones(country_code)
+
+
+class TFAView(APIView):
+    authentication_classes = (SessionAuthenticationAllowInactiveUser,)
+    permission_classes = (permissions.IsAuthenticated, IsUserInUrlOrStaff)
+
+    def get(self, request, username=None):
+        if username:
+            query = {'username': username}
+        elif 'email' in request.GET:
+            query = {'email': request.GET.get('email')}
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        try:
+            user = User.objects.get(**query)
+        except User.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        if user.profile._tfa_secret:
+            totp = pyotp.TOTP(user.profile._tfa_secret)
+        else:
+            _secret = pyotp.random_base32()
+            totp = pyotp.TOTP(_secret)
+            request.session['tfa_secret'] = _secret
+
+        buf = cStringIO.StringIO()
+        qr = qrcode.make(totp.provisioning_uri(user.email), box_size=4)
+        qr._img.save(buf, format="PNG")
+        qr_base64 = 'data:image/png;base64,{}'.format(base64.b64encode(buf.getvalue()))
+
+        return Response({'qrcode': qr_base64})
+
+    def post(self, request, username):
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExists:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        response = {'success': False, 'error': _('The security code you entered is invalid or expired. Please try again.')}
+
+        _secret = user.profile._tfa_secret or request.session.get('tfa_secret')
+        code = request.data.get('code')
+
+        if tfa_code_is_valid(code, _secret):
+            request.session.pop('tfa_secret', None)
+            user.profile._tfa_secret = _secret
+            user.profile.save()
+            response = {'success': True}
+
+        return Response(response)
+
+
+def tfa_code_is_valid(code, _secret):
+    totp = pyotp.TOTP(_secret)
+    return totp.verify(code)
