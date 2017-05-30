@@ -68,6 +68,23 @@ class HtmlBlock(object):
         scope=Scope.settings
     )
 
+    icon_class = String(
+        help=_(
+            "Select unit icon class"
+        ),
+        display_name=_("Icon"),
+        default="other",
+        values=[
+            {"display_name": _("Downloadable/Offline readings"), "value": "other"},
+            {"display_name": _("Video conferencing"), "value": "video_conferencing"},
+            {"display_name": _("Presentation slides"), "value": "presentation_slides"},
+            {"display_name": _("Discussion"), "value": "discussion"},
+            {"display_name": _("Learning objectives/session description"), "value": "problem"},
+            {"display_name": _("Video (youtube, vimeo, etc)"), "value": "video"}
+        ],
+        scope=Scope.settings
+    )
+
     @XBlock.supports("multi_device")
     def student_view(self, _context):
         """
