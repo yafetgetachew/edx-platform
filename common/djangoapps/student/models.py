@@ -295,6 +295,35 @@ class UserProfile(models.Model):
     tfa_enabled = models.BooleanField(default=False)
     _tfa_secret = models.CharField(blank=True, null=True, max_length=16, db_index=False)
 
+    PREFIX_CHOICES = (
+      ('0', _('0')),
+      ('1', _('1')),
+      ('2', _('2')),
+      ('3', _('3')),
+    )
+
+    prefix = models.CharField(blank=True, null=True, max_length=32, choices=PREFIX_CHOICES)
+    city_of_residence = models.CharField(blank=True, null=True, max_length=255)
+    country_of_residence = models.CharField(blank=True, null=True, max_length=255)
+    nationality = models.CharField(blank=True, null=True, max_length=255)
+
+    HEAR_CHOICES = (
+        ('icnc_website', _('ICNC Website')),
+        ('icnc_email', _('Email from ICNC')),
+        ('icnc_staff', _('ICNC Staff or Adviser (please list name below)')),
+        ('icnc_fb_or_twitter', _('ICNC Facebook or Twitter')),
+        ('social_media', _('Other social media outlet (please specify below)')),
+        ('email', _('Email listserv (please specify name below)')),
+        ('website', _('Other website or forum (please specify name below)')),
+        ('friend_or_colleague', _('Friend or colleague')),
+        ('university_announcement', _('University announcement')),
+        ('mentor', _('Mentor professor or student')),
+        ('other', _('Other (please specify below)')),
+    )
+    hear = models.CharField(blank=True, null=True, max_length=32, choices=HEAR_CHOICES)
+    hear_details = models.CharField(blank=True, null=True, max_length=255)
+    interested_topic = models.CharField(blank=True, null=True, max_length=255)
+
     @property
     def has_profile_image(self):
         """

@@ -194,6 +194,13 @@ class RegistrationView(APIView):
         "goals",
         "honor_code",
         "terms_of_service",
+        "prefix",
+        "city_of_residence",
+        "country_of_residence",
+        "nationality",
+        "hear",
+        "hear_details",
+        "interested_topic",
     ]
 
     # This end-point is available to anonymous users,
@@ -375,6 +382,74 @@ class RegistrationView(APIView):
         response = JsonResponse({"success": True})
         set_logged_in_cookies(request, response, user)
         return response
+
+    def _add_prefix_field(self, form_desc, required=True):
+        label = _(u"Prefix")
+        options = [(name, _(title)) for name, title in UserProfile.PREFIX_CHOICES]
+
+        form_desc.add_field(
+            "prefix",
+            field_type="select",
+            options=options,
+            label=label,
+            required=required
+        )
+
+    def _add_city_of_residence_field(self, form_desc, required=True):
+        label = _(u"City of residence")
+
+        form_desc.add_field(
+            "city_of_residence",
+            label=label,
+            required=required
+        )
+
+    def _add_country_of_residence_field(self, form_desc, required=True):
+        label = _(u"Country of residence")
+
+        form_desc.add_field(
+            "country_of_residence",
+            label=label,
+            required=required
+        )
+
+    def _add_nationality_field(self, form_desc, required=True):
+        label = _(u"Nationality")
+
+        form_desc.add_field(
+            "nationality",
+            label=label,
+            required=required
+        )
+
+    def _add_hear_field(self, form_desc, required=True):
+        label = _(u"How did you hear about ICNC online courses?")
+        options = [(name, _(title)) for name, title in UserProfile.HEAR_CHOICES]
+
+        form_desc.add_field(
+            "hear",
+            field_type="select",
+            options=options,
+            label=label,
+            required=required
+
+    def _add_hear_details_field(self, form_desc, required=False):
+        label = _(u"Details")
+
+        form_desc.add_field(
+            "hear_details",
+            label=label,
+            required=required
+        )
+
+    def _add_interested_topic_field(self, form_desc, required=False):
+        label = _(u"What specific topics related to civil resistance you are interested in")
+
+        form_desc.add_field(
+            "interested_topic",
+            label=label,
+            required=required
+        )
 
     def _add_email_field(self, form_desc, required=True):
         """Add an email field to a form description.
