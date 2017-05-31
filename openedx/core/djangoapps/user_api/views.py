@@ -432,6 +432,7 @@ class RegistrationView(APIView):
             options=options,
             label=label,
             required=required
+        )
 
     def _add_hear_details_field(self, form_desc, required=False):
         label = _(u"Details")
