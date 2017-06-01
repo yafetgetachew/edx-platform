@@ -13,6 +13,11 @@ from django.http import HttpResponseNotFound, HttpResponseServerError, Http404
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 from util.cache import cache_if_anonymous
+from info_pages.models import InfoPage
+
+import logging
+
+log = logging.getLogger(__name__)
 
 valid_templates = []
 
@@ -32,7 +37,7 @@ def index(request, template):
 
 
 @ensure_csrf_cookie
-@cache_if_anonymous()
+#@cache_if_anonymous()
 def render(request, template):
     """
     This view function renders the template sent without checking that it
@@ -41,6 +46,13 @@ def render(request, template):
 
     url(r'^jobs$', 'static_template_view.views.render', {'template': 'jobs.html'}, name="jobs")
     """
+    qs = InfoPage.objects.language('all').filter(page=template)
+    if qs:
+        page = qs.language(request.LANGUAGE_CODE).first() or qs.language(settings.LANGUAGE_CODE).first()
+        if not page:
+            page = qs.first()
+        log.info('Geting page "{page}" with language "{lang}" from "{db}"'.format(page=page.page, lang=page.language_code, db=page.from_db.im_self))
+        return render_to_response('info_pages/infopage.html', {'page': page})
 
     # Guess content type from file extension
     content_type, __ = mimetypes.guess_type(template)
