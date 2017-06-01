@@ -195,6 +195,7 @@ class RegistrationView(APIView):
         "honor_code",
         "terms_of_service",
         "prefix",
+        "custom_prefix",
         "city_of_residence",
         "country_of_residence",
         "nationality",
@@ -391,6 +392,15 @@ class RegistrationView(APIView):
             "prefix",
             field_type="select",
             options=options,
+            label=label,
+            required=required
+        )
+
+    def _add_custom_prefix_field(self, form_desc, required=False):
+        label = _(u"")
+
+        form_desc.add_field(
+            "custom_prefix",
             label=label,
             required=required
         )

@@ -296,11 +296,17 @@ class UserProfile(models.Model):
     _tfa_secret = models.CharField(blank=True, null=True, max_length=16, db_index=False)
 
     PREFIX_CHOICES = (
-      ('0', _('0')),
-      ('1', _('1')),
-      ('2', _('2')),
-      ('3', _('3')),
+      ('Ms.', _('Ms.')),
+      ('Mrs.', _('Mrs.')),
+      ('Miss', _('Miss')),
+      ('Mr.', _('Mr.')),
+      ('Dr.', _('Dr.')),
+      ('Prof.', _('Prof.')),
+      ('Rev.', _('Rev.')),
+      ('other', _('Other [Require fill-in]')),
+      (None, _('None')),
     )
+    PREFIX_CUSTOM_VALUES = ['other']
 
     prefix = models.CharField(blank=True, null=True, max_length=32, choices=PREFIX_CHOICES)
     city_of_residence = models.CharField(blank=True, null=True, max_length=255)
@@ -320,6 +326,8 @@ class UserProfile(models.Model):
         ('mentor', _('Mentor professor or student')),
         ('other', _('Other (please specify below)')),
     )
+    HEAR_CUSTOM_VALUES = ['icnc_staff', 'social_media', 'email', 'website', 'other']
+
     hear = models.CharField(blank=True, null=True, max_length=32, choices=HEAR_CHOICES)
     hear_details = models.CharField(blank=True, null=True, max_length=255)
     interested_topic = models.CharField(blank=True, null=True, max_length=255)

@@ -1704,6 +1704,15 @@ def create_account_with_params(request, params):
         not eamap.external_domain.startswith(openedx.core.djangoapps.external_auth.views.SHIBBOLETH_DOMAIN_PREFIX)
     )
 
+    custom_prefix = params.pop('custom_prefix', '')
+    extra_fields.pop('custom_prefix', None)
+
+    if params.get('prefix') in UserProfile.PREFIX_CUSTOM_VALUES:
+        params['prefix'] = custom_prefix
+
+    if params.get('hear') in UserProfile.HEAR_CUSTOM_VALUES:
+        extra_fields['hear_details'] = 'required'
+
     form = AccountCreationForm(
         data=params,
         extra_fields=extra_fields,
