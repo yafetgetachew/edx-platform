@@ -613,6 +613,7 @@ def course_index(request, course_key):
             'course_release_date': course_release_date,
             'settings_url': settings_url,
             'reindex_link': reindex_link,
+            'preview_lms_link': get_lms_link_for_item(course_module.location, preview=True),
             'deprecated_blocks_info': deprecated_blocks_info,
             'notification_dismiss_url': reverse_course_url(
                 'course_notifications_handler',
