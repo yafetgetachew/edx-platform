@@ -4,6 +4,7 @@
 <%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
+from django.conf import settings
 from openedx.core.djangolib.js_utils import (
     dump_js_escaped_json, js_escaped_string
 )
@@ -14,6 +15,16 @@ from openedx.core.djangolib.js_utils import (
 <%block name="bodyclass">is-signedin course course-info updates view-updates</%block>
 
 <%block name="header_extras">
+<%
+  tinymce_conf_updates = {'selector': 'textarea.new-update-content', 'images_upload_url': upload_asset_url}
+  tinymce_conf_handouts = {'selector': 'textarea.handouts-content-editor', 'images_upload_url': upload_asset_url}
+  tinymce_conf_updates.update(settings.TINYMCE_DEFAULT_CONFIG)
+  tinymce_conf_handouts.update(settings.TINYMCE_DEFAULT_CONFIG)
+%>
+<script type="text/javascript">
+  window.tiny_mce_conf_updates = ${tinymce_conf_updates | n, dump_js_escaped_json};
+  window.tiny_mce_conf_handouts = ${tinymce_conf_handouts | n, dump_js_escaped_json};
+</script>
 <link rel="stylesheet" type="text/css" href="${static.url('js/vendor/timepicker/jquery.timepicker.css')}" />
 % for template_name in ["course_info_update", "course_info_handouts"]:
   <script type="text/template" id="${template_name}-tpl">

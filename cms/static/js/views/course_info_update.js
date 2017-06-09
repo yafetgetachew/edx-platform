@@ -141,11 +141,11 @@ define(['codemirror',
                 $(updateEle).prepend($newForm);
 
                 var $textArea = $newForm.find('.new-update-content').first();
-                this.$codeMirror = CodeMirror.fromTextArea($textArea.get(0), {
-                    mode: 'text/html',
-                    lineNumbers: true,
-                    lineWrapping: true
-                });
+                //this.$codeMirror = CodeMirror.fromTextArea($textArea.get(0), {
+                //    mode: 'text/html',
+                //    lineNumbers: true,
+                //    lineWrapping: true
+                //});
 
                 $newForm.addClass('editing');
                 this.$currentPost = $newForm.closest('li');
@@ -164,7 +164,7 @@ define(['codemirror',
                 targetModel.set({
                 // translate short-form date (for input) into long form date (for display)
                     date: $.datepicker.formatDate('MM d, yy', new Date(this.dateEntry(event).val())),
-                    content: this.$codeMirror.getValue(),
+                    content: tinyMCE.activeEditor.getContent(),
                     push_notification_selected: this.push_notification_selected(event)
                 });
             // push change to display, hide the editor, submit the change
@@ -218,8 +218,36 @@ define(['codemirror',
                 else {
                     $(this.dateEntry(event)).val('MM/DD/YY');
                 }
-                this.$codeMirror = CourseInfoHelper.editWithCodeMirror(
-                targetModel, 'content', self.options.base_asset_url, $textArea.get(0));
+                //this.$codeMirror = CourseInfoHelper.editWithCodeMirror(
+                //targetModel, 'content', self.options.base_asset_url, $textArea.get(0));
+
+                _.extend(window.tiny_mce_conf_updates, {
+                    file_picker_callback: function(callback, value, meta) {
+                        if (meta.filetype == 'image') {
+                            $('#upload').trigger('click');
+                            $('#upload').on('change', function() {
+                                var file = this.files[0];
+                                var formData;
+                                formData = new FormData();
+                                formData.append('file', file);
+                                var url = tinyMCE.activeEditor.settings.images_upload_url;
+                                $.ajax({
+                                    url: url,
+                                    data: formData,
+                                    processData: false,
+                                    contentType: false,
+                                    type: 'POST',
+                                    headers: {'X-CSRFToken': $.cookie('csrftoken')},
+                                    success: function(response) {
+                                        callback(response.asset.url, {alt: file.name});
+                                    }
+                                });
+                            });
+                        }
+                    }
+                });
+
+                tinyMCE.init(window.tiny_mce_conf_updates);
 
             // Variable stored for unit test.
                 this.$modalCover = ModalUtils.showModalCover(false,

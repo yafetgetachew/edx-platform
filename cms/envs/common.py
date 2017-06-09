@@ -1242,3 +1242,52 @@ RETRY_ACTIVATION_EMAIL_TIMEOUT = 0.5
 
 # How long until database records about the outcome of a task and its artifacts get deleted?
 USER_TASKS_MAX_AGE = timedelta(days=7)
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+    'plugins': [
+      "table advlist autolink lists link image charmap print preview hr anchor pagebreak",
+      "searchreplace wordcount visualblocks visualchars code fullscreen",
+      "insertdatetime media nonbreaking save table contextmenu directionality",
+      "emoticons template paste textcolor colorpicker textpattern"
+    ],
+     'font_formats' : (
+         'Andale Mono=andale mono,times;'
+         'Arial=arial,helvetica,sans-serif;'
+         'Arial Black=arial black,avant garde;'
+         'Book Antiqua=book antiqua,palatino;'
+         'Comic Sans MS=comic sans ms,sans-serif;'
+         'Courier New=courier new,courier;'
+         'Georgia=georgia,palatino;'
+         'Helvetica=helvetica;'
+         'Impact=impact,chicago;'
+         'Symbol=symbol;'
+         'Tahoma=tahoma,arial,helvetica,sans-serif;'
+         'Terminal=terminal,monaco;'
+         'Times New Roman=times new roman,times;'
+         'Trebuchet MS=trebuchet ms,geneva;'
+         'Verdana=verdana,geneva;'
+         'Webdings=webdings;'
+         'Wingdings=wingdings,zapf dingbats;'
+         'Calibri=calibri,candara,segoe,optima,arial,sans-serif;'
+         'Cambria=cambria,georgia,palatino,times new roman,serif'
+     ),
+     'toolbar1': (
+         'fontsizeselect fontselect bold italic forecolor backcolor | styleselect '
+         '| alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent'
+     ),
+     'toolbar2': 'undo redo | insert | emoticons image | table | codesample | print preview | help',
+     'image_advtab': True,
+     'content_css': [
+         '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+         '//www.tinymce.com/css/codepen.min.css'
+    ],
+    'menubar': False,
+    'statusbar': True,
+    'resize': True,
+    'paste_data_images': True,
+    'automatic_uploads': True,
+    'image_advtab': True,
+    'file_picker_types': 'image'
+}

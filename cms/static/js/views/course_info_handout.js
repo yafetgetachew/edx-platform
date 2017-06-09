@@ -43,38 +43,59 @@ define(['js/views/baseview', 'codemirror', 'common/js/components/views/feedback_
                 this.$editor.val(this.$preview.html());
                 this.$form.show();
 
-                this.$codeMirror = CourseInfoHelper.editWithCodeMirror(
-                self.model, 'data', self.options['base_asset_url'], this.$editor.get(0));
+                //this.$codeMirror = CourseInfoHelper.editWithCodeMirror(
+                //self.model, 'data', self.options['base_asset_url'], this.$editor.get(0));
 
+                _.extend(window.tiny_mce_conf_handouts, {
+                    file_picker_callback: function(callback, value, meta) {
+                        if (meta.filetype == 'image') {
+                            $('#upload').trigger('click');
+                            $('#upload').on('change', function() {
+                                var file = this.files[0];
+                                var formData;
+                                formData = new FormData();
+                                formData.append('file', file);
+                                var url = tinyMCE.activeEditor.settings.images_upload_url;
+                                $.ajax({
+                                    url: url,
+                                    data: formData,
+                                    processData: false,
+                                    contentType: false,
+                                    type: 'POST',
+                                    headers: {'X-CSRFToken': $.cookie('csrftoken')},
+                                    success: function(response) {
+                                        callback(response.asset.url, {alt: file.name});
+                                    }
+                                });
+                            });
+                        }
+                    }
+                });
+
+                tinyMCE.init(window.tiny_mce_conf_handouts);
                 ModalUtils.showModalCover(false, function() { self.closeEditor(); });
             },
 
             onSave: function(event) {
                 $('#handout_error').removeClass('is-shown');
                 $('.save-button').removeClass('is-disabled').attr('aria-disabled', false);
-                if ($('.CodeMirror-lines').find('.cm-error').length == 0) {
-                    this.model.set('data', this.$codeMirror.getValue());
-                    var saving = new NotificationView.Mini({
-                        title: gettext('Saving')
-                    });
-                    saving.show();
-                    this.model.save({}, {
-                        success: function() {
-                            saving.hide();
-                        }
-                    });
-                    this.render();
-                    this.$form.hide();
-                    this.closeEditor();
+                this.model.set('data', tinyMCE.activeEditor.getContent());
+                var saving = new NotificationView.Mini({
+                    title: gettext('Saving')
+                });
+                saving.show();
+                this.model.save({}, {
+                    success: function() {
+                        saving.hide();
+                    }
+                });
+                this.render();
+                this.$form.hide();
+                this.closeEditor();
 
-                    analytics.track('Saved Course Handouts', {
-                        'course': course_location_analytics
-                    });
-                } else {
-                    $('#handout_error').addClass('is-shown');
-                    $('.save-button').addClass('is-disabled').attr('aria-disabled', true);
-                    event.preventDefault();
-                }
+                analytics.track('Saved Course Handouts', {
+                    'course': course_location_analytics
+                });
             },
 
             onCancel: function(event) {

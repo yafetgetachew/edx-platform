@@ -8,6 +8,7 @@
 <%!
   import urllib
   from django.utils.translation import ugettext as _
+  from django.conf import settings
   from contentstore import utils
   from openedx.core.djangolib.js_utils import (
       dump_js_escaped_json, js_escaped_string
@@ -26,7 +27,16 @@
 <%block name="jsextra">
   <link rel="stylesheet" type="text/css" href="${static.url('js/vendor/timepicker/jquery.timepicker.css')}" />
 
+<%
+  tinymce_conf = {
+    'selector': '#course-overview',
+    'images_upload_url': upload_asset_url
+  }
+  tinymce_conf.update(settings.TINYMCE_DEFAULT_CONFIG)
+%>
+
   <script type="text/javascript">
+window.tiny_mce_conf = ${tinymce_conf | n, dump_js_escaped_json};
 window.CMS = window.CMS || {};
 CMS.URL = CMS.URL || {};
 CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
@@ -333,6 +343,7 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 <li class="field text" id="field-course-overview">
                   <label for="course-overview">${_("Course Overview")}</label>
                   <textarea class="tinymce text-editor" id="course-overview"></textarea>
+                  <input name="image" type="file" id="upload" class="hidden" onchange="">
                   <label class="sr" for="course-overview-cm-textarea">
                     ${_('HTML Code Editor')}
                   </label>
