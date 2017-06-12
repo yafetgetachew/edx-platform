@@ -308,7 +308,7 @@ class UserProfile(models.Model):
     )
     PREFIX_CUSTOM_VALUES = ['other']
 
-    prefix = models.CharField(blank=True, null=True, max_length=32, choices=PREFIX_CHOICES)
+    prefix = models.CharField(blank=True, null=True, max_length=32)
     city_of_residence = models.CharField(blank=True, null=True, max_length=255)
     country_of_residence = models.CharField(blank=True, null=True, max_length=255)
     nationality = models.CharField(blank=True, null=True, max_length=255)

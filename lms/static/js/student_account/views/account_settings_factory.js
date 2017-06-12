@@ -147,6 +147,71 @@
                     title: gettext('Additional Information'),
                     fields: [
                         {
+                            view: new AccountSettingsFieldViews.TextFieldView({
+                                model: userAccountModel,
+                                required: true,
+                                title: gettext('Prefix'),
+                                valueAttribute: 'prefix',
+                                persistChanges: true,
+                                helpMessage: gettext('Please make your choice from "Ms.", "Mrs.", "Miss", "Mr.", "Dr.", "Prof.", "Rev." or specify your variant')
+                            })
+                        },
+                        {
+                            view: new AccountSettingsFieldViews.TextFieldView({
+                                model: userAccountModel,
+                                required: true,
+                                title: gettext('City of residence'),
+                                valueAttribute: 'city_of_residence',
+                                persistChanges: true
+                            })
+                        },
+                        {
+                            view: new AccountSettingsFieldViews.TextFieldView({
+                                model: userAccountModel,
+                                required: true,
+                                title: gettext('Country of residence'),
+                                valueAttribute: 'country_of_residence',
+                                persistChanges: true
+                            })
+                        },
+                        {
+                            view: new AccountSettingsFieldViews.TextFieldView({
+                                model: userAccountModel,
+                                required: true,
+                                title: gettext('Nationality'),
+                                valueAttribute: 'nationality',
+                                persistChanges: true
+                            })
+                        },
+                        {
+                            view: new AccountSettingsFieldViews.DropdownFieldView({
+                                model: userAccountModel,
+                                required: true,
+                                title: gettext('How did you hear about ICNC online courses?'),
+                                valueAttribute: 'hear',
+                                options: fieldsData.hear.options,
+                                persistChanges: true
+                            })
+                        },
+                        {
+                            view: new AccountSettingsFieldViews.TextFieldView({
+                                model: userAccountModel,
+                                required: false,
+                                title: gettext(''),
+                                valueAttribute: 'hear_details',
+                                persistChanges: true
+                            })
+                        },
+                        {
+                            view: new AccountSettingsFieldViews.TextFieldView({
+                                model: userAccountModel,
+                                required: false,
+                                title: gettext('What specific topics related to civil resistance you are interested in'),
+                                valueAttribute: 'interested_topic',
+                                persistChanges: true
+                            })
+                        },
+                        {
                             view: new AccountSettingsFieldViews.DropdownFieldView({
                                 model: userAccountModel,
                                 title: gettext('Education Completed'),

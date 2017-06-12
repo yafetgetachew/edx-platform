@@ -461,6 +461,8 @@ def account_settings_context(request):
                 'options': all_languages(),
             }, 'time_zone': {
                 'options': TIME_ZONE_CHOICES,
+            }, 'hear': {
+                'options': [(choice[0], _(choice[1])) for choice in UserProfile.HEAR_CHOICES],
             }
         },
         'platform_name': configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
