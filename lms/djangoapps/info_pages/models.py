@@ -33,7 +33,7 @@ def get_pages():
 class InfoPage(TranslatableModel):
     PAGES = get_pages()
 
-    page = models.CharField(max_length=50, choices=PAGES)
+    page = models.CharField(max_length=50, choices=PAGES, unique=True)
     translations = TranslatedFields(
         title = models.CharField(max_length=255),
         text = models.TextField()
