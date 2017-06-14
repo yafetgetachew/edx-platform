@@ -701,7 +701,7 @@ hr.divider {
   display: none !important;
 }
 
-.course-info-wrapper {
+.course-info-wrapper, #field-course-overview {
   table {
     border: 1px solid #aaa;
     tbody {
@@ -709,12 +709,16 @@ hr.divider {
       tr {
         border-color: inherit;
         td, th {
+          border: none;
           padding: 15px 7px;
-          border-color: inherit;
-          border-width: 1px;
-          border-style: solid;
         }
       }
     }
+  }
+}
+
+table.mce-item-table {
+  td {
+    border: none;
   }
 }

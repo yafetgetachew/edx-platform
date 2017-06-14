@@ -289,6 +289,19 @@
         margin-bottom: ($baseline*2);
       }
 
+      table {
+        border: 1px solid #aaa;
+        tbody {
+          border-color: inherit;
+          tr {
+            border-color: inherit;
+            td, th {
+              padding: 15px 7px;
+            }
+          }
+        }
+      }
+
       .course-staff {
 
         .teacher {
