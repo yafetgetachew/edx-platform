@@ -1286,8 +1286,9 @@ TINYMCE_DEFAULT_CONFIG = {
     'menubar': False,
     'statusbar': True,
     'resize': True,
-    'paste_data_images': True,
-    'automatic_uploads': True,
-    'image_advtab': True,
-    'file_picker_types': 'image'
+#    'paste_data_images': True,
+#    'automatic_uploads': True,
+#    'image_advtab': True,
+    'file_picker_types': 'image',
+    'convert_urls': False
 }

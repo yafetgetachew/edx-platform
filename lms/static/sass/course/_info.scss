@@ -41,6 +41,22 @@ div.info-wrapper {
 
   background-color: $homepage-background;
 
+  table {
+    border: 1px solid #aaa;
+    tbody {
+      border-color: inherit;
+      tr {
+        border-color: inherit;
+        td, th {
+          padding: 15px 7px;
+          border-color: inherit;
+          border-width: 1px;
+          border-style: solid;
+        }
+      }
+    }
+  }
+
   section.updates {
     @extend .content;
     @include padding-left($baseline);

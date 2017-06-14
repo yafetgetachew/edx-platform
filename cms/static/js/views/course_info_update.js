@@ -27,6 +27,32 @@ define(['codemirror',
                 // when the client refetches the updates as a whole, re-render them
                 this.listenTo(this.collection, 'reset', this.render);
                 this.listenTo(this.collection, 'invalid', this.handleValidationError);
+
+                _.extend(window.tiny_mce_conf_updates, {
+                    file_picker_callback: function(callback, value, meta) {
+                        if (meta.filetype == 'image') {
+                            $('#upload').trigger('click');
+                            $('#upload').on('change', function() {
+                                var file = this.files[0];
+                                var formData;
+                                formData = new FormData();
+                                formData.append('file', file);
+                                var url = tinyMCE.activeEditor.settings.images_upload_url;
+                                $.ajax({
+                                    url: url,
+                                    data: formData,
+                                    processData: false,
+                                    contentType: false,
+                                    type: 'POST',
+                                    headers: {'X-CSRFToken': $.cookie('csrftoken')},
+                                    success: function(response) {
+                                        callback(response.asset.url, {alt: file.name});
+                                    }
+                                });
+                            });
+                        }
+                    }
+                });
             },
 
             render: function() {
@@ -146,7 +172,7 @@ define(['codemirror',
                 //    lineNumbers: true,
                 //    lineWrapping: true
                 //});
-
+                tinyMCE.init(window.tiny_mce_conf_updates);
                 $newForm.addClass('editing');
                 this.$currentPost = $newForm.closest('li');
 
@@ -220,32 +246,6 @@ define(['codemirror',
                 }
                 //this.$codeMirror = CourseInfoHelper.editWithCodeMirror(
                 //targetModel, 'content', self.options.base_asset_url, $textArea.get(0));
-
-                _.extend(window.tiny_mce_conf_updates, {
-                    file_picker_callback: function(callback, value, meta) {
-                        if (meta.filetype == 'image') {
-                            $('#upload').trigger('click');
-                            $('#upload').on('change', function() {
-                                var file = this.files[0];
-                                var formData;
-                                formData = new FormData();
-                                formData.append('file', file);
-                                var url = tinyMCE.activeEditor.settings.images_upload_url;
-                                $.ajax({
-                                    url: url,
-                                    data: formData,
-                                    processData: false,
-                                    contentType: false,
-                                    type: 'POST',
-                                    headers: {'X-CSRFToken': $.cookie('csrftoken')},
-                                    success: function(response) {
-                                        callback(response.asset.url, {alt: file.name});
-                                    }
-                                });
-                            });
-                        }
-                    }
-                });
 
                 tinyMCE.init(window.tiny_mce_conf_updates);
 

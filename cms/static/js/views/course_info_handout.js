@@ -79,7 +79,7 @@ define(['js/views/baseview', 'codemirror', 'common/js/components/views/feedback_
             onSave: function(event) {
                 $('#handout_error').removeClass('is-shown');
                 $('.save-button').removeClass('is-disabled').attr('aria-disabled', false);
-                this.model.set('data', tinyMCE.activeEditor.getContent());
+                this.model.set('data', tinyMCE.activeEditor.getContent() || "<p></p>");
                 var saving = new NotificationView.Mini({
                     title: gettext('Saving')
                 });
