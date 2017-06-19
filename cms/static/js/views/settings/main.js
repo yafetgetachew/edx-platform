@@ -30,6 +30,8 @@ var DetailsView = ValidatingView.extend({
         this.$el.find("#course-organization").val(this.model.get('org'));
         this.$el.find("#course-number").val(this.model.get('course_id'));
         this.$el.find("#course-name").val(this.model.get('run'));
+        this.$el.find("#price-zmw").val(this.model.get('price_zmw'));
+        this.$el.find("#price-kes").val(this.model.get('price_kes'));
         this.$el.find('.set-date').datepicker({ 'dateFormat': 'm/d/yy' });
 
         // Avoid showing broken image on mistyped/nonexistent image
@@ -104,6 +106,8 @@ var DetailsView = ValidatingView.extend({
         return this;
     },
     fieldToSelectorMap : {
+        'price_zmw': 'price-zmw',
+        'price_kes': 'price-kes',
         'language' : 'course-language',
         'start_date' : "course-start",
         'end_date' : 'course-end',
@@ -212,6 +216,8 @@ var DetailsView = ValidatingView.extend({
                 this.setField(event);
             }
             break;
+        case 'price-zmw':
+        case 'price-kes':
         case 'course-short-description':
             this.setField(event);
             break;

@@ -54,6 +54,8 @@ class CourseDetails(object):
             '50'
         )  # minimum passing score for entrance exam content module/tree,
         self.has_cert_config = None  # course has active certificate configuration
+        self.price_zmw = None
+        self.price_kes = None
 
     @classmethod
     def _fetch_about_attribute(cls, course_key, attribute):
@@ -86,6 +88,8 @@ class CourseDetails(object):
         # Default course license is "All Rights Reserved"
         course_details.license = getattr(descriptor, "license", "all-rights-reserved")
         course_details.has_cert_config = has_active_web_certificate(descriptor)
+        course_details.price_kes = descriptor.price_kes
+        course_details.price_zmw = descriptor.price_zmw
 
         for attribute in ABOUT_ATTRIBUTES:
             value = cls._fetch_about_attribute(course_key, attribute)
@@ -187,6 +191,24 @@ class CourseDetails(object):
         if 'language' in jsondict and jsondict['language'] != descriptor.language:
             descriptor.language = jsondict['language']
             dirty = True
+
+        if 'price_kes' in jsondict and jsondict['price_kes'] != descriptor.price_kes:
+            try:
+                value = int(jsondict['price_kes'])
+            except ValueError:
+                pass
+            else:
+                descriptor.price_kes = value
+                dirty = True
+
+        if 'price_zmw' in jsondict and jsondict['price_zmw'] != descriptor.price_zmw:
+            try:
+                value = int(jsondict['price_zmw'])
+            except ValueError:
+                pass
+            else:
+                descriptor.price_zmw = value
+                dirty = True
 
         if dirty:
             module_store.update_item(descriptor, user.id)
