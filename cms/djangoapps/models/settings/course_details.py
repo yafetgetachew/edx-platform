@@ -193,22 +193,14 @@ class CourseDetails(object):
             dirty = True
 
         if 'price_kes' in jsondict and jsondict['price_kes'] != descriptor.price_kes:
-            try:
-                value = int(jsondict['price_kes'])
-            except ValueError:
-                pass
-            else:
-                descriptor.price_kes = value
-                dirty = True
+            value = int(jsondict['price_kes'])
+            descriptor.price_kes = value
+            dirty = True
 
         if 'price_zmw' in jsondict and jsondict['price_zmw'] != descriptor.price_zmw:
-            try:
-                value = int(jsondict['price_zmw'])
-            except ValueError:
-                pass
-            else:
-                descriptor.price_zmw = value
-                dirty = True
+            value = int(jsondict['price_zmw'])
+            descriptor.price_zmw = value
+            dirty = True
 
         if dirty:
             module_store.update_item(descriptor, user.id)
