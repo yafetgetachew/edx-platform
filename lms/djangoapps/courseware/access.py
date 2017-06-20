@@ -798,7 +798,11 @@ def _visible_to_nonstaff_users(descriptor):
     Arguments:
         descriptor: object to check
     """
-    return VisibilityError() if descriptor.visible_to_staff_only else ACCESS_GRANTED
+    if hasattr(descriptor, 'has_ended'):
+        co = descriptor
+    else:
+        co = CourseOverview.get_from_id(descriptor.course_id)
+    return VisibilityError() if descriptor.visible_to_staff_only or co.has_ended else ACCESS_GRANTED
 
 
 def _has_detached_class_tag(descriptor):
