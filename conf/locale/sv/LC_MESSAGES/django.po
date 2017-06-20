@@ -20762,3 +20762,5 @@ msgstr "godkändes %(time_ago)s av %(user)s"
 msgid "endorsed %(time_ago)s"
 msgstr "godkändes %(time_ago)s"
 
+msgid "Round is over"
+msgstr "Omgången är avslutad"
