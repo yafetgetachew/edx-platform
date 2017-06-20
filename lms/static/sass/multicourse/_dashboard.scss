@@ -289,14 +289,6 @@
       border-bottom: 4px solid $border-color-l4;
       margin-bottom: $baseline;
 
-      span {
-        font-size: 16px;
-        font-weight: 600;
-        color: #000;
-        padding-top: 20px;
-        display: block;
-      }
-
       .header-courses {
         @extend %t-title5;
         @include padding-right($baseline/2);
@@ -1509,3 +1501,10 @@ a.fade-cover{
   }
 }
 
+span.round-is-over {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  padding-top: 20px;
+  display: block;
+}
