@@ -802,7 +802,7 @@ def _visible_to_nonstaff_users(descriptor):
         co = descriptor
     else:
         co = CourseOverview.get_from_id(descriptor.course_id)
-    return VisibilityError() if descriptor.visible_to_staff_only or co.has_ended else ACCESS_GRANTED
+    return VisibilityError() if descriptor.visible_to_staff_only or co.has_ended() else ACCESS_GRANTED
 
 
 def _has_detached_class_tag(descriptor):
