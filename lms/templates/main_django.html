@@ -8,6 +8,52 @@
 
   <link rel="icon" type="image/x-icon" href="{% favicon_path %}" />
 
+  <script type="text/javascript">
+    window.intercomSettings = {
+      app_id: "m38swgns"
+    };
+  </script>
+  <script type="text/javascript">
+    (function() {
+      var w = window;
+      var ic = w.Intercom;
+
+      if(typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', intercomSettings);
+      } else {
+        var d = document;
+
+        var i = function() {
+          i.c(arguments)
+        };
+
+        i.q = [];
+
+        i.c = function(args) {
+          i.q.push(args)
+        };
+
+        w.Intercom = i;
+
+        function l() {
+          var s = d.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = 'https://widget.intercom.io/widget/m38swgns';
+          var x = d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+
+        if(w.attachEvent) {
+          w.attachEvent('onload', l);
+        } else {
+          w.addEventListener('load', l, false);
+        }
+      }
+    })()
+  </script>
+
   {% with "js/i18n/"|add:LANGUAGE_CODE|add:"/djangojs.js" as i18njs_path %}
     <script type="text/javascript" src="{% static i18njs_path %}"></script>
   {% endwith %}
