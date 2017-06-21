@@ -12,16 +12,18 @@ from celery.task import task
 from django.conf import settings
 from django.contrib.sites.models import Site
 
+from lms.urls import EDX_GLOBAL_ANALYTICS_APP_URL
 from xmodule.modulestore.django import modulestore
-from .models import TokenStorage
 
+from .models import TokenStorage
 from .utils import (
     fetch_instance_information,
     get_previous_day_start_and_end_dates,
     get_previous_week_start_and_end_dates,
     get_previous_month_start_and_end_dates,
     cache_timeout_week,
-    cache_timeout_month
+    cache_timeout_month,
+    platform_coordinates,
 )
 
 logger = logging.getLogger(__name__)
@@ -72,71 +74,60 @@ def collect_stats():
     Sending information depends on statistics level in settings, that have an effect on bunch of data size.
     """
 
-    # OLGA settings
     if 'OPENEDX_LEARNERS_GLOBAL_ANALYTICS' not in settings.ENV_TOKENS:
-        return logger.info('No OpenEdX Learners Global Analytics settings in file `lms.env.json`.')
+        logger.info('No OpenEdX Learners Global Analytics settings in file `lms.env.json`.')
+        return
 
     olga_settings = settings.ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS')
 
-    # Secret token to authorize our platform on remote server.
     try:
         token_object = TokenStorage.objects.first()
         secret_token = token_object.secret_token
     except AttributeError:
         secret_token = ""
 
-    # Current edx-platform URL.
     platform_url = "https://" + settings.SITE_NAME
 
-    # Predefined in the server settings url to send collected data to.
-    # For production development.
-    if olga_settings.get('OLGA_PERIODIC_TASK_POST_URL'):
-        post_url = olga_settings.get('OLGA_PERIODIC_TASK_POST_URL')
-    # For local development.
-    else:
-        post_url = olga_settings.get('OLGA_PERIODIC_TASK_POST_URL_LOCAL')
+    post_url = \
+        olga_settings.get('OLGA_PERIODIC_TASK_POST_URL') or olga_settings.get('OLGA_PERIODIC_TASK_POST_URL_LOCAL')
 
-    # Posts desired data volume to receiving server.
+    if not post_url:
+        logger.info('No OLGA periodic task post URL.')
+        return
+
     # Data volume depends on server settings.
     statistics_level = olga_settings.get("STATISTICS_LEVEL")
 
-    # Paranoid level basic data.
     courses_amount = len(modulestore().get_courses())
 
     (active_students_amount_day,
      active_students_amount_week,
      active_students_amount_month) = paranoid_level_statistics_bunch()
 
+    # Paranoid level basic data.
     data = {
         'active_students_amount_day': active_students_amount_day,
         'active_students_amount_week': active_students_amount_week,
         'active_students_amount_month': active_students_amount_month,
         'courses_amount': courses_amount,
         'statistics_level': 'paranoid',
-        'secret_token': secret_token
+        'secret_token': secret_token,
+
+        # Application URL for token authentication flow
+        'edx_global_analytics_app_url': EDX_GLOBAL_ANALYTICS_APP_URL,
     }
 
     # Enthusiast level (extends Paranoid level)
     if statistics_level == 1:
-        # Get IP address of the platform and convert it to latitude, longitude.
-        ip_data = requests.get('http://freegeoip.net/json')
-        ip_data_json = json.loads(ip_data.text)
 
-        platform_latitude = olga_settings.get("PLATFORM_LATITUDE")
-        platform_longitude = olga_settings.get("PLATFORM_LONGITUDE")
+        platform_city_name = olga_settings.get("PLATFORM_CITY_NAME")
 
-        if platform_latitude and platform_longitude:
-            latitude, longitude = platform_latitude, platform_longitude
-        else:
-            latitude, longitude = ip_data_json['latitude'], ip_data_json['longitude']
+        latitude, longitude = platform_coordinates(platform_city_name)
 
-        # Platform name.
         platform_name = settings.PLATFORM_NAME or Site.objects.get_current()
 
-        # Get students per country.
         students_per_country = enthusiast_level_statistics_bunch()
 
-        # Update basic Paranoid`s data
         data.update({
             'latitude': latitude,
             'longitude': longitude,
@@ -151,9 +142,9 @@ def collect_stats():
         logger.info('Connected without error to {0}'.format(request.url))
 
         if request.status_code == 201:
-            logger.info('Data were successfully transferred to Olga acceptor. Status code is 201.')
+            logger.info('Data were successfully transferred to OLGA acceptor. Status code is 201.')
         else:
-            logger.info('Data were not successfully transferred to Olga acceptor. Status code is {0}.'.format(
+            logger.info('Data were not successfully transferred to OLGA acceptor. Status code is {0}.'.format(
                 request.status_code
             ))
 

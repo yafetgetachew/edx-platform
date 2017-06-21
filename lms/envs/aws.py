@@ -20,9 +20,11 @@ Common traits:
 
 import datetime
 import json
+import random
 import warnings
 
 import dateutil
+from celery.schedules import crontab
 
 from .common import *
 from openedx.core.lib.logsettings import get_logger_config
@@ -119,8 +121,8 @@ CELERYBEAT_SCHEDULE = {
     """
 
     'collect_stats': {
-    'task': 'openedx.core.djangoapps.edx_global_analytics.tasks.collect_stats',
-    'schedule': 30, # number in seconds.
+        'task': 'openedx.core.djangoapps.edx_global_analytics.tasks.collect_stats',
+        'schedule': crontab(hour=0, minute=random.randint(1, 59)),
     }
 }
 
@@ -129,6 +131,10 @@ CELERYBEAT_SCHEDULE = {
 
 with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
     ENV_TOKENS = json.load(env_file)
+
+# Celery time zone settings for periodic task.
+OLGA_SETTINGS = ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS')
+CELERY_TIMEZONE = OLGA_SETTINGS.get('CELERY_TIMEZONE') or TIME_ZONE
 
 # STATIC_ROOT specifies the directory where static files are
 # collected
