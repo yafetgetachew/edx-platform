@@ -103,6 +103,7 @@ class CoursewareIndex(View):
                 self.course = get_course_with_access(request.user, 'load', self.course_key, depth=CONTENT_DEPTH)
                 self.is_staff = has_access(request.user, 'staff', self.course)
                 self._setup_masquerade_for_effective_user()
+                self.course = get_course_with_access(request.user, 'load', self.course_key, depth=CONTENT_DEPTH)
                 return self._get()
         except Redirect as redirect_error:
             return redirect(redirect_error.url)
