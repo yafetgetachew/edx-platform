@@ -27,8 +27,8 @@ import urllib
                 domain=site_domain,
                 path=reverse('about_course', args=[course.id.to_deprecated_string()])
             )
-        ).replace(u" ", u"+")
-        tweet_action = u"http://twitter.com/intent/tweet?text={tweet_text}".format(tweet_text=tweet_text)
+        )
+        tweet_action = u"http://twitter.com/intent/tweet?text={tweet_text}".format(tweet_text=tweet_text.replace(u"+", u"%2b"))
 
         email_subject = u"mailto:?subject={subject}&body={body}".format(
             subject=_("Take a course with {platform} online").format(platform=platform_name),
