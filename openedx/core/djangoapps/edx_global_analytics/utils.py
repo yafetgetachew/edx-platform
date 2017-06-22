@@ -13,6 +13,7 @@ from django.db.models import Count
 from django.db.models import Q
 
 from student.models import UserProfile
+from .models import AccessTokensStorage
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
