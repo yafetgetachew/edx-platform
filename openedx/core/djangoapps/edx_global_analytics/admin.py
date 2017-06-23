@@ -9,7 +9,7 @@ from .models import TokenStorage
 
 class TokenStorageAdmin(admin.ModelAdmin):
     """
-    Admin for token`s storage.
+    Admin for access tokens storage.
     """
     fields = ['secret_token']
 

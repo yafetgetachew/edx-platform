@@ -192,3 +192,90 @@ def platform_coordinates(city_name):
     Module `pytz` also has list of cities with `pytz.all_timezones`.
     """
     return get_coordinates_by_platform_city_name(city_name) or get_coordinates_by_ip()
+
+
+def request_exception_handler_with_logger(function):
+    """
+    Request Exception decorator. Logs error message if it exists.
+    """
+    def request_exception_wrapper(*args, **kwargs):
+        try:
+            return function(*args, **kwargs)
+        except requests.RequestException as error:
+            logger.exception(error.message)
+            return
+
+    return request_exception_wrapper
+
+
+def get_access_token():
+    """
+    Gets single access token for authorization and dispatch installation statistics to OLGA acceptor.
+    """
+    try:
+        access_token = AccessTokensStorage.objects.first().access_token
+    except AttributeError:
+        access_token = ''
+
+    return access_token
+
+
+@request_exception_handler_with_logger
+def access_token_registration(olga_acceptor_url):
+    """
+    Registers installation on OLGA acceptor via getting access token for further functionality.
+    """
+    token_registration_request = requests.post(olga_acceptor_url + '/api/token/registration/')
+    access_token = token_registration_request.json()['access_token']
+
+    AccessTokensStorage.objects.create(access_token=access_token)
+
+
+@request_exception_handler_with_logger
+def access_token_authorization(olga_acceptor_url):
+    """
+    Verifies that installation is allowed access to dispatch installation statistics to OLGA acceptor.
+    """
+    access_token = get_access_token()
+
+    token_authorization_request = requests.post(
+        olga_acceptor_url + '/api/token/authorization/', data={'access_token': access_token, }
+    )
+
+    if token_authorization_request.status_code == 401:
+        refreshed_access_token = token_authorization_request.json()['refreshed_access_token']
+
+        token_storage_object = AccessTokensStorage.objects.first()
+        token_storage_object.access_token = refreshed_access_token
+        token_storage_object.save()
+
+    return True
+
+
+def get_dispatch_installation_statistics_access_token(olga_acceptor_url):
+    """
+    Provides token authentication flow.
+    """
+    access_token = get_access_token()
+
+    if not access_token:
+        access_token_registration(olga_acceptor_url)
+
+    if access_token_authorization(olga_acceptor_url):
+        return get_access_token()
+
+
+@request_exception_handler_with_logger
+def dispatch_installation_statistics_to_acceptor(olga_acceptor_url, data):
+    """
+    Dispatches installation statistics OLGA acceptor.
+    """
+    request = requests.post(olga_acceptor_url + '/api/installation/statistics/', data)
+    logger.info('Connected without error to {0}'.format(request.url))
+
+    if request.status_code == 201:
+        logger.info('Data were successfully transferred to OLGA acceptor. Status code is 201.')
+    else:
+        logger.info('Data were not successfully transferred to OLGA acceptor. Status code is {0}.'.format(
+            request.status_code
+        ))
