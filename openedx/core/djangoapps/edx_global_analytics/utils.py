@@ -250,8 +250,6 @@ def access_token_authorization(olga_acceptor_url):
         token_storage_object.access_token = refreshed_access_token
         token_storage_object.save()
 
-    return True
-
 
 def get_dispatch_installation_statistics_access_token(olga_acceptor_url):
     """
@@ -262,8 +260,9 @@ def get_dispatch_installation_statistics_access_token(olga_acceptor_url):
     if not access_token:
         access_token_registration(olga_acceptor_url)
 
-    if access_token_authorization(olga_acceptor_url):
-        return get_access_token()
+    access_token_authorization(olga_acceptor_url)
+
+    return get_access_token()
 
 
 @request_exception_handler_with_logger
