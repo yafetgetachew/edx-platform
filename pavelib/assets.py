@@ -824,9 +824,14 @@ def update_assets(args):
         args.settings = 'static_collector'
     collect_log_args = {}
 
+    current_sys = args.system[0]
+
+    if args.system[0] == 'studio':
+        current_sys = 'cms'
+
     compile_templated_sass(args.system, args.settings)
-    os.environ.setdefault("SERVICE_VARIANT","{sys}".format(sys=args.system[0]))
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{sys}.envs.static_collector".format(sys=args.system[0]))
+    os.environ.setdefault("SERVICE_VARIANT","{sys}".format(sys=current_sys))
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{sys}.envs.static_collector".format(sys=current_sys))
 
     application = get_wsgi_application()  # pylint: disable=invalid-name
 
