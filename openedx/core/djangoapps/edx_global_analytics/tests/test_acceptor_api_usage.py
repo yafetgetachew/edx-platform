@@ -1,5 +1,5 @@
 """
-Tests for OLGA acceptor api usage by edX global analytics application tasks and helper functions.
+Tests acceptor API usage by edx_global_analytics application functions aka utils.
 """
 
 import uuid
@@ -17,7 +17,7 @@ from ..utils import (
 @patch('openedx.core.djangoapps.edx_global_analytics.utils.requests.post')
 class TestAcceptorApiUsage(unittest.TestCase):
     """
-    Tests for OLGA acceptor api usage by edX global analytics application.
+    Tests acceptor API usage by edx_global_analytics application functions aka utils.
     """
     def test_access_token_registration_method_sends_request_to_acceptor_api_for_token_registration(self, mock_request):
         """
