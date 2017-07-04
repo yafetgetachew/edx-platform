@@ -7,7 +7,7 @@ import uuid
 import unittest
 
 import requests
-from mock import patch, Mock
+from mock import patch
 
 from ..utils import (
     get_access_token,

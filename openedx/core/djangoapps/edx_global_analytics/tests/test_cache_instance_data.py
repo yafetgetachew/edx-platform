@@ -4,7 +4,7 @@ Tests for edX global analytics application cache functionality.
 
 from datetime import date, datetime
 
-from mock import patch, Mock
+from mock import patch
 
 from django.test import TestCase
 from django.utils import timezone

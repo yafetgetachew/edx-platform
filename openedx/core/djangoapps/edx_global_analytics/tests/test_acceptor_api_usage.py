@@ -5,7 +5,7 @@ Tests acceptor API usage by edx_global_analytics application functions aka utils
 import uuid
 import unittest
 
-from mock import patch, Mock
+from mock import patch
 
 from ..utils import (
     access_token_authorization,

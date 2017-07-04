@@ -4,7 +4,7 @@ Tests for edX global analytics application functions, that calculate statistics.
 
 import datetime
 
-from mock import patch, Mock
+from mock import patch
 
 from django.test import TestCase
 from django.utils import timezone
@@ -55,7 +55,6 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
         )
 
         self.assertEqual(2, result)
-
 
     def test_fetch_instance_information_method_raises_key_error_for_active_students_amount_statistics_query_is_missed(
             self
