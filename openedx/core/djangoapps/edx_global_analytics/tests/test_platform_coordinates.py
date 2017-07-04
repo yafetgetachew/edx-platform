@@ -9,7 +9,8 @@ from mock import patch
 
 from ..utils import (
     get_coordinates_by_platform_city_name,
-    get_coordinates_by_ip
+    get_coordinates_by_ip,
+    platform_coordinates,
 )
 
 
@@ -18,7 +19,9 @@ class TestPlatformCoordinates(unittest.TestCase):
     """
     Tests for platform coordinates methods, that gather latitude and longitude.
     """
-    def test_calls_get_coordinates_by_platform_city_name_method_with_address_param(self, mock_request):
+    def test_get_coordinates_by_platform_city_name_method_sends_request_to_google_api_with_address_param(
+            self, mock_request
+    ):
         """
         Verifies that get_coordinates_by_platform_city_name sends request to Google API with address as parameter.
         """
@@ -47,7 +50,9 @@ class TestPlatformCoordinates(unittest.TestCase):
             (50.4501, 30.5234), (latitude, longitude)
         )
 
-    def test_miss_city_in_settings_for_get_coordinates_result_by_platform_city_name(self, mock_request):
+    def test_get_coordinates_result_by_platform_city_name_method_returns_none_if_miss_city_in_settings(
+            self, mock_request
+    ):
         """
         Verifies that get_coordinates_by_platform_city_name returns city latitude and longitude
         although city name in settings is empty.
@@ -59,7 +64,9 @@ class TestPlatformCoordinates(unittest.TestCase):
         result_without_city_name = get_coordinates_by_platform_city_name('')
         self.assertEqual(None, result_without_city_name)
 
-    def test_wrong_city_name_in_settings_for_get_coordinates_result_by_platform_city_name(self, mock_request):
+    def test_get_coordinates_result_by_platform_city_name_returns_none_if_settings_have_wrong_city_name(
+            self, mock_request
+    ):
         """
         Verifies that get_coordinates_by_platform_city_name returns None if platform city name in settings is wrong.
         """
@@ -70,7 +77,7 @@ class TestPlatformCoordinates(unittest.TestCase):
         result_without_city_name = get_coordinates_by_platform_city_name('Lmnasasfabqwrqrn')
         self.assertEqual(None, result_without_city_name)
 
-    def test_calls_coordinates_by_ip_method_sends_request_to_freegeoip_api(self, mock_request):
+    def test_get_coordinates_by_ip_method_sends_request_to_freegeoip_api(self, mock_request):
         """
         Verifies that get_coordinates_by_ip sends request to FreeGeoIP API.
         """
@@ -99,4 +106,45 @@ class TestPlatformCoordinates(unittest.TestCase):
         latitude, longitude = get_coordinates_by_ip()
         self.assertEqual(
             ('', ''), (latitude, longitude)
+        )
+
+
+@patch('openedx.core.djangoapps.edx_global_analytics.utils.get_coordinates_by_platform_city_name')
+class TestPlatformCoordinatesHandler(unittest.TestCase):
+    """
+    Tests for platform_coordinates method, that handle platform coordinates receiving from independent APIs.
+    """
+    def test_platform_coordinates_method_handles_platform_coordinates_getting_to_get_coordinates_by_platform_city_name(
+            self, mock_get_coordinates_by_platform_city_name
+    ):
+        """
+        Verifies that platform_coordinates returns platform coordinates from Google API.
+        """
+        latitude, longitude = 50.4333, 30.5167
+
+        mock_get_coordinates_by_platform_city_name.return_value = 50.4333, 30.5167
+
+        result = platform_coordinates('Kiev')
+
+        self.assertEqual(
+            (latitude, longitude), result
+        )
+
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_coordinates_by_ip')
+    def test_platform_coordinates_method_handles_platform_coordinates_getting_to_get_coordinates_by_ip(
+            self, mock_get_coordinates_by_ip, mock_get_coordinates_by_platform_city_name
+    ):
+        """
+        Verifies that platform_coordinates returns platform coordinates from FreeGeoIP API
+        if Google API does not return it.
+        """
+        latitude, longitude = 50.4333, 30.5167
+
+        mock_get_coordinates_by_platform_city_name.return_value = None
+        mock_get_coordinates_by_ip.return_value = latitude, longitude
+
+        result = platform_coordinates('Kiev')
+
+        self.assertEqual(
+            (latitude, longitude), result
         )

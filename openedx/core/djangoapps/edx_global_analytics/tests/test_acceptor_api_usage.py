@@ -11,6 +11,7 @@ from ..utils import (
     access_token_authorization,
     access_token_registration,
     dispatch_installation_statistics_to_acceptor,
+    get_dispatch_installation_statistics_access_token,
 )
 
 
@@ -84,7 +85,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         self.assertEqual(mock_refreshed_access_token, mock_access_tokens_storage_model_objects_first.access_token)
         mock_access_tokens_storage_model_objects_first.save.assert_called_once()
 
-    def test_dispatch_installation_statistics_method_sends_request_to_acceptor_api_for_dispatch_statistics(
+    def test_dispatch_installation_statistics_to_acceptormethod_sends_request_to_acceptor_api_for_dispatch_statistics(
             self, mock_request
     ):
         """
@@ -97,7 +98,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.logging.Logger.info')
-    def test_dispatch_installation_statistics_method_successfully_dispatches_statistics_acceptor(
+    def test_dispatch_installation_statistics_to_acceptormethod_successfully_dispatches_statistics_acceptor(
             self, mock_logging, mock_request
     ):
         """
@@ -110,7 +111,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         mock_logging.assert_called_with('Data were successfully transferred to OLGA acceptor. Status code is 201.')
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.logging.Logger.info')
-    def test_dispatch_installation_statistics_method_unsuccessfully_dispatches_statistics_acceptor(
+    def test_dispatch_installation_statistics_to_acceptormethod_unsuccessfully_dispatches_statistics_acceptor(
             self, mock_logging, mock_request
     ):
         """
@@ -126,3 +127,59 @@ class TestAcceptorApiUsage(unittest.TestCase):
                 mock_request.return_value.status_code
             )
         )
+
+
+class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
+
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_access_token')
+    def test_get_dispatch_installation_statistics_access_token_method_calls_get_access_token(
+            self, mock_get_access_token
+    ):
+        """
+        Verifies that get_dispatch_installation_statistics_access_token method calls get_access_token method.
+        """
+        mock_get_access_token.assert_called_once()
+
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.access_token_registration')
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_access_token')
+    def test_get_dispatch_installation_statistics_access_token_method_calls_access_token_registration_if_no_token(
+            self, mock_get_access_token, mock_access_token_registration
+    ):
+        """
+        Verifies that get_dispatch_installation_statistics_access_token method calls access_token_registration
+        if access token does not exists.
+        """
+        mock_get_access_token.return_value = ''
+
+        get_dispatch_installation_statistics_access_token('https://mock-url.com')
+
+        mock_access_token_registration.assert_called_once_with('https://mock-url.com')
+
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.access_token_authorization')
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_access_token')
+    def test_get_dispatch_installation_statistics_access_token_method_calls_access_token_authorization_if_token_exists(
+            self, mock_get_access_token, mock_access_token_authorization
+    ):
+        """
+        Verifies that dispatch_installation_statistics_access_token_method calls access_token_authorization
+        if access token exists.
+        """
+        mock_get_access_token.return_value = uuid.uuid4().hex
+
+        get_dispatch_installation_statistics_access_token('https://mock-url.com')
+
+        mock_access_token_authorization.assert_called_once_with('https://mock-url.com')
+
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_access_token')
+    def test_get_dispatch_installation_statistics_access_token_returns_get_access_token_result(
+            self, mock_get_access_token
+    ):
+        """
+        Verifies that dispatch_installation_statistics_access_token_method return get_access_token method result.
+        """
+        mock_access_token = uuid.uuid4().hex
+        mock_get_access_token.return_value = mock_access_token
+
+        result = get_dispatch_installation_statistics_access_token('https://mock-url.com')
+
+        self.assertEqual(mock_access_token, result)

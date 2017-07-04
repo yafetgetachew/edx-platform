@@ -50,13 +50,15 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
         mock_logging_exception.exception.assert_called_once()
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.first')
-    def test_get_access_token_if_it_exists(self, mock_access_tokens_storage_model_objects_first_method):
+    def test_get_access_token_method_gets_access_token_from_database_if_it_exists(
+            self, mock_access_tokens_storage_model_objects_first_method
+    ):
         """
         Verifies that get_access_token gets access token from access tokens storage if it exists.
         """
         mock_access_token = uuid.uuid4().hex
 
-        class MockAccessTokensStorageModelFirstObject():
+        class MockAccessTokensStorageModelFirstObject(object):
             access_token = mock_access_token
 
         mock_access_tokens_storage_model_objects_first_method.return_value = MockAccessTokensStorageModelFirstObject()
@@ -66,7 +68,9 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
         self.assertEqual(mock_access_token, result)
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.first')
-    def test_get_access_token_if_it_does_not_exist(self, mock_access_tokens_storage_model_objects_first_method):
+    def test_get_access_token_method_returns_empty_line_if_access_token_does_not_exist(
+            self, mock_access_tokens_storage_model_objects_first_method
+    ):
         """
         Verifies that get_access_token gets empty string if access token does not exist in access tokens storage.
         It is accompanied by AttributeError.

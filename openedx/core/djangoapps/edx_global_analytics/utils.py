@@ -3,8 +3,8 @@ Helpers for the edX global analytics application.
 """
 
 import calendar
-import datetime
 import logging
+from datetime import date, datetime, timedelta
 
 import requests
 
@@ -72,11 +72,11 @@ def cache_timeout_week():
     """
     Calculates how much time cache need to save data for weekly statistics.
     """
-    current_datetime = datetime.datetime.now()
+    current_datetime = datetime.now()
 
-    days_after_week_started = datetime.date.today().weekday()
+    days_after_week_started = date.today().weekday()
 
-    last_datetime_of_current_week = (current_datetime + datetime.timedelta(
+    last_datetime_of_current_week = (current_datetime + timedelta(
         6 - days_after_week_started)
     ).replace(hour=23, minute=59, second=59)
 
@@ -89,7 +89,7 @@ def cache_timeout_month():
     """
     Calculates how much time cache need to save data for monthly statistics.
     """
-    current_datetime = datetime.datetime.now()
+    current_datetime = datetime.now()
 
     last_datetime_of_current_month = current_datetime.replace(
         day=calendar.monthrange(current_datetime.year, current_datetime.month)[1]
@@ -109,8 +109,8 @@ def get_previous_day_start_and_end_dates():
         end_of_day (date): Previous day`s end, it`s a next day (tomorrow) toward day`s start,
                            that doesn't count in segment. Example for 2017-05-15 is 2017-05-16.
     """
-    end_of_day = datetime.date.today()
-    start_of_day = end_of_day - datetime.timedelta(days=1)
+    end_of_day = date.today()
+    start_of_day = end_of_day - timedelta(days=1)
 
     return start_of_day, end_of_day
 
@@ -120,14 +120,14 @@ def get_previous_week_start_and_end_dates():
     Get accurate start and end dates, that create segment between them equal to a full last calendar week.
 
     Returns:
-        start_of_month (date): Calendar week`s start day. Example for may is 2017-05-08.
-        end_of_month (date): Calendar week`s end day, it`s the first day of next week, that doesn't count in segment.
-                             Example for may is 2017-05-15.
+        start_of_week (date): Calendar week`s start day. Example for 2017-05-17 is 2017-05-08.
+        end_of_week (date): Calendar week`s end day, it`s the first day of next week, that doesn't count in segment.
+                             Example for 2017-05-17 is 2017-05-15.
     """
-    days_after_week_started = datetime.date.today().weekday() + 7
+    days_after_week_started = date.today().weekday() + 7
 
-    start_of_week = datetime.date.today() - datetime.timedelta(days=days_after_week_started)
-    end_of_week = start_of_week + datetime.timedelta(days=7)
+    start_of_week = date.today() - timedelta(days=days_after_week_started)
+    end_of_week = start_of_week + timedelta(days=7)
 
     return start_of_week, end_of_week
 
@@ -141,12 +141,12 @@ def get_previous_month_start_and_end_dates():
         end_of_month (date): Calendar month`s end day, it`s the first day of next month, that doesn't count in segment.
                              Example for may is 2017-05-01.
     """
-    previous_month_date = datetime.date.today().replace(day=1) - datetime.timedelta(days=1)
+    previous_month_date = date.today().replace(day=1) - timedelta(days=1)
 
     start_of_month = previous_month_date.replace(day=1)
     end_of_month = previous_month_date.replace(
         day=calendar.monthrange(previous_month_date.year, previous_month_date.month)[1]
-    ) + datetime.timedelta(days=1)
+    ) + timedelta(days=1)
 
     return start_of_month, end_of_month
 
