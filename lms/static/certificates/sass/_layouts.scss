@@ -34,7 +34,7 @@
 
     .logo {
         display: block;
-        @include size(rem(100) auto);
+        width: 20rem;
         margin: 0 auto;
     }
 
@@ -217,21 +217,10 @@
             vertical-align: middle;
             height: rem(100);
             margin-bottom: spacing-vertical(small);
+            width: 20rem;
 
             &:last-child {
                 @include margin-right(0);
-            }
-
-            @media(min-width: $bp-screen-md) {
-                @include span(3);
-            }
-
-            @media(min-width: $bp-screen-lg) {
-                @include span(2);
-            }
-
-            @media(min-width: $bp-screen-xl) {
-                @include span(2);
             }
         }
 
