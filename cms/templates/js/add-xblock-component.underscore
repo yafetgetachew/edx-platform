@@ -1,5 +1,12 @@
 <div class="new-component">
     <h5><%= gettext("Add New Component") %></h5>
     <ul class="new-component-type">
+      <li>
+        <button type="button" class="button-jitsi single-template add-xblock-component-button button-component" data-category="html" data-boilerplate="jitsi.yaml">
+          <span class="large-template-icon large-jitsi-icon"></span>
+          <span class="sr"> <%= gettext("Add Component:") %></span>
+          <span class="name">Jitsi</span>
+        </button>
+      </li>
     </ul>
 </div>

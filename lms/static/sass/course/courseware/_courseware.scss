@@ -663,3 +663,10 @@ section.self-assessment {
 }
 
 
+a.jitsi-link div {
+    background: url('#{$static-path}/images/join.png') center no-repeat;
+    height: 90px;
+    width: auto;
+    background-size: contain;
+}
+
