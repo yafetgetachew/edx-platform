@@ -708,6 +708,34 @@ class CourseFields(object):
         scope=Scope.settings
     )
 
+    length = String(
+        display_name=_("Length"),
+        help=_("Specify the length."),
+        default=None,
+        scope=Scope.settings
+    )
+
+    institute = String(
+        display_name=_("Institute"),
+        help=_("Specify the institute."),
+        default=None,
+        scope=Scope.settings
+    )
+
+    certificate = String(
+        display_name=_("Certificate"),
+        help=_("Specify the certificate."),
+        default=None,
+        scope=Scope.settings
+    )
+
+    levels = String(
+        display_name=_("Levels"),
+        help=_("Specify the levels."),
+        default=None,
+        scope=Scope.settings
+    )
+
     teams_configuration = Dict(
         display_name=_("Teams Configuration"),
         # Translators: please don't translate "id".

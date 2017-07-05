@@ -72,6 +72,10 @@ class CourseDetails(object):
         self.self_paced = None
         self.learning_info = []
         self.instructor_info = []
+        self.length = ""
+        self.institute = ""
+        self.certificate = ""
+        self.levels = ""
 
     @classmethod
     def fetch_about_attribute(cls, course_key, attribute):
@@ -118,6 +122,10 @@ class CourseDetails(object):
         course_details.self_paced = course_descriptor.self_paced
         course_details.learning_info = course_descriptor.learning_info
         course_details.instructor_info = course_descriptor.instructor_info
+        course_details.length = course_descriptor.length
+        course_details.institute = course_descriptor.institute
+        course_details.certificate = course_descriptor.certificate
+        course_details.levels = course_descriptor.levels
 
         # Default course license is "All Rights Reserved"
         course_details.license = getattr(course_descriptor, "license", "all-rights-reserved")
@@ -263,6 +271,22 @@ class CourseDetails(object):
 
         if 'language' in jsondict and jsondict['language'] != descriptor.language:
             descriptor.language = jsondict['language']
+            dirty = True
+
+        if 'length' in jsondict and jsondict['length'] != descriptor.length:
+            descriptor.length = jsondict['length']
+            dirty = True
+
+        if 'institute' in jsondict and jsondict['institute'] != descriptor.institute:
+            descriptor.institute = jsondict['institute']
+            dirty = True
+
+        if 'certificate' in jsondict and jsondict['certificate'] != descriptor.certificate:
+            descriptor.certificate = jsondict['certificate']
+            dirty = True
+
+        if 'levels' in jsondict and jsondict['levels'] != descriptor.levels:
+            descriptor.levels = jsondict['levels']
             dirty = True
 
         if (SelfPacedConfiguration.current().enabled

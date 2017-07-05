@@ -3,6 +3,10 @@ define(["backbone", "underscore", "gettext", "js/models/validation_helpers", "js
 
 var CourseDetails = Backbone.Model.extend({
     defaults: {
+        length: '',
+        institute: '',
+        certificate: '',
+        levels: '',
         org : '',
         course_id: '',
         run: '',

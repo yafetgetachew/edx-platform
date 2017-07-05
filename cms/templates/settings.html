@@ -286,6 +286,27 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
               </select>
               <span class="tip tip-stacked">${_("Identify the course language here. This is used to assist users find courses that are taught in a specific language.")}</span>
             </li>
+
+            <li class="field" id="field-length">
+              <label for="course-length">${_("Length")}</label>
+              <input type="text"  dir="ltr" class="long" id="course-length" value="" autocomplete="off" />
+            </li>
+
+            <li class="field" id="field-institute">
+              <label for="course-institute">${_("Institute")}</label>
+              <input type="text"  dir="ltr" class="long" id="course-institute" value="" autocomplete="off" />
+            </li>
+
+            <li class="field" id="field-certificate">
+              <label for="course-certificate">${_("Certificate")}</label>
+              <input type="text"  dir="ltr" class="long" id="course-certificate" value="" autocomplete="off" />
+            </li>
+
+            <li class="field" id="field-levels">
+              <label for="course-levels">${_("Levels")}</label>
+              <input type="text"  dir="ltr" class="long" id="course-levels" value="" autocomplete="off" />
+            </li>
+
           </ol>
         </div>
         % endif
