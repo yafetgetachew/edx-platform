@@ -103,4 +103,5 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git+https://github.com/TinMarkovic/ChartsXBlock.git#egg=chartsxblock
 -e git+https://github.com/raccoongang/edx_xblock_firechat.git#egg=edx_xblock_firechat
 -e git+https://github.com/raccoongang/edx_xblock_firepad.git#egg=edx_xblock_firepad
+-e git+https://github.com/raccoongang/edx-xblock-in-video-quiz.git@xblock-rg#egg=invideoquiz-xblock
 
