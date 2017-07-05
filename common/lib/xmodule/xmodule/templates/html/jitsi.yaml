@@ -1,0 +1,16 @@
+---
+metadata:
+    display_name: Jitsi
+    editor: raw
+data: |
+      <!-- Do not remove this code. -->
+      <!-- BEGIN -->
+      <a class="jitsi-link" target="_blank" href="https://meet.jit.si/"><div></div></a>
+      <script>
+        $("a.jitsi-link").each(function (i, a) {
+          var id = $(a).parent().data('usage-id');
+          var room_id = window.location.host + '_' + id;
+          a.href = 'https://meet.jit.si/' + room_id.replace(/:|@/g , '_');
+        });
+      </script>
+      <!-- END -->

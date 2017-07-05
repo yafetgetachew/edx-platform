@@ -11,6 +11,17 @@
 	cursor: move;
 }
 
+.button-jitsi {
+        margin-right: 10px !important;
+}
+
+.large-jitsi-icon {
+        display: inline-block;
+        width: ($baseline*3);
+        height: ($baseline*3);
+        background: url('#{$static-path}/images/large-jitsi-icon.png') center no-repeat;
+}
+
 .large-advanced-icon {
 	display: inline-block;
 	width: ($baseline*3);
@@ -44,4 +55,11 @@
 	width: ($baseline*3);
 	height: ($baseline*3);
 	background: url('#{$static-path}/images/large-video-icon.png') center no-repeat;
+}
+
+a.jitsi-link div {
+    background: url('#{$static-path}/images/join.png') center no-repeat;
+    height: 90px;
+    width: auto;
+    background-size: contain;
 }
