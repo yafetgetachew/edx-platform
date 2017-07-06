@@ -61,7 +61,7 @@ locales:
     # - pt_BR  # Portuguese (Brazil)
     # - pt_PT  # Portuguese (Portugal)
     # - ro  # Romanian
-    #- ru  # Russian
+    - ru  # Russian
     # - si  # Sinhala
     # - sk  # Slovak
     # - sl  # Slovenian
