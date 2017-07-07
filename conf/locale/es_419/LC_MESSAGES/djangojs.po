@@ -12,7 +12,9 @@
 # morsoinferno <cristobal.acosta@usach.cl>, 2014-2015
 # David Salazar <imdjsg@gmail.com>, 2014
 # David Salazar <imdjsg@gmail.com>, 2014
+# Eduardo Zambrano <ezambrano@edx.org>, 2017
 # Elias Estay <eestay@u.uchile.cl>, 2015
+# Poxtic <erandelle@outlook.com>, 2017
 # Felipe Schmidt M <fschmidt@cercano.cl>, 2015
 # Fernando Abramowitz <ferabra@gmail.com>, 2014
 # Gerardo Laster, 2014
@@ -39,7 +41,7 @@
 # Ernesto Sánchez Benitez <sbernesto@gmail.com>, 2016
 # UAbierta Universidad de Chile <uabierta@u.uchile.cl>, 2015
 # Valeria Freire <valtodopds@hotmail.com>, 2014-2015
-# Yusuf (Josè) Luis <alagunajs@gmail.com>, 2016
+# José Luis <alagunajs@gmail.com>, 2016
 # #-#-#-#-#  djangojs-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2017 EdX
@@ -90,6 +92,7 @@
 # Leandro Agustín Barrientos <agustinbarrientos@outlook.com>, 2016
 # Mecabotware <mecabotware.ideas@gmail.com>, 2015
 # Natalia Aguillon, 2016
+# Ned Weitzman <nweitzman@edx.org>, 2017
 # Nuri Plans Toral <nplans@gmail.com>, 2014
 # Patricia Colmenares <patrusca38@hotmail.com>, 2015
 # palichis <palichis@solid-ec.org>, 2015
@@ -107,6 +110,7 @@
 # Morphyne <cirrosis60@gmail.com>, 2014
 # Cristian Guerra <cristian.guerra.maya@gmail.com>, 2016
 # Cristian Salamea <ovnicraft@gmail.com>, 2014-2015
+# Poxtic <erandelle@outlook.com>, 2017
 # Javier Galnares Arias <javigalnares@yahoo.es>, 2015
 # Juan Camilo Montoya Franco <juan.montoya@edunext.co>, 2015-2017
 # Juan Camilo Montoya Franco <juan.montoya@edunext.co>, 2014
@@ -122,8 +126,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-03-30 13:58+0000\n"
-"PO-Revision-Date: 2017-03-30 14:03+0000\n"
+"POT-Creation-Date: 2017-07-06 15:20+0000\n"
+"PO-Revision-Date: 2017-07-06 15:25+0000\n"
 "Last-Translator: Ned Batchelder <ned@edx.org>\n"
 "Language-Team: Spanish (Latin America) (http://www.transifex.com/open-edx/edx-platform/language/es_419/)\n"
 "MIME-Version: 1.0\n"
@@ -132,6 +136,20 @@ msgstr ""
 "Generated-By: Babel 1.3\n"
 "Language: es_419\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms/static/cms/js/main.js cms/static/js/views/active_video_upload_list.js
+#: common/static/bundles/Import.js
+msgid ""
+"This may be happening because of an error with our server or your internet "
+"connection. Try refreshing the page or making sure you are online."
+msgstr ""
+"Esto puede estar sucediendo debido a un error con nuestros servidores o con "
+"tu conexión a Internet. Intenta refrescar la página o verifica tu acceso a "
+"Internet."
+
+#: cms/static/cms/js/main.js common/static/bundles/Import.js
+msgid "Studio's having trouble saving your work"
+msgstr "Studio tiene problemas para guardar tu trabajo"
 
 #: cms/static/cms/js/xblock/cms.runtime.v1.js
 #: cms/static/js/certificates/views/signatory_details.js
@@ -155,7 +173,6 @@ msgstr "Guardando"
 #: lms/djangoapps/teams/static/teams/js/views/instructor_tools.js
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
-#: cms/templates/js/content-group-details.underscore
 #: cms/templates/js/content-group-editor.underscore
 #: cms/templates/js/course-instructor-details.underscore
 #: cms/templates/js/course-outline.underscore
@@ -164,6 +181,7 @@ msgstr "Guardando"
 #: cms/templates/js/course_info_update.underscore
 #: cms/templates/js/group-configuration-details.underscore
 #: cms/templates/js/group-configuration-editor.underscore
+#: cms/templates/js/partition-group-details.underscore
 #: cms/templates/js/show-textbook.underscore
 #: cms/templates/js/signatory-editor.underscore
 #: cms/templates/js/xblock-outline.underscore
@@ -207,7 +225,7 @@ msgstr "Cancelar"
 
 #. Translators: This is the status of an active video upload
 #: cms/static/js/models/active_video_upload.js cms/static/js/views/assets.js
-#: lms/static/js/views/image_field.js
+#: cms/static/js/views/video_thumbnail.js lms/static/js/views/image_field.js
 msgid "Uploading"
 msgstr "Subiendo"
 
@@ -217,6 +235,7 @@ msgstr "Subiendo"
 #: cms/static/js/views/active_video_upload.js
 #: cms/static/js/views/modals/edit_xblock.js
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
+#: lms/static/js/student_account/tos_modal.js
 #: common/static/common/templates/image-modal.underscore
 #: common/static/common/templates/discussion/alert-popup.underscore
 #: common/static/common/templates/discussion/forum-action-close.underscore
@@ -291,9 +310,9 @@ msgstr "Subir archivo"
 #: cms/templates/js/section-name-edit.underscore
 #: cms/templates/js/signatory-actions.underscore
 #: cms/templates/js/xblock-string-field-editor.underscore
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-course-wide.underscore
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-course-wide.underscore
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
 msgid "Save"
 msgstr "Guardar"
 
@@ -312,8 +331,8 @@ msgid "Removing"
 msgstr "Eliminando"
 
 #: cms/static/js/views/validation.js
-#: lms/static/js/groups/views/cohort_discussions_course_wide.js
-#: lms/static/js/groups/views/cohort_discussions_inline.js
+#: lms/static/js/discussions_management/views/divided_discussions_course_wide.js
+#: lms/static/js/discussions_management/views/divided_discussions_inline.js
 #: lms/static/js/views/fields.js
 msgid "Your changes have been saved."
 msgstr "Sus cambios han sido guardados."
@@ -370,11 +389,11 @@ msgstr "Esconder anotaciones"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Expand Instructions"
-msgstr "Expandir Instrucciones"
+msgstr "Expandir instrucciones"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Collapse Instructions"
-msgstr "Contraer Instrucciones"
+msgstr "Contraer instrucciones"
 
 #: common/lib/xmodule/xmodule/js/src/annotatable/display.js
 msgid "Commentary"
@@ -387,10 +406,28 @@ msgstr "Responder a la anotación"
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "%(num_points)s point possible (graded, results hidden)"
+msgid_plural "%(num_points)s points possible (graded, results hidden)"
+msgstr[0] "%(num_points)s punto posible (calificado, resultados escondidos)"
+msgstr[1] ""
+"%(num_points)s puntos posibles (calificados, resultados escondidos)"
+
+#. Translators: %(num_points)s is the number of points possible (examples: 1,
+#. 3, 10).;
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid "%(num_points)s point possible (ungraded, results hidden)"
+msgid_plural "%(num_points)s points possible (ungraded, results hidden)"
+msgstr[0] "%(num_points)s punto posible (calificado, resultados escondidos)"
+msgstr[1] ""
+"%(num_points)s puntos posibles (no calificados, resultados escondidos)"
+
+#. Translators: %(num_points)s is the number of points possible (examples: 1,
+#. 3, 10).;
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(num_points)s point possible (graded)"
 msgid_plural "%(num_points)s points possible (graded)"
 msgstr[0] "%(num_points)s punto posible (calificado)"
-msgstr[1] "%(num_points)s puntos posibles (calificado)"
+msgstr[1] "%(num_points)s puntos posibles (calificados)"
 
 #. Translators: %(num_points)s is the number of points possible (examples: 1,
 #. 3, 10).;
@@ -423,12 +460,12 @@ msgstr[1] "%(earned)s/%(possible)s puntos (no calificado)"
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "The grading process is still running. Refresh the page to see updates."
 msgstr ""
-"El proceso de calificación todavía está corriendo. Recargue la página para "
+"El proceso de calificación todavía está corriendo. Recarga la página para "
 "ver las actualizaciones."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Could not grade your answer. The submission was aborted."
-msgstr "No se ha podido calificar su respuesta. El registro fue cancelado."
+msgstr "No se ha podido calificar tu respuesta. El registro fue cancelado."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid ""
@@ -436,26 +473,26 @@ msgid ""
 "you can, please use Chrome or Safari which have been verified to support "
 "file uploads."
 msgstr ""
-"¡El envío fue descartado! Lo sentimos, su navegador no soporta la carga de "
-"archivos. Si puede, por favor utilice Chrome o Safari que han sido "
+"¡El envío fue descartado! Lo sentimos, tu navegador no soporta la carga de "
+"archivos. Si puedes, por favor utiliza Chrome o Safari que han sido "
 "verificados para soportar la carga de archivos."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "You submitted {filename}; only {allowedFiles} are allowed."
-msgstr "Ud. envió {filename}; solamente se permiten {allowedFiles}."
+msgstr "Tu enviaste {filename}; solamente se permiten {allowedFiles}."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Your file {filename} is too large (max size: {maxSize}MB)."
 msgstr ""
-"Su archivo {filename} es demasiado grande (tamaño máximo: {maxSize}MB)."
+"Tu archivo {filename} es demasiado grande (tamaño máximo: {maxSize}MB)."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "You did not submit the required files: {requiredFiles}."
-msgstr "Ud. no envió los archivos requeridos: {requiredFiles}."
+msgstr "No enviaste los archivos requeridos: {requiredFiles}."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "You did not select any files to submit."
-msgstr "No ha seleccionado ningún archivo para enviar."
+msgstr "No has seleccionado ningún archivo para enviar."
 
 #. Translators: This is only translated to allow for reordering of label and
 #. associated status.;
@@ -831,10 +868,10 @@ msgstr "Editar HTML"
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: cms/templates/js/certificate-details.underscore
-#: cms/templates/js/content-group-details.underscore
 #: cms/templates/js/course_info_handouts.underscore
 #: cms/templates/js/course_info_update.underscore
 #: cms/templates/js/group-configuration-details.underscore
+#: cms/templates/js/partition-group-details.underscore
 #: cms/templates/js/show-textbook.underscore
 #: cms/templates/js/signatory-details.underscore
 #: cms/templates/js/xblock-string-field-editor.underscore
@@ -864,7 +901,7 @@ msgstr "Codificación"
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "File"
-msgstr "archivo"
+msgstr "Archivo"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1487,7 +1524,7 @@ msgstr "Fuente"
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "Special character"
-msgstr "Caracter especial"
+msgstr "Carácter especial"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1580,8 +1617,8 @@ msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
 "required mailto: prefix?"
 msgstr ""
-"La URL que introdujo parece ser una dirección de correo electrónico. ¿Desea "
-"agregarle el prefijo requerido mailto:?"
+"La URL que introdujiste parece ser una dirección de correo electrónico. "
+"¿Desea agregarle el prefijo requerido mailto:?"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1590,7 +1627,7 @@ msgid ""
 "The URL you entered seems to be an external link. Do you want to add the "
 "required http:// prefix?"
 msgstr ""
-"La URL que introdujo parece ser un vínculo externo. ¿Desea agregarle el "
+"La URL que introdujiste parece ser un vínculo externo. ¿Desea agregarle el "
 "prefijo requerido http://?"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
@@ -1662,9 +1699,9 @@ msgstr "Espacio vertical"
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
-#: lms/templates/search/course_search_item.underscore
-#: lms/templates/search/dashboard_search_item.underscore
 #: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
+#: openedx/features/course_search/static/course_search/templates/course_search_item.underscore
+#: openedx/features/course_search/static/course_search/templates/dashboard_search_item.underscore
 msgid "View"
 msgstr "Ver"
 
@@ -1697,7 +1734,8 @@ msgstr "Palabras: {0}"
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 msgid "You have unsaved changes are you sure you want to navigate away?"
 msgstr ""
-"Tiene cambios sin guardar, ¿está seguro que desea avanzar en el navegador?"
+"Tienes cambios sin guardar, ¿estás seguro que deseas avanzar en el "
+"navegador?"
 
 #. Translators: this is a message from the raw HTML editor displayed in the
 #. browser when a user needs to edit HTML
@@ -1706,7 +1744,7 @@ msgid ""
 "Your browser doesn't support direct access to the clipboard. Please use the "
 "Ctrl+X/C/V keyboard shortcuts instead."
 msgstr ""
-"Su navegador no soporta el acceso directo al portapapeles. Por favor, use "
+"Tu navegador no soporta el acceso directo al portapapeles. Por favor, usa "
 "los atajos Ctrl+X/C/V"
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
@@ -1715,9 +1753,9 @@ msgid ""
 "\n"
 "Click Cancel to return to this page without sending your information."
 msgstr ""
-"Haga Clic en ACEPTAR para que su nombre de usuario y correo electrónico sean enviados a una aplicación de 3ros.\n"
+"Haz Clic en ACEPTAR para que tu nombre de usuario y correo electrónico sean enviados a una aplicación de 3ros.\n"
 "\n"
-"Haga Clic en CANCELAR para volver a está página sin que se que envíe su información."
+"Haz Clic en CANCELAR para volver a está página sin que se que envíe su información."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
 msgid ""
@@ -1725,9 +1763,9 @@ msgid ""
 "\n"
 "Click Cancel to return to this page without sending your information."
 msgstr ""
-"Haga Clic en ACEPTAR para que su nombre de usuario sea enviado a una aplicación de 3ros.\n"
+"Haz Clic en ACEPTAR para que su nombre de usuario sea enviado a una aplicación de 3ros.\n"
 "\n"
-"Haga Clic en CANCELAR para volver a está página sin que se que envíe su información."
+"Haz Clic en CANCELAR para volver a está página sin que se que envíe su información."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
 msgid ""
@@ -1735,9 +1773,9 @@ msgid ""
 "\n"
 "Click Cancel to return to this page without sending your information."
 msgstr ""
-"Haga Clic en ACEPTAR para que su correo electrónico sea enviado a una aplicación de 3ros.\n"
+"Haz Clic en ACEPTAR para que tu correo electrónico sea enviado a una aplicación de 3ros.\n"
 "\n"
-"Haga Clic en CANCELAR para volver a está página sin que se que envíe su información."
+"Haz Clic en CANCELAR para volver a está página sin que se que envíe su información."
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "incorrect"
@@ -1761,9 +1799,9 @@ msgid ""
 "\n"
 "Proceed to the Advanced Editor and convert this problem to XML?"
 msgstr ""
-"Si utiliza el Editor Avanzado, este problema se convertirá a formato XML y no podrá retornar al Editor Simple.\n"
+"Si utilizas el Editor Avanzado, este problema se convertirá a formato XML y no podrá retornar al Editor Simple.\n"
 "\n"
-"¿Desea pasar al Editor avanzado y convertir el problema a formato XML?"
+"¿Deseas pasar al Editor avanzado y convertir el problema a formato XML?"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Explanation"
@@ -1774,8 +1812,8 @@ msgid ""
 "Sequence error! Cannot navigate to %(tab_name)s in the current "
 "SequenceModule. Please contact the course staff."
 msgstr ""
-"Error de secuencia! No se ha podido navegar a %(tab_name)s en el actual "
-"SequenceModule. Por favor contacte al equipo del curso."
+"¡Error de secuencia! No se ha podido navegar a %(tab_name)s en el actual "
+"SequenceModule. Por favor contacta al equipo del curso."
 
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
 msgid "Bookmarked"
@@ -1856,13 +1894,6 @@ msgid "Maximum"
 msgstr "Máximo"
 
 #: common/lib/xmodule/xmodule/js/src/video/02_html5_video.js
-msgid ""
-"VideoPlayer: Element corresponding to the given selector was not found."
-msgstr ""
-"VideoPlayer: El elemento correspondiente al selector dado no ha sido "
-"encontrado."
-
-#: common/lib/xmodule/xmodule/js/src/video/02_html5_video.js
 msgid "This browser cannot play .mp4, .ogg, or .webm files."
 msgstr "Este navegador no puede reproducir archivos .mp4, .ogg o .webm"
 
@@ -1883,12 +1914,16 @@ msgid "on"
 msgstr "Encender"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
-msgid "Video position"
-msgstr "Posición del video"
+msgid "Video position. Press space to toggle playback"
+msgstr "Posición del video. Presiona el espacio para alternar la reproducción"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "Video ended"
 msgstr "Fin del video"
+
+#: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
+msgid "Video position"
+msgstr "Posición del video"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "%(value)s hour"
@@ -1913,7 +1948,7 @@ msgid ""
 "Click on this button to mute or unmute this video or press UP or DOWN "
 "buttons to increase or decrease volume level."
 msgstr ""
-"Haga clic en este botón para silenciar o activar el sonido del vídeo o use "
+"Haz clic en este botón para silenciar o activar el sonido del vídeo o usa "
 "los botones ARRIBA o ABAJO para aumentar o disminuir el nivel de volumen."
 
 #: common/lib/xmodule/xmodule/js/src/video/07_video_volume_control.js
@@ -1926,8 +1961,8 @@ msgid ""
 "navigate the different speeds, then press ENTER to change to the selected "
 "speed."
 msgstr ""
-"Velocidad: Presione ARRIBA para acceder al menú, luego use las teclas de "
-"ARRIBA y ABAJO para cambiar a diferentes velocidades, y presione ENTER para "
+"Velocidad: Presiona ARRIBA para acceder al menú, luego usa las teclas de "
+"ARRIBA y ABAJO para cambiar a diferentes velocidades, y presiona ENTER para "
 "cambiar a la velocidad seleccionada."
 
 #: common/lib/xmodule/xmodule/js/src/video/08_video_speed_control.js
@@ -1956,7 +1991,8 @@ msgstr "Abrir menú de idioma"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "Transcript will be displayed when you start playing the video."
-msgstr "La transcripción se visualizará cuando empieza a reproducir el video."
+msgstr ""
+"La transcripción se visualizará cuando se comience a reproducir el video."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid ""
@@ -1984,8 +2020,8 @@ msgid ""
 " keys to navigate language options. Press ENTER to change to the selected "
 "language."
 msgstr ""
-"Idioma: Presione la flecha ARRIBA para entrar al menú de idioma, luego use "
-"las flechas ARRIBA y ABAJO para navegar las opciones de idioma. Presione "
+"Idioma: Presiona la flecha ARRIBA para entrar al menú de idioma, luego usa "
+"las flechas ARRIBA y ABAJO para navegar las opciones de idioma. Presiona "
 "ENTRAR para cambiar al idioma seleccionado."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
@@ -2009,18 +2045,68 @@ msgstr "Activar transcripción"
 msgid "Turn off transcripts"
 msgstr "Desactivar transcripción"
 
+#: common/static/bundles/Import.js
+msgid "There was an error during the upload process."
+msgstr "Hubo un error durante el proceso de carga."
+
+#: common/static/bundles/Import.js
+msgid "There was an error while unpacking the file."
+msgstr "Ha habido un error desempaquetando el archivo"
+
+#: common/static/bundles/Import.js
+msgid "There was an error while verifying the file you submitted."
+msgstr "Ha ocurrido un error verificando el archivo que usted ha enviado."
+
+#: common/static/bundles/Import.js
+msgid "Choose new file"
+msgstr "Selecciona un nuevo archivo"
+
+#: common/static/bundles/Import.js
+msgid ""
+"File format not supported. Please upload a file with a {ext} extension."
+msgstr ""
+"Formato de archivo no soportado. Por favor carga un archivo con extensión "
+"{ext}"
+
+#: common/static/bundles/Import.js
+msgid "There was an error while importing the new library to our database."
+msgstr ""
+"Hubo un error mientras importábamos la nueva librería a nuestra base de "
+"datos."
+
+#: common/static/bundles/Import.js
+msgid "There was an error while importing the new course to our database."
+msgstr "Ha habido un error importando el nuevo curso a nuestra base de datos."
+
+#: common/static/bundles/Import.js
+msgid "Your import has failed."
+msgstr "Tu importación ha fallado."
+
+#: common/static/bundles/Import.js
+msgid "Your import is in progress; navigating away will abort it."
+msgstr ""
+"Tu importación está en progreso. Si abandona esta página, la cancelará."
+
+#: common/static/bundles/Import.js
+msgid "Error importing course"
+msgstr "Error importando curso"
+
+#: common/static/bundles/Import.js
+msgid "There was an error with the upload"
+msgstr "Hubo un error con la subida del archivo"
+
 #: common/static/common/js/components/utils/view_utils.js
 msgid "Required field."
 msgstr "Campo requerido."
 
 #: common/static/common/js/components/utils/view_utils.js
 msgid "Please do not use any spaces in this field."
-msgstr "Por favor, no usar espacios o caracteres especiales en este campo."
+msgstr "Por favor, no uses espacios o caracteres especiales en este campo."
 
 #: common/static/common/js/components/utils/view_utils.js
 msgid "Please do not use any spaces or special characters in this field."
 msgstr ""
-"Por favor, no utilizar espacios o caracteres especiales en este campo."
+"Por favor, no utilices espacios o caracteres especiales en este campo."
 
 #: common/static/common/js/components/views/paginated_view.js
 #: common/static/common/js/components/views/paging_footer.js
@@ -2032,9 +2118,9 @@ msgid ""
 "Your request could not be completed. Reload the page and try again. If the "
 "issue persists, click the Help tab to report the problem."
 msgstr ""
-"Su solicitud no pudo ser completada. Recargue la página e intente "
-"nuevamente. Si el problema persiste, haga clic en la pestaña de Ayuda para "
-"reportar el problema."
+"Tu solicitud no pudo ser completada. Recarga la página e intenta nuevamente."
+" Si el problema persiste, haz clic en la pestaña de Ayuda para reportar el "
+"problema."
 
 #: common/static/common/js/components/views/paging_header.js
 msgid "Showing {firstIndex} out of {numItems} total"
@@ -2051,8 +2137,7 @@ msgstr "Cargando contenido"
 #: common/static/common/js/discussion/utils.js
 msgid "Your request could not be processed. Refresh the page and try again."
 msgstr ""
-"Su solicitud no pudo ser completada. Recargue la página e intente "
-"nuevamente."
+"Tu solicitud no pudo ser completada. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/utils.js
 #: common/static/common/templates/discussion/pagination.underscore
@@ -2083,85 +2168,84 @@ msgstr[1] "{numVotes} Votos"
 msgid ""
 "You could not be subscribed to this post. Refresh the page and try again."
 msgstr ""
-"No se pudo procesar su solicitud de subscribirse a esta publicación. "
-"Recargue la página e intente nuevamente."
+"No se pudo procesar tu solicitud de subscribirse a esta publicación. Recarga"
+" la página e intenta nuevamente"
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid ""
 "You could not be unsubscribed from this post. Refresh the page and try "
 "again."
 msgstr ""
-"No se pudo procesar su solicitud de cancelar su subscripción a esta "
-"publicación. Recargue la página e intente nuevamente."
+"No se pudo procesar tu solicitud de cancelar tu subscripción a esta "
+"publicación. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid ""
 "This response could not be marked as an answer. Refresh the page and try "
 "again."
 msgstr ""
-"No se pudo marcar esta respuesta. Recargue la página e intente nuevamente."
+"No se pudo marcar esta respuesta. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid ""
 "This response could not be unmarked as an answer. Refresh the page and try "
 "again."
 msgstr ""
-"No se pudo desmarcar esta respuesta. Recargue la página e intente "
-"nuevamente."
+"No se pudo desmarcar esta respuesta. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid ""
 "This response could not be marked as endorsed. Refresh the page and try "
 "again."
 msgstr ""
-"No se pudo marcar esta respuesta como validada. Recargue la página e intente"
-" nuevamente. "
+"No se pudo marcar esta respuesta como validada. Recarga la página e intenta "
+"nuevamente. "
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This response could not be unendorsed. Refresh the page and try again."
 msgstr ""
-"No se pudo desmarcar esta respuesta como validada. Recargue la página e "
-"intente nuevamente."
+"No se pudo desmarcar esta respuesta como validada. Recarga la página e "
+"intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This vote could not be processed. Refresh the page and try again."
 msgstr ""
-"Este voto no se pudo procesar. Recargue la página e intente nuevamente."
+"Este voto no se pudo procesar. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This post could not be pinned. Refresh the page and try again."
 msgstr ""
-"No se pudo marcar esta publicación. Recargue la página e intente nuevamente."
+"No se pudo marcar esta publicación. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This post could not be unpinned. Refresh the page and try again."
 msgstr ""
-"No se pudo desmarcar esta publicación. Recargue la página e intente "
+"No se pudo desmarcar esta publicación. Recarga la página e intente "
 "nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid ""
 "This post could not be flagged for abuse. Refresh the page and try again."
 msgstr ""
-"No se pudo marcar esta publicación como abusiva. Recargue la página e "
-"intente nuevamente."
+"No se pudo marcar esta publicación como abusiva. Recarga la página e intenta"
+" nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid ""
 "This post could not be unflagged for abuse. Refresh the page and try again."
 msgstr ""
-"No se pudo desmarcar esta publicación como abusiva. Recargue la página e "
-"intente nuevamente."
+"No se pudo desmarcar esta publicación como abusiva. Recarga la página e "
+"intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This post could not be closed. Refresh the page and try again."
 msgstr ""
-"No se pudo cerrar esta publicación. Recargue la página e intente nuevamente."
+"No se pudo cerrar esta publicación. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid "This post could not be reopened. Refresh the page and try again."
 msgstr ""
-"No se pudo abrir esta publicación de nuevo. Recargue la página e intente "
+"No se pudo abrir esta publicación de nuevo. Recarga la página e intenta "
 "nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_inline_view.js
@@ -2171,7 +2255,7 @@ msgstr "Ocultar Discusión"
 #: common/static/common/js/discussion/views/discussion_inline_view.js
 msgid "This discussion could not be loaded. Refresh the page and try again."
 msgstr ""
-"No se pudo cargar esta discusión. Recargue la página e intente nuevamente."
+"No se pudo cargar esta discusión. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_inline_view.js
 msgid "Show Discussion"
@@ -2184,12 +2268,12 @@ msgstr "Cargando más discusiones"
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Additional posts could not be loaded. Refresh the page and try again."
 msgstr ""
-"No se pudieron cargar las publicaciones adicionales. Recargue la página e "
-"intente nuevamente."
+"No se pudieron cargar las publicaciones adicionales. Recarga la página e "
+"intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Current conversation"
-msgstr "conversación actual"
+msgstr "Conversación actual"
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Loading posts list"
@@ -2218,13 +2302,13 @@ msgstr "La publicación que seleccionó ha sido borrada."
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Responses could not be loaded. Refresh the page and try again."
 msgstr ""
-"No se pudieron cargar respuestas. Recargue la página e intente nuevamente."
+"No se pudieron cargar respuestas. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid ""
 "Additional responses could not be loaded. Refresh the page and try again."
 msgstr ""
-"No se pudieron cargar respuestas adicionales. Recargue la página e intente "
+"No se pudieron cargar respuestas adicionales. Recarga la página e intenta "
 "nuevamente."
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
@@ -2259,11 +2343,11 @@ msgstr "Cargar las siguientes {numResponses} respuestas"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Are you sure you want to delete this post?"
-msgstr "¿Está seguro de que desea borrar esta publicación?"
+msgstr "¿Estás seguro de que deseas borrar esta publicación?"
 
 #: common/static/common/js/discussion/views/new_post_view.js
 msgid "Your post will be discarded."
-msgstr "Su publicación será descartada."
+msgstr "Tu publicación será descartada."
 
 #: common/static/common/js/discussion/views/response_comment_show_view.js
 #: common/static/common/templates/discussion/post-user-display.underscore
@@ -2273,21 +2357,21 @@ msgstr "anónimo"
 
 #: common/static/common/js/discussion/views/response_comment_view.js
 msgid "Are you sure you want to delete this comment?"
-msgstr "¿Está seguro de que desea borrar este comentario?"
+msgstr "¿Estás seguro de que deseas borrar este comentario?"
 
 #: common/static/common/js/discussion/views/response_comment_view.js
 msgid "This comment could not be deleted. Refresh the page and try again."
 msgstr ""
-"No se pudo borrar este comentario. Recargue la página e intente nuevamente."
+"No se pudo borrar este comentario. Recarga la página e intenta nuevamente."
 
 #: common/static/common/js/discussion/views/thread_response_view.js
 msgid "Are you sure you want to delete this response?"
-msgstr "¿Está seguro de que desea borrar esta respuesta?"
+msgstr "¿Estás seguro de que deseas borrar esta respuesta?"
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "The email address you've provided isn't formatted correctly."
 msgstr ""
-"La dirección de correo que ha ingresado no está en el formato correcto."
+"La dirección de correo que has ingresado no está en el formato correcto."
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "%(field)s must have at least %(count)d characters."
@@ -2299,7 +2383,7 @@ msgstr "%(field)s solo puede contener hasta %(count)d caracteres."
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "Please enter your %(field)s."
-msgstr "Por favor ingrese su %(field)s."
+msgstr "Por favor ingresa su %(field)s."
 
 #: common/static/js/capa/drag_and_drop/base_image.js
 msgid "Drop target image"
@@ -2398,7 +2482,7 @@ msgstr "Usuario"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Annotation"
-msgstr "Anotacion"
+msgstr "Anotación "
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Start"
@@ -2501,14 +2585,14 @@ msgstr "Etiquetas:"
 #. report
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "Check the box to remove all flags."
-msgstr "Marque la casilla para eliminar todas las marcas."
+msgstr "Marca la casilla para eliminar todas las marcas."
 
 #. Translators: 'totalFlags' is the number of flags solely for that annotation
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "Check the box to remove %(totalFlags)s flag."
 msgid_plural "Check the box to remove %(totalFlags)s flags."
 msgstr[0] "Marque la casilla para eliminar %(totalFlags)s marca."
-msgstr[1] "Marque la casilla para eliminar %(totalFlags)s marcas."
+msgstr[1] "Marca la casilla para eliminar %(totalFlags)s marcas."
 
 #. Translators: 'count' is the number of flags solely for that annotation that
 #. will be removed
@@ -2516,16 +2600,16 @@ msgstr[1] "Marque la casilla para eliminar %(totalFlags)s marcas."
 msgid "Check the box to remove %(count)s flag."
 msgid_plural "Check the box to remove %(count)s flags."
 msgstr[0] "Marque la casilla para eliminar %(count)s marca."
-msgstr[1] "Marque la casilla para eliminar %(count)s marcas."
+msgstr[1] "Marca la casilla para eliminar %(count)s marcas."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "All flags have been removed. To undo, uncheck the box."
 msgstr ""
-"Todas las marcas han sido eliminadas.  Para deshacer, desmarque la casilla."
+"Todas las marcas han sido eliminadas.  Para deshacer, desmarca la casilla."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "You have already reported this annotation."
-msgstr "Ya había reportado esta publicación."
+msgstr "Ya has reportado esta publicación."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "Report annotation as inappropriate or offensive."
@@ -2540,7 +2624,7 @@ msgstr[1] "Esta publicación tiene %(count)s marcas."
 
 #: lms/djangoapps/support/static/support/js/views/certificates.js
 msgid "An unexpected error occurred.  Please try again."
-msgstr "Se produjo un error inesperado. Por favor, inténtelo nuevamente."
+msgstr "Se produjo un error inesperado. Por favor, inténtalo nuevamente."
 
 #: lms/djangoapps/support/static/support/js/views/enrollment.js
 msgid "Financial Assistance"
@@ -2556,12 +2640,12 @@ msgstr "Profesor asistente"
 
 #: lms/djangoapps/support/static/support/js/views/enrollment_modal.js
 msgid "Please specify a reason."
-msgstr "Por favor especifique una razón."
+msgstr "Por favor especifica una razón."
 
 #: lms/djangoapps/support/static/support/js/views/enrollment_modal.js
 msgid "Something went wrong changing this enrollment. Please try again."
 msgstr ""
-"Ocurrió un error al cambiar esta inscripción. Por favor intente nuevamente."
+"Ocurrió un error al cambiar esta inscripción. Por favor intenta nuevamente."
 
 #: lms/djangoapps/teams/static/teams/js/collections/team.js
 msgid "last activity"
@@ -2641,15 +2725,15 @@ msgstr "El país que identifica de forma primaria a los miembros del equipo."
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 #: lms/static/js/views/fields.js
 msgid "An error occurred. Please try again."
-msgstr "Ocurrió un error. Por favor, intente nuevamente."
+msgstr "Ocurrió un error. Por favor, intenta nuevamente."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Check the highlighted fields below and try again."
-msgstr "Revise los campos resaltados abajo e intente nuevamente."
+msgstr "Revisa los campos resaltados abajo e intenta nuevamente."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Enter team name."
-msgstr "Ingrese el nombre del equipo."
+msgstr "Ingresa el nombre del equipo."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Team name cannot have more than 255 characters."
@@ -2657,7 +2741,7 @@ msgstr "El nombre del equipo no puede tener más de 255 caracteres."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Enter team description."
-msgstr "Ingrese la descripción del equipo."
+msgstr "Ingresa la descripción del equipo."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Team description cannot have more than 300 characters."
@@ -2666,7 +2750,7 @@ msgstr "La descripción no puede tener más de 300 caracteres."
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid "An error occurred while removing the member from the team. Try again."
 msgstr ""
-"Ocurrió un error al remover al miembro del equipo. Intente nuevamente. "
+"Ocurrió un error al remover al miembro del equipo. Intenta nuevamente. "
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid "This team does not have any members."
@@ -2715,7 +2799,7 @@ msgstr "Equipo \"{team}\" eliminado exitosamente."
 
 #: lms/djangoapps/teams/static/teams/js/views/my_teams.js
 msgid "You are not currently a member of any team."
-msgstr "Usted no es actualmente miembro de ningún equipo."
+msgstr "No eres actualmente miembro de ningún equipo."
 
 #. Translators: "and others" refers to fact that additional members of a team
 #. exist that are not displayed.
@@ -2736,19 +2820,19 @@ msgstr "Ver %(span_start)s %(team_name)s %(span_end)s"
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 #: lms/djangoapps/teams/static/teams/js/views/team_profile_header_actions.js
 msgid "An error occurred. Try again."
-msgstr "Ocurrió un error. Intente nuevamente."
+msgstr "Ocurrió un error. Intenta nuevamente."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 msgid "Leave this team?"
-msgstr "¿Desea abandonar este equipo?"
+msgstr "¿Deseas abandonar este equipo?"
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 msgid ""
 "If you leave, you can no longer post in this team's discussions. Your place "
 "will be available to another learner."
 msgstr ""
-"Si abandona este equipo, no podrá escribir en las discusiones de este "
-"equipo. Su lugar estará disponible para otro aprendiz."
+"Si abandonas este equipo, no podrás escribir en las discusiones de este "
+"equipo. Tu lugar estará disponible para otro estudiante."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 #: lms/static/js/verify_student/views/reverify_view.js
@@ -2758,7 +2842,7 @@ msgstr "Confirmar"
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile_header_actions.js
 msgid "You already belong to another team."
-msgstr "Usted ya pertenece a otro equipo."
+msgstr "Tu ya perteneces a otro equipo."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile_header_actions.js
 msgid "This team is full."
@@ -2787,7 +2871,7 @@ msgid ""
 "See all teams in your course, organized by topic. Join a team to collaborate"
 " with other learners who are interested in the same topic as you are."
 msgstr ""
-"Revise los equipos de su curso, organizados por tema. Únase a un equipo para"
+"Revisa los equipos de tu curso, organizados por tema. Unete a un equipo para"
 " colaborar con otros que estén interesados en los mismos temas."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
@@ -2802,8 +2886,7 @@ msgstr "Explorar"
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Your request could not be completed. Reload the page and try again."
 msgstr ""
-"Su solicitud no pudo ser completada. Recargue la página e intente "
-"nuevamente."
+"Tu solicitud no pudo ser completada. Recarga la página e intenta nuevamente."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
@@ -2811,8 +2894,8 @@ msgid ""
 " and try again. If the issue persists, click the Help tab to report the "
 "problem."
 msgstr ""
-"Su solicitud no pudo ser completada debido a un problema en el servidor. "
-"Recargue la página e intente nuevamente. Si el problema persiste, haga clic "
+"Tu solicitud no pudo ser completada debido a un problema en el servidor. "
+"Recarga la página e intenta nuevamente. Si el problema persiste, dale clic "
 "en la pestaña de ayuda para reportar el problema."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
@@ -2832,8 +2915,8 @@ msgid ""
 "Create a new team if you can't find an existing team to join, or if you "
 "would like to learn with friends you know."
 msgstr ""
-"Cree un nuevo equipo si no puede encontrar uno existente para unirse o si "
-"desea aprender con personas que ya conoce."
+"Crea un nuevo equipo si no puedes encontrar uno existente para unirte o si "
+"deseas aprender con personas que ya conoces."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 #: lms/djangoapps/teams/static/teams/templates/team-profile-header-actions.underscore
@@ -2845,7 +2928,7 @@ msgid ""
 "If you make significant changes, make sure you notify members of the team "
 "before making these changes."
 msgstr ""
-"Si hace cambios significativos, asegúrese de avisar a los miembros del "
+"Si haces cambios significativos,  asegúrate de avisarle a los miembros del "
 "equipos antes de realizar estos cambios."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
@@ -2910,9 +2993,9 @@ msgid ""
 "find a team to join, {create_span_start}create a new team in this "
 "topic{span_end}."
 msgstr ""
-"Intente {browse_span_start}explorar equipos en otros temas{span_end} o "
-"{search_span_start}buscar  equipos{span_end} en este tema. Sí aún no puede "
-"encontrar un equipo para unirse, {create_span_start}cree un nuevo equipo en "
+"Intenta {browse_span_start}explorar equipos en otros temas{span_end} o "
+"{search_span_start}busca  equipos{span_end} en este tema. Sí aún no puedes "
+"encontrar un equipo para unirte, {create_span_start}crea un nuevo equipo en "
 "este tema{span_end}."
 
 #: lms/djangoapps/teams/static/teams/js/views/topics.js
@@ -2953,19 +3036,19 @@ msgstr "p. ej. 'google'"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Please provide a description of the link destination."
-msgstr "Por favor, proveer una descripción de la destinación del vínculo."
+msgstr "Por favor, provee una descripción de la destinación del vínculo."
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Insert Image (upload file or type URL)"
-msgstr "Insertar imagen (subir archivo o introducir URL)"
+msgstr "Inserta imagen (subir archivo o introducir URL)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid ""
 "Type in a URL or use the \"Choose File\" button to upload a file from your "
 "machine. (e.g. 'http://example.com/img/clouds.jpg')"
 msgstr ""
-"Introduzca un URL o utilice el botón de \"Elegir Archivo\" para subir un "
-"archivo de su máquina (p. ej. 'http://example.com/img/clouds.jpg')"
+"Introduce un URL o utiliza el botón de \"Elegir Archivo\" para subir un "
+"archivo de tu máquina (p. ej. 'http://example.com/img/clouds.jpg')"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Image Description"
@@ -2976,7 +3059,7 @@ msgid ""
 "Please describe this image or agree that it has no contextual value by "
 "checking the checkbox."
 msgstr ""
-"Por favor, describa esta imagen o indique que no tiene valor contextual "
+"Por favor, describe esta imagen o indica que no tiene valor contextual "
 "marcando la casilla."
 
 #: lms/static/js/Markdown.Editor.js
@@ -3007,7 +3090,7 @@ msgstr "URL"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Please provide a valid URL."
-msgstr "Por favor, provea un URL válido."
+msgstr "Por favor, provee un URL válido."
 
 #. Translators: 'errorCount' is the number of errors found in the form.
 #: lms/static/js/Markdown.Editor.js
@@ -3078,11 +3161,11 @@ msgstr "texto enfatizado"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "enter link description here"
-msgstr "Ingrese la descripción del vínculo aquí"
+msgstr "Ingresa la descripción del vínculo aquí"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "enter code here"
-msgstr "ingrese el código aquí"
+msgstr "ingresa el código aquí"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "List item"
@@ -3098,9 +3181,9 @@ msgid ""
 "now. Click Cancel to stay on this page (you must log in again to save your "
 "work)."
 msgstr ""
-"Su sesión ha sido cerrada. Haga clic en Aceptar para volver a iniciar "
-"sesión. Haga clic en Cancelar para permanecer en está página (Deberá iniciar"
-" sesión nuevamente para guardar su trabajo)."
+"Tu sesión ha sido cerrada. Haz clic en Aceptar para volver a iniciar sesión."
+" Haz clic en Cancelar para permanecer en está página (Deberas iniciar sesión"
+" nuevamente para guardar tu trabajo)."
 
 #: lms/static/js/api_admin/views/catalog_preview.js
 msgid "Preview this query"
@@ -3116,11 +3199,11 @@ msgstr "Todas las unidades"
 
 #: lms/static/js/ccx/schedule.js lms/templates/ccx/schedule.underscore
 msgid "Click to change"
-msgstr "Haga clic para modificar"
+msgstr "Haz clic para modificar"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Select a chapter"
-msgstr "Seleccionar un capitulo"
+msgstr "Selecciona un capitulo"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Save changes"
@@ -3128,7 +3211,7 @@ msgstr "Guardar cambios"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Please enter valid start date and time."
-msgstr "Por favor ingrese fecha y hora de inicio válida."
+msgstr "Por favor ingresa fecha y hora de inicio válida."
 
 #: lms/static/js/ccx/schedule.js
 msgid "Due date cannot be before start date."
@@ -3136,7 +3219,7 @@ msgstr "Fecha límite no puede ser menor al a fecha de inicio."
 
 #: lms/static/js/ccx/schedule.js
 msgid "Enter Due Date and Time"
-msgstr "Ingrese fecha y hora límites"
+msgstr "Ingresa fecha y hora límites"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Enter Start Date and Time"
@@ -3148,7 +3231,7 @@ msgid ""
 "in username/email and then press \"Add to Exception List\" button."
 msgstr ""
 "El campo de nombre de usuario /correo de estudiante es requerido y no puede "
-"estar vacío. Por favor diligencie este campo y luego presione el botón de "
+"estar vacío. Por favor completa este campo y luego presiona el botón de "
 "\"Añadir a la lista de excepciones\"."
 
 #: lms/static/js/certificates/models/certificate_invalidation.js
@@ -3157,12 +3240,12 @@ msgid ""
 "in username/email and then press \"Invalidate Certificate\" button."
 msgstr ""
 "El campo de nombre de usuario /correo de estudiante es requerido y no puede "
-"estar vacío. Por favor diligencie este campo y luego presione el botón de "
+"estar vacío. Por favor completa este campo y luego presiona el botón de "
 "\"Invalidar certificado\"."
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid "Uploaded file issues. Click on \"+\" to view."
-msgstr "Problemas con los archivos cargados. Haga clic en \"+\" para ver."
+msgstr "Problemas con los archivos cargados. Haz clic en \"+\" para ver."
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " learners are successfully added to exception list"
@@ -3175,19 +3258,20 @@ msgstr "alumno fue agregado a la lista de excepción"
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " records are not in correct format and not added to the exception list"
 msgstr ""
-"registros no están en el formato correcto y no se añadieron a la lista de "
-"excepciones"
+"los registros no están en el formato correcto y no se añadieron a la lista "
+"de excepciones"
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " record is not in correct format and not added to the exception list"
 msgstr ""
-"registro no está en el formato correcto y no se añadió a la lista de "
+"el registro no está en el formato correcto y no se añadió a la lista de "
 "excepciones"
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " learners do not exist in LMS and not added to the exception list"
 msgstr ""
-"estudiantes no existen en el LMS y no se añadieron a la lista de excepciones"
+"los estudiantes no existen en el LMS y no se añadieron a la lista de "
+"excepciones"
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " learner does not exist in LMS and not added to the exception list"
@@ -3197,25 +3281,25 @@ msgstr ""
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " learners are already white listed and not added to the exception list"
 msgstr ""
-"estudiantes ya están en la lista blanca y no se añadieron a la lista de "
+"los estudiantes ya están en la lista blanca y no se añadieron a la lista de "
 "excepciones"
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " learner is already white listed and not added to the exception list"
 msgstr ""
-"estudiante ya está en la lista blanca y no se añadió a las excepciones"
+"el estudiante ya está en la lista blanca y no se añadió a las excepciones"
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid ""
 " learners are not enrolled in course and not added to the exception list"
 msgstr ""
-"estudiantes no están inscritos en el curso y no se añadieron a la lista de "
-"excepciones"
+"los estudiantes no están inscritos en el curso y no se añadieron a la lista "
+"de excepciones"
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid " learner is not enrolled in course and not added to the exception list"
 msgstr ""
-"estudiante no está inscrito en el curso y no se añadió a la lista de "
+"el estudiante no está inscrito en el curso y no se añadió a la lista de "
 "excepciones"
 
 #: lms/static/js/certificates/views/certificate_invalidation_view.js
@@ -3223,8 +3307,8 @@ msgid ""
 "Certificate of <%= user %> has already been invalidated. Please check your "
 "spelling and retry."
 msgstr ""
-"El certificado de <%= user %> ya ha sido invalidado. Por favor verifique los"
-" datos y vuelva a intentarlo."
+"El certificado de <%= user %> ya ha sido invalidado. Por favor verifica los "
+"datos y vuelve a intentarlo."
 
 #: lms/static/js/certificates/views/certificate_invalidation_view.js
 msgid "Certificate has been successfully invalidated for <%= user %>."
@@ -3234,7 +3318,7 @@ msgstr "Certificado ha sido invalidado exitosamente para <%= user %>."
 #: lms/static/js/certificates/views/certificate_whitelist.js
 #: lms/static/js/certificates/views/certificate_whitelist_editor.js
 msgid "Server Error, Please refresh the page and try again."
-msgstr "Error de servidor, por favor recargue la página e intente nuevamente."
+msgstr "Error de servidor, por favor recarga la página e intenta nuevamente."
 
 #: lms/static/js/certificates/views/certificate_invalidation_view.js
 msgid ""
@@ -3250,7 +3334,7 @@ msgid ""
 " and try again"
 msgstr ""
 "No se pudo hallar Invalidación del Certificado en la lista. Por favor, "
-"actualice la página e intente nuevamente."
+"actualiza la página e intenta nuevamente."
 
 #: lms/static/js/certificates/views/certificate_whitelist.js
 msgid "Student Removed from certificate white list successfully."
@@ -3263,7 +3347,7 @@ msgid ""
 "and try again"
 msgstr ""
 "No se pudo encontrar la excepción de certificado en la lista blanca. Por "
-"favor recargue la página e intente nuevamente."
+"favor recarga la página e intenta nuevamente."
 
 #: lms/static/js/certificates/views/certificate_whitelist_editor.js
 msgid "<%= user %> already in exception list."
@@ -3274,12 +3358,12 @@ msgid ""
 "<%= user %> has been successfully added to the exception list. Click "
 "Generate Exception Certificate below to send the certificate."
 msgstr ""
-"<%= user %> ha sido añadido a la lista de excepciones. Haga clic en Generar "
+"<%= user %> ha sido añadido a la lista de excepciones. Haz clic en Generar "
 "cerfificado de excepción para enviar este certificado."
 
 #: lms/static/js/course_survey.js
 msgid "There has been an error processing your survey."
-msgstr "Ocurrió un error al procesar su encuesta."
+msgstr "Ocurrió un error al procesar tu encuesta."
 
 #: lms/static/js/courseware/credit_progress.js
 #: lms/templates/discovery/facet.underscore
@@ -3289,15 +3373,15 @@ msgstr "Menos"
 
 #: lms/static/js/dashboard/donation.js
 msgid "Please enter a valid donation amount."
-msgstr "Por favor entre un valor de donación válido"
+msgstr "Por favor entra un valor de donación válido"
 
 #: lms/static/js/dashboard/donation.js
 msgid "Your donation could not be submitted."
-msgstr "Su donación no pudo ser enviada."
+msgstr "Tu donación no pudo ser enviada."
 
 #: lms/static/js/dashboard/legacy.js
 msgid "An error occurred. Please try again later."
-msgstr "Ocurrió un error. Por favor intente nuevamente más tarde."
+msgstr "Ocurrió un error. Por favor intenta nuevamente más tarde."
 
 #: lms/static/js/discovery/views/search_form.js
 #, javascript-format
@@ -3312,9 +3396,85 @@ msgid "We couldn't find any results for \"%s\"."
 msgstr "No se ha encontrado ninguna coincidencia para \"%s\"."
 
 #: lms/static/js/discovery/views/search_form.js
-#: lms/templates/search/search_error.underscore
+#: openedx/features/course_search/static/course_search/templates/search_error.underscore
 msgid "There was an error, try searching again."
-msgstr "Hubo un error, intente buscar de nuevo."
+msgstr "Hubo un error, intenta buscar de nuevo."
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "Not divided"
+msgstr "No dividido"
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid ""
+"Discussions are unified; all learners interact with posts from other "
+"learners, regardless of the group they are in."
+msgstr ""
+"Las discusiones son unificadas; todos los estudiantes interactúan con "
+"publicaciones de otros estudiantes, sin considerar su grupo."
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "Enrollment Tracks"
+msgstr "Rutas de inscripción"
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid ""
+"Use enrollment tracks as the basis for dividing discussions. All learners, "
+"regardless of their enrollment track, see the same discussion topics, but "
+"within divided topics, only learners who are in the same enrollment track "
+"see and respond to each others’ posts."
+msgstr ""
+"Usar rutas de inscripción como base de dividir las discusiones. Todos los "
+"estudiantes, sin considerar su ruta de inscripción, ven los mismos temas de "
+"discusión, pero dentro de temas divididos, los estudiantes solamente ven y "
+"responden a las publicaciones de otros estudiantes en la misma ruta de "
+"inscripción como ellos."
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "Cohorts"
+msgstr "Cohortes"
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid ""
+"Use cohorts as the basis for dividing discussions. All learners, regardless "
+"of cohort, see the same discussion topics, but within divided topics, only "
+"members of the same cohort see and respond to each others’ posts. "
+msgstr ""
+"Usar cohortes como base de dividir las discusiones. Todos los estudiantes, "
+"sin considerar su cohorte, ven los mismos temas de discusión, pero dentro de"
+" temas divididos, los estudiantes solamente ven y responden a las "
+"publicaciones de otros estudiantes en el mismo cohorte como ellos."
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "Discussion topics in the course are not divided."
+msgstr "Temas de discusión en el curso no son divididos."
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "Any divided discussion topics are divided based on enrollment track."
+msgstr "La división de temas de discusión se basa en la ruta de inscripción."
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "Any divided discussion topics are divided based on cohort."
+msgstr "La división de temas de discusión se basa en el cohorte."
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "Your changes have been saved. {details}"
+msgstr "Tus cambios han sido guardados. {details}"
+
+#: lms/static/js/discussions_management/views/discussions.js
+msgid "We have encountered an error. Refresh your browser and then try again."
+msgstr ""
+"Hemos detectado un error. Por favor recarga la página en el navegador e "
+"intenta nuevamente."
+
+#: lms/static/js/discussions_management/views/divided_discussions.js
+#: lms/static/js/discussions_management/views/divided_discussions_course_wide.js
+#: lms/static/js/discussions_management/views/divided_discussions_inline.js
+#: lms/static/js/groups/views/cohort_form.js
+#: lms/static/js/groups/views/cohorts.js
+msgid "We've encountered an error. Refresh your browser and then try again."
+msgstr ""
+"Hemos detectado un error. Por favor recarga la página en el navegador e "
+"intenta nuevamente."
 
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 #: lms/static/js/edxnotes/views/search_box.js
@@ -3322,8 +3482,8 @@ msgid ""
 "An error has occurred. Make sure that you are connected to the Internet, and"
 " then try refreshing the page."
 msgstr ""
-"Ha ocurrido un error.  Asegúrese de que está conectado a Internet y luego "
-"recargue la página."
+"Ha ocurrido un error.  Asegúrate de que está conectado a Internet y luego "
+"recarga la página."
 
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 msgid "Hide notes"
@@ -3343,7 +3503,7 @@ msgstr "Notas ocultas"
 
 #: lms/static/js/edxnotes/views/search_box.js
 msgid "Please enter a term in the {anchorStart} search field{anchorEnd}."
-msgstr "Ingrese un término en el {anchorStart} campo de búsqueda{anchorEnd}."
+msgstr "Ingresa un término en el {anchorStart} campo de búsqueda{anchorEnd}."
 
 #: lms/static/js/edxnotes/views/tab_item.js
 msgid "Current tab"
@@ -3360,12 +3520,12 @@ msgstr "Actividad Reciente"
 #: lms/static/js/edxnotes/views/tabs/search_results.js
 msgid "No results found for \"%(query_string)s\". Please try searching again."
 msgstr ""
-"No se encontraron resultados para \"%(query_string)s\". Por favor intente "
+"No se encontraron resultados para \"%(query_string)s\". Por favor intenta "
 "nuevamente."
 
 #: lms/static/js/edxnotes/views/tabs/search_results.js
-#: lms/templates/search/course_search_results.underscore
-#: lms/templates/search/dashboard_search_results.underscore
+#: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
+#: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
 msgid "Search Results"
 msgstr "Resultados de búsqueda"
 
@@ -3385,21 +3545,11 @@ msgstr "No se pudo enviar la solicitud"
 #: lms/static/js/student_account/views/LoginView.js
 msgid "An error has occurred. Check your Internet connection and try again."
 msgstr ""
-"Ha ocurrido un error. Revise su conexión a Internet e intente nuevamente."
+"Ha ocurrido un error. Revisa su conexión a Internet e intenta nuevamente."
 
 #: lms/static/js/financial-assistance/views/financial_assistance_form_view.js
 msgid "Choose one"
 msgstr "Elegir uno"
-
-#: lms/static/js/groups/views/cohort_discussions.js
-#: lms/static/js/groups/views/cohort_discussions_course_wide.js
-#: lms/static/js/groups/views/cohort_discussions_inline.js
-#: lms/static/js/groups/views/cohort_form.js
-#: lms/static/js/groups/views/cohorts.js
-msgid "We've encountered an error. Refresh your browser and then try again."
-msgstr ""
-"Hemos detectado un error. Por favor recargue la página en el navegador e "
-"intente nuevamente."
 
 #: lms/static/js/groups/views/cohort_editor.js
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
@@ -3411,41 +3561,64 @@ msgid "Saved cohort"
 msgstr "Guardar Cohorte"
 
 #: lms/static/js/groups/views/cohort_editor.js
-msgid "Error adding students."
-msgstr "Error al añadir estudiantes."
+msgid "Error adding learners."
+msgstr "Error para agregar estudiantes."
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid "Enter a username or email."
-msgstr "Ingrese el nombre de usuario o el correo electrónico."
+msgstr "Ingresa el nombre de usuario o el correo electrónico."
 
 #: lms/static/js/groups/views/cohort_editor.js
-msgid "{numUsersAdded} student has been added to this cohort"
-msgid_plural "{numUsersAdded} students have been added to this cohort"
-msgstr[0] "{numUsersAdded} estudiantes han sido añadidos a este cohorte"
-msgstr[1] "{numUsersAdded} estudiantes han sido añadidos a este cohorte"
+msgid "{numUsersAdded} learner has been added to this cohort. "
+msgid_plural "{numUsersAdded} learners have been added to this cohort. "
+msgstr[0] "{numUsersAdded} estudiante ha sido agregado a este cohorte."
+msgstr[1] "{numUsersAdded} estudiantes han sido agregados a este cohorte."
 
 #: lms/static/js/groups/views/cohort_editor.js
-msgid "{numMoved} student was removed from {oldCohort}"
-msgid_plural "{numMoved} students were removed from {oldCohort}"
-msgstr[0] "{numMoved} estudiante ha sido eliminado de la cohorte {oldCohort}"
+msgid "{numMoved} learner was moved from {prevCohort}"
+msgid_plural "{numMoved} learners were moved from {prevCohort}"
+msgstr[0] "{numMoved} estudiante fue movido de {prevCohort}"
+msgstr[1] "{numMoved} estudiantes fueron movidos de {prevCohort}"
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "{numPresent} learner was already in the cohort"
+msgid_plural "{numPresent} learners were already in the cohort"
+msgstr[0] "{numPresent} estudiante ya estaba en el cohorte."
+msgstr[1] "{numPresent} estudiantes ya estaban en el cohorte."
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "{email}"
+msgstr "{email}"
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid ""
+"{numPreassigned} learner was pre-assigned for this cohort. This learner will"
+" automatically be added to the cohort when they enroll in the course."
+msgid_plural ""
+"{numPreassigned} learners were pre-assigned for this cohort. These learners "
+"will automatically be added to the cohort when they enroll in the course."
+msgstr[0] ""
+"{numPreassigned} estudiante fue asignado previamente a este cohorte. Este "
+"estudiante será agregado automáticamente a este cohorte cuando se inscriban "
+"en el curso."
 msgstr[1] ""
-"{numMoved} estudiantes han sido eliminados de la cohorte {oldCohort}"
+"{numPreassigned} estudiantes fueron asignados previamente a este cohorte. "
+"Estos estudiantes serán agregados automáticamente a este cohorte cuando se "
+"inscriban en el curso."
 
 #: lms/static/js/groups/views/cohort_editor.js
-msgid "{numPresent} student was already in the cohort"
-msgid_plural "{numPresent} students were already in the cohort"
-msgstr[0] "{numPresent} estudiante ya estaba en cohorte"
-msgstr[1] "{numPresent} estudiantes ya estaban en cohorte"
-
-#: lms/static/js/groups/views/cohort_editor.js
-msgid "Unknown user: {user}"
+msgid "Unknown username: {user}"
 msgstr "Usuario desconocido: {user}"
 
 #: lms/static/js/groups/views/cohort_editor.js
-msgid "There was an error when trying to add students:"
-msgid_plural "There were {numErrors} errors when trying to add students:"
-msgstr[0] "Ocurrió un error al añadir estudiantes:"
-msgstr[1] "Ocurrieron {numErrors} errores al añadir estudiantes:"
+msgid "Invalid email address: {email}"
+msgstr "Correo electrónico inválido: {email}"
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "There was an error when trying to add learners:"
+msgid_plural "{numErrors} learners could not be added to this cohort:"
+msgstr[0] "Hubo un error al intentar agregar estudiantes:"
+msgstr[1] "{numErrors} estudiantes no pudieron ser agregados a este cohorte:"
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid "View all errors"
@@ -3453,11 +3626,11 @@ msgstr "Ver todos los errores"
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "You must specify a name for the cohort"
-msgstr "Debe especificar un nombre para el cohorte"
+msgstr "Debes especificar un nombre para el cohorte"
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "You did not select a content group"
-msgstr "No ha seleccionado el contenido del grupo"
+msgstr "No has seleccionado el contenido del grupo"
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "The selected content group does not exist"
@@ -3473,7 +3646,7 @@ msgstr "El cohorte no puede ser añadido"
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "You currently have no cohorts configured"
-msgstr "Actualmente no ha configurado ningún cohorte"
+msgstr "Actualmente no has configurado ningún cohorte"
 
 #: lms/static/js/groups/views/cohorts.js
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
@@ -3485,7 +3658,7 @@ msgid ""
 "The {cohortGroupName} cohort has been created. You can manually add students"
 " to this cohort below."
 msgstr ""
-"El cohorte {cohortGroupName} ha sido creado. Puede manualmente añadir "
+"El cohorte {cohortGroupName} ha sido creado. Puedes manualmente añadir "
 "estudiantes a este cohorte."
 
 #: lms/static/js/groups/views/cohorts.js
@@ -3494,7 +3667,7 @@ msgstr "Asignar estudiantes al cohorte cargando un archivo CSV."
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "Choose a .csv file"
-msgstr "Elija un fichero .cxv"
+msgstr "Elije un fichero .cxv"
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "Only properly formatted .csv files will be accepted."
@@ -3508,7 +3681,7 @@ msgstr "Cargar archivo y asignar estudiantes"
 msgid ""
 "Your file '{file}' has been uploaded. Allow a few minutes for processing."
 msgstr ""
-"El archivo '{file}' ha sido cargado. Espere algunos minutos mientras se "
+"El archivo '{file}' ha sido cargado. Espera algunos minutos mientras se "
 "procesa."
 
 #: lms/static/js/groups/views/course_cohort_settings_notification.js
@@ -3529,8 +3702,8 @@ msgstr ""
 "Este curso utiliza la función de cohortes automáticamente para estudiantes "
 "en el modo verificado. No se puede desactivar los cohortes, ni se puede "
 "cambiarle el nombre al cohorte manual nombrado '{verifiedCohortName}'. Para "
-"modificar la configuración de los cohortes del modo verificado, comuníquese "
-"con su punto de contacto en edX."
+"modificar la configuración de los cohortes del modo verificado, comunícate "
+"con tu punto de contacto en edX."
 
 #: lms/static/js/groups/views/verified_track_settings_notification.js
 msgid ""
@@ -3539,8 +3712,8 @@ msgid ""
 "cohort named '{verifiedCohortName}' for the feature to work."
 msgstr ""
 "Este curso tiene la función de cohortes habilitada automáticamente para "
-"estudiantes en el modo verificado, pero el cohorte requerido no existe. "
-"Usted debe crear un cohorte asignado manualmente con el título "
+"estudiantes en el modo verificado, pero el cohorte requerido no existe. Tu "
+"debes crear un cohorte asignado manualmente con el título "
 "'{verifiedCohortName}' para que esta característica funcione."
 
 #: lms/static/js/groups/views/verified_track_settings_notification.js
@@ -3549,8 +3722,8 @@ msgid ""
 " cohorts are disabled. You must enable cohorts for the feature to work."
 msgstr ""
 "Este curso tiene la función de cohortes habilitada automáticamente para los "
-"estudiantes del modo verificado, pero los cohortes están inhabilitados. "
-"Usted deber habilitar los cohortes para que esta característica funcione. "
+"estudiantes del modo verificado, pero los cohortes están inhabilitados. Tu "
+"debes habilitar los cohortes para que esta característica funcione. "
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Allow students to generate certificates for this course?"
@@ -3558,7 +3731,7 @@ msgstr "¿Permitir a los estudiantes generar certificados para este curso ?"
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Prevent students from generating certificates in this course?"
-msgstr "¡Evitar que estudiantes generen certificados para este curso ?"
+msgstr "¿Evitar que estudiantes generen certificados para este curso ?"
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Start generating certificates for all students in this course?"
@@ -3567,15 +3740,15 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Error while generating certificates. Please try again."
-msgstr "Error al generar los certificados. Por favor inténtelo nuevamente."
+msgstr "Error al generar los certificados. Por favor intenta nuevamente."
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Start regenerating certificates for students in this course?"
-msgstr "Iniciar regeneración de certificados para estudiantes de este curso?"
+msgstr "¿Iniciar regeneración de certificados para estudiantes de este curso?"
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Error while regenerating certificates. Please try again."
-msgstr "Error al regenerar los certificados. Por favor inténtelo nuevamente."
+msgstr "Error al regenerar los certificados. Por favor inténtalo nuevamente."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Loading data..."
@@ -3589,22 +3762,22 @@ msgstr "Error al obtener la lista de certificados emitidos."
 msgid "Error generating proctored exam results. Please try again."
 msgstr ""
 "Error al generar el reporte de resultados de examenes supervisados. Por "
-"favor intente nuevamente."
+"favor intenta nuevamente."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating survey results. Please try again."
 msgstr ""
-"Error generando los resultados de encuesta. Por favor intente nuevamente."
+"Error generando los resultados de encuesta. Por favor intenta nuevamente."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating student profile information. Please try again."
 msgstr ""
-"Error al generar la información de perfil de estudiante. Por favor inténtelo"
+"Error al generar la información de perfil de estudiante. Por favor inténtalo"
 " nuevamente."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 #: cms/templates/js/move-xblock-modal.underscore
-#: lms/templates/search/search_loading.underscore
+#: openedx/features/course_search/static/course_search/templates/search_loading.underscore
 msgid "Loading"
 msgstr "Cargando"
 
@@ -3616,7 +3789,7 @@ msgstr "Error al obtener la lista de estudiantes."
 msgid "Error generating list of students who may enroll. Please try again."
 msgstr ""
 "Error al generar la lista de estudiantes que pueden inscribirse al curso. "
-"Por favor inténtelo nuevamente."
+"Por favor inténtalo nuevamente."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error retrieving grading configuration."
@@ -3624,29 +3797,29 @@ msgstr "Error al obtener la configuración de calificaciones."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating grades. Please try again."
-msgstr "Error al generar las calificaciones. Por favor inténtelo nuevamente."
+msgstr "Error al generar las calificaciones. Por favor inténtalo nuevamente."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating problem grade report. Please try again."
 msgstr ""
-"Error al generar el reporte de calificaciones. Por favor intente nuevamente."
+"Error al generar el reporte de calificaciones. Por favor intenta nuevamente."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating ORA data report. Please try again."
 msgstr ""
-"Error al generar el reporte de datos de ORA. Por favor, intente nuevamente."
+"Error al generar el reporte de datos de ORA. Por favor, intenta nuevamente."
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid ""
 "There was a problem creating the report. Select \"Create Executive Summary\""
 " to try again."
 msgstr ""
-"Hubo un problema creando el reporte. Seleccione \"Crear resumen ejecutivo\" "
+"Hubo un problema creando el reporte. Selecciona \"Crear resumen ejecutivo\" "
 "para intentarlo nuevamente."
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid "Enter the enrollment code."
-msgstr "Ingrese el código de inscripción."
+msgstr "Ingresa el código de inscripción."
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid "Cancel enrollment code"
@@ -3677,12 +3850,12 @@ msgstr "Quitar el acceso"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Enter username or email"
-msgstr "Ingrese el nombre de usuario o el correo electrónico."
+msgstr "Ingresa el nombre de usuario o el correo electrónico."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Please enter a username or email."
 msgstr ""
-"Por favor ingrese su nombre de usuario o dirección de correo electrónico."
+"Por favor ingresa tu nombre de usuario o dirección de correo electrónico."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Error changing user's permissions."
@@ -3706,7 +3879,7 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Error: You cannot remove yourself from the Instructor group!"
-msgstr "Error: No puede eliminarse a usted mismo del grupo de instructores!"
+msgstr "Error: No puedes eliminarse a ti mismo del grupo de instructores!"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Errors"
@@ -3744,6 +3917,14 @@ msgstr ""
 "Los siguientes usuarios fueron añadidos exitosamente como usuarios de "
 "prueba:"
 
+#: lms/static/js/instructor_dashboard/membership.js
+msgid ""
+"These users could not be added as beta testers because their accounts are "
+"not yet activated:"
+msgstr ""
+"No se ha podido agregar a estos usuarios como usuarios de prueba porque sus "
+"cuentas no han sido activadas:"
+
 #. Translators: A list of users appears after this sentence;
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "These users were successfully removed as beta testers:"
@@ -3779,7 +3960,7 @@ msgstr "El campo de Razón no pude dejarse vacío."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Error enrolling/unenrolling users."
-msgstr "Error al inscribir o des inscribir usuarios."
+msgstr "Error al inscribir o desinscribir  usuarios."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "The following email addresses and/or usernames are invalid:"
@@ -3847,27 +4028,27 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Your message must have a subject."
-msgstr "Su mensaje debe tener un asunto."
+msgstr "Tu mensaje debe tener un asunto."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Your message cannot be blank."
-msgstr "Su mensaje no puede estar vacío."
+msgstr "Tu mensaje no puede estar vacío."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Your message must have at least one target."
-msgstr "Su mensaje debe tener al menos un objetivo."
+msgstr "Tu mensaje debe tener al menos un objetivo."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid ""
 "There are invalid keywords in your email. Check the following keywords and "
 "try again."
 msgstr ""
-"Hay palabras clave inválidas en su correo. Por favor, compruebe las "
-"siguientes claves e intente de nuevo:"
+"Hay palabras clave inválidas en tu correo. Por favor, comprueba las "
+"siguientes claves e inténtalo de nuevo:"
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Yourself"
-msgstr "Usted mismo"
+msgstr "Tu mismo"
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Everyone who has staff privileges in this course"
@@ -3891,7 +4072,7 @@ msgid ""
 "large number of learners, email messages to learners might take up to an "
 "hour to be sent."
 msgstr ""
-"Su mensaje fué procesado con éxito para ser enviado. En cursos con muchos "
+"Tu mensaje fue procesado con éxito para ser enviado. En cursos con muchos "
 "estudiantes, podría requerirse hasta una hora para que el mensaje sea "
 "enviado."
 
@@ -3900,7 +4081,7 @@ msgid ""
 "You are sending an email message with the subject {subject} to the following"
 " recipients."
 msgstr ""
-"Usted está enviando un correo electrónico con asunto {subject} a los "
+"Tu estás enviando un correo electrónico con asunto {subject} a los "
 "siguientes destinatarios."
 
 #: lms/static/js/instructor_dashboard/send_email.js
@@ -3934,7 +4115,7 @@ msgstr "Enviar a:"
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Please enter a student email address or username."
 msgstr ""
-"Por favor ingrese una dirección de correo electrónico o nombre de usuario "
+"Por favor ingresa una dirección de correo electrónico o nombre de usuario "
 "válidos."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -3943,11 +4124,11 @@ msgid ""
 "the student identifier is spelled correctly."
 msgstr ""
 "Error al obtener la url de progreso del estudiante '<%- student_id %>'. "
-"Asegúrese de que el identificador del estudiante esté escrito correctamente."
+"Asegúrate de que el identificador del estudiante esté escrito correctamente."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Please enter a problem location."
-msgstr "Por favor ingrese la ubicación de un problema"
+msgstr "Por favor ingresa la ubicación de un problema"
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -3964,8 +4145,8 @@ msgid ""
 " complete and correct."
 msgstr ""
 "Error al reiniciar los envíos para el problema '<%= problem_id %>' y "
-"estudiante '<%- student_id %>'. Asegúrese de que los identificadores del "
-"problema y el estudiante esten completos y correctos."
+"estudiante '<%- student_id %>'. Asegúrate de que los identificadores del "
+"problema y el estudiante estén completos y correctos."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -3981,7 +4162,7 @@ msgid ""
 "correct."
 msgstr ""
 "Error al borrar el estado del estudiante '<%- student_id %>' para el "
-"problema '<%- problem_id %>'.  Verifique que el problema y el estudiante "
+"problema '<%- problem_id %>'.  Verifica que el problema y el estudiante "
 "estén identificados correctamente."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -3995,7 +4176,7 @@ msgid ""
 "complete and correct."
 msgstr ""
 "Error al obtener el historial de tareas para el problema '<%- problem_id %>'"
-" y el estudiante '<%- student_id %>'.  Verifique que el problema y el "
+" y el estudiante '<%- student_id %>'.  Verifica que el problema y el "
 "estudiante estén identificados correctamente."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4009,19 +4190,19 @@ msgid ""
 "Error resetting entrance exam attempts for student '{student_id}'. Make sure"
 " student identifier is correct."
 msgstr ""
-"Error reiniciando los intentos de exámen de ingreso para el estudiante "
-"'{student_id}'. Asegúrese que el identificador es correcto."
+"Error reiniciando los intentos de examen de ingreso para el estudiante "
+"'{student_id}'. Asegúrate que el identificador es correcto."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Enter a student's username or email address."
-msgstr "Ingresar un nombre de usuario o email del estudiante."
+msgstr "Ingresa un nombre de usuario o email de estudiante."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "Do you want to allow this student ('{student_id}') to skip the entrance "
 "exam?"
 msgstr ""
-"Desea permitir a este estudiante ('{student_id}') saltar el examen de "
+"Deseas permitir a este estudiante ('{student_id}') saltar el examen de "
 "ingreso ?"
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4029,8 +4210,8 @@ msgid ""
 "An error occurred. Make sure that the student's username or email address is"
 " correct and try again."
 msgstr ""
-"Un error ha ocurrido. Asegurar que el nombre de usuario o email del "
-"estudiante es correcto e intentar de nuevo."
+"Un error ha ocurrido. Asegúrate que el nombre de usuario o email del "
+"estudiante es correcto e intenta de nuevo."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Entrance exam state is being deleted for student '{student_id}'."
@@ -4044,15 +4225,15 @@ msgid ""
 "student identifier is correct."
 msgstr ""
 "Error borrando el estado del examen de ingreso para el estudiante "
-"'{student_id}'. Asegurar que el identificador del estudiante es correcto."
+"'{student_id}'. Asegúrate que el identificador del estudiante es correcto."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "Error getting entrance exam task history for student '{student_id}'. Make "
 "sure student identifier is correct."
 msgstr ""
-"Error obteniendo el historial de tarea para exámen de ingreso para el "
-"estudiante '{student_id}'. Asegurar que el identificador del estudiane es "
+"Error obteniendo el historial de tarea para examen de ingreso para el "
+"estudiante '{student_id}'. Asegúrate que el identificador del estudiante es "
 "correcto."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4067,7 +4248,7 @@ msgid ""
 " Click the 'Show Task Status' button to see the status of the task."
 msgstr ""
 "Se ha programado la tarea de reinicio de los envíos para todos los "
-"estudiantes en el problema '<%- problem_id %>'. Haga clic en el botón de "
+"estudiantes en el problema '<%- problem_id %>'. Haz clic en el botón de "
 "'Mostrar estado de tareas' para ver el estado de dicha tarea."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4077,7 +4258,7 @@ msgid ""
 "correct."
 msgstr ""
 "Error en el proceso de reinicio de envíos para todos los estudiantes para el"
-" problema '<%- problem_id %>'.  Verifique que el problema esté identificado "
+" problema '<%- problem_id %>'.  Verifica que el problema esté identificado "
 "correctamente."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4092,8 +4273,8 @@ msgid ""
 "of the task."
 msgstr ""
 "Inició el proceso de re puntuación del problema '<%- problem_id %>' para el "
-"estudiante '<%- student_id %>'.  Haga clic en el botón de 'Mostrar estado de"
-" tareas' para ver el estado de dicha tarea."
+"estudiante '<%- student_id %>'.  Haz clic en el botón de 'Mostrar estado de "
+"tareas' para ver el estado de dicha tarea."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -4102,7 +4283,7 @@ msgid ""
 "are complete and correct."
 msgstr ""
 "Error al iniciar el proceso de re puntuación del problema '<%- problem_id "
-"%>' para el estudiante '<%- student_id %>'.  Verifique que el problema y el "
+"%>' para el estudiante '<%- student_id %>'.  Verifica que el problema y el "
 "estudiante estén identificados correctamente."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4110,9 +4291,9 @@ msgid ""
 "Started entrance exam rescore task for student '{student_id}'. Click the "
 "'Show Task Status' button to see the status of the task."
 msgstr ""
-"Iniciada tarea de recalificación de exámen de ingreso para estudiante "
-"'{student_id}'. Haga clic en el botón 'Mostrar estado de tareas' para ver el"
-" estado de la tarea."
+"Iniciada tarea de recalificación de examen de ingreso para estudiante "
+"'{student_id}'. Haz clic en el botón 'Mostrar estado de tareas' para ver el "
+"estado de la tarea."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -4120,8 +4301,8 @@ msgid ""
 "Make sure that entrance exam has problems in it and student identifier is "
 "correct."
 msgstr ""
-"Error iniciando la tarea para recalificar el exámen de ingreso para el "
-"estudiante '{student_id}'. Asegurar que el exámen de ingreso tiene problemas"
+"Error iniciando la tarea para recalificar el examen de ingreso para el "
+"estudiante '{student_id}'. Asegurar que el examen de ingreso tiene problemas"
 " y el identificador del estudiante es correcto."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4135,7 +4316,7 @@ msgid ""
 "students. Click the 'Show Task Status' button to see the status of the task."
 msgstr ""
 "Se programó la tarea para re puntuar el problema '<%- problem_id %>' para "
-"todos los estudiantes.  Haga clic en el botón de 'Mostrar estado de tareas' "
+"todos los estudiantes.  Haz clic en el botón de 'Mostrar estado de tareas' "
 "para ver el estado de dicha tarea."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -4144,7 +4325,7 @@ msgid ""
 " the problem identifier is complete and correct."
 msgstr ""
 "Error al iniciar la tarea para re puntuar el problema '<%- problem_id %>'.  "
-"Verifique que el problema esté identificado correctamente."
+"Verifica que el problema esté identificado correctamente."
 
 #. Translators: a "Task" is a background process such as grading students or
 #. sending email
@@ -4205,8 +4386,8 @@ msgid ""
 "An error occurred retrieving your email. Please try again later, and contact"
 " technical support if the problem persists."
 msgstr ""
-"Ocurrió un error al recuperar su correo. Por favor intente nuevamente más "
-"tarde. Si el problema persiste, contacte al soporte técnico."
+"Ocurrió un error al recuperar tu correo. Por favor intenta nuevamente más "
+"tarde. Si el problema persiste, contacta a soporte técnico."
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Subject"
@@ -4269,12 +4450,17 @@ msgstr ""
 "dado a la naturaleza sensible de la información de calificaciones de "
 "estudiantes."
 
-#: lms/static/js/search/base/views/search_results_view.js
-#, javascript-format
-msgid "%s result"
-msgid_plural "%s results"
-msgstr[0] "%s resultado"
-msgstr[1] "%s resultados"
+#: lms/static/js/learner_dashboard/views/program_details_sidebar_view.js
+msgid "{type} Progress"
+msgstr "{type} Progreso"
+
+#: lms/static/js/learner_dashboard/views/program_details_sidebar_view.js
+msgid "Earned Certificates"
+msgstr "Certificados Ganados"
+
+#: lms/static/js/learner_dashboard/views/program_details_view.js
+msgid "Enrolled"
+msgstr "Inscrito"
 
 #: lms/static/js/staff_debug_actions.js
 msgid "Unknown Error Occurred."
@@ -4321,62 +4507,73 @@ msgstr "Los datos no pudieron ser guardados."
 
 #: lms/static/js/student_account/account.js
 msgid "Please enter a valid email address"
-msgstr "Por favor ingrese una dirección de correo electrónico válida."
+msgstr "Por favor ingresa una dirección de correo electrónico válida."
 
 #: lms/static/js/student_account/account.js
 msgid "Please enter a valid password"
-msgstr "Por favor ingrese una contraseña válida"
+msgstr "Por favor ingresa una contraseña válida"
 
 #: lms/static/js/student_account/account.js
 msgid ""
 "Password reset email sent. Follow the link in the email to change your "
 "password."
 msgstr ""
-"Se ha enviado el correo para restablecer su contraseña.  Siga el vínculo "
+"Se ha enviado el correo para restablecer tu contraseña.  Sigue el vínculo "
 "enviado en el correo para realizar el cambio."
 
 #: lms/static/js/student_account/account.js
 msgid "We weren't able to send you a password reset email."
-msgstr "No se ha podido enviar el correo para restablecer su contraseña."
+msgstr "No se ha podido enviar el correo para restablecer tu contraseña."
 
 #: lms/static/js/student_account/account.js
 msgid "Please check your email to confirm the change"
-msgstr "Por favor revise su correo para confirmar el cambio"
+msgstr "Por favor revisa tu correo para confirmar el cambio"
+
+#: lms/static/js/student_account/tos_modal.js
+msgid "Terms of Service and Honor Code"
+msgstr "Términos del servicio y código de honor"
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Saving your email preference"
-msgstr "Guardando sus preferencias de correo electrónico"
+msgstr "Guardando tus preferencias de correo electrónico"
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Enrolling you in the selected course"
-msgstr "Inscribiéndolo en el curso seleccionado"
+msgstr "Inscribiéndote en el curso seleccionado"
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Adding the selected course to your cart"
-msgstr "Añadiendo el curso seleccionado a su carrito de compras"
+msgstr "Añadiendo el curso seleccionado a tu carrito de compras"
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Loading your courses"
-msgstr "Cargando sus cursos"
+msgstr "Cargando tus cursos"
 
 #: lms/static/js/student_account/views/FormView.js
 #: lms/static/js/student_account/views/RegisterView.js
 msgid "An error occurred."
 msgstr "Ha ocurrido un error."
 
+#. Translators: This string is appended to optional field labels on the
+#. student login, registration, and
+#. profile forms.
+#: lms/static/js/student_account/views/FormView.js
+msgid "(optional)"
+msgstr "(opcional)"
+
 #: lms/static/js/student_account/views/LoginView.js
 msgid "We couldn't sign you in."
-msgstr "No se ha podido iniciar su sesión."
+msgstr "No se ha podido iniciar tu sesión."
 
 #: lms/static/js/student_account/views/LoginView.js
 #, javascript-format
 msgid "An error occurred when signing you in to %s."
-msgstr "Ocurrió un error al iniciar su sesión en %s."
+msgstr "Ocurrió un error al iniciar tu sesión en %s."
 
 #: lms/static/js/student_account/views/LoginView.js
 #: lms/templates/verify_student/intro_step.underscore
 msgid "Check Your Email"
-msgstr "Revise su correo electrónico"
+msgstr "Revise tu correo electrónico"
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
@@ -4388,20 +4585,20 @@ msgid ""
 "spam folder.{paragraphEnd}{paragraphStart}If you need further assistance, "
 "{anchorStart}contact technical support{anchorEnd}.{paragraphEnd}"
 msgstr ""
-"{paragraphStart}Ud. ingresó {boldStart}{email}{boldEnd}. Si esta dirección "
-"de email está asociada con su cuenta en {platform_name}, enviaremos un "
-"mensaje a esta dirección con instrucciones para reestablecer su "
-"contraseña.{paragraphEnd}{paragraphStart}Si no recibe ningún mensaje, "
-"verifique que ingresó la dirección correctamente y revise su carpeta de "
-"spam.{paragraphEnd}{paragraphStart}Si necesita asistencia adicional, "
-"{anchorStart}contacte al equipo de soporte{anchorEnd}.{paragraphEnd}"
+"{paragraphStart}Tu ingresaste {boldStart}{email}{boldEnd}. Si esta dirección"
+" de email está asociada con tu cuenta en {platform_name}, enviaremos un "
+"mensaje a esta dirección con instrucciones para restablecer tu "
+"contraseña.{paragraphEnd}{paragraphStart}Si no recibes ningún mensaje, "
+"verifica que ingresaste la dirección correctamente y revisa tu carpeta de "
+"spam.{paragraphEnd}{paragraphStart}Si necesitas asistencia adicional, "
+"{anchorStart}contacta al equipo de soporte{anchorEnd}.{paragraphEnd}"
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
 "An error has occurred. Try refreshing the page, or check your Internet "
 "connection."
 msgstr ""
-"Ha ocurrido un error. Intente recargar la página o revise su conexión a "
+"Ha ocurrido un error. Intenta recargar la página o revisa tu conexión a "
 "Internet."
 
 #: lms/static/js/student_account/views/LoginView.js
@@ -4410,26 +4607,46 @@ msgid ""
 "%(currentProvider)s account does not have a linked %(platformName)s account."
 " To link your accounts, sign in now using your %(platformName)s password."
 msgstr ""
-"Ha iniciado sesión exitosamente en %(currentProvider)s, pero su cuenta de "
+"Has iniciado sesión exitosamente en %(currentProvider)s, pero tu cuenta de "
 "%(currentProvider)s no está vinculada con una cuenta en %(platformName)s. "
-"Para vincular sus cuentas, ingrese con su usuario y contraseña de "
+"Para vincular tus cuentas, ingresa con tu usuario y contraseña de "
 "%(platformName)s."
 
 #: lms/static/js/student_account/views/RegisterView.js
 msgid "We couldn't create your account."
-msgstr "No pudimos crear su cuenta."
+msgstr "No pudimos crear tu cuenta."
 
 #: lms/static/js/student_account/views/RegisterView.js
 msgid "You've successfully signed into %(currentProvider)s."
-msgstr "Ha iniciado sesión exitosamente en %(currentProvider)s."
+msgstr "Has iniciado sesión exitosamente en %(currentProvider)s."
 
 #: lms/static/js/student_account/views/RegisterView.js
 msgid ""
 "We just need a little more information before you start learning with "
 "%(platformName)s."
 msgstr ""
-"Necesitamos un poco mas de información antes de que comience a aprender con "
-"%(platformName)s."
+"Necesitamos un poco mas de información antes de que comiences a aprender con"
+" %(platformName)s."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Email Address"
+msgstr "Dirección de correo electrónico"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"The email address you use to sign in. Communications from {platform_name} "
+"and your courses are sent to this address."
+msgstr ""
+"La dirección de correo que usas para iniciar sesión. Las comunicaciones de "
+"{platform_name} y las relacionadas con tus cursos serán enviadas a esta "
+"dirección."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"The email address you use to sign in. Communications from {platform_name} "
+"and your courses are sent to this address.  To change the email address, "
+"please contact {contact_email}."
+msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Basic Account Information"
@@ -4441,16 +4658,16 @@ msgid ""
 "specify additional information and see your linked social accounts on this "
 "page."
 msgstr ""
-"Esta configuración incluye información básica de su cuenta. También puede "
+"Esta configuración incluye información básica de tu cuenta. También puedes "
 "añadir información adicional y ver los perfiles de redes sociales asociados "
-"a su cuenta."
+"a tu cuenta."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
 "The name that identifies you throughout {platform_name}. You cannot change "
 "your username."
 msgstr ""
-"El nombre que lo identifica en el sitio de {platform_name}. No podrá ser "
+"El nombre que te identifica en el sitio de {platform_name}. No podrá ser "
 "cambiado."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
@@ -4464,23 +4681,10 @@ msgid ""
 "exactly as it appears on your government-issued photo ID, including any non-"
 "Roman characters."
 msgstr ""
-"Nombre que se usará para la verificación de identidad y que aparece en sus "
-"certificados. Otros estudiantes nunca verán su nombre completo. Asegúrese de"
-" que ingresa el nombre exactamente como aparece en su identificación oficial"
-" con foto, incluyendo cualquier caracter no romano."
-
-#: lms/static/js/student_account/views/account_settings_factory.js
-msgid "Email Address"
-msgstr "Dirección de correo electrónico"
-
-#: lms/static/js/student_account/views/account_settings_factory.js
-msgid ""
-"The email address you use to sign in. Communications from {platform_name} "
-"and your courses are sent to this address."
-msgstr ""
-"La dirección de correo que usa para iniciar sesión. Las comunicaciones de "
-"{platform_name} y las relacionadas con sus cursos serán enviadas a esta "
-"dirección."
+"Nombre que se usará para la verificación de identidad y que aparece en tus "
+"certificados. Otros estudiantes nunca verán tu nombre completo. Asegúrate de"
+" que ingresas el nombre exactamente como aparece en tu identificación "
+"oficial con foto, incluyendo cualquier carácter no romano."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: lms/templates/student_account/account.underscore
@@ -4489,7 +4693,7 @@ msgstr "Contraseña"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Reset Your Password"
-msgstr "Restablecer su contraseña"
+msgstr "Restablecer tu contraseña"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
@@ -4497,9 +4701,9 @@ msgid ""
 " address for your {platform_name} account. Click the link in the message to "
 "reset your password."
 msgstr ""
-"Cuando selecciona \"Restablecer su contraseña\", un mensaje será enviado a "
-"la dirección de correo electrónico asociada con su cuenta de "
-"{platform_name}. Haga clic en el vínculo del mensaje para restablecer su "
+"Cuando seleccionas \"Restablecer tu contraseña\", un mensaje será enviado a "
+"la dirección de correo electrónico asociada con tu cuenta de "
+"{platform_name}. Haz clic en el vínculo del mensaje para restablecer tu "
 "contraseña. "
 
 #: lms/static/js/student_account/views/account_settings_factory.js
@@ -4507,8 +4711,8 @@ msgid ""
 "The language used throughout this site. This site is currently available in "
 "a limited number of languages."
 msgstr ""
-"El idioma que usará para el sitio. Actualmente solo hay disponibilidad de "
-"usar un número limitado de idiomas."
+"El idioma que se usará para el sitio. Actualmente solo hay disponibilidad de"
+" usar un número limitado de idiomas."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Country or Region"
@@ -4524,9 +4728,9 @@ msgid ""
 "time zone, course dates, including assignment deadlines, will be displayed "
 "in your browser's local time zone."
 msgstr ""
-"Seleccionar la zona horaria para exponer las fechas del curso. Si no "
-"especifica una zona horaria, las fechas del curso, incluidas las fechas "
-"límites de tareas, serán expuestas en la zona horaria local de su navegador."
+"Selecciona la zona horaria para exponer las fechas del curso. Si no "
+"especificas una zona horaria, las fechas del curso, incluidas las fechas "
+"límites de tareas, serán expuestas en la zona horaria local de tu navegador."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "All Time Zones"
@@ -4567,8 +4771,8 @@ msgid ""
 "You can link your social media accounts to simplify signing in to "
 "{platform_name}."
 msgstr ""
-"Puede vincular sus cuentas de redes sociales para simplificar el proceso de "
-"iniciar sesión en {platform_name}."
+"Puedes vincular tus cuentas de redes sociales para simplificar el proceso de"
+" iniciar sesión en {platform_name}."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "ORDER NAME"
@@ -4595,7 +4799,7 @@ msgid ""
 "This page contains information about orders that you have placed with "
 "{platform_name}."
 msgstr ""
-"Esta página contiene información de las órdenes de compra que ha realizado "
+"Esta página contiene información de las órdenes de compra que has realizado "
 "en {platform_name}."
 
 #: lms/static/js/student_account/views/account_settings_fields.js
@@ -4603,27 +4807,29 @@ msgid ""
 "We've sent a confirmation message to {new_email_address}. Click the link in "
 "the message to update your email address."
 msgstr ""
-"Hemos enviado un mensaje de confirmación a {new_email_address}. Haga clic en"
-" el vínculo del mensaje para actualizar su correo electrónico."
+"Hemos enviado un mensaje de confirmación a {new_email_address}. Haz clic en "
+"el vínculo del mensaje para actualizar tu correo electrónico."
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid ""
 "You must sign out and sign back in before your language changes take effect."
 msgstr ""
-"Debe cerrar sesión y volver a iniciar para que se aplique el cambio de "
+"Debes cerrar sesión y volver a iniciar para que se aplique el cambio de "
 "idioma"
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid ""
-"We've sent a message to {email_address}. Click the link in the message to "
-"reset your password."
+"We've sent a message to {email}. Click the link in the message to reset your"
+" password. Didn't receive the message? Contact {anchorStart}technical "
+"support{anchorEnd}."
 msgstr ""
-"Hemos enviado un mensaje a {email_address}. Haga clic en el vínculo del "
-"mensaje para restablecer su contraseña."
+"Hemos mandado un mensaje a {email}. Haz clic en el enlace en el mensaje para"
+" restablecer tu contraseña. ¿No recibiste el mensaje? Contáctate con "
+"{anchorStart}apoyo técnico{anchorEnd}."
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid "Link your {accountName} account"
-msgstr "Vincular su cuenta de {accountName}"
+msgstr "Vincular tu cuenta de {accountName}"
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid "Unlink This Account"
@@ -4634,23 +4840,23 @@ msgid ""
 "You can use your {accountName} account to sign in to your {platformName} "
 "account."
 msgstr ""
-"Puede utilizar su cuenta de {accountName} para iniciar sesión en su cuenta "
+"Puedes utilizar tu cuenta de {accountName} para iniciar sesión en tu cuenta "
 "de {platformName}."
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid "Unlink your {accountName} account"
-msgstr "Desvincular su cuenta de {accountName} "
+msgstr "Desvincular tu cuenta de {accountName} "
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid "Link Your Account"
-msgstr "Vincular su cuenta"
+msgstr "Vincular tu cuenta"
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid ""
 "Link your {accountName} account to your {platformName} account and use "
 "{accountName} to sign in to {platformName}."
 msgstr ""
-"Vincule su cuenta {accountName} con su cuenta de {platformName} y use "
+"Vincula tu cuenta {accountName} con tu cuenta de {platformName} y usa "
 "{accountName} para iniciar sesión en {platformName}."
 
 #: lms/static/js/student_account/views/account_settings_fields.js
@@ -4706,8 +4912,8 @@ msgid ""
 "Tell other learners a little about yourself: where you live, what your "
 "interests are, why you're taking courses, or what you hope to learn."
 msgstr ""
-"Comparta con otros usuarios algo sobre usted: donde vive, cuales son sus "
-"intereses, porque está tomando estos cursos, o cuales son sus expectativas "
+"Comparte con otros usuarios algo sobre ti: donde vives, cuales son tus "
+"intereses, porque estás tomando estos cursos, o cuales son tus expectativas "
 "de aprendizaje."
 
 #: lms/static/js/student_profile/views/learner_profile_fields.js
@@ -4719,8 +4925,8 @@ msgid ""
 "You must specify your birth year before you can share your full profile. To "
 "specify your birth year, go to the {account_settings_page_link}"
 msgstr ""
-"Debe especificar un año de nacimiento antes de poder compartir su perfil "
-"completo. Para definir un año de nacimiento, visite "
+"Debes especificar un año de nacimiento antes de poder compartir tu perfil "
+"completo. Para definir un año de nacimiento, visita "
 "{account_settings_page_link}"
 
 #: lms/static/js/student_profile/views/learner_profile_fields.js
@@ -4728,8 +4934,8 @@ msgid ""
 "You must be over 13 to share a full profile. If you are over 13, make sure "
 "that you have specified a birth year on the {account_settings_page_link}"
 msgstr ""
-"Debe tener 13 años o más para compartir un perfil completo.  Si ud tiene mas"
-" de esta edad, asegúrese que ha especificado un año de nacimiento en "
+"Debes tener 13 años o más para compartir un perfil completo.  Si tienes más "
+"de esta edad, asegúrate que has especificado un año de nacimiento en "
 "{account_settings_page_link}"
 
 #: lms/static/js/student_profile/views/learner_profile_fields.js
@@ -4758,12 +4964,12 @@ msgstr "Error en subir imagen"
 
 #: lms/static/js/verify_student/views/image_input_view.js
 msgid "Please verify that you have uploaded a valid image (PNG and JPEG)."
-msgstr "Por favor verifique que haya cargado una imagen válida (PNG y JPEG)"
+msgstr "Por favor verifica que hayas cargado una imagen válida (PNG y JPEG)"
 
 #: lms/static/js/verify_student/views/incourse_reverify_view.js
 #: lms/static/js/verify_student/views/review_photos_step_view.js
 msgid "An error has occurred. Please try again later."
-msgstr "Ocurrió un error. Por favor intente nuevamente mas tarde."
+msgstr "Ocurrió un error. Por favor intenta nuevamente más tarde."
 
 #: lms/static/js/verify_student/views/incourse_reverify_view.js
 #: lms/static/js/verify_student/views/review_photos_step_view.js
@@ -4806,15 +5012,15 @@ msgstr "Ningún método de pago está disponible en este momento."
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Try the transaction again in a few minutes."
-msgstr "Intente la transacción nuevamente en algunos minutos."
+msgstr "Intenta la transacción nuevamente en algunos minutos."
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "An error has occurred. Please try again."
-msgstr "Ocurrió un error. Por favor intente nuevamente."
+msgstr "Ocurrió un error. Por favor intenta nuevamente."
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Could not submit order"
-msgstr "No se pudo publicar su petición"
+msgstr "No se pudo publicar tu petición"
 
 #: lms/static/js/verify_student/views/payment_confirmation_step_view.js
 msgid "Could not retrieve payment information"
@@ -4822,15 +5028,15 @@ msgstr "No se pudo conseguir la información del pago"
 
 #: lms/static/js/verify_student/views/reverify_view.js
 msgid "Take a photo of your ID"
-msgstr "Tome una foto de su ID"
+msgstr "Toma una foto de tu Identificación "
 
 #: lms/static/js/verify_student/views/reverify_view.js
 msgid "Review your info"
-msgstr "Revise su información"
+msgstr "Revisa tu información"
 
 #: lms/static/js/verify_student/views/step_view.js
 msgid "An error has occurred. Please try reloading the page."
-msgstr "Ocurrió un error. Por favor, intente recargar la página."
+msgstr "Ocurrió un error. Por favor, intenta recargar la página."
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "Video Capture Error"
@@ -4841,7 +5047,7 @@ msgid ""
 "Please verify that your webcam is connected and that you have allowed your "
 "browser to access it."
 msgstr ""
-"Por favor, compruebe que su webcam este conectada y que el navegador tenga "
+"Por favor, comprueba que tu webcam este conectada y que el navegador tenga "
 "habilitado el acceso a la misma."
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
@@ -4855,7 +5061,7 @@ msgstr "Parece que no hay una webcam conectada."
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "Double-check that your webcam is connected and working to continue."
 msgstr ""
-"Verifique que su cámara web esté conectada y funcionando para continuar."
+"Verifica que tu cámara web esté conectada y funcionando para continuar."
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "Photo Captured successfully."
@@ -4863,15 +5069,15 @@ msgstr "Foto capturada con éxito."
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "No Flash Detected"
-msgstr "No se detectó Flash"
+msgstr "No se detectó flash"
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid ""
 "You don't seem to have Flash installed. Get Flash to continue your "
 "verification."
 msgstr ""
-"Al parecer no tiene Flash instalado. Por favor instale Flash para continuar "
-"con su proceso de verificación."
+"Al parecer no tienes el flash instalado. Por favor instala el flash para "
+"continuar con tu proceso de verificación."
 
 #: lms/static/js/views/fields.js
 msgid "Editable"
@@ -4879,7 +5085,7 @@ msgstr "Editable"
 
 #: lms/static/js/views/fields.js
 msgid "Validation Error"
-msgstr "Error de Validación"
+msgstr "Error de validación"
 
 #: lms/static/js/views/fields.js
 msgid "In Progress"
@@ -4907,7 +5113,7 @@ msgstr "Cambiar imagen"
 
 #: lms/static/js/views/image_field.js
 msgid "An error has occurred. Refresh the page, and then try again."
-msgstr "Ha ocurrido un error. Refresque la página e intente nuevamente."
+msgstr "Ha ocurrido un error. Refresca la página e intenta nuevamente."
 
 #: lms/static/js/views/image_field.js
 msgid "The file must be at least {size} in size."
@@ -4922,7 +5128,7 @@ msgid ""
 "Upload is in progress. To avoid errors, stay on this page until the process "
 "is complete."
 msgstr ""
-"La carga está en proceso. Para evitar errores, permanezca en esta página "
+"La carga está en proceso. Para evitar errores, permanece en esta página "
 "hasta que el proceso haya finalizado."
 
 #: lms/static/js/views/image_field.js
@@ -4930,7 +5136,7 @@ msgid ""
 "Removal is in progress. To avoid errors, stay on this page until the process"
 " is complete."
 msgstr ""
-"La eliminación está en progreso. Para evitar errores, permanezca en esta "
+"La eliminación está en progreso. Para evitar errores, permanece en esta "
 "página hasta que el proceso haya finalizado."
 
 #: lms/static/js/views/image_field.js
@@ -4954,8 +5160,8 @@ msgid ""
 "You cannot view the course as a student or beta tester before the course "
 "release date."
 msgstr ""
-"No se puede ver el curso como estudiante ni como probador beta antes de la "
-"fecha de lanzamiento del curso."
+"No se puede ver el curso como estudiante ni como usuario de prueba antes de "
+"la fecha de lanzamiento del curso."
 
 #: lms/templates/class_dashboard/d3_stacked_bar_graph.js
 msgid "%(num_students)s student opened Subsection"
@@ -4982,19 +5188,6 @@ msgstr "Número de estudiantes"
 #: lms/templates/courseware/progress_graph.js
 msgid "Overall Score"
 msgstr "Puntaje general"
-
-#: cms/static/cms/js/main.js cms/static/js/views/active_video_upload_list.js
-msgid ""
-"This may be happening because of an error with our server or your internet "
-"connection. Try refreshing the page or making sure you are online."
-msgstr ""
-"Esto puede estar sucediendo debido a un error con nuestros servidores o con "
-"tu conexión a Internet. Intenta refrescar la página o verifica tu acceso a "
-"Internet."
-
-#: cms/static/cms/js/main.js
-msgid "Studio's having trouble saving your work"
-msgstr "Studio tiene problemas para guardar su trabajo"
 
 #: cms/static/cms/js/xblock/cms.runtime.v1.js
 msgid "OpenAssessment Save Error"
@@ -5092,44 +5285,6 @@ msgstr "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 #: cms/static/js/factories/export.js
 msgid "Your export has failed."
 msgstr ""
-
-#: cms/static/js/factories/import.js
-msgid "There was an error while importing the new library to our database."
-msgstr ""
-"Hubo un error mientras importabamos la nueva librería a nuestra base de "
-"datos."
-
-#: cms/static/js/factories/import.js
-msgid "There was an error while importing the new course to our database."
-msgstr "Ha habido un error importando el nuevo curso a nuestra base de datos."
-
-#: cms/static/js/factories/import.js
-msgid "There was an error during the upload process."
-msgstr "Hubo un error durante el proceso de carga."
-
-#: cms/static/js/factories/import.js
-msgid "There was an error while unpacking the file."
-msgstr "Ha habido un error desempaquetando el archivo"
-
-#: cms/static/js/factories/import.js
-msgid "There was an error while verifying the file you submitted."
-msgstr "Ha habido un error verificando el archivo que usted ha enviado."
-
-#: cms/static/js/factories/import.js
-msgid "Choose new file"
-msgstr "Escoja un nuevo archivo"
-
-#: cms/static/js/factories/import.js
-msgid "Your import has failed."
-msgstr "Su importación ha fallado."
-
-#: cms/static/js/factories/import.js
-msgid ""
-"File format not supported. Please upload a file with a {file_extension} "
-"extension."
-msgstr ""
-"Formato de archivo no soportado. Por favor cargue un archivo con extensión "
-"{file_extension}."
 
 #: cms/static/js/factories/manage_users.js
 msgid "Already a course team member"
@@ -5368,8 +5523,6 @@ msgid ""
 "{filename} is not in a supported file format. Supported file formats are "
 "{supportedFileFormats}."
 msgstr ""
-"{filename} no está en un formato de archivo soportado. Los formatos de "
-"archivo compatibles son {supportedFileFormats}."
 
 #: cms/static/js/views/active_video_upload_list.js
 msgid "{filename} exceeds maximum size of {maxFileSizeInGB} GB."
@@ -5443,35 +5596,6 @@ msgstr "Cargar otro archivo"
 msgid "Adding"
 msgstr "Añadiendo"
 
-#: cms/static/js/views/content_group_details.js
-#: cms/static/js/views/group_configuration_details.js
-msgid "Not in Use"
-msgstr "No esta en uso"
-
-#. Translators: 'count' is number of units that the group
-#. configuration is used in.
-#: cms/static/js/views/content_group_details.js
-#: cms/static/js/views/group_configuration_details.js
-msgid "Used in {count} unit"
-msgid_plural "Used in {count} units"
-msgstr[0] "Usado en {count} unidades"
-msgstr[1] "Usado en {count} unidades"
-
-#. Translators: This refers to a content group that can be linked to a student
-#. cohort.
-#: cms/static/js/views/content_group_item.js
-#: cms/static/js/views/content_group_list.js
-msgid "content group"
-msgstr "Contenido"
-
-#: cms/static/js/views/content_group_list.js
-msgid "Add your first content group"
-msgstr "Agrege su primer grupo de contenido"
-
-#: cms/static/js/views/content_group_list.js
-msgid "You have not created any content groups yet."
-msgstr "Todavía no ha añadido ninguna librería."
-
 #: cms/static/js/views/course_info_update.js
 msgid "Are you sure you want to delete this update?"
 msgstr "¿Está seguro de que quiere borrar esta actualización?"
@@ -5503,10 +5627,6 @@ msgid ""
 "attempting another export. Please check that all components on the page are "
 "valid and do not display any error messages."
 msgstr ""
-"Ha habido una falla para exportar al XML al menos un componente. Se "
-"recomienda ir a la página de edición y reparar el error antes de intentar "
-"otra exportación. Por favor, verifique que todos los componentes en la "
-"página son validos y no exhiben ninguna mensaje de error.   "
 
 #: cms/static/js/views/export.js
 msgid "Correct failed component"
@@ -5522,9 +5642,6 @@ msgid ""
 "to identify the failed component. Inspect your library to identify any "
 "problematic components and try again."
 msgstr ""
-"Tu librería no puede ser exportada a XML. No ha la suficiente información "
-"para identificar el componente que falló. Revisar tu librería para "
-"identificar algún problema en componentes e intentar de nuevo."
 
 #: cms/static/js/views/export.js
 msgid "Take me to the main library page"
@@ -5536,9 +5653,6 @@ msgid ""
 " identify the failed component. Inspect your course to identify any "
 "problematic components and try again."
 msgstr ""
-"Tu librería no puede ser exportada a XML. No ha la suficiente información "
-"para identificar el componente que falló. Revisar tu librería para "
-"identificar algún problema en componentes e intentar de nuevo."
 
 #: cms/static/js/views/export.js
 msgid "Take me to the main course page"
@@ -5560,6 +5674,20 @@ msgid_plural "Contains {count} groups"
 msgstr[0] "Contiene {count} grupo"
 msgstr[1] "Contiene {count} grupos"
 
+#: cms/static/js/views/group_configuration_details.js
+#: cms/static/js/views/partition_group_details.js
+msgid "Not in Use"
+msgstr "No esta en uso"
+
+#. Translators: 'count' is number of units that the group
+#. configuration is used in.
+#: cms/static/js/views/group_configuration_details.js
+#: cms/static/js/views/partition_group_details.js
+msgid "Used in {count} unit"
+msgid_plural "Used in {count} units"
+msgstr[0] "Usado en {count} unidades"
+msgstr[1] "Usado en {count} unidades"
+
 #. Translators: this refers to a collection of groups.
 #: cms/static/js/views/group_configuration_item.js
 #: cms/static/js/views/group_configurations_list.js
@@ -5573,19 +5701,6 @@ msgstr "Agregue su primera configuración de grupo"
 #: cms/static/js/views/group_configurations_list.js
 msgid "You have not created any group configurations yet."
 msgstr "No ha creado ninguna configuración de grupo."
-
-#: cms/static/js/views/import.js
-msgid "Your import is in progress; navigating away will abort it."
-msgstr ""
-"Su importación está en progreso. Si abandona esta página, la cancelará."
-
-#: cms/static/js/views/import.js
-msgid "Error importing course"
-msgstr "Error importando curso"
-
-#: cms/static/js/views/import.js
-msgid "There was an error with the upload"
-msgstr "Hubo un error con la subida del archivo"
 
 #: cms/static/js/views/instructor_info.js
 msgid "Upload instructor image."
@@ -5759,6 +5874,10 @@ msgstr "Publicar"
 msgid "Basic"
 msgstr "Básico"
 
+#: cms/static/js/views/modals/course_outline_modals.js
+msgid "Visibility"
+msgstr ""
+
 #. Translators: "title" is the name of the current component being edited.
 #: cms/static/js/views/modals/edit_xblock.js
 msgid "Editing: %(title)s"
@@ -5794,7 +5913,7 @@ msgstr "Cambiar Manualmente"
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Sections"
-msgstr "Secciones"
+msgstr ""
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Subsections"
@@ -5802,13 +5921,12 @@ msgstr ""
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Units"
-msgstr "Unidades"
+msgstr ""
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Components"
 msgstr ""
 
-#: cms/static/js/views/move_xblock_list.js
 #: cms/templates/js/group-configuration-editor.underscore
 msgid "Groups"
 msgstr "Grupos"
@@ -5817,9 +5935,8 @@ msgstr "Grupos"
 msgid "This {parentCategory} has no {childCategory}"
 msgstr ""
 
-#: cms/static/js/views/move_xblock_list.js
-#: cms/templates/js/content-group-details.underscore
 #: cms/templates/js/group-configuration-details.underscore
+#: cms/templates/js/partition-group-details.underscore
 msgid "Course Outline"
 msgstr "Estructura del curso"
 
@@ -5829,8 +5946,8 @@ msgstr "Fecha de adición"
 
 #. Translators: "title" is the name of the current component being edited.
 #: cms/static/js/views/pages/container.js
-msgid "Editing visibility for: %(title)s"
-msgstr "Edición visible para: %(title)s"
+msgid "Editing access for: %(title)s"
+msgstr ""
 
 #: cms/static/js/views/pages/container_subviews.js
 msgid "Publishing"
@@ -5947,12 +6064,20 @@ msgstr ""
 msgid "{totalItems} total"
 msgstr "{totalItems} total"
 
-#. Translators: This is listed as the duration for a video
-#. that has not yet reached the point in its processing by
-#. the servers where its duration is determined.
-#: cms/static/js/views/previous_video_upload.js
-msgid "Pending"
-msgstr "Pendiente"
+#. Translators: This refers to a content group that can be linked to a student
+#. cohort.
+#: cms/static/js/views/partition_group_item.js
+#: cms/static/js/views/partition_group_list.js
+msgid "content group"
+msgstr "Contenido"
+
+#: cms/static/js/views/partition_group_list.js
+msgid "Add your first content group"
+msgstr "Agrege su primer grupo de contenido"
+
+#: cms/static/js/views/partition_group_list.js
+msgid "You have not created any content groups yet."
+msgstr "Todavía no ha añadido ninguna librería."
 
 #: cms/static/js/views/previous_video_upload.js
 msgid "Are you sure you want to remove this video from the list?"
@@ -6216,6 +6341,117 @@ msgstr ""
 msgid "Upload translation"
 msgstr "Subir traducción"
 
+#: cms/static/js/views/video_thumbnail.js
+msgid "Add Thumbnail"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "Edit Thumbnail"
+msgstr ""
+
+#. Translators: This is a 2 part text which tells the image requirements.
+#: cms/static/js/views/video_thumbnail.js
+msgid ""
+"{InstructionsSpanStart}{videoImageResoultion}{lineBreak} "
+"{videoImageSupportedFileFormats}{spanEnd}"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "Image upload failed"
+msgstr ""
+
+#. Translators: This is a 3 part text which tells the image requirements.
+#: cms/static/js/views/video_thumbnail.js
+msgid ""
+"{ReqTextSpanStart}Requirements{spanEnd}{lineBreak}{InstructionsSpanStart}{videoImageResoultion}{lineBreak}"
+" {videoImageSupportedFileFormats}{spanEnd}"
+msgstr ""
+
+#. Translators: message will be like 1280x720 pixels
+#: cms/static/js/views/video_thumbnail.js
+msgid "{maxWidth}x{maxHeight} pixels"
+msgstr ""
+
+#. Translators: message will be like Thumbnail for Arrow.mp4
+#: cms/static/js/views/video_thumbnail.js
+msgid "Thumbnail for {videoName}"
+msgstr ""
+
+#. Translators: message will be like Add Thumbnail - Arrow.mp4
+#: cms/static/js/views/video_thumbnail.js
+msgid "Add Thumbnail - {videoName}"
+msgstr ""
+
+#. Translators: humanizeDuration will be like 10 minutes, an hour and 20
+#. minutes etc
+#: cms/static/js/views/video_thumbnail.js
+msgid "Video duration is {humanizeDuration}"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "minutes"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "minute"
+msgstr ""
+
+#. Translators: message will be like 15 minutes, 1 minute
+#: cms/static/js/views/video_thumbnail.js
+msgid "{minutes} {unit}"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "seconds"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "second"
+msgstr ""
+
+#. Translators: message will be like 20 seconds, 1 second
+#: cms/static/js/views/video_thumbnail.js
+msgid "{seconds} {unit}"
+msgstr ""
+
+#. Translators: `and` will be used to combine both miuntes and seconds like
+#. `13 minutes and 45 seconds`
+#: cms/static/js/views/video_thumbnail.js
+msgid " and "
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "Video image upload started"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "Video image upload completed"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid ""
+"This image file type is not supported. Supported file types are "
+"{supportedFileFormats}."
+msgstr ""
+
+#. Translators: maxFileSizeInMB will be like 2 MB.
+#: cms/static/js/views/video_thumbnail.js
+msgid "The selected image must be smaller than {maxFileSizeInMB}."
+msgstr ""
+
+#. Translators: minFileSizeInKB will be like 2 KB.
+#: cms/static/js/views/video_thumbnail.js
+msgid "The selected image must be larger than {minFileSizeInKB}."
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "Could not upload the video image file"
+msgstr ""
+
+#: cms/static/js/views/video_thumbnail.js
+msgid "Image upload failed. "
+msgstr ""
+
 #: cms/static/js/views/xblock_editor.js
 msgid "Editor"
 msgstr "Editor"
@@ -6286,14 +6522,6 @@ msgstr "Acercar"
 #: common/static/common/templates/image-modal.underscore
 msgid "Zoom Out"
 msgstr "Alejar"
-
-#: common/static/common/templates/sequence-breadcrumbs.underscore
-msgid "Return to course outline"
-msgstr ""
-
-#: common/static/common/templates/sequence-breadcrumbs.underscore
-msgid "Outline"
-msgstr "Estructura"
 
 #: common/static/common/templates/components/paging-footer.underscore
 #, python-format
@@ -6383,10 +6611,8 @@ msgstr "Visible para"
 #: common/static/common/templates/discussion/new-post.underscore
 msgid ""
 "Discussion admins, moderators, and TAs can make their posts visible to all "
-"students or specify a single cohort."
+"students or specify a single group."
 msgstr ""
-"Admins de discusiones, moderadores y TA pueden hacer sus publicaciones "
-"visibles a todos los estudiantes o para un grupo común específico."
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "All Groups"
@@ -6553,8 +6779,13 @@ msgstr "Añadir un comentario"
 
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
-msgid "%(post_type)s posted %(time_ago)s by %(author)s"
-msgstr "%(post_type)s publicada hace %(time_ago)s por %(author)s"
+msgid "discussion posted %(time_ago)s by %(author)s"
+msgstr ""
+
+#: common/static/common/templates/discussion/thread-show.underscore
+#, python-format
+msgid "question posted %(time_ago)s by %(author)s"
+msgstr ""
 
 #: common/static/common/templates/discussion/thread-show.underscore
 msgid "Closed"
@@ -7136,8 +7367,28 @@ msgid "Click to edit"
 msgstr "Haga clic para editar"
 
 #: lms/templates/fields/field_order_history.underscore
+msgid "Order Number"
+msgstr ""
+
+#: lms/templates/fields/field_order_history.underscore
+msgid "Date Placed"
+msgstr ""
+
+#: lms/templates/fields/field_order_history.underscore
+msgid "Cost"
+msgstr ""
+
+#: lms/templates/fields/field_order_history.underscore
 msgid "Order Details"
 msgstr "Detalles de la orden"
+
+#: lms/templates/fields/field_order_history.underscore
+msgid "for"
+msgstr ""
+
+#: lms/templates/fields/field_order_history.underscore
+msgid "Product Name"
+msgstr ""
 
 #: lms/templates/financial-assistance/financial_assessment_form.underscore
 #: lms/templates/financial-assistance/financial_assessment_submitted.underscore
@@ -7298,76 +7549,29 @@ msgstr "Certificado generado"
 msgid "Remove from List"
 msgstr "Remover de la lista"
 
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-course-wide.underscore
-#: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
-msgid "Specify whether discussion topics are divided by cohort"
-msgstr "Especifique si los temas de discusión son divididos por cohorte"
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-course-wide.underscore
-msgid "Course-Wide Discussion Topics"
-msgstr "Temas de discusión de todo el curso"
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-course-wide.underscore
-msgid ""
-"Select the course-wide discussion topics that you want to divide by cohort."
-msgstr ""
-"Seleccione los temas de discusión de todo el curso que desea dividir por "
-"cohorte."
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
-msgid "Content-Specific Discussion Topics"
-msgstr "Temas de discusión específicos al contenido"
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
-msgid ""
-"Specify whether content-specific discussion topics are divided by cohort."
-msgstr ""
-"Especifique si los temas de discusión de contenido específico se dividen por"
-" cohorte."
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
-msgid "Always cohort content-specific discussion topics"
-msgstr ""
-"Aplicar siempre cohortes a los temas de discusión de contenido específico."
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
-msgid "Cohort selected content-specific discussion topics"
-msgstr ""
-" Aplicar cohortes a los Temas de discusión de contenido específico "
-"seleccionados"
-
-#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
-msgid "No content-specific discussion topics exist."
-msgstr "No existen temas de discusión de contenidos específicos"
-
 #: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-subcategory.underscore
-msgid "Cohorted"
-msgstr "Con cohortes"
+msgid "Divided"
+msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
-msgid "Manage Students"
-msgstr "Administrar estudiantes"
+msgid "Manage Learners"
+msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
-msgid "Add students to this cohort"
-msgstr "Agregar estudiantes a esta categoria o cohorte"
+msgid "Add learners to this cohort"
+msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid ""
-"Note: Students can be in only one cohort. Adding students to this group "
+"Note: Learners can be in only one cohort. Adding learners to this group "
 "overrides any previous group assignment."
 msgstr ""
-"Nota: Los estudiantes pueden pertenecer solo a una categoria o cohorte a la "
-"vez. Agregar estudiantes a este grupo o cohorte anula cualquier asignación "
-"previa."
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid ""
 "Enter email addresses and/or usernames, separated by new lines or commas, "
-"for the students you want to add. *"
+"for the learners you want to add. *"
 msgstr ""
-"Ingrese los correos electrónicos y/o nombres de usuario separados por nuevas"
-" lineas o por comas para los estudiantes que desea añadir. *"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
@@ -7387,8 +7591,8 @@ msgstr ""
 "asegurarse de que los correos estén bien escritos."
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
-msgid "Add Students"
-msgstr "Añadir estudiantes"
+msgid "Add Learners"
+msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Add a New Cohort"
@@ -7516,19 +7720,47 @@ msgid "View Cohort"
 msgstr "Ver Cohorte"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
-msgid "Assign students to cohorts by uploading a CSV file"
-msgstr "Asignar estudiantes a la cohorte cargando un archivo CSV."
+msgid "Assign learners to cohorts by uploading a CSV file"
+msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid ""
-"To review student cohort assignments or see the results of uploading a CSV "
+"To review learner cohort assignments or see the results of uploading a CSV "
 "file, download course profile information or cohort results on the "
 "{link_start}Data Download{link_end} page."
 msgstr ""
-"Para revisar las asignaciones de estudiantes a cohortes o ver los resultados"
-" de cargar un archivo CSV, descargue la información del perfil del curso o "
-"los resultados de cohortes en {link_start}la página para descarga de "
-"datos{link_end}."
+
+#: lms/templates/instructor/instructor_dashboard_2/discussions.underscore
+msgid "Specify whether discussion topics are divided"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-course-wide.underscore
+msgid "Course-Wide Discussion Topics"
+msgstr "Temas de discusión de todo el curso"
+
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-course-wide.underscore
+msgid "Select the course-wide discussion topics that you want to divide."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
+msgid "Content-Specific Discussion Topics"
+msgstr "Temas de discusión específicos al contenido"
+
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
+msgid "Specify whether content-specific discussion topics are divided."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
+msgid "Always divide content-specific discussion topics"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
+msgid "Divide the selected content-specific discussion topics"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
+msgid "No content-specific discussion topics exist."
+msgstr "No existen temas de discusión de contenidos específicos"
 
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Used"
@@ -7538,56 +7770,26 @@ msgstr "Utilizado"
 msgid "Valid"
 msgstr "Válido"
 
-#: lms/templates/learner_dashboard/certificate.underscore
-msgid "Program Certificates"
-msgstr "Certificados de programa"
+#: lms/templates/learner_dashboard/certificate_status.underscore
+#: lms/templates/learner_dashboard/upgrade_message.underscore
+msgid "Certificate Status:"
+msgstr ""
 
 #: lms/templates/learner_dashboard/certificate_status.underscore
-msgid "Congratulations! You have earned a certificate for this course."
-msgstr "¡Felicitaciones! Usted ha obtenido un certificado de este curso."
-
-#: lms/templates/learner_dashboard/certificate_status.underscore
-msgid "View Certificate"
-msgstr "Ver certificado"
-
-#: lms/templates/learner_dashboard/course_card.underscore
-#, python-format
-msgid "%(courseName)s Home Page."
-msgstr "Página de inicio de %(courseName)s."
-
-#: lms/templates/learner_dashboard/course_enroll.underscore
-msgid "enrolled"
-msgstr "inscritos"
-
-#: lms/templates/learner_dashboard/course_enroll.underscore
-msgid "View Course"
-msgstr "Ver curso"
+msgid "Certificate Purchased"
+msgstr ""
 
 #: lms/templates/learner_dashboard/course_enroll.underscore
 msgid "View Archived Course"
 msgstr "Ver curso archivado"
 
 #: lms/templates/learner_dashboard/course_enroll.underscore
-#: lms/templates/learner_dashboard/program_card.underscore
-msgid "Not Enrolled"
+msgid "View Course"
+msgstr "Ver curso"
+
+#: lms/templates/learner_dashboard/course_enroll.underscore
+msgid "Choose a course run:"
 msgstr ""
-
-#: lms/templates/learner_dashboard/course_enroll.underscore
-msgid "Please select a course date"
-msgstr "Por favor seleccione una fecha para el curso."
-
-#: lms/templates/learner_dashboard/course_enroll.underscore
-msgid "Select Course Run"
-msgstr "Selecciona un curso a ejecutar"
-
-#: lms/templates/learner_dashboard/course_enroll.underscore
-msgid "Choose Course Date"
-msgstr "Seleccione la fecha del curso"
-
-#: lms/templates/learner_dashboard/course_enroll.underscore
-#, python-format
-msgid "Starts %(start)s"
-msgstr "Empieza %(start)s"
 
 #: lms/templates/learner_dashboard/course_enroll.underscore
 msgid "Enroll Now"
@@ -7634,10 +7836,10 @@ msgstr[1] ""
 
 #: lms/templates/learner_dashboard/program_card.underscore
 msgid "Completed"
-msgstr "Finalizado"
+msgstr ""
 
 #: lms/templates/learner_dashboard/program_card.underscore
-msgid "Enrolled"
+msgid "Remaining"
 msgstr ""
 
 #: lms/templates/learner_dashboard/program_card.underscore
@@ -7645,50 +7847,61 @@ msgstr ""
 msgid "%(programName)s Home Page."
 msgstr "Página de inicio de %(programName)s."
 
+#: lms/templates/learner_dashboard/program_details_sidebar.underscore
+msgid "Your {program} Certificate"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_sidebar.underscore
+#, python-format
+msgid "Open the certificate you earned for the %(title)s program."
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid "Congratulations!"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid "Your Program Journey"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid ""
+"To complete the program, you must earn a verified certificate for each "
+"course."
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid "COURSES IN PROGRESS"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid "REMAINING COURSES"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid "COMPLETED COURSES"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid "As you complete courses, you will see them listed here."
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_details_view.underscore
+msgid ""
+"Complete courses on your schedule to ensure you stand out in your field!"
+msgstr ""
+
 #: lms/templates/learner_dashboard/program_header_view.underscore
 msgid "{organization}\\'s logo"
 msgstr "Logo de la {organization}"
 
-#: lms/templates/learner_dashboard/program_header_view.underscore
-msgid "You are here"
-msgstr "Usted está aquí"
-
-#: lms/templates/learner_dashboard/program_header_view.underscore
-msgid "Dashboard"
-msgstr "Panel principal"
-
-#: lms/templates/learner_dashboard/program_header_view.underscore
-msgid "Programs"
-msgstr "Programas"
-
 #: lms/templates/learner_dashboard/upgrade_message.underscore
-msgid ""
-"You need a certificate in this course to be eligible for a program "
-"certificate."
+msgid "Needs verified certificate "
 msgstr ""
-"Necesitas un certificado en este curso para ser elegible para un programa de"
-" certificación."
 
 #: lms/templates/learner_dashboard/upgrade_message.underscore
-msgid "Upgrade Now"
-msgstr "Actualizar Ahora"
-
-#: lms/templates/search/course_search_results.underscore
-#: lms/templates/search/dashboard_search_results.underscore
-#, python-format
-msgid "Load next %(num_items)s result"
-msgid_plural "Load next %(num_items)s results"
-msgstr[0] "Cargar el siguiente %(num_items)s resultado"
-msgstr[1] "Cargar los siguientes %(num_items)s resultados"
-
-#: lms/templates/search/course_search_results.underscore
-#: lms/templates/search/dashboard_search_results.underscore
-msgid "Sorry, no results were found."
-msgstr "Lo sentimos, no se encuentran resultados"
-
-#: lms/templates/search/dashboard_search_results.underscore
-msgid "Back to Dashboard"
-msgstr "Volver al Panel de Control"
+msgid "Buy Certificate"
+msgstr ""
 
 #: lms/templates/student_account/account.underscore
 msgid "New Address"
@@ -7716,7 +7929,6 @@ msgstr "¿Olvidaste tu contraseña?"
 
 #: lms/templates/student_account/hinted_login.underscore
 #: lms/templates/student_account/login.underscore
-#: lms/templates/student_account/register.underscore
 msgid "Sign in"
 msgstr "Iniciar sesión"
 
@@ -7756,6 +7968,18 @@ msgid "Register through edX"
 msgstr "Registrarse a través de edX"
 
 #: lms/templates/student_account/login.underscore
+msgid "First time here?"
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
+msgid "Create an Account."
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
+msgid "Sign In"
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
 msgid ""
 "Sign in here using your email address and password, or use one of the "
 "providers listed below."
@@ -7788,15 +8012,6 @@ msgstr "Iniciar sesión usando %(providerName)s"
 msgid "Use my institution/campus credentials"
 msgstr "Usar mis credenciales de la institución o el Campus"
 
-#: lms/templates/student_account/login.underscore
-#, python-format
-msgid "New to %(platformName)s?"
-msgstr "¿Es nuevo en %(platformName)s?"
-
-#: lms/templates/student_account/login.underscore
-msgid "Create an account"
-msgstr "Crear una cuenta"
-
 #: lms/templates/student_account/password_reset.underscore
 msgid "Password assistance"
 msgstr "Ayuda con la contraseña"
@@ -7814,6 +8029,18 @@ msgid "Reset my password"
 msgstr "Restablecer mi contraseña"
 
 #: lms/templates/student_account/register.underscore
+msgid "Already have an {platformName} account?"
+msgstr ""
+
+#: lms/templates/student_account/register.underscore
+msgid "Sign in."
+msgstr ""
+
+#: lms/templates/student_account/register.underscore
+msgid "Create an Account"
+msgstr ""
+
+#: lms/templates/student_account/register.underscore
 msgid "Create an account using"
 msgstr "Crear una cuenta usando"
 
@@ -7827,20 +8054,8 @@ msgid "or create a new one here"
 msgstr "o crear una nueva aquí"
 
 #: lms/templates/student_account/register.underscore
-msgid "Create a new account"
-msgstr "Crear una nueva cuenta"
-
-#: lms/templates/student_account/register.underscore
-msgid "Create your account"
-msgstr "Crear su cuenta"
-
-#: lms/templates/student_account/register.underscore
-msgid "Required field"
-msgstr "Campo requerido"
-
-#: lms/templates/student_account/register.underscore
-msgid "Already have an account?"
-msgstr "¿Ya está registrado?"
+msgid "Create account"
+msgstr ""
 
 #: lms/templates/student_profile/badge.underscore
 #, python-format
@@ -8504,6 +8719,22 @@ msgid ""
 "page, click \"Bookmark this page\" under the page title."
 msgstr ""
 
+#: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
+#: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
+msgid "Load next {num_items} result"
+msgid_plural "Load next {num_items} results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
+#: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
+msgid "Sorry, no results were found."
+msgstr "Lo sentimos, no se encuentran resultados"
+
+#: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
+msgid "Back to Dashboard"
+msgstr "Volver al Panel de Control"
+
 #: cms/templates/js/access-editor.underscore
 msgid "Limit Access"
 msgstr "Restrinja permisos"
@@ -8656,8 +8887,8 @@ msgid "Lock/unlock file"
 msgstr "Bloquear / Desbloquear recurso"
 
 #: cms/templates/js/certificate-details.underscore
-#: cms/templates/js/content-group-details.underscore
 #: cms/templates/js/group-configuration-details.underscore
+#: cms/templates/js/partition-group-details.underscore
 msgid "ID"
 msgstr "ID"
 
@@ -8760,23 +8991,6 @@ msgstr ""
 "Atención: La última versión publicada de esta unidad está en vivo. Al "
 "publicar los cambios, cambiará la experiencia de los estudiantes."
 
-#: cms/templates/js/content-group-details.underscore
-#: cms/templates/js/content-group-editor.underscore
-msgid "Cannot delete when in use by a unit"
-msgstr "No puede borrar cuando esta en uso por una unidad"
-
-#: cms/templates/js/content-group-details.underscore
-msgid "This content group is used in:"
-msgstr "Este contenido de grupo es usado en:"
-
-#: cms/templates/js/content-group-details.underscore
-msgid ""
-"This content group is not in use. Add a content group to any unit from the "
-"{linkStart}Course Outline{linkEnd}."
-msgstr ""
-"Este grupo de contenidos no está en uso. Añada un grupo de contenidos a "
-"cualquier unidad de la {linkStart}Estructura del curso{linkEnd}."
-
 #: cms/templates/js/content-group-editor.underscore
 msgid "Content Group Name"
 msgstr "Content Group Name"
@@ -8792,6 +9006,11 @@ msgstr "Este es el nombre del grupo"
 #: cms/templates/js/content-group-editor.underscore
 msgid "This content group is used in one or more units."
 msgstr "Este contenido de grupo es usado en uno o mas unidades."
+
+#: cms/templates/js/content-group-editor.underscore
+#: cms/templates/js/partition-group-details.underscore
+msgid "Cannot delete when in use by a unit"
+msgstr "No puede borrar cuando esta en uso por una unidad"
 
 #: cms/templates/js/content-visibility-editor.underscore
 msgid "Subsection Visibility"
@@ -8936,6 +9155,12 @@ msgid "Unpublished changes to content that will release in the future"
 msgstr "Cambios no publicados del contenido que será liberado en el futuro"
 
 #: cms/templates/js/course-outline.underscore
+msgid ""
+"Access to some content in this unit is restricted to specific groups of "
+"learners"
+msgstr ""
+
+#: cms/templates/js/course-outline.underscore
 msgid "Ungraded"
 msgstr "No calificado"
 
@@ -8949,7 +9174,7 @@ msgstr "Examen supervisado"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Timed Exam"
-msgstr "Examen cronometrado"
+msgstr ""
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
@@ -9367,6 +9592,16 @@ msgstr "No ha añadido aún ningún libro de texto a este curso."
 msgid "Add your first textbook"
 msgstr "Añada su primer libro de texto"
 
+#: cms/templates/js/partition-group-details.underscore
+msgid "This group controls access to:"
+msgstr ""
+
+#: cms/templates/js/partition-group-details.underscore
+msgid ""
+"In the {linkStart}Course Outline{linkEnd}, use this group to control access "
+"to a component."
+msgstr ""
+
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Previous Uploads"
 msgstr "Subidas anteriores"
@@ -9376,8 +9611,8 @@ msgid "Download available encodings (.csv)"
 msgstr "Descargar las codificaciones disponibles (.csv)"
 
 #: cms/templates/js/previous-video-upload-list.underscore
-msgid "Duration"
-msgstr "Duración"
+msgid "Thumbnail"
+msgstr ""
 
 #: cms/templates/js/previous-video-upload-list.underscore
 msgid "Video ID"
@@ -9396,7 +9631,6 @@ msgid "Never published"
 msgstr "Nunca publicad"
 
 #: cms/templates/js/publish-history.underscore
-#: cms/templates/js/publish-xblock.underscore
 #, python-format
 msgid "Last published %(last_published_date)s by %(publish_username)s"
 msgstr ""
@@ -9436,9 +9670,16 @@ msgid "Publishing Status"
 msgstr "Estado de publicación"
 
 #: cms/templates/js/publish-xblock.underscore
-#, python-format
-msgid "Draft saved on %(last_saved_date)s by %(edit_username)s"
-msgstr "Borrador guardado el %(last_saved_date)s por %(edit_username)s"
+msgid ""
+"Draft saved on {lastSavedStart}{editedOn}{lastSavedEnd} by "
+"{editedByStart}{editedBy}{editedByEnd}"
+msgstr ""
+
+#: cms/templates/js/publish-xblock.underscore
+msgid ""
+"Last published {lastPublishedStart}{publishedOn}{lastPublishedEnd} by "
+"{publishedByStart}{publishedBy}{publishedByEnd}"
+msgstr ""
 
 #: cms/templates/js/publish-xblock.underscore
 #, python-format
@@ -9467,9 +9708,10 @@ msgid "Staff and Learners"
 msgstr "Funcionarios y estudiantes"
 
 #: cms/templates/js/publish-xblock.underscore
-msgid "Some content in this unit is visible only to particular content groups"
+msgid ""
+"Access to some content in this unit is restricted to specific groups of "
+"learners."
 msgstr ""
-"Algún contenido en esta unidad es visible sólo a un grupo en particular"
 
 #: cms/templates/js/publish-xblock.underscore
 #: cms/templates/js/staff-lock-editor.underscore
@@ -9495,6 +9737,60 @@ msgstr "Hora de liberación en UTC:"
 #: cms/templates/js/release-date-editor.underscore
 msgid "Clear Release Date/Time"
 msgstr "Borrar la fecha y hora de liberación"
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid "Assessment Results Visibility"
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid "Always show assessment results"
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid ""
+"When learners submit an answer to an assessment, they immediately see "
+"whether the answer is correct or incorrect, and the score received."
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid "Never show assessment results"
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid ""
+"Learners never see whether their answers to assessments are correct or "
+"incorrect, nor the score received."
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid "Show assessment results when subsection is past due"
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid ""
+"Learners do not see whether their answers to assessments were correct or "
+"incorrect, nor the score received, until after the course end date has "
+"passed."
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid ""
+"If the course does not have an end date, learners always see their scores "
+"when they submit answers to assessments."
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid ""
+"Learners do not see whether their answers to assessments were correct or "
+"incorrect, nor the score received, until after the due date for the "
+"subsection has passed."
+msgstr ""
+
+#: cms/templates/js/show-correctness-editor.underscore
+msgid ""
+"If the subsection does not have a due date, learners always see their scores"
+" when they submit answers to assessments."
+msgstr ""
 
 #: cms/templates/js/show-textbook.underscore
 msgid "View Live"
@@ -9743,6 +10039,12 @@ msgstr ""
 "Los usuarios que requieren verificación deben completar el punto de "
 "verificación seleccionado para ver el contenido de esta unidad. Los usuarios"
 " que no requieren verificación ven el contenido en forma predeterminada."
+
+#: cms/templates/js/video-thumbnail.underscore
+msgid ""
+"Recommended image resolution is {imageResolution}, maximum image file size "
+"should be {maxFileSize} and format must be one of {supportedImageFormats}."
+msgstr ""
 
 #: cms/templates/js/xblock-string-field-editor.underscore
 msgid "Edit the name"
