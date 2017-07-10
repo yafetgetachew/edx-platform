@@ -177,31 +177,28 @@ class LoginSessionView(APIView):
 class RegistrationView(APIView):
     """HTTP end-points for creating a new user. """
 
-    DEFAULT_FIELDS = ["email", "name", "username", "password"]
+    DEFAULT_FIELDS = ["email", "name", "prefix", "custom_prefix", "gender", "username", "password"]
 
     EXTRA_FIELDS = [
+        "city_of_residence",
+        "country_of_residence",
+        "nationality",
         "first_name",
         "last_name",
         "city",
         "state",
         "country",
-        "gender",
         "year_of_birth",
-        "level_of_education",
         "company",
         "title",
         "mailing_address",
-        "goals",
-        "honor_code",
-        "terms_of_service",
-        "prefix",
-        "custom_prefix",
-        "city_of_residence",
-        "country_of_residence",
-        "nationality",
+        "level_of_education",
         "hear",
         "hear_details",
+        "goals",
         "interested_topic",
+        "honor_code",
+        "terms_of_service",
     ]
 
     # This end-point is available to anonymous users,
@@ -265,7 +262,8 @@ class RegistrationView(APIView):
 
         # Default fields are always required
         for field_name in self.DEFAULT_FIELDS:
-            self.field_handlers[field_name](form_desc, required=True)
+            required = field_name != "custom_prefix"
+            self.field_handlers[field_name](form_desc, required=required)
 
         # Custom form fields can be added via the form set in settings.REGISTRATION_EXTENSION_FORM
         custom_form = get_registration_extension_form()
