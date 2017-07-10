@@ -1290,5 +1290,6 @@ TINYMCE_DEFAULT_CONFIG = {
 #    'automatic_uploads': True,
 #    'image_advtab': True,
     'file_picker_types': 'image',
-    'convert_urls': False
+    'convert_urls': False,
+    'image_caption': True
 }
