@@ -304,7 +304,7 @@ class UserProfile(models.Model):
       ('Prof.', _('Prof.')),
       ('Rev.', _('Rev.')),
       ('other', _('Other [Require fill-in]')),
-      (None, _('None')),
+      ('none', _('None')),
     )
     PREFIX_CUSTOM_VALUES = ['other']
 

@@ -395,7 +395,7 @@ class RegistrationView(APIView):
         )
 
     def _add_custom_prefix_field(self, form_desc, required=False):
-        label = _(u"")
+        label = _(u"If other, please specify here")
 
         form_desc.add_field(
             "custom_prefix",
@@ -443,7 +443,7 @@ class RegistrationView(APIView):
         )
 
     def _add_hear_details_field(self, form_desc, required=False):
-        label = _(u"")
+        label = _(u"If other, please specify here")
 
         form_desc.add_field(
             "hear_details",
