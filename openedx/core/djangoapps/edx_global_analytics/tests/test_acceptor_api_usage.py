@@ -1,5 +1,5 @@
 """
-Tests acceptor API usage by edx_global_analytics application functions aka utils.
+Tests acceptor API usage by edx global analytics application functions aka utils.
 """
 
 import uuid
@@ -18,11 +18,12 @@ from ..utils import (
 @patch('openedx.core.djangoapps.edx_global_analytics.utils.requests.post')
 class TestAcceptorApiUsage(unittest.TestCase):
     """
-    Tests acceptor API usage by edx_global_analytics application functions aka utils.
+    Test acceptor API usage by edx global analytics application functions aka utils.
     """
+
     def test_access_token_registration_method_sends_request_to_acceptor_api_for_token_registration(self, mock_request):
         """
-        Verifies that access_token_registration sends request to acceptor API for token registration.
+        Verify that access_token_registration sends request to acceptor API for token registration.
         """
         access_token_registration('https://mock-url.com')
         mock_request.assert_called_once_with('https://mock-url.com' + '/api/token/registration/')
@@ -32,7 +33,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
             self, mock_access_tokens_storage_model_objects_create_method, mock_request
     ):
         """
-        Verifies that access_token_registration gets access token after registration request to acceptor and
+        Verify that access_token_registration gets access token after registration request to acceptor and
         save it to AccessTokensStorage model in database.
         """
         mock_access_token = uuid.uuid4().hex
@@ -50,7 +51,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
             self, mock_get_access_token_function, mock_request
     ):
         """
-        Verifies that access_token_authorization sends request to acceptor API for token authorization.
+        Verify that access_token_authorization sends request to acceptor API for token authorization.
         """
         mock_access_token = uuid.uuid4().hex
 
@@ -67,7 +68,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
             self, mock_access_tokens_storage_model_objects_first, mock_request
     ):
         """
-        Verifies that access_token_authorization method gets refreshed access token after authorization request to
+        Verify that access_token_authorization method gets refreshed access token after authorization request to
         acceptor if Acceptor for any reason does not has a token from edX installation in own database.
         """
         mock_refreshed_access_token = uuid.uuid4().hex
@@ -89,7 +90,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
             self, mock_request
     ):
         """
-        Verifies that dispatch_installation_statistics sends request to acceptor API for token dispatch statistics.
+        Verify that dispatch_installation_statistics sends request to acceptor API for token dispatch statistics.
         """
         dispatch_installation_statistics_to_acceptor('https://mock-url.com', {'mock_data': 'mock_data', })
 
@@ -102,7 +103,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
             self, mock_logging, mock_request
     ):
         """
-        Verifies that dispatch_installation_statistics successfully dispatches installation_statistics to acceptor API.
+        Verify that dispatch_installation_statistics successfully dispatches installation_statistics to acceptor API.
         """
         mock_request.return_value.status_code = 201
 
@@ -115,7 +116,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
             self, mock_logging, mock_request
     ):
         """
-        Verifies that dispatch_installation_statistics unsuccessfully dispatches
+        Verify that dispatch_installation_statistics unsuccessfully dispatches
         installation_statistics to acceptor API.
         """
         mock_request.return_value.status_code = 400
@@ -130,13 +131,16 @@ class TestAcceptorApiUsage(unittest.TestCase):
 
 
 class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
+    """
+    Tests for dispatching installation statistics access token.
+    """
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_access_token')
     def test_get_dispatch_installation_statistics_access_token_method_calls_get_access_token(
             self, mock_get_access_token
     ):
         """
-        Verifies that get_dispatch_installation_statistics_access_token method calls get_access_token method.
+        Verify that get_dispatch_installation_statistics_access_token method calls get_access_token method.
         """
         mock_get_access_token.assert_called_once()
 
@@ -146,7 +150,7 @@ class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
             self, mock_get_access_token, mock_access_token_registration
     ):
         """
-        Verifies that get_dispatch_installation_statistics_access_token method calls access_token_registration
+        Verify that get_dispatch_installation_statistics_access_token method calls access_token_registration
         if access token does not exists.
         """
         mock_get_access_token.return_value = ''
@@ -161,7 +165,7 @@ class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
             self, mock_get_access_token, mock_access_token_authorization
     ):
         """
-        Verifies that dispatch_installation_statistics_access_token_method calls access_token_authorization
+        Verify that dispatch_installation_statistics_access_token_method calls access_token_authorization
         if access token exists.
         """
         mock_get_access_token.return_value = uuid.uuid4().hex
@@ -175,7 +179,7 @@ class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
             self, mock_get_access_token
     ):
         """
-        Verifies that dispatch_installation_statistics_access_token_method return get_access_token method result.
+        Verify that dispatch_installation_statistics_access_token_method return get_access_token method result.
         """
         mock_access_token = uuid.uuid4().hex
         mock_get_access_token.return_value = mock_access_token

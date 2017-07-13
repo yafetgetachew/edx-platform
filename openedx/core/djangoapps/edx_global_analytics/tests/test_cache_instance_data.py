@@ -23,8 +23,9 @@ from ..utils import (
 
 class TestCacheInstanceData(TestCase):
     """
-    Tests cover cache-functionality for queries results.
+    Test cover cache-functionality for queries results.
     """
+
     @staticmethod
     def create_cache_instance_data_default_database_data():
         """
@@ -42,7 +43,7 @@ class TestCacheInstanceData(TestCase):
 
     def test_cache_instance_data_method_caches_instance_data_if_query_result_is_new_fo_cache(self):
         """
-        Verifies that cache_instance_data returns data as expected after caching it.
+        Verify that cache_instance_data returns data as expected after caching it.
         """
         self.create_cache_instance_data_default_database_data()
 
@@ -64,7 +65,7 @@ class TestCacheInstanceData(TestCase):
             self, mock_cache_set, mock_cache_get
     ):
         """
-        Verifies that cache_instance_data returns data as expected if it already exists in cache.
+        Verify that cache_instance_data returns data as expected if it already exists in cache.
         """
         mock_cache_get.return_value = 'mock_cached_query_result'
 
@@ -78,10 +79,11 @@ class TestCacheInstanceDataHelpFunctions(TestCase):
     """
     Tests for cache help functions.
     """
+
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.date')
     def test_cache_timeout_week_method_calculates_value_correctly(self, mock_date, mock_datetime):
         """
-        Verifies cache_timeout_week returns correct cache timeout seconds.
+        Verify cache_timeout_week returns correct cache timeout seconds.
         """
         mock_datetime.now.return_value = datetime(2017, 7, 9, 23, 55, 0)
         mock_date.today.return_value = date(2017, 7, 9)
@@ -92,7 +94,7 @@ class TestCacheInstanceDataHelpFunctions(TestCase):
 
     def test_cache_timeout_month_method_calculates_value_correctly(self, mock_datetime):
         """
-        Verifies cache_timeout_week returns correct cache timeout seconds.
+        Verify cache_timeout_week returns correct cache timeout seconds.
         """
         mock_datetime.now.return_value = datetime(2017, 7, 31, 21, 59, 59)
 

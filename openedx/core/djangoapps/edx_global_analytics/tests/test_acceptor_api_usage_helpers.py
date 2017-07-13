@@ -21,6 +21,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
     """
     Tests for OLGA acceptor api usage by edX global analytics application tasks and helper functions.
     """
+
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.request_exception_handler_with_logger')
     def test_request_exception_handler_with_logger_returns_wrapped_function_without_raise_exception(
             self, mock_request_exception_handler_with_logger
@@ -28,14 +29,17 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
         """
         Test request_exception_handler_with_logger return wrapped function, if Request Exception does not exist.
         """
-        def mock_function_under_decorator(mock):
+        def mock_decorated_function(mock):
+            """
+            Mock decorated function.
+            """
             return mock
 
-        mock_request_exception_handler_with_logger.return_value = mock_function_under_decorator('mock')
+        mock_request_exception_handler_with_logger.return_value = mock_decorated_function('mock')
 
         result = mock_request_exception_handler_with_logger()
 
-        self.assertEqual(mock_function_under_decorator('mock'), result)
+        self.assertEqual(mock_decorated_function('mock'), result)
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.logging.Logger.exception')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.request_exception_handler_with_logger')
@@ -54,11 +58,14 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
             self, mock_access_tokens_storage_model_objects_first_method
     ):
         """
-        Verifies that get_access_token gets access token from access tokens storage if it exists.
+        Verify that get_access_token gets access token from access tokens storage if it exists.
         """
         mock_access_token = uuid.uuid4().hex
 
         class MockAccessTokensStorageModelFirstObject(object):
+            """
+            Mock class for AccessTokensStorage model first object.
+            """
             access_token = mock_access_token
 
         mock_access_tokens_storage_model_objects_first_method.return_value = MockAccessTokensStorageModelFirstObject()
@@ -72,7 +79,8 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
             self, mock_access_tokens_storage_model_objects_first_method
     ):
         """
-        Verifies that get_access_token gets empty string if access token does not exist in access tokens storage.
+        Verify that get_access_token gets empty string if access token does not exist in access tokens storage.
+
         It is accompanied by AttributeError.
         """
         mock_access_tokens_storage_model_objects_first_method.side_effect = AttributeError()
@@ -86,7 +94,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
             self, mock_get_access_token, mock_access_token_registration
     ):
         """
-        Verifies that dispatch_installation_statistics_access_token goes to registry access token if it does not exist.
+        Verify that dispatch_installation_statistics_access_token goes to registry access token if it does not exist.
         """
         mock_get_access_token.return_value = ''
 
@@ -100,7 +108,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
             self, mock_get_access_token, mock_access_token_authorization
     ):
         """
-        Verifies that dispatch_installation_statistics_access_token goes to authorize access token if it exists.
+        Verify that dispatch_installation_statistics_access_token goes to authorize access token if it exists.
         """
         mock_get_access_token.return_value = uuid.uuid4().hex
 

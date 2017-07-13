@@ -76,8 +76,8 @@ def cache_timeout_week():
 
     days_after_week_started = date.today().weekday()
 
-    last_datetime_of_current_week = (current_datetime + timedelta(
-        6 - days_after_week_started)
+    last_datetime_of_current_week = (
+        current_datetime + timedelta(6 - days_after_week_started)
     ).replace(hour=23, minute=59, second=59)
 
     cache_timeout_week_in_seconds = (last_datetime_of_current_week - current_datetime).total_seconds()
@@ -200,6 +200,9 @@ def request_exception_handler_with_logger(function):
     Request Exception decorator. Logs error message if it exists.
     """
     def request_exception_wrapper(*args, **kwargs):
+        """
+        Decorator wrapper.
+        """
         try:
             return function(*args, **kwargs)
         except requests.RequestException as error:

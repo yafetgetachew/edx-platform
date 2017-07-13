@@ -21,8 +21,9 @@ from ..utils import (
 
 class TestStudentsAmountPerParticularPeriod(TestCase):
     """
-    Tests cover all methods, that have a deal with statistics calculation.
+    Cover all methods, that have a deal with statistics calculation.
     """
+
     @staticmethod
     def create_active_students_amount_default_database_data():
         """
@@ -41,7 +42,8 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
 
     def test_fetch_instance_information_method_returns_expected_result_for_active_students_amount(self):
         """
-        Verifies that fetch_instance_information returns data as expected in particular period and accurate datetime.
+        Verify that fetch_instance_information returns data as expected in particular period and accurate datetime.
+
         We have no reason to test week and month periods for active students amount,
         all queries are the same, we just go test only day period.
         """
@@ -60,7 +62,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
             self
     ):
         """
-        Verifies that fetch_instance_information raise `KeyError` if default statistics queries don't have
+        Verify that fetch_instance_information raise `KeyError` if default statistics queries don't have
         corresponding name (dict`s key).
         """
         activity_period = datetime.date(2017, 5, 15), datetime.date(2017, 5, 16)
@@ -74,7 +76,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
             self
     ):
         """
-        Verifies that fetch_instance_information raise `TypeError` if needed datetime objects are missed
+        Verify that fetch_instance_information raise `TypeError` if needed datetime objects are missed
         as activity period is None.
         """
         activity_period, cache_timeout = None, None
@@ -85,7 +87,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
 
     def test_fetch_instance_information_method_returns_expected_result_for_students_per_country(self):
         """
-        Verifies that students_per_country returns data as expected in particular period and accurate datetime.
+        Verify that students_per_country returns data as expected in particular period and accurate datetime.
         """
         last_login = timezone.make_aware(datetime.datetime(2017, 5, 15, 14, 23, 23), timezone.get_default_timezone())
         countries = [u'US', u'CA']
@@ -107,10 +109,10 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache_instance_data')
     def test_fetch_instance_information_method_calls_cache_for_students_per_country_if_cache_timeout_is_not_none(
-        self, mock_cache_instance_data
+            self, mock_cache_instance_data
     ):
         """
-        Verifies that cache_instance_data called during fetch instance information method is occurring
+        Verify that cache_instance_data called during fetch instance information method is occurring
         with not none `cache_timeout`.
         """
         activity_period = datetime.date(2017, 5, 15), datetime.date(2017, 5, 16)
@@ -124,7 +126,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
 
     def test_fetch_instance_information_method_returns_none_for_students_per_country_if_cache_timeout_is_none(self):
         """
-        Verifies that students_per_country returns data as expected if no students with country.
+        Verify that students_per_country returns data as expected if no students with country.
         """
         last_login = timezone.make_aware(datetime.datetime(2017, 5, 15, 14, 23, 23), timezone.get_default_timezone())
 
