@@ -666,7 +666,6 @@ section.self-assessment {
 }
 
 
-<<<<<<< HEAD
 /*
  * CodeMirror color contrast overrides
  * (so we don't change the vendor file)
@@ -678,7 +677,7 @@ section.self-assessment {
         color: $gray-d3 !important;
     }
 }
-=======
+
 a.jitsi-link div {
     background: url('#{$static-path}/images/join.png') center no-repeat;
     height: 90px;
@@ -686,4 +685,3 @@ a.jitsi-link div {
     background-size: contain;
 }
 
->>>>>>> ce424e0adf... Add Jitsi xblock
