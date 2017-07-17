@@ -14,7 +14,7 @@ from django.db.models import Q
 from student.models import UserProfile
 from student.tests.factories import UserFactory
 
-from ..utils import (
+from openedx.core.djangoapps.edx_global_analytics.utils import (
     cache_instance_data,
     cache_timeout_month,
     cache_timeout_week,
@@ -27,7 +27,7 @@ class TestCacheInstanceData(TestCase):
     """
 
     @staticmethod
-    def create_cache_instance_data_default_database_data():
+    def create_cache_instance_method_default_data():
         """
         Default integration database data for cache instance information tests.
         """
@@ -41,11 +41,11 @@ class TestCacheInstanceData(TestCase):
         for user_last_login in users_last_login:
             UserFactory(last_login=user_last_login)
 
-    def test_cache_instance_data_method_caches_instance_data_if_query_result_is_new_fo_cache(self):
+    def test_cache_instance_data_method_caches_new_instance_data(self):
         """
         Verify that cache_instance_data returns data as expected after caching it.
         """
-        self.create_cache_instance_data_default_database_data()
+        self.create_cache_instance_method_default_data()
 
         period_start, period_end = date(2017, 5, 8), date(2017, 5, 15)
 
@@ -61,7 +61,7 @@ class TestCacheInstanceData(TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache.get')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache.set')
-    def test_cache_instance_data_methods_returns_existed_data_if_query_result_already_exists_in_cache(
+    def test_cache_instance_data_method_returns_existed_query_result(
             self, mock_cache_set, mock_cache_get
     ):
         """

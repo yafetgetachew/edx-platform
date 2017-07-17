@@ -13,7 +13,6 @@ from django.db.models import Count
 from django.db.models import Q
 
 from student.models import UserProfile
-from openedx.core.djangoapps.edx_global_analytics.models import AccessTokensStorage
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -212,73 +211,12 @@ def request_exception_handler_with_logger(function):
     return request_exception_wrapper
 
 
-def get_access_token():
-    """
-    Return single access token for authorization and dispatch installation statistics to OLGA acceptor.
-    """
-    try:
-        access_token = AccessTokensStorage.objects.first().access_token
-    except AttributeError:
-        access_token = ''
-
-    return access_token
-
-
-@request_exception_handler_with_logger
-def access_token_registration(olga_acceptor_url):
-    """
-    Registry installation on OLGA acceptor via getting access token for further functionality.
-    """
-    token_registration_request = requests.post(olga_acceptor_url + '/api/token/registration/')
-    access_token = token_registration_request.json()['access_token']
-
-    AccessTokensStorage.objects.create(access_token=access_token)
-
-
-@request_exception_handler_with_logger
-def access_token_authorization(olga_acceptor_url):
-    """
-    Verify that installation is allowed access to dispatch installation statistics to OLGA acceptor.
-    """
-    access_token = get_access_token()
-
-    token_authorization_request = requests.post(
-        olga_acceptor_url + '/api/token/authorization/', data={'access_token': access_token, }
-    )
-
-    if token_authorization_request.status_code == 401:
-        refreshed_access_token = token_authorization_request.json()['refreshed_access_token']
-
-        token_storage_object = AccessTokensStorage.objects.first()
-        token_storage_object.access_token = refreshed_access_token
-        token_storage_object.save()
-
-
-def get_acceptor_api_access_token(olga_acceptor_url):
-    """
-    Provide access token`s authentication flow for getting access token and return it.
-
-    If no access token, method registry it.
-    If access token exists, method authorize it.
-    If access token was successfully authorized, method returns access token.
-    """
-    access_token = get_access_token()
-
-    if not access_token:
-        access_token_registration(olga_acceptor_url)
-
-    access_token_authorization(olga_acceptor_url)
-
-    return get_access_token()
-
-
 @request_exception_handler_with_logger
 def send_instance_statistics_to_acceptor(olga_acceptor_url, data):
     """
     Dispatch installation statistics OLGA acceptor.
     """
     request = requests.post(olga_acceptor_url + '/api/installation/statistics/', data)
-    logger.info('Connected without error to {0}'.format(request.url))
 
     if request.status_code == 201:
         logger.info('Data were successfully transferred to OLGA acceptor. Status code is 201.')

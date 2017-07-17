@@ -1,5 +1,5 @@
 """
-This file contains periodic tasks for global_statistics, which will collect data about Open eDX users
+This file contains periodic tasks for edx_global_statistics, which will collect data about Open eDX users
 and send this data to appropriate service for further processing.
 """
 
@@ -13,6 +13,7 @@ from django.contrib.sites.models import Site
 
 from xmodule.modulestore.django import modulestore
 
+from openedx.core.djangoapps.edx_global_analytics.access_token_authentication_utils import get_acceptor_api_access_token
 from openedx.core.djangoapps.edx_global_analytics.utils import (
     fetch_instance_information,
     get_previous_day_start_and_end_dates,
@@ -21,7 +22,6 @@ from openedx.core.djangoapps.edx_global_analytics.utils import (
     cache_timeout_week,
     cache_timeout_month,
     platform_coordinates,
-    get_acceptor_api_access_token,
     send_instance_statistics_to_acceptor,
 )
 
@@ -66,12 +66,12 @@ def enthusiast_level_statistics_bunch():
 
 def get_olga_acceptor_url(olga_settings):
     """
-    Return olga acceptor url that edx application needs to send statistics to.
+    Return olga acceptor url that edX application needs to send statistics to.
     """
-    olga_acceptor_periodic_task_url = olga_settings.get('OLGA_ACCEPTOR_PERIODIC_TASK_URL')
-    olga_acceptor_periodic_task_url_local_dev = olga_settings.get('OLGA_ACCEPTOR_PERIODIC_TASK_URL_LOCAL_DEV')
+    olga_acceptor_url = olga_settings.get('ACCEPTOR_URL')
+    olga_acceptor_url_develop = olga_settings.get('ACCEPTOR_URL_DEVELOP')
 
-    olga_acceptor_url = olga_acceptor_periodic_task_url or olga_acceptor_periodic_task_url_local_dev
+    olga_acceptor_url = olga_acceptor_url or olga_acceptor_url_develop
 
     if not olga_acceptor_url:
         logger.info('No OLGA periodic task post URL.')

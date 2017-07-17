@@ -7,9 +7,11 @@ from datetime import date
 
 from mock import patch
 
-from ..tasks import enthusiast_level_statistics_bunch, paranoid_level_statistics_bunch
-from ..utils import get_previous_day_start_and_end_dates
-
+from openedx.core.djangoapps.edx_global_analytics.utils import get_previous_day_start_and_end_dates
+from openedx.core.djangoapps.edx_global_analytics.tasks import (
+    enthusiast_level_statistics_bunch,
+    paranoid_level_statistics_bunch
+)
 
 @patch('openedx.core.djangoapps.edx_global_analytics.tasks.fetch_instance_information')
 class TestStatisticsLevelBunches(unittest.TestCase):
@@ -17,7 +19,7 @@ class TestStatisticsLevelBunches(unittest.TestCase):
     Tests for statistics level bunches, that provides particular edX installation statistics.
     """
 
-    def test_paranoid_level_statistics_bunch_method_calls_fetch_instance_information_method_three_times(
+    def test_paranoid_level_statistics_bunch_method_calls_all_fetch_methods(
             self, mock_fetch_instance_information
     ):
         """
@@ -27,7 +29,7 @@ class TestStatisticsLevelBunches(unittest.TestCase):
 
         self.assertEqual(3, mock_fetch_instance_information.call_count)
 
-    def test_paranoid_level_statistics_bunch_method_returns_active_students_amount_day_week_month(
+    def test_paranoid_level_statistics_bunch_method_returns_active_students_amounts(
             self, mock_fetch_instance_information
     ):
         """
@@ -42,7 +44,7 @@ class TestStatisticsLevelBunches(unittest.TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_previous_day_start_and_end_dates')
-    def test_enthusiast_level_statistics_bunch_method_calls_fetch_instance_information_method_for_students_per_country(
+    def test_enthusiast_level_statistics_bunch_method_calls_fetch_for_students_per_country(
             self, mock_get_previous_day_start_and_end_dates, mock_fetch_instance_information
     ):
         """

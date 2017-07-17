@@ -8,7 +8,7 @@ from mock import patch
 
 from django.test import TestCase
 
-from ..utils import (
+from openedx.core.djangoapps.edx_global_analytics.utils import (
     get_previous_day_start_and_end_dates,
     get_previous_week_start_and_end_dates,
     get_previous_month_start_and_end_dates,

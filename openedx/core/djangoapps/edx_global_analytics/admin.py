@@ -4,7 +4,7 @@ Django admin page for edX global analytics application.
 
 from django.contrib import admin
 
-from .models import AccessTokensStorage
+from openedx.core.djangoapps.edx_global_analytics.models import AccessTokensStorage
 
 
 class AccessTokensStorageAdmin(admin.ModelAdmin):

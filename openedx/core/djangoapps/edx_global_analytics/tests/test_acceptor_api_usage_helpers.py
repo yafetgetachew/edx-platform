@@ -9,9 +9,9 @@ import unittest
 import requests
 from mock import patch
 
-from ..utils import (
+from openedx.core.djangoapps.edx_global_analytics.access_token_authentication_utils import (
     get_access_token,
-    get_dispatch_installation_statistics_access_token
+    get_acceptor_api_access_token
 )
 
 logger = logging.getLogger(__name__)
@@ -23,7 +23,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
     """
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.request_exception_handler_with_logger')
-    def test_request_exception_handler_with_logger_returns_wrapped_function_without_raise_exception(
+    def test_request_exception_handler_returns_wrapped_function_if_no_exception(
             self, mock_request_exception_handler_with_logger
     ):
         """
@@ -43,7 +43,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.logging.Logger.exception')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.request_exception_handler_with_logger')
-    def test_request_exception_handler_with_logger_method_logs_error_message_after_raise_exception(
+    def test_request_exception_handler_logs_error_message_if_exception(
             self, mock_request_exception_handler_with_logger, mock_logging_exception
     ):
         """
@@ -54,7 +54,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
         mock_logging_exception.exception.assert_called_once()
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.first')
-    def test_get_access_token_method_gets_access_token_from_database_if_it_exists(
+    def test_get_access_token_method_gets_access_token_if_it_exists(
             self, mock_access_tokens_storage_model_objects_first_method
     ):
         """
@@ -75,7 +75,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
         self.assertEqual(mock_access_token, result)
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.first')
-    def test_get_access_token_method_returns_empty_line_if_access_token_does_not_exist(
+    def test_get_access_token_method_returns_empty_line_if_no_access_token(
             self, mock_access_tokens_storage_model_objects_first_method
     ):
         """
@@ -90,28 +90,28 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.access_token_registration')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_access_token')
-    def get_dispatch_installation_statistics_access_token_method_goes_to_access_token_registration_if_it_does_not_exist(
+    def test_get_acceptor_api_access_token_goes_to_access_token_registration_if_no_token(
             self, mock_get_access_token, mock_access_token_registration
     ):
         """
-        Verify that dispatch_installation_statistics_access_token goes to registry access token if it does not exist.
+        Verify that get_acceptor_api_access_token goes to registry access token if it does not exist.
         """
         mock_get_access_token.return_value = ''
 
-        get_dispatch_installation_statistics_access_token('https://mock-url.com')
+        get_acceptor_api_access_token('https://mock-url.com')
 
         mock_access_token_registration.assert_called_once_with('https://mock-url.com')
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.access_token_authorization')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_access_token')
-    def get_dispatch_installation_statistics_access_token_method_goes_to_access_token_authorization_if_it_exists(
+    def test_get_acceptor_api_access_token_goes_to_access_token_authorization_if_token_exists(
             self, mock_get_access_token, mock_access_token_authorization
     ):
         """
-        Verify that dispatch_installation_statistics_access_token goes to authorize access token if it exists.
+        Verify that get_acceptor_api_access_token goes to authorize access token if it exists.
         """
         mock_get_access_token.return_value = uuid.uuid4().hex
 
-        get_dispatch_installation_statistics_access_token('https://mock-url.com')
+        get_acceptor_api_access_token('https://mock-url.com')
 
         mock_access_token_authorization.assert_called_once_with('https://mock-url.com')

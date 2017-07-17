@@ -7,7 +7,7 @@ import unittest
 import requests
 from mock import patch
 
-from ..utils import (
+from openedx.core.djangoapps.edx_global_analytics.utils import (
     get_coordinates_by_platform_city_name,
     get_coordinates_by_ip,
     platform_coordinates,
@@ -20,7 +20,7 @@ class TestPlatformCoordinates(unittest.TestCase):
     Tests for platform coordinates methods, that gather latitude and longitude.
     """
 
-    def test_get_coordinates_by_platform_city_name_method_sends_request_to_google_api_with_address_param(
+    def test_get_coordinates_by_platform_city_name_method_sends_request_to_google_api(
             self, mock_request
     ):
         """
@@ -31,7 +31,7 @@ class TestPlatformCoordinates(unittest.TestCase):
             'https://maps.googleapis.com/maps/api/geocode/json', params={'address': 'Kiev'}
         )
 
-    def test_get_coordinates_by_platform_city_name_method_gets_correct_address_coordinates_result(self, mock_request):
+    def test_get_coordinates_by_platform_city_name_method_gets_address_coordinates(self, mock_request):
         """
         Verify that get_coordinates_by_platform_city_name returns city latitude and longitude as expected.
         """
@@ -51,7 +51,7 @@ class TestPlatformCoordinates(unittest.TestCase):
             (50.4501, 30.5234), (latitude, longitude)
         )
 
-    def test_get_coordinates_result_by_platform_city_name_method_returns_none_if_miss_city_in_settings(
+    def test_get_coordinates_result_by_platform_city_name_method_returns_none_if_no_city_name(
             self, mock_request
     ):
         """
@@ -65,7 +65,7 @@ class TestPlatformCoordinates(unittest.TestCase):
         result_without_city_name = get_coordinates_by_platform_city_name('')
         self.assertEqual(None, result_without_city_name)
 
-    def test_get_coordinates_result_by_platform_city_name_returns_none_if_settings_have_wrong_city_name(
+    def test_get_coordinates_result_by_platform_city_name_returns_none_if_wrong_city_name(
             self, mock_request
     ):
         """
@@ -85,7 +85,7 @@ class TestPlatformCoordinates(unittest.TestCase):
         get_coordinates_by_ip()
         mock_request.assert_called_once('https://freegeoip.net/json')
 
-    def test_get_coordinates_by_ip_method_returns_coordinates_result(self, mock_request):
+    def test_get_coordinates_by_ip_method_returns_coordinates_from_freegeoip_api(self, mock_request):
         """
         Verify that get_coordinates_by_ip returns city latitude and longitude as expected.
         """
@@ -99,7 +99,7 @@ class TestPlatformCoordinates(unittest.TestCase):
             (50.4333, 30.5167), (latitude, longitude)
         )
 
-    def test_get_coordinates_by_ip_method_returns_empty_coordinates_result_after_request_exception(self, mock_request):
+    def test_get_coordinates_by_ip_method_returns_empty_coordinates_if_exception(self, mock_request):
         """
         Verify that get_coordinates_by_ip returns empty latitude and longitude after request exception.
         """
@@ -116,7 +116,7 @@ class TestPlatformCoordinatesHandler(unittest.TestCase):
     Tests for platform_coordinates method, that handle platform coordinates receiving from independent APIs.
     """
 
-    def test_platform_coordinates_method_handles_platform_coordinates_getting_to_get_coordinates_by_platform_city_name(
+    def test_platform_coordinates_method_handles_flow_to_google_api(
             self, mock_get_coordinates_by_platform_city_name
     ):
         """
@@ -133,7 +133,7 @@ class TestPlatformCoordinatesHandler(unittest.TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_coordinates_by_ip')
-    def test_platform_coordinates_method_handles_platform_coordinates_getting_to_get_coordinates_by_ip(
+    def test_platform_coordinates_method_handles_flow_to_freeheoip(
             self, mock_get_coordinates_by_ip, mock_get_coordinates_by_platform_city_name
     ):
         """
