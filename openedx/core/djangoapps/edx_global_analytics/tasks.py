@@ -68,10 +68,10 @@ def get_olga_acceptor_url(olga_settings):
     """
     Return olga acceptor url that edX application needs to send statistics to.
     """
-    olga_acceptor_url = olga_settings.get('ACCEPTOR_URL')
-    olga_acceptor_url_develop = olga_settings.get('ACCEPTOR_URL_DEVELOP')
+    acceptor_url = olga_settings.get('ACCEPTOR_URL')
+    acceptor_url_develop = olga_settings.get('ACCEPTOR_URL_DEVELOP')
 
-    olga_acceptor_url = olga_acceptor_url or olga_acceptor_url_develop
+    olga_acceptor_url = acceptor_url or acceptor_url_develop
 
     if not olga_acceptor_url:
         logger.info('No OLGA periodic task post URL.')
