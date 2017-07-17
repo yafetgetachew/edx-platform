@@ -13,7 +13,7 @@ from django.db.models import Count
 from django.db.models import Q
 
 from student.models import UserProfile
-from .models import AccessTokensStorage
+from openedx.core.djangoapps.edx_global_analytics.models import AccessTokensStorage
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -21,7 +21,7 @@ logger.setLevel(logging.INFO)
 
 def fetch_instance_information(name_to_cache, query_type, activity_period, cache_timeout=None):
     """
-    Calculates instance information corresponding for particular period as like as previous calendar day and
+    Calculate instance information corresponding for particular period as like as previous calendar day and
     statistics type as like as students per country after cached if needed.
     """
     period_start, period_end = activity_period
@@ -48,7 +48,7 @@ def fetch_instance_information(name_to_cache, query_type, activity_period, cache
 
 def cache_instance_data(name_to_cache, query_result, cache_timeout):
     """
-    Caches queries, that calculate particular instance data,
+    Cache queries, that calculate particular instance data,
     including long time unchangeable weekly and monthly statistics.
 
     Arguments:
@@ -70,7 +70,7 @@ def cache_instance_data(name_to_cache, query_result, cache_timeout):
 
 def cache_timeout_week():
     """
-    Calculates how much time cache need to save data for weekly statistics.
+    Calculate how much time cache need to save data for weekly statistics.
     """
     current_datetime = datetime.now()
 
@@ -87,7 +87,7 @@ def cache_timeout_week():
 
 def cache_timeout_month():
     """
-    Calculates how much time cache need to save data for monthly statistics.
+    Calculate how much time cache need to save data for monthly statistics.
     """
     current_datetime = datetime.now()
 
@@ -182,7 +182,7 @@ def get_coordinates_by_platform_city_name(city_name):
 
 def platform_coordinates(city_name):
     """
-    Method gets platform city latitude and longitude.
+    Get platform city latitude and longitude.
 
     If `city_platform_located_in` (name of city) exists in OLGA setting (lms.env.json) as manual parameter
     Google API helps to get city latitude and longitude. Else FreeGeoIP gathers latitude and longitude by IP address.
@@ -214,7 +214,7 @@ def request_exception_handler_with_logger(function):
 
 def get_access_token():
     """
-    Gets single access token for authorization and dispatch installation statistics to OLGA acceptor.
+    Return single access token for authorization and dispatch installation statistics to OLGA acceptor.
     """
     try:
         access_token = AccessTokensStorage.objects.first().access_token
@@ -227,7 +227,7 @@ def get_access_token():
 @request_exception_handler_with_logger
 def access_token_registration(olga_acceptor_url):
     """
-    Registers installation on OLGA acceptor via getting access token for further functionality.
+    Registry installation on OLGA acceptor via getting access token for further functionality.
     """
     token_registration_request = requests.post(olga_acceptor_url + '/api/token/registration/')
     access_token = token_registration_request.json()['access_token']
@@ -238,7 +238,7 @@ def access_token_registration(olga_acceptor_url):
 @request_exception_handler_with_logger
 def access_token_authorization(olga_acceptor_url):
     """
-    Verifies that installation is allowed access to dispatch installation statistics to OLGA acceptor.
+    Verify that installation is allowed access to dispatch installation statistics to OLGA acceptor.
     """
     access_token = get_access_token()
 
@@ -254,9 +254,13 @@ def access_token_authorization(olga_acceptor_url):
         token_storage_object.save()
 
 
-def get_dispatch_installation_statistics_access_token(olga_acceptor_url):
+def get_acceptor_api_access_token(olga_acceptor_url):
     """
-    Provides token authentication flow.
+    Provide access token`s authentication flow for getting access token and return it.
+
+    If no access token, method registry it.
+    If access token exists, method authorize it.
+    If access token was successfully authorized, method returns access token.
     """
     access_token = get_access_token()
 
@@ -269,9 +273,9 @@ def get_dispatch_installation_statistics_access_token(olga_acceptor_url):
 
 
 @request_exception_handler_with_logger
-def dispatch_installation_statistics_to_acceptor(olga_acceptor_url, data):
+def send_instance_statistics_to_acceptor(olga_acceptor_url, data):
     """
-    Dispatches installation statistics OLGA acceptor.
+    Dispatch installation statistics OLGA acceptor.
     """
     request = requests.post(olga_acceptor_url + '/api/installation/statistics/', data)
     logger.info('Connected without error to {0}'.format(request.url))

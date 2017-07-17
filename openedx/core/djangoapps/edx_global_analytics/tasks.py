@@ -13,7 +13,7 @@ from django.contrib.sites.models import Site
 
 from xmodule.modulestore.django import modulestore
 
-from .utils import (
+from openedx.core.djangoapps.edx_global_analytics.utils import (
     fetch_instance_information,
     get_previous_day_start_and_end_dates,
     get_previous_week_start_and_end_dates,
@@ -21,8 +21,8 @@ from .utils import (
     cache_timeout_week,
     cache_timeout_month,
     platform_coordinates,
-    get_dispatch_installation_statistics_access_token,
-    dispatch_installation_statistics_to_acceptor,
+    get_acceptor_api_access_token,
+    send_instance_statistics_to_acceptor,
 )
 
 logger = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ logger.setLevel(logging.INFO)
 
 def paranoid_level_statistics_bunch():
     """
-    Gathers particular bunch of instance data called `Paranoid`, that contains active students amount
+    Gather particular bunch of instance data called `Paranoid`, that contains active students amount
     for day, week and month.
     """
     active_students_amount_day = fetch_instance_information(
@@ -54,7 +54,7 @@ def paranoid_level_statistics_bunch():
 
 def enthusiast_level_statistics_bunch():
     """
-    Gathers particular bunch of instance data called `Enthusiast`, that contains students per country amount.
+    Gather particular bunch of instance data called `Enthusiast`, that contains students per country amount.
     """
     students_per_country = fetch_instance_information(
         'students_per_country', 'students_per_country',
@@ -62,6 +62,22 @@ def enthusiast_level_statistics_bunch():
     )
 
     return students_per_country
+
+
+def get_olga_acceptor_url(olga_settings):
+    """
+    Return olga acceptor url that edx application needs to send statistics to.
+    """
+    olga_acceptor_periodic_task_url = olga_settings.get('OLGA_ACCEPTOR_PERIODIC_TASK_URL')
+    olga_acceptor_periodic_task_url_local_dev = olga_settings.get('OLGA_ACCEPTOR_PERIODIC_TASK_URL_LOCAL_DEV')
+
+    olga_acceptor_url = olga_acceptor_periodic_task_url or olga_acceptor_periodic_task_url_local_dev
+
+    if not olga_acceptor_url:
+        logger.info('No OLGA periodic task post URL.')
+        return
+
+    return olga_acceptor_url
 
 
 @task
@@ -72,26 +88,15 @@ def collect_stats():
 
     Sending information depends on statistics level in settings, that have an effect on bunch of data size.
     """
-
     if 'OPENEDX_LEARNERS_GLOBAL_ANALYTICS' not in settings.ENV_TOKENS:
         logger.info('No OpenEdX Learners Global Analytics settings in file `lms.env.json`.')
         return
 
     olga_settings = settings.ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS')
 
-    olga_acceptor_url = \
-        olga_settings.get(
-            'OLGA_ACCEPTOR_PERIODIC_TASK_URL'
-        ) or \
-        olga_settings.get(
-            'OLGA_ACCEPTOR_PERIODIC_TASK_URL_LOCAL_DEV'
-        )
+    olga_acceptor_url = get_olga_acceptor_url
 
-    if not olga_acceptor_url:
-        logger.info('No OLGA periodic task post URL.')
-        return
-
-    access_token = get_dispatch_installation_statistics_access_token(olga_acceptor_url)
+    access_token = get_acceptor_api_access_token(olga_acceptor_url)
 
     # Data volume depends on server settings.
     statistics_level = olga_settings.get("STATISTICS_LEVEL")
@@ -127,7 +132,7 @@ def collect_stats():
             'platform_name': platform_name,
             'platform_url': platform_url,
             'statistics_level': 'enthusiast',
-            'students_per_country': json.dumps(students_per_country)
+            'students_per_country': json.dumps(students_per_country),
         })
 
-    dispatch_installation_statistics_to_acceptor(olga_acceptor_url, data)
+    send_instance_statistics_to_acceptor(olga_acceptor_url, data)
