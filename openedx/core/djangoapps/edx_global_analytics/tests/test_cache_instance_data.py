@@ -27,7 +27,7 @@ class TestCacheInstanceData(TestCase):
     """
 
     @staticmethod
-    def create_cache_instance_method_default_data():
+    def create_default_data():
         """
         Default integration database data for cache instance information tests.
         """
@@ -41,11 +41,11 @@ class TestCacheInstanceData(TestCase):
         for user_last_login in users_last_login:
             UserFactory(last_login=user_last_login)
 
-    def test_cache_instance_data_method_caches_new_instance_data(self):
+    def test_cache_new_instance_data(self):
         """
         Verify that cache_instance_data returns data as expected after caching it.
         """
-        self.create_cache_instance_method_default_data()
+        self.create_default_data()
 
         period_start, period_end = date(2017, 5, 8), date(2017, 5, 15)
 
@@ -61,7 +61,7 @@ class TestCacheInstanceData(TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache.get')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache.set')
-    def test_cache_instance_data_method_returns_existed_query_result(
+    def test_returning_existed_query_result(
             self, mock_cache_set, mock_cache_get
     ):
         """
@@ -81,7 +81,7 @@ class TestCacheInstanceDataHelpFunctions(TestCase):
     """
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.date')
-    def test_cache_timeout_week_method_calculates_value_correctly(self, mock_date, mock_datetime):
+    def test_cache_timeout_week(self, mock_date, mock_datetime):
         """
         Verify cache_timeout_week returns correct cache timeout seconds.
         """
@@ -92,7 +92,7 @@ class TestCacheInstanceDataHelpFunctions(TestCase):
 
         self.assertEqual(299, result)
 
-    def test_cache_timeout_month_method_calculates_value_correctly(self, mock_datetime):
+    def test_cache_timeout_month(self, mock_datetime):
         """
         Verify cache_timeout_week returns correct cache timeout seconds.
         """

@@ -13,13 +13,14 @@ from openedx.core.djangoapps.edx_global_analytics.tasks import (
     paranoid_level_statistics_bunch
 )
 
+
 @patch('openedx.core.djangoapps.edx_global_analytics.tasks.fetch_instance_information')
 class TestStatisticsLevelBunches(unittest.TestCase):
     """
     Tests for statistics level bunches, that provides particular edX installation statistics.
     """
 
-    def test_paranoid_level_statistics_bunch_method_calls_all_fetch_methods(
+    def test_fetching_paranoid_statistics(
             self, mock_fetch_instance_information
     ):
         """
@@ -29,7 +30,7 @@ class TestStatisticsLevelBunches(unittest.TestCase):
 
         self.assertEqual(3, mock_fetch_instance_information.call_count)
 
-    def test_paranoid_level_statistics_bunch_method_returns_active_students_amounts(
+    def test_paranoid_statistics_result(
             self, mock_fetch_instance_information
     ):
         """
@@ -44,7 +45,7 @@ class TestStatisticsLevelBunches(unittest.TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.get_previous_day_start_and_end_dates')
-    def test_enthusiast_level_statistics_bunch_method_calls_fetch_for_students_per_country(
+    def test_fetching_enthusiast_statistics(
             self, mock_get_previous_day_start_and_end_dates, mock_fetch_instance_information
     ):
         """
@@ -59,7 +60,7 @@ class TestStatisticsLevelBunches(unittest.TestCase):
             'students_per_country', 'students_per_country', get_previous_day_start_and_end_dates(), cache_timeout=None
         )
 
-    def test_enthusiast_level_statistics_bunch_method_returns_students_per_country(
+    def test_enthusiast_statistics_result(
             self, mock_fetch_instance_information
     ):
         """

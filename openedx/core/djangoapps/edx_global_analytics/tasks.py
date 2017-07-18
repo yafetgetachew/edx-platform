@@ -13,7 +13,7 @@ from django.contrib.sites.models import Site
 
 from xmodule.modulestore.django import modulestore
 
-from openedx.core.djangoapps.edx_global_analytics.access_token_authentication_utils import get_acceptor_api_access_token
+from openedx.core.djangoapps.edx_global_analytics.token_utils import get_acceptor_api_access_token
 from openedx.core.djangoapps.edx_global_analytics.utils import (
     fetch_instance_information,
     get_previous_day_start_and_end_dates,
@@ -74,7 +74,7 @@ def get_olga_acceptor_url(olga_settings):
     olga_acceptor_url = acceptor_url or acceptor_url_develop
 
     if not olga_acceptor_url:
-        logger.info('No OLGA periodic task post URL.')
+        logger.info('No OLGA periodic task URL.')
         return
 
     return olga_acceptor_url
@@ -94,7 +94,7 @@ def collect_stats():
 
     olga_settings = settings.ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS')
 
-    olga_acceptor_url = get_olga_acceptor_url
+    olga_acceptor_url = get_olga_acceptor_url(olga_settings)
 
     access_token = get_acceptor_api_access_token(olga_acceptor_url)
 

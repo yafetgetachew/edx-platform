@@ -21,7 +21,7 @@ class TestStudentsAmountPerParticularPeriodHelpFunctions(TestCase):
     """
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.date')
-    def test_get_previous_day_start_and_end_dates(self, mock_date):
+    def test_calendar_day(self, mock_date):
         """
         Verify that get_previous_day_start_and_end_dates returns expected previous day start and end dates.
         """
@@ -34,7 +34,7 @@ class TestStudentsAmountPerParticularPeriodHelpFunctions(TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.date')
-    def test_get_previous_week_start_and_end_dates(self, mock_date):
+    def test_calendar_week(self, mock_date):
         """
         Verify that test_get_previous_week_start_and_end_dates returns expected previous week start and end dates.
         """
@@ -47,7 +47,7 @@ class TestStudentsAmountPerParticularPeriodHelpFunctions(TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.date')
-    def test_get_previous_month_start_and_end_dates(self, mock_date):
+    def test_calendar_month(self, mock_date):
         """
         Verify that test_get_previous_month_start_and_end_dates returns expected previous month start and end dates.
         """
