@@ -81,9 +81,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
         self.assertItemsEqual({u'US': 1, u'CA': 1}, result)
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache_instance_data')
-    def test_caching_students_with_timeout(
-            self, mock_cache_instance_data
-    ):
+    def test_caching_students_with_timeout(self, mock_cache_instance_data):
         """
         Verify that cache_instance_data called during fetch instance information method is occurring
         with not none `cache_timeout`.

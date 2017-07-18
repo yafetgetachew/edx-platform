@@ -61,9 +61,7 @@ class TestCacheInstanceData(TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache.get')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache.set')
-    def test_returning_existed_query_result(
-            self, mock_cache_set, mock_cache_get
-    ):
+    def test_returning_existed_query_result(self, mock_cache_set, mock_cache_get):
         """
         Verify that cache_instance_data returns data as expected if it already exists in cache.
         """

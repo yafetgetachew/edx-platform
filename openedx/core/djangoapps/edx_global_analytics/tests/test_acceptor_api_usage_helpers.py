@@ -20,9 +20,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
     """
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.request_exception_handler_with_logger')
-    def test_decorator_if_no_exception(
-            self, mock_request_exception_handler_with_logger
-    ):
+    def test_decorator_if_no_exception(self, mock_request_exception_handler_with_logger):
         """
         Test request_exception_handler_with_logger return wrapped function, if Request Exception does not exist.
         """
@@ -40,9 +38,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.logging.Logger.exception')
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.request_exception_handler_with_logger')
-    def test_decorator_if_exception(
-            self, mock_request_exception_handler_with_logger, mock_logging_exception
-    ):
+    def test_decorator_if_exception(self, mock_request_exception_handler_with_logger, mock_logging_exception):
         """
         Test request_exception_handler_with_logger raise Request Exception
         if whatever happened with request inside wrapped function.
@@ -51,9 +47,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
         mock_logging_exception.exception.assert_called_once()
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.first')
-    def test_returning_token_if_token_exists(
-            self, mock_access_tokens_storage_model_objects_first_method
-    ):
+    def test_returning_token_if_token_exists(self, mock_access_tokens_storage_model_objects_first_method):
         """
         Verify that get_access_token gets access token from access tokens storage if it exists.
         """
@@ -72,9 +66,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
         self.assertEqual(mock_access_token, result)
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.first')
-    def test_returning_empty_line_if_no_token(
-            self, mock_access_tokens_storage_model_objects_first_method
-    ):
+    def test_returning_empty_line_if_no_token(self, mock_access_tokens_storage_model_objects_first_method):
         """
         Verify that get_access_token gets empty string if access token does not exist in access tokens storage.
 

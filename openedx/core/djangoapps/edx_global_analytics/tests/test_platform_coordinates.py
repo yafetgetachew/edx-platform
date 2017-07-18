@@ -20,9 +20,7 @@ class TestPlatformCoordinates(unittest.TestCase):
     Tests for platform coordinates methods, that gather latitude and longitude.
     """
 
-    def test_platform_city_name_request(
-            self, mock_request
-    ):
+    def test_platform_city_name_request(self, mock_request):
         """
         Verify that get_coordinates_by_platform_city_name sends request to Google API with address as parameter.
         """
@@ -116,9 +114,7 @@ class TestPlatformCoordinatesHandler(unittest.TestCase):
     Tests for platform_coordinates method, that handle platform coordinates receiving from independent APIs.
     """
 
-    def test_platform_coordinates_handles_to_google_api(
-            self, mock_get_coordinates_by_platform_city_name
-    ):
+    def test_platform_coordinates_handles_to_google_api(self, mock_get_coordinates_by_platform_city_name):
         """
         Verify that platform_coordinates returns platform coordinates from Google API.
         """

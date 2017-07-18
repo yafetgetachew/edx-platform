@@ -30,9 +30,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         mock_request.assert_called_once_with('https://mock-url.com' + '/api/token/registration/')
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.create')
-    def test_saving_token(
-            self, mock_access_tokens_storage_model_objects_create_method, mock_request
-    ):
+    def test_saving_token(self, mock_access_tokens_storage_model_objects_create_method, mock_request):
         """
         Verify that access_token_registration gets access token after registration request to acceptor and
         save it to AccessTokensStorage model in database.
@@ -60,9 +58,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.models.AccessTokensStorage.objects.first')
-    def test_refreshing_token(
-            self, mock_access_tokens_storage_model_objects_first, mock_request
-    ):
+    def test_refreshing_token(self, mock_access_tokens_storage_model_objects_first, mock_request):
         """
         Verify that access_token_authorization method gets refreshed access token after authorization request to
         acceptor if Acceptor for any reason does not has a token from edX installation in own database.
@@ -83,9 +79,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         self.assertEqual(mock_refreshed_access_token, mock_access_tokens_storage_model_objects_first.access_token)
         mock_access_tokens_storage_model_objects_first.save.assert_called_once()
 
-    def test_sending_statistics(
-            self, mock_request
-    ):
+    def test_sending_statistics(self, mock_request):
         """
         Verify that send_instance_statistics_to_acceptor sends request to acceptor API for token dispatch statistics.
         """
@@ -96,9 +90,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         )
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.logging.Logger.info')
-    def test_successfully_sent_statistics(
-            self, mock_logging, mock_request
-    ):
+    def test_successfully_sent_statistics(self, mock_logging, mock_request):
         """
         Verify that send_instance_statistics_to_acceptor successfully dispatches
         installation_statistics to acceptor API.
@@ -110,9 +102,7 @@ class TestAcceptorApiUsage(unittest.TestCase):
         mock_logging.assert_called_with('Data were successfully transferred to OLGA acceptor. Status code is 201.')
 
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.logging.Logger.info')
-    def test_unsuccessfully_sent_statistics(
-            self, mock_logging, mock_request
-    ):
+    def test_unsuccessfully_sent_statistics(self, mock_logging, mock_request):
         """
         Verify that send_instance_statistics_to_acceptor unsuccessfully dispatches
         installation_statistics to acceptor API.
@@ -134,9 +124,7 @@ class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
     """
 
     @patch('openedx.core.djangoapps.edx_global_analytics.token_utils.get_access_token')
-    def test_get_access_token_occurs(
-            self, mock_get_access_token
-    ):
+    def test_get_access_token_occurs(self, mock_get_access_token):
         """
         Verify that get_acceptor_api_access_token method calls get_access_token method.
         """
@@ -146,9 +134,7 @@ class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.token_utils.access_token_registration')
     @patch('openedx.core.djangoapps.edx_global_analytics.token_utils.get_access_token')
-    def test_token_registration_occurs(
-            self, mock_get_access_token, mock_access_token_registration
-    ):
+    def test_token_registration_occurs(self, mock_get_access_token, mock_access_token_registration):
         """
         Verify that get_acceptor_api_access_token method calls access_token_registration
         if access token does not exists.
@@ -161,9 +147,7 @@ class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
 
     @patch('openedx.core.djangoapps.edx_global_analytics.token_utils.access_token_authorization')
     @patch('openedx.core.djangoapps.edx_global_analytics.token_utils.get_access_token')
-    def test_token_authorization_occurs(
-            self, mock_get_access_token, mock_access_token_authorization
-    ):
+    def test_token_authorization_occurs(self, mock_get_access_token, mock_access_token_authorization):
         """
         Verify that get_acceptor_api_access_token_method calls access_token_authorization
         if access token exists.
@@ -176,9 +160,7 @@ class TestDispatchInstallationStatisticsAccessToken(unittest.TestCase):
         mock_access_token_authorization.assert_called_once_with(mock_access_token, 'https://mock-url.com')
 
     @patch('openedx.core.djangoapps.edx_global_analytics.token_utils.get_access_token')
-    def test_get_access_token_result(
-            self, mock_get_access_token
-    ):
+    def test_get_access_token_result(self, mock_get_access_token):
         """
         Verify that get_acceptor_api_access_token method return get_access_token method result.
         """
