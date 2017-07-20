@@ -693,7 +693,7 @@ class RegistrationView(APIView):
         # Translators: This phrase appears above a field on the registration form
         # meant to hold the user's reasons for registering with edX.
         goals_label = _(u"Tell us why you're interested in {platform_name}").format(
-            platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME)
+            platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME[:5] + settings.PLATFORM_NAME.lower()[5:])
         )
 
         form_desc.add_field(
