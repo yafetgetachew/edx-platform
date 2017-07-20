@@ -206,7 +206,7 @@
                             view: new AccountSettingsFieldViews.TextFieldView({
                                 model: userAccountModel,
                                 required: false,
-                                title: gettext('What specific topics related to civil resistance you are interested in'),
+                                title: gettext('What specific topics related to civil resistance are you interested in?'),
                                 valueAttribute: 'interested_topic',
                                 persistChanges: true
                             })
