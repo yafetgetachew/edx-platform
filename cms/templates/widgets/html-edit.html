@@ -5,6 +5,7 @@
       <div class="row">
           % if editor == 'visual':
             <textarea class="tiny-mce">${data | h}</textarea>
+            <input name="image" type="file" id="upload" class="hidden" onchange="">
           % endif
           <textarea name="" class="edit-box">${data | h}</textarea>
       </div>

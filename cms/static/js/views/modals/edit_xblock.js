@@ -63,6 +63,7 @@ define(['jquery', 'underscore', 'gettext', 'js/views/modals/base_modal', 'common
                     model: this.xblockInfo,
                     view: this.options.view
                 });
+                tinyMCE.baseURL = window.tinymce_base_url;
                 this.editorView.render({
                     success: _.bind(this.onDisplayXBlock, this)
                 });
