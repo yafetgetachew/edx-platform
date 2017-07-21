@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-04-05 06:22-0400\n"
-"PO-Revision-Date: 2017-04-05 10:22:49.876530\n"
+"POT-Creation-Date: 2017-07-17 08:17-0400\n"
+"PO-Revision-Date: 2017-07-17 12:18:05.668739\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -8446,6 +8446,10 @@ msgstr ""
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
 
 #: lms/templates/student_account/login.underscore
+msgid "Log in"
+msgstr "Lög ïn Ⱡ'σяєм ιρѕυ#"
+
+#: lms/templates/student_account/login.underscore
 msgid "or sign in with"
 msgstr "ör sïgn ïn wïth Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
 
@@ -8505,8 +8509,8 @@ msgid "Create a new account"
 msgstr "Çréäté ä néw äççöünt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
 
 #: lms/templates/student_account/register.underscore
-msgid "Create your account"
-msgstr "Çréäté ýöür äççöünt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
+msgid "Sign up"
+msgstr "Sïgn üp Ⱡ'σяєм ιρѕυм #"
 
 #: lms/templates/student_account/register.underscore
 msgid "Required field"

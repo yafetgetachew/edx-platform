@@ -5088,6 +5088,7 @@ msgid "Validation Error"
 msgstr "Error de validación"
 
 #: lms/static/js/views/fields.js
+#: lms/templates/learner_dashboard/program_card.underscore
 msgid "In Progress"
 msgstr "En progreso"
 
@@ -5523,6 +5524,8 @@ msgid ""
 "{filename} is not in a supported file format. Supported file formats are "
 "{supportedFileFormats}."
 msgstr ""
+"{filename} no está en un formato de archivo soportado. Los formatos de "
+"archivo compatibles son {supportedFileFormats}."
 
 #: cms/static/js/views/active_video_upload_list.js
 msgid "{filename} exceeds maximum size of {maxFileSizeInGB} GB."
@@ -5627,6 +5630,10 @@ msgid ""
 "attempting another export. Please check that all components on the page are "
 "valid and do not display any error messages."
 msgstr ""
+"Ha habido una falla para exportar al XML al menos un componente. Se "
+"recomienda ir a la página de edición y reparar el error antes de intentar "
+"otra exportación. Por favor, verifique que todos los componentes en la "
+"página son validos y no exhiben ninguna mensaje de error.   "
 
 #: cms/static/js/views/export.js
 msgid "Correct failed component"
@@ -5642,6 +5649,9 @@ msgid ""
 "to identify the failed component. Inspect your library to identify any "
 "problematic components and try again."
 msgstr ""
+"Tu librería no puede ser exportada a XML. No ha la suficiente información "
+"para identificar el componente que falló. Revisar tu librería para "
+"identificar algún problema en componentes e intentar de nuevo."
 
 #: cms/static/js/views/export.js
 msgid "Take me to the main library page"
@@ -5653,6 +5663,9 @@ msgid ""
 " identify the failed component. Inspect your course to identify any "
 "problematic components and try again."
 msgstr ""
+"Tu librería no puede ser exportada a XML. No ha la suficiente información "
+"para identificar el componente que falló. Revisar tu librería para "
+"identificar algún problema en componentes e intentar de nuevo."
 
 #: cms/static/js/views/export.js
 msgid "Take me to the main course page"
@@ -5876,7 +5889,7 @@ msgstr "Básico"
 
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "Visibility"
-msgstr ""
+msgstr "Visibilidad"
 
 #. Translators: "title" is the name of the current component being edited.
 #: cms/static/js/views/modals/edit_xblock.js
@@ -5913,7 +5926,7 @@ msgstr "Cambiar Manualmente"
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Sections"
-msgstr ""
+msgstr "Secciones"
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Subsections"
@@ -5921,12 +5934,13 @@ msgstr ""
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Units"
-msgstr ""
+msgstr "Unidades"
 
 #: cms/static/js/views/move_xblock_list.js
 msgid "Components"
 msgstr ""
 
+#: cms/static/js/views/move_xblock_list.js
 #: cms/templates/js/group-configuration-editor.underscore
 msgid "Groups"
 msgstr "Grupos"
@@ -5935,6 +5949,7 @@ msgstr "Grupos"
 msgid "This {parentCategory} has no {childCategory}"
 msgstr ""
 
+#: cms/static/js/views/move_xblock_list.js
 #: cms/templates/js/group-configuration-details.underscore
 #: cms/templates/js/partition-group-details.underscore
 msgid "Course Outline"
@@ -6390,7 +6405,7 @@ msgstr ""
 
 #: cms/static/js/views/video_thumbnail.js
 msgid "minutes"
-msgstr ""
+msgstr "minutos"
 
 #: cms/static/js/views/video_thumbnail.js
 msgid "minute"
@@ -6418,7 +6433,7 @@ msgstr ""
 #. `13 minutes and 45 seconds`
 #: cms/static/js/views/video_thumbnail.js
 msgid " and "
-msgstr ""
+msgstr "y"
 
 #: cms/static/js/views/video_thumbnail.js
 msgid "Video image upload started"
@@ -6623,10 +6638,12 @@ msgstr "Todos los Grupos"
 msgid ""
 "Add a clear and descriptive title to encourage participation. (Required)"
 msgstr ""
+"Agregar un título claro y descriptivo para fomentar la participación. "
+"(Requisito)"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Your question or idea (required)"
-msgstr ""
+msgstr "Tu pregunta o idea (requisito)"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
@@ -6649,11 +6666,11 @@ msgstr "Enviar"
 
 #: common/static/common/templates/discussion/post-user-display.underscore
 msgid "(Community TA)"
-msgstr ""
+msgstr "(Asistente de enseñanza de la comunidad)"
 
 #: common/static/common/templates/discussion/post-user-display.underscore
 msgid "(Staff)"
-msgstr ""
+msgstr "(Equipo)"
 
 #: common/static/common/templates/discussion/profile-thread.underscore
 #: common/static/common/templates/discussion/thread.underscore
@@ -6780,12 +6797,12 @@ msgstr "Añadir un comentario"
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
 msgid "discussion posted %(time_ago)s by %(author)s"
-msgstr ""
+msgstr "discusión publicada hace %(time_ago)s por %(author)s"
 
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
 msgid "question posted %(time_ago)s by %(author)s"
-msgstr ""
+msgstr "pregunta publicada hace %(time_ago)s por %(author)s"
 
 #: common/static/common/templates/discussion/thread-show.underscore
 msgid "Closed"
@@ -6840,6 +6857,8 @@ msgstr "Área Temática"
 #: common/static/common/templates/discussion/topic.underscore
 msgid "Add your post to a relevant topic to help others find it. (Required)"
 msgstr ""
+"Agregar tu publicación a un tema relevante para que los demás la puedan "
+"encontrar. (Requisito)"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Discussion Home"
@@ -7368,15 +7387,15 @@ msgstr "Haga clic para editar"
 
 #: lms/templates/fields/field_order_history.underscore
 msgid "Order Number"
-msgstr ""
+msgstr "Número de orden"
 
 #: lms/templates/fields/field_order_history.underscore
 msgid "Date Placed"
-msgstr ""
+msgstr "Fecha de Efectuación"
 
 #: lms/templates/fields/field_order_history.underscore
 msgid "Cost"
-msgstr ""
+msgstr "Precio"
 
 #: lms/templates/fields/field_order_history.underscore
 msgid "Order Details"
@@ -7388,7 +7407,7 @@ msgstr ""
 
 #: lms/templates/fields/field_order_history.underscore
 msgid "Product Name"
-msgstr ""
+msgstr "Nombre del Producto"
 
 #: lms/templates/financial-assistance/financial_assessment_form.underscore
 #: lms/templates/financial-assistance/financial_assessment_submitted.underscore
@@ -7773,11 +7792,11 @@ msgstr "Válido"
 #: lms/templates/learner_dashboard/certificate_status.underscore
 #: lms/templates/learner_dashboard/upgrade_message.underscore
 msgid "Certificate Status:"
-msgstr ""
+msgstr "Estado del Certificado:"
 
 #: lms/templates/learner_dashboard/certificate_status.underscore
 msgid "Certificate Purchased"
-msgstr ""
+msgstr "Certificado Comprado"
 
 #: lms/templates/learner_dashboard/course_enroll.underscore
 msgid "View Archived Course"
@@ -7789,7 +7808,7 @@ msgstr "Ver curso"
 
 #: lms/templates/learner_dashboard/course_enroll.underscore
 msgid "Choose a course run:"
-msgstr ""
+msgstr "Seleccionar una sesión de curso:"
 
 #: lms/templates/learner_dashboard/course_enroll.underscore
 msgid "Enroll Now"
@@ -7831,16 +7850,16 @@ msgstr "Explorar programas nuevos"
 #: lms/templates/verify_student/enrollment_confirmation_step.underscore
 msgid "Course"
 msgid_plural "Courses"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Curso"
+msgstr[1] "Cursos"
 
 #: lms/templates/learner_dashboard/program_card.underscore
 msgid "Completed"
-msgstr ""
+msgstr "Finalizado"
 
 #: lms/templates/learner_dashboard/program_card.underscore
 msgid "Remaining"
-msgstr ""
+msgstr "Restante"
 
 #: lms/templates/learner_dashboard/program_card.underscore
 #, python-format
@@ -7849,16 +7868,16 @@ msgstr "Página de inicio de %(programName)s."
 
 #: lms/templates/learner_dashboard/program_details_sidebar.underscore
 msgid "Your {program} Certificate"
-msgstr ""
+msgstr "Tu Certificado {program}"
 
 #: lms/templates/learner_dashboard/program_details_sidebar.underscore
 #, python-format
 msgid "Open the certificate you earned for the %(title)s program."
-msgstr ""
+msgstr "Abrir el certificado que ganaste en el programa %(title)s."
 
 #: lms/templates/learner_dashboard/program_details_view.underscore
 msgid "Congratulations!"
-msgstr ""
+msgstr "¡Felicitaciones!"
 
 #: lms/templates/learner_dashboard/program_details_view.underscore
 msgid "Your Program Journey"
@@ -7869,27 +7888,31 @@ msgid ""
 "To complete the program, you must earn a verified certificate for each "
 "course."
 msgstr ""
+"Para completar el programa, deberás ganar un certificado verificado en cada "
+"curso."
 
 #: lms/templates/learner_dashboard/program_details_view.underscore
 msgid "COURSES IN PROGRESS"
-msgstr ""
+msgstr "CURSOS EN PROGRESO"
 
 #: lms/templates/learner_dashboard/program_details_view.underscore
 msgid "REMAINING COURSES"
-msgstr ""
+msgstr "CURSOS RESTANTES"
 
 #: lms/templates/learner_dashboard/program_details_view.underscore
 msgid "COMPLETED COURSES"
-msgstr ""
+msgstr "CURSOS COMPLETADOS"
 
 #: lms/templates/learner_dashboard/program_details_view.underscore
 msgid "As you complete courses, you will see them listed here."
-msgstr ""
+msgstr "Mientras completas cursos, los verás enumerados aquí."
 
 #: lms/templates/learner_dashboard/program_details_view.underscore
 msgid ""
 "Complete courses on your schedule to ensure you stand out in your field!"
 msgstr ""
+"¡Complete cursos según tu horario para asegurar que sobresalgas en tu "
+"disciplina!"
 
 #: lms/templates/learner_dashboard/program_header_view.underscore
 msgid "{organization}\\'s logo"
@@ -7897,11 +7920,11 @@ msgstr "Logo de la {organization}"
 
 #: lms/templates/learner_dashboard/upgrade_message.underscore
 msgid "Needs verified certificate "
-msgstr ""
+msgstr "Necesita certificado verificado"
 
 #: lms/templates/learner_dashboard/upgrade_message.underscore
 msgid "Buy Certificate"
-msgstr ""
+msgstr "Comprar Certificado"
 
 #: lms/templates/student_account/account.underscore
 msgid "New Address"
@@ -7977,7 +8000,7 @@ msgstr ""
 
 #: lms/templates/student_account/login.underscore
 msgid "Sign In"
-msgstr ""
+msgstr "Iniciar sesión"
 
 #: lms/templates/student_account/login.underscore
 msgid ""
@@ -8711,13 +8734,16 @@ msgstr "Añadido a marcadores en"
 
 #: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
 msgid "You have not bookmarked any courseware pages yet"
-msgstr ""
+msgstr "No has marcado ninguna página del curso todavía"
 
 #: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
 msgid ""
 "Use bookmarks to help you easily return to courseware pages. To bookmark a "
 "page, click \"Bookmark this page\" under the page title."
 msgstr ""
+"Usa marcadores para ayudarte a regresar fácilmente a ciertas páginas en el "
+"curso. Para marcar una página, haz clic en \"Marcar esta página\" bajo el "
+"título de la página."
 
 #: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
 #: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
@@ -9159,6 +9185,8 @@ msgid ""
 "Access to some content in this unit is restricted to specific groups of "
 "learners"
 msgstr ""
+"Acceso a ciertos contenidos en esta unidad está restringido a grupos "
+"específicos de estudiantes."
 
 #: cms/templates/js/course-outline.underscore
 msgid "Ungraded"
@@ -9174,7 +9202,7 @@ msgstr "Examen supervisado"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Timed Exam"
-msgstr ""
+msgstr "Examen cronometrado"
 
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
@@ -9574,7 +9602,7 @@ msgstr ""
 
 #: cms/templates/js/move-xblock-list.underscore
 msgid "Current location"
-msgstr ""
+msgstr "Ubicación actual"
 
 #: cms/templates/js/move-xblock-list.underscore
 msgid "View child items"
@@ -9594,7 +9622,7 @@ msgstr "Añada su primer libro de texto"
 
 #: cms/templates/js/partition-group-details.underscore
 msgid "This group controls access to:"
-msgstr ""
+msgstr "Este grupo controla el acceso a:"
 
 #: cms/templates/js/partition-group-details.underscore
 msgid ""
@@ -9744,13 +9772,16 @@ msgstr ""
 
 #: cms/templates/js/show-correctness-editor.underscore
 msgid "Always show assessment results"
-msgstr ""
+msgstr "Mostrar siempre los resultados de la evaluación"
 
 #: cms/templates/js/show-correctness-editor.underscore
 msgid ""
 "When learners submit an answer to an assessment, they immediately see "
 "whether the answer is correct or incorrect, and the score received."
 msgstr ""
+"Cuando los estudiantes envían una respuesta para evaluación, ven "
+"inmediatamente si la respuesta es correcta o incorrecta, y la calificación "
+"recibida."
 
 #: cms/templates/js/show-correctness-editor.underscore
 msgid "Never show assessment results"
