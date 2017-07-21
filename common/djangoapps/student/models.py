@@ -483,6 +483,7 @@ def user_post_save_callback(sender, **kwargs):
     Emit analytics events after saving the User.
     """
     user = kwargs['instance']
+    created = kwargs['created']
     # pylint: disable=protected-access
     emit_field_changed_events(
         user,
@@ -491,6 +492,12 @@ def user_post_save_callback(sender, **kwargs):
         excluded_fields=['last_login', 'first_name', 'last_name'],
         hidden_fields=['password']
     )
+
+    if created:
+        up, up_created = UserProfile.objects.get_or_create(user=user)
+        if up_created:
+            up.name = user.get_full_name()
+            up.save()
 
 
 class UserSignupSource(models.Model):

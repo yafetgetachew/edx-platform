@@ -66,6 +66,7 @@ import string
 from collections import OrderedDict
 import urllib
 import analytics
+import requests
 from eventtracking import tracker
 
 from django.conf import settings
@@ -525,7 +526,14 @@ def ensure_user_information(strategy, auth_entry, backend=None, user=None, socia
         return current_provider and current_provider.skip_email_verification
 
     if not user:
-        if auth_entry in [AUTH_ENTRY_LOGIN_API, AUTH_ENTRY_REGISTER_API]:
+        if kwargs['is_new'] and auth_entry == AUTH_ENTRY_LOGIN_API:
+            if backend.name == 'facebook':
+                details = kwargs.get('details', {'email': ''})
+                r = requests.post('{}?fields=email'.format(backend.USER_DATA_URL), {'access_token': backend.data.get('access_token')})
+                details['email'] = r.json().get('email', '')
+                return {'details': details}
+            return {}
+        elif auth_entry in [AUTH_ENTRY_LOGIN_API, AUTH_ENTRY_REGISTER_API]:
             return HttpResponseBadRequest()
         elif auth_entry == AUTH_ENTRY_LOGIN:
             # User has authenticated with the third party provider but we don't know which edX
