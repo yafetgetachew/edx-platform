@@ -1526,9 +1526,9 @@ def _do_create_account(form, custom_form=None):
         "name", "level_of_education", "gender", "mailing_address", "city", "country", "goals",
         "year_of_birth"
     ]
-    profile = UserProfile(
+    profile, _created = UserProfile.objects.get_or_create(
         user=user,
-        **{key: form.cleaned_data.get(key) for key in profile_fields}
+        defaults={key: form.cleaned_data.get(key) for key in profile_fields}
     )
     extended_profile = form.cleaned_extended_profile
     if extended_profile:
