@@ -591,15 +591,15 @@ PIPELINE_CSS = {
     },
     'style-vendor-tinymce-content': {
         'source_filenames': [
-            'css/tinymce-studio-content-fonts.css',
-            'js/vendor/tinymce/js/tinymce/skins/studio-tmce4/content.min.css',
-            'css/tinymce-studio-content.css'
+#            'css/tinymce-studio-content-fonts.css',
+#            'js/vendor/tinymce/js/tinymce/skins/studio-tmce4/content.min.css',
+#            'css/tinymce-studio-content.css'
         ],
         'output_filename': 'css/cms-style-vendor-tinymce-content.css',
     },
     'style-vendor-tinymce-skin': {
         'source_filenames': [
-            'js/vendor/tinymce/js/tinymce/skins/studio-tmce4/skin.min.css'
+ #           'js/vendor/tinymce/js/tinymce/skins/studio-tmce4/skin.min.css'
         ],
         'output_filename': 'css/cms-style-vendor-tinymce-skin.css',
     },
@@ -1247,10 +1247,10 @@ TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 10,
     'plugins': [
-      "table advlist autolink lists link image charmap print preview hr anchor pagebreak",
+      "table advlist autolink lists link image charmap preview hr",
       "searchreplace wordcount visualblocks visualchars code fullscreen",
-      "insertdatetime media nonbreaking save table contextmenu directionality",
-      "emoticons template paste textcolor colorpicker textpattern"
+      "insertdatetime nonbreaking save contextmenu directionality",
+      "paste textcolor colorpicker textpattern"
     ],
      'font_formats' : (
          'Andale Mono=andale mono,times;'
@@ -1275,9 +1275,9 @@ TINYMCE_DEFAULT_CONFIG = {
      ),
      'toolbar1': (
          'fontsizeselect fontselect bold italic forecolor backcolor | styleselect '
-         '| alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent'
+         '| alignleft aligncenter alignright alignjustify'
      ),
-     'toolbar2': 'undo redo | insert | emoticons image | table | codesample | print preview | help',
+     'toolbar2': 'undo redo | bullist numlist | outdent indent | insert | image | table | codesample | code preview',
      'image_advtab': True,
      'content_css': [
          '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',

@@ -64,9 +64,10 @@ class @HTMLEditingDescriptor
         selector: ".tiny-mce",
         script_url : "#{baseUrl}/tiny_mce/tinymce.min.js",
 #        font_formats : _getFonts(),
-        theme : "modern",
-        skin: 'studio-tmce4',
+#        theme : "modern",
+#        skin: 'studio-tmce4',
         schema: "html5",
+        relative_urls: true,
         # Necessary to preserve relative URLs to our images.
 #        convert_urls : false,
         # Sniff UI direction from `.wrapper-view` in studio or `.window-wrap` in LMS
@@ -77,7 +78,7 @@ class @HTMLEditingDescriptor
 #          code: {inline: 'code'}
 #        },
         # Disable visual aid on borderless table.
-        visual: false,
+#        visual: false,
 #        plugins: "textcolor, link, image, codemirror",
         codemirror: {
           path: "#{baseUrl}/js/vendor"
@@ -95,16 +96,16 @@ class @HTMLEditingDescriptor
 #          }, true),
         width: '100%',
         height: '400px',
-        menubar: false,
-        statusbar: false,
+#        menubar: false,
+#        statusbar: false,
 
         # Necessary to avoid stripping of style tags.
-        valid_children : "+body[style]",
+#        valid_children : "+body[style]",
 
         # Allow any elements to be used, e.g. link, script, math
-        valid_elements: "*[*]",
-        extended_valid_elements: "*[*]",
-        invalid_elements: "",
+#        valid_elements: "*[*]",
+#        extended_valid_elements: "*[*]",
+#        invalid_elements: "",
 
         setup: @setupTinyMCE,
         # Cannot get access to tinyMCE Editor instance (for focusing) until after it is rendered.
