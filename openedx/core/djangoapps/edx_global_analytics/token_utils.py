@@ -8,6 +8,14 @@ from openedx.core.djangoapps.edx_global_analytics.models import AccessTokensStor
 from openedx.core.djangoapps.edx_global_analytics.utils import request_exception_handler_with_logger
 
 
+def clean_unauthorized_access_token():
+    """
+    Delete first and sole access token in storage.
+
+    If instance unsuccessfully authorized, statistics dispatch flow needs to registry access token again.
+    """
+    AccessTokensStorage.objects.first().delete()
+
 def get_access_token():
     """
     Return single access token for authorization.
@@ -36,6 +44,7 @@ def access_token_registration(olga_acceptor_url):
 
     return access_token
 
+
 @request_exception_handler_with_logger
 def access_token_authorization(access_token, olga_acceptor_url):
     """
@@ -49,11 +58,9 @@ def access_token_authorization(access_token, olga_acceptor_url):
     )
 
     if token_authorization_request.status_code == 401:
-        refreshed_access_token = token_authorization_request.json()['refreshed_access_token']
+        return False
 
-        token_storage_object = AccessTokensStorage.objects.first()
-        token_storage_object.access_token = refreshed_access_token
-        token_storage_object.save()
+    return True
 
 
 def get_acceptor_api_access_token(olga_acceptor_url):
@@ -62,13 +69,17 @@ def get_acceptor_api_access_token(olga_acceptor_url):
 
     If access token does not exist, method goes to register it.
     After successful registration edX platform authorizes itself via access token.
+
     If instance successfully authorized, method returns access token.
+    If not it cleans token in storage and goes ahead to repeat flow.
     """
     access_token = get_access_token()
 
     if not access_token:
         access_token = access_token_registration(olga_acceptor_url)
 
-    access_token_authorization(access_token, olga_acceptor_url)
+    if access_token_authorization(access_token, olga_acceptor_url):
+        return get_access_token()
 
-    return get_access_token()
+    clean_unauthorized_access_token()
+    return get_acceptor_api_access_token(olga_acceptor_url)
