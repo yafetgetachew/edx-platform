@@ -24053,6 +24053,3 @@ msgstr "نصائح لإدارة الوقت"
 
 msgid "Student Success"
 msgstr "نجاح الطالب"
-
-msgid "Find Courses"
-msgstr "البحث عن الدورات التدريبية"
