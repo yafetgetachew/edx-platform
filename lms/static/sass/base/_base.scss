@@ -392,3 +392,40 @@ figure.image figcaption {
     text-align: center;
     font-size: 14px;
 }
+
+.xmodule_display.xmodule_HtmlModule table td,
+.xmodule_display.xmodule_HtmlModule table th {
+    padding: 15px 7px;
+    vertical-align: middle;
+}
+
+.xmodule_display.xmodule_HtmlModule h2 {
+    text-transform: none;
+}
+
+.xmodule_display.xmodule_HtmlModule h1,
+.mce-content-body h1 {
+    font-size: 35px;
+}  
+.xmodule_display.xmodule_HtmlModule h2,
+.mce-content-body h2 {
+    margin: 0 0 10px 0;
+    text-transform: none;
+    font-size: 31px;
+}  
+.xmodule_display.xmodule_HtmlModule h3,
+.mce-content-body h3 {
+    font-size: 26px;
+}
+.xmodule_display.xmodule_HtmlModule h4,
+.mce-content-body h4 {
+    font-size: 23px;
+}
+.xmodule_display.xmodule_HtmlModule h5,
+.mce-content-body h5 {
+    font-size: 19px;
+}
+.xmodule_display.xmodule_HtmlModule h6,
+.mce-content-body h6 {
+    font-size: 15px;
+}

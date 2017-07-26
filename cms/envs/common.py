@@ -1247,7 +1247,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 10,
     'plugins': [
-      "table advlist autolink lists link image charmap preview hr",
+      "table advlist autolink lists link image charmap preview",
       "searchreplace wordcount visualblocks visualchars code fullscreen",
       "insertdatetime nonbreaking save contextmenu directionality",
       "paste textcolor colorpicker textpattern"
@@ -1291,5 +1291,36 @@ TINYMCE_DEFAULT_CONFIG = {
 #    'image_advtab': True,
     'file_picker_types': 'image',
     'convert_urls': False,
-    'image_caption': True
+    'image_caption': True,
+    'style_formats': [
+        {
+            'title': 'Headers', 'items': [
+                {'title': 'Header 1', 'format': 'h1'},
+                {'title': 'Header 2', 'format': 'h2'},
+                {'title': 'Header 3', 'format': 'h3'},
+                {'title': 'Header 4', 'format': 'h4'},
+                {'title': 'Header 5', 'format': 'h5'},
+                {'title': 'Header 6', 'format': 'h6'}
+            ]
+        },
+        {
+            'title': 'Inline', 'items': [
+                {'title': 'Bold', 'icon': 'bold', 'format': 'bold'},
+                {'title': 'Italic', 'icon': 'italic', 'format': 'italic'},
+                {'title': 'Underline', 'icon': 'underline', 'format': 'underline'},
+                {'title': 'Strikethrough', 'icon': 'strikethrough', 'format': 'strikethrough'},
+                {'title': 'Superscript', 'icon': 'superscript', 'format': 'superscript'},
+                {'title': 'Subscript', 'icon': 'subscript', 'format': 'subscript'},
+                {'title': 'Code', 'icon': 'code', 'format': 'code'}
+            ]
+        },
+        {
+            'title': 'Alignment', 'items': [
+                {'title': 'Left', 'icon': 'alignleft', 'format': 'alignleft'},
+                {'title': 'Center', 'icon': 'aligncenter', 'format': 'aligncenter'},
+                {'title': 'Right', 'icon': 'alignright', 'format': 'alignright'},
+                {'title': 'Justify', 'icon': 'alignjustify', 'format': 'alignjustify'}
+            ]
+        },
+    ]
 }
