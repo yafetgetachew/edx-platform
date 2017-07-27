@@ -8,7 +8,6 @@ from mock import patch
 
 from django.test import TestCase
 from django.utils import timezone
-
 from django.db.models import Q
 
 from student.models import UserProfile

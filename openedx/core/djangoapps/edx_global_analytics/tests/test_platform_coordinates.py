@@ -5,7 +5,8 @@ Tests for edx global analytics application tasks and helper functions.
 import unittest
 
 import requests
-from mock import patch
+from ddt import ddt, data, unpack
+from mock import patch, call
 
 from openedx.core.djangoapps.edx_global_analytics.utils import (
     get_coordinates_by_platform_city_name,
@@ -20,14 +21,23 @@ class TestPlatformCoordinates(unittest.TestCase):
     Tests for platform coordinates methods, that gather latitude and longitude.
     """
 
-    def test_platform_city_name_request(self, mock_request):
+    def tests_sending_requests(self, mock_request):
         """
-        Verify that get_coordinates_by_platform_city_name sends request to Google API with address as parameter.
+        Tests to prove that methods send request to needed corresponding URLs.
         """
+
+        # Verify that get_coordinates_by_platform_city_name sends request to Google API with address as parameter.
         get_coordinates_by_platform_city_name('Kiev')
-        mock_request.assert_called_once_with(
-            'https://maps.googleapis.com/maps/api/geocode/json', params={'address': 'Kiev'}
-        )
+
+        # Verify that get_coordinates_by_ip sends request to FreeGeoIP API.
+        get_coordinates_by_ip()
+
+        expected_calls = [
+            call('https://maps.googleapis.com/maps/api/geocode/json', params={'address': 'Kiev'}),
+            call('https://freegeoip.net/json'),
+        ]
+
+        self.assertEqual(mock_request.call_args_list, expected_calls)
 
     def test_platform_city_name_result(self, mock_request):
         """
@@ -75,13 +85,6 @@ class TestPlatformCoordinates(unittest.TestCase):
 
         result_without_city_name = get_coordinates_by_platform_city_name('Lmnasasfabqwrqrn')
         self.assertEqual(None, result_without_city_name)
-
-    def test_get_coordinates_by_ip_request(self, mock_request):
-        """
-        Verify that get_coordinates_by_ip sends request to FreeGeoIP API.
-        """
-        get_coordinates_by_ip()
-        mock_request.assert_called_once('https://freegeoip.net/json')
 
     def test_get_coordinates_by_ip_result(self, mock_request):
         """

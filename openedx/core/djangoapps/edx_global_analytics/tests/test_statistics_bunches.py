@@ -20,14 +20,6 @@ class TestStatisticsLevelBunches(unittest.TestCase):
     Tests for statistics level bunches, that provides particular edX installation statistics.
     """
 
-    def test_fetching_paranoid_statistics(self, mock_fetch_instance_information):
-        """
-        Verify that paranoid_level_statistics_bunch_method calls needed fetch instance information method three time.
-        """
-        paranoid_level_statistics_bunch()
-
-        self.assertEqual(3, mock_fetch_instance_information.call_count)
-
     def test_paranoid_statistics_result(self, mock_fetch_instance_information):
         """
         Verify that paranoid_level_statistics_bunch_method returns active students amount per day, week and month.

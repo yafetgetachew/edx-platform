@@ -217,10 +217,9 @@ def send_instance_statistics_to_acceptor(olga_acceptor_url, data):
     Dispatch installation statistics OLGA acceptor.
     """
     request = requests.post(olga_acceptor_url + '/api/installation/statistics/', data)
+    status_code = request.status_code
 
-    if request.status_code == 201:
-        logger.info('Data were successfully transferred to OLGA acceptor. Status code is 201.')
+    if status_code == 201:
+        logger.info('Data were successfully transferred to OLGA acceptor. Status code is {0}.'.format(status_code))
     else:
-        logger.info('Data were not successfully transferred to OLGA acceptor. Status code is {0}.'.format(
-            request.status_code
-        ))
+        logger.info('Data were not successfully transferred to OLGA acceptor. Status code is {0}.'.format(status_code))

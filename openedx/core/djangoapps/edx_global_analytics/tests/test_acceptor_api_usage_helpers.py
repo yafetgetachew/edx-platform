@@ -40,8 +40,7 @@ class TestAcceptorApiUsageHelpFunctions(unittest.TestCase):
     @patch('openedx.core.djangoapps.edx_global_analytics.utils.request_exception_handler_with_logger')
     def test_decorator_if_exception(self, mock_request_exception_handler_with_logger, mock_logging_exception):
         """
-        Test request_exception_handler_with_logger raise Request Exception
-        if whatever happened with request inside wrapped function.
+        Test request_exception_handler_with_logger log exception if whatever happened with request.
         """
         mock_request_exception_handler_with_logger.return_value.side_effect = requests.RequestException()
         mock_logging_exception.exception.assert_called_once()
