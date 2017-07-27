@@ -838,3 +838,52 @@ body .xmodule_display.xmodule_HtmlModule h6,
     margin: 25px 0 15px;
     font-size: 15px;
 }
+
+body .course-updates .update-list>li h1 {
+    font-size: 35px;
+    line-height: 1.3;
+    margin: 25px 0 15px;
+}
+body .course-updates .update-list>li h2 {
+    line-height: 1.3;
+    margin: 25px 0 15px;
+    text-transform: none;
+    font-size: 31px;
+}
+body .course-updates .update-list>li h3 {
+    line-height: 1.3;
+    margin: 25px 0 15px;
+    font-size: 26px;
+}
+body .course-updates .update-list>li h4 {
+    line-height: 1.3;
+    margin: 25px 0 15px;
+    font-size: 23px;
+}
+body .course-updates .update-list>li h5 {
+    line-height: 1.3;
+    margin: 25px 0 15px;
+    font-size: 19px;
+}
+body .course-updates .update-list>li h6 {
+    line-height: 1.3;
+    margin: 25px 0 15px;
+    font-size: 15px;
+}
+.course-info .details .inner-wrapper table p,
+.course-updates .update-contents table p {
+    margin: 20px 0;
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.course-info .details .inner-wrapper table tr td,
+.course-info .details .inner-wrapper table tr th,
+.inner-wrapper .course-info-wrapper table tr td,
+.inner-wrapper .course-info-wrapper table tr th {
+    padding: 15px 7px;
+    vertical-align: middle;
+}
