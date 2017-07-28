@@ -497,6 +497,9 @@ body .window-wrap div.info-wrapper table,
 .course-info .details .inner-wrapper table,
 .inner-wrapper .course-info-wrapper table {
     width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 1px solid #aaa;
 }
 .course-info .details .inner-wrapper .faq .response figure.image.align-left,
 body div.info-wrapper section.updates figure.image.align-left,
