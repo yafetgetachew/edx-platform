@@ -114,9 +114,9 @@ class @HTMLEditingDescriptor
 
         browser_spellcheck: true,
         file_picker_callback: (callback, value, meta) ->
-          console.log($('#upload'))
           if meta.filetype.toString() == 'image'
             $('#upload').trigger('click')
+            $('#upload').unbind()
             $('#upload').on('change', () ->
               file = this.files[0]
               formData = new FormData()
