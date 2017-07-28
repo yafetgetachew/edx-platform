@@ -368,7 +368,7 @@ mark {
 .image.align-right {
     text-align: right;
     float: right;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 .xmodule_display.xmodule_HtmlModule table td p:last-child {
     margin-bottom: 0;
@@ -407,6 +407,8 @@ body .course-updates .update-list>li h1,
     font-weight: 200;
     margin: 25px 0 15px !important;
     color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .course-info .details .inner-wrapper .faq .response h2,
 body div.info-wrapper section.updates h2,
@@ -420,6 +422,8 @@ body .course-updates .update-list>li h2,
     line-height: 1.3;
     font-weight: 200;
     color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .course-info .details .inner-wrapper .faq .response h3,
 body div.info-wrapper section.updates h3,
@@ -432,6 +436,8 @@ body .course-updates .update-list>li h3,
     line-height: 1.3;
     font-weight: 200 !important;
     color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .course-info .details .inner-wrapper .faq .response h4,
 body div.info-wrapper section.updates h4,
@@ -444,6 +450,8 @@ body .course-updates .update-list>li h4,
     line-height: 1.3;
     font-weight: 200;
     color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .course-info .details .inner-wrapper .faq .response h5,
 body div.info-wrapper section.updates h5,
@@ -456,6 +464,8 @@ body .course-updates .update-list>li h5,
     line-height: 1.3;
     font-weight: 200;
     color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .course-info .details .inner-wrapper .faq .response h6,
 body div.info-wrapper section.updates h6,
@@ -468,6 +478,8 @@ body .course-updates .update-list>li h6,
     line-height: 1.3;
     font-weight: 200;
     color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body .window-wrap div.info-wrapper table td,
 body .window-wrap div.info-wrapper table th,
@@ -493,5 +505,5 @@ body .xmodule_display.xmodule_HtmlModule figure.image.align-left,
 body .course-updates .update-list figure.image.align-left,
 figure.image.align-left {
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
 }
