@@ -29,6 +29,7 @@ from openedx.core.djangoapps.course_groups.cohorts import (
 )
 from openedx.core.djangoapps.course_groups.models import CourseUserGroup
 from request_cache.middleware import request_cached
+import re
 
 
 log = logging.getLogger(__name__)
@@ -246,10 +247,23 @@ def _sort_map_entries(category_map, sort_alpha):
     """
     Internal helper method to list category entries according to the provided sort order
     """
+    r = re.compile('^([0-9.]*)\s*(.*)$')
+    def _title_to_tuple(t):
+        # TODO: waiting for payment
+        return t
+        res = r.search(t)
+        if res:
+            res_tuple = res.groups()
+            if res_tuple[0]:
+                return (float(res_tuple[0]), res_tuple[1])
+        return t
+
     things = []
     for title, entry in category_map["entries"].items():
-        if entry["sort_key"] is None and sort_alpha:
-            entry["sort_key"] = title
+        if sort_alpha:
+            if entry["sort_key"] is None:
+                entry["sort_key"] = title
+            entry["sort_key"] = _title_to_tuple(entry["sort_key"])
         things.append((title, entry, TYPE_ENTRY))
     for title, category in category_map["subcategories"].items():
         things.append((title, category, TYPE_SUBCATEGORY))
