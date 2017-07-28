@@ -116,7 +116,7 @@ class @HTMLEditingDescriptor
         file_picker_callback: (callback, value, meta) ->
           if meta.filetype.toString() == 'image'
             $('#upload').trigger('click')
-            $('#upload').unbind()
+            $('#upload').unbind('change')
             $('#upload').on('change', () ->
               file = this.files[0]
               formData = new FormData()

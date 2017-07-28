@@ -32,7 +32,7 @@ define(['codemirror',
                     file_picker_callback: function(callback, value, meta) {
                         if (meta.filetype == 'image') {
                             $('#upload').trigger('click');
-                            $('#upload').unbind();
+                            $('#upload').unbind('change');
                             $('#upload').on('change', function() {
                                 var file = this.files[0];
                                 var formData;
