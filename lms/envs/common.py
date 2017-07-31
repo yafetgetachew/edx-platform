@@ -1188,6 +1188,8 @@ MIDDLEWARE_CLASSES = (
     # to redirected unenrolled students to the course info page
     'courseware.middleware.RedirectUnenrolledMiddleware',
 
+    'courseware.middleware.HidePages',
+
     'course_wiki.middleware.WikiAccessMiddleware',
 
     'openedx.core.djangoapps.theming.middleware.CurrentSiteThemeMiddleware',
