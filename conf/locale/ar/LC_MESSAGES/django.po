@@ -24048,8 +24048,11 @@ msgid ""
 "#%(r2)d"
 msgstr "أُنشأت مراجعة جديدة: الدمج بين المراجعة #%(r1)d والمراجعة #%(r2)d "
 
-msgid "Tips for better time management"
+msgid "TIPS FOR BETTER TIME MANAGEMENT"
 msgstr "نصائح لإدارة الوقت"
 
-msgid "Student Success"
+msgid "STUDENT SUCCESS"
 msgstr "نجاح الطالب"
+
+msgid "FIND COURSES"
+msgstr "البحث عن الدورات التدريبية"
