@@ -1292,6 +1292,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'file_picker_types': 'image',
     'convert_urls': False,
     'image_caption': True,
+    'table_style_by_css': True,
     'style_formats': [
         {
             'title': 'Headers', 'items': [
