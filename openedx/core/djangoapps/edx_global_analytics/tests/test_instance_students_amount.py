@@ -13,10 +13,8 @@ from django_countries.fields import Country
 
 from student.tests.factories import UserFactory
 
-from openedx.core.djangoapps.edx_global_analytics.utils import (
-    fetch_instance_information,
-    cache_timeout_week,
-)
+from openedx.core.djangoapps.edx_global_analytics.utils.cache_utils import cache_timeout_week
+from openedx.core.djangoapps.edx_global_analytics.utils.utils import fetch_instance_information
 
 
 class TestStudentsAmountPerParticularPeriod(TestCase):
@@ -80,7 +78,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
 
         self.assertItemsEqual({u'US': 1, u'CA': 1}, result)
 
-    @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache_instance_data')
+    @patch('openedx.core.djangoapps.edx_global_analytics.utils.cache_utils.cache_instance_data')
     def test_caching_students_with_timeout(self, mock_cache_instance_data):
         """
         Verify that cache_instance_data called during fetch instance information method is occurring
@@ -107,6 +105,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
         cache_timeout = None
 
         result = fetch_instance_information(
-            'students_per_country', 'students_per_country', activity_period, cache_timeout)
+            'students_per_country', 'students_per_country', activity_period, cache_timeout
+        )
 
         self.assertEqual({None: 0}, result)

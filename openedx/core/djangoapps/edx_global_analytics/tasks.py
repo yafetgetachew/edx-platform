@@ -7,20 +7,21 @@ import json
 import logging
 
 from celery.task import task
-
 from django.conf import settings
 from django.contrib.sites.models import Site
-
 from xmodule.modulestore.django import modulestore
 
-from openedx.core.djangoapps.edx_global_analytics.token_utils import get_acceptor_api_access_token
-from openedx.core.djangoapps.edx_global_analytics.utils import (
+
+from openedx.core.djangoapps.edx_global_analytics.utils.cache_utils import (
+    cache_timeout_week,
+    cache_timeout_month,
+)
+from openedx.core.djangoapps.edx_global_analytics.utils.token_utils import get_acceptor_api_access_token
+from openedx.core.djangoapps.edx_global_analytics.utils.utils import (
     fetch_instance_information,
     get_previous_day_start_and_end_dates,
     get_previous_week_start_and_end_dates,
     get_previous_month_start_and_end_dates,
-    cache_timeout_week,
-    cache_timeout_month,
     platform_coordinates,
     send_instance_statistics_to_acceptor,
 )

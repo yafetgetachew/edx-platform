@@ -2,10 +2,12 @@
 Providers for access token`s authentication flow.
 """
 
+import httplib
+
 import requests
 
 from openedx.core.djangoapps.edx_global_analytics.models import AccessTokensStorage
-from openedx.core.djangoapps.edx_global_analytics.utils import request_exception_handler_with_logger
+from openedx.core.djangoapps.edx_global_analytics.utils.utils import request_exception_handler_with_logger
 
 
 def clean_unauthorized_access_token():
@@ -24,13 +26,10 @@ def get_access_token():
     So access token is needed to make relationship with `edx_global_analytics` and `OLGA`.
     Reference: https://github.com/raccoongang/acceptor
     """
-    try:
-        access_token = AccessTokensStorage.objects.first().access_token
-    except AttributeError:
-        access_token = ''
+    token_object = AccessTokensStorage.objects.first()
 
-    return access_token
-
+    if token_object:
+        return token_object.access_token
 
 @request_exception_handler_with_logger
 def access_token_registration(olga_acceptor_url):
@@ -57,7 +56,7 @@ def access_token_authorization(access_token, olga_acceptor_url):
         olga_acceptor_url + '/api/token/authorization/', data={'access_token': access_token, }
     )
 
-    if token_authorization_request.status_code == 401:
+    if token_authorization_request.status_code == httplib.UNAUTHORIZED:
         return False
 
     return True

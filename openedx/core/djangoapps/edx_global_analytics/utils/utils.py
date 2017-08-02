@@ -3,16 +3,16 @@ Helpers for the edX global analytics application.
 """
 
 import calendar
+import httplib
 import logging
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 
 import requests
-
-from django.core.cache import cache
 from django.db.models import Count
 from django.db.models import Q
-
 from student.models import UserProfile
+
+from openedx.core.djangoapps.edx_global_analytics.utils.cache_utils import cache_instance_data
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -43,60 +43,6 @@ def fetch_instance_information(name_to_cache, query_type, activity_period, cache
         return cache_instance_data(name_to_cache, statistics_queries[query_type], cache_timeout)
 
     return statistics_queries[query_type]
-
-
-def cache_instance_data(name_to_cache, query_result, cache_timeout):
-    """
-    Cache queries, that calculate particular instance data,
-    including long time unchangeable weekly and monthly statistics.
-
-    Arguments:
-        name_to_cache (str): Name of query.
-        query_result (query result): Django-query result.
-        cache_timeout (int/None): Caching for particular seconds amount.
-
-    Returns cached query result.
-    """
-    cached_query_result = cache.get(name_to_cache)
-
-    if cached_query_result is not None:
-        return cached_query_result
-
-    cache.set(name_to_cache, query_result, cache_timeout)
-
-    return query_result
-
-
-def cache_timeout_week():
-    """
-    Calculate how much time cache need to save data for weekly statistics.
-    """
-    current_datetime = datetime.now()
-
-    days_after_week_started = date.today().weekday()
-
-    last_datetime_of_current_week = (
-        current_datetime + timedelta(6 - days_after_week_started)
-    ).replace(hour=23, minute=59, second=59)
-
-    cache_timeout_week_in_seconds = (last_datetime_of_current_week - current_datetime).total_seconds()
-
-    return cache_timeout_week_in_seconds
-
-
-def cache_timeout_month():
-    """
-    Calculate how much time cache need to save data for monthly statistics.
-    """
-    current_datetime = datetime.now()
-
-    last_datetime_of_current_month = current_datetime.replace(
-        day=calendar.monthrange(current_datetime.year, current_datetime.month)[1]
-    ).replace(hour=23, minute=59, second=59)
-
-    cache_timeout_month_in_seconds = (last_datetime_of_current_month - current_datetime).total_seconds()
-
-    return cache_timeout_month_in_seconds
 
 
 def get_previous_day_start_and_end_dates():
@@ -219,7 +165,7 @@ def send_instance_statistics_to_acceptor(olga_acceptor_url, data):
     request = requests.post(olga_acceptor_url + '/api/installation/statistics/', data)
     status_code = request.status_code
 
-    if status_code == 201:
+    if status_code == httplib.CREATED:
         logger.info('Data were successfully transferred to OLGA acceptor. Status code is {0}.'.format(status_code))
     else:
         logger.info('Data were not successfully transferred to OLGA acceptor. Status code is {0}.'.format(status_code))
