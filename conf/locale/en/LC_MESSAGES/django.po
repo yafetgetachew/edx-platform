@@ -11151,6 +11151,10 @@ msgstr ""
 msgid "Welcome to {platform_name}"
 msgstr ""
 
+#: raccoongang
+msgid "Welcome to"
+msgstr ""
+
 #: lms/templates/register-sidebar.html
 msgid ""
 "Registering with {platform_name} gives you access to all of our current and "

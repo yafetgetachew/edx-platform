@@ -12300,6 +12300,10 @@ msgstr "مخل هر"
 msgid "Welcome to {platform_name}"
 msgstr "صثمذخوث فخ {platform_name}"
 
+#: raccoongang
+msgid "Welcome to"
+msgstr "صثمذخوث فخ"
+
 #: lms/templates/register-sidebar.html
 msgid ""
 "Registering with {platform_name} gives you access to all of our current and "

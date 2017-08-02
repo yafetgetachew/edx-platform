@@ -14164,6 +14164,10 @@ msgstr "Lög ïn Ⱡ'σяєм ιρѕυ#"
 msgid "Welcome to {platform_name}"
 msgstr "Wélçömé tö {platform_name} Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
+#: raccoongang
+msgid "Welcome to"
+msgstr "Wélçömé tö#"
+
 #: lms/templates/register-sidebar.html
 msgid ""
 "Registering with {platform_name} gives you access to all of our current and "
