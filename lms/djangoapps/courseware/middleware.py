@@ -31,12 +31,14 @@ class RedirectUnenrolledMiddleware(object):
 class HidePages(object):
     _paths = [
         '/dashboard',
-        '/courses/{}/(?!about).+'.format(settings.COURSE_ID_PATTERN),
+        '/courses/{}/(?!about).*'.format(settings.COURSE_ID_PATTERN),
         '/login',
         '/u/[\w.@+-]+',
         '/account/settings',
         '/logout',
         '/register',
+        '/activate/[0-9a-f]{32}',
+        '/password_reset_complete/?',
         '/password_reset_confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/',
         '/honor',
         '/certificates/[0-9a-f]+',
@@ -47,6 +49,8 @@ class HidePages(object):
     def process_request(self, request):
         if request.path == '/':
             return redirect(reverse('dashboard'))
+        elif request.path == '/courses':
+            return redirect('http://desk.ua/courses-overview/')
 
         if not request.is_ajax() and not self.rexp.match(request.path):
             raise Http404
