@@ -67,7 +67,7 @@ def enthusiast_level_statistics_bunch():
 
 def get_olga_acceptor_url(olga_settings):
     """
-    Return olga acceptor url that edX application needs to send statistics to.
+    Return OLGA acceptor url that edX application needs to send statistics to.
     """
     acceptor_url = olga_settings.get('ACCEPTOR_URL')
     acceptor_url_develop = olga_settings.get('ACCEPTOR_URL_DEVELOP')
@@ -98,6 +98,10 @@ def collect_stats():
     olga_acceptor_url = get_olga_acceptor_url(olga_settings)
 
     access_token = get_acceptor_api_access_token(olga_acceptor_url)
+
+    if not access_token:
+        logger.info('Access token was unsuccessfully authorize. Task will try to register a new token in next turn.')
+        return
 
     # Data volume depends on server settings.
     statistics_level = olga_settings.get("STATISTICS_LEVEL")

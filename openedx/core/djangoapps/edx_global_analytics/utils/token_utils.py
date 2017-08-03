@@ -18,12 +18,13 @@ def clean_unauthorized_access_token():
     """
     AccessTokensStorage.objects.first().delete()
 
+
 def get_access_token():
     """
     Return single access token for authorization.
 
-    Actually this application works only with one OLGA acceptor for now.
-    So access token is needed to make relationship with `edx_global_analytics` and `OLGA`.
+    This application works only with single OLGA acceptor for now.
+    So access token is needed to make relationship between `edx_global_analytics` and `OLGA`.
     Reference: https://github.com/raccoongang/acceptor
     """
     token_object = AccessTokensStorage.objects.first()
@@ -31,10 +32,11 @@ def get_access_token():
     if token_object:
         return token_object.access_token
 
+
 @request_exception_handler_with_logger
 def access_token_registration(olga_acceptor_url):
     """
-    Request access token from Acceptor and store it.
+    Request access token from OLGA and store it.
     """
     token_registration_request = requests.post(olga_acceptor_url + '/api/token/registration/')
     access_token = token_registration_request.json()['access_token']
@@ -57,9 +59,10 @@ def access_token_authorization(access_token, olga_acceptor_url):
     )
 
     if token_authorization_request.status_code == httplib.UNAUTHORIZED:
-        return False
+        clean_unauthorized_access_token()
+        return
 
-    return True
+    return access_token
 
 
 def get_acceptor_api_access_token(olga_acceptor_url):
@@ -77,8 +80,4 @@ def get_acceptor_api_access_token(olga_acceptor_url):
     if not access_token:
         access_token = access_token_registration(olga_acceptor_url)
 
-    if access_token_authorization(access_token, olga_acceptor_url):
-        return get_access_token()
-
-    clean_unauthorized_access_token()
-    return get_acceptor_api_access_token(olga_acceptor_url)
+    return access_token_authorization(access_token, olga_acceptor_url)
