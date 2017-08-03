@@ -503,7 +503,7 @@ body .window-wrap div.info-wrapper table,
 .course-info .details .inner-wrapper table,
 .inner-wrapper .course-info-wrapper table {
     width: 100%;
-    border-collapse: separate;
+    border-collapse: separate !important;
     border: 1px solid #aaa;
     padding: inherit;
     border-spacing: auto;
