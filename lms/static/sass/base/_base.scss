@@ -507,6 +507,9 @@ body .window-wrap div.info-wrapper table,
     border: 1px solid #aaa;
     padding: inherit;
     border-spacing: auto;
+    word-break: normal;
+    table-layout: auto;
+    border-collapse: collapse;
 }
 .course-info .details .inner-wrapper .faq .response figure.image.align-left,
 body div.info-wrapper section.updates figure.image.align-left,
