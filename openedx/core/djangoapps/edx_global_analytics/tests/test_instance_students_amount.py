@@ -8,7 +8,6 @@ from mock import patch
 
 from django.test import TestCase
 from django.utils import timezone
-
 from django_countries.fields import Country
 
 from student.tests.factories import UserFactory
