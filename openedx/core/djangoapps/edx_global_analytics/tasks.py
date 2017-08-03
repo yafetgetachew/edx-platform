@@ -100,7 +100,7 @@ def collect_stats():
     access_token = get_acceptor_api_access_token(olga_acceptor_url)
 
     if not access_token:
-        logger.info('Access token was unsuccessfully authorize. Task will try to register a new token in next turn.')
+        logger.info('Access token was unsuccessfully authorized. Task will try to register a new token in next turn.')
         return
 
     # Data volume depends on server settings.

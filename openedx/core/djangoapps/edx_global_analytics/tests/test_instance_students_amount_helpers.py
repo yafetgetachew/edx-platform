@@ -6,7 +6,6 @@ from datetime import date
 
 from ddt import ddt, data, unpack
 from mock import patch
-
 from django.test import TestCase
 
 from openedx.core.djangoapps.edx_global_analytics.utils.utils import (

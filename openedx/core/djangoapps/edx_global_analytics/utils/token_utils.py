@@ -51,8 +51,8 @@ def access_token_authorization(access_token, olga_acceptor_url):
     """
     Verify that installation is allowed to send statistics to OLGA acceptor.
 
-    Acceptor can lost edX instance token (returns 401 status code), so edX instance won't be authorized.
-    Solved this problem with refreshed token.
+    If edX platform won't be authorized, method clear existing access token.
+    Task will try to register a new token in next turn.
     """
     token_authorization_request = requests.post(
         olga_acceptor_url + '/api/token/authorization/', data={'access_token': access_token, }
