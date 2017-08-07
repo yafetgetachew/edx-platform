@@ -12660,7 +12660,7 @@ msgstr "تسجيل الدخول"
 msgid "Welcome to {platform_name}"
 msgstr "مرحباً بك في  {platform_name} "
 
-#: raccoongang
+#: lms/templates/index.html
 msgid "Welcome to"
 msgstr "مرحباً بك في"
 
