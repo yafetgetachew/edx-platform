@@ -863,6 +863,7 @@ body .window-wrap div.info-wrapper table th,
 .inner-wrapper .course-info-wrapper table tr th {
     padding: 15px 7px;
     vertical-align: middle;
+    border: 1px solid #aaa;
 }
 body .window-wrap div.info-wrapper table,
 .xmodule_display.xmodule_HtmlModule table,
@@ -875,6 +876,15 @@ body .window-wrap div.info-wrapper table,
     border-spacing: auto;
     word-break: normal;
     table-layout: auto;
+    padding: 0;
+}
+body .window-wrap div.info-wrapper table *,
+.xmodule_display.xmodule_HtmlModule table *,
+.course-info .details .inner-wrapper table *,
+.inner-wrapper .course-info-wrapper table * {
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 .course-info .details .inner-wrapper .faq .response figure.image.align-left,
 body div.info-wrapper section.updates figure.image.align-left,
@@ -884,4 +894,10 @@ body .course-updates .update-list figure.image.align-left,
 figure.image.align-left {
     float: left;
     margin-right: 10px;
+}
+.inner-wrapper .course-info-wrapper table td:last-child,
+.inner-wrapper .course-info-wrapper table tr:last-child td,
+.course-info .details .inner-wrapper table tbody tr td,
+.course-info .details .inner-wrapper table tbody tr th {
+    border: 1px solid #aaa;
 }
