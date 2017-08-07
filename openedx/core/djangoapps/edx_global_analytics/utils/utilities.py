@@ -8,41 +8,22 @@ import logging
 from datetime import date, timedelta
 
 import requests
-from django.db.models import Count
-from django.db.models import Q
-from student.models import UserProfile
 
-from openedx.core.djangoapps.edx_global_analytics.utils.cache_utils import cache_instance_data
+from openedx.core.djangoapps.edx_global_analytics.utils.cache_utils import cache_instance_data, get_query_result
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-def fetch_instance_information(name_to_cache, query_type, activity_period, cache_timeout=None):
+def fetch_instance_information(query_type, activity_period, name_to_cache=None):
     """
     Calculate instance information corresponding for particular period as like as previous calendar day and
     statistics type as like as students per country after cached if needed.
     """
-    period_start, period_end = activity_period
+    if name_to_cache is not None:
+        return cache_instance_data(name_to_cache, query_type, activity_period)
 
-    statistics_queries = {
-        'active_students_amount': UserProfile.objects.exclude(
-            Q(user__last_login=None) | Q(user__is_active=False)
-        ).filter(user__last_login__gte=period_start, user__last_login__lt=period_end).count(),
-
-        'students_per_country': dict(
-            UserProfile.objects.exclude(
-                Q(user__last_login=None) | Q(user__is_active=False)
-            ).filter(user__last_login__gte=period_start, user__last_login__lt=period_end).values(
-                'country'
-            ).annotate(count=Count('country')).values_list('country', 'count')
-        )
-    }
-
-    if cache_timeout is not None:
-        return cache_instance_data(name_to_cache, statistics_queries[query_type], cache_timeout)
-
-    return statistics_queries[query_type]
+    return get_query_result(query_type, activity_period)
 
 
 def get_previous_day_start_and_end_dates():
