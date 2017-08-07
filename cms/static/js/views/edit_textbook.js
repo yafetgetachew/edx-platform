@@ -7,7 +7,7 @@ define(['js/views/baseview', 'underscore', 'jquery', 'js/views/edit_chapter', 'c
                     var chapters = this.model.get('chapters');
                     this.listenTo(chapters, 'add', this.addOne);
                     this.listenTo(chapters, 'reset', this.addAll);
-                    this.listenTo(chapters, 'all', this.render);
+                    //this.listenTo(chapters, 'all', this.render);
                 },
                 tagName: 'section',
                 className: 'textbook',
@@ -35,7 +35,7 @@ define(['js/views/baseview', 'underscore', 'jquery', 'js/views/edit_chapter', 'c
                 },
                 createChapter: function(e) {
                     if (e && e.preventDefault) { e.preventDefault(); }
-                    this.setValues();
+                    //this.setValues();
                     this.model.get('chapters').add([{}]);
                 },
                 setName: function(e) {
