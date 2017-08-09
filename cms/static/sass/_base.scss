@@ -911,3 +911,8 @@ body .xmodule_display.xmodule_HtmlModule ol li,
 body .xmodule_display.xmodule_HtmlModule ul li {
     margin-bottom: 0;
 }
+body .xmodule_display.xmodule_HtmlModule h5:after {
+  content: '';
+  display: table;
+  clear: both;
+}
