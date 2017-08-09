@@ -906,3 +906,8 @@ figure.image.align-left {
 .course-info .details .inner-wrapper table tbody tr th {
     border: 1px solid #aaa;
 }
+body .xmodule_display.xmodule_HtmlModule p,
+body .xmodule_display.xmodule_HtmlModule ol li,
+body .xmodule_display.xmodule_HtmlModule ul li {
+    margin-bottom: 0;
+}
