@@ -761,6 +761,11 @@ figure.image figcaption {
     &:last-child {
         margin-bottom: 0;
     }
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
 }
 .course-handouts .handouts-content h1,
 .course-info .details .inner-wrapper .faq .response h1,
