@@ -2166,11 +2166,6 @@ INSTALLED_APPS = (
 
     # global-statistics application
     'openedx.core.djangoapps.edx_global_analytics',
-
-    # Features
-    'openedx.features.course_bookmarks',
-    'openedx.features.course_experience',
-    'openedx.features.enterprise_support',
 )
 
 # Migrations which are not in the standard module "migrations"
