@@ -42,7 +42,9 @@ class HidePages(object):
         '/password_reset_confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/',
         '/honor',
         '/certificates/[0-9a-f]+',
-        '/admin/.*'
+        '/admin/.*',
+        '/404',
+        '/500'
     ]
     rexp = re.compile('^({})$'.format('|'.join(_paths)))
 
