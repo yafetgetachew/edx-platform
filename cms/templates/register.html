@@ -63,11 +63,13 @@ from django.core.urlresolvers import reverse
                 <input class="short" id="language" type="text" name="language" />
               </div>
             </li>
-
+            <%
+                lang = LANGUAGE_CODE in ['en', 'ru'] and '{}/'.format(LANGUAGE_CODE) or ''
+            %>
             <li class="field checkbox required" id="field-tos">
               <input id="tos" name="terms_of_service" type="checkbox" value="true" />
               <label for="tos">
-                ${_("I agree to the {a_start} Terms of Service {a_end}").format(a_start='<a data-rel="edx.org" href="{}">'.format(marketing_link('TOS')), a_end="</a>")}
+                ${_("I agree to the {a_start} Terms of Service {a_end}").format(a_start='<a data-rel="edx.org" target="_blank" href="{}">'.format('http://desk.ua/{}ugoda-koristuvacha'.format(lang)), a_end="</a>")}
               </label>
             </li>
           </ol>
