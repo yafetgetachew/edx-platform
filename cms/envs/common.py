@@ -603,6 +603,10 @@ PIPELINE_CSS = {
         ],
         'output_filename': 'css/cms-style-vendor-tinymce-skin.css',
     },
+    'style-vendor-highlight': {
+        'source_filenames': ['js/vendor/highlight/styles/zenburn.css'],
+        'output_filename': 'css/cms-style-vendor-highlight.css',
+    },
     'style-main-v1': {
         'source_filenames': [
             'css/studio-main-v1.css',

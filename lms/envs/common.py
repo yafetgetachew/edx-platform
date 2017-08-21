@@ -1404,6 +1404,7 @@ PIPELINE_CSS = {
         'source_filenames': [
             'css/vendor/font-awesome.css',
             'css/vendor/jquery.qtip.min.css',
+            'js/vendor/highlight/styles/zenburn.css'
         ],
         'output_filename': 'css/lms-style-vendor.css',
     },

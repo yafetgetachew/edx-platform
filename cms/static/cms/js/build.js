@@ -108,7 +108,7 @@
                 deps: [
                     'jquery', 'underscore', 'codemirror', 'tinymce',
                     'jquery.tinymce', 'jquery.qtip', 'jquery.scrollTo', 'jquery.flot',
-                    'jquery.cookie', 'utility'
+                    'jquery.cookie', 'utility', 'highlight'
                 ]
             }
         },

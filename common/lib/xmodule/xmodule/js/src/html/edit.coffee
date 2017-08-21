@@ -75,13 +75,40 @@ class @HTMLEditingDescriptor
         },
         # Disable visual aid on borderless table.
         visual: false,
-        plugins: "textcolor, link, image, codemirror",
+        plugins: "textcolor, link, image, codemirror, codesample",
         codemirror: {
           path: "#{baseUrl}/js/vendor"
         },
         image_advtab: true,
+        codesample_hljs_css: "#{baseUrl}/js/vendor/highlight/styles/zenburn.css",
+        codesample_languages: [
+          {text: 'Apache', value: 'apache'},
+          {text: 'Bash', value: 'bash'},
+          {text: 'C', value: 'c'},
+          {text: 'C#', value: 'cs'},
+          {text: 'C++', value: 'cpp'},
+          {text: 'CSS', value: 'css'},
+          {text: 'CoffeeScript', value: 'coffeescript'},
+          {text: 'Diff', value: 'diff'},
+          {text: 'HTML/XML', value: 'xml'},
+          {text: 'HTTP', value: 'http'},
+          {text: 'Ini', value: 'ini'},
+          {text: 'JSON', value: 'json'},
+          {text: 'Java', value: 'java'},
+          {text: 'JavaScript', value: 'javascript'},
+          {text: 'Makefile', value: 'makefile'},
+          {text: 'Markdown', value: 'markdown'},
+          {text: 'Nginx', value: 'nginx'},
+          {text: 'Objective-C', value: 'objectivec'},
+          {text: 'PHP', value: 'php'},
+          {text: 'Perl', value: 'perl'},
+          {text: 'Python', value: 'python'},
+          {text: 'Ruby', value: 'ruby'},
+          {text: 'SQL', value: 'sql'},
+          {text: 'Shell Session', value: 'shell'}
+        ],
         # We may want to add "styleselect" when we collect all styles used throughout the LMS
-        toolbar: "formatselect | fontselect | bold italic underline forecolor wrapAsCode | bullist numlist outdent indent blockquote | link unlink image | code",
+        toolbar: "codesample | formatselect | fontselect | bold italic underline forecolor wrapAsCode | bullist numlist outdent indent blockquote | link unlink image | code",
         block_formats: interpolate("%(paragraph)s=p;%(preformatted)s=pre;%(heading3)s=h3;%(heading4)s=h4;%(heading5)s=h5;%(heading6)s=h6", {
             paragraph: gettext("Paragraph"),
             preformatted: gettext("Preformatted"),
