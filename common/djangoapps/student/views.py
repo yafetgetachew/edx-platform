@@ -46,6 +46,7 @@ from social.exceptions import AuthException, AuthAlreadyAssociated
 
 from edxmako.shortcuts import render_to_response, render_to_string
 
+from util.course_utils import courses_language_filter
 from util.enterprise_helpers import data_sharing_consent_requirement_at_login
 from course_modes.models import CourseMode
 from shoppingcart.api import order_history
@@ -171,11 +172,13 @@ def index(request, extra_context=None, user=AnonymousUser()):
     extra_context is used to allow immediate display of certain modal windows, eg signup,
     as used by external_auth.
     """
+    filter_language = request.GET.get('filter_language')
+
     if extra_context is None:
         extra_context = {}
 
     programs_list = []
-    courses = get_courses(user)
+    courses = get_courses(user, language=filter_language)
 
     if configuration_helpers.get_value(
             "ENABLE_COURSE_SORTING_BY_START_DATE",
@@ -185,7 +188,7 @@ def index(request, extra_context=None, user=AnonymousUser()):
     else:
         courses = sort_by_announcement(courses)
 
-    context = {'courses': courses}
+    context = {'courses': courses, 'selected_language': filter_language}
 
     context['homepage_overlay_html'] = configuration_helpers.get_value('homepage_overlay_html')
 
@@ -586,6 +589,7 @@ def dashboard(request):
 
     """
     user = request.user
+    filter_language = request.GET.get('filter_language')
 
     platform_name = configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME)
     enable_verified_certificates = configuration_helpers.get_value(
@@ -613,6 +617,7 @@ def dashboard(request):
     # longer exist (because the course IDs have changed). Still, we don't delete those
     # enrollments, because it could have been a data push snafu.
     course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
+    course_enrollments = courses_language_filter(course_enrollments, language=filter_language)
 
     # sort the enrollment pairs by the enrollment date
     course_enrollments.sort(key=lambda x: x.created, reverse=True)

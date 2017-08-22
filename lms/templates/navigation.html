@@ -77,6 +77,19 @@ site_status_msg = get_site_status_msg(course_id)
         <span class="course-name">${display_name}</span></h2>
       % endif
 
+      % if settings.FEATURES.get('FILTER_LANGUAGES', False):
+        <ul>
+          <li class="nav-global-02">
+            <a href="">All courses</a>
+          </li>
+         % for lang, code in settings.FEATURES.get('FILTER_LANGUAGES', {}).items():
+          <li class="nav-global-02">
+            <a href="?filter_language=${lang}" class="btn${lang == selected_language and ' active' or ''}">${dict(settings.LANGUAGES).get(code)}</a>
+          </li>
+         % endfor
+        </ul>
+      % endif
+
       % if user.is_authenticated():
         <ol class="left nav-global list-inline authenticated">
         <%block name="navigation_global_links_authenticated">
