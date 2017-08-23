@@ -1194,10 +1194,6 @@ MIDDLEWARE_CLASSES = (
 
     # This must be last
     'openedx.core.djangoapps.site_configuration.middleware.SessionCookieDomainOverrideMiddleware',
-
-    # SSO Client for Drupal. https://github.com/raccoongang/edx-oauth-client/tree/drupal
-    # seamless authorization add middleware classes for SeamlessAuthorization (crossdomain cookie support needed)
-    "edx_oauth_client.middleware.SeamlessAuthorization",
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
