@@ -8,6 +8,9 @@
 
   <link rel="icon" type="image/x-icon" href="{% favicon_path %}" />
 
+  <link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css" />
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+
   {% with "js/i18n/"|add:LANGUAGE_CODE|add:"/djangojs.js" as i18njs_path %}
     <script type="text/javascript" src="{% static i18njs_path %}"></script>
   {% endwith %}
