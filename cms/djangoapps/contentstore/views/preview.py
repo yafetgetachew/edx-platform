@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 import logging
 from functools import partial
+import random
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
@@ -40,6 +41,8 @@ from .helpers import render_from_lms
 
 from contentstore.views.access import get_user_role
 from xblock_config.models import StudioConfig
+from student.models import AnonymousUserId
+
 
 __all__ = ['preview_handler']
 
@@ -103,8 +106,31 @@ class PreviewModuleSystem(ModuleSystem):  # pylint: disable=abstract-method
     # they are being rendered for preview (i.e. in Studio)
     is_author_mode = True
 
-    def __init__(self, **kwargs):
-        super(PreviewModuleSystem, self).__init__(**kwargs)
+    def __init__(self, anonymous_student_id=None, course_id=None, user=None, **kwargs):
+        if anonymous_student_id == 'student' and course_id and user:
+            qs = AnonymousUserId.objects.filter(
+                course_id=course_id,
+                user=user,
+                anonymous_user_id__startswith='preview'
+            )
+
+            if qs.exists():
+                anonymous_student_id = qs[0].anonymous_user_id
+            else:
+                _hash = random.getrandbits(128)
+                student_id = 'preview-%032x' % _hash
+                anonymous_student_id = student_id[:AnonymousUserId._meta.get_field('anonymous_user_id').max_length]
+                AnonymousUserId.objects.create(
+                    anonymous_user_id=anonymous_student_id,
+                    course_id=course_id,
+                    user=user
+                )
+        super(PreviewModuleSystem, self).__init__(
+            anonymous_student_id=anonymous_student_id,
+            course_id=course_id,
+            user=user,
+            **kwargs
+        )
 
     def handler_url(self, block, handler_name, suffix='', query='', thirdparty=False):
         return reverse('preview_handler', kwargs={

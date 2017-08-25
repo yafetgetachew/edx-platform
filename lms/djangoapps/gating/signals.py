@@ -22,7 +22,9 @@ def handle_score_changed(**kwargs):
     Returns:
         None
     """
-    course = modulestore().get_course(CourseKey.from_string(kwargs.get('course_id')))
-    block = modulestore().get_item(UsageKey.from_string(kwargs.get('usage_id')))
+    course_id = type(kwargs.get('course_id')) in (str, unicode) and CourseKey.from_string(kwargs.get('course_id')) or kwargs.get('course_id')
+    usage_id = type(kwargs.get('usage_id')) in (str, unicode) and UsageKey.from_string(kwargs.get('usage_id')) or kwargs.get('usage_id')
+    course = modulestore().get_course(course_id)
+    block = modulestore().get_item(usage_id)
     gating_api.evaluate_prerequisite(course, block, kwargs.get('user_id'))
     gating_api.evaluate_entrance_exam(course, block, kwargs.get('user_id'))
