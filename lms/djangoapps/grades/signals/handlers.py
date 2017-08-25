@@ -173,11 +173,13 @@ def enqueue_subsection_update(sender, **kwargs):  # pylint: disable=unused-argum
     enqueueing a subsection update operation to occur asynchronously.
     """
     _emit_problem_submitted_event(kwargs)
+    course_id = hasattr(kwargs['course_id'], 'to_deprecated_string') and kwargs['course_id'].to_deprecated_string() or kwargs['course_id']
+    usage_id = hasattr(kwargs['usage_id'], 'to_deprecated_string') and kwargs['usage_id'].to_deprecated_string() or kwargs['usage_id']
     result = recalculate_subsection_grade_v2.apply_async(
         kwargs=dict(
             user_id=kwargs['user_id'],
-            course_id=kwargs['course_id'],
-            usage_id=kwargs['usage_id'],
+            course_id=course_id,
+            usage_id=usage_id,
             only_if_higher=kwargs.get('only_if_higher'),
             expected_modified_time=to_timestamp(kwargs['modified']),
             score_deleted=kwargs.get('score_deleted', False),
