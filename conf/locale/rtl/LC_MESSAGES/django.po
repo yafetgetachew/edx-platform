@@ -22,11 +22,6 @@
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # EdX Team <info@edx.org>, 2017.
 # 
-# #-#-#-#-#  messages.po (EdX Studio)  #-#-#-#-#
-# edX translation file
-# Copyright (C) 2013 edX
-# This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2017 edX
@@ -37,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-06-14 17:18+0000\n"
-"PO-Revision-Date: 2017-06-14 17:18:13.469619\n"
+"POT-Creation-Date: 2017-08-28 15:12+0000\n"
+"PO-Revision-Date: 2017-08-28 15:12:45.621218\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -3192,6 +3187,14 @@ msgstr ""
 "فاث وهرهوعو لقشيث فاشف ش مثشقرثق وعسف ثشقر فخ قثذثهدث ذقثيهف هر فاث ذخعقسث, "
 "شس ش يثذهوشم زثفصثثر 0.0 شري 1.0. بخق ثطشوحمث, بخق 75%, ثرفثق 0.75."
 
+#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
+msgid "Zambian kwacha price"
+msgstr "ظشوزهشر نصشذاش حقهذث"
+
+#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
+msgid "Kenyan shilling price"
+msgstr "نثرغشر ساهممهرل حقهذث"
+
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "General"
 msgstr "لثرثقشم"
@@ -5481,6 +5484,12 @@ msgstr "فثطفزخخنس"
 #. "$".
 #. This string would look like this when all variables are in:
 #. "$500.00"
+#. Translators: currency_symbol is a symbol indicating type of currency, ex
+#. "$". currency_abbr is
+#. an abbreviation for the currency, ex "USD". This string would look like
+#. this
+#. when all variables are in:
+#. "$500.00 USD"
 #: lms/djangoapps/courseware/views.py
 #: lms/templates/shoppingcart/shopping_cart.html
 msgid "{currency_symbol}{price}"
@@ -12447,8 +12456,10 @@ msgid "Enrollment is Closed"
 msgstr "ثرقخمموثرف هس ذمخسثي"
 
 #: lms/templates/courseware/course_about.html
-msgid "Add {course_name} to Cart <span>({price} USD)</span>"
-msgstr "شيي {course_name} فخ ذشقف <span>({price} عسي)</span>"
+msgid ""
+"Add {course_name} to Cart <span>({price})</span> {price_zmw} {price_kes}"
+msgstr ""
+"شيي {course_name} فخ ذشقف <span>({price})</span> {price_zmw} {price_kes}"
 
 #: lms/templates/courseware/course_about.html
 msgid "Enroll in {course_name}"
@@ -16874,16 +16885,6 @@ msgstr "ذخيث اشس زثثر شححمهثي"
 msgid "TOTAL:"
 msgstr "فخفشم:"
 
-#. Translators: currency_symbol is a symbol indicating type of currency, ex
-#. "$". currency_abbr is
-#. an abbreviation for the currency, ex "USD". This string would look like
-#. this
-#. when all variables are in:
-#. "$500.00 USD"
-#: lms/templates/shoppingcart/shopping_cart.html
-msgid "{currency_symbol}{price} {currency_abbr}"
-msgstr "{currency_symbol}{price} {currency_abbr}"
-
 #: lms/templates/shoppingcart/shopping_cart.html
 msgid ""
 "After this purchase is complete, a receipt is generated with relative "
@@ -19925,6 +19926,10 @@ msgid "Enrollment End Time"
 msgstr "ثرقخمموثرف ثري فهوث"
 
 #: cms/templates/settings.html
+msgid "0.0"
+msgstr "0.0"
+
+#: cms/templates/settings.html
 msgid "These Dates Are Not Used When Promoting Your Course"
 msgstr "فاثسث يشفثس شقث رخف عسثي صاثر حقخوخفهرل غخعق ذخعقسث"
 
@@ -20736,10 +20741,6 @@ msgstr "ذخرفشذف عس"
 #: cms/templates/widgets/tabs-aggregator.html
 msgid "name"
 msgstr "رشوث"
-
-# empty
-msgid "This is a key string."
-msgstr "فاهس هس ش نثغ سفقهرل."
 
 #: wiki/admin.py wiki/models/article.py
 msgid "created"
