@@ -6,12 +6,21 @@
   from django.utils.translation import ugettext as _
   from django.core.urlresolvers import reverse
   from xmodule.tabs import StaticTab
-  from openedx.core.djangolib.js_utils import js_escaped_string
+  from openedx.core.djangolib.js_utils import js_escaped_string, dump_js_escaped_json
 %>
 <%block name="title">${_("Pages")}</%block>
 <%block name="bodyclass">is-signedin course view-static-pages</%block>
 
 <%block name="header_extras">
+<%
+    tinymce_conf = {
+        'images_upload_url': upload_asset_url
+    }
+    tinymce_conf.update(settings.TINYMCE_DEFAULT_CONFIG)
+%>
+<script type="text/javascript">
+    window.tiny_mce_conf = ${tinymce_conf | n, dump_js_escaped_json};
+</script>
 % for template_name in ["basic-modal", "modal-button", "edit-xblock-modal", "editor-mode-button"]:
 <script type="text/template" id="${template_name}-tpl">
     <%static:include path="js/${template_name}.underscore" />

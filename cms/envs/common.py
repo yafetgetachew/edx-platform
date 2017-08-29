@@ -1271,7 +1271,9 @@ TINYMCE_DEFAULT_CONFIG = {
          'Webdings=webdings;'
          'Wingdings=wingdings,zapf dingbats;'
          'Calibri=calibri,candara,segoe,optima,arial,sans-serif;'
-         'Cambria=cambria,georgia,palatino,times new roman,serif'
+         'Cambria=cambria,georgia,palatino,times new roman,serif;'
+         'Open Sans=\'Open Sans\',sans-serif;'
+         'Lato=\'Lato\',sans-serif;'
      ),
      'toolbar1': (
          'fontsizeselect fontselect bold italic forecolor backcolor | styleselect '
@@ -1281,6 +1283,7 @@ TINYMCE_DEFAULT_CONFIG = {
      'image_advtab': True,
      'content_css': [
          '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+         '//fonts.googleapis.com/css?family=Open+Sans:300,400,700',
          '//www.tinymce.com/css/codepen.min.css'
     ],
     'menubar': False,

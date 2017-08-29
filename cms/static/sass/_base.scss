@@ -761,6 +761,11 @@ figure.image figcaption {
     &:last-child {
         margin-bottom: 0;
     }
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
 }
 .course-handouts .handouts-content h1,
 .course-info .details .inner-wrapper .faq .response h1,
@@ -900,4 +905,14 @@ figure.image.align-left {
 .course-info .details .inner-wrapper table tbody tr td,
 .course-info .details .inner-wrapper table tbody tr th {
     border: 1px solid #aaa;
+}
+body .xmodule_display.xmodule_HtmlModule p,
+body .xmodule_display.xmodule_HtmlModule ol li,
+body .xmodule_display.xmodule_HtmlModule ul li {
+    margin-bottom: 0;
+}
+body .xmodule_display.xmodule_HtmlModule h5:after {
+  content: '';
+  display: table;
+  clear: both;
 }
