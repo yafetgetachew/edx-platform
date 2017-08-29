@@ -61,6 +61,8 @@ body .course-updates .update-list>li h1,
     -webkit-font-smoothing: auto;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: inherit;
+    border-bottom: none;
+    padding-bottom: none;
 }
 body .xmodule_display.xmodule_StaticTabModule h2,
 .course-info .details .inner-wrapper .faq .response h2,
@@ -144,6 +146,8 @@ body .course-updates .update-list>li h6,
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: inherit;
 }
+body .xmodule_display.xmodule_StaticTabModule table td,
+body .xmodule_display.xmodule_StaticTabModule table th,
 body .window-wrap div.info-wrapper table td,
 body .window-wrap div.info-wrapper table th,
 .xmodule_display.xmodule_HtmlModule table td,
@@ -170,6 +174,7 @@ body .window-wrap div.info-wrapper table,
     table-layout: auto;
     padding: 0;
 }
+body .xmodule_display.xmodule_StaticTabModule table *,
 body .window-wrap div.info-wrapper table *,
 .xmodule_display.xmodule_HtmlModule table *,
 .course-info .details .inner-wrapper table *,
