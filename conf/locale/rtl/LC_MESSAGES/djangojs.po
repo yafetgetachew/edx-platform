@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-04-05 06:22-0400\n"
-"PO-Revision-Date: 2017-04-05 10:22:49.876530\n"
+"POT-Creation-Date: 2017-08-29 12:59+0000\n"
+"PO-Revision-Date: 2017-08-29 13:00:29.161115\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -7643,14 +7643,6 @@ msgid "Create a new account"
 msgstr "ذقثشفث ش رثص شذذخعرف"
 
 #: lms/templates/student_account/register.underscore
-msgid "Create your account"
-msgstr "ذقثشفث غخعق شذذخعرف"
-
-#: lms/templates/student_account/register.underscore
-msgid "Required field"
-msgstr "قثضعهقثي بهثمي"
-
-#: lms/templates/student_account/register.underscore
 msgid "Already have an account?"
 msgstr "شمقثشيغ اشدث شر شذذخعرف?"
 
@@ -9630,6 +9622,11 @@ msgstr "وشقنثفهرل سمعل"
 #: cms/templates/js/programs/program_creator_form.underscore
 msgid "Slug used to generate links to the marketing site."
 msgstr "سمعل عسثي فخ لثرثقشفث مهرنس فخ فاث وشقنثفهرل سهفث."
+
+#: cms/templates/js/programs/program_creator_form.underscore
+#: cms/templates/js/programs/program_details.underscore
+msgid "Featured"
+msgstr "بثشفعقثي"
 
 #: cms/templates/js/programs/program_details.underscore
 msgid "Edit the program title"

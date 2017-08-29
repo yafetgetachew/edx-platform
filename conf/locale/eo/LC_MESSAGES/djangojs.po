@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-04-05 06:22-0400\n"
-"PO-Revision-Date: 2017-04-05 10:22:49.876530\n"
+"POT-Creation-Date: 2017-08-29 12:59+0000\n"
+"PO-Revision-Date: 2017-08-29 13:00:29.161115\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -8505,14 +8505,6 @@ msgid "Create a new account"
 msgstr "Çréäté ä néw äççöünt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
 
 #: lms/templates/student_account/register.underscore
-msgid "Create your account"
-msgstr "Çréäté ýöür äççöünt Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: lms/templates/student_account/register.underscore
-msgid "Required field"
-msgstr "Réqüïréd fïéld Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
-
-#: lms/templates/student_account/register.underscore
 msgid "Already have an account?"
 msgstr "Àlréädý hävé än äççöünt? Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
 
@@ -10763,6 +10755,11 @@ msgid "Slug used to generate links to the marketing site."
 msgstr ""
 "Slüg üséd tö généräté lïnks tö thé märkétïng sïté. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
 "αмєт, ¢σηѕє¢тєтυя α#"
+
+#: cms/templates/js/programs/program_creator_form.underscore
+#: cms/templates/js/programs/program_details.underscore
+msgid "Featured"
+msgstr "Féätüréd Ⱡ'σяєм ιρѕυм ∂#"
 
 #: cms/templates/js/programs/program_details.underscore
 msgid "Edit the program title"

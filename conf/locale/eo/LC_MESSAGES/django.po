@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-04-05 06:22-0400\n"
-"PO-Revision-Date: 2017-04-05 10:22:49.567755\n"
+"POT-Creation-Date: 2017-08-29 13:00+0000\n"
+"PO-Revision-Date: 2017-08-29 13:00:28.533293\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -118,6 +118,26 @@ msgstr "Stätüs Ⱡ'σяєм ιρѕυ#"
 msgid "Pending"
 msgstr "Péndïng Ⱡ'σяєм ιρѕυм #"
 
+#: common/djangoapps/course_category/models.py
+msgid "Category Name"
+msgstr "Çätégörý Nämé Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
+
+#: common/djangoapps/course_category/models.py cms/templates/settings.html
+msgid "Course Category"
+msgstr "Çöürsé Çätégörý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
+
+#: common/djangoapps/course_category/models.py
+msgid "Course Categories"
+msgstr "Çöürsé Çätégörïés Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: common/djangoapps/course_category/models.py
+#: common/djangoapps/course_modes/models.py common/lib/xmodule/xmodule/tabs.py
+#: lms/djangoapps/courseware/tabs.py lms/djangoapps/courseware/views/views.py
+#: lms/djangoapps/shoppingcart/reports.py cms/templates/widgets/header.html
+#: lms/templates/courseware/courseware.html
+msgid "Course"
+msgstr "Çöürsé Ⱡ'σяєм ιρѕυ#"
+
 #: common/djangoapps/course_modes/admin.py
 #: common/djangoapps/course_modes/models.py
 #: common/lib/xmodule/xmodule/library_content_module.py
@@ -194,13 +214,6 @@ msgstr ""
 #: common/djangoapps/course_modes/helpers.py
 msgid "Professional Ed"
 msgstr "Pröféssïönäl Éd Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
-#: common/djangoapps/course_modes/models.py common/lib/xmodule/xmodule/tabs.py
-#: lms/djangoapps/courseware/tabs.py lms/djangoapps/courseware/views/views.py
-#: lms/djangoapps/shoppingcart/reports.py cms/templates/widgets/header.html
-#: lms/templates/courseware/courseware.html
-msgid "Course"
-msgstr "Çöürsé Ⱡ'σяєм ιρѕυ#"
 
 #: common/djangoapps/course_modes/models.py
 #: common/lib/xmodule/xmodule/annotatable_module.py
@@ -870,6 +883,12 @@ msgstr ""
 #: common/djangoapps/student/views.py lms/templates/provider_login.html
 msgid "Email or password is incorrect."
 msgstr "Émäïl ör pässwörd ïs ïnçörréçt. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
+
+#: common/djangoapps/student/views.py
+msgid "You do not have a \"Course Creator\" privileges."
+msgstr ""
+"Ýöü dö nöt hävé ä \"Çöürsé Çréätör\" prïvïlégés. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт "
+"αмєт, ¢σηѕє¢тєтυя α#"
 
 #: common/djangoapps/student/views.py
 msgid ""
@@ -3845,6 +3864,16 @@ msgstr ""
 "döçüméntätïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, "
 "ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂ι∂υηт υт łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм "
 "α∂ мιηιм νєηιαм, qυιѕ ησѕ#"
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Featured Course"
+msgstr "Féätüréd Çöürsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Show course in \"Featured Courses\" section."
+msgstr ""
+"Shöw çöürsé ïn \"Féätüréd Çöürsés\" séçtïön. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
+"¢σηѕє¢тєтυя #"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "General"
@@ -10997,8 +11026,8 @@ msgstr ""
 "ön öthér ärtïçlés whïçh mäý ör mäý nöt ßé ä gööd thïng. Ⱡ#"
 
 #: lms/templates/wiki/plugins/attachments/index.html
-#: lms/templates/dashboard.html lms/templates/index.html
-#: lms/templates/api_admin/catalogs/search.html
+#: lms/templates/category_list.html lms/templates/dashboard.html
+#: lms/templates/index.html lms/templates/api_admin/catalogs/search.html
 #: lms/templates/courseware/courses.html
 #: lms/templates/courseware/courseware.html
 #: lms/templates/edxnotes/edxnotes.html
@@ -12730,8 +12759,8 @@ msgstr "Örgänïzätïön: Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 msgid "Course Number:"
 msgstr "Çöürsé Nümßér: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
 
-#: cms/templates/index.html lms/templates/navigation.html
-#: lms/templates/sysadmin_dashboard.html
+#: cms/templates/index.html lms/templates/category.html
+#: lms/templates/navigation.html lms/templates/sysadmin_dashboard.html
 #: lms/templates/sysadmin_dashboard_gitlogs.html
 #: lms/templates/courseware/courses.html
 #: themes/edx.org/lms/templates/header.html
@@ -12740,7 +12769,11 @@ msgid "Courses"
 msgstr "Çöürsés Ⱡ'σяєм ιρѕυм #"
 
 #: cms/templates/index.html cms/templates/widgets/header.html
-#: lms/templates/navigation.html lms/templates/learner_dashboard/programs.html
+#: lms/templates/navigation.html
+#: lms/templates/learner_dashboard/explore_programs.html
+#: lms/templates/learner_dashboard/programs.html
+#: lms/templates/learner_dashboard/programs_error.html
+#: lms/templates/program_marketing/explore_programs.html
 #: themes/edx.org/lms/templates/header.html
 #: themes/red-theme/lms/templates/header.html
 msgid "Programs"
@@ -13031,6 +13064,13 @@ msgstr "Àddïtïönäl Ìnfö: Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#
 msgid "Feedback from user"
 msgstr "Féédßäçk fröm üsér Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
 
+#: common/templates/program_marketing/marketing_page.html
+#: lms/templates/learner_dashboard/program_details.html
+#: lms/templates/learner_dashboard/program_details0.html
+#: lms/templates/program_marketing/marketing_page.html
+msgid "Program Details"
+msgstr "Prögräm Détäïls Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
+
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 #: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion - {course_number}"
@@ -13108,6 +13148,20 @@ msgstr "Böökmärkéd Ⱡ'σяєм ιρѕυм ∂σłσ#"
 #: lms/templates/bookmark_button.html
 msgid "Bookmark this page"
 msgstr "Böökmärk thïs pägé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт#"
+
+#: lms/templates/category.html lms/templates/courseware/courses.html
+msgid "List of Courses"
+msgstr "Lïst öf Çöürsés Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
+
+#: lms/templates/category_list.html lms/templates/navigation.html
+msgid "Course catalog"
+msgstr "Çöürsé çätälög Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт#"
+
+#: lms/templates/category_list.html lms/templates/index.html
+#: lms/templates/courseware/courses.html
+#: themes/stanford-style/lms/templates/index.html
+msgid "Search for a course"
+msgstr "Séärçh för ä çöürsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
 
 #: lms/templates/conditional_module.html
 msgid "You do not have access to this dependency module."
@@ -13535,11 +13589,6 @@ msgid "It works! This is the default homepage for this Open edX instance."
 msgstr ""
 "Ìt wörks! Thïs ïs thé défäült hömépägé för thïs Öpén édX ïnstänçé. Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: lms/templates/index.html lms/templates/courseware/courses.html
-#: themes/stanford-style/lms/templates/index.html
-msgid "Search for a course"
-msgstr "Séärçh för ä çöürsé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
 
 #: lms/templates/invalid_email_key.html
 msgid "Invalid email change key"
@@ -16569,10 +16618,6 @@ msgstr "Shöw Ⱡ'σяєм ι#"
 #: lms/templates/courseware/course_updates.html
 msgid "Show Earlier Course Updates"
 msgstr "Shöw Éärlïér Çöürsé Ûpdätés Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє#"
-
-#: lms/templates/courseware/courses.html
-msgid "List of Courses"
-msgstr "Lïst öf Çöürsés Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
 
 #: lms/templates/courseware/courses.html
 msgid "Refine Your Search"
@@ -20680,10 +20725,6 @@ msgstr ""
 "Shöw thé stätüs för thé täsks thät ýöü süßmïttéd för thïs prößlém. Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
 
-#: lms/templates/learner_dashboard/program_details.html
-msgid "Program Details"
-msgstr "Prögräm Détäïls Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
-
 #: lms/templates/modal/_modal-settings-language.html
 msgid "Change Preferred Language"
 msgstr "Çhängé Préférréd Längüägé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
@@ -20915,6 +20956,10 @@ msgstr "Kéép Fläg Ⱡ'σяєм ιρѕυм ∂σł#"
 #: lms/templates/peer_grading/peer_grading_problem.html
 msgid "Go Back"
 msgstr "Gö Bäçk Ⱡ'σяєм ιρѕυм #"
+
+#: lms/templates/program_marketing/curriculum.html
+msgid "Microsoft"
+msgstr "Mïçrösöft Ⱡ'σяєм ιρѕυм ∂σł#"
 
 #: lms/templates/provider/authorize.html
 msgid ""
@@ -25162,6 +25207,15 @@ msgstr ""
 #: cms/templates/settings.html
 msgid "Invite your students"
 msgstr "Ìnvïté ýöür stüdénts Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
+
+#: cms/templates/settings.html
+msgid "You can add course to the category"
+msgstr ""
+"Ýöü çän ädd çöürsé tö thé çätégörý Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєт#"
+
+#: cms/templates/settings.html
+msgid "Featured."
+msgstr "Féätüréd. Ⱡ'σяєм ιρѕυм ∂σł#"
 
 #: cms/templates/settings.html
 msgid "Promoting Your Course with {platform_name}"

@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-04-05 06:22-0400\n"
-"PO-Revision-Date: 2017-04-05 10:22:49.567755\n"
+"POT-Creation-Date: 2017-08-29 13:00+0000\n"
+"PO-Revision-Date: 2017-08-29 13:00:28.533293\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -117,6 +117,26 @@ msgstr ""
 msgid "Pending"
 msgstr ""
 
+#: common/djangoapps/course_category/models.py
+msgid "Category Name"
+msgstr ""
+
+#: common/djangoapps/course_category/models.py cms/templates/settings.html
+msgid "Course Category"
+msgstr ""
+
+#: common/djangoapps/course_category/models.py
+msgid "Course Categories"
+msgstr ""
+
+#: common/djangoapps/course_category/models.py
+#: common/djangoapps/course_modes/models.py common/lib/xmodule/xmodule/tabs.py
+#: lms/djangoapps/courseware/tabs.py lms/djangoapps/courseware/views/views.py
+#: lms/djangoapps/shoppingcart/reports.py cms/templates/widgets/header.html
+#: lms/templates/courseware/courseware.html
+msgid "Course"
+msgstr ""
+
 #: common/djangoapps/course_modes/admin.py
 #: common/djangoapps/course_modes/models.py
 #: common/lib/xmodule/xmodule/library_content_module.py
@@ -178,13 +198,6 @@ msgstr ""
 
 #: common/djangoapps/course_modes/helpers.py
 msgid "Professional Ed"
-msgstr ""
-
-#: common/djangoapps/course_modes/models.py common/lib/xmodule/xmodule/tabs.py
-#: lms/djangoapps/courseware/tabs.py lms/djangoapps/courseware/views/views.py
-#: lms/djangoapps/shoppingcart/reports.py cms/templates/widgets/header.html
-#: lms/templates/courseware/courseware.html
-msgid "Course"
 msgstr ""
 
 #: common/djangoapps/course_modes/models.py
@@ -712,6 +725,10 @@ msgstr ""
 
 #: common/djangoapps/student/views.py lms/templates/provider_login.html
 msgid "Email or password is incorrect."
+msgstr ""
+
+#: common/djangoapps/student/views.py
+msgid "You do not have a \"Course Creator\" privileges."
 msgstr ""
 
 #: common/djangoapps/student/views.py
@@ -3012,6 +3029,14 @@ msgid ""
 "for use in courses due to non-compliance with one or more of the base "
 "requirements, such as testing, accessibility, internationalization, and "
 "documentation."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Featured Course"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Show course in \"Featured Courses\" section."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
@@ -8546,8 +8571,8 @@ msgid ""
 msgstr ""
 
 #: lms/templates/wiki/plugins/attachments/index.html
-#: lms/templates/dashboard.html lms/templates/index.html
-#: lms/templates/api_admin/catalogs/search.html
+#: lms/templates/category_list.html lms/templates/dashboard.html
+#: lms/templates/index.html lms/templates/api_admin/catalogs/search.html
 #: lms/templates/courseware/courses.html
 #: lms/templates/courseware/courseware.html
 #: lms/templates/edxnotes/edxnotes.html
@@ -9929,8 +9954,8 @@ msgstr ""
 msgid "Course Number:"
 msgstr ""
 
-#: cms/templates/index.html lms/templates/navigation.html
-#: lms/templates/sysadmin_dashboard.html
+#: cms/templates/index.html lms/templates/category.html
+#: lms/templates/navigation.html lms/templates/sysadmin_dashboard.html
 #: lms/templates/sysadmin_dashboard_gitlogs.html
 #: lms/templates/courseware/courses.html
 #: themes/edx.org/lms/templates/header.html
@@ -9939,7 +9964,11 @@ msgid "Courses"
 msgstr ""
 
 #: cms/templates/index.html cms/templates/widgets/header.html
-#: lms/templates/navigation.html lms/templates/learner_dashboard/programs.html
+#: lms/templates/navigation.html
+#: lms/templates/learner_dashboard/explore_programs.html
+#: lms/templates/learner_dashboard/programs.html
+#: lms/templates/learner_dashboard/programs_error.html
+#: lms/templates/program_marketing/explore_programs.html
 #: themes/edx.org/lms/templates/header.html
 #: themes/red-theme/lms/templates/header.html
 msgid "Programs"
@@ -10210,6 +10239,13 @@ msgstr ""
 msgid "Feedback from user"
 msgstr ""
 
+#: common/templates/program_marketing/marketing_page.html
+#: lms/templates/learner_dashboard/program_details.html
+#: lms/templates/learner_dashboard/program_details0.html
+#: lms/templates/program_marketing/marketing_page.html
+msgid "Program Details"
+msgstr ""
+
 #: lms/djangoapps/discussion/templates/discussion/discussion_board.html
 #: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
 msgid "Discussion - {course_number}"
@@ -10284,6 +10320,20 @@ msgstr ""
 
 #: lms/templates/bookmark_button.html
 msgid "Bookmark this page"
+msgstr ""
+
+#: lms/templates/category.html lms/templates/courseware/courses.html
+msgid "List of Courses"
+msgstr ""
+
+#: lms/templates/category_list.html lms/templates/navigation.html
+msgid "Course catalog"
+msgstr ""
+
+#: lms/templates/category_list.html lms/templates/index.html
+#: lms/templates/courseware/courses.html
+#: themes/stanford-style/lms/templates/index.html
+msgid "Search for a course"
 msgstr ""
 
 #: lms/templates/conditional_module.html
@@ -10636,11 +10686,6 @@ msgstr ""
 #. untranslated. See http://open.edx.org for more information.
 #: lms/templates/index.html
 msgid "It works! This is the default homepage for this Open edX instance."
-msgstr ""
-
-#: lms/templates/index.html lms/templates/courseware/courses.html
-#: themes/stanford-style/lms/templates/index.html
-msgid "Search for a course"
 msgstr ""
 
 #: lms/templates/invalid_email_key.html
@@ -12976,10 +13021,6 @@ msgstr ""
 
 #: lms/templates/courseware/course_updates.html
 msgid "Show Earlier Course Updates"
-msgstr ""
-
-#: lms/templates/courseware/courses.html
-msgid "List of Courses"
 msgstr ""
 
 #: lms/templates/courseware/courses.html
@@ -16116,10 +16157,6 @@ msgstr ""
 msgid "Show the status for the tasks that you submitted for this problem."
 msgstr ""
 
-#: lms/templates/learner_dashboard/program_details.html
-msgid "Program Details"
-msgstr ""
-
 #: lms/templates/modal/_modal-settings-language.html
 msgid "Change Preferred Language"
 msgstr ""
@@ -16309,6 +16346,10 @@ msgstr ""
 
 #: lms/templates/peer_grading/peer_grading_problem.html
 msgid "Go Back"
+msgstr ""
+
+#: lms/templates/program_marketing/curriculum.html
+msgid "Microsoft"
 msgstr ""
 
 #: lms/templates/provider/authorize.html
@@ -19447,6 +19488,14 @@ msgid "Invite your students"
 msgstr ""
 
 #: cms/templates/settings.html
+msgid "You can add course to the category"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "Featured."
+msgstr ""
+
+#: cms/templates/settings.html
 msgid "Promoting Your Course with {platform_name}"
 msgstr ""
 
@@ -20989,10 +21038,3 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr ""
-
-msgid ""
-"The name that will identify you in your courses - {bold_start}(cannot be "
-"changed later){bold_end}"
-msgstr ""
-"Will be shown in any discussions or forums you participate in "
-"{bold_start}(cannot be changed later){bold_end}"
