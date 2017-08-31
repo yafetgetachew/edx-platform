@@ -909,3 +909,21 @@ LOCALESET_FROM_REQUEST = ENV_TOKENS.get('LOCALESET_FROM_REQUEST', {"en": "en_US.
 SEARCH_SKIP_ENROLLMENT_START_DATE_FILTERING = FEATURES.get("SEARCH_SKIP_ENROLLMENT_START_DATE_FILTERING", True)
 #### RaccoonGang ####
 
+LOGIN_URL = "/openid/openid/KeyCloak"
+LOGOUT_URL = "/openid/logout"
+
+OIDC_PROVIDERS = {
+    'KeyCloak': {
+        'srv_discovery_url': ENV_TOKENS.get('OIDC_SRV_DISCOVERY_URL'),
+        'behaviour': {
+            'response_type': 'code',
+            'scope': ['openid', 'profile', 'email'],
+        },
+        'client_registration': {
+            'client_id': ENV_TOKENS.get('OIDC_CLIENT_ID'),
+            'client_secret': ENV_TOKENS.get('OIDC_CLIENT_SECRET'),
+            'redirect_uris': ['{}/openid/callback/login/'.format(LMS_ROOT_URL)],
+            'post_logout_redirect_uris': ['{}/openid/callback/logout/'.format(LMS_ROOT_URL)],
+       },
+   }
+}
