@@ -104,7 +104,6 @@ urlpatterns = (
     # URLs for API access management
     url(r'^api-admin/', include('openedx.core.djangoapps.api_admin.urls', namespace='api_admin')),
     url(r'openid/', include('djangooidc.urls')),
-    url(r'^k_logout', 'djangooidc.views.k_logout')
 )
 
 urlpatterns += (
