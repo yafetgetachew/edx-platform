@@ -10,4 +10,3 @@
 -e common/lib/xmodule
 
 -e openedx/core/lib/xblock_builtin/xblock_discussion
--e git+git@github.com:raccoongang/edx_scorm_xblock.git#egg=edx_xblock_scorm
