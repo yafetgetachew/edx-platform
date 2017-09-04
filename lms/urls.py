@@ -128,6 +128,12 @@ urlpatterns += (
 #         url(r'^register$', 'student.views.register_user', name="register_user"),
 #     )
 
+
+urlpatterns += (
+    url(r'^register$', 'student_account.views.login_and_registration_form',
+        {'initial_mode': 'register'}, name="register_user"),
+)
+
 if settings.FEATURES["ENABLE_MOBILE_REST_API"]:
     urlpatterns += (
         url(r'^api/mobile/v0.5/', include('mobile_api.urls')),
