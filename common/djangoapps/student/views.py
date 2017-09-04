@@ -26,7 +26,8 @@ from django.core import mail
 from django.core.urlresolvers import reverse, NoReverseMatch, reverse_lazy
 from django.core.validators import validate_email, ValidationError
 from django.db import IntegrityError, transaction
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseServerError, Http404
+from django.http import (HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseServerError, Http404,
+                         HttpResponseRedirect)
 from django.shortcuts import redirect
 from django.utils.encoding import force_bytes, force_text
 from django.utils.translation import ungettext
@@ -585,6 +586,9 @@ def dashboard(request):
         The dashboard response.
 
     """
+    if settings.MAGENTO_URL:
+        return HttpResponseRedirect('{}'.format(settings.MAGENTO_URL))
+
     user = request.user
 
     platform_name = configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME)

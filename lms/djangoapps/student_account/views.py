@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse, resolve
 from django.http import (
-    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest
+    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest, HttpResponseRedirect
 )
 from django.shortcuts import redirect
 from django.utils.translation import ugettext as _
@@ -382,7 +382,8 @@ def account_settings(request):
         GET /account/settings
 
     """
-    return render_to_response('student_account/account_settings.html', account_settings_context(request))
+    return HttpResponseRedirect(settings.OIDC_ACCOUNT_URL)
+    # return render_to_response('student_account/account_settings.html', account_settings_context(request))
 
 
 @login_required
