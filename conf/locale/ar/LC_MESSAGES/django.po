@@ -16189,8 +16189,7 @@ msgid ""
 "You have been invited to join {course_name} at {site_name} by a member of "
 "the course staff."
 msgstr ""
-"لقد تم دعوتك للانضمام للمساق {course_name} على الموقع {site_name} من قبل أحد"
-" أعضاء طاقم المساق. "
+"من أحد المشرفين على الدورة {course_name} على {site_name} أنت مدعو للمشاركة."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "To access the course visit {course_url} and login."
@@ -16209,17 +16208,14 @@ msgid ""
 "the registration form making sure to use {email_address} in the E-mail "
 "field."
 msgstr ""
-"لإتمام عملية التسجيل الخاصة بك، يرجى زيارة الصفحة {registration_url} وتعبئة "
-"بيانات نموذج التسجيل مع التأكد من استخدام {email_address} في حقل البريد "
-"الإلكتروني."
+"لإنهاء التسجيل، يُرجى زيارة {email_address} وملء إستمارة التسجيل مُتأكداً من إستخدام {registration_url}  في حقل البريد الإلكتروني. "
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "Once you have registered and activated your account, you will see "
 "{course_name} listed on your dashboard."
 msgstr ""
-"بمجرد قيامك بالتسجيل وبتفعيل حسابك، ستتمكن من رؤية المساق {course_name} على "
-"لوحة المعلومات الخاصة بك."
+"عندما تنتهي من التسجيل وتفعيل حسابك، سترى {course_name} في لوحة المفاتيح."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -16235,7 +16231,7 @@ msgstr "يمكنك بعدها التسجيل بـ {course_name}."
 
 #: lms/templates/emails/enroll_email_allowedsubject.txt
 msgid "You have been invited to register for {course_name}"
-msgstr "لقد تم دعوتك للتسجيل في مساق {course_name}"
+msgstr "أنت مدعو للتسجيل في {course_name}"
 
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 msgid ""
@@ -16250,8 +16246,7 @@ msgstr ""
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "This email was automatically sent from {site_name} to {full_name}"
 msgstr ""
-"تم إرسال هذه الرسالة الإلكترونية بشكلٍ تلقائيٍ من الموقع {site_name} إلى "
-"{full_name}"
+"تم إرسال هذه الرسالة الإلكترونية تلقائياً من {site_name} الى {full_name} "
 
 #: lms/templates/emails/enroll_email_enrolledsubject.txt
 msgid "You have been enrolled in {course_name}"
@@ -24056,3 +24051,21 @@ msgstr "نجاح الطالب"
 
 msgid "FIND COURSES"
 msgstr "البحث عن الدورات التدريبية"
+
+#: lms/templates/emails/activation_email.txt
+msgid "Thank you for creating an account with {platform_name}!"
+msgstr "شكراً لفتح حساب مع {platform_name}!"
+
+#: lms/templates/emails/activation_email_subject.txt
+msgid "Activate Your {platform_name} Account"
+msgstr "فعِل حسابك في برنامج المفكرين الشباب "
+
+#: lms/templates/emails/activation_email.txt
+msgid ""
+"There's just one more step before you can enroll in a course: you need to "
+"activate your {platform_name} account. To activate your account, click the "
+"following link. If that doesn't work, copy and paste the link into your "
+"browser's address bar."
+msgstr ""
+"هناك خطوه إيضافية قبل أن تتمكن من التسجيل في الدورة: كي عليك أن تُفعل حسابك {platform_name}. "
+"لتُفل حسابك، أُنقر على الرابط التالي. إذا لم ينجح في ذلك، عليك أن تنسخ وتلصق الرابط في شريط البحث."
