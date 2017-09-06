@@ -7612,7 +7612,7 @@ msgstr "Momentan nicht verfügbar"
 
 #: lms/templates/learner_dashboard/empty_programs_list.underscore
 msgid "You are not enrolled in any programs yet."
-msgstr ""
+msgstr "Sie sind noch in keinem Programm eingeschrieben."
 
 #: lms/templates/learner_dashboard/empty_programs_list.underscore
 msgid "Explore Programs"

@@ -12292,11 +12292,6 @@ msgid "Already registered?"
 msgstr "Bereits registriert?"
 
 #: lms/templates/register-sidebar.html
-#: themes/stanford-style/lms/templates/register-sidebar.html
-msgid "Log in"
-msgstr "Anmelden"
-
-#: lms/templates/register-sidebar.html
 msgid "Welcome to {platform_name}"
 msgstr "Willkommen bei {platform_name}"
 
@@ -12347,10 +12342,6 @@ msgstr "Registrieren für {platform_name}"
 #: lms/templates/register.html
 msgid "Create My {platform_name} Account"
 msgstr "Mein {platform_name} Konto erstellen"
-
-#: lms/templates/register.html
-msgid "Welcome!"
-msgstr "Willkommen!"
 
 #: lms/templates/register.html
 msgid "Register below to create your {platform_name} account"
@@ -23004,3 +22995,124 @@ msgid ""
 msgstr ""
 "Eine neue Revision wurde erzeugt: Zusammenführung von Revision #%(r1)d und "
 "Revision #%(r2)d"
+
+#: themes/etc-ficus/templates/courseware/course_about.html
+msgid "ABOUT THIS COURSE"
+msgstr "Über dieses Seminar"
+
+#: themes/etc-ficus/templates/courseware/course_about.html
+msgid "PREREQUISITES"
+msgstr "Voraussetzungen"
+
+#: themes/etc-ficus/templates/courseware/course_about.html
+msgid "COURSE STAFF"
+msgstr "Seminar Personal"
+
+
+#: lms/templates/category_list.html
+#: themes/etc-ficus/templates/navigation.html
+msgid "Course Catalog"
+msgstr "Seminarangebot"
+
+#: lms/templates/category_list.html
+msgid "Browse our catalog of available courses"
+msgstr "Durchstöbern Sie unser Seminarangebot"
+
+#: lms/templates/category_list.html
+msgid "Select a course category below for more details."
+msgstr "Wählen Sie eine Seminarkategorie für mehr Details"
+
+#: ../themes/etc-ficus/lms/templates/index.html
+msgid "Welcome to TrainIT!"
+msgstr "Willkommen bei TrainIT"
+
+#: ../themes/etc-ficus/lms/templates/index.html
+msgid "your first choice for latest technology training"
+msgstr "Ihre erste Wahl für neue Technologie-Trainings"
+
+#: ../themes/etc-ficus/lms/templates/index.html
+msgid "Featured courses"
+msgstr "Seminarempfehlungen"
+
+#: ../themes/etc-ficus/lms/templates/index.html
+msgid "View all courses"
+msgstr "Alle Seminare"
+
+#: ../themes/etc-ficus/lms/templates/index.html
+msgid "View all tracks"
+msgstr "Details"
+
+#: themes/etc-ficus/templates/navigation.html
+#: themes/etc-ficus/templates/student_account/login_and_register.html
+msgid "Log in"
+msgstr "Anmelden"
+
+#: themes/etc-ficus/templates/navigation.html
+#: themes/etc-ficus/templates/student_account/login_and_register.html
+msgid "Sign up"
+msgstr "Registrieren"
+
+#: themes/etc-ficus/templates/student_account/login_and_register.html
+msgid "Welcome!"
+msgstr "Willkommen!"
+
+#: themes/etc-ficus/templates/student_account/login_and_register.html
+msgid "Please log in to access your account and courses. "
+msgstr "Bitte melden Sie sich an, um zu den Seminaren zu gelangen."
+
+#: ../lms/templates/student_account/login_and_register.html
+#: ../lms/templates/student_account/login_and_register.html
+msgid "Need help? View our "
+msgstr " "
+
+#: ../lms/templates/student_account/login_and_register.html
+msgid "help section"
+msgstr " "
+
+#: ../lms/templates/student_account/login_and_register.html
+#: ../lms/templates/student_account/login_and_register.html
+msgid " for answers to commonly asked questions."
+msgstr " "
+
+#: ../lms/templates/student_account/login_and_register.html
+msgid "Not Enrolled? "
+msgstr "Sie haben noch keine Zugangsdaten? Hier können Sie sich "
+
+#: ../lms/templates/student_account/login_and_register.html
+msgid " for TrainIT today!"
+msgstr "!"
+
+#: ../lms/templates/student_account/login_and_register.html
+msgid "Please register below to create your TrainIT account. Registering with TrainIT gives you access to all of our current and future free courses."
+msgstr "Um unser online Seminarangebot nutzen zu können, füllen Sie bitte die nachfolgenden Felder wahrheitsgemäß aus."
+
+#: ../lms/templates/student_account/login_and_register.html
+msgid "Not ready to take a course just yet? Registering puts you on our mailing list - we will update you as courses are added."
+msgstr " "
+
+#: ../lms/templates/student_account/login_and_register.html
+msgid "Already registered? "
+msgstr "Sie sind schon registriert? Hier geht es zur "
+
+#: ../lms/templates/student_account/login_and_register.html
+msgid "Log in "
+msgstr "Anmeldung"
+#: ../lms/templates/student_account/login_and_register.html
+msgid "now!"
+msgstr "!"
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Full name"
+msgstr "Vollständiger Name"
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Public username"
+msgstr "Benutzername"
+
+#: openedx/core/djangoapps/user_api/views.py
+#, python-brace-format
+msgid ""
+"The name that will identify you in your courses - {bold_start}(cannot be "
+"changed later){bold_end}"
+msgstr "Dieser Name ist für alle User sichtbar. – {bold_start}(Der Benutzername kann nicht geändert werden){bold_end}"
+

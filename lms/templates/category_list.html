@@ -6,7 +6,7 @@
 
 <%namespace name='static' file='static_content.html'/>
 
-<%block name="pagetitle">${_("Course catalog")}</%block>
+<%block name="pagetitle">${_("Course Catalog")}</%block>
 
 <main id="main" class="theme-content" aria-label="Content" tabindex="-1">
 <div class="home theme-content_section">
@@ -15,8 +15,8 @@
         <div class="outer-wrapper">
           <div class="title">
             <div class="heading-group">
-                  <h1>Course Catalog</h1>
-                  <p>Browse our catalog of available courses</p>
+                  <h1>${_("Course Catalog")}</h1>
+                  <p>${_("Browse our catalog of available courses")}</p>
             </div>
 
             %if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
@@ -37,7 +37,7 @@
 
       </header>
     <section class="categories">
-    <h2 class="categories_heading">Select a course category below for more details.</h2>
+    <h2 class="categories_heading">${_("Select a course category below for more details.")}</h2>
     <div class="categories_holder">
      % for category1, children1 in categories.iteritems():
       <section class="categories_section level-1">
