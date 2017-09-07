@@ -23015,6 +23015,11 @@ msgid "Course Catalog"
 msgstr "Seminarangebot"
 
 #: lms/templates/category_list.html
+#: themes/etc-ficus/templates/navigation.html
+msgid "Course catalog"
+msgstr "Seminarangebot"
+
+#: lms/templates/category_list.html
 msgid "Browse our catalog of available courses"
 msgstr "Durchstöbern Sie unser Seminarangebot"
 
