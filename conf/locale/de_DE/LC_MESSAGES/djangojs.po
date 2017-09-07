@@ -7745,6 +7745,10 @@ msgstr "Passwort vergessen?"
 msgid "Sign in"
 msgstr "Einloggen"
 
+#: lms/templates/student_account/register.underscore
+msgid "Sign Up"
+msgstr "Registrieren"
+
 #: lms/templates/student_account/hinted_login.underscore
 #, python-format
 msgid "Would you like to sign in using your %(providerName)s credentials?"
@@ -9993,3 +9997,15 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "Nutze aktuelles Transkript"
+
+#: lms/templates/student_account/login.underscore
+msgid "Log in"
+msgstr "Anmelden"
+
+#: lms/templates/student_account/register.underscore
+msgid "As part of joining TrainIT, you will receive an activation email. You must click on the activation link to complete the process. Don't see the email? Check your spam folder and mark TrainIT emails as 'not spam'. At TrainIT, we communicate mostly through email."
+msgstr ""
+
+#: lms/templates/student_account/register.underscore
+msgid "Next steps"
+msgstr "Nächste Schritte"
