@@ -8925,7 +8925,7 @@ msgstr "Fehler"
 msgid ""
 "You're receiving this e-mail because you requested a password reset for your"
 " user account at %(platform_name)s."
-msgstr ""
+msgstr "Sie haben das Zurücksetzen Ihres Passwortes auf %(platform_name)s beantragt."
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
@@ -15476,7 +15476,7 @@ msgstr "Anfrage zur Änderung der {platform_name}-Konto-E-Mail-Adresse "
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "Dear student,"
-msgstr "Lieber Teilnehmer,"
+msgstr "Herzlich Willkommen,"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -15531,7 +15531,7 @@ msgstr "Sie können sich für {course_name} anmelden."
 
 #: lms/templates/emails/enroll_email_allowedsubject.txt
 msgid "You have been invited to register for {course_name}"
-msgstr "Sie wurden eingeladen, sich für {course_name} zu registrieren."
+msgstr "Einladung zur Registrierung für {course_name}"
 
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 msgid ""
@@ -15786,7 +15786,7 @@ msgstr "Dankeschön,"
 
 #: lms/templates/emails/unenroll_email_allowedmessage.txt
 msgid "Dear Student,"
-msgstr "Lieber Teilnehmer,"
+msgstr "Herzlich Willkommen,"
 
 #: lms/templates/emails/unenroll_email_allowedmessage.txt
 msgid ""
@@ -23120,4 +23120,31 @@ msgid ""
 "The name that will identify you in your courses - {bold_start}(cannot be "
 "changed later){bold_end}"
 msgstr "Dieser Name ist für alle User sichtbar. – {bold_start}(Der Benutzername kann nicht geändert werden){bold_end}"
+
+#: lms/templates/emails/activation_email_subject.txt
+msgid "Activate Your {platform_name} Account"
+msgstr "Aktivieren Sie Ihren {platform_name} Account"
+
+#: lms/templates/emails/activation_email.txt
+msgid "Thank you for creating an account with {platform_name}!"
+msgstr "Danke, dass Sie sich bei {platform_name} registriert haben!"
+
+#: lms/templates/emails/activation_email.txt
+msgid ""
+"There's just one more step before you can enroll in a course: you need to "
+"activate your {platform_name} account. To activate your account, click the "
+"following link. If that doesn't work, copy and paste the link into your "
+"browser's address bar."
+msgstr ""
+"Sie sind nur mehr einen Schritt  von Ihrem Kurs entfernt: klicken Sie auf folgenden Link um Ihr "
+"{platform_name} Profil zu aktivieren. Sollte der Link nicht funktionieren, "
+"kopieren Sie ihn bitte in die Adressleiste Ihres Browsers."
+
+#: lms/templates/emails/activation_email.txt
+msgid ""
+"If you didn't create an account, you don't need to do anything; you won't "
+"receive any more email from us. If you need assistance, please do not reply "
+"to this email message. Check the help section of the {platform_name} "
+"website."
+msgstr ""
 

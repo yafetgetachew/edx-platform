@@ -10004,7 +10004,7 @@ msgstr "Anmelden"
 
 #: lms/templates/student_account/register.underscore
 msgid "As part of joining TrainIT, you will receive an activation email. You must click on the activation link to complete the process. Don't see the email? Check your spam folder and mark TrainIT emails as 'not spam'. At TrainIT, we communicate mostly through email."
-msgstr ""
+msgstr "Als Teil des Registrierungsprozesses  erhalten Sie eine Aktivierungsemail. Um Ihre Anmeldung abzuschließen, klicken Sie bitte auf den Link in dieser E-Mail. . Sie haben keine E-Mail erhalten? Dann überprüfen Sie bitte Ihren Spam Ordner und markieren Sie E-Mails von TrainIT als ‚vertrauenswürdig‘. Bei TrainIT findet der Großteil der Kommunikation per E-Mail statt."
 
 #: lms/templates/student_account/register.underscore
 msgid "Next steps"
