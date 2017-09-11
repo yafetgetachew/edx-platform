@@ -2,6 +2,7 @@
 <%! from django.utils.translation import ugettext as _ %>
 
 <%block name="message">
+<div style="text-align: right;">
 <p>
 ${_("Dear {full_name}").format(full_name=full_name)}
 </p>
@@ -25,4 +26,5 @@ ${_("This email was automatically sent from {site_name} to "
 		site_name=site_name, full_name=full_name
 	)}
 </p>
+</div>
 </%block>
