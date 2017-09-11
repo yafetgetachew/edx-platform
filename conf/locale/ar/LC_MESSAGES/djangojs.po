@@ -10147,3 +10147,12 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "استخدم النص الحالي"
+
+#: lms/templates/student_account/login.underscore
+msgid "Get signed in with Young Thinkers"
+msgstr "تسجيل الدخول مع المفكرين اليافعين"
+
+#: lms/templates/student_account/login.underscore
+msgid "Sign in now"
+msgstr "سجل الدخول الان"
+
