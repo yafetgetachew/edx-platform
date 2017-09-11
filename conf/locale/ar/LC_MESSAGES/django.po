@@ -16209,18 +16209,6 @@ msgid "Request to change {platform_name} account e-mail"
 msgstr "طلب تغيير البريد الإلكتروني لحساب المنصة {platform_name}"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
-msgid "Dear student,"
-msgstr "عزيزي الطالب،"
-
-#: lms/templates/emails/enroll_email_allowedmessage.txt
-msgid ""
-"You have been invited to join {course_name} at {site_name} by a member of "
-"the course staff."
-msgstr ""
-"لقد تم دعوتك للانضمام للمساق {course_name} على الموقع {site_name} من قبل أحد"
-" أعضاء طاقم المساق. "
-
-#: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "To access the course visit {course_url} and login."
 msgstr "للدخول إلى المساق يرجي زيارة الصفحة {course_url} وتسجيل الدخول."
 
@@ -16233,37 +16221,16 @@ msgstr ""
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
-"To finish your registration, please visit {registration_url} and fill out "
-"the registration form making sure to use {email_address} in the E-mail "
-"field."
-msgstr ""
-"لإتمام عملية التسجيل الخاصة بك، يرجى زيارة الصفحة {registration_url} وتعبئة "
-"بيانات نموذج التسجيل مع التأكد من استخدام {email_address} في حقل البريد "
-"الإلكتروني."
-
-#: lms/templates/emails/enroll_email_allowedmessage.txt
-msgid ""
 "Once you have registered and activated your account, you will see "
 "{course_name} listed on your dashboard."
 msgstr ""
 "بمجرد قيامك بالتسجيل وبتفعيل حسابك، ستتمكن من رؤية المساق {course_name} على "
 "لوحة المعلومات الخاصة بك."
 
-#: lms/templates/emails/enroll_email_allowedmessage.txt
-msgid ""
-"Once you have registered and activated your account, visit "
-"{course_about_url} to join the course."
-msgstr ""
-"بمجرد قيامك بالتسجيل وبتفعيل حسابك، يرجى زيارة صفحة {course_about_url} "
-"للانضمام إلى المساق."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "You can then enroll in {course_name}."
 msgstr "يمكنك بعدها التسجيل بـ {course_name}."
-
-#: lms/templates/emails/enroll_email_allowedsubject.txt
-msgid "You have been invited to register for {course_name}"
-msgstr "لقد تم دعوتك للتسجيل في مساق {course_name}"
 
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 msgid ""
@@ -16273,13 +16240,6 @@ msgstr ""
 "لقد تم تسجيلك في المساق {course_name} على الموقع {site_name} من قبل أحد "
 "أعضاء طاقم المساق. يجب أن يكون المساق قد أصبح ظاهراً الآن على لوحة المعلومات"
 " الخاصة بك على موقع {site_name}."
-
-#: lms/templates/emails/enroll_email_enrolledmessage.txt
-#: lms/templates/emails/unenroll_email_enrolledmessage.txt
-msgid "This email was automatically sent from {site_name} to {full_name}"
-msgstr ""
-"تم إرسال هذه الرسالة الإلكترونية بشكلٍ تلقائيٍ من الموقع {site_name} إلى "
-"{full_name}"
 
 #: lms/templates/emails/enroll_email_enrolledsubject.txt
 msgid "You have been enrolled in {course_name}"
@@ -24106,3 +24066,60 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "أُنشأت مراجعة جديدة: الدمج بين المراجعة #%(r1)d والمراجعة #%(r2)d "
+
+#: lms/templates/emails/activation_email.txt
+msgid "Thank you for creating an account with {platform_name}!"
+msgstr "ﺶﻛﺭﺍً ﻞﻔﺘﺣ ﺢﺳﺎﺑ ﻢﻋ {platform_name}!"
+
+#: lms/templates/emails/activation_email_subject.txt
+msgid "Activate Your {platform_name} Account"
+msgstr "ﻒﻌِﻟ ﺢﺳﺎﺒﻛ ﻒﻳ ﺏﺮﻧﺎﻤﺟ ﺎﻠﻤﻔﻛﺮﻴﻧ ﺎﻠﺸﺑﺎﺑ "
+
+#: lms/templates/emails/activation_email.txt
+msgid ""
+"There's just one more step before you can enroll in a course: you need to "
+"activate your {platform_name} account. To activate your account, click the "
+"following link. If that doesn't work, copy and paste the link into your "
+"browser's address bar."
+msgstr ""
+"ﻪﻧﺎﻛ ﺦﻃﻮﻫ ﺈﻴﺿﺎﻔﻳﺓ ﻖﺒﻟ ﺄﻧ ﺖﺘﻤﻜﻧ ﻢﻧ ﺎﻠﺘﺴﺠﻴﻟ ﻒﻳ ﺎﻟﺩﻭﺭﺓ: ﻚﻳ ﻊﻠﻴﻛ ﺄﻧ ﺖُﻔﻌﻟ ﺢﺳﺎﺒﻛ {platform_name}. "
+"ﻞﺘُﻔﻟ ﺢﺳﺎﺒﻛ، ﺄُﻨﻗﺭ ﻊﻟﻯ ﺎﻟﺭﺎﺒﻃ ﺎﻠﺗﺎﻠﻳ. ﺇﺫﺍ ﻞﻣ ﻲﻨﺠﺣ ﻒﻳ ﺬﻠﻛ، ﻊﻠﻴﻛ ﺄﻧ ﺖﻨﺴﺧ ﻮﺘﻠﺼﻗ ﺎﻟﺭﺎﺒﻃ ﻒﻳ ﺵﺮﻴﻃ ﺎﻠﺒﺤﺛ."
+
+
+#: lms/templates/emails/enroll_email_allowedsubject.txt
+msgid "You have been invited to register for {course_name}"
+msgstr "ﺄﻨﺗ ﻡﺪﻋﻭ ﻞﻠﺘﺴﺠﻴﻟ ﻒﻳ {course_name}"
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid "Dear student,"
+msgstr "ﻉﺰﻳﺰﻳ ﺎﻠﻃﺎﻠﺑ،"
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid ""
+"You have been invited to join {course_name} at {site_name} by a member of "
+"the course staff."
+msgstr ""
+"ﻢﻧ ﺄﺣﺩ ﺎﻠﻤﺷﺮﻔﻴﻧ ﻊﻟﻯ ﺎﻟﺩﻭﺭﺓ {course_name} ﻊﻟﻯ {site_name} ﺄﻨﺗ ﻡﺪﻋﻭ ﻞﻠﻤﺷﺍﺮﻛﺓ."
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid ""
+"To finish your registration, please visit {registration_url} and fill out "
+"the registration form making sure to use {email_address} in the E-mail "
+"field."
+msgstr ""
+"ﻺﻨﻫﺍﺀ ﺎﻠﺘﺴﺠﻴﻟ، ﻱُﺮﺟﻯ ﺰﻳﺍﺭﺓ {email_address} ﻮﻤﻟﺀ ﺈﺴﺘﻣﺍﺭﺓ ﺎﻠﺘﺴﺠﻴﻟ ﻢُﺗﺄﻛﺩﺍً ﻢﻧ ﺈﺴﺘﺧﺩﺎﻣ {registration_url}  ﻒﻳ ﺢﻘﻟ ﺎﻠﺑﺮﻳﺩ ﺍﻺﻠﻜﺗﺭﻮﻨﻳ. "
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid ""
+"Once you have registered and activated your account, visit "
+"{course_about_url} to join the course."
+msgstr ""
+"ﺐﻤﺟﺭﺩ ﻖﻳﺎﻤﻛ ﺏﺎﻠﺘﺴﺠﻴﻟ ﻮﺒﺘﻔﻌﻴﻟ ﺢﺳﺎﺒﻛ، ﻱﺮﺟﻯ ﺰﻳﺍﺭﺓ ﺺﻔﺣﺓ {course_about_url} "
+"ﻝﻼﻨﻀﻣﺎﻣ ﺈﻟﻯ ﺎﻠﻤﺳﺎﻗ."
+
+#: lms/templates/emails/enroll_email_enrolledmessage.txt
+#: lms/templates/emails/unenroll_email_enrolledmessage.txt
+msgid "This email was automatically sent from {site_name} to {full_name}"
+msgstr ""
+"ﺖﻣ ﺇﺮﺳﺎﻟ ﻩﺬﻫ ﺎﻟﺮﺳﺎﻟﺓ ﺍﻺﻠﻜﺗﺭﻮﻨﻳﺓ ﺖﻠﻗﺎﺌﻳﺍً ﻢﻧ {site_name} ﺎﻟﻯ {full_name} "
+
