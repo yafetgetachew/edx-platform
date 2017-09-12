@@ -282,6 +282,7 @@ def course_info(request, course_id):
 
     Assumes the course_id is in a valid format.
     """
+    return redirect(reverse('courseware', kwargs={'course_id': course_id}))
     course_key = CourseKey.from_string(course_id)
     with modulestore().bulk_operations(course_key):
         course = get_course_by_id(course_key, depth=2)
