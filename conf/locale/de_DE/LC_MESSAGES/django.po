@@ -8922,10 +8922,9 @@ msgstr "Fehler"
 
 #: lms/templates/registration/password_reset_email.html
 #, python-format
-msgid ""
-"You're receiving this e-mail because you requested a password reset for your"
-" user account at %(platform_name)s."
-msgstr "Sie haben das Zurücksetzen Ihres Passwortes auf %(platform_name)s beantragt."
+msgid "You're receiving this e-mail because you requested a password reset for your user account at my.trainit.biz."
+msgstr "Sie haben das Zurücksetzen Ihres Passwortes auf my.trainit.biz beantragt."
+
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
@@ -15483,7 +15482,7 @@ msgid ""
 "You have been invited to join {course_name} at {site_name} by a member of "
 "the course staff."
 msgstr ""
-"Sie wurden von einem Kursmitarbeiter eingeladen, an {course_name} auf "
+"Sie wurden eingeladen an dem Kurs {course_name} auf "
 "{site_name} teilzunehmen."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
@@ -15505,17 +15504,17 @@ msgid ""
 "the registration form making sure to use {email_address} in the E-mail "
 "field."
 msgstr ""
-"Um Ihre Registrierung abzuschließen, besuchen Sie bitte {registration_url} "
-"und füllen das Formular aus. Vergewissern Sie sich, dass Sie {email_address}"
-" im E-Mail-Adressfeld benutzen."
+"Um die Registrierung abzuschließen, besuchen Sie bitte {registration_url} "
+"und vervollständigen Sie das Formular. Stellen Sie sicher, dass Sie {email_address}"
+" in dem 'E-Mail' Feld verwenden."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "Once you have registered and activated your account, you will see "
 "{course_name} listed on your dashboard."
 msgstr ""
-"Nachdem Sie sich registriert und Ihr Konto aktiviert haben, werden Sie "
-"{course_name} auf der Seite \"Meine Kurse\" gelistet sehen."
+"Sobald Sie  die Registrierung abgeschlossen haben, und das Profil aktiviert ist, sehen Sie "
+" {course_name} in Ihrer Seminarübersicht."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -23147,4 +23146,7 @@ msgid ""
 "to this email message. Check the help section of the {platform_name} "
 "website."
 msgstr ""
+"Sollten Sie kein Profil angelegt haben, betrachten Sie diese Nachricht als gegenstandslos; "
+"Sie werden keine weiteren E-Mails von uns bekommen. Sollten Sie Hilfe benötigen antworten "
+"Sie bitte NICHT auf diese E-Mail, sondern besuchen Sie unsere Webseite. {platform_name}"
 
