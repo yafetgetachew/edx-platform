@@ -228,6 +228,8 @@ def course_info(request, course_id):
 
     Assumes the course_id is in a valid format.
     """
+    return redirect(reverse('courseware', kwargs={'course_id': course_id}))
+
     def get_last_accessed_courseware(course, request, user):
         """
         Returns the courseware module URL that the user last accessed, or None if it cannot be found.
