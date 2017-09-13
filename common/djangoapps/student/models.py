@@ -443,7 +443,7 @@ def user_profile_pre_save_callback(sender, **kwargs):
     # old field values.
     user_profile._changed_fields = get_changed_fields_dict(user_profile, sender)
 
-    user_profile._old_gender = sender.objects.get(pk=user_profile.pk).gender
+    user_profile._old_gender = user_profile.pk and sender.objects.get(pk=user_profile.pk).gender
 
 
 @receiver(post_save, sender=UserProfile)
