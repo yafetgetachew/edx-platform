@@ -416,7 +416,7 @@ class HtmlDescriptor(HtmlBlock, XmlDescriptor, EditingDescriptor):  # pylint: di
         file_path = '{}content_html.zip'.format(self._base_storage_path())
 
         try:
-            default_storage.url(file_path)
+            default_storage.created_time(file_path)
         except OSError:
             self.update_info_api()
 
