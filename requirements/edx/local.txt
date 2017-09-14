@@ -11,3 +11,4 @@
 
 -e openedx/core/lib/xblock_builtin/xblock_discussion
 raven
+-e git+https://github.com/appsembler/xblock-video.git#egg=video_xblock
