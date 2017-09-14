@@ -590,6 +590,7 @@ def _save_xblock(user, xblock, data=None, children_strings=None, metadata=None, 
         # Make public after updating the xblock, in case the caller asked for both an update and a publish.
         # Used by Bok Choy tests and by republishing of staff locks.
         if publish == 'make_public':
+            update_info_api(xblock)
             modulestore().publish(xblock.location, user.id)
 
         # Note that children aren't being returned until we have a use case.
@@ -1250,3 +1251,13 @@ def _xblock_type_and_display_name(xblock):
     return _('{section_or_subsection} "{display_name}"').format(
         section_or_subsection=xblock_type_display_name(xblock),
         display_name=xblock.display_name_with_default)
+
+
+def update_info_api(parent):
+    if parent.category in ['chapter', 'sequential']:
+        for childr in parent.get_children():
+            update_info_api(childr)
+    elif parent.category == 'vertical':
+        for childr in parent.get_children():
+            if childr.category == 'html':
+                childr.update_info_api()

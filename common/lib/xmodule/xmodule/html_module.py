@@ -9,8 +9,17 @@ from pkg_resources import resource_string
 import re
 import sys
 import textwrap
+import zipfile
 
 import dogstats_wrapper as dog_stats_api
+
+from django.conf import settings
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
+from xmodule.assetstore.assetmgr import AssetManager
+from xmodule.exceptions import NotFoundError
+from xmodule.modulestore.exceptions import ItemNotFoundError
+
 from xmodule.util.misc import escape_html_characters
 from xmodule.contentstore.content import StaticContent
 from xmodule.editing_module import EditingDescriptor
@@ -342,6 +351,83 @@ class HtmlDescriptor(HtmlBlock, XmlDescriptor, EditingDescriptor):  # pylint: di
             xblock_body["content"] = html_body
         xblock_body["content_type"] = "Text"
         return xblock_body
+
+    def update_info_api(self):
+        base_path = self._base_storage_path()
+        self.remove_old_files(base_path)
+
+        def replace_links(match):
+            link = match.group()
+            filename = link.split('/static/')[-1]
+            self.save_asset_file(link, filename)
+            return 'assets/{}'.format(filename)
+
+        pattern = re.compile(r'/static/[\w\+@\-_\.]+')
+        new_data = pattern.sub(replace_links, self.data)
+
+        default_storage.save('{}index.html'.format(base_path), ContentFile(new_data))
+        self.create_zip_file(base_path)
+
+    def remove_old_files(self, base_path):
+        try:
+            directories, files = default_storage.listdir(base_path)
+        except OSError:
+            pass
+        else:
+            for file_name in files:
+                default_storage.delete(base_path+file_name)
+
+        try:
+            directories, files = default_storage.listdir(base_path+'assets/')
+        except OSError:
+            pass
+        else:
+            for file_name in files:
+                default_storage.delete(base_path+'assets/'+file_name)
+
+    def _base_storage_path(self):
+        return '{loc.org}/{loc.course}/{loc.block_type}/{loc.block_id}/'.format(loc=self.location)
+
+    def save_asset_file(self, path, filename):
+        asset_key = StaticContent.get_asset_key_from_path(self.location.course_key, path)
+        try:
+            content = AssetManager.find(asset_key)
+        except (ItemNotFoundError, NotFoundError):
+            pass
+        else:
+            base_path = self._base_storage_path()
+            default_storage.save('{}assets/{}'.format(base_path, filename), ContentFile(content.data))
+
+    def create_zip_file(self, base_path):
+        zf = zipfile.ZipFile(default_storage.path(base_path+"content_html.zip"), "w")
+        zf.write(default_storage.path(base_path+"index.html"), "index.html")
+
+        try:
+            directories, files = default_storage.listdir(base_path+'assets/')
+        except OSError:
+            pass
+        else:
+            for file_name in files:
+                zf.write(default_storage.path(base_path+'assets/'+file_name), 'assets/'+file_name)
+
+        zf.close()
+
+    def student_view_data(self):
+        file_path = '{}content_html.zip'.format(self._base_storage_path())
+        last_modified = None
+        html_data = None
+        size = 0
+
+        try:
+            last_modified = default_storage.created_time(file_path)
+            html_data = default_storage.url(file_path)
+            size = default_storage.size(file_path)
+        except OSError:
+            pass
+
+        return {'last_modified': last_modified,
+                'html_data': '{}{}'.format(settings.LMS_ROOT_URL, html_data),
+                'size': size}
 
 
 class AboutFields(object):
