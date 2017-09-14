@@ -3,7 +3,7 @@ XFields for video module.
 """
 import datetime
 
-from xblock.fields import Scope, String, Float, Boolean, List, Dict, DateTime
+from xblock.fields import Scope, String, Float, Boolean, List, Dict, DateTime, Integer
 from xmodule.fields import RelativeTime
 
 # Make '_' a no-op so we can scrape strings. Using lambda instead of
@@ -91,6 +91,12 @@ class VideoFields(object):
         help=_("The URL or URLs where you've posted non-YouTube versions of the video. Each URL must end in .mpeg, .mp4, .ogg, or .webm and cannot be a YouTube URL. (For browser compatibility, we strongly recommend .mp4 and .webm format.) Students will be able to view the first listed video that's compatible with the student's computer. To allow students to download these videos, set Video Download Allowed to True."),  # pylint: disable=line-too-long
         display_name=_("Video File URLs"),
         scope=Scope.settings,
+    )
+    file_size = Integer(
+        help=_("Add video size. This size appears in mobile app via file downloading"),
+        display_name=_("Video File Size"),
+        scope=Scope.settings,
+        default=0
     )
     track = String(
         help=_("By default, students can download an .srt or .txt transcript when you set Download Transcript Allowed to True. If you want to provide a downloadable transcript in a different format, we recommend that you upload a handout by using the Upload a Handout field. If this isn't possible, you can post a transcript file on the Files & Uploads page or on the Internet, and then add the URL for the transcript here. Students see a link to download that transcript below the video."),  # pylint: disable=line-too-long

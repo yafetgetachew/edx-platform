@@ -924,7 +924,7 @@ class VideoDescriptor(VideoFields, VideoTranscriptsMixin, VideoStudioViewHandler
             if video_url:
                 encoded_videos["fallback"] = {
                     "url": video_url,
-                    "file_size": 0,  # File size is unknown for fallback URLs
+                    "file_size": self.file_size,
                 }
 
             # Include youtube link if there is no encoding for mobile- ie only a fallback URL or no encodings at all
