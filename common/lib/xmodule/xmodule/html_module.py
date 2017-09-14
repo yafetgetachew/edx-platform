@@ -414,19 +414,18 @@ class HtmlDescriptor(HtmlBlock, XmlDescriptor, EditingDescriptor):  # pylint: di
 
     def student_view_data(self):
         file_path = '{}content_html.zip'.format(self._base_storage_path())
-        last_modified = None
-        html_data = None
-        size = 0
 
         try:
-            last_modified = default_storage.created_time(file_path)
-            html_data = default_storage.url(file_path)
-            size = default_storage.size(file_path)
+            default_storage.url(file_path)
         except OSError:
-            pass
+            self.update_info_api()
+
+        html_data = '{}{}'.format(settings.LMS_ROOT_URL, default_storage.url(file_path))
+        last_modified = default_storage.created_time(file_path)
+        size = default_storage.size(file_path)
 
         return {'last_modified': last_modified,
-                'html_data': '{}{}'.format(settings.LMS_ROOT_URL, html_data),
+                'html_data': html_data,
                 'size': size}
 
 
