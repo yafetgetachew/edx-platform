@@ -29,10 +29,11 @@ class RedirectUnenrolledMiddleware(object):
 
 
 class HidePages(object):
+    _course_id_pattern = settings.COURSE_ID_PATTERN.replace('?P<course_id>', '')
     _paths = [
         '/sysadmin/.*',
         '/dashboard',
-        '/courses/{}/(?!about).*'.format(settings.COURSE_ID_PATTERN),
+        '/courses/{}/(?!about).*'.format(_course_id_pattern),
         '/login',
         '/u/[\w.@+-]+',
         '/account/settings',
@@ -43,6 +44,7 @@ class HidePages(object):
         '/password_reset_confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/',
         '/honor',
         '/certificates/[0-9a-f]+',
+        '/certificates/user/\d+/course/{}'.format(_course_id_pattern),
         '/admin/.*',
         '/404',
         '/500'
