@@ -28,6 +28,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                initialize: function(options) {
                    options = options || {};
         // fill in fields
+                   this.$el.find("#course-info").val(this.model.get('course_info'));
                    this.$el.find('#course-language').val(this.model.get('language'));
                    this.$el.find('#course-organization').val(this.model.get('org'));
                    this.$el.find('#course-number').val(this.model.get('course_id'));
@@ -154,6 +155,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    return this;
                },
                fieldToSelectorMap: {
+                   'course_info': 'course-info',
                    'language': 'course-language',
                    'start_date': 'course-start',
                    'end_date': 'course-end',
@@ -297,6 +299,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    case 'course-pace-instructor-paced':
                        this.model.set('self_paced', JSON.parse(event.currentTarget.value));
                        break;
+                   case 'course-info':
                    case 'course-language':
                    case 'course-effort':
                    case 'course-title':

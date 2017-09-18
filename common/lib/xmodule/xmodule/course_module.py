@@ -853,6 +853,13 @@ class CourseFields(object):
         scope=Scope.settings, default=False
     )
 
+    course_info = String(
+        display_name=_("Course Info"),
+        help=_("Specify the course info."),
+        default=None,
+        scope=Scope.settings
+    )
+
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
