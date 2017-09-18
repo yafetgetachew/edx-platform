@@ -30,6 +30,7 @@ class RedirectUnenrolledMiddleware(object):
 
 class HidePages(object):
     _paths = [
+        '/sysadmin/.*',
         '/dashboard',
         '/courses/{}/(?!about).*'.format(settings.COURSE_ID_PATTERN),
         '/login',
