@@ -24077,3 +24077,7 @@ msgstr ""
 #: ../themes/asu-ficus/lms/templates/navigation.html
 msgid "Back to YTP Home"
 msgstr "العودة الى الصفحة الرئيسية للمفكرين اليافعين"
+
+#: lms/templates/course.html
+msgid "Course starts: "
+msgstr "بدء الدورة: "
