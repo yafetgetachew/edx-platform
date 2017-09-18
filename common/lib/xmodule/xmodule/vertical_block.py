@@ -17,7 +17,7 @@ log = logging.getLogger(__name__)
 
 # HACK: This shouldn't be hard-coded to two types
 # OBSOLETE: This obsoletes 'type'
-CLASS_PRIORITY = ['video', 'problem', 'presentation_slides', 'video_conferencing', 'discussion']
+CLASS_PRIORITY = ['video', 'other', 'problem', 'presentation_slides', 'video_conferencing', 'discussion']
 
 
 @XBlock.needs('user', 'bookmarks')
