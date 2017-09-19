@@ -249,8 +249,6 @@ def _sort_map_entries(category_map, sort_alpha):
     """
     r = re.compile('^([0-9.]*)\s*(.*)$')
     def _title_to_tuple(t):
-        # TODO: waiting for payment
-        return t
         res = r.search(t)
         if res:
             res_tuple = res.groups()
