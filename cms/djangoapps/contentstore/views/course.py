@@ -1,6 +1,7 @@
 """
 Views related to operations on course objects
 """
+import re
 import copy
 import json
 import logging
@@ -1346,8 +1347,26 @@ def textbooks_list_handler(request, course_key_string):
     """
     course_key = CourseKey.from_string(course_key_string)
     store = modulestore()
+
     with store.bulk_operations(course_key):
         course = get_course_and_check_access(course_key, request.user)
+
+        r = re.compile('^([0-9.]*)\s*(.*)$')
+        def _title_to_tuple(tb):
+            t = tb.get('title')
+            res = r.search(t)
+            if res:
+                res_tuple = res.groups()
+                if res_tuple[0]:
+                    return (float(res_tuple[0]), res_tuple[1], tb.get('url'))
+            return (t, tb.get('url'))
+
+        def _sort(textbooks):
+            result = []
+            for ptb in textbooks:
+                ptb['chapters'].sort(key=_title_to_tuple)
+                result.append(ptb)
+            return result
 
         if "application/json" not in request.META.get('HTTP_ACCEPT', 'text/html'):
             # return HTML page
@@ -1355,14 +1374,14 @@ def textbooks_list_handler(request, course_key_string):
             textbook_url = reverse_course_url('textbooks_list_handler', course_key)
             return render_to_response('textbooks.html', {
                 'context_course': course,
-                'textbooks': course.pdf_textbooks,
+                'textbooks': _sort(course.pdf_textbooks),
                 'upload_asset_url': upload_asset_url,
                 'textbook_url': textbook_url,
             })
 
         # from here on down, we know the client has requested JSON
         if request.method == 'GET':
-            return JsonResponse(course.pdf_textbooks)
+            return JsonResponse(_sort(course.pdf_textbooks))
         elif request.method == 'PUT':
             try:
                 textbooks = validate_textbooks_json(request.body)
