@@ -11384,7 +11384,7 @@ msgstr "الإعدادات"
 #: cms/templates/course-create-rerun.html cms/templates/index.html
 #: cms/templates/settings.html lms/templates/courseware/course_about.html
 msgid "Course Number"
-msgstr "رقم المساق "
+msgstr "رقم الدورة "
 
 #: cms/templates/course_outline.html
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
@@ -11403,7 +11403,7 @@ msgstr "المؤسّسة: "
 #: cms/templates/index.html
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Course Number:"
-msgstr "رقم المساق: "
+msgstr "رقم الدورة: "
 
 #: cms/templates/index.html lms/templates/sysadmin_dashboard.html
 #: lms/templates/sysadmin_dashboard_gitlogs.html
@@ -14706,7 +14706,7 @@ msgstr "استعراض صفحة اللمحة في استوديو"
 
 #: lms/templates/courseware/course_about.html
 msgid "Classes Start"
-msgstr "تبدأ الحصص"
+msgstr "بدء المحاضرات"
 
 #: lms/templates/courseware/course_about.html
 msgid "Classes End"
@@ -14714,7 +14714,7 @@ msgstr "تنتهي الحصص"
 
 #: lms/templates/courseware/course_about.html
 msgid "Estimated Effort"
-msgstr "الجهد المقدَّر"
+msgstr "مدة الدورة"
 
 #: lms/templates/courseware/course_about.html
 msgid "Prerequisites"
