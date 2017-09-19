@@ -2520,6 +2520,10 @@ msgstr[3] "{num_minute} دقائق"
 msgstr[4] "{num_minute} دقائق"
 msgstr[5] "{num_minute} دقائق"
 
+#, python-brace-format
+msgid "{num_hour} hour {num_minute} minute"
+msgstr "{num_hour} ﺱﺎﻋﺎﺗ {num_minute} ﺪﻘﻴﻗﺓ"
+
 #: common/lib/xmodule/xmodule/capa_base.py
 #, python-brace-format
 msgid "{num_second} second"
