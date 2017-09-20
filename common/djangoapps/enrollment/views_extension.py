@@ -43,7 +43,7 @@ class EnrollmentExtensionListView(EnrollmentListView):
                 data={"message": u"Username required field."}
             )
 
-        user = get_user_by_id({'sub': keycloak_uid, 'preferred_username': username})
+        user = get_user_by_id({'sub': keycloak_uid, 'preferred_username': username, 'email': username})
         request._full_data.update({'user': user.username})
 
         return super(EnrollmentExtensionListView, self).post(request)
