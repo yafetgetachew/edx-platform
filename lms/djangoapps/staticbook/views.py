@@ -2,6 +2,8 @@
 Views for serving static textbooks.
 """
 
+import re
+
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from edxmako.shortcuts import render_to_response
@@ -77,6 +79,22 @@ def pdf_index(request, course_id, book_index, chapter=None, page=None):
 
     page:  (optional) one-based page number to display within the PDF.  Defaults to first page.
     """
+    r = re.compile('^([^0-9]*)\s*([0-9]*)[\.,:-_/]*([0-9]*)\s*(.*)$')
+    def _title_to_tuple(tb):
+        t = tb.get('title')
+        res = r.search(t)
+        if res:
+            res_tuple = res.groups()
+            key = (
+                res_tuple[0],
+                int(res_tuple[1] or 0),
+                int(res_tuple[2] or 0),
+                res_tuple[3],
+                tb.get('url')
+            )
+            return key
+        return (t, tb.get('url'))
+
     course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
     course = get_course_with_access(request.user, 'load', course_key)
     staff_access = bool(has_access(request.user, 'staff', course))
@@ -105,6 +123,7 @@ def pdf_index(request, course_id, book_index, chapter=None, page=None):
             current_chapter = textbook['chapters'][0]
         viewer_params += current_chapter['url']
         current_url = current_chapter['url']
+        textbook['chapters'].sort(key=_title_to_tuple)
 
     viewer_params += '#zoom=page-fit&disableRange=true'
     if page is not None:
