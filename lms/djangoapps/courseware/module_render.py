@@ -59,6 +59,7 @@ from openedx.core.lib.xblock_utils import (
     wrap_xblock,
     request_token as xblock_request_token,
 )
+from openedx.core.lib.gating import api as gating_api
 from openedx.core.lib.url_utils import unquote_slashes, quote_slashes
 from student.models import anonymous_id_for_user, user_by_anonymous_id
 from student.roles import CourseBetaTesterRole
@@ -980,6 +981,10 @@ def _invoke_xblock_handler(request, course_id, usage_id, handler, suffix, course
         try:
             with tracker.get_tracker().context(tracking_context_name, tracking_context):
                 resp = instance.handle(handler, req, suffix)
+                is_prereq = gating_api.is_prerequisite(course_id, instance._parent_block.parent)
+                r = json.loads(resp.app_iter[0])
+                if is_prereq and r.get('current_score', 0) >= r.get('total_possible', 1):
+                    resp = append_data_to_webob_response(resp, {'refresh_page': True})
                 if suffix == 'problem_check' \
                         and course \
                         and getattr(course, 'entrance_exam_enabled', False) \
