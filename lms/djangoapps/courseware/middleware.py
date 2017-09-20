@@ -32,6 +32,7 @@ class HidePages(object):
     _course_id_pattern = settings.COURSE_ID_PATTERN.replace('?P<course_id>', '')
     _paths = [
         '/sysadmin/.*',
+        '/preview/.*',
         '/dashboard',
         '/courses/{}/(?!about).*'.format(_course_id_pattern),
         '/login',
