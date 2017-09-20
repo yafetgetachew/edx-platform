@@ -1351,14 +1351,20 @@ def textbooks_list_handler(request, course_key_string):
     with store.bulk_operations(course_key):
         course = get_course_and_check_access(course_key, request.user)
 
-        r = re.compile('^([0-9.]*)\s*(.*)$')
+        r = re.compile('^([^0-9]*)\s*([0-9]*)[\.,:-_/]*([0-9]*)\s*(.*)$')
         def _title_to_tuple(tb):
             t = tb.get('title')
             res = r.search(t)
             if res:
                 res_tuple = res.groups()
-                if res_tuple[0]:
-                    return (float(res_tuple[0]), res_tuple[1], tb.get('url'))
+                key = (
+                    res_tuple[0],
+                    int(res_tuple[1] or 0),
+                    int(res_tuple[2] or 0),
+                    res_tuple[3],
+                    tb.get('url')
+                )
+                return key
             return (t, tb.get('url'))
 
         def _sort(textbooks):

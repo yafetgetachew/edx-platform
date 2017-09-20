@@ -247,13 +247,12 @@ def _sort_map_entries(category_map, sort_alpha):
     """
     Internal helper method to list category entries according to the provided sort order
     """
-    r = re.compile('^([0-9.]*)\s*(.*)$')
+    r = re.compile('^([^0-9]*)\s*([0-9]*)[\.,:-_/]*([0-9]*)\s*(.*)$')
     def _title_to_tuple(t):
         res = r.search(t)
         if res:
             res_tuple = res.groups()
-            if res_tuple[0]:
-                return (float(res_tuple[0]), res_tuple[1])
+            return (res_tuple[0], int(res_tuple[1] or 0), int(res_tuple[2] or 0), res_tuple[3])
         return t
 
     things = []
