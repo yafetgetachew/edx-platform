@@ -18,4 +18,227 @@
 // ------------------------------
 // #SHAME
 // ------------------------------
+@font-face {font-family:"Trajan-Reg";font-weight:400;src:url("/static/fonts/TrajanPro3Regular.woff2") format("woff2");}
+@font-face {font-family:"Adventure";font-weight:400;src:url("/static/fonts/Adventure.woff2") format("woff2");}
+@font-face {font-family:"Evolventa";font-weight:400;src:url("/static/fonts/Evolventa-Regular.woff2") format("woff2");}
 
+
+.certificates {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    &__background {
+        width: 100%;
+        height: 100%;
+    }
+    &__border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__books {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 64%;
+        height: 55%;
+    }
+    &__title {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%,0);
+        color: #8f6c29;
+        font:  80px/80px Trajan-Reg;
+        width: 100%;
+        height: 23%;
+        span {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: 33%;
+            font-size: 156.2%;
+        }
+        img {
+            width: 43%;
+            transform: translate(72%, 0);
+        }
+    }
+    &__title--holder {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    &__proove {
+        position: absolute;
+        top: 33.6%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: #3c3c3b;
+        font: 35px/30px Evolventa;
+        letter-spacing: 5px;
+        width: 100%;
+        text-align: center;
+    }
+    &__owner-name {
+        position: absolute;
+        top: 46.6%;
+        left: 50%;
+        color: #3c3c3b;
+        transform: translate(-50%, 0);
+        font: 63px/70px Adventure;
+        width: 100%;
+        text-align: center;
+        img {
+            position: absolute;
+            width: 70%;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 0);
+        }
+    }
+    &__name {
+        position: absolute;
+        bottom: -4px;
+        width: 82%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        max-height: 148px;
+        overflow: hidden;
+        padding: 9px 5px 0;
+    }
+    &__award-text {
+        position: absolute;
+        top: 50.1%;
+        left: 50%;
+        color: #3c3c3b;
+        transform: translate(-50%, 0);
+        font: 26px/30px Adventure;
+        width: 70%;
+        text-align: center;
+        max-height: 170px;
+        overflow: hidden;
+    }
+    &__stamp {
+        width: 40%;
+        height: 370px;
+        .certificates__relative-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,0);
+            width: 100%;
+            height: 2px;
+        }
+    }
+    &__stamp-holder {
+        position: absolute;
+        top: 67.8%;
+        left: 50%;
+        color: #3c3c3b;
+        transform: translate(-50%, 0);
+        font: 26px/30px Evolventa;
+        width: 64%;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__stamp-descr {
+        font-size: 18px;
+        line-height: 24px;
+        width: 180px;
+        margin: 0 auto;
+        overflow: hidden ;
+        max-height: 150px;  
+    }
+    &__stamp-name {
+        margin-bottom: 6px;
+    }
+    &__stamp-image {
+        width: 60%;
+    }
+    &__stamp-descr--wide {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .layout-accomplishment .wrapper-accomplishment-rendering {
+            margin: 0 !important;
+    }
+    &__id-date {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        font: 18px/24px Evolventa;
+        color: #6f6f6e;
+    }
+    &__relative-wrapper {
+        width: 100%;
+        position: relative;
+    }
+    &__flex-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+
+@media print {
+    @page {size: portrait;}
+    html, body {
+        height: auto;    
+    }
+    body {
+        margin: 0 !important;
+    }
+    .certificates {
+        width: 21cm !important; 
+        height: 29.4cm;
+        margin: 0 !important;
+    }
+    .certificates__title span {
+        top: 30%;
+        font-size: 114.2%;
+    }
+    .certificates__proove {
+        font: 21px/30px Evolventa;
+    }
+    .certificates__owner-name {
+        font: 41px/50px Adventure;
+    }
+    .certificates__award-text {
+        font: 17px/24px Adventure;
+    }
+    .certificates__stamp-name {
+        font-size: 17px;
+    }
+    .certificates__stamp-descr {
+        font-size: 12px;
+        line-height: 15px;
+        max-height: 90px;
+    }
+    .wrapper-accomplishment-rendering {
+        margin: 0 !important;
+    }
+    .certificates__id-date {
+        font-size: 12px;
+    }
+    .certificates__stamp {
+        height: 240px;
+    }
+    .certificates__name {
+        max-height: 103px;
+        overflow: hidden;
+        padding: 4px 5px 0;
+    }
+}

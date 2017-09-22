@@ -336,3 +336,52 @@
     }
 }
 
+@media print {
+    @page {size: portrait;}
+    html, body {
+        height: auto;    
+    }
+    body {
+        margin: 0 !important;
+    }
+    .certificates {
+        width: 21cm !important; 
+        height: 29.4cm;
+        margin: 0 !important;
+    }
+    .certificates__title span {
+        top: 30%;
+        font-size: 114.2%;
+    }
+    .certificates__proove {
+        font: 21px/30px Evolventa;
+    }
+    .certificates__owner-name {
+        font: 41px/50px Adventure;
+    }
+    .certificates__award-text {
+        font: 17px/24px Adventure;
+    }
+    .certificates__stamp-name {
+        font-size: 17px;
+    }
+    .certificates__stamp-descr {
+        font-size: 12px;
+        line-height: 15px;
+        max-height: 90px;
+    }
+    .wrapper-accomplishment-rendering {
+        margin: 0 !important;
+    }
+    .certificates__id-date {
+        font-size: 12px;
+    }
+    .certificates__stamp {
+        height: 240px;
+    }
+    .certificates__name {
+        max-height: 103px;
+        overflow: hidden;
+        padding: 4px 5px 0;
+    }
+}
