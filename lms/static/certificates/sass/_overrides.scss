@@ -125,7 +125,8 @@
     }
     &__stamp {
         width: 40%;
-        height: 370px;
+        height: 180px;
+        position: relative;
         .certificates__relative-wrapper img {
             position: absolute;
             top: 0;
@@ -150,7 +151,6 @@
     &__stamp-descr {
         font-size: 18px;
         line-height: 24px;
-        width: 180px;
         margin: 0 auto;
         overflow: hidden ;
         max-height: 150px;  
@@ -158,8 +158,13 @@
     &__stamp-name {
         margin-bottom: 6px;
     }
-    &__stamp-image {
+    &__sign-image {
         width: 60%;
+        top: - 5px;
+        left: 50%;
+        max-height: 100px;
+        transform: translate(-50%,-100%);
+        position: absolute;
     }
     &__stamp-descr--wide {
         width: 100%;
@@ -190,6 +195,19 @@
         align-items: center;
         height: 100%;
     }
+    &__stamps {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0 130px;
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
 }
 
 
@@ -218,6 +236,7 @@
     }
     .certificates__award-text {
         font: 17px/24px Adventure;
+        max-height: 141px;
     }
     .certificates__stamp-name {
         font-size: 17px;
@@ -234,11 +253,21 @@
         font-size: 12px;
     }
     .certificates__stamp {
-        height: 240px;
+        height: 130px;
+    }
+    .certificates__stamps img {
+        height: 130px;
+        width: 130px;
+    }
+    .certificates__stamps {
+        padding: 0 80px;
     }
     .certificates__name {
         max-height: 103px;
         overflow: hidden;
         padding: 4px 5px 0;
+    }
+    .certificates__sign-image {
+        max-height: 50px;
     }
 }
