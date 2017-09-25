@@ -984,7 +984,7 @@ def _invoke_xblock_handler(request, course_id, usage_id, handler, suffix, course
                 is_prereq = gating_api.is_prerequisite(course_id, instance._parent_block.parent)
                 try:
                     r = json.loads(resp.app_iter[0])
-                except TypeError:
+                except (TypeError, ValueError):
                     r = {}
                 if is_prereq and r.get('current_score', 0) >= r.get('total_possible', 1):
                     resp = append_data_to_webob_response(resp, {'refresh_page': True})
