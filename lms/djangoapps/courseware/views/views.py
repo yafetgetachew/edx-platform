@@ -275,6 +275,7 @@ def jump_to(_request, course_id, location):
 
 
 @ensure_csrf_cookie
+@login_required
 @ensure_valid_course_key
 def course_info(request, course_id):
     """
