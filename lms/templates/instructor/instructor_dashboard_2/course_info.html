@@ -42,11 +42,16 @@ from openedx.core.djangolib.markup import HTML, Text
 
 <div class="basic-wrapper">
   <h3 class="hd hd-3">${_("Basic Course Information")}</h3>
-
+      <%
+      if (section_data['course_id'].org == 'YTP_Arabic') or (section_data['course_id'].org == 'YTPArabic'):
+          section_data_course_id_org = 'ﺏﺮﻧﺎﻤﺟ ﺎﻠﻤﻔﻛﺮﻴﻧ ﺎﻠﻳﺎﻔﻌﻴﻨﻋﺮﺒﻳ'
+      else:
+          section_data_course_id_org = section_data['course_id'].org;
+      %>
   <ul class="list-input">
     <li class="field text is-not-editable" id="field-course-organization">
       <label for="course-organization">${_("Organization:")}</label>
-      <b>${ section_data['course_id'].org}</b>
+      <b>${ section_data_course_id_org }</b>
     </li>
 
     <li class="field text is-not-editable" id="field-course-number">

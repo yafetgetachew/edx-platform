@@ -95,8 +95,14 @@ from student.helpers import (
             <span>${course_overview.display_name_with_default}</span>
           % endif
         </h3>
+      <%
+      if (course_overview.display_org_with_default == 'YTP_Arabic') or (course_overview.display_org_with_default == 'YTPArabic'):
+          course_overview_display_org_with_default = 'ﺏﺮﻧﺎﻤﺟ ﺎﻠﻤﻔﻛﺮﻴﻧ ﺎﻠﻳﺎﻔﻌﻴﻨﻋﺮﺒﻳ'
+      else:
+          course_overview_display_org_with_default = course_overview.display_org_with_default;
+      %>
         <div class="course-info">
-          <span class="info-university">${course_overview.display_org_with_default} - </span>
+          <span class="info-university">${course_overview_display_org_with_default} - </span>
           <span class="info-course-id">${course_overview.display_number_with_default}</span>
           <%
             if course_overview.start_date_is_still_default:
