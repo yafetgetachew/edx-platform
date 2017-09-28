@@ -913,6 +913,8 @@ LOGIN_URL = "/openid/openid/KeyCloak"
 LOGOUT_URL = "/openid/logout"
 OIDC_ACCOUNT_URL = FEATURES.get('OIDC_ACCOUNT_URL', '')
 
+scheme = 'https' if HTTPS == 'on' else 'http'
+
 OIDC_PROVIDERS = {
     'KeyCloak': {
         'srv_discovery_url': FEATURES.get('OIDC_SRV_DISCOVERY_URL'),
@@ -924,7 +926,7 @@ OIDC_PROVIDERS = {
             'client_id': FEATURES.get('OIDC_CLIENT_ID'),
             'client_secret': FEATURES.get('OIDC_CLIENT_SECRET'),
             'redirect_uris': ['{}/openid/callback/login/'.format(LMS_ROOT_URL),
-                              '{}/openid/callback/login/'.format(FEATURES.get('PREVIEW_LMS_BASE', ''))],
+                              '{}://{}/openid/callback/login/'.format(FEATURES.get('PREVIEW_LMS_BASE', ''), scheme)],
             'post_logout_redirect_uris': ['{}/openid/callback/logout/'.format(LMS_ROOT_URL)],
        },
    }
