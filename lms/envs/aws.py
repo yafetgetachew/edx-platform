@@ -923,7 +923,8 @@ OIDC_PROVIDERS = {
         'client_registration': {
             'client_id': FEATURES.get('OIDC_CLIENT_ID'),
             'client_secret': FEATURES.get('OIDC_CLIENT_SECRET'),
-            'redirect_uris': ['{}/openid/callback/login/'.format(LMS_ROOT_URL)],
+            'redirect_uris': ['{}/openid/callback/login/'.format(LMS_ROOT_URL),
+                              '{}/openid/callback/login/'.format(FEATURES.get('PREVIEW_LMS_BASE', ''))],
             'post_logout_redirect_uris': ['{}/openid/callback/logout/'.format(LMS_ROOT_URL)],
        },
    }
