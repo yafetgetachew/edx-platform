@@ -1832,6 +1832,9 @@ msgstr ""
 msgid "Bookmarked"
 msgstr "جرى وضع علامة"
 
+msgid "Bookmark this page"
+msgstr "إضافة الصفحة للمفضلة"
+
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/09_play_pause_control.js
 #: common/lib/xmodule/xmodule/js/src/video/09_play_skip_control.js
