@@ -91,7 +91,15 @@ def _get_xmodule_instance_args(request, task_id):
                     'ip': request.META['REMOTE_ADDR'],
                     'agent': request.META.get('HTTP_USER_AGENT', '').decode('latin1'),
                     'host': request.META['SERVER_NAME'],
-                    }
+                    'additional_fields': [
+                        'prefix',
+                        'city_of_residence',
+                        'country_of_residence',
+                        'nationality',
+                        'hear',
+                        'hear_details',
+                        'interested_topic'
+                    ]}
 
     xmodule_instance_args = {'xqueue_callback_url_prefix': get_xqueue_callback_url_prefix(request),
                              'request_info': request_info,

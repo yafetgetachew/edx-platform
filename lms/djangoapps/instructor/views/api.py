@@ -1197,7 +1197,18 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
     course_key = CourseKey.from_string(course_id)
     course = get_course_by_id(course_key)
 
-    available_features = instructor_analytics.basic.AVAILABLE_FEATURES
+    available_features = instructor_analytics.basic.AVAILABLE_FEATURES + \
+    (
+        'enrolled_courses',
+        'course_complete',
+        'prefix',
+        'city_of_residence',
+        'country_of_residence',
+        'nationality',
+        'hear',
+        'hear_details',
+        'interested_topic'
+    )
 
     # Allow for sites to be able to define additional columns.
     # Note that adding additional columns has the potential to break
@@ -1213,7 +1224,8 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         query_features = [
             'id', 'username', 'name', 'email', 'language', 'location',
             'year_of_birth', 'gender', 'level_of_education', 'mailing_address',
-            'goals', 'enrollment_mode', 'verification_status',
+            'goals', 'enrollment_mode', 'verification_status', 'enrolled_courses',
+            'course_complete'
         ]
 
     # Provide human-friendly and translatable names for these features. These names
@@ -1233,6 +1245,15 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'goals': _('Goals'),
         'enrollment_mode': _('Enrollment Mode'),
         'verification_status': _('Verification Status'),
+        'enrolled_courses': _('Enrolled Courses'),
+        'course_complete': _('Course Complete'),
+        'prefix': _('Prefix'),
+        'city_of_residence': _('City Of Residence'),
+        'country_of_residence': _('Country Of Residence'),
+        'nationality': _('Nationality'),
+        'hear': _('How Did You Hear About ICNC Online Courses?'),
+        'hear_details': _('How did you hear about ICNC online courses?(details)'),
+        'interested_topic': _('Interested Topic')
     }
 
     if is_course_cohorted(course.id):

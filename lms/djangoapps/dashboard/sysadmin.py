@@ -34,6 +34,8 @@ import dashboard.git_import as git_import
 from dashboard.git_import import GitImportError
 from student.roles import CourseStaffRole, CourseInstructorRole
 from dashboard.models import CourseImportLog
+
+from lms.djangoapps.courseware.views.views import is_course_passed
 from openedx.core.djangoapps.external_auth.models import ExternalAuthMap
 from openedx.core.djangoapps.external_auth.views import generate_password
 from student.models import CourseEnrollment, UserProfile, Registration
@@ -85,7 +87,7 @@ class SysadminDashboardView(TemplateView):
         writer = csv.writer(csv_file, dialect='excel', quotechar='"',
                             quoting=csv.QUOTE_ALL)
 
-        writer.writerow(header)
+        writer.writerow([s.encode("utf-8") for s in header])
 
         # Setup streaming of the data
         def read_and_flush():
@@ -99,7 +101,7 @@ class SysadminDashboardView(TemplateView):
         def csv_data():
             """Generator for handling potentially large CSVs"""
             for row in data:
-                writer.writerow(row)
+                writer.writerow([s.encode("utf-8") for s in row])
             csv_data = read_and_flush()
             yield csv_data
         response = HttpResponse(csv_data(), content_type='text/csv')
@@ -297,9 +299,70 @@ class Users(SysadminDashboardView):
         track.views.server_track(request, action, {}, page='user_sysdashboard')
 
         if action == 'download_users':
-            header = [_('username'), _('email'), ]
-            data = ([u.username, u.email] for u in
-                    (User.objects.all().iterator()))
+            def course_complete(ce, user):
+                course = modulestore().get_course(ce.course_id)
+                course_id = unicode(ce.course_id)
+                try:
+                    passed = is_course_passed(course, student=user)
+                except:
+                    return course_id
+                else:
+                    return passed and u'{}[{}]'.format(course_id, _(u'Complete')) or course_id
+
+            def enrolled_courses(user):
+                qs = CourseEnrollment.objects.filter(user=user, is_active=True)
+                course_ids = [course_complete(i, user) for i in qs]
+                list_courses = u', '.join(course_ids)
+                return list_courses
+
+            header = [
+                _('username'),
+                _('email'),
+                _('name'),
+                _('language'),
+                _('location'),
+                _('year_of_birth'),
+                _('gender'),
+                _('level_of_education'),
+                _('mailing_address'),
+                _('goals'),
+                _('prefix'),
+                _('city_of_residence'),
+                _('country_of_residence'),
+                _('nationality'),
+                _('How hear about online courses'),
+                _('How hear about online courses(details)'),
+                _('interested_topic'),
+                _('enrolled_courses')
+            ]
+            data = []
+            for u in User.objects.prefetch_related("groups").all().iterator():
+                if hasattr(u, 'profile'):
+                    profile = [
+                        u.profile.name or '',
+                        u.profile.language or '',
+                        u.profile.location or '',
+                        unicode(u.profile.year_of_birth or ''),
+                        dict(UserProfile.GENDER_CHOICES).get(u.profile.gender, ''),
+                        dict(UserProfile.LEVEL_OF_EDUCATION_CHOICES).get(u.profile.level_of_education, ''),
+                        u.profile.mailing_address or '',
+                        unicode(u.profile.goals or ''),
+                        dict(UserProfile.PREFIX_CHOICES).get(u.profile.prefix, unicode(u.profile.prefix)),
+                        u.profile.city_of_residence or '',
+                        u.profile.country_of_residence or '',
+                        u.profile.nationality or '',
+                        dict(UserProfile.HEAR_CHOICES).get(u.profile.hear, ''),
+                        u.profile.hear_details or '',
+                        u.profile.interested_topic or '',
+                        enrolled_courses(u)
+                    ]
+                else:
+                    profile = [u.get_full_name() or ''] + [''] * 16 + [enrolled_courses(u)]
+
+                data.append([
+                    u.username,
+                    u.email
+                ] + profile)
             return self.return_csv('users_{0}.csv'.format(
                 request.META['SERVER_NAME']), header, data)
         elif action == 'repair_eamap':

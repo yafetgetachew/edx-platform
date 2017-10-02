@@ -15,23 +15,28 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
 from opaque_keys.edx.keys import UsageKey
 import xmodule.graders as xmgraders
-from student.models import CourseEnrollmentAllowed, CourseEnrollment
+from xmodule.modulestore.django import modulestore
+from student.models import CourseEnrollmentAllowed, CourseEnrollment, UserProfile
 from edx_proctoring.api import get_all_exam_attempts
 from courseware.models import StudentModule
 from certificates.models import GeneratedCertificate
 from django.db.models import Count
 from certificates.models import CertificateStatuses
+
 from lms.djangoapps.grades.context import grading_context_for_course
 from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification
+from lms.djangoapps.courseware.views.views import is_course_passed
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 
 STUDENT_FEATURES = ('id', 'username', 'first_name', 'last_name', 'is_staff', 'email')
 PROFILE_FEATURES = ('name', 'language', 'location', 'year_of_birth', 'gender',
                     'level_of_education', 'mailing_address', 'goals', 'meta',
-                    'city', 'country')
+                    'city', 'country', 'prefix', 'city_of_residence', 'country_of_residence',
+                    'nationality', 'hear', 'hear_details', 'interested_topic')
 ORDER_ITEM_FEATURES = ('list_price', 'unit_cost', 'status')
 ORDER_FEATURES = ('purchase_time',)
 
@@ -201,7 +206,7 @@ def issued_certificates(course_key, features):
     return generated_certificates
 
 
-def enrolled_students_features(course_key, features):
+def enrolled_students_features(course_key, features, additional_fields):
     """
     Return list of student features as dictionaries.
 
@@ -212,10 +217,15 @@ def enrolled_students_features(course_key, features):
         {'username': 'username3', 'first_name': 'firstname3'}
     ]
     """
+    features += additional_fields
     include_cohort_column = 'cohort' in features
     include_team_column = 'team' in features
     include_enrollment_mode = 'enrollment_mode' in features
     include_verification_status = 'verification_status' in features
+    include_enrolled_courses = 'enrolled_courses' in features
+    include_course_complete = 'course_complete' in features
+
+    course = modulestore().get_course(course_key, depth=2)
 
     students = User.objects.filter(
         courseenrollment__course_id=course_key,
@@ -231,6 +241,15 @@ def enrolled_students_features(course_key, features):
     def extract_attr(student, feature):
         """Evaluate a student attribute that is ready for JSON serialization"""
         attr = getattr(student, feature)
+        if feature == 'gender':
+            attr = dict(UserProfile.GENDER_CHOICES).get(attr, '')
+        elif feature == 'level_of_education':
+            attr = dict(UserProfile.LEVEL_OF_EDUCATION_CHOICES).get(attr, '')
+        elif feature == 'prefix':
+            attr = dict(UserProfile.PREFIX_CHOICES).get(attr, attr)
+        elif feature == 'hear':
+            attr = dict(UserProfile.HEAR_CHOICES).get(attr, '')
+
         try:
             DjangoJSONEncoder().default(attr)
             return attr
@@ -289,6 +308,18 @@ def enrolled_students_features(course_key, features):
                 )
             if include_enrollment_mode:
                 student_dict['enrollment_mode'] = enrollment_mode
+
+        if include_enrolled_courses:
+            qs = CourseEnrollment.objects.filter(user=student, is_active=True)
+            list_courses = ', '.join(map(str, qs.values_list('course_id', flat=True)))
+            student_dict['enrolled_courses'] = list_courses
+
+        if include_course_complete:
+            student = User.objects.prefetch_related("groups").get(id=student.id)
+            try:
+                student_dict['course_complete'] = is_course_passed(course, None, student) and _('Yes') or _('No')
+            except:
+                student_dict['course_complete'] = _('No')
 
         return student_dict
 
