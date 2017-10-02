@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.views.decorators.http import require_http_methods
 from django_countries import countries
 from django.contrib.staticfiles.storage import staticfiles_storage
@@ -37,6 +37,9 @@ def learner_profile(request, username):
     Example usage:
         GET /account/profile
     """
+    if settings.OIDC_ACCOUNT_URL:
+        return HttpResponseRedirect(settings.OIDC_ACCOUNT_URL)
+
     try:
         return render_to_response(
             'student_profile/learner_profile.html',
