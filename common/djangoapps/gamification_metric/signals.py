@@ -40,7 +40,7 @@ def send_achievement(sender, instance, **kwargs):
 @receiver(post_save, sender='student.CourseEnrollment')
 def send_enroll_achievement(sender, instance, created, **kwargs):
     # Remove check for GAMMA_ALLOWED_USERS after release
-    if created and instance.is_active:
+    if instance.is_active:
         org = instance.course_id.org
         course_id = unicode(instance.course_id)
         data = {
