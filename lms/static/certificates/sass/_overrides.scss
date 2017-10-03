@@ -235,7 +235,7 @@
 
 
 @media print {
-    @page {size: portrait;margin: 0;border: 0;}
+    @page {size: portrait;margin: 0.5cm;border: 0;}
     html, body {
         height: auto;    
     }
@@ -244,7 +244,7 @@
     }
     .certificates {
         width: 21cm !important; 
-        height: 29.4cm;
+        height: 29.4cm !important;
         margin: 0 !important;
     }
     .certificates__title span {
