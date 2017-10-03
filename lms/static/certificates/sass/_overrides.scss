@@ -124,9 +124,11 @@
         overflow: hidden;
     }
     &__stamp {
-        width: 40%;
         height: 180px;
         position: relative;
+        max-width: 300px;
+        min-width: 240px;
+        padding: 0 5px;
         .certificates__relative-wrapper img {
             position: absolute;
             top: 0;
@@ -143,7 +145,7 @@
         color: #3c3c3b;
         transform: translate(-50%, 0);
         font: 26px/30px Evolventa;
-        width: 64%;
+        width: 84%;
         text-align: center;
         display: flex;
         justify-content: space-between;
@@ -203,10 +205,31 @@
         justify-content: space-around;
         width: 100%;
         padding: 0 130px;
-        img {
-            width: 200px;
-            height: 200px;
-        }
+    }
+    &__owner {
+        flex: 1 1 auto;
+        display: flex ;
+        justify-content: center 
+    }
+    &__stamp-holder {
+        display: flex;
+    }
+    &__stamp-inner-holder {
+        display: flex;
+        justify-content: space-around;
+
+    }
+    &__stamp-image-holder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    &__stamp-image {
+        width: 200px;
+        height: 200px;
+    }
+    &__stamp-wrapper {
+        flex: 1 1 auto;
     }
 }
 
@@ -254,8 +277,10 @@
     }
     .certificates__stamp {
         height: 130px;
+        min-width: 160px;
+        max-width: 200px;
     }
-    .certificates__stamps img {
+    .certificates__stamp-image {
         height: 130px;
         width: 130px;
     }
