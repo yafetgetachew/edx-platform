@@ -131,7 +131,7 @@
         padding: 0 5px;
         .certificates__relative-wrapper img {
             position: absolute;
-            top: 0;
+            top: -3px;
             left: 50%;
             transform: translate(-50%,0);
             width: 100%;
@@ -294,5 +294,8 @@
     }
     .certificates__sign-image {
         max-height: 50px;
+    }
+    .certificates__stamp .certificates__relative-wrapper img {
+        top: 0;
     }
 }
