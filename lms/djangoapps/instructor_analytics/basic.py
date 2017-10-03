@@ -28,7 +28,6 @@ from certificates.models import CertificateStatuses
 
 from lms.djangoapps.grades.context import grading_context_for_course
 from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification
-from lms.djangoapps.courseware.views.views import is_course_passed
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 
@@ -217,6 +216,7 @@ def enrolled_students_features(course_key, features, additional_fields):
         {'username': 'username3', 'first_name': 'firstname3'}
     ]
     """
+    from lms.djangoapps.courseware.views.views import is_course_passed
     features += additional_fields
     include_cohort_column = 'cohort' in features
     include_team_column = 'team' in features
