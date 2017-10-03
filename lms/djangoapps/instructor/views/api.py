@@ -1151,7 +1151,12 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
     course_key = CourseKey.from_string(course_id)
     course = get_course_by_id(course_key)
 
-    available_features = instructor_analytics.basic.AVAILABLE_FEATURES
+    available_features = instructor_analytics.basic.AVAILABLE_FEATURES + (
+        'phone',
+        'work',
+        'position',
+        'qualification',
+    )
 
     # Allow for microsites to be able to define additional columns (e.g. )
     query_features = microsite.get_value('student_profile_download_fields')
@@ -1178,6 +1183,10 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'level_of_education': _('Level of Education'),
         'mailing_address': _('Mailing Address'),
         'goals': _('Goals'),
+        'phone': _('Phone'),
+        'work': _('Work'),
+        'position': _('Position'),
+        'qualification': _('Qualification'),
     }
 
     if is_course_cohorted(course.id):

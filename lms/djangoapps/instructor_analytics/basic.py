@@ -17,7 +17,7 @@ from django.core.urlresolvers import reverse
 from opaque_keys.edx.keys import UsageKey
 import xmodule.graders as xmgraders
 from microsite_configuration import microsite
-from student.models import CourseEnrollmentAllowed
+from student.models import CourseEnrollmentAllowed, UserProfile
 from edx_proctoring.api import get_all_exam_attempts
 from courseware.models import StudentModule
 from certificates.models import GeneratedCertificate
@@ -27,7 +27,8 @@ from certificates.models import CertificateStatuses
 
 STUDENT_FEATURES = ('id', 'username', 'first_name', 'last_name', 'is_staff', 'email')
 PROFILE_FEATURES = ('name', 'language', 'location', 'year_of_birth', 'gender',
-                    'level_of_education', 'mailing_address', 'goals', 'meta')
+                    'level_of_education', 'mailing_address', 'goals', 'meta',
+                    'phone', 'work', 'position', 'qualification',)
 ORDER_ITEM_FEATURES = ('list_price', 'unit_cost', 'status')
 ORDER_FEATURES = ('purchase_time',)
 
@@ -197,7 +198,7 @@ def issued_certificates(course_key, features):
     return generated_certificates
 
 
-def enrolled_students_features(course_key, features):
+def enrolled_students_features(course_key, features, additional_fields):
     """
     Return list of student features as dictionaries.
 
@@ -208,6 +209,7 @@ def enrolled_students_features(course_key, features):
         {'username': 'username3', 'first_name': 'firstname3'}
     ]
     """
+    features += additional_fields
     include_cohort_column = 'cohort' in features
     include_team_column = 'team' in features
 
@@ -240,7 +242,16 @@ def enrolled_students_features(course_key, features):
                             for feature in student_features)
         profile = student.profile
         if profile is not None:
-            profile_dict = dict((feature, getattr(profile, feature))
+            def _display(feature, attr):
+                if feature == 'gender':
+                    attr = dict(UserProfile.GENDER_CHOICES).get(attr, '')
+                elif feature == 'level_of_education':
+                    attr = dict(UserProfile.LEVEL_OF_EDUCATION_CHOICES).get(attr, '')
+                elif feature == 'qualification':
+                    attr = dict(UserProfile.QUALIFICATION_CHOICES).get(attr, '')
+                return attr
+
+            profile_dict = dict((feature, _display(feature, getattr(profile, feature)))
                                 for feature in profile_features)
             student_dict.update(profile_dict)
 
