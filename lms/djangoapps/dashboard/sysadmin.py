@@ -498,7 +498,8 @@ class Courses(SysadminDashboardView):
 
                 response = self._searcher.search(doc_type="courseware_content", field_dictionary={'course': course_id})
                 result_ids = [result["data"]["id"] for result in response["results"]]
-                self._searcher.remove('courseware_content', result_ids)
+                if settings.FEATURES.get('ENABLE_COURSEWARE_INDEX', False):
+                    self._searcher.remove('courseware_content', result_ids)
                 self._searcher.remove('course_info', [course_id])
 
                 # don't delete user permission groups, though
