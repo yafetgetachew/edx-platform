@@ -15,7 +15,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_POST, require_http_methods
 from django.views.decorators.cache import cache_control
 from django.core.exceptions import ValidationError, PermissionDenied
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives, send_mail
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError, transaction
 from django.core.urlresolvers import reverse
@@ -24,6 +24,9 @@ from django.utils.translation import ugettext as _
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseNotFound
 from django.utils.html import strip_tags
 from django.shortcuts import redirect
+from django.utils.http import int_to_base36
+from django.template import loader
+from django.contrib.auth.tokens import default_token_generator
 import string
 import random
 import unicodecsv
@@ -2505,6 +2508,46 @@ def list_forum_members(request, course_id):
         rolename: map(extract_user_info, users),
     }
     return JsonResponse(response_payload)
+
+
+@transaction.non_atomic_requests
+@require_POST
+@ensure_csrf_cookie
+@cache_control(no_cache=True, no_store=True, must_revalidate=True)
+@require_level('staff')
+def send_email_password(request, course_id):
+    course_id = SlashSeparatedCourseKey.from_deprecated_string(course_id)
+    users = User.objects.select_related().filter(
+        is_active=True,
+        courseenrollment__course_id=course_id,
+        courseenrollment__is_active=True,
+        password__in=('', None)
+    )
+    for user in users:
+        site_name = request.get_host()
+
+        context = {
+            'email': user.email,
+            'site_name': site_name,
+            'uid': int_to_base36(user.id),
+            'user': user,
+            'token': default_token_generator.make_token(user),
+            'protocol': 'https' if request.is_secure() else 'http',
+            'platform_name': configuration_helpers.get_value('platform_name', settings.PLATFORM_NAME)
+        }
+
+        subject = loader.render_to_string('registration/password_reset_subject.txt', context)
+        subject = subject.replace('\n', '')
+        email = loader.render_to_string('registration/password_reset_email.txt', context)
+
+        try:
+            html_email = loader.render_to_string('registration/password_reset_email.html', context)
+        except:
+            html_email = None
+        from_email = configuration_helpers.get_value('email_from_address', settings.DEFAULT_FROM_EMAIL)
+        send_mail(subject, email, from_email, [user.email], html_message=html_email)
+
+    return JsonResponse({'success': True, 'message': _('Send messages for {} users.').format(users.count())})
 
 
 @transaction.non_atomic_requests

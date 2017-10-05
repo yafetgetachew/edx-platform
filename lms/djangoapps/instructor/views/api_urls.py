@@ -75,6 +75,8 @@ urlpatterns = patterns(
         'lms.djangoapps.instructor.views.api.update_forum_role_membership', name="update_forum_role_membership"),
     url(r'^send_email$',
         'lms.djangoapps.instructor.views.api.send_email', name="send_email"),
+    url(r'^send_email_password$',
+        'lms.djangoapps.instructor.views.api.send_email_password', name="send_email_password"),
     url(r'^change_due_date$', 'lms.djangoapps.instructor.views.api.change_due_date',
         name='change_due_date'),
     url(r'^reset_due_date$', 'lms.djangoapps.instructor.views.api.reset_due_date',

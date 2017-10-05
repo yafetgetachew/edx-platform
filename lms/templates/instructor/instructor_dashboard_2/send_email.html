@@ -81,6 +81,10 @@ from openedx.core.djangolib.markup import HTML
     <input type="button" name="send" value="${_("Send Email")}" data-endpoint="${ section_data['send_email'] }" >
     <div class="request-response-error"></div>
 
+    <hr>
+    <input type="button" name="send-password" value="${_('Send Password Emails')}" data-endpoint="${ section_data['send_email'] }_password">
+    <div id="send-password-emails-message"></div>
+
     %if settings.FEATURES.get('ENABLE_INSTRUCTOR_BACKGROUND_TASKS'):
     <div class="running-tasks-container action-type-container">
         <hr>
