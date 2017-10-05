@@ -1,3 +1,4 @@
+from django.core.validators import ValidationError
 from django.utils.decorators import method_decorator
 from djangooidc.models import Keycloak
 from djangooidc.backends import get_user_by_id
@@ -42,8 +43,14 @@ class EnrollmentExtensionListView(EnrollmentListView):
                 status=status.HTTP_400_BAD_REQUEST,
                 data={"message": u"Username required field."}
             )
+        try:
+            user = get_user_by_id({'sub': keycloak_uid, 'preferred_username': username, 'email': username})
+        except ValidationError as er:
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST,
+                data=er
+            )
 
-        user = get_user_by_id({'sub': keycloak_uid, 'preferred_username': username, 'email': username})
         request._full_data.update({'user': user.username})
 
         return super(EnrollmentExtensionListView, self).post(request)
