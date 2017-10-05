@@ -318,6 +318,7 @@ class Users(SysadminDashboardView):
             header = [
                 _('username'),
                 _('email'),
+                _('date_of_registration'),
                 _('name'),
                 _('language'),
                 _('location'),
@@ -333,7 +334,7 @@ class Users(SysadminDashboardView):
                 _('How hear about online courses'),
                 _('How hear about online courses(details)'),
                 _('interested_topic'),
-                _('enrolled_courses')
+                _('enrolled_courses'),
             ]
             data = []
             for u in User.objects.prefetch_related("groups").all().iterator():
@@ -354,14 +355,15 @@ class Users(SysadminDashboardView):
                         dict(UserProfile.HEAR_CHOICES).get(u.profile.hear, ''),
                         u.profile.hear_details or '',
                         u.profile.interested_topic or '',
-                        enrolled_courses(u)
+                        enrolled_courses(u),
                     ]
                 else:
                     profile = [u.get_full_name() or ''] + [''] * 16 + [enrolled_courses(u)]
 
                 data.append([
                     u.username,
-                    u.email
+                    u.email,
+                    unicode(u.date_joined)
                 ] + profile)
             return self.return_csv('users_{0}.csv'.format(
                 request.META['SERVER_NAME']), header, data)
