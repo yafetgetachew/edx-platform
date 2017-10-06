@@ -3208,7 +3208,7 @@ msgid ""
 "<%= user %> has been successfully added to the exception list. Click "
 "Generate Exception Certificate below to send the certificate."
 msgstr ""
-"<%= user %> успішно доданий. Для видачі сертифіката натисніть кнопку "
+"<%= user %> успішно доданий. Для видачі сертифікату натисніть кнопку "
 "\\\"Створити сертифікати для виняткових випадків\\\"."
 
 #: lms/static/js/course_survey.js
@@ -4616,7 +4616,7 @@ msgstr "Професійна освіта"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Verified Certificate upgrade"
-msgstr "Оновлення підтвердженого сертифіката"
+msgstr "Оновлення підтвердженого сертифікату"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Verified Certificate"
@@ -4849,7 +4849,7 @@ msgstr "Не вдається пропарсити сертифікат JSON. %(
 
 #: cms/static/js/certificates/models/certificate.js
 msgid "Certificate name is required."
-msgstr "Необхідно вказати ім'я сертифіката."
+msgstr "Необхідно вказати ім'я сертифікату."
 
 #: cms/static/js/certificates/models/certificate.js
 msgid "Signatory field(s) has invalid data."
@@ -8268,7 +8268,7 @@ msgstr "Ідентифікатор"
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
 msgid "Certificate Details"
-msgstr "Деталі сертифіката"
+msgstr "Деталі сертифікату"
 
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
