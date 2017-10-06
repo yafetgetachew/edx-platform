@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-04-24 05:37-0400\n"
-"PO-Revision-Date: 2017-04-24 09:37:57.446743\n"
+"POT-Creation-Date: 2017-10-06 11:02-0400\n"
+"PO-Revision-Date: 2017-10-06 15:02:37.053235\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -3012,6 +3012,16 @@ msgid ""
 "for use in courses due to non-compliance with one or more of the base "
 "requirements, such as testing, accessibility, internationalization, and "
 "documentation."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+#: lms/djangoapps/instructor/views/instructor_dashboard.py
+#: cms/templates/settings.html
+msgid "Course Info"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Specify the course info."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
@@ -6303,10 +6313,6 @@ msgstr ""
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "CourseMode price updated successfully"
-msgstr ""
-
-#: lms/djangoapps/instructor/views/instructor_dashboard.py
-msgid "Course Info"
 msgstr ""
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
@@ -19560,6 +19566,10 @@ msgstr ""
 
 #: cms/templates/settings.html
 msgid "Provide useful information about your course"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "Course info for certificate"
 msgstr ""
 
 #: cms/templates/settings.html
