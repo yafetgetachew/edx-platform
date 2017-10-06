@@ -7,6 +7,7 @@ from django.conf.urls import patterns, url
 from ..profile_images.views import ProfileImageView
 from .accounts.views import AccountView
 from .preferences.views import PreferencesView, PreferencesDetailView
+from .accounts.views_add_account import AccountAddView
 
 USERNAME_PATTERN = r'(?P<username>[\w.+-]+)'
 
@@ -31,5 +32,13 @@ urlpatterns = patterns(
         r'^v1/preferences/{}/(?P<preference_key>[a-zA-Z0-9_]+)$'.format(USERNAME_PATTERN),
         PreferencesDetailView.as_view(),
         name="preferences_detail_api"
+    ),
+)
+
+urlpatterns += (
+    url(
+        r'^v1/accounts/$',
+        AccountAddView.as_view(),
+        name="accounts_add_api"
     ),
 )
