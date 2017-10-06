@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2017-07-11 11:49-0400\n"
-"PO-Revision-Date: 2017-07-11 15:49:24.103795\n"
+"POT-Creation-Date: 2017-10-06 13:08+0000\n"
+"PO-Revision-Date: 2017-10-06 13:09:09.144003\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -7182,7 +7182,11 @@ msgid "If you do not yet have an account, use the button below to register."
 msgstr ""
 
 #: lms/templates/student_account/login.underscore
-msgid "or sign in with"
+msgid "Get signed in with Young Thinkers"
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
+msgid "Sign in now"
 msgstr ""
 
 #: lms/templates/student_account/login.underscore
