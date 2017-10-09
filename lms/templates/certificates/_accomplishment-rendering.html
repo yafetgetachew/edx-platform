@@ -50,7 +50,7 @@ course_mode_class = course_mode if course_mode else ''
 
                     <div class="wrapper-signatories">
                         <div class="list-signatories">
-                            <img class="src" src="/static/certificates/images/logo-sert.png" alt="">
+                            <img class="src" src="${certificate_image_url}" alt="">
                             % if certificate_data:
                                 % for signatory in certificate_data.get('signatories', []):
                                 <div class="signatory">
