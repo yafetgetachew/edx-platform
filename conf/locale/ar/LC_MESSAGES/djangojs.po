@@ -10160,7 +10160,7 @@ msgid "Sign in now"
 msgstr "سجل الدخول الان"
 
 msgid "You have used {used} of {total} attempts."
-msgstr ".محاولات  {total}  من  {used} كنت فد إستخدمت"
+msgstr "كنت فد إستخدمت {used}  من {total}  محاولات."
 
 msgid "Keyboard Help"
 msgstr "مساعدة لوحة المفاتيح"
