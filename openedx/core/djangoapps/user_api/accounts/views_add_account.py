@@ -42,5 +42,5 @@ class AccountAddView(AccountView, ApiKeyPermissionMixIn):
 
         return Response(
             status=status.HTTP_200_OK,
-            data={"message": u"Account successfully saved."}
+            data={"message": u"Account successfully created."}
         )
