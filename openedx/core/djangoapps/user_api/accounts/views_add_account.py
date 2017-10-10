@@ -15,7 +15,7 @@ class AccountAddView(AccountView, ApiKeyPermissionMixIn):
 
     def post(self, request):
         form = AccountCreationForm(
-            data=request.POST,
+            data=request.data,
             extra_fields={},
             extended_profile_fields={},
             enforce_username_neq_password=False,
