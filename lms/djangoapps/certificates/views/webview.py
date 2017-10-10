@@ -31,6 +31,7 @@ from util import organizations_helpers as organization_api
 from util.views import handle_500
 from xmodule.modulestore.django import modulestore
 from xmodule.modulestore.exceptions import ItemNotFoundError
+from util.date_utils import strftime_localized
 
 from certificates.api import (
     get_active_web_certificate,
@@ -97,33 +98,7 @@ def _update_certificate_context(request, context, user_certificate, platform_nam
         suffix=context.get('certificate_verify_url_suffix')
     )
 
-    certificate_date_issued_month=user_certificate.modified_date.strftime("%B")
-    uk_months_fix = {
-        "січень": "січня",
-        "лютий": "лютого",
-        "березень": "березня",
-        "квітень": "квітня",
-        "травень": "травня",
-        "червень": "червня",
-        "липень": "липня",
-        "серпень": "серпня",
-        "вересень": "вересня",
-        "жовтень": "жовтня",
-        "листопад": "листопада",
-        "грудень": "грудня"
-    }
-    try:
-        certificate_date_issued_month=uk_months_fix[certificate_date_issued_month]
-    except KeyError:
-        pass
-
-    # Translators:  The format of the date includes the full name of the month
-    context['certificate_date_issued'] = _('{month} {day}, {year}').format(
-        month=certificate_date_issued_month,
-        day=user_certificate.modified_date.day,
-        year=user_certificate.modified_date.year
-    )
-
+    context['certificate_date_issued'] = strftime_localized(user_certificate.modified_date, '%d %B %Y').lower()
     if request.GET.get('language', settings.LANGUAGE_CODE) == "uk":
         context['certificate_date_issued'] += " року"
 
