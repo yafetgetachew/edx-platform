@@ -114,6 +114,9 @@ class CourseOverview(TimeStampedModel):
         """
         from lms.djangoapps.certificates.api import get_active_web_certificate
         from openedx.core.lib.courses import course_image_url
+        from contentstore.courseware_index import CoursewareSearchIndexer
+        from cms.djangoapps.contentstore.courseware_index import CourseAboutSearchIndexer
+        from opaque_keys.edx.keys import CourseKey
 
         log.info('Creating course overview for %s.', unicode(course.id))
 
@@ -138,6 +141,16 @@ class CourseOverview(TimeStampedModel):
             start = ccx.start
             end = ccx.due
             max_student_enrollments_allowed = ccx.max_student_enrollments_allowed
+
+        if (course.catalog_visibility != 'both'):
+            # Delete course entry Search_index
+            log.info('Removing search index for %s.', unicode(course.id))
+            CourseAboutSearchIndexer.remove_deleted_items(course.id)
+        else:
+            # Reindex course entry Search_index
+            log.info('Rebuild search index for %s.', unicode(course.id))
+            store = modulestore()
+            CoursewareSearchIndexer.do_course_reindex(store, course.id)
 
         return cls(
             version=cls.VERSION,
