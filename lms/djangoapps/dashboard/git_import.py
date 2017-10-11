@@ -196,6 +196,10 @@ def add_repo(repo, rdir_in, branch=None):
         'db': 'xlog',
     }
 
+    mongo_db.update(settings.CONTENTSTORE['OPTIONS'])
+    if isinstance(mongo_db['host'], list):
+        mongo_db['host'] = mongo_db['host'][0]
+
     # Allow overrides
     if hasattr(settings, 'MONGODB_LOG'):
         for config_item in ['host', 'user', 'password', 'db', 'port']:
@@ -329,8 +333,8 @@ def add_repo(repo, rdir_in, branch=None):
         else:
             mdb = mongoengine.connect(mongo_db['db'], host=mongo_db['host'], port=mongo_db['port'])
     except mongoengine.connection.ConnectionError:
-        log.exception('Unable to connect to mongodb to save log, please '
-                      'check MONGODB_LOG settings')
+        log.exception('Unable to connect to mongodb to save log, '
+                      'please check MONGODB_LOG settings.', "mongodb://{user}:*****@{host}/{db}".format(**mongo_db))
     cil = CourseImportLog(
         course_id=course_key,
         location=location,
