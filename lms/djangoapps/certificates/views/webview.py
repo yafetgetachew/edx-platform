@@ -13,6 +13,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
+from django.utils import translation
 from django.utils.encoding import smart_str
 from django.contrib.auth.decorators import login_required
 
@@ -98,8 +99,8 @@ def _update_certificate_context(request, context, user_certificate, platform_nam
         suffix=context.get('certificate_verify_url_suffix')
     )
 
-    context['certificate_date_issued'] = strftime_localized(user_certificate.modified_date, '%d %B %Y').lower()
-    if request.GET.get('language', settings.LANGUAGE_CODE) == "uk":
+    with translation.override('uk'):
+        context['certificate_date_issued'] = strftime_localized(user_certificate.modified_date, '%d %B %Y').lower()
         context['certificate_date_issued'] += " року"
 
     # Translators:  This text represents the verification of the certificate
@@ -481,7 +482,9 @@ def render_cert_by_uuid(request, certificate_uuid):
             verify_uuid=certificate_uuid,
             status=CertificateStatuses.downloadable
         )
-        return render_html_view(request, certificate.user.id, unicode(certificate.course_id))
+        with translation.override('uk'):
+            cert_content = render_html_view(request, certificate.user.id, unicode(certificate.course_id))
+        return cert_content
     except GeneratedCertificate.DoesNotExist:
         raise Http404
 
@@ -506,7 +509,8 @@ def render_html_view(request, user_id, course_id):
     configuration = CertificateHtmlViewConfiguration.get_config()
     # Create the initial view context, bootstrapping with Django settings and passed-in values
     context = {}
-    _update_context_with_basic_info(context, course_id, platform_name, configuration)
+    with translation.override('uk'):
+        _update_context_with_basic_info(context, course_id, platform_name, configuration)
     invalid_template_path = 'certificates/invalid.html'
 
     # Kick the user back to the "Invalid" screen if the feature is disabled
