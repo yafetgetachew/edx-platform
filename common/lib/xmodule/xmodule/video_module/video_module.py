@@ -1048,10 +1048,15 @@ class VideoDescriptor(VideoFields, VideoTranscriptsMixin, VideoStudioViewHandler
 
         # Fall back to other video URLs in the video module if not found in VAL
         if not encoded_videos:
-            video_url = self.html5_sources[0] if self.html5_sources else self.source
-            if video_url:
+            for source in self.html5_sources:
+                if source.endswith('.m3u8'):
+                    encoded_videos['hls'] = { "url": source, "file_size": 0 }
+                else:
+                    encoded_videos['fallback'] = { "url": source, "file_size": 0 }
+
+            if not encoded_videos and self.source:
                 encoded_videos["fallback"] = {
-                    "url": video_url,
+                    "url": self.source,
                     "file_size": 0,  # File size is unknown for fallback URLs
                 }
 
