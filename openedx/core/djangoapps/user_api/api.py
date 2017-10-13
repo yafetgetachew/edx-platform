@@ -43,7 +43,7 @@ def get_password_reset_form():
     # Translators: These instructions appear on the password reset form,
     # immediately below a field meant to hold the user's email address.
     email_instructions = _(u"The email address you used to register with {platform_name}").format(
-        platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
+        platform_name=configuration_helpers.get_value('platform_name', settings.PLATFORM_NAME)
     )
 
     form_desc.add_field(
@@ -88,7 +88,7 @@ def get_login_session_form():
     # Translators: These instructions appear on the login form, immediately
     # below a field meant to hold the user's email address.
     email_instructions = _("The email address you used to register with {platform_name}").format(
-        platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
+        platform_name=configuration_helpers.get_value('platform_name', settings.PLATFORM_NAME)
     )
 
     form_desc.add_field(
@@ -580,7 +580,7 @@ class RegistrationFormFactory(object):
         # Translators: This phrase appears above a field on the registration form
         # meant to hold the user's reasons for registering with edX.
         goals_label = _(u"Tell us why you're interested in {platform_name}").format(
-            platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME)
+            platform_name=configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME)
         )
         error_msg = accounts.REQUIRED_FIELD_GOALS_MSG
 
@@ -764,14 +764,14 @@ class RegistrationFormFactory(object):
         # Translators: "Terms of Service" is a legal document users must agree to
         # in order to register a new account.
         label = _(u"I agree to the {platform_name} {terms_of_service}").format(
-            platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
+            platform_name=configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME),
             terms_of_service=terms_label
         )
 
         # Translators: "Terms of Service" is a legal document users must agree to
         # in order to register a new account.
         error_msg = _(u"You must agree to the {platform_name} {terms_of_service}").format(
-            platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
+            platform_name=configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME),
             terms_of_service=terms_label
         )
 
@@ -804,14 +804,14 @@ class RegistrationFormFactory(object):
         # Translators: "Terms of service" is a legal document users must agree to
         # in order to register a new account.
         label = _(u"I agree to the {platform_name} {terms_of_service}").format(
-            platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
+            platform_name=configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME),
             terms_of_service=terms_label
         )
 
         # Translators: "Terms of service" is a legal document users must agree to
         # in order to register a new account.
         error_msg = _(u"You must agree to the {platform_name} {terms_of_service}").format(
-            platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
+            platform_name=configuration_helpers.get_value("platform_name", settings.PLATFORM_NAME),
             terms_of_service=terms_label
         )
 
