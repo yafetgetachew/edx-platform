@@ -62,7 +62,7 @@
             'backbone.validation': 'common/js/vendor/backbone-validation-min',
             'backbone.associations': 'js/vendor/backbone-associations-min',
             'backbone.paginator': 'common/js/vendor/backbone.paginator',
-            'tinymce': 'js/vendor/tinymce/js/tinymce/tinymce.full.min',
+            'tinymce': 'js/vendor/tinymce/js/tinymce/tinymce.min',
             'jquery.tinymce': 'js/vendor/tinymce/js/tinymce/jquery.tinymce.min',
             'xmodule': '/xmodule/xmodule',
             'xblock/cms.runtime.v1': 'cms/js/xblock/cms.runtime.v1',

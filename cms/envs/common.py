@@ -1242,3 +1242,89 @@ RETRY_ACTIVATION_EMAIL_TIMEOUT = 0.5
 
 # How long until database records about the outcome of a task and its artifacts get deleted?
 USER_TASKS_MAX_AGE = timedelta(days=7)
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+    'plugins': [
+      "table advlist autolink lists link image charmap preview",
+      "searchreplace wordcount visualblocks code fullscreen",
+      "insertdatetime nonbreaking save contextmenu directionality",
+      "paste textcolor colorpicker textpattern"
+    ],
+     'font_formats' : (
+         'Andale Mono=andale mono,times;'
+         'Arial=arial,helvetica,sans-serif;'
+         'Arial Black=arial black,avant garde;'
+         'Book Antiqua=book antiqua,palatino;'
+         'Comic Sans MS=comic sans ms,sans-serif;'
+         'Courier New=courier new,courier;'
+         'Georgia=georgia,palatino;'
+         'Helvetica=helvetica;'
+         'Impact=impact,chicago;'
+         'Symbol=symbol;'
+         'Tahoma=tahoma,arial,helvetica,sans-serif;'
+         'Terminal=terminal,monaco;'
+         'Times New Roman=times new roman,times;'
+         'Trebuchet MS=trebuchet ms,geneva;'
+         'Verdana=verdana,geneva;'
+         'Webdings=webdings;'
+         'Wingdings=wingdings,zapf dingbats;'
+         'Calibri=calibri,candara,segoe,optima,arial,sans-serif;'
+         'Cambria=cambria,georgia,palatino,times new roman,serif;'
+         'Open Sans=\'Open Sans\',sans-serif;'
+         'Lato=\'Lato\',sans-serif;'
+     ),
+     'toolbar1': (
+         'fontsizeselect fontselect bold italic forecolor backcolor | styleselect '
+         '| alignleft aligncenter alignright alignjustify'
+     ),
+     'toolbar2': 'undo redo | bullist numlist | outdent indent | insert | image | table | codesample | code preview',
+     'image_advtab': True,
+     'content_css': [
+         '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+         '//fonts.googleapis.com/css?family=Open+Sans:300,400,700',
+         '//www.tinymce.com/css/codepen.min.css'
+    ],
+    'menubar': False,
+    'statusbar': True,
+    'resize': True,
+#    'paste_data_images': True,
+#    'automatic_uploads': True,
+#    'image_advtab': True,
+    'file_picker_types': 'image',
+    'convert_urls': False,
+    'image_caption': True,
+    'table_style_by_css': True,
+    'style_formats': [
+        {
+            'title': 'Headers', 'items': [
+                {'title': 'Header 1', 'format': 'h1'},
+                {'title': 'Header 2', 'format': 'h2'},
+                {'title': 'Header 3', 'format': 'h3'},
+                {'title': 'Header 4', 'format': 'h4'},
+                {'title': 'Header 5', 'format': 'h5'},
+                {'title': 'Header 6', 'format': 'h6'}
+            ]
+        },
+        {
+            'title': 'Inline', 'items': [
+                {'title': 'Bold', 'icon': 'bold', 'format': 'bold'},
+                {'title': 'Italic', 'icon': 'italic', 'format': 'italic'},
+                {'title': 'Underline', 'icon': 'underline', 'format': 'underline'},
+                {'title': 'Strikethrough', 'icon': 'strikethrough', 'format': 'strikethrough'},
+                {'title': 'Superscript', 'icon': 'superscript', 'format': 'superscript'},
+                {'title': 'Subscript', 'icon': 'subscript', 'format': 'subscript'},
+                {'title': 'Code', 'icon': 'code', 'format': 'code'}
+            ]
+        },
+        {
+            'title': 'Alignment', 'items': [
+                {'title': 'Left', 'icon': 'alignleft', 'format': 'alignleft'},
+                {'title': 'Center', 'icon': 'aligncenter', 'format': 'aligncenter'},
+                {'title': 'Right', 'icon': 'alignright', 'format': 'alignright'},
+                {'title': 'Justify', 'icon': 'alignjustify', 'format': 'alignjustify'}
+            ]
+        },
+    ]
+}

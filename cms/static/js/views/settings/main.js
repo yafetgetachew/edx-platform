@@ -32,6 +32,42 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    this.$el.find('#course-organization').val(this.model.get('org'));
                    this.$el.find('#course-number').val(this.model.get('course_id'));
                    this.$el.find('#course-name').val(this.model.get('run'));
+                   var view = this;
+                   _.extend(window.tiny_mce_conf, {
+                       selector: '#course-overview',
+                       images_upload_url: window.CMS.URL.UPLOAD_ASSET,
+                       setup: function(editor) {
+                           editor.on('change', function () {
+                               view.model.set('overview', tinyMCE.activeEditor.getContent());
+                           });
+                       },
+                       file_picker_callback: function(callback, value, meta) {
+                           if (meta.filetype == 'image') {
+                               $('#upload').trigger('click');
+                               $('#upload').unbind('change');
+                               $('#upload').on('change', function() {
+                                   var file = this.files[0];
+                                   var formData;
+                                   formData = new FormData();
+                                   formData.append('file', file);
+                                   var url = tinyMCE.activeEditor.settings.images_upload_url;
+                                   $.ajax({
+                                       url: url,
+                                       data: formData,
+                                       processData: false,
+                                       contentType: false,
+                                       type: 'POST',
+                                       headers: {'X-CSRFToken': $.cookie('csrftoken')},
+                                       success: function(response) {
+                                           callback(response.asset.url, {alt: file.name});
+                                       }
+                                   });
+                               });
+                           }
+                       }
+                   });
+
+                   tinyMCE.init(window.tiny_mce_conf);
                    this.$el.find('.set-date').datepicker({'dateFormat': 'm/d/yy'});
 
         // Avoid showing broken image on mistyped/nonexistent image
@@ -83,7 +119,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    DateUtils.setupDatePicker('enrollment_end', this);
 
                    this.$el.find('#' + this.fieldToSelectorMap['overview']).val(this.model.get('overview'));
-                   this.codeMirrorize(null, $('#course-overview')[0]);
+//                   this.codeMirrorize(null, $('#course-overview')[0]);
 
                    if (this.model.get('title') !== '') {
                        this.$el.find('#' + this.fieldToSelectorMap.title).val(this.model.get('title'));

@@ -8,6 +8,7 @@
 <%!
   import urllib
   from django.utils.translation import ugettext as _
+  from django.conf import settings
   from contentstore import utils
   from openedx.core.djangolib.js_utils import (
       dump_js_escaped_json, js_escaped_string
@@ -30,11 +31,12 @@
 window.CMS = window.CMS || {};
 CMS.URL = CMS.URL || {};
 CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
+window.tiny_mce_conf = ${settings.TINYMCE_DEFAULT_CONFIG | n, dump_js_escaped_json};
   </script>
 </%block>
 
 <%block name="requirejs">
-    require(["js/factories/settings"], function(SettingsFactory) {
+    require(["js/factories/settings", "js/vendor/tinymce/js/tinymce/tinymce.min"], function(SettingsFactory) {
         SettingsFactory(
             "${details_url | n, js_escaped_string}",
             ${show_min_grade_warning | n, dump_js_escaped_json}
@@ -333,6 +335,7 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 <li class="field text" id="field-course-overview">
                   <label for="course-overview">${_("Course Overview")}</label>
                   <textarea class="tinymce text-editor" id="course-overview"></textarea>
+                  <input name="image" type="file" id="upload" class="hidden" onchange="">
                   <label class="sr" for="course-overview-cm-textarea">
                     ${_('HTML Code Editor')}
                   </label>
