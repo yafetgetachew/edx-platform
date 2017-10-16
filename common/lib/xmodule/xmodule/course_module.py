@@ -34,6 +34,8 @@ CATALOG_VISIBILITY_CATALOG_AND_ABOUT = "both"
 CATALOG_VISIBILITY_ABOUT = "about"
 CATALOG_VISIBILITY_NONE = "none"
 
+DEFAULT_COURSE_VISIBILITY_IN_CATALOG = getattr(settings, 'DEFAULT_COURSE_VISIBILITY_IN_CATALOG', 'both')
+
 
 class StringOrDate(Date):
     def from_json(self, value):
@@ -685,7 +687,7 @@ class CourseFields(object):
             "of three values: 'both' (show in catalog and allow access to about page), 'about' (only allow access "
             "to about page), 'none' (do not show in catalog and do not allow access to an about page)."
         ),
-        default=settings.DEFAULT_COURSE_VISIBILITY_IN_CATALOG,
+        default=DEFAULT_COURSE_VISIBILITY_IN_CATALOG,
         scope=Scope.settings,
         values=[
             {"display_name": _("Both"), "value": CATALOG_VISIBILITY_CATALOG_AND_ABOUT},
