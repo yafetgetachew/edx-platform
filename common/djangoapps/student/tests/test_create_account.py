@@ -44,7 +44,7 @@ TEST_CS_URL = 'https://comments.service.test:123/'
         key: "optional"
         for key in [
             "level_of_education", "gender", "mailing_address", "city", "country", "goals",
-            "year_of_birth"
+            "year_of_birth", "terms_of_service"
         ]
     }
 )
