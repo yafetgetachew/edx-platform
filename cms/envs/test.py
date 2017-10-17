@@ -44,7 +44,8 @@ MONGO_PORT_NUM = int(os.environ.get('EDXAPP_TEST_MONGO_PORT', '27017'))
 MONGO_HOST = os.environ.get('EDXAPP_TEST_MONGO_HOST', 'localhost')
 
 THIS_UUID = uuid4().hex[:5]
-
+BULK_EMAIL_DEFAULT_RETRY_DELAY = 30
+COURSE_CATALOG_VISIBILITY_PERMISSION = 'see_in_catalog'
 # Nose Test Runner
 TEST_RUNNER = 'openedx.core.djangolib.nose.NoseTestSuiteRunner'
 
@@ -64,7 +65,7 @@ NOSE_PLUGINS = [
 ]
 
 TEST_ROOT = path('test_root')
-
+FEATURES['ENABLE_FEEDBACK_SUBMISSION'] = False
 # Want static files in the same dir for running on jenkins.
 STATIC_ROOT = TEST_ROOT / "staticfiles"
 INSTALLED_APPS = [app for app in INSTALLED_APPS if app != 'webpack_loader']
