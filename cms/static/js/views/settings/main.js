@@ -46,6 +46,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                                $('#upload').trigger('click');
                                $('#upload').unbind('change');
                                $('#upload').on('change', function() {
+                                   var that = this;
                                    var file = this.files[0];
                                    var formData;
                                    formData = new FormData();
@@ -59,6 +60,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                                        type: 'POST',
                                        headers: {'X-CSRFToken': $.cookie('csrftoken')},
                                        success: function(response) {
+                                           that.value = '';
                                            callback(response.asset.url, {alt: file.name});
                                        }
                                    });

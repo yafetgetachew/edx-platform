@@ -1248,7 +1248,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 10,
     'plugins': [
       "table advlist autolink lists link image charmap preview",
-      "searchreplace wordcount visualblocks code fullscreen",
+      "searchreplace wordcount visualblocks visualchars code fullscreen",
       "insertdatetime nonbreaking save contextmenu directionality",
       "paste textcolor colorpicker textpattern"
     ],
@@ -1280,6 +1280,7 @@ TINYMCE_DEFAULT_CONFIG = {
          '| alignleft aligncenter alignright alignjustify'
      ),
      'toolbar2': 'undo redo | bullist numlist | outdent indent | insert | image | table | codesample | code preview',
+     'table_toolbar': 'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
      'image_advtab': True,
      'content_css': [
          '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
