@@ -31,7 +31,7 @@ course_mode_class = course_mode if course_mode else ''
                     <div class="certificate_subtitle" style="color: ${certificate_subtitle_color};">${certificate_subtitle}</div>
                     <p class="accomplishment-statement-lead">
                         <span class="accomplishment-summary copy copy-lead">This is to certify that</span>
-                        <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}Test Name</strong>
+                        <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</strong>
                         <span class="accomplishment-summary copy copy-lead copy-lead__other">successfully completed and received a passing grade in</span>
 
                         <span class="accomplishment-course hd-1 emphasized">
@@ -41,7 +41,7 @@ course_mode_class = course_mode if course_mode else ''
                         </span>
                     </p>
 
-                    <p class="accomplishment-statement-detail copy copy-lead">${accomplishment_copy_course_description}</p>
+                    <p class="accomplishment-statement-detail copy copy-lead">The course was offered, administrated and delivered by d2o.</p>
                 </div>
 
                 % if mode != 'base':
@@ -90,11 +90,11 @@ course_mode_class = course_mode if course_mode else ''
                 </ul> -->
                 <img class="src" src="/static/certificates/images/stamp-2.png" alt="stamp">
                 <dl class="metadata accomplishment-date">
-                    <dt class="label copy copy-meta">${certificate_date_issued_title}</dt>
+                    <dt class="label copy copy-meta">Verified Certificate</dt>
                     <dd class="value copy copy-base">${certificate_date_issued}</dd>
                 </dl>
                 <dl class="metadata accomplishment-id">
-                    <dt class="label copy copy-meta">${certificate_id_number_title}:</dt>
+                    <dt class="label copy copy-meta">VALID Certificate ID:</dt>
                     <dd class="value copy copy-base">${certificate_id_number}</dd>
                 </dl>
             </div>
