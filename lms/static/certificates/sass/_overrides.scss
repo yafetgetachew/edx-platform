@@ -18,12 +18,16 @@
 // ------------------------------
 // #SHAME
 // ------------------------------
-.header-app .logo {
-    width: 16em;
-}
-#company-info > nav > ul > li > a {
-    color: #4CBEA7;
-    &:hover {
-        color: lighten(#4CBEA7, 20%);
+body {
+    .header-app .logo {
+        width: 16em;
+    }
+    #company-info > nav > ul > li > a,
+    .copy-meta a {
+        color: #4CBEA7;
+        &:hover {
+            color: lighten(#4CBEA7, 20%);
+        }
     }
 }
+
