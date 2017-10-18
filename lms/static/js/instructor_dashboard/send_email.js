@@ -43,6 +43,7 @@
             this.$cohort_targets = this.$send_to.filter('[value^="cohort:"]');
             this.$subject = this.$container.find("input[name='subject']");
             this.$btn_send = this.$container.find("input[name='send']");
+            this.$btn_send_password = this.$container.find("input[name='send-password']");
             this.$task_response = this.$container.find('.request-response');
             this.$request_response_error = this.$container.find('.request-response-error');
             this.$content_request_response_error = this.$container.find('.content-request-response-error');
@@ -53,6 +54,19 @@
             this.$table_email_content_history = this.$container.find('.content-history-email-table');
             this.$email_content_table_inner = this.$container.find('.content-history-table-inner');
             this.$email_messages_wrapper = this.$container.find('.email-messages-wrapper');
+            this.$btn_send_password.click(function() {
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: sendemail.$btn_send_password.data('endpoint'),
+                    success: function(response) {
+                        $('#send-password-emails-message').html(response.message);
+                    },
+                    error: statusAjaxError(function() {
+                        sendemail.fail_with_error(gettext('Error sending emails.'));
+                    })
+                });
+            });
             this.$btn_send.click(function() {
                 var body, confirmMessage, displayTarget, fullConfirmMessage, message,
                     sendData, subject, successMessage, target, targets, validation, i, len;
