@@ -482,9 +482,10 @@ DOC_LINK_BASE_URL = ENV_TOKENS.get('DOC_LINK_BASE_URL', DOC_LINK_BASE_URL)
 #RACCOONGANG
 CMS_MKTG_URLS = ENV_TOKENS.get('CMS_MKTG_URLS', {})
 
-if ENV_TOKENS.get('SENTRY_DSN'):
+if AUTH_TOKENS.get('SENTRY_DSN'):
     INSTALLED_APPS += ( 'raven.contrib.django.raven_compat', )
     RAVEN_CONFIG = {
-        'dsn': SENTRY_DSN,
+        'dsn': AUTH_TOKENS.get('SENTRY_DSN'),
     }
+    raven.fetch_git_sha("/edx/app/edxapp/edx-platform")
 #RACCOONGANG

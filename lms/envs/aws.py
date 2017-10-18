@@ -917,10 +917,11 @@ ENTERPRISE_ENROLLMENT_API_URL = ENV_TOKENS.get('ENTERPRISE_ENROLLMENT_API_URL', 
 #### RaccoonGang ####
 LOCALESET_FROM_REQUEST = ENV_TOKENS.get('LOCALESET_FROM_REQUEST', {"en": "en_US.utf8"})
 
-if ENV_TOKENS.get('SENTRY_DSN'):
+if AUTH_TOKENS.get('SENTRY_DSN'):
     INSTALLED_APPS += ( 'raven.contrib.django.raven_compat', )
     RAVEN_CONFIG = {
-        'dsn': ENV_TOKENS.get('SENTRY_DSN'),
+        'dsn': AUTH_TOKENS.get('SENTRY_DSN'),
     }
+    raven.fetch_git_sha("/edx/app/edxapp/edx-platform")
 #### RaccoonGang ####
 
