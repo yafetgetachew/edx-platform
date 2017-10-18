@@ -128,12 +128,15 @@
 }
 .layout-accomplishment.certificate-honor .accomplishment-rendering .accomplishment-signatories .signatory-signature {
     margin: 0 0 0 auto;
+    max-width: 150px;
 }
 .accomplishment-summary.copy.copy-lead.copy-lead__other {
     margin-bottom: 33px;
 }
 .list-signatories .src {
     margin-bottom: 28px;
+    max-width: 200px;
+    height: auto;
 }
 .accomplishment-rendering .accomplishment-signatories .signatory-name {
     font-size: 16px;
