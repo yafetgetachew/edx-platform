@@ -588,7 +588,7 @@ def course_about(request, course_id):
                     shoppingcart.models.CourseRegCodeItem.contained_in_order(cart, course_key)
 
             reg_then_add_to_cart_link = "{reg_url}?course_id={course_id}&enrollment_action=add_to_cart".format(
-                reg_url=reverse('register_user'), course_id=urllib.quote(str(course_id))
+                reg_url=reverse('signin_user'), course_id=urllib.quote(str(course_id))
             )
 
         # If the ecommerce checkout flow is enabled and the mode of the course is
