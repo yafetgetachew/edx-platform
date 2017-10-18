@@ -898,3 +898,11 @@ ENTERPRISE_ENROLLMENT_API_URL = ENV_TOKENS.get('ENTERPRISE_ENROLLMENT_API_URL', 
 # JIVOSITE widget settings:
 if FEATURES.get('ENABLE_JIVOSITE', False):
     JIVOSITE_WIDGET_ID = FEATURES.get('JIVOSITE_WIDGET_ID', 'jivosite_widget_id_given_to_jivosite_widget')
+
+if AUTH_TOKENS.get('SENTRY_DSN'):
+    INSTALLED_APPS += ( 'raven.contrib.django.raven_compat', )
+    RAVEN_CONFIG = {
+        'dsn': AUTH_TOKENS.get('SENTRY_DSN'),
+    }
+    raven.fetch_git_sha("/edx/app/edxapp/edx-platform")
+
