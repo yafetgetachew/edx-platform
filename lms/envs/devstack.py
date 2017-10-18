@@ -21,7 +21,6 @@ HTTPS = 'off'
 
 LMS_ROOT_URL = 'http://localhost:8000'
 ENTERPRISE_API_URL = LMS_ROOT_URL + '/enterprise/api/v1/'
-ANALYTICA_TOKEN = ''
 
 ################################ LOGGERS ######################################
 
@@ -36,6 +35,11 @@ LOG_OVERRIDES = [
 for log_name, log_level in LOG_OVERRIDES:
     logging.getLogger(log_name).setLevel(log_level)
 
+
+########################### ANALYTICA ################################
+ANALITICA_TRACK_URL = ''
+ANALITICA_ACTIVE = False
+ANALITICA_TOKEN = ''
 
 ################################ EMAIL ########################################
 
