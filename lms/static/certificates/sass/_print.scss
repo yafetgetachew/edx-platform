@@ -69,12 +69,14 @@
     html,
     body {
         @extend %print-black-on-white;
+        height: 100%;
     }
 
     body {
-        height: auto;
+        height: 100%;
         margin: 0!important;
         padding: 0;
+        overflow: hidden;
     }
 
     .wrapper-view {
@@ -184,16 +186,20 @@
     }
 
     // accomplishment
-    .accomplishment-main {
-        @extend %print-no-background;
+    .accomplishment-main,
+    .wrapper-accomplishment-rendering,
+    .wrapper-view {
+        height: 100%;
+        overflow: hidden;
     }
-
     .accomplishment-rendering {
         top: 0 !important;
+        height: 100%;
         // border: rem(1) solid palette(grayscale, back);
         // border-top: rem(2) solid $cert-base-color;
         box-shadow: none;
         padding: spacing-vertical(small) spacing-horizontal(mid-large);
+        overflow: hidden;
 
 
         .accomplishment-type {
@@ -251,8 +257,9 @@
             }
 
             .signatory-signature {
-                height: spacing-vertical(small);
+                height: auto;
                 max-width: 100%;
+                width: 30%;
                 margin-top: 0;
                 padding-top: 0 !important;
                 padding-bottom: 0 !important;
@@ -263,7 +270,7 @@
             }
 
             .signatory-credentials {
-                margin-bottom: 0 !important;
+                margin-bottom: 20px !important;
             }
 
             // CASE: > 4 signatures
@@ -332,6 +339,11 @@
         .accomplishment-rendering {
             // border-top-color: $cert-distinguished-color;
         }
+    }
+    .list-signatories .src {
+        margin-bottom: 28px;
+        width: 40%;
+        height: auto;
     }
 }
 
