@@ -2538,10 +2538,10 @@ def send_email_password(request, course_id):
 
         subject = loader.render_to_string('registration/password_reset_subject.txt', context)
         subject = subject.replace('\n', '')
-        email = loader.render_to_string('registration/password_reset_email.txt', context)
+        email = loader.render_to_string('registration/password_set_email.txt', context)
 
         try:
-            html_email = loader.render_to_string('registration/password_reset_email.html', context)
+            html_email = loader.render_to_string('registration/password_set_email.html', context)
         except:
             html_email = None
         from_email = configuration_helpers.get_value('email_from_address', settings.DEFAULT_FROM_EMAIL)
