@@ -38,6 +38,9 @@ TEST_CS_URL = 'https://comments.service.test:123/'
         "microsite": {
             "domain_prefix": "microsite",
             "extended_profile_fields": ["extra1", "extra2"],
+            "REGISTRATION_EXTRA_FIELDS": {
+                "terms_of_service": "optional"
+            },
         }
     },
     REGISTRATION_EXTRA_FIELDS={
