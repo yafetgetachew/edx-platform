@@ -21,6 +21,7 @@ HTTPS = 'off'
 
 LMS_ROOT_URL = 'http://localhost:8000'
 ENTERPRISE_API_URL = LMS_ROOT_URL + '/enterprise/api/v1/'
+ANALYTICA_TOKEN = ''
 
 ################################ LOGGERS ######################################
 
