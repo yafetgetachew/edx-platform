@@ -920,7 +920,7 @@ LOCALESET_FROM_REQUEST = ENV_TOKENS.get('LOCALESET_FROM_REQUEST', {"en": "en_US.
 if ENV_TOKENS.get('SENTRY_DSN'):
     INSTALLED_APPS += ( 'raven.contrib.django.raven_compat', )
     RAVEN_CONFIG = {
-        'dsn': SENTRY_DSN,
+        'dsn': ENV_TOKENS.get('SENTRY_DSN'),
     }
 #### RaccoonGang ####
 
