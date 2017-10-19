@@ -423,6 +423,11 @@ def send_mail_to_student(student, param_dict, language=None):
 
     Returns a boolean indicating whether the email was sent successfully.
     """
+    from_address = configuration_helpers.get_value(
+            'email_from_address',
+            settings.DEFAULT_FROM_EMAIL
+        )
+    param_dict['from_email_address'] = from_address
 
     # add some helpers and microconfig subsitutions
     if 'display_name' in param_dict:
@@ -496,10 +501,6 @@ def send_mail_to_student(student, param_dict, language=None):
 
         # Email subject *must not* contain newlines
         subject = ''.join(subject.splitlines())
-        from_address = configuration_helpers.get_value(
-            'email_from_address',
-            settings.DEFAULT_FROM_EMAIL
-        )
 
         send_mail(subject, message, from_address, [student], fail_silently=False, html_message=html_message)
 
