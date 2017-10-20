@@ -54,89 +54,142 @@ class @HTMLEditingDescriptor
 
   #   This is a workaround for the fact that tinyMCE's baseURL property is not getting correctly set on AWS
   #   instances (like sandbox). It is not necessary to explicitly set baseURL when running locally.
-#     tinyMCE.baseURL = "#{baseUrl}/js/vendor/tinymce/js/tinymce"
+      if IS_LMS
+        tinyMCE.baseURL = "#{baseUrl}/js/vendor/tinymce/js/tinymce"
   #   This is necessary for the LMS bulk e-mail acceptance test. In that particular scenario,
   #   tinyMCE incorrectly decides that the suffix should be "", which means it fails to load files.
-#      tinyMCE.suffix = ".min"
-      window.tiny_mce_conf.plugins[0] = "#{window.tiny_mce_conf.plugins[0]} codemirror"
-      tinyMCE.baseURL = window.tinymce_base_url;
-      _.extend(window.tiny_mce_conf, {
-        selector: ".tiny-mce",
-        script_url : "#{baseUrl}/tiny_mce/tinymce.min.js",
-#        font_formats : _getFonts(),
-#        theme : "modern",
-#        skin: 'studio-tmce4',
-        schema: "html5",
-        relative_urls: true,
-        # Necessary to preserve relative URLs to our images.
-#        convert_urls : false,
-        # Sniff UI direction from `.wrapper-view` in studio or `.window-wrap` in LMS
-        directionality: $(".wrapper-view, .window-wrap").prop('dir'),
-#        content_css : tiny_mce_css_links.join(", "),
-#        formats : {
-#          # tinyMCE does block level for code by default
-#          code: {inline: 'code'}
-#        },
-        # Disable visual aid on borderless table.
-#        visual: false,
-#        plugins: "textcolor, link, image, codemirror",
-        codemirror: {
-          path: "#{baseUrl}/js/vendor"
-        },
-#        image_advtab: true,
-        # We may want to add "styleselect" when we collect all styles used throughout the LMS
-#        toolbar: "formatselect | fontselect | bold italic underline forecolor wrapAsCode | bullist numlist outdent indent blockquote | link unlink image | code",
-#        block_formats: interpolate("%(paragraph)s=p;%(preformatted)s=pre;%(heading3)s=h3;%(heading4)s=h4;%(heading5)s=h5;%(heading6)s=h6", {
-#            paragraph: gettext("Paragraph"),
-#            preformatted: gettext("Preformatted"),
-#            heading3: gettext("Heading 3"),
-#            heading4: gettext("Heading 4"),
-#            heading5: gettext("Heading 5"),
-#            heading6: gettext("Heading 6")
-#          }, true),
-        width: '100%',
-        height: '400px',
-#        menubar: false,
-#        statusbar: false,
+      if IS_LMS
+        tinyMCE.suffix = ".min"
+        @tiny_mce_textarea = $(".tiny-mce", @element).tinymce({
+          script_url : "#{baseUrl}/js/vendor/tinymce/js/tinymce/tinymce.full.min.js",
+          font_formats : _getFonts(),
+          theme : "modern",
+          skin: 'studio-tmce4',
+          schema: "html5",
+          # Necessary to preserve relative URLs to our images.
+          convert_urls : false,
+          # Sniff UI direction from `.wrapper-view` in studio or `.window-wrap` in LMS
+          directionality: $(".wrapper-view, .window-wrap").prop('dir'),
+          content_css : tiny_mce_css_links.join(", "),
+          formats : {
+            # tinyMCE does block level for code by default
+            code: {inline: 'code'}
+          },
+          # Disable visual aid on borderless table.
+          visual: false,
+          plugins: "textcolor, link, image, codemirror",
+          codemirror: {
+            path: "#{baseUrl}/js/vendor"
+          },
+          image_advtab: true,
+          # We may want to add "styleselect" when we collect all styles used throughout the LMS
+          toolbar: "formatselect | fontselect | bold italic underline forecolor wrapAsCode | bullist numlist outdent indent blockquote | link unlink image | code",
+          block_formats: interpolate("%(paragraph)s=p;%(preformatted)s=pre;%(heading3)s=h3;%(heading4)s=h4;%(heading5)s=h5;%(heading6)s=h6", {
+              paragraph: gettext("Paragraph"),
+              preformatted: gettext("Preformatted"),
+              heading3: gettext("Heading 3"),
+              heading4: gettext("Heading 4"),
+              heading5: gettext("Heading 5"),
+              heading6: gettext("Heading 6")
+            }, true),
+          width: '100%',
+          height: '400px',
+          menubar: false,
+          statusbar: false,
 
-        # Necessary to avoid stripping of style tags.
-#        valid_children : "+body[style]",
+          # Necessary to avoid stripping of style tags.
+          valid_children : "+body[style]",
 
-        # Allow any elements to be used, e.g. link, script, math
-#        valid_elements: "*[*]",
-#        extended_valid_elements: "*[*]",
-#        invalid_elements: "",
+          # Allow any elements to be used, e.g. link, script, math
+          valid_elements: "*[*]",
+          extended_valid_elements: "*[*]",
+          invalid_elements: "",
 
-        setup: @setupTinyMCE,
-        # Cannot get access to tinyMCE Editor instance (for focusing) until after it is rendered.
-        # The tinyMCE callback passes in the editor as a parameter.
-        init_instance_callback: @initInstanceCallback,
+          setup: @setupTinyMCE,
+          # Cannot get access to tinyMCE Editor instance (for focusing) until after it is rendered.
+          # The tinyMCE callback passes in the editor as a parameter.
+          init_instance_callback: @initInstanceCallback,
 
-        browser_spellcheck: true,
-        file_picker_callback: (callback, value, meta) ->
-          if meta.filetype.toString() == 'image'
-            $('#upload').trigger('click')
-            $('#upload').unbind('change')
-            $('#upload').on('change', () ->
-              file = this.files[0]
-              formData = new FormData()
-              formData.append('file', file)
-              url = tinyMCE.activeEditor.settings.images_upload_url
-              $.ajax({
-                url: url,
-                data: formData,
-                processData: false,
-                contentType: false,
-                type: 'POST',
-                headers: {'X-CSRFToken': $.cookie('csrftoken')},
-                success: (response) ->
-                  callback(response.asset.url, {alt: file.name})
-              })
-            )
-      })
+          browser_spellcheck: true
+        })
+      else
+        window.tiny_mce_conf.plugins[0] = "#{window.tiny_mce_conf.plugins[0]} codemirror"
+        tinyMCE.baseURL = window.tinymce_base_url;
+        _.extend(window.tiny_mce_conf, {
+          selector: ".tiny-mce",
+          script_url : "#{baseUrl}/tiny_mce/tinymce.min.js",
+  #        font_formats : _getFonts(),
+  #        theme : "modern",
+  #        skin: 'studio-tmce4',
+          schema: "html5",
+          relative_urls: true,
+          # Necessary to preserve relative URLs to our images.
+  #        convert_urls : false,
+          # Sniff UI direction from `.wrapper-view` in studio or `.window-wrap` in LMS
+          directionality: $(".wrapper-view, .window-wrap").prop('dir'),
+  #        content_css : tiny_mce_css_links.join(", "),
+  #        formats : {
+  #          # tinyMCE does block level for code by default
+  #          code: {inline: 'code'}
+  #        },
+          # Disable visual aid on borderless table.
+  #        visual: false,
+  #        plugins: "textcolor, link, image, codemirror",
+          codemirror: {
+            path: "#{baseUrl}/js/vendor"
+          },
+ #        image_advtab: true,
+          # We may want to add "styleselect" when we collect all styles used throughout the LMS
+  #        toolbar: "formatselect | fontselect | bold italic underline forecolor wrapAsCode | bullist numlist outdent indent blockquote | link unlink image | code",
+  #        block_formats: interpolate("%(paragraph)s=p;%(preformatted)s=pre;%(heading3)s=h3;%(heading4)s=h4;%(heading5)s=h5;%(heading6)s=h6", {
+  #            paragraph: gettext("Paragraph"),
+  #            preformatted: gettext("Preformatted"),
+  #            heading3: gettext("Heading 3"),
+  #            heading4: gettext("Heading 4"),
+  #            heading5: gettext("Heading 5"),
+  #            heading6: gettext("Heading 6")
+  #          }, true),
+          width: '100%',
+          height: '400px',
+  #        menubar: false,
+  #        statusbar: false,
 
-       
-      @tiny_mce_textarea = $(".tiny-mce", @element).tinymce(window.tiny_mce_conf)
+          # Necessary to avoid stripping of style tags.
+  #        valid_children : "+body[style]",
+
+          # Allow any elements to be used, e.g. link, script, math
+  #        valid_elements: "*[*]",
+  #        extended_valid_elements: "*[*]",
+  #        invalid_elements: "",
+
+          setup: @setupTinyMCE,
+          # Cannot get access to tinyMCE Editor instance (for focusing) until after it is rendered.
+          # The tinyMCE callback passes in the editor as a parameter.
+          init_instance_callback: @initInstanceCallback,
+
+          browser_spellcheck: true,
+          file_picker_callback: (callback, value, meta) ->
+            if meta.filetype.toString() == 'image'
+              $('#upload').trigger('click')
+              $('#upload').unbind('change')
+              $('#upload').on('change', () ->
+                file = this.files[0]
+                formData = new FormData()
+                formData.append('file', file)
+                url = tinyMCE.activeEditor.settings.images_upload_url
+                $.ajax({
+                  url: url,
+                  data: formData,
+                  processData: false,
+                  contentType: false,
+                  type: 'POST',
+                  headers: {'X-CSRFToken': $.cookie('csrftoken')},
+                  success: (response) ->
+                    callback(response.asset.url, {alt: file.name})
+                })
+              )
+        })
+        @tiny_mce_textarea = $(".tiny-mce", @element).tinymce(window.tiny_mce_conf)
 
       tinymce.addI18n('en', {
         ###
