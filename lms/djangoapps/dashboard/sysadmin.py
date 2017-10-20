@@ -601,10 +601,15 @@ class GitLogs(TemplateView):
         # Set mongodb defaults even if it isn't defined in settings
         mongo_db = {
             'host': 'localhost',
+            'port': 27017,
             'user': '',
             'password': '',
             'db': 'xlog',
         }
+
+        mongo_db.update(settings.CONTENTSTORE['OPTIONS'])
+        if isinstance(mongo_db['host'], list):
+            mongo_db['host'] = mongo_db['host'][0]
 
         # Allow overrides
         if hasattr(settings, 'MONGODB_LOG'):
@@ -622,8 +627,8 @@ class GitLogs(TemplateView):
             else:
                 mdb = mongoengine.connect(mongo_db['db'], host=mongo_db['host'])
         except mongoengine.connection.ConnectionError:
-            log.exception('Unable to connect to mongodb to save log, '
-                          'please check MONGODB_LOG settings.')
+            log.exception('Unable to connect to mongodb "%s" to retrive log, '
+                          'please check MONGODB_LOG settings.', "mongodb://{user}:*****@{host}/{db}".format(**mongo_db))
 
         if course_id is None:
             # Require staff if not going to specific course
