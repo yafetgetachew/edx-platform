@@ -486,5 +486,13 @@ MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB = FEATURES.get("MAX_ASSET_UPLOAD_FILE_SIZE_IN_M
 
 MEDIA_ROOT = ENV_TOKENS.get('MEDIA_ROOT', 'media/')
 MEDIA_URL = ENV_TOKENS.get('MEDIA_URL', '/media/')
+
+if AUTH_TOKENS.get('SENTRY_DSN'):
+    INSTALLED_APPS += ( 'raven.contrib.django.raven_compat', )
+    RAVEN_CONFIG = {
+        'dsn': AUTH_TOKENS.get('SENTRY_DSN'),
+    }
+    raven.fetch_git_sha("/edx/app/edxapp/edx-platform")
+
 #RACCOONGANG
 
