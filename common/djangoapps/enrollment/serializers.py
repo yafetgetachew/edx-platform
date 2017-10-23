@@ -6,7 +6,9 @@ import logging
 from rest_framework import serializers
 
 from course_modes.models import CourseMode
+from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
 from student.models import CourseEnrollment
+from xmodule.modulestore.django import modulestore
 
 
 log = logging.getLogger(__name__)
@@ -72,14 +74,19 @@ class CourseEnrollmentSerializer(serializers.ModelSerializer):
     """
     course_details = CourseSerializer(source="course_overview")
     user = serializers.SerializerMethodField('get_username')
+    finished = serializers.SerializerMethodField()
 
     def get_username(self, model):
         """Retrieves the username from the associated model."""
         return model.username
 
+    def get_finished(self, model):
+        course = modulestore().get_course(model.course_id)
+        return CourseGradeFactory().create(model.user, course).passed
+
     class Meta(object):
         model = CourseEnrollment
-        fields = ('created', 'mode', 'is_active', 'course_details', 'user')
+        fields = ('created', 'mode', 'is_active', 'course_details', 'user', 'finished')
         lookup_field = 'username'
 
 
