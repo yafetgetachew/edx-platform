@@ -69,10 +69,10 @@ from django.template.defaultfilters import escapejs
                     %endif
 
                     %if linked_in_url:
-                    <button class="action action-linkedin-profile btn-inverse btn-small icon-only" id="action-share-linkedin" title="${_('Add to LinkedIn Profile')}" data-course-id="${course_id}" data-certificate-mode="${course_mode}">
+                    <a class="action action-linkedin-profile btn-inverse btn-small icon-only" href="https://www.linkedin.com/help/linkedin/answer/44644?lang=en">
                         <span class="icon fa fa-linkedin" aria-hidden="true"></span>
                         <span class="action-label">${_("Add to LinkedIn Profile")}</span>
-                    </button>
+                    </a>
                     %endif
 
                     %if badge:
