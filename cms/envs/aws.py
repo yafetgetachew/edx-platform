@@ -492,6 +492,7 @@ if AUTH_TOKENS.get('SENTRY_DSN'):
     RAVEN_CONFIG = {
         'dsn': AUTH_TOKENS.get('SENTRY_DSN'),
     }
+    import raven
     raven.fetch_git_sha("/edx/app/edxapp/edx-platform")
 
 #RACCOONGANG
