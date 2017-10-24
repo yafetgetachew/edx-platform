@@ -72,25 +72,6 @@
         background: transparent none;
       }
 
-<<<<<<< HEAD
-      button {
-        @extend %ui-clear-button;
-        @extend %btn-no-style;
-
-        @include appearance(none);
-
-        display:block;
-        padding: ($baseline/4);
-
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          border-bottom: 4px solid $courseware-border-bottom-color !important;
-        }
-
-        &.active {
-          border-bottom: 4px solid $black-t3 !important;
-=======
             button {
                 @extend %ui-clear-button;
                 @extend %btn-no-style;
@@ -107,12 +88,11 @@
                     border-bottom: 4px solid $black-t3;
                 }
             }
->>>>>>> remove all the css importants
         }
       }
     }
-  }
-}
+  
+
 
 // +Settings Section
 .account-settings-sections {

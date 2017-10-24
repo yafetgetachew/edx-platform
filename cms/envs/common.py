@@ -114,24 +114,9 @@ from lms.envs.common import (
     DISABLE_ACCOUNT_ACTIVATION_REQUIREMENT_SWITCH,
     # Video Image settings
     VIDEO_IMAGE_SETTINGS,
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     VIDEO_TRANSCRIPTS_SETTINGS,
-=======
-=======
-    # Setting for PAID_COURSE_REGISTRATION, DOES NOT AFFECT VERIFIED STUDENTS
-<<<<<<< HEAD
-    PAID_COURSE_REGISTRATION_CURRENCY
->>>>>>> display default checkout currency correctly
-<<<<<<< HEAD
->>>>>>> display default checkout currency correctly
-=======
-=======
-    PAID_COURSE_REGISTRATION_CURRENCY,
-	ENABLE_DOG
->>>>>>> ENH: adding setting for datadog and removing log suppresion
->>>>>>> ENH: adding setting for datadog and removing log suppresion
-=======
+
 
     # Setting for PAID_COURSE_REGISTRATION, DOES NOT AFFECT VERIFIED STUDENTS
     PAID_COURSE_REGISTRATION_CURRENCY,
@@ -144,7 +129,6 @@ from lms.envs.common import (
     ANALITICA_ACTIVE,
     ANALITICA_TOKEN
 
->>>>>>> merge fixes
 )
 from path import Path as path
 from warnings import simplefilter

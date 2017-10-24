@@ -91,12 +91,7 @@ td { vertical-align: top; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
-<<<<<<< HEAD
-  img { max-width: 100% !important; }
-
-=======
   img { max-width: 100%; }
->>>>>>> remove all the css importants
   @page { margin: 1cm 1.2cm 2cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
