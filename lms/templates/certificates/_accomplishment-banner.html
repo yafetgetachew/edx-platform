@@ -45,6 +45,7 @@ from django.template.defaultfilters import escapejs
                 <p class="message-copy copy copy-base emphasized">${accomplishment_banner_congrats}</p>
                 <div class="message-actions">
                     <h3 class="sr-only">${_("Print or share your certificate:")}</h3>
+
                     % if facebook_share_enabled:
                       <button class="action action-share-facebook btn-inverse btn-small icon-only" id="action-share-facebook"
                          onclick="FaceBook.share({
@@ -81,9 +82,8 @@ from django.template.defaultfilters import escapejs
                     </button>
                     %endif
 
-                    <button class="action action-print btn-inverse btn-small" id="action-print-view">
+                    <button class="action action-print btn-inverse" id="action-print-view">
                         <span class="icon fa fa-print" aria-hidden="true"></span>
-                        ${_("Print Certificate")}
                     </button>
                 </div>
             </div>

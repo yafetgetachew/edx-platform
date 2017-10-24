@@ -233,6 +233,31 @@
 .footer-app {
     border-color: #e5e9eb;
 }
+.banner-user .wrapper-copy-and-actions {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.banner-user .wrapper-copy-and-actions .message-actions {
+    width: auto;
+    background: #e7e6e6;
+    border-radius: 3px;
+    border: 1px solid #fcfcfc;
+}
+.banner-user .wrapper-copy-and-actions .message-actions .action {
+    min-width: auto;
+    border-color: transparent;
+    margin-right: 0;
+    color: #6b6969;
+}
+.banner-user .wrapper-copy-and-actions .message-copy {
+    max-width: 666px;
+}
+.message.message-block.message-notice {
+    width: 100%;
+}
+.wrapper-copy-and-actions:after {
+    display: none;
+}
 // ------------------------------
 // #SHAME
 // ------------------------------
