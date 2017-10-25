@@ -82,7 +82,9 @@ class CourseEnrollmentSerializer(serializers.ModelSerializer):
 
     def get_finished(self, model):
         course = modulestore().get_course(model.course_id)
-        return CourseGradeFactory().create(model.user, course).passed
+        if course:
+            return CourseGradeFactory().create(model.user, course).passed
+        return False
 
     class Meta(object):
         model = CourseEnrollment
