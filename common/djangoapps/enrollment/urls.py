@@ -11,6 +11,10 @@ from .views import (
     EnrollmentCourseDetailView
 )
 
+from .views_api_enrollment import (
+    EnrollmentExtensionListView,
+)
+
 USERNAME_PATTERN = '(?P<username>[\w.@+-]+)'
 
 urlpatterns = patterns(
@@ -32,4 +36,8 @@ urlpatterns = patterns(
         EnrollmentCourseDetailView.as_view(),
         name='courseenrollmentdetails'
     ),
+)
+
+urlpatterns += (
+    url(r'^extension/enrollment/$', EnrollmentExtensionListView.as_view()),
 )
