@@ -32,7 +32,10 @@ class SubmissionHistoryView(APIView, ApiKeyPermissionMixIn):
         ).order_by('created')
 
         for course_enrollment in course_enrollments:
-            course = get_course(course_enrollment.course_id, depth=4)
+            try:
+                course = get_course(course_enrollment.course_id, depth=4)
+            except ValueError:
+                continue
 
             course_data = {
                 'course_id': unicode(course_enrollment.course_id),
