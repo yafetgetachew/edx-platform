@@ -115,4 +115,4 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git+https://github.com/ubc/ubcpi.git@0.6.4#egg=xblock_ubcpi==0.6.4
 -e git+https://github.com/schoolyourself/schoolyourself-xblock#egg=xblock_schoolyourself_xblock
 -e git+https://github.com/pmitros/FeedbackXBlock.git#egg=xblock_rate_feedback==0.0
-
+-e git+https://github.com/edx-solutions/xblock-ooyala.git#egg=xblock_ooyala
