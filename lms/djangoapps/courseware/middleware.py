@@ -44,6 +44,7 @@ class HidePages(object):
         '/password_reset_complete/?',
         '/password_reset_confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/',
         '/honor',
+        '/api/certificates/.*',
         '/certificates/[0-9a-f]+',
         '/certificates/user/\d+/course/{}'.format(_course_id_pattern),
         '/admin/.*',

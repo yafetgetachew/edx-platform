@@ -53,6 +53,7 @@ import os
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
 from django.db import models, transaction
 from django.db.models import Count
 from django.dispatch import receiver
@@ -246,6 +247,14 @@ class GeneratedCertificate(models.Model):
     class Meta(object):
         unique_together = (('user', 'course_id'),)
         app_label = "certificates"
+
+    def get_download_url(self):
+        url = (
+            self.download_url
+            or self.verify_uuid and reverse('certificates:render_cert_by_uuid', args=[self.verify_uuid])
+            or None
+        )
+        return url
 
     @classmethod
     def certificate_for_student(cls, student, course_id):

@@ -880,6 +880,8 @@ if settings.FEATURES.get('ENABLE_OAUTH2_PROVIDER'):
 urlpatterns += (
     url(r'^certificates/', include('certificates.urls', app_name="certificates", namespace="certificates")),
 
+    url(r'^api/certificates/', include('lms.djangoapps.certificates.urls_api', namespace='certificates_api_v1')),
+
     # Backwards compatibility with XQueue, which uses URLs that are not prefixed with /certificates/
     url(r'^update_certificate$', 'certificates.views.update_certificate'),
     url(r'^update_example_certificate$', 'certificates.views.update_example_certificate'),
