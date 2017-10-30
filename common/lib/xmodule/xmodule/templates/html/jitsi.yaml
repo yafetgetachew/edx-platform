@@ -1,0 +1,24 @@
+---
+metadata:
+    display_name: Jitsi
+    editor: raw
+data: |
+      <!-- Do not remove this code. -->
+      <!-- BEGIN -->
+      <a class="jitsi-link" target="_blank" href="#"><div></div></a>
+      <script>
+        var findUsageId = function(el) {
+          var usage_id = el.data('usage-id');
+          if (usage_id) return usage_id;
+          return findUsageId(el.parent())
+        }
+
+        $('a.jitsi-link').click(function(e) {
+          var a = $(e.target).parent();
+          if (a.attr('href') == '#') {
+            var id = window.location.host + '_' + findUsageId(a);
+            a.attr('href', 'https://meet.jit.si/' + id.replace(/:|@/g , '_'));
+          }
+        });
+      </script>
+      <!-- END -->
