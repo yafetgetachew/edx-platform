@@ -9,6 +9,7 @@ from ratelimitbackend import admin
 from django.conf.urls.static import static
 
 from courseware.views.views import EnrollStaffView
+from courseware.views.index import CoursesFeed
 from config_models.views import ConfigurationModelCurrentAPIView
 from courseware.views.index import CoursewareIndex
 from openedx.core.djangoapps.auth_exchange.views import LoginWithAccessTokenView
@@ -270,6 +271,7 @@ urlpatterns += (
 
     url(r'^courses/?$', 'branding.views.courses', name="courses"),
 
+    url(r'^courses/feed/$', CoursesFeed()),
     #About the course
     url(
         r'^courses/{}/about$'.format(

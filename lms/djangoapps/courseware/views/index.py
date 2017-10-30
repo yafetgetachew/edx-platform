@@ -6,6 +6,8 @@ from datetime import datetime
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.syndication.views import Feed
+from django.utils.feedgenerator import Rss201rev2Feed
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
 from django.http import Http404
@@ -21,11 +23,13 @@ from edxmako.shortcuts import render_to_response, render_to_string
 import logging
 import newrelic.agent
 import urllib
+import branding
 
 from xblock.fragment import Fragment
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.lang_pref import LANGUAGE_KEY
 from openedx.core.djangoapps.user_api.preferences.api import get_user_preference
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from shoppingcart.models import CourseRegistrationCode
 from student.models import CourseEnrollment
 from student.views import is_course_blocked
@@ -37,7 +41,7 @@ from survey.utils import must_answer_survey
 
 from ..access import has_access, _adjust_start_date_for_beta_testers
 from ..access_utils import in_preview_mode
-from ..courses import get_studio_url, get_course_with_access
+from ..courses import get_studio_url, get_course_with_access, get_course_by_id
 from ..entrance_exams import (
     course_has_entrance_exam,
     get_entrance_exam_content,
@@ -552,3 +556,44 @@ def save_positions_recursively_up(user, request, field_data_cache, xmodule, cour
             save_child_position(parent, current_module.location.name)
 
         current_module = parent
+
+
+class CoursesRss(Rss201rev2Feed):
+    def add_item_elements(self, handler, item):
+        super(CoursesRss, self).add_item_elements(handler, item)
+        if item['start_date'] is not None:
+            handler.addQuickElement(u'start_date', item['start_date'])
+
+
+class CoursesFeed(Feed):
+    __name__ = 'courses_feed'
+    title = "Courses"
+    link = "/"
+    description = "Courses RSS Feed"
+    feed_type = CoursesRss
+
+    def item_extra_kwargs(self, item):
+        extra = super(CoursesFeed, self).item_extra_kwargs(item)
+        extra.update({'start_date': self.item_start_date(item)})
+        return extra
+
+    def get_object(self, request):
+        return configuration_helpers.get_value('course_org_filter')
+
+    def items(self, org):
+        return branding.get_visible_courses(org=org)
+
+    def item_title(self, item):
+        return item.display_name
+
+    def item_description(self, item):
+        course = get_course_by_id(item.id, depth=2)
+        loc = course.location.replace(category='about', name='overview')
+        c = modulestore().get_item(loc)
+        return c.data
+
+    def item_link(self, item):
+        return reverse('about_course', args=[item.id.to_deprecated_string()])
+
+    def item_start_date(self, item):
+        return item.start.isoformat()
