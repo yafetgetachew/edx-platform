@@ -7,6 +7,10 @@ from lms.djangoapps.grades.api import views
 urlpatterns = patterns(
     '',
     url(
+        r'^v0/course_grade/bulk/$',
+        views.GradesBulkAPIView.as_view(), name='bulk_user_grades'
+    ),
+    url(
         r'^v0/course_grade/{course_id}/users/$'.format(
             course_id=settings.COURSE_ID_PATTERN,
         ),

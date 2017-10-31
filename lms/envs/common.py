@@ -2923,7 +2923,7 @@ COURSE_ABOUT_VISIBILITY_PERMISSION = 'see_about_page'
 
 # Set default course visibility in catalog
 DEFAULT_COURSE_VISIBILITY_IN_CATALOG = "both"
-
+DEFAULT_MOBILE_AVAILABLE = False
 
 # Enrollment API Cache Timeout
 ENROLLMENT_COURSE_DETAILS_CACHE_TIMEOUT = 60
@@ -3340,6 +3340,18 @@ COURSE_ENROLLMENT_MODES = {
     "credit": 5,
     "honor": 6,
 }
+
+###############################################################################
+# This set the user course enrollment api order by
+#
+# Options:
+# created: order by course creation 
+# created_reverse: order by course creation and then reverse
+# course_name: order by course display name
+# course_name_reverse: order by course display name and then reverse
+#
+###############################################################################
+USER_COURSE_ENROLLMENTS_ORDER_BY = 'created_reverse'
 
 ############## Settings for the Discovery App ######################
 

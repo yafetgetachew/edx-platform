@@ -35,7 +35,7 @@ CATALOG_VISIBILITY_ABOUT = "about"
 CATALOG_VISIBILITY_NONE = "none"
 
 DEFAULT_COURSE_VISIBILITY_IN_CATALOG = getattr(settings, 'DEFAULT_COURSE_VISIBILITY_IN_CATALOG', 'both')
-
+DEFAULT_MOBILE_AVAILABLE = getattr(settings, 'DEFAULT_MOBILE_AVAILABLE', False)
 
 class StringOrDate(Date):
     def from_json(self, value):
@@ -341,7 +341,7 @@ class CourseFields(object):
     mobile_available = Boolean(
         display_name=_("Mobile Course Available"),
         help=_("Enter true or false. If true, the course will be available to mobile devices."),
-        default=False,
+        default=DEFAULT_MOBILE_AVAILABLE,
         scope=Scope.settings
     )
     video_upload_pipeline = Dict(
