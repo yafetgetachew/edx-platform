@@ -9,7 +9,7 @@ from course_modes.models import CourseMode
 from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
 from student.models import CourseEnrollment
 from xmodule.modulestore.django import modulestore
-
+from django.core.exceptions import PermissionDenied
 
 log = logging.getLogger(__name__)
 
@@ -83,7 +83,11 @@ class CourseEnrollmentSerializer(serializers.ModelSerializer):
     def get_finished(self, model):
         course = modulestore().get_course(model.course_id)
         if course:
-            return CourseGradeFactory().create(model.user, course).passed
+            try:
+                coursegrade = CourseGradeFactory().create(model.user, course).passed
+            except PermissionDenied:
+                return False
+            return coursegrade
         return False
 
     class Meta(object):
