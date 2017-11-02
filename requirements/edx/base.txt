@@ -203,3 +203,6 @@ py2neo==3.1.2
 
 # for calculating coverage
 -r coverage.txt
+
+django-tinymce==2.0.4
+django-hvad==1.5.0

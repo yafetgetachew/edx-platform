@@ -949,6 +949,10 @@ urlpatterns += (
     url(r'^api/', include('edx_proctoring.urls')),
 )
 
+urlpatterns += (
+    url(r'^tinymce/', include('tinymce.urls')),
+)
+
 if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
     urlpatterns += (
         url(

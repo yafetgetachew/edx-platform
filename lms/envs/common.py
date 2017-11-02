@@ -3049,3 +3049,103 @@ DOC_LINK_BASE_URL = None
 
 ENTERPRISE_ENROLLMENT_API_URL = LMS_ROOT_URL + "/api/enrollment/v1/"
 
+INSTALLED_APPS += (
+    'tinymce',
+    'info_pages',
+    'hvad',
+)
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace,style",
+    'theme_advanced_buttons3_add' : "styleprops",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+    'style_formats': [
+        {
+            "title": "Arial",
+            "inline": "span",
+            "styles": {"font-family": "arial"}
+        },
+        {
+            "title": "Book Antiqua",
+            "inline": "span",
+            "styles": {"font-family": "book antiqua"}
+        },
+        {
+            "title": "Comic Sans MS",
+            "inline": "span",
+            "styles": {"font-family": "comic sans ms, sans-serif"}
+        },
+        {
+            "title": "Courier New",
+            "inline": "span",
+            "styles": {"font-family": "courier new, courier"}
+        },
+        {
+            "title": "Georgia",
+            "inline": "span",
+            "styles": {"font-family": "georgia, palatino"}
+        },
+        {
+            "title": "Helvetica",
+            "inline": "span",
+            "styles": {"font-family": "helvetica"}
+        },
+        {
+            "title": "Impact",
+            "inline": "span",
+            "styles": {"font-family": "impact, chicago"}
+        },
+        {
+            "title": "Open Sans",
+            "inline": "span",
+            "styles": {"font-family": "Open Sans"}
+        },
+        {
+            "title": "Symbol",
+            "inline": "span",
+            "styles": {"font-family": "symbol"}
+        },
+        {
+            "title": "Tahoma",
+            "inline": "span",
+            "styles": {"font-family":"tahoma"}
+        },
+        {
+            "title": "Terminal",
+            "inline": "span",
+            "styles": {"font-family": "terminal, monaco"}
+        },
+        {
+            "title": "Times New Roman",
+            "inline": "span",
+            "styles": {"font-family": "times new roman, times"}
+        },
+        {
+            "title": "Verdana",
+            "inline": "span",
+            "styles": {"font-family": "Verdana"}
+        },
+        {
+            "title": "Superscript",
+            "icon": "superscript",
+            "format": "superscript"
+        },
+        {
+            "title": "Subscript",
+            "icon": "subscript",
+            "format": "subscript"
+        },
+        {
+            "title": "Code",
+            "icon": "code",
+            "format": "code"
+        },
+        {"title": "Paragraph", "format": "p"},
+        {"title": "Blockquote", "format": "blockquote"},
+        {"title": "Div", "format": "div"},
+        {"title": "Pre", "format": "pre"}
+    ]
+}
+
