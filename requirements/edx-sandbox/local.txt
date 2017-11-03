@@ -7,6 +7,7 @@
 # Install these packages from the edx-platform working tree
 # NOTE: if you change code in these packages, you MUST change the version
 # number in its setup.py or the code WILL NOT be installed during deploy.
+https://s3-us-west-2.amazonaws.com/jdimatteo-personal-public-readaccess/nltk-2.0.5-https-distribute.tar.gz
 common/lib/calc
 common/lib/chem
 common/lib/sandbox-packages
