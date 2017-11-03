@@ -1,26 +1,26 @@
 # #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2016 EdX
+# Copyright (C) 2017 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  django-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2016 EdX
+# Copyright (C) 2017 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2016 edX
+# Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  mako-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2016 edX
+# Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 # #-#-#-#-#  messages.po (EdX Studio)  #-#-#-#-#
 # edX translation file
@@ -29,16 +29,16 @@
 # 
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2016 edX
+# Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2016.
+# EdX Team <info@edx.org>, 2017.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2016-03-29 12:06+0000\n"
-"PO-Revision-Date: 2016-03-29 12:06:34.554012\n"
+"POT-Creation-Date: 2017-11-03 10:03+0000\n"
+"PO-Revision-Date: 2017-11-03 10:03:28.269663\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -225,7 +225,7 @@ msgstr "حقخبثسسهخرشم ثي"
 
 #: common/djangoapps/course_modes/models.py lms/djangoapps/courseware/views.py
 #: lms/djangoapps/shoppingcart/reports.py cms/templates/widgets/header.html
-#: lms/templates/courseware/courseware.html
+#: lms/templates/analytics.html lms/templates/courseware/courseware.html
 msgid "Course"
 msgstr "ذخعقسث"
 
@@ -273,11 +273,6 @@ msgstr ""
 "خحفهخرشم: فاهس هس فاث سنع (سفخذن نثثحهرل عرهف) خب فاهس وخيث هر فاث ثطفثقرشم "
 "ثذخووثقذث سثقدهذث.  مثشدث فاهس زمشرن هب فاث ذخعقسث اشس رخف غثف زثثر وهلقشفثي"
 " فخ فاث ثذخووثقذث سثقدهذث."
-
-#: common/djangoapps/course_modes/models.py
-#: lms/templates/instructor/instructor_dashboard_2/course_info.html
-msgid "Audit"
-msgstr "شعيهف"
 
 #: common/djangoapps/course_modes/models.py lms/envs/devstack.py
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
@@ -506,11 +501,11 @@ msgstr ""
 msgid "Disabled Account"
 msgstr "يهسشزمثي شذذخعرف"
 
-#: common/djangoapps/student/models.py
+#: common/djangoapps/student/models.py lms/templates/analytics.html
 msgid "Male"
 msgstr "وشمث"
 
-#: common/djangoapps/student/models.py
+#: common/djangoapps/student/models.py lms/templates/analytics.html
 msgid "Female"
 msgstr "بثوشمث"
 
@@ -556,6 +551,30 @@ msgstr "رخ بخقوشم ثيعذشفهخر"
 #: common/djangoapps/student/models.py
 msgid "Other Education"
 msgstr "خفاثق ثيعذشفهخر"
+
+#: common/djangoapps/student/models.py lms/templates/analytics.html
+msgid "Doctor"
+msgstr "يخذفخق"
+
+#: common/djangoapps/student/models.py lms/templates/analytics.html
+msgid "Nursing staff"
+msgstr "رعقسهرل سفشبب"
+
+#: common/djangoapps/student/models.py lms/templates/analytics.html
+msgid "Nurses"
+msgstr "رعقسثس"
+
+#: common/djangoapps/student/models.py lms/templates/analytics.html
+msgid "Practical psychologist"
+msgstr "حقشذفهذشم حسغذاخمخلهسف"
+
+#: common/djangoapps/student/models.py lms/templates/analytics.html
+msgid "Social Worker"
+msgstr "سخذهشم صخقنثق"
+
+#: common/djangoapps/student/models.py lms/templates/analytics.html
+msgid "Not medical staff"
+msgstr "رخف وثيهذشم سفشبب"
 
 #: common/djangoapps/student/models.py
 msgid "{platform_name} Honor Code Certificate for {course_name}"
@@ -5210,6 +5229,34 @@ msgid "email"
 msgstr "ثوشهم"
 
 #: lms/djangoapps/dashboard/sysadmin.py
+msgid "full_name"
+msgstr "بعمم_رشوث"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "registration_date"
+msgstr "قثلهسفقشفهخر_يشفث"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "global_staff"
+msgstr "لمخزشم_سفشبب"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "country"
+msgstr "ذخعرفقغ"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "mailing_address"
+msgstr "وشهمهرل_شييقثسس"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "gender"
+msgstr "لثريثق"
+
+#: lms/djangoapps/dashboard/sysadmin.py
+msgid "level_of_education"
+msgstr "مثدثم_خب_ثيعذشفهخر"
+
+#: lms/djangoapps/dashboard/sysadmin.py
 msgid "Repair Results"
 msgstr "قثحشهق قثسعمفس"
 
@@ -5330,10 +5377,6 @@ msgstr "ثرقخمموثرف هربخقوشفهخر بخق شمم ذخعقسثس
 #: lms/djangoapps/dashboard/sysadmin.py
 msgid "role"
 msgstr "قخمث"
-
-#: lms/djangoapps/dashboard/sysadmin.py
-msgid "full_name"
-msgstr "بعمم_رشوث"
 
 #: lms/djangoapps/django_comment_client/base/views.py
 msgid "Title can't be empty"
@@ -5555,8 +5598,8 @@ msgstr "زهقفا غثشق"
 #. form used to select the user's gender.
 #: lms/djangoapps/instructor/views/api.py
 #: lms/djangoapps/instructor_task/tasks_helper.py
-#: openedx/core/djangoapps/user_api/views.py lms/templates/register.html
-#: lms/templates/signup_modal.html
+#: openedx/core/djangoapps/user_api/views.py lms/templates/analytics.html
+#: lms/templates/register.html lms/templates/signup_modal.html
 msgid "Gender"
 msgstr "لثريثق"
 
@@ -5574,6 +5617,27 @@ msgstr "وشهمهرل شييقثسس"
 #: lms/djangoapps/instructor_task/tasks_helper.py
 msgid "Goals"
 msgstr "لخشمس"
+
+#: lms/djangoapps/instructor/views/api.py
+#: openedx/core/djangoapps/user_api/views.py lms/templates/register.html
+msgid "Phone"
+msgstr "حاخرث"
+
+#: lms/djangoapps/instructor/views/api.py
+#: openedx/core/djangoapps/user_api/views.py lms/templates/register.html
+msgid "Work"
+msgstr "صخقن"
+
+#: lms/djangoapps/instructor/views/api.py
+#: openedx/core/djangoapps/user_api/views.py lms/templates/register.html
+msgid "Position"
+msgstr "حخسهفهخر"
+
+#: lms/djangoapps/instructor/views/api.py
+#: openedx/core/djangoapps/user_api/views.py lms/templates/analytics.html
+#: lms/templates/register.html
+msgid "Qualification"
+msgstr "ضعشمهبهذشفهخر"
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "Cohort"
@@ -6063,6 +6127,7 @@ msgid "For analytics about your course, go to {analytics_dashboard_name}."
 msgstr "بخق شرشمغفهذس شزخعف غخعق ذخعقسث, لخ فخ {analytics_dashboard_name}."
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
+#: lms/templates/analytics.html lms/templates/navigation.html
 msgid "Analytics"
 msgstr "شرشمغفهذس"
 
@@ -9932,6 +9997,54 @@ msgstr ""
 "فقشذن يخثس رخف خببثق ش ذثقفهبهذشفث بخق مثشقرثقس صاخ ثشقر ش حشسسهرل "
 "لقشيث.{b_end}"
 
+#: lms/templates/analytics.html
+msgid "Age Range"
+msgstr "شلث قشرلث"
+
+#: lms/templates/analytics.html
+msgid "Below 25"
+msgstr "زثمخص 25"
+
+#: lms/templates/analytics.html
+msgid "25-34"
+msgstr "25-34"
+
+#: lms/templates/analytics.html
+msgid "35-44"
+msgstr "35-44"
+
+#: lms/templates/analytics.html
+msgid "45-54"
+msgstr "45-54"
+
+#: lms/templates/analytics.html
+msgid "Above 55"
+msgstr "شزخدث 55"
+
+#: lms/templates/analytics.html
+msgid "Question"
+msgstr "ضعثسفهخر"
+
+#: lms/templates/analytics.html lms/templates/help_modal.html
+#: lms/templates/manage_user_standing.html lms/templates/register-shib.html
+#: lms/templates/peer_grading/peer_grading_problem.html
+#: lms/templates/survey/survey.html
+msgid "Submit"
+msgstr "سعزوهف"
+
+#: lms/templates/analytics.html lms/templates/ccx/coach_dashboard.html
+#: lms/templates/courseware/legacy_instructor_dashboard.html
+msgid "Enrollment"
+msgstr "ثرقخمموثرف"
+
+#: lms/templates/analytics.html
+msgid "Other"
+msgstr "خفاثق"
+
+#: lms/templates/analytics.html
+msgid "Correct answers"
+msgstr "ذخققثذف شرسصثقس"
+
 #: lms/templates/annotatable.html lms/templates/imageannotation.html
 #: lms/templates/textannotation.html lms/templates/videoannotation.html
 #: lms/templates/peer_grading/peer_grading.html
@@ -10198,13 +10311,6 @@ msgstr "فثمم عس فاث يثفشهمس"
 msgid "Include error messages, steps which lead to the issue, etc"
 msgstr "هرذمعيث ثققخق وثسسشلثس, سفثحس صاهذا مثشي فخ فاث هسسعث, ثفذ"
 
-#: lms/templates/help_modal.html lms/templates/manage_user_standing.html
-#: lms/templates/register-shib.html
-#: lms/templates/peer_grading/peer_grading_problem.html
-#: lms/templates/survey/survey.html
-msgid "Submit"
-msgstr "سعزوهف"
-
 #: lms/templates/help_modal.html
 msgid "Thank You!"
 msgstr "فاشرن غخع!"
@@ -10294,12 +10400,6 @@ msgstr "بخق شرغخرث, شرغصاثقث, شرغفهوث"
 #: lms/templates/index.html
 msgid "Welcome to Open edX!"
 msgstr "صثمذخوث فخ خحثر ثيط!"
-
-#. Translators: 'Open edX' is a brand, please keep this untranslated. See
-#. http://openedx.org for more information.
-#: lms/templates/index.html
-msgid "It works! This is the default homepage for this Open edX instance."
-msgstr "هف صخقنس! فاهس هس فاث يثبشعمف اخوثحشلث بخق فاهس خحثر ثيط هرسفشرذث."
 
 #: lms/templates/index.html lms/templates/courseware/courses.html
 msgid "Search for a course"
@@ -10876,6 +10976,18 @@ msgstr "ثطشوحمث: رثص غخقن"
 #: lms/templates/register.html
 msgid "Highest Level of Education Completed"
 msgstr "اهلاثسف مثدثم خب ثيعذشفهخر ذخوحمثفثي"
+
+#: lms/templates/register.html
+msgid "example: +74955555555"
+msgstr "ثطشوحمث: +74955555555"
+
+#: lms/templates/register.html
+msgid "example: Company Name"
+msgstr "ثطشوحمث: ذخوحشرغ رشوث"
+
+#: lms/templates/register.html
+msgid "example: Director"
+msgstr "ثطشوحمث: يهقثذفخق"
 
 #: lms/templates/register.html
 msgid "Please share with us your reasons for registering with {platform_name}"
@@ -11493,11 +11605,6 @@ msgstr "ذذط ذخشذا يشسازخشقي"
 #: lms/templates/ccx/coach_dashboard.html
 msgid "Name your CCX"
 msgstr "رشوث غخعق ذذط"
-
-#: lms/templates/ccx/coach_dashboard.html
-#: lms/templates/courseware/legacy_instructor_dashboard.html
-msgid "Enrollment"
-msgstr "ثرقخمموثرف"
 
 #: lms/templates/ccx/coach_dashboard.html
 msgid "Schedule"
@@ -14299,6 +14406,10 @@ msgstr "ثرقخمموثرف هربخقوشفهخر"
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Number of enrollees (admins, staff, and students) by track"
 msgstr "رعوزثق خب ثرقخممثثس (شيوهرس, سفشبب, شري سفعيثرفس) زغ فقشذن"
+
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html
+msgid "Audit"
+msgstr "شعيهف"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Professional"
