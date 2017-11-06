@@ -971,3 +971,7 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+from openassessment.fileupload.urls import urlpatterns as oraurlpatterns
+urlpatterns+= oraurlpatterns
+
