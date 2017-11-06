@@ -976,6 +976,3 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
         )
     )
 
-from openassessment.fileupload.urls import urlpatterns as oraurlpatterns
-urlpatterns+= oraurlpatterns
-

@@ -215,6 +215,3 @@ urlpatterns += (
     url(r'^500$', handler500),
 )
 
-from openassessment.fileupload.urls import urlpatterns as oraurlpatterns
-urlpatterns+= oraurlpatterns
-
