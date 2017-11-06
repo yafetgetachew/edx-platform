@@ -3,7 +3,7 @@
 locales:
     - en  # English - Source Language
     # - am  # Amharic
-    # - ar  # Arabic
+    - ar  # Arabic
     # - az  # Azerbaijani
     # - bg_BG  # Bulgarian (Bulgaria)
     # - bn_BD  # Bengali (Bangladesh)
@@ -36,7 +36,7 @@ locales:
     - fr  # French
     # - gl  # Galician
     # - gu  # Gujarati
-    # - he  # Hebrew
+    - he  # Hebrew
     # - hi  # Hindi
     # - hr  # Croatian
     # - hu  # Hungarian
