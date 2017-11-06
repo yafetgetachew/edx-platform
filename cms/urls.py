@@ -6,6 +6,7 @@ from ratelimitbackend import admin
 from cms.djangoapps.contentstore.views.program import ProgramAuthoringView, ProgramsIdTokenView
 from cms.djangoapps.contentstore.views.organization import OrganizationListView
 from student.views import LogoutView
+from openassessment.fileupload import views_filesystem
 
 admin.autodiscover()
 
@@ -67,6 +68,8 @@ urlpatterns += patterns(
     # ajax view that actually does the work
     url(r'^login_post$', 'student.views.login_user', name='login_post'),
     url(r'^logout$', LogoutView.as_view(), name='logout'),
+
+    url(r'^(?P<key>.+)/openassessment-filesystem-storage', views_filesystem.filesystem_storage, name='openassessment-filesystem-storage'),
 )
 
 # restful api
