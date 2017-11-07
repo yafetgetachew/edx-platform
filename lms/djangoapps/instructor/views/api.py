@@ -2523,6 +2523,11 @@ def send_email_password(request, course_id):
         courseenrollment__is_active=True,
         password__in=('', None)
     )
+
+    emails = request.POST.get('emails', '').strip()
+    if emails:
+        users = users.filter(email__in=[e.strip() for e in re.split(",|;|\s|\n", emails) if e])
+
     for user in users:
         site_name = request.get_host()
 

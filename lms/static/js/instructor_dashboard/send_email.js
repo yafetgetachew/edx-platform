@@ -58,6 +58,7 @@
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
+                    data: {'emails': sendemail.$container.find('#send-password-emails').val()},
                     url: sendemail.$btn_send_password.data('endpoint'),
                     success: function(response) {
                         $('#send-password-emails-message').html(response.message);
