@@ -72,7 +72,7 @@ git+https://github.com/edx/lettuce.git@0.2.20.002#egg=lettuce==0.2.20.002
 
 # Our libraries:
 git+https://github.com/edx/XBlock.git@xblock-0.4.13#egg=XBlock==0.4.13
--e git+https://github.com/edx/codejail.git@a320d43ce6b9c93b17636b2491f724d9e433be47#egg=codejail==0.0
+-e git+https://github.com/edx/codejail.git@a320d43ce6b9c93b17636b2491f724d9e433be47#egg=codejail==0.1
 -e git+https://github.com/edx/event-tracking.git@0.2.1#egg=event-tracking==0.2.1
 -e git+https://github.com/edx/django-splash.git@v0.2#egg=django-splash==0.2
 -e git+https://github.com/edx/acid-block.git@e46f9cda8a03e121a00c7e347084d142d22ebfb7#egg=acid-xblock
@@ -108,7 +108,7 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 
 -e git+https://github.com/OfficeDev/xblock-officemix.git#egg=xblock_officemix
 # -e git+https://github.com/edx-solutions/xblock-adventure.git#egg=xblock_adventure
--e git+https://github.com/edx-solutions/xblock-image-explorer.git@release-2016-06-05#egg=xblock_image_explorer==release-2016-06-05
+-e git+https://github.com/edx-solutions/xblock-image-explorer.git@release-2016-06-05#egg=xblock_image_explorer==0.2
 # -e git+https://github.com/perpetualny/voicerecxblock.git#egg=xblock_voicerecxblock
 -e git+https://github.com/open-craft/problem-builder.git@v2.7.9#egg=xblock_problem_builder==v2.7.9
 -e git+https://github.com/jazkarta/edx-jsme.git@1.0.1#egg=xblock_edx_jsme==1.0.1
