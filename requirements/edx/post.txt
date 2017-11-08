@@ -17,3 +17,6 @@
 # https://github.com/onelogin/python-saml/pull/159
 # https://github.com/onelogin/python-saml/pull/164
 git+https://github.com/open-craft/python-saml.git@d50f8d25419c2e981605e5c64e8528a125bcf303#egg=python-saml==2.2.0
+
+# RG reinstall azure-storage to required version after azure requirements installation from github.txt
+azure-storage==v0.20.3
