@@ -700,3 +700,188 @@ hr.divider {
 .hidden {
   display: none !important;
 }
+
+//for tyni_mce
+.image.align-center {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+}
+.image.align-right {
+    text-align: right;
+    float: right;
+    margin-left: 20px;
+}
+.xmodule_display.xmodule_HtmlModule table td p:last-child {
+    margin-bottom: 0;
+}
+figure.image {
+    display: inline-block;
+    border: 1px solid gray;
+    margin: 0 2px 0 1px;
+    background: #f5f2f0 ;
+}
+figure.image img {
+    margin: 8px 8px 0 8px;
+}
+figure.image figcaption {
+    margin: 6px 8px 6px 8px;
+    text-align: center;
+    font-size: 14px;
+}
+.mce-content-body p {
+    margin: 20px 0;
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+body .xmodule_display.xmodule_StaticTabModule h1,
+.course-info .details .inner-wrapper .faq .response h1,
+body div.info-wrapper section.updates h1,
+body div.info-wrapper section.handouts h1,
+body .xmodule_display.xmodule_HtmlModule h1,
+body .course-updates .update-list>li h1,
+.mce-content-body h1 {
+    font-size: 35px;
+    line-height: 1.3;
+    font-weight: 200;
+    margin: 25px 0 15px !important;
+    color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: inherit;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+body .xmodule_display.xmodule_StaticTabModule h2,
+.course-info .details .inner-wrapper .faq .response h2,
+body div.info-wrapper section.updates h2,
+body div.info-wrapper section.handouts h2,
+body .xmodule_display.xmodule_HtmlModule h2,
+body .course-updates .update-list>li h2,
+.mce-content-body h2 {
+    margin: 25px 0 15px;
+    text-transform: none;
+    font-size: 31px;
+    line-height: 1.3;
+    font-weight: 200;
+    color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: inherit;
+}
+body .xmodule_display.xmodule_StaticTabModule h3,
+body .wrapper-xblock .xblock-render .xblock .xblock-render .xblock h3,
+.course-info .details .inner-wrapper .faq .response h3,
+body div.info-wrapper section.updates h3,
+body div.info-wrapper section.handouts h3,
+body .xmodule_display.xmodule_HtmlModule h3,
+body .course-updates .update-list>li h3,
+.mce-content-body h3 {
+    margin: 25px 0 15px;
+    font-size: 26px;
+    line-height: 1.3;
+    font-weight: 200 !important;
+    color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: inherit;
+}
+body .xmodule_display.xmodule_StaticTabModule h4,
+.course-info .details .inner-wrapper .faq .response h4,
+body div.info-wrapper section.updates h4,
+body div.info-wrapper section.handouts h4,
+body .xmodule_display.xmodule_HtmlModule h4,
+body .course-updates .update-list>li h4,
+.mce-content-body h4 {
+    margin: 25px 0 15px;
+    font-size: 23px;
+    line-height: 1.3;
+    font-weight: 200;
+    color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: inherit;
+}
+body .xmodule_display.xmodule_StaticTabModule h5,
+.course-info .details .inner-wrapper .faq .response h5,
+body div.info-wrapper section.updates h5,
+body div.info-wrapper section.handouts h5,
+body .xmodule_display.xmodule_HtmlModule h5,
+body .course-updates .update-list>li h5,
+.mce-content-body h5 {
+    margin: 25px 0 15px;
+    font-size: 19px;
+    line-height: 1.3;
+    font-weight: 200;
+    color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: inherit;
+}
+body .xmodule_display.xmodule_StaticTabModule h6,
+.course-info .details .inner-wrapper .faq .response h6,
+body div.info-wrapper section.updates h6,
+body div.info-wrapper section.handouts h6,
+body .xmodule_display.xmodule_HtmlModule h6,
+body .course-updates .update-list>li h6,
+.mce-content-body h6 {
+    margin: 25px 0 15px;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 200;
+    color: #3c3c3c;
+    -webkit-font-smoothing: auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: inherit;
+}
+body .xmodule_display.xmodule_StaticTabModule table td,
+body .xmodule_display.xmodule_StaticTabModule table th,
+body .window-wrap div.info-wrapper table td,
+body .window-wrap div.info-wrapper table th,
+.xmodule_display.xmodule_HtmlModule table td,
+.xmodule_display.xmodule_HtmlModule table th,
+.course-info .details .inner-wrapper table tr td,
+.course-info .details .inner-wrapper table tr th,
+.inner-wrapper .course-info-wrapper table tr td,
+.inner-wrapper .course-info-wrapper table tr th {
+    padding: 15px 7px;
+    vertical-align: middle;
+    border: 1px solid #aaa;
+}
+body .xmodule_display.xmodule_StaticTabModule table,
+body .window-wrap div.info-wrapper table,
+.xmodule_display.xmodule_HtmlModule table,
+.course-info .details .inner-wrapper table,
+.inner-wrapper .course-info-wrapper table {
+    width: 100%;
+    border-collapse: separate !important;
+    border: 1px solid #aaa;
+    padding: inherit;
+    border-spacing: auto;
+    word-break: normal;
+    table-layout: auto;
+    padding: 0;
+}
+body .xmodule_display.xmodule_StaticTabModule table *,
+body .window-wrap div.info-wrapper table *,
+.xmodule_display.xmodule_HtmlModule table *,
+.course-info .details .inner-wrapper table *,
+.inner-wrapper .course-info-wrapper table * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.course-info .details .inner-wrapper .faq .response figure.image.align-left,
+body div.info-wrapper section.updates figure.image.align-left,
+body div.info-wrapper section.handouts figure.image.align-left,
+body .xmodule_display.xmodule_HtmlModule figure.image.align-left,
+body .course-updates .update-list figure.image.align-left,
+figure.image.align-left {
+    float: left;
+    margin-right: 20px;
+}
