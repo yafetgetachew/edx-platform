@@ -7280,6 +7280,9 @@ msgstr "Термін здачі завдання для цього слухач�
 msgid "Full Name"
 msgstr "Ім'я та прізвище"
 
+msgid "Full name"
+msgstr "Повне ім'я"
+
 #: lms/djangoapps/instructor/views/tools.py
 msgid "Extended Due Date"
 msgstr "Розширений термін оплати"
@@ -10664,6 +10667,9 @@ msgstr ""
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "Public Username"
+msgstr "Загальнодоступне ім’я користувача"
+
+msgid "Public username"
 msgstr "Загальнодоступне ім’я користувача"
 
 #. Translators: These instructions appear on the registration form,
@@ -24029,3 +24035,30 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "Нова версія була створена: злиття версій #%(r1)d і #%(r2)d"
+
+#. Translators: These instructions appear on the registration form,
+#. immediately
+#. below a field meant to hold the user's public username.
+#: openedx/core/djangoapps/user_api/views.py
+msgid ""
+"The name that will identify you in your courses - {bold_start}(cannot be "
+"changed later){bold_end}"
+msgstr ""
+"Ім'я, за яким Вас будуть ідентифікувати на курсах - {bold_start}(неможливо змінити "
+"пізніше){bold_end}"
+
+#. Translators: "Terms of Service" is a legal document users must agree to
+#. in order to register a new account.
+#. Translators: "Terms of service" is a legal document users must agree to
+#. in order to register a new account.
+#: openedx/core/djangoapps/user_api/views.py
+msgid "I agree to the {platform_name} {terms_of_service}."
+msgstr "Я погоджуюсь з {terms_of_service} {platform_name}."
+
+#. Translators: "Terms of Service" is a legal document users must agree to
+#. in order to register a new account.
+#. Translators: "Terms of service" is a legal document users must agree to
+#. in order to register a new account.
+#: openedx/core/djangoapps/user_api/views.py
+msgid "You must agree to the {platform_name} {terms_of_service}."
+msgstr "Ви повинні прийняти {terms_of_service} {platform_name}."
