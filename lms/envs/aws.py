@@ -924,3 +924,5 @@ if ALL_LANGUAGES_OVERRIDE:
         else:
             ALL_LANGUAGES_DICT[code] = language
     ALL_LANGUAGES_DICT = OrderedDict(sorted(ALL_LANGUAGES_DICT.items(), key=itemgetter(1)))
+
+MIDDLEWARE_CLASSES += tuple(ENV_TOKENS.get('ADDL_MIDDLEWARE_CLASSES'), [])
