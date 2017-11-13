@@ -1,6 +1,13 @@
 <%inherit file="main.html" />
 <%! from django.utils.translation import ugettext as _ %>
 
+<%block name="header">
+% if bidi:
+<html dir="rtl">
+<body style="direction:rtl;unicode-bidi:embed;">
+% endif
+</%block>
+
 <%block name="message">
 <p>
 ${_("Dear Student,")}

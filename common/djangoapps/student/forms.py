@@ -13,7 +13,7 @@ from django.contrib.auth.hashers import UNUSABLE_PASSWORD_PREFIX
 from django.contrib.auth.tokens import default_token_generator
 
 from django.utils.http import int_to_base36
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language, get_language_info
 from django.template import loader
 
 from django.conf import settings
@@ -79,7 +79,8 @@ class PasswordResetFormNoActive(PasswordResetForm):
                 'user': user,
                 'token': token_generator.make_token(user),
                 'protocol': 'https' if use_https else 'http',
-                'platform_name': configuration_helpers.get_value('platform_name', settings.PLATFORM_NAME)
+                'platform_name': configuration_helpers.get_value('platform_name', settings.PLATFORM_NAME),
+                'bidi': get_language_info(get_language())['bidi']
             }
             subject = loader.render_to_string(subject_template_name, context)
             # Email subject *must not* contain newlines

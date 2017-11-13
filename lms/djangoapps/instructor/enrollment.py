@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
-from django.utils.translation import override as override_language
+from django.utils.translation import override as override_language, get_language_info
 from eventtracking import tracker
 import pytz
 
@@ -514,6 +514,7 @@ def render_message_to_string(subject_template, message_template, param_dict, lan
     subject and message.
     """
     language = language or settings.LANGUAGE_CODE
+    param_dict['bidi'] = get_language_info(language)['bidi']
     with override_language(language):
         return get_subject_and_message(subject_template, message_template, param_dict)
 

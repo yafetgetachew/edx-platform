@@ -1,5 +1,13 @@
 <%inherit file="main.html" />
-<%! from django.utils.translation import ugettext as _ %>
+<%! from django.utils.translation import ugettext as _, get_language_bidi %>
+
+<%block name="header">
+% if get_language_bidi()
+<html dir="rtl">
+<body style="direction:rtl;unicode-bidi:embed;">
+lang: {{ language }}
+% endif
+</%block>
 
 <%block name="message">
 <p>

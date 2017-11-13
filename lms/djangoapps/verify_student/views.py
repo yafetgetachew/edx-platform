@@ -24,6 +24,7 @@ from django.utils.translation import ugettext as _, ugettext_lazy
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.views.generic.base import View
+from django.utils.translation import get_language, get_language_info
 
 import analytics
 from eventtracking import tracker
@@ -1095,7 +1096,8 @@ class SubmitPhotosView(View):
         """
         context = {
             'full_name': user.profile.name,
-            'platform_name': configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME)
+            'platform_name': configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
+            'bidi': get_language_info(get_language())['bidi']
         }
 
         subject = _("Verification photos received")

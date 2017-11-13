@@ -31,7 +31,7 @@ from django.shortcuts import redirect
 from django.utils.encoding import force_bytes, force_text
 from django.utils.translation import ungettext
 from django.utils.http import base36_to_int, urlsafe_base64_encode, urlencode
-from django.utils.translation import ugettext as _, get_language
+from django.utils.translation import ugettext as _, get_language, get_language_info
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from django.views.decorators.http import require_POST, require_GET
 from django.db.models.signals import post_save
@@ -1836,6 +1836,7 @@ def create_account_with_params(request, params):
         context = {
             'name': profile.name,
             'key': registration.activation_key,
+            'bidi': get_language_info(get_language())['bidi']
         }
 
         # composes activation email
@@ -2458,7 +2459,8 @@ def do_email_change_request(user, new_email, activation_key=None):
     context = {
         'key': pec.activation_key,
         'old_email': user.email,
-        'new_email': pec.new_email
+        'new_email': pec.new_email,
+        'bidi': get_language_info(get_language())['bidi']
     }
 
     subject = render_to_string('emails/email_change_subject.txt', context)
@@ -2512,7 +2514,8 @@ def confirm_email_change(request, key):  # pylint: disable=unused-argument
         user = pec.user
         address_context = {
             'old_email': user.email,
-            'new_email': pec.new_email
+            'new_email': pec.new_email,
+            'bidi': get_language_info(get_language())['bidi']
         }
 
         if len(User.objects.filter(email=pec.new_email)) != 0:
@@ -2524,7 +2527,7 @@ def confirm_email_change(request, key):  # pylint: disable=unused-argument
         subject = ''.join(subject.splitlines())
         message = render_to_string('emails/confirm_email_change.txt', address_context)
         try:
-            html_message = render_to_string('emails/confirm_email_change.html', context)
+            html_message = render_to_string('emails/confirm_email_change.html', address_context)
         except:
             html_message = None
 

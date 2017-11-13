@@ -2,6 +2,13 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%! from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers %>
 
+<%block name="header">
+% if bidi:
+<html dir="rtl">
+<body style="direction:rtl;unicode-bidi:embed;">
+% endif
+</%block>
+
 <%block name="message">
 <p>
 ${_("Thank you for creating an account with {platform_name}!").format(
