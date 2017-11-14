@@ -121,20 +121,20 @@ urlpatterns += (
     url(r'^dashboard/', include('learner_dashboard.urls')),
 )
 
-if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
-    # Backwards compatibility with old URL structure, but serve the new views
-    urlpatterns += (
-        url(r'^login$', 'student_account.views.login_and_registration_form',
-            {'initial_mode': 'login'}, name="signin_user"),
-        url(r'^register$', 'student_account.views.login_and_registration_form',
-            {'initial_mode': 'register'}, name="register_user"),
-    )
-else:
-    # Serve the old views
-    urlpatterns += (
-        url(r'^login$', 'student.views.signin_user', name="signin_user"),
-        url(r'^register$', 'student.views.register_user', name="register_user"),
-    )
+#if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
+#    # Backwards compatibility with old URL structure, but serve the new views
+#    urlpatterns += (
+#        url(r'^login$', 'student_account.views.login_and_registration_form',
+#            {'initial_mode': 'login'}, name="signin_user"),
+#        url(r'^register$', 'student_account.views.login_and_registration_form',
+#            {'initial_mode': 'register'}, name="register_user"),
+#    )
+#else:
+#    # Serve the old views
+#    urlpatterns += (
+#        url(r'^login$', 'student.views.signin_user', name="signin_user"),
+#        url(r'^register$', 'student.views.register_user', name="register_user"),
+#    )
 
 if settings.FEATURES["ENABLE_MOBILE_REST_API"]:
     urlpatterns += (
