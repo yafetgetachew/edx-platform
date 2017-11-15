@@ -72,17 +72,30 @@ def save_org_logo(url, org_short_name):
         tempfile = image
         tempfile_io = cStringIO.StringIO() # Creates file-like object in mem
         tempfile.save(tempfile_io, format=image.format)
-        org = Organization.objects.get(short_name=org_short_name)
-        org.logo.save(
-            filename,
-            ContentFile(tempfile_io.getvalue()),
-            save=False
-        )
-        org.save()
+        try:
+            org = Organization.objects.get(short_name=org_short_name)
+        except org_exceptions.InvalidCourseKeyException:
+            raise
+        else:    
+            org.logo.save(
+                filename,
+                ContentFile(tempfile_io.getvalue()),
+                save=False
+            )
+            org.save()
+       
     except Exception as e:
         log.error(e)
         raise
         
+def generate_error_response(string):
+    """
+    Generate Response with error message about missing request data
+    """
+    return Response(
+        {"error": "{} is None, please add to request body.".format(string)},
+        status=status.HTTP_400_BAD_REQUEST
+    )
 
 
 """        
@@ -106,7 +119,6 @@ def update_map( map, key, values):
         map.update({key:new_map})
     else:
         map.update({key:values})
-
 
 
 def build_inner_map(microsite):
@@ -215,79 +227,90 @@ class MicrositesViewSet(ViewSet):
 
     def post(self, request, format=None):
 
-        serializer = MicrositeSerializer(data=request.data)
+        # Parse the request.data as json
+        
+        site_url = request.data.get('SITE_NAME', None)
+        site_name = request.data.get('domain_prefix', None)
+        platform_name = request.data.get('platform_name', None)
+        course_org_filter = request.data.get('course_org_filter', None)
         Site = apps.get_model('sites', 'Site')
 
-        # Parse the request.data as json
-        site_url = request.data['SITE_NAME']
-        site_name = request.data['domain_prefix']
-        platform_name = request.data['platform_name']
-        course_org_filter = request.data['course_org_filter']
-
-        # Check if staging is in the site name, strip staging from the name
-        if 'staging' in site_name:
-            site_name = site_name.replace('staging.', '')
-
-        # need to check if site exists, do not duplicate
-        if not Site.objects.filter(domain=site_url):
-            site = Site(domain=site_url, name=site_name)
-            site.save()
+        if site_url is None:
+            return generate_error_response('SITE_NAME')
+        elif site_name is None:
+            return generate_error_response('domain_prefix')
+        elif platform_name is None:
+            return generate_error_response('platform_name')
+        elif course_org_filter is None:
+            return generate_error_response('course_org_filter')
         else:
-            return Response(
-                {'error': 'That site url already exists'},
-                status=status.HTTP_400_BAD_REQUEST)
-
-        org_data = {
-            'name': platform_name,
-            'short_name': course_org_filter,
-            'description': platform_name,
-        }
-        
-        messages = {}
-
-        # Check if org exits, if not add organization
-        try:
-            organizations_api.get_organization_by_short_name(course_org_filter)
-        except org_exceptions.InvalidOrganizationException:
-            organizations_api.add_organization(org_data)
-        if 's3_logo_url' in request.data:
-            s3_logo_url = request.data['s3_logo_url']
+            # Check if staging is in the site name, strip staging from the name
+            if 'staging' in site_name:
+                site_name = site_name.replace('staging.', '')
+            # need to check if site exists, do not duplicate
             try:
-                save_org_logo(s3_logo_url, course_org_filter)
-                messages['logo-image-error'] = ""
-            except Exception as e:
-                messages['logo-image-error'] = '{}'.format(e)
-        # Need to check if the microsite key is a duplicate
-        try:
-            microsite = Microsite(
-                key=org_data['short_name'],
-                values=request.data,
-                site=site
+                Site.objects.filter(domain=site_url)
+                site = Site(domain=site_url, name=site_name)
+                site.save()
+            except IntegrityError as e:
+                return Response(
+                    {"error": str(e)},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            org_data = {
+                'name': platform_name,
+                'short_name': course_org_filter,
+                'description': platform_name,
+            }
+            messages = {}
+            # Check if org exits, if not add organization
+            try:
+                organizations_api.get_organization_by_short_name(course_org_filter)
+            except org_exceptions.InvalidOrganizationException as e:
+                try:
+                    organizations_api.add_organization(org_data)
+                except org_exceptions.InvalidOrganizationException:
+                    return Response(
+                        {"error": str(e)},
+                        status=status.HTTP_400_BAD_REQUEST
+                    )  
+    
+            if 's3_logo_url' in request.data:
+                s3_logo_url = request.data.get('s3_logo_url', None)
+                try:
+                    save_org_logo(s3_logo_url, course_org_filter)
+                    messages['logo-image-error'] = "No error."
+                except Exception as e:
+                    messages['logo-image-error'] = '{}'.format(e)
+            # Need to check if the microsite key is a duplicate
+            try:
+                microsite = Microsite(
+                    key= course_org_filter,
+                    values=request.data,
+                    site=site
+                )
+                microsite.save()
+            except IntegrityError as e:
+                print "line 286"
+                return Response(
+                    { "error": str(e)},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            # Map the organization and microsite
+            mapping = MicrositeOrganizationMapping(
+                organization=org_data['short_name'],
+                microsite=microsite
             )
-            microsite.save()
-        except IntegrityError:
-            return Response(
-                { "error": "Duplicate entry for microsite key {key}".format(
-                    key=org_data['short_name'])
-                },
-                status=status.HTTP_400_BAD_REQUEST
-            )
+            mapping.save()
+            serializer = MicrositeSerializer(data=request.data)
+        
+            if serializer.is_valid():
+                serializer.save()
+                save_to_file()
+                messages['id'] = microsite.id
+                return Response(messages, status=status.HTTP_201_CREATED)
 
-        # Map the organization and microsite
-        mapping = MicrositeOrganizationMapping(
-            organization=org_data['short_name'],
-            microsite=microsite
-        )
-        mapping.save()
-
-
-        if serializer.is_valid():
-            serializer.save()
-            save_to_file()
-            messages['id'] = microsite.id
-            return Response(messages, status=status.HTTP_201_CREATED)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class MicrositesDetailView(ViewSet):
     '''
@@ -366,15 +389,24 @@ class MicrositesDetailView(ViewSet):
         messages = {}
 
         # Parse the request.data as json
-        site_url = request.data['SITE_NAME']
-        site_name = request.data['domain_prefix']
-        platform_name = request.data['platform_name']
-        course_org_filter = request.data['course_org_filter']
-        
+        site_url = request.data.get('SITE_NAME', None)
+        site_name = request.data.get('domain_prefix', None)
+        platform_name = request.data.get('platform_name', None)
+        course_org_filter = request.data.get('course_org_filter', None)
+
+        if site_url is None:
+            return generate_error_response('SITE_NAME')
+        elif site_name is None:
+            return generate_error_response('domain_prefix')
+        elif platform_name is None:
+            return generate_error_response('platform_name')
+        elif course_org_filter is None:
+            return generate_error_response('course_org_filter')
+
         # Get the microsite
         microsite = Microsite.objects.get(pk=pk)
         domain = microsite.site.domain
-        serializer = MicrositeSerializer(data=request.data)
+        
         if microsite is None:
             return Response(
                 {"error": "The microsite was not found"},
@@ -403,13 +435,14 @@ class MicrositesDetailView(ViewSet):
         Microsite.objects.filter(pk=pk).update(values=request.data)
 
         if 's3_logo_url' in request.data:
-            s3_logo_url = request.data['s3_logo_url']
+            s3_logo_url = request.data.get('s3_logo_url', None)
             try:
                 save_org_logo(s3_logo_url, course_org_filter)
-                messages['logo-image-error'] = ""
+                messages['logo-image-error'] = "No error."
             except Exception as e:
                 messages['logo-image-error'] = '{}'.format(e)
-        
+                
+        serializer = MicrositeSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             messages['id'] = microsite.id
