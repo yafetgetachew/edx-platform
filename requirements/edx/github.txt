@@ -115,4 +115,5 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git+https://github.com/schoolyourself/schoolyourself-xblock#egg=xblock_schoolyourself_xblock
 -e git+https://github.com/pmitros/FeedbackXBlock.git#egg=xblock_rate_feedback==0.0
 -e git+https://github.com/edx-solutions/xblock-ooyala.git#egg=xblock_ooyala
--e git+https://github.com/Stanford-Online/xblock-free-text-response@release/v0.1.7#egg=xblock-free-text-response
+# -e git+https://github.com/Stanford-Online/xblock-free-text-response@release/v0.1.7#egg=xblock-free-text-response
+-e git+https://github.com/MamlukiSn/xblock-free-text-response.git#egg=xblock-free-text-response
