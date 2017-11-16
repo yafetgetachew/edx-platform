@@ -87,7 +87,7 @@
               <label for="course">${_("Course")}</label>
               <select id="course" name="course">
                 %for course in courses:
-                <option ${'selected' if selected_course == course.location.course_key else ''} value="${course.location.course_key}">${course.display_name}</option>
+                <option ${'selected' if selected_course == course.location.course_key else ''} value="${course.location.course_key}">${_(course.display_name)}</option>
                 %endfor
               </select>
             </div>
@@ -98,7 +98,7 @@
               <label for="question">${_("Question")}</label>
               <select id="question" name="question">
                 %for question in questions:
-                <option ${'selected' if selected_question == question.location else ''} value="${question.location}">${question.display_name}</option>
+                <option ${'selected' if selected_question == question.location else ''} value="${question.location}">${_(question.display_name)}</option>
                 %endfor
               </select>
             </div>

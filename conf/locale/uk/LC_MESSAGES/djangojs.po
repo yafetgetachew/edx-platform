@@ -2004,9 +2004,15 @@ msgstr ""
 msgid "Showing {firstIndex} out of {numItems} total"
 msgstr "Відображається {firstIndex} з {numItems} усього"
 
+msgid "Showing %(first_index)s out of %(num_items)s total"
+msgstr "Відображається %(first_index)s з %(num_items)s усього"
+
 #: common/static/common/js/components/views/paging_header.js
 msgid "Showing {firstIndex}-{lastIndex} out of {numItems} total"
 msgstr "Відображається {firstIndex}-{lastIndex} з {numItems} усього"
+
+msgid "Showing %(first_index)s-%(last_index)s out of %(num_items)s total"
+msgstr "Відображається %(first_index)s-%(last_index)s з %(num_items)s усього"
 
 #: common/static/common/js/discussion/utils.js
 msgid "Loading content"
@@ -4442,8 +4448,14 @@ msgstr ""
 "%(platformName)s."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"The name that appears on your certificates. Other learners never see your full name."
+msgstr ""
+"Ім'я, що буде зазначено на ваших сертифікатах. Інші учні не бачитимуть вашого повного імені."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Email Address"
-msgstr "Поштова скринька"
+msgstr "Електронна пошта"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
@@ -4463,6 +4475,10 @@ msgstr ""
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Basic Account Information"
 msgstr "Основна інформація облікового запису"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Basic Account Information (required)"
+msgstr "Основна інформація облікового запису (обов'язково)"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "These settings include basic information about your account."
@@ -4502,6 +4518,15 @@ msgstr "Скинути свій пароль"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
+"When you click \"Reset Password\", a message will be sent to your email "
+"address. Click the link in the message to reset your password."
+msgstr ""
+"Коли ви натиснете на \"Змінити пароль\", повідомлення буде надіслано на вашу"
+" електронну пошту. Перейдіть по посиланню у повідомленні, щоб змінити свій "
+"пароль."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
 "When you select \"Reset Your Password\", a message will be sent to the email"
 " address for your {platform_name} account. Click the link in the message to "
 "reset your password."
@@ -4521,6 +4546,10 @@ msgstr ""
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Country or Region of Residence"
 msgstr ""
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Country or Region"
+msgstr "Країна або Регіон"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "The country or region where you live."
@@ -4550,6 +4579,10 @@ msgid "Additional Information"
 msgstr "Додаткова інформація"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Additional Information (optional)"
+msgstr "Додаткова інформація (за бажанням)"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Education Completed"
 msgstr "Навчання завершено"
 
@@ -4565,6 +4598,34 @@ msgstr "Рік Народження"
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Preferred Language"
 msgstr "Обрати бажану мову"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Phone"
+msgstr "Контактний телефон"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Phone number"
+msgstr "Номер телефону"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Work"
+msgstr "Місце роботи"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Work company name."
+msgstr "Назва компанії"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Position"
+msgstr "Посада"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Work position."
+msgstr "Посада"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Qualification"
+msgstr "Професійна кваліфікація"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Social Media Links"
@@ -5832,7 +5893,10 @@ msgstr "Ви впевнені, що хочете обмежити {email} дос
 
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "{display_name} Settings"
-msgstr ""
+msgstr "{display_name} налаштування"
+
+msgid "%(display_name)s Settings"
+msgstr "%(display_name)s налаштування"
 
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "Publish {display_name}"
@@ -5871,6 +5935,10 @@ msgstr "Основне"
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "Visibility"
 msgstr ""
+
+#: cms/static/js/views/modals/course_outline_modals.js
+msgid "Change the settings for %(display_name)s"
+msgstr "Змінити налаштування для %(display_name)s"
 
 #. Translators: "title" is the name of the current component being edited.
 #: cms/static/js/views/modals/edit_xblock.js
@@ -5951,6 +6019,11 @@ msgstr "Дата додавання"
 msgid "Editing access for: %(title)s"
 msgstr ""
 
+#. Translators: "title" is the name of the current component being edited.
+#: cms/static/js/views/pages/container.js
+msgid "Editing visibility for: %(title)s"
+msgstr "Редагування видимості для: %(title)s"
+
 #: cms/static/js/views/pages/container_subviews.js
 msgid "Publishing"
 msgstr "Публікація"
@@ -6027,6 +6100,13 @@ msgid ""
 "{assetType}, sorted by {sortName} ascending"
 msgstr ""
 
+msgid ""
+"Showing %(current_item_range)s out of %(total_items_count)s, filtered by "
+"%(asset_type)s, sorted by %(sort_name)s ascending"
+msgstr ""
+"Показано %(current_item_range)s з %(total_items_count)s, профільтровано за "
+"%(asset_type)s, упорядковано за %(sort_name)s у висхідному порядку"
+
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, filtered by Images, sorted by Date Added
 #. descending"
@@ -6035,6 +6115,13 @@ msgid ""
 "Showing {currentItemRange} out of {totalItemsCount}, filtered by "
 "{assetType}, sorted by {sortName} descending"
 msgstr ""
+
+msgid ""
+"Showing %(current_item_range)s out of %(total_items_count)s, filtered by "
+"%(asset_type)s, sorted by %(sort_name)s descending"
+msgstr ""
+"Показано %(current_item_range)s з %(total_items_count)s, профільтровано за "
+"%(asset_type)s, упорядковано за %(sort_name)s у низхідному порядку"
 
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, sorted by Date Added ascending"
@@ -6046,6 +6133,13 @@ msgstr ""
 "Відображається {currentItemRange} з {totalItemsCount}, упорядковано за "
 "{sortName} у висхідному порядку"
 
+msgid ""
+"Showing %(current_item_range)s out of %(total_items_count)s, sorted by "
+"%(sort_name)s ascending"
+msgstr ""
+"Показано %(current_item_range)s з %(total_items_count)s, упорядковано за "
+"%(sort_name)s у висхідному порядку"
+
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, sorted by Date Added descending"
 #: cms/static/js/views/paging_header.js
@@ -6056,11 +6150,21 @@ msgstr ""
 "Відображається {currentItemRange} з {totalItemsCount}, упорядковано за "
 "{sortName} у низхідному порядку"
 
+msgid ""
+"Showing %(current_item_range)s out of %(total_items_count)s, sorted by "
+"%(sort_name)s descending"
+msgstr ""
+"Показано %(current_item_range)s з %(total_items_count)s , упорядковано за "
+"%(sort_name)s у низхідному порядку"
+
 #. Translators: turns into "25 total" to be used in other sentences, e.g.
 #. "Showing 0-9 out of 25 total".
 #: cms/static/js/views/paging_header.js
 msgid "{totalItems} total"
 msgstr ""
+
+msgid "%(total_items)s total"
+msgstr "Загальна кількість %(total_items)s"
 
 #. Translators: This refers to a content group that can be linked to a student
 #. cohort.
@@ -6231,11 +6335,21 @@ msgstr ""
 
 #: cms/static/js/views/utils/xblock_utils.js
 msgid "Yes, delete this {xblock_type}"
-msgstr ""
+msgstr "Так, видалити {xblock_type}"
+
+msgid "Yes, delete this %(xblock_type)s"
+msgstr "Так, видалити %(xblock_type)s"
 
 #: cms/static/js/views/utils/xblock_utils.js
 msgid "Delete this {xblock_type}?"
-msgstr ""
+msgstr "Видалити {xblock_type}?"
+
+msgid "Delete this %(xblock_type)s?"
+msgstr "Видалити %(xblock_type)s?"
+
+#: cms/static/js/views/utils/xblock_utils.js
+msgid "Deleting this %(xblock_type)s is permanent and cannot be undone."
+msgstr "Видалення %(xblock_type)s є безповоротнім і не може бути скасоване."
 
 #: cms/static/js/views/utils/xblock_utils.js
 msgid "section"
@@ -6447,7 +6561,10 @@ msgstr "Налаштування"
 
 #: cms/static/js/views/xblock_outline.js
 msgid "New {component_type}"
-msgstr ""
+msgstr "Новий компонент {component_type}"
+
+msgid "New %(component_type)s"
+msgstr "Новий компонент %(component_type)s"
 
 #. Translators: This message will be added to the front of messages of type
 #. warning,
@@ -6597,6 +6714,9 @@ msgstr ""
 msgid "Add a Post"
 msgstr "Додати повідомлення"
 
+msgid "Add Post"
+msgstr "Додати повідомлення"
+
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Visible to"
 msgstr ""
@@ -6616,6 +6736,10 @@ msgstr "Всі групи"
 msgid ""
 "Add a clear and descriptive title to encourage participation. (Required)"
 msgstr ""
+
+msgid ""
+"Add a clear and descriptive title to encourage participation."
+msgstr "Додайте зрозумілу та вичерпну назву, щоб заохотити участь."
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Your question or idea (required)"
@@ -6639,6 +6763,10 @@ msgstr "залишити повідомлення анонімно для одн
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Submit"
 msgstr "Надіслати"
+
+#: common/static/common/templates/discussion/new-post.underscore
+msgid "Enter your question or comment"
+msgstr "Введіть ваше питання або коментар"
 
 #: common/static/common/templates/discussion/post-user-display.underscore
 msgid "(Community TA)"
@@ -6803,11 +6931,22 @@ msgstr "Це повідомлення видно всім."
 msgid "Post type"
 msgstr "Тип повідомлення"
 
+msgid "Post type:"
+msgstr "Тип повідомлення:"
+
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid ""
 "Questions raise issues that need answers. Discussions share ideas and start "
 "conversations. (Required)"
 msgstr ""
+
+msgid ""
+"Questions raise issues that need answers. Discussions share ideas and start "
+"conversations."
+msgstr ""
+"Питання використовуються тоді, коли вам потрібні конкретні відповіді. "
+"Дискусії використовуються для того, щоб ділитися ідеями та вести вільне "
+"обговорення. "
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Question"
@@ -6829,9 +6968,17 @@ msgstr "Додати відповідь:"
 msgid "Topic area"
 msgstr ""
 
+msgid "Topic Area:"
+msgstr "Теми:"
+
 #: common/static/common/templates/discussion/topic.underscore
 msgid "Add your post to a relevant topic to help others find it. (Required)"
 msgstr ""
+
+msgid "Add your post to a relevant topic to help others find it."
+msgstr ""
+"Додайте ваше повідомлення до відповідної теми, щоб допомогти іншим знайти "
+"його. "
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Discussion Home"
@@ -6861,7 +7008,7 @@ msgstr "Фільтрування та впорядкування тем"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Engage with posts"
-msgstr "Цікавитися повідомленнями "
+msgstr "Оцінюйте повідомлення"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Vote for good posts and responses"
@@ -7481,7 +7628,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
 msgid "Student email or username"
-msgstr ""
+msgstr "Eлектронна пошта чи ім'я користувача студента"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list-editor.underscore
 msgid "Free text notes"
@@ -7490,6 +7637,22 @@ msgstr "Нотатки"
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "Generate Exception Certificates"
 msgstr "Генерація сертифікатів для винятків"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+msgid "Generate a Certificate for all "
+msgstr "Генерування сертифікатів для всіх "
+
+#: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+msgid "New"
+msgstr "нових"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+msgid "additions to the Exception list"
+msgstr "доповнень зі списку винятків"
+
+#: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
+msgid "Generate a Certificate for all users on the Exception list"
+msgstr "Генерування сертифікатів для всіх користувачів у списку винятків"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "All users on the Exception list who do not yet have a certificate"
@@ -7895,6 +8058,16 @@ msgstr "Змінити Пароль"
 #: lms/templates/student_account/account_settings.underscore
 msgid "Account Settings"
 msgstr "Налаштування облікового запису"
+
+#: lms/templates/student_account/account_settings.underscore
+msgid ""
+"These settings include basic information about your account. You can also "
+"specify additional information and see your linked social accounts on this "
+"page."
+msgstr ""
+"Ці параметри включають в себе основну інформацію стосовно Вашого облікового "
+"запису. На цій сторінці Ви можете також надати додаткову інформацію і "
+"побачити Ваші облікові записи в соціальних мережах."
 
 #: lms/templates/student_account/account_settings_section.underscore
 msgid "An error occurred. Please reload the page."
@@ -9263,6 +9436,26 @@ msgid "Abbreviation"
 msgstr "Абревіатура"
 
 #: cms/templates/js/course_grade_policy.underscore
+msgid "e.g. Homework, Midterm Exams"
+msgstr "Наприклад: домашня робота, проміжний іспит"
+
+#: cms/templates/js/course_grade_policy.underscore
+msgid "e.g. HW, Midterm"
+msgstr "Наприклад: ДР, ПІ"
+
+#: cms/templates/js/course_grade_policy.underscore
+msgid "as a percent, e.g. 40"
+msgstr "Як процент, наприклад 40"
+
+#: cms/templates/js/course_grade_policy.underscore
+msgid "total exercises assigned"
+msgstr "Загальна кількість вправ"
+
+#: cms/templates/js/course_grade_policy.underscore
+msgid "total exercises that won't be graded"
+msgstr "Загальна кількість вправ, які не оцінюватимуться"
+
+#: cms/templates/js/course_grade_policy.underscore
 msgid ""
 "This short name for the assignment type (for example, HW or Midterm) appears"
 " next to assignments on a learner's Progress page."
@@ -9342,7 +9535,10 @@ msgstr "Ім'я розділу"
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "Chapter {order}"
-msgstr ""
+msgstr "Розділ {order}"
+
+msgid "Chapter %s"
+msgstr "Розділ %s"
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "provide the title/name of the chapter that will be used in navigating"
@@ -9381,7 +9577,7 @@ msgstr "Назва підручника"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Introduction to Cookie Baking"
-msgstr ""
+msgstr "Вступ до приготування випічки"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid ""
@@ -9613,7 +9809,7 @@ msgstr ""
 
 #: cms/templates/js/publish-history.underscore
 msgid "Never published"
-msgstr "Ще не опубліковане"
+msgstr "Не опубліковано"
 
 #: cms/templates/js/publish-history.underscore
 #, python-format
@@ -9671,7 +9867,7 @@ msgstr ""
 #: cms/templates/js/publish-xblock.underscore
 #, python-format
 msgid "with %(release_date_from)s"
-msgstr ""
+msgstr "для %(release_date_from)s"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Is Visible To:"
@@ -9688,16 +9884,25 @@ msgstr ""
 #: cms/templates/js/publish-xblock.underscore
 #, python-format
 msgid "with %(section_or_subsection)s"
-msgstr ""
+msgstr "для %(section_or_subsection)s"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Staff and Learners"
 msgstr ""
 
 #: cms/templates/js/publish-xblock.underscore
+msgid "Staff and Students"
+msgstr "Персонал та студенти"
+
+#: cms/templates/js/publish-xblock.underscore
 #: cms/templates/js/staff-lock-editor.underscore
 msgid "Hide from learners"
 msgstr ""
+
+#: cms/templates/js/publish-xblock.underscore
+#: cms/templates/js/staff-lock-editor.underscore
+msgid "Hide from students"
+msgstr "Персонал та студенти"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Note: Do not hide graded assignments after they have been released."
@@ -10199,3 +10404,42 @@ msgstr ""
 #: lms/static/js/student_profile/views/learner_profile_factory.js
 msgid "{platform_name} learners can see my:"
 msgstr "Учасники {platform_name} можуть бачити мої:"
+
+#: cms/templates/js/xblock-string-field-editor.underscore
+msgid "Edit the name"
+msgstr "Редагувати ім'я"
+
+msgid "Fail"
+msgstr "Не складено"
+
+msgid "Pass"
+msgstr "Складено"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "DISCUSSION HOME:"
+msgstr "ОБГОВОРЕННЯ: ГОЛОВНА СТОРІНКА"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "Focus in on specific topics"
+msgstr "Зосередьтеся на певних темах"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "Search for specific posts"
+msgstr "Шукайте у всіх повідомленнях"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "Sort by date, vote, or comments"
+msgstr "Фільтрувати за датою, голосами, повідомленнями"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "Upvote posts and good responses"
+msgstr "Голосуйте за хороші повідомлення та відповіді"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "Report Forum Misuse"
+msgstr "Повідомте про порушення"
+
+#: common/static/common/templates/discussion/discussion-home.underscore
+msgid "Follow posts for updates"
+msgstr "Відстежуйте повідомлення"
+
