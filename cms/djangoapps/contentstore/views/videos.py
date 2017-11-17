@@ -15,6 +15,7 @@ from django.utils.translation import ugettext as _, ugettext_noop
 from django.views.decorators.http import require_GET, require_http_methods
 import rfc6266
 
+from azure_video_pipeline.utils import get_media_service_client
 from edxval.api import (
     create_video,
     get_videos_for_course,
@@ -382,7 +383,7 @@ def videos_post(course, request):
     if error:
         return JsonResponse({"error": error}, status=400)
 
-    bucket = storage_service_bucket()
+    bucket = storage_service_bucket(course)
     course_video_upload_token = course.video_upload_pipeline["course_video_upload_token"]
     req_files = request.json["files"]
     resp_files = []
@@ -425,26 +426,35 @@ def videos_post(course, request):
     return JsonResponse({"files": resp_files}, status=200)
 
 
-def storage_service_bucket():
+def storage_service_bucket(course=None):
     """
     Returns an S3 bucket for video uploads.
     """
-    conn = s3.connection.S3Connection(
-        settings.AWS_ACCESS_KEY_ID,
-        settings.AWS_SECRET_ACCESS_KEY
-    )
-    return conn.get_bucket(settings.VIDEO_UPLOAD_PIPELINE["BUCKET"])
+    if str(settings.FEATURES['ENABLE_VIDEO_UPLOAD_PIPELINE']) == 'azure':
+        return get_media_service_client(course.org)
+    else:
+
+        conn = s3.connection.S3Connection(
+            settings.AWS_ACCESS_KEY_ID,
+            settings.AWS_SECRET_ACCESS_KEY
+        )
+        return conn.get_bucket(settings.VIDEO_UPLOAD_PIPELINE["BUCKET"])
 
 
 def storage_service_key(bucket, file_name):
     """
     Returns an S3 key to the given file in the given bucket.
     """
-    key_name = "{}/{}".format(
-        settings.VIDEO_UPLOAD_PIPELINE.get("ROOT_PATH", ""),
-        file_name
-    )
-    return s3.key.Key(bucket, key_name)
+    if str(settings.FEATURES['ENABLE_VIDEO_UPLOAD_PIPELINE']) == 'azure':
+        asset = bucket.create_asset(file_name)
+        bucket.asset = asset
+        return bucket
+    else:
+        key_name = "{}/{}".format(
+            settings.VIDEO_UPLOAD_PIPELINE.get("ROOT_PATH", ""),
+            file_name
+        )
+        return s3.key.Key(bucket, key_name)
 
 
 def send_video_status_update(updates):
