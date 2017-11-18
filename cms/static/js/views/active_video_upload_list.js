@@ -157,7 +157,6 @@ define([
                     });
                     this.collection.add(model);
                     uploadData.cid = model.cid; // eslint-disable-line no-param-reassign
-                    uploadData.headers = {'x-ms-blob-type': 'BlockBlob'};
                     uploadData.submit();
                 } else {
                     // Validate file and remove the files with errors

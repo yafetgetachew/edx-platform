@@ -15,7 +15,7 @@ from django.utils.translation import ugettext as _, ugettext_noop
 from django.views.decorators.http import require_GET, require_http_methods
 import rfc6266
 
-from azure_video_pipeline.utils import get_media_service_client
+from azure_video_pipeline.blobs_service import BlobServiceClient
 from edxval.api import (
     create_video,
     get_videos_for_course,
@@ -42,10 +42,15 @@ LOGGER = logging.getLogger(__name__)
 # Default expiration, in seconds, of one-time URLs used for uploading videos.
 KEY_EXPIRATION_IN_SECONDS = 86400
 
-VIDEO_SUPPORTED_FILE_FORMATS = {
-    '.mp4': 'video/mp4',
-    '.mov': 'video/quicktime',
-}
+if str(settings.FEATURES.get('ENABLE_VIDEO_UPLOAD_PIPELINE', '')) == 'azure':
+    VIDEO_SUPPORTED_FILE_FORMATS = {
+        '.mp4': 'video/mp4'
+    }
+else:
+    VIDEO_SUPPORTED_FILE_FORMATS = {
+        '.mp4': 'video/mp4',
+        '.mov': 'video/quicktime',
+    }
 
 VIDEO_UPLOAD_MAX_FILE_SIZE_GB = 5
 
@@ -383,7 +388,7 @@ def videos_post(course, request):
     if error:
         return JsonResponse({"error": error}, status=400)
 
-    bucket = storage_service_bucket(course)
+    bucket = storage_service_bucket()
     course_video_upload_token = course.video_upload_pipeline["course_video_upload_token"]
     req_files = request.json["files"]
     resp_files = []
@@ -426,12 +431,12 @@ def videos_post(course, request):
     return JsonResponse({"files": resp_files}, status=200)
 
 
-def storage_service_bucket(course=None):
+def storage_service_bucket():
     """
     Returns an S3 bucket for video uploads.
     """
     if str(settings.FEATURES['ENABLE_VIDEO_UPLOAD_PIPELINE']) == 'azure':
-        return get_media_service_client(course.org)
+        return BlobServiceClient()
     else:
 
         conn = s3.connection.S3Connection(
@@ -446,8 +451,7 @@ def storage_service_key(bucket, file_name):
     Returns an S3 key to the given file in the given bucket.
     """
     if str(settings.FEATURES['ENABLE_VIDEO_UPLOAD_PIPELINE']) == 'azure':
-        asset = bucket.create_asset(file_name)
-        bucket.asset = asset
+        bucket.edx_video_id = file_name
         return bucket
     else:
         key_name = "{}/{}".format(

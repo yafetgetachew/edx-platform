@@ -172,6 +172,11 @@ if settings.FEATURES.get('CERTIFICATES_HTML_VIEW'):
             'contentstore.views.certificates.certificates_list_handler')
     )
 
+if str(settings.FEATURES.get('ENABLE_VIDEO_UPLOAD_PIPELINE', '')) == 'azure':
+    urlpatterns += (
+        url(r'', include('azure_video_pipeline.urls')),
+    )
+
 # Maintenance Dashboard
 urlpatterns += patterns(
     '',
