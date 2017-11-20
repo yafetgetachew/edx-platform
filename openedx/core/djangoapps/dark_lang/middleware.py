@@ -20,6 +20,7 @@ from openedx.core.djangoapps.dark_lang.models import DarkLangConfig
 from openedx.core.djangoapps.user_api.preferences.api import (
     get_user_preference
 )
+from openedx.core.djangoapps.lang_pref import LANGUAGE_KEY
 
 # If django 1.7 or higher is used, the right-side can be updated with new-style codes.
 CHINESE_LANGUAGE_CODE_MAP = {
@@ -87,6 +88,13 @@ class DarkLangMiddleware(object):
         self._activate_preview_language(request)
 
     def _set_site_or_microsite_language(self, request):
+        auth_user = request.user.is_authenticated()
+        if request.user.is_authenticated():
+           user_pref = get_user_preference(request.user, LANGUAGE_KEY)
+           if user_pref:
+              request.session[LANGUAGE_SESSION_KEY] = user_pref
+              return
+
         language = get_value('LANGUAGE_CODE', None)
         if language:
             request.session[LANGUAGE_SESSION_KEY] = language
