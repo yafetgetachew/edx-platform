@@ -8,7 +8,7 @@ This middleware must be placed before the LocaleMiddleware, but after
 the SessionMiddleware.
 """
 from django.conf import settings
-from django.utils.translation.trans_real import parse_accept_lang_header
+from django.utils.translation.trans_real import parse_accept_lang_header, get_languages, check_for_language
 from django.utils.translation import LANGUAGE_SESSION_KEY
 
 import locale
@@ -88,7 +88,13 @@ class DarkLangMiddleware(object):
         self._activate_preview_language(request)
 
     def _set_site_or_microsite_language(self, request):
-        auth_user = request.user.is_authenticated()
+        supported_lang_codes = get_languages()
+        if hasattr(request, 'session'):
+            lang_code = request.session.get(LANGUAGE_SESSION_KEY)
+            if lang_code in supported_lang_codes and lang_code is not None and check_for_language(lang_code):
+                request.session[LANGUAGE_SESSION_KEY] = lang_code
+                return
+
         if request.user.is_authenticated():
            user_pref = get_user_preference(request.user, LANGUAGE_KEY)
            if user_pref:
