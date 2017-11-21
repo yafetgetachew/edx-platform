@@ -764,7 +764,10 @@ def _update_and_import_module(
 
             # Publish it if importing the course for branch setting published_only.
             if store.get_branch_setting() == ModuleStoreEnum.Branch.published_only:
-                store.publish(block.location, user_id)
+                try:
+                    store.publish(block.location, user_id)
+                except:
+                    pass
 
     return block
 
