@@ -42,10 +42,17 @@ LOGGER = logging.getLogger(__name__)
 # Default expiration, in seconds, of one-time URLs used for uploading videos.
 KEY_EXPIRATION_IN_SECONDS = 86400
 
-VIDEO_SUPPORTED_FILE_FORMATS = {
-    '.mp4': 'video/mp4',
-    '.mov': 'video/quicktime',
-}
+if str(settings.FEATURES['ENABLE_VIDEO_UPLOAD_PIPELINE']) == 'azure':
+    STORAGE_SERVICE = 'azure'
+    VIDEO_SUPPORTED_FILE_FORMATS = {
+        '.mp4': 'video/mp4',
+    }
+else:
+    STORAGE_SERVICE = 's3'
+    VIDEO_SUPPORTED_FILE_FORMATS = {
+        '.mp4': 'video/mp4',
+        '.mov': 'video/quicktime',
+    }
 
 VIDEO_UPLOAD_MAX_FILE_SIZE_GB = 5
 
@@ -245,12 +252,16 @@ def _get_and_validate_course(course_key_string, user):
     # In the future, we plan to add a new org-level role for video uploaders.
     course = get_course_and_check_access(course_key, user)
 
-    if (
-            settings.FEATURES["ENABLE_VIDEO_UPLOAD_PIPELINE"] and
-            getattr(settings, "VIDEO_UPLOAD_PIPELINE", None) and
-            course and
-            course.video_pipeline_configured
-    ):
+    if any([
+        settings.FEATURES["ENABLE_VIDEO_UPLOAD_PIPELINE"] and
+        course and
+        getattr(settings, "VIDEO_UPLOAD_PIPELINE", None) and
+        course.video_pipeline_configured,
+
+        settings.FEATURES["ENABLE_VIDEO_UPLOAD_PIPELINE"] == "azure" and
+        course and
+        course.video_pipeline_configured
+    ]):
         return course
     else:
         return None
@@ -325,7 +336,8 @@ def videos_index_html(course):
             "previous_uploads": _get_index_videos(course),
             "concurrent_upload_limit": settings.VIDEO_UPLOAD_PIPELINE.get("CONCURRENT_UPLOAD_LIMIT", 0),
             "video_supported_file_formats": VIDEO_SUPPORTED_FILE_FORMATS.keys(),
-            "video_upload_max_file_size": VIDEO_UPLOAD_MAX_FILE_SIZE_GB
+            "video_upload_max_file_size": VIDEO_UPLOAD_MAX_FILE_SIZE_GB,
+            "storage_service": STORAGE_SERVICE
         }
     )
 

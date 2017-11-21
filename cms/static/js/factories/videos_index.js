@@ -11,7 +11,8 @@ define([
         uploadButton,
         previousUploads,
         videoSupportedFileFormats,
-        videoUploadMaxFileSizeInGB
+        videoUploadMaxFileSizeInGB,
+        storageService
     ) {
         var activeView = new ActiveVideoUploadListView({
                 postUrl: videoHandlerUrl,
@@ -19,6 +20,7 @@ define([
                 uploadButton: uploadButton,
                 videoSupportedFileFormats: videoSupportedFileFormats,
                 videoUploadMaxFileSizeInGB: videoUploadMaxFileSizeInGB,
+                storageService: storageService,
                 onFileUploadDone: function(activeVideos) {
                     $.ajax({
                         url: videoHandlerUrl,

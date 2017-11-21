@@ -8,7 +8,9 @@ define([
     'edx-ui-toolkit/js/utils/html-utils',
     'edx-ui-toolkit/js/utils/string-utils',
     'text!templates/active-video-upload-list.underscore',
-    'jquery.fileupload'
+    'jquery.fileupload',
+    'azure-storage.common',
+    'azure-storage.blob'
 ],
     function($, _, Backbone, ActiveVideoUpload, BaseView, ActiveVideoUploadView,
              HtmlUtils, StringUtils, activeVideoUploadListTemplate) {
@@ -34,6 +36,7 @@ define([
                 this.postUrl = options.postUrl;
                 this.videoSupportedFileFormats = options.videoSupportedFileFormats;
                 this.videoUploadMaxFileSizeInGB = options.videoUploadMaxFileSizeInGB;
+                this.storageService = options.storageService;
                 this.onFileUploadDone = options.onFileUploadDone;
                 if (options.uploadButton) {
                     options.uploadButton.click(this.chooseFile.bind(this));
@@ -151,14 +154,17 @@ define([
                     errorMsg;
 
                 if (uploadData.redirected) {
-                    model = new ActiveVideoUpload({
-                        fileName: uploadData.files[0].name,
-                        videoId: uploadData.videoId
-                    });
-                    this.collection.add(model);
-                    uploadData.cid = model.cid; // eslint-disable-line no-param-reassign
-                    uploadData.headers = {'x-ms-blob-type': 'BlockBlob'};
-                    uploadData.submit();
+                    if (this.storageService === 'azure') {
+                        this.uploadAzureStorage(uploadData);
+                    } else {
+                        model = new ActiveVideoUpload({
+                            fileName: uploadData.files[0].name,
+                            videoId: uploadData.videoId
+                        });
+                        this.collection.add(model);
+                        uploadData.cid = model.cid; // eslint-disable-line no-param-reassign
+                        uploadData.submit();
+                    }
                 } else {
                     // Validate file and remove the files with errors
                     errors = view.validateFile(uploadData);
@@ -171,6 +177,13 @@ define([
                     _.each(
                         uploadData.files,
                         function(file) {
+                            var modelTracking;
+                            if (view.storageService === 'azure') {
+                                modelTracking = new ActiveVideoUpload({
+                                    fileName: file.name
+                                });
+                                view.collection.add(modelTracking);
+                            }
                             $.ajax({
                                 url: view.postUrl,
                                 contentType: 'application/json',
@@ -184,12 +197,17 @@ define([
                                 _.each(
                                     responseData.files,
                                     function(file) { // eslint-disable-line no-shadow
+                                        if (modelTracking) {
+                                            modelTracking.set('videoId', file.edx_video_id);
+                                        }
+
                                         view.$uploadForm.fileupload('add', {
                                             files: _.filter(uploadData.files, function(fileObj) {
                                                 return file.file_name === fileObj.name;
                                             }),
                                             url: file.upload_url,
                                             videoId: file.edx_video_id,
+                                            cid: modelTracking ? modelTracking.cid : '',
                                             multipart: false,
                                             global: false,  // Do not trigger global AJAX error handler
                                             redirected: true
@@ -202,7 +220,7 @@ define([
                                 } catch (error) {
                                     errorMsg = view.defaultFailureMessage;
                                 }
-                                view.addUploadFailureView(file.name, errorMsg);
+                                view.addUploadFailureView(file.name, errorMsg, modelTracking);
                             });
                         }
                     );
@@ -281,13 +299,18 @@ define([
                 this.setStatus(data.cid, ActiveVideoUpload.STATUS_FAILED, message);
             },
 
-            addUploadFailureView: function(fileName, failureMessage) {
-                var model = new ActiveVideoUpload({
-                    fileName: fileName,
-                    status: ActiveVideoUpload.STATUS_FAILED,
-                    failureMessage: failureMessage
-                });
-                this.collection.add(model);
+            addUploadFailureView: function(fileName, failureMessage, model) {
+                if (model) {
+                    this.setStatus(model.cid, ActiveVideoUpload.STATUS_FAILED, failureMessage)
+                } else {
+                    model = new ActiveVideoUpload({
+                        fileName: fileName,
+                        status: ActiveVideoUpload.STATUS_FAILED,
+                        failureMessage: failureMessage
+                    });
+                    this.collection.add(model);
+                }
+
                 this.readMessages([
                     StringUtils.interpolate(
                         gettext('Upload failed for video {fileName}'),
@@ -383,6 +406,58 @@ define([
                     dataType: 'json',
                     type: 'POST'
                 });
+            },
+
+            uploadAzureStorage: function (uploadData) {
+                var uploadUrl = uploadData.url,
+                    view = this,
+                    finishedOrError = false,
+                    blobUri,
+                    blobContainer,
+                    blobName,
+                    sasToken;
+
+                sasToken = uploadUrl.split('?').pop();
+                uploadUrl = uploadUrl.split('?')[0];
+                var arrayUploadUrl = uploadUrl.split('/');
+                blobName = arrayUploadUrl.pop();
+                blobContainer = arrayUploadUrl.pop();
+                blobUri = uploadUrl.split(blobContainer)[0];
+
+                var blobService = AzureStorage.createBlobServiceWithSas(blobUri, sasToken);
+                var speedSummary = blobService.createBlockBlobFromBrowserFile(
+                    blobContainer,
+                    blobName,
+                    uploadData.files[0],
+                    function(error, result, response) {
+                        finishedOrError = true;
+                        if (error) {
+                            var data = {
+                                cid: uploadData.cid,
+                                jqXHR: {}
+                            };
+                            view.fileUploadFail('event', data);
+                        } else {
+                            view.fileUploadDone('event', uploadData)
+                        }
+                    }
+                );
+
+                this.setStatus(uploadData.cid, ActiveVideoUpload.STATUS_UPLOADING);
+
+                function refreshProgress() {
+                    var timerId = setTimeout(function() {
+                        if (!finishedOrError) {
+                            var progress = speedSummary.getCompletePercent() / 100;
+                            view.setProgress(uploadData.cid, progress);
+                            refreshProgress();
+                        } else {
+                            clearTimeout(timerId);
+                        }
+                    }, 200);
+                }
+
+                refreshProgress();
             }
         });
 
