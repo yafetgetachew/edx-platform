@@ -134,7 +134,6 @@ def videos_handler(request, course_key_string, edx_video_id=None):
         soft deletes a video for particular course
     """
     course = _get_and_validate_course(course_key_string, request.user)
-
     if not course:
         return HttpResponseNotFound()
 
@@ -250,12 +249,16 @@ def _get_and_validate_course(course_key_string, user):
     # In the future, we plan to add a new org-level role for video uploaders.
     course = get_course_and_check_access(course_key, user)
 
-    if (
-            settings.FEATURES["ENABLE_VIDEO_UPLOAD_PIPELINE"] and
-            getattr(settings, "VIDEO_UPLOAD_PIPELINE", None) and
-            course and
-            course.video_pipeline_configured
-    ):
+    if any([
+        settings.FEATURES["ENABLE_VIDEO_UPLOAD_PIPELINE"] and
+        course and
+        getattr(settings, "VIDEO_UPLOAD_PIPELINE", None) and
+        course.video_pipeline_configured,
+
+        settings.FEATURES["ENABLE_VIDEO_UPLOAD_PIPELINE"] == "azure" and
+        course and
+        course.video_pipeline_configured
+    ]):
         return course
     else:
         return None
