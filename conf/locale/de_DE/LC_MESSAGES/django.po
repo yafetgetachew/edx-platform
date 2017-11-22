@@ -9123,6 +9123,11 @@ msgid ""
 msgstr ""
 
 #: lms/templates/registration/password_reset_email.html
+#, python-format
+msgid "You're receiving this e-mail because you requested a password reset for your user account at {{ site_name }}"
+msgstr "Sie haben das Zurücksetzen Ihres Passwortes auf {{ site_name }} beantragt."
+
+#: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
 msgstr ""
 "Bitte besuchen Sie die folgende Seite und wählen Sie ein neues Passwort:"
@@ -15917,6 +15922,33 @@ msgid ""
 "This email message was automatically sent by {lms_url} because someone "
 "attempted to create an account on {platform_name} using this email address."
 msgstr ""
+
+#: lms/templates/emails/activation_email_subject.txt
+msgid "Activate Your {platform_name} Account"
+msgstr "Aktivieren Sie Ihren {platform_name} Account"
+
+#: lms/templates/emails/activation_email.txt
+msgid "Thank you for creating an account with {platform_name}!"
+msgstr "Danke, dass Sie sich bei {platform_name} registriert haben!"
+
+#: lms/templates/emails/activation_email.txt
+msgid "There's just one more step before you can enroll in a course: "
+"you need to activate your {platform_name} account. To activate "
+"your account, click the following link. If that doesn't work, "
+"copy and paste the link into your browser's address bar."
+msgstr "Sie sind nur mehr einen Schritt von Ihrem Kurs entfernt: "
+"klicken Sie auf folgenden Link um Ihr {platform_name} Profil zu aktivieren. "
+"Sollte der Link nicht funktionieren, kopieren Sie ihn bitte in die Adressleiste Ihres Browsers."
+
+#: lms/templates/emails/activation_email.txt
+msgid "If you didn't create an account, you don't need to do anything; you "
+"won't receive any more email from us. If you need assistance, please "
+"do not reply to this email message. Check the help section of the "
+"{platform_name} website."
+msgstr "Sollten Sie kein Profil angelegt haben, betrachten Sie diese Nachricht "
+"als gegenstandslos; Sie werden keine weiteren E-Mails von uns bekommen. "
+"Sollten Sie Hilfe benötigen antworten Sie bitte NICHT auf diese E-Mail, "
+"sondern besuchen Sie unsere Webseite. {platform_name}"
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Action Required: Activate your {platform_name} account"
