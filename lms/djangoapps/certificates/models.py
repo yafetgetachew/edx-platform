@@ -1087,7 +1087,7 @@ def generate_pdf(sender, instance, **kwargs):
 
     token = md5.new('{}{}'.format(settings.SECRET_KEY, settings.SITE_NAME)).hexdigest()
     kwargs = {'token': token, 'user_id': instance.user.id, 'course_id': unicode(instance.course_id)}
-    html_cert_url = 'https://{}{}'.format(settings.SITE_NAME, reverse('certificates:token_html_view', kwargs=kwargs))
+    html_cert_url = 'https://{}{}'.format(settings.FEATURES.get('LOCAL_LMS_URL', settings.SITE_NAME), reverse('certificates:token_html_view', kwargs=kwargs))
 
     pdf_filename = '{}.pdf'.format(instance.verify_uuid)
     pdf_dir = os.path.join(settings.MEDIA_ROOT, 'certs')
