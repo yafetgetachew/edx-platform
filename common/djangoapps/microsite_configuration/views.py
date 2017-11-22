@@ -61,14 +61,14 @@ def download_image(url):
         raise
         
 
-
 def save_org_logo(url, org_short_name):
     """
     Download and save remote organization logo
     """
     try:
         image = download_image(url)
-        filename = urlparse.urlparse(url).path.split('/')[-1]
+        filename_end = urlparse.urlparse(url).path.split('/')[-1]
+        filename = "{}_{}".format(org_short_name, filename_end)
         tempfile = image
         tempfile_io = cStringIO.StringIO() # Creates file-like object in mem
         tempfile.save(tempfile_io, format=image.format)
@@ -83,11 +83,12 @@ def save_org_logo(url, org_short_name):
                 save=False
             )
             org.save()
-       
+
     except Exception as e:
         log.error(e)
         raise
-        
+
+
 def generate_error_response(string):
     """
     Generate Response with error message about missing request data
@@ -312,6 +313,7 @@ class MicrositesViewSet(ViewSet):
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class MicrositesDetailView(ViewSet):
     '''
         **Use Cases**
@@ -403,6 +405,7 @@ class MicrositesDetailView(ViewSet):
         elif course_org_filter is None:
             return generate_error_response('course_org_filter')
 
+
         # Get the microsite
         microsite = Microsite.objects.get(pk=pk)
         domain = microsite.site.domain
@@ -443,6 +446,7 @@ class MicrositesDetailView(ViewSet):
                 messages['logo-image-error'] = '{}'.format(e)
                 
         serializer = MicrositeSerializer(data=request.data)
+
         if serializer.is_valid():
             serializer.save()
             messages['id'] = microsite.id
