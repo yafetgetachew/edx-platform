@@ -2,6 +2,7 @@
 <%! from django.utils.translation import ugettext as _ %>
 
 <%
+from django.conf import settings
 # set doc language direction
 from django.utils.translation import get_language_bidi
 dir_rtl = 'rtl' if get_language_bidi() else 'ltr'
@@ -14,7 +15,7 @@ course_mode_class = course_mode if course_mode else ''
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <base href="https://${settings.SITE_NAME}">
     <title>${document_title}</title>
     <link rel="icon" type="image/x-icon" href="/static/deskua/images/favicon.5cb63f764721.ico">
     <%static:css group='style-certificates'/>

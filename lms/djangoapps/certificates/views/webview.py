@@ -7,15 +7,15 @@ from datetime import datetime
 from uuid import uuid4
 import logging
 import urllib
+import md5
 
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseForbidden
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.utils import translation
 from django.utils.encoding import smart_str
-from django.contrib.auth.decorators import login_required
 
 from badges.events.course_complete import get_completion_badge
 from badges.utils import badges_enabled
@@ -597,3 +597,10 @@ def render_html_view(request, user_id, course_id):
 
     # FINALLY, render appropriate certificate
     return _render_certificate_template(request, context, course, user_certificate)
+
+
+def render_html_view_with_token(request, token, user_id, course_id):
+    m = md5.new('{}{}'.format(settings.SECRET_KEY, settings.SITE_NAME))
+    if m.hexdigest() == token:
+        return render_html_view(request, user_id, course_id)
+    return HttpResponseForbidden()

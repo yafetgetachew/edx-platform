@@ -50,12 +50,14 @@ import logging
 import uuid
 
 import os
+import md5
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import models, transaction
 from django.db.models import Count
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.fields import CreationDateTimeField
@@ -248,13 +250,8 @@ class GeneratedCertificate(models.Model):
         unique_together = (('user', 'course_id'),)
         app_label = "certificates"
 
-    def get_download_url(self):
-        url = (
-            self.download_url
-            or self.verify_uuid and reverse('certificates:render_cert_by_uuid', args=[self.verify_uuid])
-            or None
-        )
-        return url
+    def get_certificate_url(self):
+        return self.verify_uuid and reverse('certificates:render_cert_by_uuid', args=[self.verify_uuid]) or None
 
     @classmethod
     def certificate_for_student(cls, student, course_id):
@@ -1075,3 +1072,27 @@ def create_course_group_badge(sender, user, course_key, status, **kwargs):  # py
     Standard signal hook to create badges when a user has completed a prespecified set of courses.
     """
     course_group_check(user, course_key)
+
+
+@receiver(post_save, sender=GeneratedCertificate)
+def generate_pdf(sender, instance, **kwargs):
+    if not instance.verify_uuid:
+        return None
+
+    token = md5.new('{}{}'.format(settings.SECRET_KEY, settings.SITE_NAME)).hexdigest()
+    kwargs = {'token': token, 'user_id': instance.user.id, 'course_id': unicode(instance.course_id)}
+    html_cert_url = 'https://{}{}'.format(settings.SITE_NAME, reverse('certificates:token_html_view', kwargs=kwargs))
+
+    pdf_filename = '{}.pdf'.format(instance.verify_uuid)
+    pdf_dir = os.path.join(settings.MEDIA_ROOT, 'certs')
+    pdf_url = os.path.join(settings.MEDIA_URL, 'certs', pdf_filename)
+
+    if not os.path.exists(pdf_dir):
+        os.mkdir(pdf_dir)
+
+    cmd = ('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.2887 '
+          '--margin-top 5 --margin-bottom 5 --margin-left 5 --margin-right 5 '
+          '-s A4 -O Portrait --print-media-type {} {}')
+    os.system(cmd.format(html_cert_url, os.path.join(pdf_dir, pdf_filename)))
+
+    sender.objects.filter(id=instance.id).update(download_url=pdf_url)

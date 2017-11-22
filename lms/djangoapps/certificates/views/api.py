@@ -13,14 +13,14 @@ class CertificateSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = GeneratedCertificate
         fields = ('username', 'user_fullname', 'course_id',
-                  'download_url', 'uuid', 'profile_image',
+                  'download_url', 'certificate_url', 'uuid', 'profile_image',
                   'status', 'mode', 'name', 'created_date',
                   'modified_date', 'error_reason','grade',
                   'grade_summary',)
 
     username = serializers.SerializerMethodField()
     user_fullname = serializers.SerializerMethodField()
-    download_url = serializers.CharField(source='get_download_url')
+    certificate_url = serializers.CharField(source='get_certificate_url')
     uuid = serializers.CharField(source='verify_uuid')
     profile_image = serializers.SerializerMethodField()
     grade_summary = serializers.SerializerMethodField()

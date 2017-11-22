@@ -47,6 +47,7 @@ class HidePages(object):
         '/api/certificates/.*',
         '/certificates/[0-9a-f]+',
         '/certificates/user/\d+/course/{}'.format(_course_id_pattern),
+        '/certificates/token/[0-9a-f]{{32}}/user/\d+/course/{course_id}'.format(course_id=_course_id_pattern),
         '/admin/.*',
         '/404',
         '/500'

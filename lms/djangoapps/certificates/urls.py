@@ -24,6 +24,12 @@ urlpatterns = patterns(
         name='render_cert_by_uuid'
     ),
 
+    url(
+        r'^token/(?P<token>[0-9a-f]{{32}})/user/(?P<user_id>\d+)/course/{course_id}'.format(course_id=settings.COURSE_ID_PATTERN),
+        views.render_html_view_with_token,
+        name='token_html_view'
+    ),
+
     # End-points used by student support
     # The views in the lms/djangoapps/support use these end-points
     # to retrieve certificate information and regenerate certificates.
