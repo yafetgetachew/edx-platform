@@ -15,7 +15,9 @@ course_mode_class = course_mode if course_mode else ''
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    %if 'token' in request.path:
     <base href="${settings.FEATURES.get('LOCAL_LMS_URL', 'https://{}'.format(settings.SITE_NAME))}">
+    %endif
     <title>${document_title}</title>
     <link rel="icon" type="image/x-icon" href="/static/deskua/images/favicon.5cb63f764721.ico">
     <%static:css group='style-certificates'/>
