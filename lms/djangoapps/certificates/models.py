@@ -1076,6 +1076,12 @@ def create_course_group_badge(sender, user, course_key, status, **kwargs):  # py
 
 @receiver(post_save, sender=GeneratedCertificate)
 def generate_pdf(sender, instance, **kwargs):
+    """
+    cd /tmp
+    wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+    tar xvf wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+    sudo mv wkhtmltox/bin/wkhtmlto* /usr/bin/
+    """
     if not instance.verify_uuid:
         return None
 
