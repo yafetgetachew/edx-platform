@@ -40,4 +40,3 @@ libxmlsec1-dev
 swig
 libicu55
 xvfb
-wkhtmltopdf
