@@ -579,11 +579,11 @@ urlpatterns += (
     ),
 
     # Student profile
-    url(
-        r'^u/(?P<username>[\w.@+-]+)$',
-        'student_profile.views.learner_profile',
-        name='learner_profile',
-    ),
+#    url(
+#        r'^u/(?P<username>[\w.@+-]+)$',
+#        'student_profile.views.learner_profile',
+#        name='learner_profile',
+#    ),
 
     # Student Notes
     url(
