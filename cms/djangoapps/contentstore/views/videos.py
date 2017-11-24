@@ -76,8 +76,12 @@ class StatusDisplayStrings(object):
     _UPLOAD_COMPLETED = ugettext_noop("Uploaded")
     # Translators: This is the status for a video that the servers have failed to process
     _FAILED = ugettext_noop("Failed")
+    # Translators: This is the status for a video that the servers video processing have failed
+    _PROCESSING_FAILED = ugettext_noop("Processing Failed")
     # Translators: This is the status for a video that is cancelled during upload by user
     _CANCELLED = ugettext_noop("Cancelled")
+    # Translators: This is the status for a video that is cancelled during processing
+    _PROCESSING_CANCELLED = ugettext_noop("Processing Cancelled")
     # Translators: This is the status for a video which has failed
     # due to being flagged as a duplicate by an external or internal CMS
     _DUPLICATE = ugettext_noop("Failed Duplicate")
@@ -96,6 +100,7 @@ class StatusDisplayStrings(object):
         "ingest": _IN_PROGRESS,
         "transcode_queue": _IN_PROGRESS,
         "transcode_active": _IN_PROGRESS,
+        "transcode_failed": _PROCESSING_FAILED,
         "file_delivered": _COMPLETE,
         "file_complete": _COMPLETE,
         "upload_completed": _UPLOAD_COMPLETED,
@@ -104,6 +109,7 @@ class StatusDisplayStrings(object):
         "upload_failed": _FAILED,
         "s3_upload_failed": _FAILED,
         "upload_cancelled": _CANCELLED,
+        "transcode_cancelled": _PROCESSING_CANCELLED,
         "duplicate": _DUPLICATE,
         "youtube_duplicate": _YOUTUBE_DUPLICATE,
         "invalid_token": _INVALID_TOKEN,
