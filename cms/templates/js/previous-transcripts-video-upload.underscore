@@ -1,0 +1,14 @@
+<td class="name-col js-transcript-content"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+    <ul class="actions-list">
+        <li class="action-item">
+            <a href="#" data-tooltip="<%- gettext('Upload New Transcript') %>" class="action-button js-add-transcript">
+                <span class="icon fa fa-plus" aria-hidden="true"></span>
+            </a>
+        </li>
+    </ul>
+</td>

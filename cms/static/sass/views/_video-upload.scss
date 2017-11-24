@@ -163,4 +163,17 @@
       @extend %actions-list;
     }
   }
+
+  .link-hide-transcripts {
+    display: none;
+  }
+
+  .active-transcripts {
+    .link-show-transcripts {
+      display: none;
+    }
+    .link-hide-transcripts {
+      display: block;
+    }
+  }
 }

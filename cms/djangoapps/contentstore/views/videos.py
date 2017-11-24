@@ -10,7 +10,7 @@ from uuid import uuid4
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from django.utils.translation import ugettext as _, ugettext_noop
 from django.views.decorators.http import require_GET, require_http_methods
 import rfc6266
@@ -24,6 +24,7 @@ from edxval.api import (
     remove_video_for_course,
     update_video_status
 )
+from edxval.models import Video
 from opaque_keys.edx.keys import CourseKey
 
 from contentstore.models import VideoUploadConfig
@@ -34,7 +35,7 @@ from util.json_request import expect_json, JsonResponse
 from .course import get_course_and_check_access
 
 
-__all__ = ["videos_handler", "video_encodings_download"]
+__all__ = ["videos_handler", "video_encodings_download", "video_transcripts_handler"]
 
 LOGGER = logging.getLogger(__name__)
 
@@ -112,6 +113,7 @@ class StatusDisplayStrings(object):
 
     @staticmethod
     def get(val_status):
+
         """Map a VAL status string to a localized display string"""
         return _(StatusDisplayStrings._STATUS_MAP.get(val_status, StatusDisplayStrings._UNKNOWN))    # pylint: disable=translation-of-non-string
 
@@ -305,6 +307,7 @@ def _get_videos(course):
 
     # convert VAL's status to studio's Video Upload feature status.
     for video in videos:
+        video["status_value"] = video["status"]
         video["status"] = convert_video_status(video)
 
     return videos
@@ -317,7 +320,7 @@ def _get_index_videos(course):
     return list(
         {
             attr: video[attr]
-            for attr in ["edx_video_id", "client_video_id", "created", "duration", "status"]
+            for attr in ["edx_video_id", "client_video_id", "created", "duration", "status", "status_value"]
         }
         for video in _get_videos(course)
     )
@@ -337,7 +340,8 @@ def videos_index_html(course):
             "concurrent_upload_limit": settings.VIDEO_UPLOAD_PIPELINE.get("CONCURRENT_UPLOAD_LIMIT", 0),
             "video_supported_file_formats": VIDEO_SUPPORTED_FILE_FORMATS.keys(),
             "video_upload_max_file_size": VIDEO_UPLOAD_MAX_FILE_SIZE_GB,
-            "storage_service": STORAGE_SERVICE
+            "storage_service": STORAGE_SERVICE,
+            "transcript_handler_url": reverse_course_url("video_transcripts_handler", unicode(course.id)),
         }
     )
 
@@ -485,3 +489,28 @@ def is_status_update_request(request_data):
     Returns True if `request_data` contains status update else False.
     """
     return any('status' in update for update in request_data)
+
+
+@expect_json
+@login_required
+@require_http_methods(("GET", "POST", "DELETE"))
+def video_transcripts_handler(request, course_key_string, edx_video_id=None):
+    course = _get_and_validate_course(course_key_string, request.user)
+
+    if not course:
+        return HttpResponseNotFound()
+
+    if request.method == "GET" and "application/json" in request.META.get("HTTP_ACCEPT", ""):
+        return video_transcripts_json(edx_video_id)
+
+
+def video_transcripts_json(edx_video_id):
+    try:
+        video = Video.objects.prefetch_related("subtitles").get(edx_video_id=edx_video_id)
+    except Video.DoesNotExist:
+        return HttpResponseBadRequest()
+
+    transcripts = [{'name': transcript.content, 'language': transcript.language}
+                   for transcript in video.subtitles.all()]
+
+    return JsonResponse({"transcripts": transcripts}, status=200)

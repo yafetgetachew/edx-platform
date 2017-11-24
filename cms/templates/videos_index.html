@@ -16,7 +16,7 @@
 <%namespace name='static' file='static_content.html'/>
 
 <%block name="header_extras">
-% for template_name in ["active-video-upload", "previous-video-upload-list"]:
+% for template_name in ["active-video-upload", "previous-video-upload-list", "previous-transcripts-video-upload"]:
 <script type="text/template" id="${template_name}-tpl">
     <%static:include path="js/${template_name}.underscore" />
 </script>
@@ -36,7 +36,8 @@
             $contentWrapper.data("previous-uploads"),
             ${video_supported_file_formats | n, dump_js_escaped_json},
             ${video_upload_max_file_size | n, dump_js_escaped_json},
-            ${storage_service | n, dump_js_escaped_json}
+            ${storage_service | n, dump_js_escaped_json},
+            ${transcript_handler_url | n, dump_js_escaped_json}
         );
     });
 </%block>

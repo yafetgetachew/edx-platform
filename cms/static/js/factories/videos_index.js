@@ -12,7 +12,8 @@ define([
         previousUploads,
         videoSupportedFileFormats,
         videoUploadMaxFileSizeInGB,
-        storageService
+        storageService,
+        transcriptHandlerUrl
     ) {
         var activeView = new ActiveVideoUploadListView({
                 postUrl: videoHandlerUrl,
@@ -37,6 +38,7 @@ define([
                             }),
                             updatedView = new PreviousVideoUploadListView({
                                 videoHandlerUrl: videoHandlerUrl,
+                                transcriptHandlerUrl: transcriptHandlerUrl,
                                 collection: updatedCollection,
                                 encodingsDownloadUrl: encodingsDownloadUrl
                             });
@@ -46,6 +48,7 @@ define([
             }),
             previousView = new PreviousVideoUploadListView({
                 videoHandlerUrl: videoHandlerUrl,
+                transcriptHandlerUrl: transcriptHandlerUrl,
                 collection: new Backbone.Collection(previousUploads),
                 encodingsDownloadUrl: encodingsDownloadUrl
             });
