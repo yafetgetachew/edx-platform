@@ -1,27 +1,40 @@
-// ------------------------------
-// Open edX Certificates: Overrides
+//// ------------------------------
+//// Open edX Certificates: Overrides
+//
+//// About: Additional sass rules that must come at the end of the compilation for overriding purposes - either for temporary/specific developer styling needs or for known poorly scoped/written styling (aka shame CSS).
+//
+//// #TEMP
+//// #DEVELOPERS
+//// #SHAME
+//
+//// ------------------------------
+//// #TEMP
+//// ------------------------------
+//
+//// ------------------------------
+//// #DEVELOPERS
+//// ------------------------------
+//
+//// ------------------------------
+//// #SHAME
+//// ------------------------------
+@font-face {
+    font-family: "Trajan-Reg";
+    font-weight: 400;
+    src: url("/static/fonts/TrajanPro3Regular.woff2") format("woff2"),url("/static/fonts/TrajanPro3Regular.woff") format("woff");
+}
 
-// About: Additional sass rules that must come at the end of the compilation for overriding purposes - either for temporary/specific developer styling needs or for known poorly scoped/written styling (aka shame CSS).
+@font-face {
+    font-family: "Adventure";
+    font-weight: 400;
+    src: url("/static/fonts/Adventure.woff2") format("woff2"),url("/static/fonts/Adventure.woff") format("woff");
+}
 
-// #TEMP
-// #DEVELOPERS
-// #SHAME
-
-// ------------------------------
-// #TEMP
-// ------------------------------
-
-// ------------------------------
-// #DEVELOPERS
-// ------------------------------
-
-// ------------------------------
-// #SHAME
-// ------------------------------
-@font-face {font-family:"Trajan-Reg";font-weight:400;src:url("/static/fonts/TrajanPro3Regular.woff2") format("woff2");}
-@font-face {font-family:"Adventure";font-weight:400;src:url("/static/fonts/Adventure.woff2") format("woff2");}
-@font-face {font-family:"Evolventa";font-weight:400;src:url("/static/fonts/Evolventa-Regular.woff2") format("woff2");}
-
+@font-face {
+    font-family: "Evolventa";
+    font-weight: 400;
+    src: url("/static/fonts/Evolventa-Regular.woff2") format("woff2"),url("/static/fonts/Evolventa-Regular.woff") format("woff");
+}
 
 .certificates {
     position: relative;
@@ -43,7 +56,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
         width: 64%;
         height: 55%;
     }
@@ -51,21 +65,24 @@
         position: absolute;
         left: 50%;
         top: 10%;
-        transform: translate(-50%,0);
+        transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         color: #8f6c29;
-        font:  80px/80px Trajan-Reg;
+        font: 80px/80px Trajan-Reg;
         width: 100%;
         height: 23%;
         span {
             position: absolute;
             left: 50%;
             transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
             top: 33%;
             font-size: 156.2%;
         }
         img {
             width: 43%;
             transform: translate(72%, 0);
+            -webkit-transform: translate(72%, 0);
         }
     }
     &__title--holder {
@@ -78,6 +95,7 @@
         top: 33.6%;
         left: 50%;
         transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         color: #3c3c3b;
         font: 35px/30px Evolventa;
         letter-spacing: 5px;
@@ -90,6 +108,7 @@
         left: 50%;
         color: #3c3c3b;
         transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         font: 63px/70px Adventure;
         width: 100%;
         text-align: center;
@@ -99,6 +118,7 @@
             left: 50%;
             bottom: 0;
             transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
         }
     }
     &__name {
@@ -107,6 +127,7 @@
         width: 82%;
         left: 50%;
         transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         max-height: 148px;
         overflow: hidden;
         padding: 9px 5px 0;
@@ -117,6 +138,7 @@
         left: 50%;
         color: #3c3c3b;
         transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         font: 26px/30px Adventure;
         width: 70%;
         text-align: center;
@@ -133,7 +155,8 @@
             position: absolute;
             top: -6px;
             left: 50%;
-            transform: translate(-50%,0);
+            transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
             width: 100%;
             height: 2px;
         }
@@ -144,9 +167,12 @@
         left: 50%;
         color: #3c3c3b;
         transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         font: 26px/30px Evolventa;
         width: 84%;
         text-align: center;
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         justify-content: space-between;
     }
@@ -154,8 +180,8 @@
         font-size: 18px;
         line-height: 24px;
         margin: 0 auto;
-        overflow: hidden ;
-        max-height: 150px;  
+        overflow: hidden;
+        max-height: 150px;
     }
     &__stamp-name {
         margin-bottom: 6px;
@@ -165,7 +191,8 @@
         top: -3px;
         left: 50%;
         max-height: 100px;
-        transform: translate(-50%,-100%);
+        transform: translate(-50%, -100%);
+        -webkit-transform: translate(-50%, -100%);
         position: absolute;
     }
     &__stamp-descr--wide {
@@ -173,14 +200,17 @@
         margin: 0 auto;
     }
     .layout-accomplishment .wrapper-accomplishment-rendering {
-            margin: 0 !important;
+        margin: 0 !important;
     }
     &__id-date {
         position: absolute;
         bottom: 5%;
         left: 50%;
-        transform: translate(-50%,0);
+        transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         width: 80%;
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         justify-content: space-between;
         font: 18px/24px Evolventa;
@@ -191,6 +221,8 @@
         position: relative;
     }
     &__flex-wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -201,6 +233,8 @@
         position: absolute;
         top: 79.5%;
         left: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         justify-content: space-around;
         width: 100%;
@@ -208,19 +242,27 @@
     }
     &__owner {
         flex: 1 1 auto;
-        display: flex ;
-        justify-content: center 
+        -webkit-box-flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
+        display: flex;
+        justify-content: center
     }
     &__stamp-holder {
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
     }
     &__stamp-inner-holder {
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         justify-content: space-around;
 
     }
     &__stamp-image-holder {
         width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         justify-content: center;
     }
@@ -230,14 +272,19 @@
     }
     &__stamp-wrapper {
         flex: 1 1 auto;
+        -webkit-box-flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
     }
 }
 
-
 @media print {
-    @page {size: portrait;margin: 8mm 8mm 0 8mm;border: 0;}
+    @page {
+        size: portrait;
+        margin: 8mm 8mm 0 8mm;
+        border: 0;
+    }
     html, body {
-        height: auto;    
+        height: auto;
     }
     .certificates {
         width: 20.4cm !important;
