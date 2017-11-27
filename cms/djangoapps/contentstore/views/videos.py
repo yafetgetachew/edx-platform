@@ -10,6 +10,7 @@ from uuid import uuid4
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from django.utils.translation import ugettext as _, ugettext_noop
 from django.views.decorators.http import require_GET, require_http_methods
@@ -24,8 +25,9 @@ from edxval.api import (
     remove_video_for_course,
     update_video_status
 )
-from edxval.models import Video
+from edxval.models import Video, Subtitle
 from opaque_keys.edx.keys import CourseKey
+from requests import HTTPError
 
 from contentstore.models import VideoUploadConfig
 from contentstore.utils import reverse_course_url
@@ -493,24 +495,51 @@ def is_status_update_request(request_data):
 
 @expect_json
 @login_required
-@require_http_methods(("GET", "POST", "DELETE"))
+@require_http_methods(("GET", "POST",))
 def video_transcripts_handler(request, course_key_string, edx_video_id=None):
     course = _get_and_validate_course(course_key_string, request.user)
 
     if not course:
         return HttpResponseNotFound()
 
-    if request.method == "GET" and "application/json" in request.META.get("HTTP_ACCEPT", ""):
-        return video_transcripts_json(edx_video_id)
-
-
-def video_transcripts_json(edx_video_id):
     try:
         video = Video.objects.prefetch_related("subtitles").get(edx_video_id=edx_video_id)
     except Video.DoesNotExist:
         return HttpResponseBadRequest()
 
+    if request.method == "GET" and "application/json" in request.META.get("HTTP_ACCEPT", ""):
+        return video_transcripts_json(video)
+
+    if request.method == "POST":
+        return video_transcript_post(request, course, video)
+
+    return HttpResponseBadRequest()
+
+
+def video_transcripts_json(video):
     transcripts = [{'name': transcript.content, 'language': transcript.language}
                    for transcript in video.subtitles.all()]
-
     return JsonResponse({"transcripts": transcripts}, status=200)
+
+
+def video_transcript_post(request, course, video):
+    transcript_file = request.FILES.get('transcript_file')
+    media_service = get_media_service_client(course.org)
+
+    try:
+        media_service.upload_video_transcript(
+            video.edx_video_id,
+            transcript_file=transcript_file
+        )
+    except (HTTPError, ObjectDoesNotExist) as e:
+        return JsonResponse({"message": e.message}, status=400)
+
+    transcript = Subtitle.objects.create(
+        video=video,
+        language=request.POST.get('language'),
+        content=transcript_file.name
+
+    )
+    return JsonResponse({'status': 'ok',
+                         'transcript': {'name': transcript.content, 'language': transcript.language}},
+                        status=200)

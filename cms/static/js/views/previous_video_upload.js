@@ -13,7 +13,8 @@ define(
 
             events: {
                 'click .remove-video-button.action-button': 'removeVideo',
-                'click .js-toggle-transcripts': 'toggleTranscripts'
+                'click .js-toggle-transcripts': 'toggleTranscripts',
+                'click .js-add-transcript': 'addTranscripts'
             },
 
             initialize: function(options) {
@@ -52,7 +53,7 @@ define(
                     )
                 );
 
-                if (this.transcriptsCollection.length) {
+                if (this.model.get('status_value') == 'file_complete') {
                     this.renderTranscripts();
                 }
 
@@ -60,7 +61,11 @@ define(
             },
 
             renderTranscripts: function () {
-                this.transcriptsView = new PreviousTranscriptsVideoUploadView({collection: this.transcriptsCollection});
+                this.transcriptsView = new PreviousTranscriptsVideoUploadView({
+                    collection: this.transcriptsCollection,
+                    transcriptHandlerUrl: this.transcriptHandlerUrl,
+                    edxVideoId: this.model.get('edx_video_id')
+                });
                 this.$el.after(this.transcriptsView.render().$el);
 
             },
@@ -108,6 +113,11 @@ define(
                 event.preventDefault();
                 this.transcriptsView.$el.toggleClass('is-hidden');
                 $(event.currentTarget).toggleClass('active-transcripts');
+            },
+
+            addTranscripts: function (event) {
+                event.preventDefault();
+                this.transcriptsView.$el.find('.js-add-transcript').click();
             }
         });
 

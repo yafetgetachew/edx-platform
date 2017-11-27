@@ -31,7 +31,13 @@ define([
                 this.template = HtmlUtils.template(activeVideoUploadListTemplate)({});
                 this.collection = new Backbone.Collection();
                 this.itemViews = [];
+
                 this.listenTo(this.collection, 'add', this.addUpload);
+                this.listenTo(Backbone, 'activeUpload:add', this.addCollection);
+                this.listenTo(Backbone, 'activeUpload:setStatus', this.setStatus);
+                this.listenTo(Backbone, 'activeUpload:setProgress', this.setProgress);
+                this.listenTo(Backbone, 'activeUpload:clearSuccessful', this.clearSuccessful);
+
                 this.concurrentUploadLimit = options.concurrentUploadLimit || 0;
                 this.postUrl = options.postUrl;
                 this.videoSupportedFileFormats = options.videoSupportedFileFormats;
@@ -41,6 +47,10 @@ define([
                 if (options.uploadButton) {
                     options.uploadButton.click(this.chooseFile.bind(this));
                 }
+            },
+
+            addCollection: function (model) {
+                this.collection.add(model);
             },
 
             render: function() {

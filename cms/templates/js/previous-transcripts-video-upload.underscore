@@ -1,4 +1,4 @@
-<td class="name-col js-transcript-content"></td>
+<td class="name-col js-transcript-container"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -11,4 +11,8 @@
             </a>
         </li>
     </ul>
+    <form class="file-transcript-upload-form">
+        <input type="file" class="sr js-file-transcript-input" name="transcript_file">
+        <input type="text" class="sr js-language-input" name="language" value="en">
+    </form>
 </td>
