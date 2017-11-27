@@ -41,6 +41,7 @@
     width: 100%;
     padding: 0;
     border: 0;
+    max-width: 1170px;
     &__background {
         width: 100%;
         height: 100%;
@@ -98,9 +99,12 @@
         -webkit-transform: translate(-50%, 0);
         color: #3c3c3b;
         font: 35px/30px Evolventa;
-        letter-spacing: 5px;
         width: 100%;
         text-align: center;
+        max-width: 1170px;
+        &-text {
+            max-width: 100%;
+        }
     }
     &__owner-name {
         position: absolute;
@@ -174,6 +178,7 @@
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
+        -webkit-box-pack: justify;
         justify-content: space-between;
     }
     &__stamp-descr {
@@ -208,10 +213,11 @@
         left: 50%;
         transform: translate(-50%, 0);
         -webkit-transform: translate(-50%, 0);
-        width: 80%;
+        width: 82%;
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
+        -webkit-box-pack: justify;
         justify-content: space-between;
         font: 18px/24px Evolventa;
         color: #6f6f6e;
@@ -225,6 +231,7 @@
         display: -webkit-flex;
         display: flex;
         flex-direction: column;
+        -webkit-box-pack: justify;
         justify-content: space-between;
         align-items: center;
         height: 100%;
@@ -236,15 +243,17 @@
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
+        -webkit-box-pack: justify;
         justify-content: space-around;
         width: 100%;
         padding: 0 130px;
     }
     &__owner {
         flex: 1 1 auto;
-        -webkit-box-flex: 1 1 auto;
+        -webkit-box-flex: 1;
         -webkit-flex: 1 1 auto;
         display: flex;
+        -webkit-box-pack: center;
         justify-content: center
     }
     &__stamp-holder {
@@ -256,6 +265,7 @@
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
+        -webkit-box-pack: justify;
         justify-content: space-around;
 
     }
@@ -264,6 +274,7 @@
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
+        -webkit-box-pack: center;
         justify-content: center;
     }
     &__stamp-image {
@@ -272,15 +283,19 @@
     }
     &__stamp-wrapper {
         flex: 1 1 auto;
-        -webkit-box-flex: 1 1 auto;
+        -webkit-box-flex: 1;
         -webkit-flex: 1 1 auto;
+    }
+    &__date {
+        min-width: 40%;
+        white-space: nowrap;
     }
 }
 
 @media print {
     @page {
         size: portrait;
-        margin: 8mm 8mm 0 8mm;
+        margin: 6mm 8mm 0 8mm;
         border: 0;
     }
     html, body {
