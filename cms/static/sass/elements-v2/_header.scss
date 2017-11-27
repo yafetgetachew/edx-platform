@@ -35,7 +35,7 @@
     @include text-align(right);
   }
 
-  .branding, .info-course, .nav-course, .nav-account, .nav-pitch {
+  .branding, .studio-branding, .info-course, .nav-course, .nav-account, .nav-pitch {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: middle;
@@ -111,6 +111,21 @@
 
   // ====================
 
+  .studio-branding {
+    padding: ($baseline*0.75) 0;
+
+    .studio-brand-link {
+      display: block;
+
+      .studio-brand-image {
+        max-height: ($baseline*2);
+        display: block;
+      }
+    }
+  }
+
+  // ====================
+
   // specific elements - account-based nav
   .nav-account {
     position: relative;
@@ -161,6 +176,10 @@
   }
 
   .branding {
+    @include margin-right(2%);
+  }
+
+  .studio-branding {
     @include margin-right(2%);
   }
 
