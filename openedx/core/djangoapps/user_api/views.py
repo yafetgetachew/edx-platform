@@ -439,6 +439,7 @@ class RegistrationView(APIView):
             field_type="select",
             options=options,
             label=label,
+            include_default_option=True,
             required=required
         )
 
