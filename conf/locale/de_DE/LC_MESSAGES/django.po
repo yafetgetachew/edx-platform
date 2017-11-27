@@ -15950,7 +15950,7 @@ msgid "If you didn't create an account, you don't need to do anything; you "
 msgstr "Sollten Sie kein Profil angelegt haben, betrachten Sie diese Nachricht "
 "als gegenstandslos; Sie werden keine weiteren E-Mails von uns bekommen. "
 "Sollten Sie Hilfe benötigen antworten Sie bitte NICHT auf diese E-Mail, "
-"sondern besuchen Sie unsere Webseite. {platform_name}"
+"sondern besuchen Sie unsere Webseite {platform_name}."
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Action Required: Activate your {platform_name} account"
