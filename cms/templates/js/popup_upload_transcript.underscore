@@ -1,5 +1,5 @@
-<div class="">
-    <div class="">
+<div class="modal-transcript">
+    <div class="modal-body">
         <h2><%- gettext('Upload New Transcript') %></h2>
         <label><%- gettext('Transcript Languages') %></label>
         <select class="js-select-language">
@@ -9,14 +9,8 @@
             <% }) %>
         </select>
     </div>
-    <div>
-        <ul>
-            <li>
-                <button class="js-close-popup"><%- gettext('Close') %></button>
-            </li>
-            <li>
-                <button class="js-upload-transcript" disabled><%- gettext('Next') %></button>
-            </li>
-        </ul>
+    <div class="modal-actions">
+        <button class="close-button js-close-popup"><%- gettext('Close') %></button>
+        <button class="next-button js-upload-transcript" disabled><%- gettext('Next') %></button>
     </div>
 </div>

@@ -10,6 +10,7 @@ define(
 
         var PopupUploadTranscriptView = BaseView.extend({
             tagName: 'div',
+            className: 'modal-cover-transcript',
 
             events: {
                 'change .js-select-language': 'setLanguage',

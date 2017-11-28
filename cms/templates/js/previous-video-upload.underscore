@@ -3,11 +3,11 @@
     <div>
         <% if (countTranscripts) { %>
         <a href="#" class="js-toggle-transcripts">
-            <span class="link-show-transcripts"><%- gettext('Show transcripts') %></span>
-            <span class="link-hide-transcripts"><%- gettext('Hide transcripts') %></span>
+            <span class="link-transcripts link-show-transcripts"><%- gettext('Show transcripts') %></span>
+            <span class="link-transcripts link-hide-transcripts"><%- gettext('Hide transcripts') %></span>
         </a>
         <% } else if (status_value == 'file_complete') { %>
-        <a href="#" class="js-add-transcript">
+        <a href="#" class="link-transcripts js-add-transcript">
             <%- gettext('Add transcripts') %>
         </a>
         <% } %>
