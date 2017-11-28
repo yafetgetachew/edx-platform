@@ -1,0 +1,22 @@
+<div class="">
+    <div class="">
+        <h2><%- gettext('Upload New Transcript') %></h2>
+        <label><%- gettext('Transcript Languages') %></label>
+        <select class="js-select-language">
+            <option></option>
+            <% _.each(languages, function(language) { %>
+            <option value="<%- language[0] %>"><%- language[1] %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <button class="js-close-popup"><%- gettext('Close') %></button>
+            </li>
+            <li>
+                <button class="js-upload-transcript" disabled><%- gettext('Next') %></button>
+            </li>
+        </ul>
+    </div>
+</div>

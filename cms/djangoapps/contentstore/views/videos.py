@@ -27,6 +27,7 @@ from edxval.api import (
 )
 from edxval.models import Video, Subtitle
 from opaque_keys.edx.keys import CourseKey
+from openedx.core.djangoapps.lang_pref.api import all_languages
 from requests import HTTPError
 
 from contentstore.models import VideoUploadConfig
@@ -344,6 +345,7 @@ def videos_index_html(course):
             "video_upload_max_file_size": VIDEO_UPLOAD_MAX_FILE_SIZE_GB,
             "storage_service": STORAGE_SERVICE,
             "transcript_handler_url": reverse_course_url("video_transcripts_handler", unicode(course.id)),
+            "languages": all_languages()
         }
     )
 
@@ -519,7 +521,10 @@ def video_transcripts_handler(request, course_key_string, edx_video_id=None):
 def video_transcripts_json(video):
     transcripts = [{'name': transcript.content, 'language': transcript.language}
                    for transcript in video.subtitles.all()]
-    return JsonResponse({"transcripts": transcripts}, status=200)
+    return JsonResponse(
+        {"transcripts": transcripts},
+        status=200
+    )
 
 
 def video_transcript_post(request, course, video):

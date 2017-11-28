@@ -4,10 +4,11 @@ define(
      'js/views/baseview',
      'edx-ui-toolkit/js/utils/html-utils',
      'js/models/active_video_upload',
+     'js/views/popup_upload_transcript',
      'text!templates/previous-transcripts-video-upload.underscore',
      'jquery.fileupload'],
 
-    function(_, Backbone, BaseView, HtmlUtils, ActiveTranscriptUpload,
+    function(_, Backbone, BaseView, HtmlUtils, ActiveTranscriptUpload, PopupUploadTranscriptView,
              previousTranscriptsVideoUploadTemplate) {
         'use strict';
 
@@ -16,7 +17,7 @@ define(
             className: 'is-hidden',
 
             events: {
-                'click .js-add-transcript': 'addTranscript'
+                'click .js-add-transcript': 'showPopupUploadTranscript'
             },
 
             initialize: function (options) {
@@ -70,12 +71,22 @@ define(
                 this.itemViews.push(transcriptView)
             },
 
-            addTranscript: function (event) {
-                event.preventDefault();
+            uploadTranscript: function () {
                 this.$uploadForm.find('.js-file-transcript-input').click();
             },
 
+            showPopupUploadTranscript: function (event) {
+                event.preventDefault();
+                this.popupUploadTranscriptView = new PopupUploadTranscriptView({
+                    setLanguageTranscript: this.setLanguageTranscript.bind(this),
+                    uploadTranscript: this.uploadTranscript.bind(this)
+                });
+                $('body').append(this.popupUploadTranscriptView.render().$el);
+
+            },
+
             fileUploadAdd: function(event, uploadData) {
+                this.popupUploadTranscriptView.remove();
                 var model = new ActiveTranscriptUpload({
                     fileName: uploadData.files[0].name
                 });
@@ -138,6 +149,11 @@ define(
                     .replace('{maxFileSize}', self.MB / 1000 / 1000);
                 }
                 return error;
+            },
+
+            setLanguageTranscript: function (value) {
+                this.$el.find('.js-language-input').val(value);
+
             }
         });
 
