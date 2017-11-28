@@ -7,8 +7,8 @@
             <span class="link-transcripts link-hide-transcripts"><%- gettext('Hide transcripts') %></span>
         </a>
         <% } else if (status_value == 'file_complete') { %>
-        <a href="#" class="link-transcripts js-add-transcript">
-            <%- gettext('Add transcripts') %>
+        <a href="#" class="js-add-transcript">
+            <span class="link-transcripts"><%- gettext('Add transcripts') %></span>
         </a>
         <% } %>
     </div>
