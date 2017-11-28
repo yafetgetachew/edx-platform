@@ -9611,7 +9611,7 @@ msgid ""
 " user account at %(platform_name)s."
 msgstr ""
 "Вы получили это сообщение, потому что запросили сброс пароля своей учётной "
-"записи на %(platform_name)s»."
+"записи на %(platform_name)s."
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
