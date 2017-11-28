@@ -16,6 +16,8 @@ define(
             tagName: 'tr',
             className: 'is-hidden',
 
+            defaultFailureMessage: gettext('This may be happening because of an error with our server or your internet connection. Try refreshing the page or making sure you are online.'),
+
             events: {
                 'click .js-add-transcript': 'showPopupUploadTranscript'
             },
@@ -122,7 +124,14 @@ define(
             },
 
             fileUploadFail: function(event, data) {
-                var message = 'error';
+                var message;
+
+                try {
+                    message = data.jqXHR.responseJSON.error;
+                } catch (error) {
+                    message = this.defaultFailureMessage;
+                }
+
                 Backbone.trigger('activeUpload:setStatus', data.cid, ActiveTranscriptUpload.STATUS_FAILED, message);
             },
 

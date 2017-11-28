@@ -10,7 +10,7 @@ from uuid import uuid4
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from django.utils.translation import ugettext as _, ugettext_noop
 from django.views.decorators.http import require_GET, require_http_methods
@@ -529,6 +529,13 @@ def video_transcripts_json(video):
 
 def video_transcript_post(request, course, video):
     transcript_file = request.FILES.get('transcript_file')
+
+    try:
+        transcript_file.name.encode('ascii')
+    except UnicodeEncodeError:
+        error_msg = 'The file name for %s must contain only ASCII characters.' % transcript_file.name
+        return JsonResponse({'error': error_msg}, status=400)
+
     media_service = get_media_service_client(course.org)
 
     try:
@@ -536,8 +543,10 @@ def video_transcript_post(request, course, video):
             video.edx_video_id,
             transcript_file=transcript_file
         )
-    except (HTTPError, ObjectDoesNotExist) as e:
-        return JsonResponse({"message": e.message}, status=400)
+    except (MultipleObjectsReturned, ObjectDoesNotExist) as e:
+        return JsonResponse({"error": e.message}, status=400)
+    except HTTPError:
+        return JsonResponse(status=400)
 
     transcript = Subtitle.objects.create(
         video=video,
