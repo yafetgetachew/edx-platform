@@ -40,7 +40,8 @@ define([
                                 videoHandlerUrl: videoHandlerUrl,
                                 transcriptHandlerUrl: transcriptHandlerUrl,
                                 collection: updatedCollection,
-                                encodingsDownloadUrl: encodingsDownloadUrl
+                                encodingsDownloadUrl: encodingsDownloadUrl,
+                                storageService: storageService
                             });
                         $contentWrapper.find('.wrapper-assets').replaceWith(updatedView.render().$el);
                     });
@@ -50,7 +51,8 @@ define([
                 videoHandlerUrl: videoHandlerUrl,
                 transcriptHandlerUrl: transcriptHandlerUrl,
                 collection: new Backbone.Collection(previousUploads),
-                encodingsDownloadUrl: encodingsDownloadUrl
+                encodingsDownloadUrl: encodingsDownloadUrl,
+                storageService: storageService
             });
         $contentWrapper.append(activeView.render().$el);
         $contentWrapper.append(previousView.render().$el);

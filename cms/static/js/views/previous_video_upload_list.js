@@ -13,7 +13,8 @@ define(
                     return new PreviousVideoUploadView({
                         videoHandlerUrl: options.videoHandlerUrl,
                         transcriptHandlerUrl: options.transcriptHandlerUrl,
-                        model: model
+                        model: model,
+                        storageService: options.storageService
                     });
                 });
             },

@@ -21,6 +21,7 @@ define(
                 this.template = HtmlUtils.template(previousVideoUploadTemplate);
                 this.videoHandlerUrl = options.videoHandlerUrl;
                 this.transcriptHandlerUrl = options.transcriptHandlerUrl;
+                this.storageService = options.storageService;
                 this.transcriptsCollection = new Backbone.Collection();
 
                 this.transcriptsCollection.on('reset', this.render);
@@ -44,6 +45,7 @@ define(
                     duration: duration > 0 ? this.renderDuration(duration) : gettext('Pending'),
                     created: DateUtils.renderDate(this.model.get('created')),
                     status: this.model.get('status'),
+                    storageService: this.storageService,
                     countTranscripts: this.transcriptsCollection.length
                 };
                 HtmlUtils.setHtml(
@@ -53,7 +55,7 @@ define(
                     )
                 );
 
-                if (this.model.get('status_value') == 'file_complete') {
+                if (this.model.get('status_value') == 'file_complete' && this.storageService == 'azure') {
                     this.renderTranscripts();
                 }
 
@@ -96,7 +98,7 @@ define(
             },
 
             getTranscripts: function () {
-                if (this.model.get('status_value') == 'file_complete') {
+                if (this.model.get('status_value') == 'file_complete' && this.storageService == 'azure') {
                     var view = this;
                     $.ajax({
                         url: this.transcriptHandlerUrl + '/' + this.model.get('edx_video_id'),

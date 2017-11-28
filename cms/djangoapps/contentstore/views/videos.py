@@ -504,6 +504,9 @@ def is_status_update_request(request_data):
 @login_required
 @require_http_methods(("GET", "POST",))
 def video_transcripts_handler(request, course_key_string, edx_video_id=None):
+    if str(settings.FEATURES['ENABLE_VIDEO_UPLOAD_PIPELINE']) != 'azure':
+        return HttpResponseBadRequest()
+
     course = _get_and_validate_course(course_key_string, request.user)
 
     if not course:

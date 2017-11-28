@@ -6,7 +6,7 @@
             <span class="link-transcripts link-show-transcripts"><%- gettext('Show transcripts') %></span>
             <span class="link-transcripts link-hide-transcripts"><%- gettext('Hide transcripts') %></span>
         </a>
-        <% } else if (status_value == 'file_complete') { %>
+        <% } else if (status_value == 'file_complete' && storageService == 'azure') { %>
         <a href="#" class="js-add-transcript">
             <span class="link-transcripts"><%- gettext('Add transcripts') %></span>
         </a>
