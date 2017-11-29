@@ -1034,3 +1034,7 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
         )
     )
 
+# include into our URL patterns the OSPP REST API
+urlpatterns += (
+    url(r'^ospp_api/v0/', include('ospp_api.urls', namespace='ospp_api_v0')),
+)
