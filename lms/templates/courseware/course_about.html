@@ -58,7 +58,7 @@ from openedx.core.lib.courses import course_image_url
                         'You may need to {start_logout_tag}log out{end_tag} then try the enroll button again. '
                         'Please visit the {start_help_tag}help page{end_tag} for a possible solution.').format(
                           start_help_tag="<a href='{url}'>".format(url=marketing_link('FAQ')), end_tag='</a>',
-                          start_logout_tag="<a href='{url}'>".format(url=reverse('logout'))
+                          start_logout_tag="<a href='{url}'>".format(url=reverse('logout_auth0'))
                           )
       %>
     $('#class_enroll_form').on('ajax:complete', function(event, xhr) {

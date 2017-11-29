@@ -1038,3 +1038,7 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
 urlpatterns += (
     url(r'^ospp_api/v0/', include('ospp_api.urls', namespace='ospp_api_v0')),
 )
+
+urlpatterns += (
+    url(r'^logout_auth0$', 'student.views.logout_auth0', name='logout_auth0'),
+)

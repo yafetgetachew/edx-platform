@@ -9,6 +9,7 @@ import uuid
 import warnings
 from collections import defaultdict, namedtuple
 from urlparse import parse_qs, urlsplit, urlunsplit
+import urllib
 
 import analytics
 import edx_oauth2_provider
@@ -2898,3 +2899,12 @@ class LogoutView(TemplateView):
         })
 
         return context
+
+
+def logout_auth0(request):
+    logout_edx_url = urllib.quote('{}://{}{}'.format(
+        request.scheme,
+        request.META['HTTP_HOST'],
+        reverse('logout'),
+    ), safe='')
+    return redirect('https://opened.auth0.com/v2/logout?returnTo={}'.format(logout_edx_url))
