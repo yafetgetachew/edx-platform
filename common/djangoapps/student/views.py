@@ -2908,3 +2908,13 @@ def logout_auth0(request):
         reverse('logout'),
     ), safe='')
     return redirect('https://opened.auth0.com/v2/logout?returnTo={}'.format(logout_edx_url))
+
+def register_auth0(register):
+    def wrapper(request, *args, **kwargs):
+        pipeline_token = request.session.get('partial_pipeline_token')
+        auth_entry = request.session.get('auth_entry')
+        is_auth0 = 'opened.auth0.com/login/callback' in request.META.get('HTTP_REFERER', '')
+        if is_auth0 and pipeline_token and auth_entry == 'login':
+            return register(request, *args, **kwargs)
+        raise Http404
+    return wrapper

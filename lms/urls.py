@@ -18,6 +18,8 @@ from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.features.enterprise_support.api import enterprise_enabled
+from student.views import register_auth0, register_user
+from student_account.views import login_and_registration_form
 
 from openassessment.fileupload import views_filesystem
 
@@ -119,20 +121,20 @@ urlpatterns = (
 
 # TODO: This needs to move to a separate urls.py once the student_account and
 # student views below find a home together
-#if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
-#    # Backwards compatibility with old URL structure, but serve the new views
-#    urlpatterns += (
+if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
+    # Backwards compatibility with old URL structure, but serve the new views
+    urlpatterns += (
 #        url(r'^login$', 'student_account.views.login_and_registration_form',
 #            {'initial_mode': 'login'}, name="signin_user"),
-#        url(r'^register$', 'student_account.views.login_and_registration_form',
-#            {'initial_mode': 'register'}, name="register_user"),
-#    )
-#else:
-#    # Serve the old views
-#    urlpatterns += (
+        url(r'^register$', register_auth0(login_and_registration_form),
+            {'initial_mode': 'register'}, name="register_user"),
+    )
+else:
+    # Serve the old views
+    urlpatterns += (
 #        url(r'^login$', 'student.views.signin_user', name="signin_user"),
-#        url(r'^register$', 'student.views.register_user', name="register_user"),
-#    )
+        url(r'^register$', register_auth0(register_user), name="register_user"),
+    )
 
 if settings.FEATURES["ENABLE_MOBILE_REST_API"]:
     urlpatterns += (
