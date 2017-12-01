@@ -119,5 +119,6 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git+https://github.com/MamlukiSn/xblock-free-text-response.git#egg=xblock-free-text-response
 
 -e git+https://github.com/raccoongang/voicerecxblock#egg=xblock-voicerecxblock
+-e git://github.com/edx-solutions/xblock-mentoring.git@8837eb5d91fed05ec4758dfd9b9e7adc5c906210#egg=xblock_mentoring
 -e git+https://github.com/raccoongang/xblock-adventure#egg=xblock-adventure
 
