@@ -88,6 +88,7 @@ def save_org_logo(url, org_short_name):
         log.error(e)
         raise
 
+
 def generate_error_response(string):
     """
     Generate Response with error message about missing request data
@@ -403,6 +404,7 @@ class MicrositesDetailView(ViewSet):
             return generate_error_response('platform_name')
         elif course_org_filter is None:
             return generate_error_response('course_org_filter')
+
 
         # Get the microsite
         microsite = Microsite.objects.get(pk=pk)
