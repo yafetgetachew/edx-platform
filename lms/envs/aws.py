@@ -923,5 +923,10 @@ if AUTH_TOKENS.get('SENTRY_DSN'):
         'dsn': AUTH_TOKENS.get('SENTRY_DSN'),
     }
     raven.fetch_git_sha("/edx/app/edxapp/edx-platform")
-#### RaccoonGang ####
 
+SEARCH_SKIP_ENROLLMENT_START_DATE_FILTERING = FEATURES.get("SEARCH_SKIP_ENROLLMENT_START_DATE_FILTERING", True)
+
+ORA2_FILEUPLOAD_BACKEND = ENV_TOKENS.get('ORA2_FILEUPLOAD_BACKEND', 'filesystem')
+ORA2_FILEUPLOAD_CACHE_NAME = ENV_TOKENS.get('ORA2_FILEUPLOAD_CACHE_NAME', 'default')
+ORA2_FILEUPLOAD_ROOT = ENV_TOKENS.get('ORA2_FILEUPLOAD_ROOT', os.path.join(MEDIA_ROOT, 'submissions_attachments/'))
+#### RaccoonGang ####
