@@ -84,4 +84,3 @@ class BulkRegisterEnrollSerializer(serializers.Serializer):
                     serializers.ValidationError("Course key not valid: {}".format(course))
                     
         return new_values
-
