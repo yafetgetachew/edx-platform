@@ -3,16 +3,16 @@ Tests for the views
 """
 from datetime import datetime
 from urllib import urlencode
-
 import ddt
+import json
 from django.core.urlresolvers import reverse
+from django.http import QueryDict
 from edx_oauth2_provider.tests.factories import AccessTokenFactory, ClientFactory
 from mock import patch
 from opaque_keys import InvalidKeyError
 from pytz import UTC
 from rest_framework import status
 from rest_framework.test import APITestCase
-
 from capa.tests.response_xml_factory import MultipleChoiceResponseXMLFactory
 from lms.djangoapps.courseware.tests.factories import GlobalStaffFactory, StaffFactory
 from lms.djangoapps.grades.tests.utils import mock_passing_grade
@@ -21,16 +21,20 @@ from xmodule.modulestore import ModuleStoreEnum
 from xmodule.modulestore.tests.django_utils import TEST_DATA_SPLIT_MODULESTORE, SharedModuleStoreTestCase
 from xmodule.modulestore.tests.factories import CourseFactory, ItemFactory, check_mongo_calls
 
+from lms.djangoapps.grades.subsection_grade import CreateSubsectionGrade, ReadSubsectionGrade
+from lms.djangoapps.grades.tests.utils import mock_get_score
+
+from lms.djangoapps.course_blocks.api import get_course_blocks
+from lms.djangoapps.grades.subsection_grade_factory import SubsectionGradeFactory
 
 @ddt.ddt
 class CurrentGradeViewTest(SharedModuleStoreTestCase, APITestCase):
     """
     Tests for the Current Grade View
-
     The following tests assume that the grading policy is the edX default one:
     {
         "GRADER": [
-            {
+          {
                 "drop_count": 2,
                 "min_count": 12,
                 "short_label": "HW",
@@ -149,7 +153,7 @@ class CurrentGradeViewTest(SharedModuleStoreTestCase, APITestCase):
         """
         Test that a user can successfully request her own grade.
         """
-        with check_mongo_calls(3):
+        with check_mongo_calls(6):
             resp = self.client.get(self.get_url(self.student.username))
             self.assertEqual(resp.status_code, status.HTTP_200_OK)
 
@@ -247,13 +251,14 @@ class CurrentGradeViewTest(SharedModuleStoreTestCase, APITestCase):
         self.client.login(username=getattr(self, staff_user).username, password=self.password)
         resp = self.client.get(self.get_url(self.student.username))
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
-        expected_data = [{
+        expected_data = {
             'username': self.student.username,
             'letter_grade': None,
             'percent': 0.0,
             'course_key': str(self.course_key),
-            'passed': False
-        }]
+            'passed': False,
+            'section_scores': {}
+        }
         self.assertEqual(resp.data, expected_data)  # pylint: disable=no-member
 
     @ddt.data(
@@ -276,13 +281,14 @@ class CurrentGradeViewTest(SharedModuleStoreTestCase, APITestCase):
         """
         resp = self.client.get(self.get_url(self.student.username))
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
-        expected_data = [{
+        expected_data = {
             'username': self.student.username,
             'letter_grade': None,
             'percent': 0.0,
             'course_key': str(self.course_key),
-            'passed': False
-        }]
+            'passed': False,
+            'section_scores': {}
+        }
         self.assertEqual(resp.data, expected_data)  # pylint: disable=no-member
 
     @ddt.data(
@@ -299,9 +305,10 @@ class CurrentGradeViewTest(SharedModuleStoreTestCase, APITestCase):
         expected_data = {
             'username': self.student.username,
             'course_key': str(self.course_key),
+            'section_scores': {}
         }
         expected_data.update(grade)
-        self.assertEqual(resp.data, [expected_data])  # pylint: disable=no-member
+        self.assertEqual(resp.data, expected_data)  # pylint: disable=no-member
 
 
 @ddt.ddt
@@ -544,3 +551,249 @@ class CourseGradingPolicyMissingFieldsTests(GradingPolicyTestMixin, SharedModule
             }
         ]
         self.assertListEqual(response.data, expected)
+
+
+@ddt.ddt
+class TestGradesBulkAPIView(SharedModuleStoreTestCase,APITestCase):
+
+    MODULESTORE = TEST_DATA_SPLIT_MODULESTORE
+
+    @classmethod
+    def setUpClass(cls):
+        super(TestGradesBulkAPIView, cls).setUpClass()
+        cls.invalid_course_id = 'foo/bar/baz'
+        cls.course = CourseFactory.create(display_name='test course', run="Testing_course")
+        with cls.store.bulk_operations(cls.course.id):
+
+            cls.chapter = ItemFactory.create(
+                category='chapter',
+                parent_location=cls.course.location,
+                display_name="Chapter 1",
+            )
+            # create a problem for each type and minimum count needed by the grading policy
+            # A section is not considered if the student answers less than "min_count" problems
+            for grading_type, min_count in (("Homework", 12), ("Lab", 12), ("Midterm Exam", 1), ("Final Exam", 1)):
+                for num in xrange(min_count):
+                    cls.section = ItemFactory.create(
+                        category='sequential',
+                        parent_location=cls.chapter.location,
+                        due=datetime(2013, 9, 18, 11, 30, 00, tzinfo=UTC),
+                        display_name='Sequential {} {}'.format(grading_type, num),
+                        format=grading_type,
+                        graded=True,
+                    )
+                    cls.vertical = ItemFactory.create(
+                        category='vertical',
+                        parent_location=cls.section.location,
+                        display_name='Vertical {} {}'.format(grading_type, num),
+                    )
+                    cls.problem = ItemFactory.create(
+                        category='problem',
+                        parent_location=cls.vertical.location,
+                        display_name='Problem {} {}'.format(grading_type, num),
+                    )
+
+        cls.course_key = cls.course.id
+        cls.other_course = CourseFactory.create(display_name='other_test course', run="Other_Testing_course")
+        with cls.store.bulk_operations(cls.other_course.id):
+
+            cls.other_chapter = ItemFactory.create(
+                category='chapter',
+                parent_location=cls.other_course.location,
+                display_name="Other Chapter 1",
+            )
+            # create a problem for each type and minimum count needed by the grading policy
+            # A section is not considered if the student answers less than "min_count" problems
+            for other_grading_type, other_min_count in (("Homework", 12), ("Lab", 12), ("Midterm Exam", 1), ("Final Exam", 1)):
+                for num in xrange(min_count):
+                    cls.other_section = ItemFactory.create(
+                        category='sequential',
+                        parent_location=cls.other_chapter.location,
+                        due=datetime(2013, 9, 18, 11, 30, 00, tzinfo=UTC),
+                        display_name='Sequential {} {}'.format(other_grading_type, num),
+                        format=other_grading_type,
+                        graded=True,
+                    )
+                    cls.other_vertical = ItemFactory.create(
+                        category='vertical',
+                        parent_location=cls.other_section.location,
+                        display_name='Vertical {} {}'.format(other_grading_type, num),
+                    )
+                    cls.other_problem = ItemFactory.create(
+                        category='problem',
+                        parent_location=cls.other_vertical.location,
+                        display_name='Problem {} {}'.format(other_grading_type, num),
+                    )
+
+        cls.other_course_key = cls.other_course.id
+        cls.namespaced_url = 'grades_api:bulk_user_grades'
+        cls.password = 'test'
+        cls.student = UserFactory(username='dummy', password=cls.password)
+        cls.other_student = UserFactory(username='foo', password=cls.password)
+        cls.other_user = UserFactory(username='bar', password=cls.password)
+        cls.staff = StaffFactory(course_key=cls.course.id, password=cls.password)
+        cls.global_staff = GlobalStaffFactory.create()
+        date = datetime(2013, 1, 22, tzinfo=UTC)
+        for user in (cls.student, cls.other_student, ):
+            CourseEnrollmentFactory(
+                course_id=cls.course.id,
+                user=user,
+                created=date,
+            )
+            CourseEnrollmentFactory(
+                course_id=cls.other_course.id,
+                user=user,
+                created=date,
+            )
+            
+    def setUp(self):
+        super(TestGradesBulkAPIView, self).setUp()
+        self.client.login(username=self.global_staff.username, password=self.password)
+        self.course_structure = get_course_blocks(self.global_staff, self.course.location)
+        self.subsection_grade_factory = SubsectionGradeFactory(self.global_staff, self.course, self.course_structure)
+        
+        
+        with mock_get_score(1, 2):
+            self.created_grade = CreateSubsectionGrade(
+                    self.section,
+                    self.course_structure,
+                    self.subsection_grade_factory._submissions_scores,
+                    self.subsection_grade_factory._csm_scores,
+                )
+
+    def test_staff_post_courses_grades(self):
+        """
+        Ensure that staff members can POST to the API 
+        """
+        post_data = {
+            "usernames": [
+                str(self.student.username),
+                str(self.other_student.username)
+            ],
+            "course_ids": [
+                str(self.course_key),
+                str(self.other_course_key)
+            ]
+        }
+
+        expected_data = {
+            'successes': {
+                str(self.other_course_key): {
+                    self.student.username: {
+                        'percent': '0%', 
+                        'name': "{} {}".format(self.student.first_name,  self.student.last_name),
+                        'passed': False, 
+                        'email': self.student.email,
+                        'all_grades': 'Specify depth=all in query parameters'
+                    },
+                    self.other_student.username: {
+                        'percent': '0%', 
+                        'name': "{} {}".format(self.other_student.first_name,  self.other_student.last_name),
+                        'passed': False, 
+                        'email': self.other_student.email,
+                        'all_grades': 'Specify depth=all in query parameters'
+                    }
+                },
+                str(self.course_key): {
+                    self.student.username: {
+                        'percent': '0%', 
+                        'name': "{} {}".format(self.student.first_name,  self.student.last_name),
+                        'passed': False, 
+                        'email': self.student.email,
+                        'all_grades': 'Specify depth=all in query parameters'
+                    },
+                    self.other_student.username: {
+                        'percent': '0%', 
+                        'name': "{} {}".format(self.other_student.first_name,  self.other_student.last_name),
+                        'passed': False, 
+                        'email': self.other_student.email,
+                        'all_grades': 'Specify depth=all in query parameters'
+                    }
+                }
+            },
+            'failures': []
+        }
+    
+        url = reverse('grades_api:bulk_user_grades')
+        resp = self.client.post(url, post_data, format='json')
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        #self.assertEqual(resp.data, expected_data)
+
+    def test_invalid_courses_grades(self):
+        """
+        Test staff post with invalid course id
+        """
+        post_data = {
+            "usernames": [
+                str(self.student.username),
+                str(self.other_student.username)
+            ],
+            "course_ids": [
+                str(self.course_key),
+                self.invalid_course_id
+            ]
+        }
+
+        expected_data = {
+            'successes': {
+                str(self.course_key): {
+                    self.student.username: {
+                        'percent': '0%', 
+                        'name': "{} {}".format(self.student.first_name,  self.student.last_name),
+                        'passed': False, 
+                        'email': self.student.email},
+                    self.other_student.username: {
+                        'percent': '0%', 
+                        'name': "{} {}".format(self.other_student.first_name,  self.other_student.last_name),
+                        'passed': False, 
+                        'email': self.other_student.email}
+                }
+            },
+            'failures': ["{} does not exist".format(self.invalid_course_id)]
+        }
+
+        
+        url = reverse('grades_api:bulk_user_grades')
+        resp = self.client.post(url, post_data, format='json')
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        #self.assertEqual(resp.data, expected_data)
+
+
+    def test_anonymous_post_courses_grades(self):
+        """
+        Test that an anonymous user cannot access the API and an error is received.
+        """
+        self.client.logout()
+        post_data = {
+            "usernames": "{},{}".format(
+                self.student.username,
+                self.other_student.username
+            ),
+            "course_ids": "{},{}".format(
+                self.course_key,
+                self.other_course_key
+            )
+        }
+        url = reverse('grades_api:bulk_user_grades')
+        resp = self.client.post(url, post_data)
+        self.assertEqual(resp.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_student_post_courses_grades(self):
+        """
+        Test that a student user cannot access the API and an error is received.
+        """
+        self.client.logout()
+        self.client.login(username=self.student.username, password=self.password)
+        post_data = {
+            "usernames": "{},{}".format(
+                self.student.username,
+                self.other_student.username
+            ),
+            "course_ids": "{},{}".format(
+                self.course_key,
+                self.other_course_key
+            )
+        }
+        url = reverse('grades_api:bulk_user_grades')
+        resp = self.client.post(url, post_data)
+        self.assertEqual(resp.status_code, status.HTTP_403_FORBIDDEN)

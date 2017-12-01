@@ -150,6 +150,10 @@ REGISTRATION_UTM_CREATED_AT = 'registration_utm_created_at'
 # used to announce a registration
 REGISTER_USER = Signal(providing_args=["user", "registration"])
 
+
+USER_COURSE_ENROLLMENTS_ORDER_BY =\
+    getattr(settings, 'USER_COURSE_ENROLLMENTS_ORDER_BY', 'created_reverse')
+
 # Disable this warning because it doesn't make sense to completely refactor tests to appease Pylint
 # pylint: disable=logging-format-interpolation
 
@@ -868,6 +872,22 @@ def dashboard(request):
     valid_verification_statuses = ['approved', 'must_reverify', 'pending', 'expired']
     display_sidebar_on_dashboard = len(order_history_list) or verification_status in valid_verification_statuses
 
+    # sort the enrollment pairs by the flag USER_COURSE_ENROLLMENTS_ORDER_BY
+    if USER_COURSE_ENROLLMENTS_ORDER_BY == 'created':
+        course_enrollments.sort(key=lambda x: x.created, reverse=False)
+    elif USER_COURSE_ENROLLMENTS_ORDER_BY == 'created_reverse':
+        course_enrollments.sort(key=lambda x: x.created, reverse=True)
+    elif USER_COURSE_ENROLLMENTS_ORDER_BY == 'course_name':
+        course_enrollments.sort(
+            key=lambda x: x.course.display_name,
+            reverse=False
+        )
+    elif USER_COURSE_ENROLLMENTS_ORDER_BY == 'course_name_reverse':
+        course_enrollments.sort(
+            key=lambda x: x.course.display_name,
+            reverse=True
+        )
+
     context = {
         'enterprise_message': enterprise_message,
         'enrollment_message': enrollment_message,
@@ -1361,19 +1381,19 @@ def _generate_not_activated_message(user):
     )
 
     platform_name = configuration_helpers.get_value(
-        'PLATFORM_NAME',
+        'platform_name',
         settings.PLATFORM_NAME
     )
 
     not_activated_msg_template = _('In order to sign in, you need to activate your account.<br /><br />'
                                    'We just sent an activation link to <strong>{email}</strong>.  If '
                                    'you do not receive an email, check your spam folders or '
-                                   '<a href="{support_url}">contact {platform} Support</a>.')
+                                   '<a href="{support_url}">contact {platform_name} Support</a>.')
 
     not_activated_message = not_activated_msg_template.format(
         email=user.email,
         support_url=support_url,
-        platform=platform_name
+        platform_name=platform_name
     )
 
     return not_activated_message
