@@ -36,7 +36,7 @@ define(
             setLanguage: function (event) {
                 var val = $(event.currentTarget).val();
                 this.setLanguageTranscript(val);
-                this.$el.find('.js-upload-transcript').prop("disabled", val=='')
+                this.$el.find('.js-upload-transcript').prop("disabled", val=='').attr("aria-disabled", false)
             },
 
             trigerUploadTranscript: function (event) {

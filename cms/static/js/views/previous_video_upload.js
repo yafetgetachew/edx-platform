@@ -112,8 +112,11 @@ define(
             },
 
             toggleTranscripts: function (event) {
+                var isHidden = this.transcriptsView.$el.find('.fa-plus').attr('aria-hidden');
+                this.transcriptsView.$el.find('.fa-plus').attr('aria-hidden', !isHidden);
                 event.preventDefault();
                 this.transcriptsView.$el.toggleClass('is-hidden');
+
                 $(event.currentTarget).toggleClass('active-transcripts');
             },
 
