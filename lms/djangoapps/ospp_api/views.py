@@ -3,15 +3,16 @@ import string
 import random
 
 from django.core.exceptions import ValidationError
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from social_django.models import UserSocialAuth
 
+from third_party_auth.models import SAMLProviderConfig, SAMLProviderData
 from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
 from openedx.core.lib.api.authentication import OAuth2AuthenticationAllowInactiveUser
 from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
-
 from student.views import create_account_with_params
+
 
 log = logging.getLogger(__name__)
 
@@ -53,16 +54,24 @@ class CreateUserView(APIView):
             return Response(errors, status=409)
         # Generate fake password and set name equal to the username
         data['password'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))
-        data['name'] = data['username']
+        name = data['name'].split(' ', 1)
 
         # Avoid sending activation email
         data['send_activation_email'] = False
         try:
             user = create_account_with_params(request, data)
-            user.is_active = False
+            user.is_active = True
+            idp = SAMLProviderConfig.objects.first()
+            social_user_id = '{}:{}'.format(idp.name, data.pop('name_id'))
+            UserSocialAuth.objects.create(user=user, provider=idp.backend_name, uid=social_user_id)
+            user.first_name = name[0]
+            user.last_name = name[1]
             user.save()
         except ValidationError:
             errors = {"user_message": "Wrong parameters on user creation"}
+            return Response(errors, status=400)
+        except AttributeError:
+            errors = {"user_message": "Wrong Identity Provider's configuration"}
             return Response(errors, status=400)
 
         return Response({'user_id': user.id}, status=200)

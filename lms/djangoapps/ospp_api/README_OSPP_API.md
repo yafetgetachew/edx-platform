@@ -26,6 +26,8 @@ This endpoint creates a new edX user.
     * Required:
         * 'username'
         * 'email'
+        * 'name'
+        * 'name_id' # is the user_id from the Auth0 user profile
 
 * Success Response
     * Code: 200
@@ -49,10 +51,12 @@ This endpoint creates a new edX user.
 POST /ospp_api/v0/create_user
 Host: example.com
 Content-Type: application/json
-x-edx-api-key: EDX-API-KEY-TOKEN
+x-edx-api-key: {EDX-API-KEY-TOKEN}
 Cache-Control: no-cache
 {
     "username": "user55",
     "email": "user55@example.com",
+    "name": "Test User",
+    "name_id": "auth0|5a1827996asd85k0cb994082"
 }
 ```
