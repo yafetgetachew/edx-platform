@@ -61,9 +61,9 @@ class CreateUserView(APIView):
         try:
             user = create_account_with_params(request, data)
             user.is_active = True
-            idp = SAMLProviderConfig.objects.first()
-            social_user_id = '{}:{}'.format(idp.name, data.pop('name_id'))
-            UserSocialAuth.objects.create(user=user, provider=idp.backend_name, uid=social_user_id)
+            idp = SAMLProviderConfig.objects.first().backend_name
+            social_user_id = '{}:{}'.format(idp, data.pop('name_id'))
+            UserSocialAuth.objects.create(user=user, provider=idp, uid=social_user_id)
             user.first_name = name[0]
             user.last_name = name[1]
             user.save()
