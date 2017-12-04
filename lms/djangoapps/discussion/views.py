@@ -522,7 +522,7 @@ def user_profile(request, course_key, user_id):
                 'page': query_params['page'],
                 'num_pages': query_params['num_pages'],
                 'sort_preference': user.default_sort_key,
-                'learner_profile_page_url': reverse('learner_profile', kwargs={'username': django_user.username}),
+                'learner_profile_page_url': '#',
             })
 
             return render_to_response('discussion/discussion_profile_page.html', context)
