@@ -26,8 +26,10 @@ This endpoint creates a new edX user.
     * Required:
         * 'username'
         * 'email'
-        * 'name'
         * 'name_id' # is the user_id from the Auth0 user profile
+    * Optional
+        * 'first_name'
+        * 'last_name'
 
 * Success Response
     * Code: 200
@@ -56,8 +58,9 @@ Cache-Control: no-cache
 {
     "username": "user55",
     "email": "user55@example.com",
-    "name": "Test User",
     "name_id": "auth0|5a1827996asd85k0cb994082"
+    "first_name": "Test",
+    "last_name": "User",
 }
 ```
 
@@ -76,7 +79,7 @@ Cache-Control: no-cache
     * Optional:
         * is_active default - true
         * mode default - audit
-        
+
 * Success Response
     * Code: 200
     * Content:
@@ -137,5 +140,5 @@ Cache-Control: no-cache
   "course_details": {
     "course_id": "course-v1:Rom+RM1+2015"
   }
-} 
+}
 ```

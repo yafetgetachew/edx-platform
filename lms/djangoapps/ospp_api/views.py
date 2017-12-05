@@ -47,6 +47,9 @@ class CreateUserView(APIView):
                 {
                     "username": "user4",
                     "email": "userUdot@example.com",
+                    "name_id": "auth0|5a1827996asd85k0cb994082" # auth0 user's profile ID
+                    "first_name": "Test" # Optional parameter
+                    "last_name": "User" # Optional parameter
                 }
         Returns:
             HttpResponse: 200 on success, {"user_id": 3}
@@ -58,25 +61,29 @@ class CreateUserView(APIView):
         data['honor_code'] = "True"
         data['terms_of_service'] = "True"
 
+        username = data['username']
+
         # Handle duplicate email/username
-        conflicts = check_account_exists(email=data['email'], username=data['username'])
+        conflicts = check_account_exists(email=data['email'], username=username)
         if conflicts:
             errors = {"user_message": "User already exists"}
             return Response(errors, status=409)
         # Generate fake password and set name equal to the username
         data['password'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))
-        name = data['name'].split(' ', 1)
+        first_name = data.get('first_name', '')
+        last_name = data.get('last_name', '')
+        data['name'] = '{}{}{}'.format(first_name, ' ' if first_name else '', last_name) or username
 
         # Avoid sending activation email
         data['send_activation_email'] = False
         try:
             user = create_account_with_params(request, data)
             user.is_active = True
-            idp = SAMLProviderConfig.objects.first().backend_name
-            social_user_id = '{}:{}'.format(idp, data.pop('name_id'))
-            UserSocialAuth.objects.create(user=user, provider=idp, uid=social_user_id)
-            user.first_name = name[0]
-            user.last_name = name[1]
+            idp_name = SAMLProviderConfig.objects.first().backend_name
+            social_user_id = '{}:{}'.format(idp_name, data.pop('name_id'))
+            UserSocialAuth.objects.create(user=user, provider=idp_name, uid=social_user_id)
+            user.first_name = first_name
+            user.last_name = last_name
             user.save()
         except ValidationError:
             errors = {"user_message": "Wrong parameters on user creation"}
