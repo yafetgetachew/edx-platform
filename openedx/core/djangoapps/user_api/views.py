@@ -395,7 +395,7 @@ class RegistrationView(APIView):
         )
 
     def _add_custom_prefix_field(self, form_desc, required=False):
-        label = _(u"If other, please specify here")
+        label = _(u"If you selected \"Other\" in Prefix, please specify here")
 
         form_desc.add_field(
             "custom_prefix",
