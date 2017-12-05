@@ -79,7 +79,9 @@ Cache-Control: no-cache
     * Optional:
         * is_active default - true
         * mode default - audit
-
+        * eligibility_status default - false
+        * partner_logo default - ''
+        
 * Success Response
     * Code: 200
     * Content:
@@ -137,8 +139,10 @@ Cache-Control: no-cache
 {
   "user_id": "16",
   "is_active": true,
+  "eligibility_status": ture,
+  "partner_logo": "https://pbs.twimg.com/profile_images/596777148435705856/tsE4inUQ.jpg"
   "course_details": {
     "course_id": "course-v1:Rom+RM1+2015"
   }
-}
+} 
 ```

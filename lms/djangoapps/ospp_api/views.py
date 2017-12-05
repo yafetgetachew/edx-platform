@@ -17,13 +17,13 @@ from social_django.models import UserSocialAuth
 from enrollment import api
 from enrollment.errors import CourseEnrollmentError, CourseModeNotFoundError, CourseEnrollmentExistsError
 from enrollment.views import REQUIRED_ATTRIBUTES
+from ospp_api.models import OSPPEnrollmentFeature
 from third_party_auth.models import SAMLProviderConfig, SAMLProviderData
 from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
 from openedx.core.lib.api.authentication import OAuth2AuthenticationAllowInactiveUser
 from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
 from student.views import create_account_with_params
-from student.models import User
-
+from student.models import User, CourseEnrollment
 
 log = logging.getLogger(__name__)
 
@@ -125,6 +125,8 @@ class EnrollUserView(APIView):
                 JSON (application/json)
                 {
                   "user_id": "16",
+                  "eligibility_status": ture,
+                  "partner_logo": "https://pbs.twimg.com/profile_images/596777148435705856/tsE4inUQ.jpg"
                   "is_active": "default:true, [true|false]",
                   "mode":"default:audit, [honor|professional|verified|audit]",
                   "course_details": {
@@ -215,6 +217,10 @@ class EnrollUserView(APIView):
 
         mode = request.data.get('mode')
 
+        partner_logo = request.data.get('partner_logo', '')
+        eligibility_status = request.data.get('eligibility_status', False)
+
+
         try:
             is_active = request.data.get('is_active')
             # Check if the requested activation status is None or a Boolean
@@ -296,6 +302,7 @@ class EnrollUserView(APIView):
                         enrollment_attributes=enrollment_attributes
                 )
 
+
             email_opt_in = request.data.get('email_opt_in', None)
             if email_opt_in is not None:
                 org = course_id.org
@@ -337,6 +344,17 @@ class EnrollUserView(APIView):
             )
         finally:
             current_enrollment = api.get_enrollment(username, unicode(course_id))
+            enrollment = CourseEnrollment.objects.get(course_id=course_id, user_id=user.id) # type: CourseEnrollment
+            if not OSPPEnrollmentFeature.objects.filter(enrollment_id=enrollment.id).exists():
+                OSPPEnrollmentFeature(
+                        enrollment_id=enrollment.id,
+                        partner_logo=partner_logo,
+                        eligibility_status=eligibility_status
+                ).save()
+            else:
+                enrollment.ospp_feature.partner_logo = partner_logo
+                enrollment.ospp_feature.eligibility_status = eligibility_status
+                enrollment.ospp_feature.save()
             audit_log(
                     'enrollment_change_requested',
                     course_id=unicode(course_id),
