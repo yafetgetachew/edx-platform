@@ -2245,6 +2245,7 @@ INSTALLED_APPS = (
     'openedx.features.enterprise_support',
 
     'experiments',
+    'ospp_api',
 )
 
 ######################### CSRF #########################################
