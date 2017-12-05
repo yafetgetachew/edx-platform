@@ -28,6 +28,9 @@ from student.models import User
 log = logging.getLogger(__name__)
 
 
+REQUIRED_CREATE_USER_PARAMS = ('username', 'email', 'name_id')
+
+
 class CreateUserView(APIView):
     authentication_classes = OAuth2AuthenticationAllowInactiveUser,
     permission_classes = ApiKeyHeaderPermission,
@@ -60,6 +63,15 @@ class CreateUserView(APIView):
 
         data['honor_code'] = "True"
         data['terms_of_service'] = "True"
+
+        # Check that all required parameters are sent
+        missed_params = []
+        for param in REQUIRED_CREATE_USER_PARAMS:
+            if not data.get(param):
+                missed_params.append(param)
+        if missed_params:
+            error_msg = "Required parameter(s): {} were not provided".format(" ,".join(missed_params))
+            return Response({"user_message": error_msg}, status=400)
 
         username = data['username']
 
