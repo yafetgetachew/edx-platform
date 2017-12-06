@@ -400,3 +400,17 @@ class BulkEmailFlag(ConfigurationModel):
             current_model.is_enabled(),
             current_model.require_course_email_auth
 )
+
+
+class SetPasswordEmail(models.Model):
+    sender = models.ForeignKey(User, default=1, blank=True, null=True)
+    course_id = CourseKeyField(max_length=255, db_index=True)
+    sended_emails = models.TextField(null=True, blank=True)
+    failed_emails = models.TextField(null=True, blank=True)
+    sended = models.IntegerField(default=0, blank=True)
+    failed = models.IntegerField(default=0, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta(object):
+        app_label = "bulk_email"

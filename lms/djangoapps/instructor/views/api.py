@@ -94,7 +94,7 @@ from submissions import api as sub_api  # installed from the edx-submissions rep
 from certificates import api as certs_api
 from certificates.models import CertificateWhitelist, GeneratedCertificate, CertificateStatuses, CertificateInvalidation
 
-from bulk_email.models import CourseEmail, BulkEmailFlag
+from bulk_email.models import CourseEmail, BulkEmailFlag, SetPasswordEmail
 from student.models import get_user_by_username_or_email
 
 from .tools import (
@@ -2528,6 +2528,8 @@ def send_email_password(request, course_id):
     if emails:
         users = users.filter(email__in=[e.strip() for e in re.split(",|;|\s|\n", emails) if e])
 
+    sended = []
+    failed = []
     for user in users:
         site_name = request.get_host()
 
@@ -2550,7 +2552,22 @@ def send_email_password(request, course_id):
         except:
             html_email = None
         from_email = configuration_helpers.get_value('email_from_address', settings.DEFAULT_FROM_EMAIL)
-        send_mail(subject, email, from_email, [user.email], html_message=html_email)
+
+        try:
+            send_mail(subject, email, from_email, [user.email], html_message=html_email)
+        except Exception:
+            failed.append(user.email)
+        else:
+            sended.append(user.email)
+
+    SetPasswordEmail.objects.create(
+        sender=request.user,
+        course_id=course_id,
+        sended_emails=', '.join(sended),
+        failed_emails=', '.join(failed),
+        sended=len(sended),
+        failed=len(failed)
+    )
 
     return JsonResponse({'success': True, 'message': _('Send messages for {} users.').format(users.count())})
 

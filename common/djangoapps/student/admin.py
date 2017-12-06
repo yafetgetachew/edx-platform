@@ -3,10 +3,13 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.admin import SimpleListFilter
+from django.http import HttpResponse
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from ratelimitbackend import admin
 from xmodule.modulestore.django import modulestore
+import unicodecsv
 
 from config_models.admin import ConfigurationModelAdmin
 from student.models import (
@@ -162,9 +165,39 @@ class UserProfileInline(admin.StackedInline):
     verbose_name_plural = _('User profile')
 
 
+class PasswordFilter(SimpleListFilter):
+    title = _('Password')
+    parameter_name = 'PasswordFilter'
+
+    def lookups(self, request, model_admin):
+        return (('empty', _('Empty password')),)
+
+    def queryset(self, request, queryset):
+        if self.value() == 'empty':
+            return queryset.filter(password='')
+        return queryset
+
+
+def export_as_csv(modeladmin, request, queryset):
+    opts = modeladmin.model._meta
+    field_names = [field.name for field in opts.fields]
+
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=%s.csv' % unicode(opts).replace('.', '_')
+    writer = unicodecsv.writer(response, encoding='utf-8')
+    writer.writerow(field_names)
+    for obj in queryset:
+        row = [getattr(obj, field)() if callable(getattr(obj, field)) else getattr(obj, field) for field in field_names]
+        writer.writerow(row)
+    return response
+export_as_csv.short_description = _("Export to CSV")
+
+
 class UserAdmin(BaseUserAdmin):
     """ Admin interface for the User model. """
+    list_filter = ('is_staff', 'is_superuser', 'is_active', PasswordFilter)
     inlines = (UserProfileInline,)
+    actions = [export_as_csv]
 
 
 @admin.register(UserAttribute)

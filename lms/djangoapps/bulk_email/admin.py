@@ -5,8 +5,19 @@ from django.contrib import admin
 
 from config_models.admin import ConfigurationModelAdmin
 
-from bulk_email.models import CourseEmail, Optout, CourseEmailTemplate, CourseAuthorization, BulkEmailFlag
+from bulk_email.models import (
+    CourseEmail, Optout,
+    CourseEmailTemplate,
+    CourseAuthorization,
+    BulkEmailFlag,
+    SetPasswordEmail
+)
 from bulk_email.forms import CourseEmailTemplateForm, CourseAuthorizationAdminForm
+
+
+class SetPasswordEmailAdmin(admin.ModelAdmin):
+    readonly_fields = ('sender',)
+    list_display = ('sender', 'course_id', 'sended', 'failed', 'created')
 
 
 class CourseEmailAdmin(admin.ModelAdmin):
@@ -84,3 +95,4 @@ admin.site.register(Optout, OptoutAdmin)
 admin.site.register(CourseEmailTemplate, CourseEmailTemplateAdmin)
 admin.site.register(CourseAuthorization, CourseAuthorizationAdmin)
 admin.site.register(BulkEmailFlag, ConfigurationModelAdmin)
+admin.site.register(SetPasswordEmail, SetPasswordEmailAdmin)
