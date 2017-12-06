@@ -99,6 +99,9 @@ urlpatterns = patterns(
         'lms.djangoapps.instructor.views.api.calculate_grades_csv', name="calculate_grades_csv"),
     url(r'problem_grade_report$',
         'lms.djangoapps.instructor.views.api.problem_grade_report', name="problem_grade_report"),
+    # Bulk Grades API Task
+    url(r'bulk_grades_report$',
+        'lms.djangoapps.instructor.views.api.bulk_grades_report', name="bulk_grades_report"),
 
     # Financial Report downloads..
     url(r'^list_financial_report_downloads$',
