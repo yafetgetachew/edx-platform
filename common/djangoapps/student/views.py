@@ -26,7 +26,10 @@ from django.core import mail
 from django.core.urlresolvers import reverse, NoReverseMatch, reverse_lazy
 from django.core.validators import validate_email, ValidationError
 from django.db import IntegrityError, transaction
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseServerError, Http404
+from django.http import (
+    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseServerError, Http404, HttpResponseNotFound,
+    HttpResponseRedirect
+)
 from django.shortcuts import redirect
 from django.utils.encoding import force_bytes, force_text
 from django.utils.translation import ungettext
@@ -440,6 +443,19 @@ def signin_user(request):
         return external_auth_response
     # Determine the URL to redirect to following login:
     redirect_to = get_next_url_for_login_page(request)
+
+    if third_party_auth.is_enabled():
+        login_url = None
+        for enabled in third_party_auth.provider.Registry.accepting_logins():
+            login_url = pipeline.get_login_url(
+                enabled.provider_id,
+                pipeline.AUTH_ENTRY_LOGIN,
+                redirect_url=redirect_to,
+            )
+            break
+        if login_url:
+            return HttpResponseRedirect(login_url)
+
     if request.user.is_authenticated():
         return redirect(redirect_to)
 
@@ -470,6 +486,7 @@ def signin_user(request):
 @ensure_csrf_cookie
 def register_user(request, extra_context=None):
     """Deprecated. To be replaced by :class:`student_account.views.login_and_registration_form`."""
+    return HttpResponseNotFound()
     # Determine the URL to redirect to following login:
     redirect_to = get_next_url_for_login_page(request)
     if request.user.is_authenticated():

@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse, resolve
 from django.http import (
-    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest
+    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest, HttpResponseNotFound, HttpResponseRedirect
 )
 from django.shortcuts import redirect
 from django.utils.translation import ugettext as _
@@ -65,6 +65,21 @@ def login_and_registration_form(request, initial_mode="login"):
     """
     # Determine the URL to redirect to following login/registration/third_party_auth
     redirect_to = get_next_url_for_login_page(request)
+
+    if initial_mode == "register":
+        return HttpResponseNotFound()
+    else:
+        if third_party_auth.is_enabled():
+            login_url = None
+            for enabled in third_party_auth.provider.Registry.accepting_logins():
+                login_url = pipeline.get_login_url(
+                    enabled.provider_id,
+                    pipeline.AUTH_ENTRY_LOGIN,
+                    redirect_url=redirect_to,
+                )
+                break
+            if login_url:
+                return HttpResponseRedirect(login_url)
 
     # If we're already logged in, redirect to the dashboard
     if request.user.is_authenticated():
