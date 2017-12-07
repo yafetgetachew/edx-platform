@@ -1167,7 +1167,7 @@ MIDDLEWARE_CLASSES = (
 
     # This must be last
     'microsite_configuration.middleware.MicrositeSessionCookieDomainMiddleware',
-    'edx_oauth_client.middleware.SeamlessAuthorization'
+    #'edx_oauth_client.middleware.SeamlessAuthorization'
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
