@@ -98,6 +98,7 @@ def courses(request):
     to that. Otherwise, if subdomain branding is on, this is the university
     profile page. Otherwise, it's the edX courseware.views.views.courses page
     """
+    return redirect('https://opusplace.com/sv/kurskatalog')
     enable_mktg_site = configuration_helpers.get_value(
         'ENABLE_MKTG_SITE',
         settings.FEATURES.get('ENABLE_MKTG_SITE', False)
