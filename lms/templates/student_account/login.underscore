@@ -22,6 +22,9 @@
 
     <button type="submit" class="action action-primary action-update js-login login-button"><%- gettext("Sign in") %></button>
 
+    <h2 class="login-form__heading">Continue to the Education For Humanity <br>
+    <strong>Course Platform<strong></h2>
+
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
     <div class="login-providers">
         <div class="section-title lines">
