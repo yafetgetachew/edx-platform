@@ -18862,7 +18862,7 @@ msgid ""
 "won't receive any more email from us. If you need assistance, please "
 "do not reply to this email message. Check the help section of the "
 "{platform_name} website."
-msgstr ""
+msgstr " "
 
 #: lms/templates/registration/password_reset_complete.html
 msgid "Your Password Reset is Complete"
