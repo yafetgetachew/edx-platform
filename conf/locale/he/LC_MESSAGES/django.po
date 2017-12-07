@@ -16129,6 +16129,10 @@ msgid ""
 "able to log back into your account until you have activated it."
 msgstr ""
 
+#: lms/templates/emails/activation_email.html
+msgid "Thank you for creating an account with {platform_name}!"
+msgstr "יצרתם חשבון במערכת הלימוד המקוונת."
+
 #: lms/templates/emails/activation_email.txt
 msgid "Enjoy learning with {platform_name}."
 msgstr ""
@@ -18842,6 +18846,23 @@ msgstr ""
 "רק עוד צעד אחד: לפני שתירשם לקורס, עליך להפעיל את חשבונך. שלחנו הודעת דואר "
 "אלקטרוני אל  {email_start}{email}{email_end} עם הוראות להפעלת החשבון. אם "
 "אינך מקבל הודעה זו, בדוק את תיקיית דואר הזבל שלך."
+
+#: lms/templates/registration/activation_email.html
+msgid ""
+"There's just one more step before you can enroll in a course: "
+"you need to activate your {platform_name} account. To activate "
+"your account, click the following link. If that doesn't work, "
+"copy and paste the link into your browser's address bar."
+msgstr ""
+"להפעלת החשבון, לחצו על הקישור הבא, או העתיקו אותו לשורת הכתובת בדפדפן."
+
+#: lms/templates/registration/activation_email.html
+msgid ""
+"If you didn't create an account, you don't need to do anything; you "
+"won't receive any more email from us. If you need assistance, please "
+"do not reply to this email message. Check the help section of the "
+"{platform_name} website."
+msgstr ""
 
 #: lms/templates/registration/password_reset_complete.html
 msgid "Your Password Reset is Complete"
