@@ -11,8 +11,3 @@
 
 -e openedx/core/lib/xblock_builtin/xblock_discussion
 
-# Raccoongang
-
--e git+git@github.com:raccoongang/edx_scorm_xblock.git#egg=edx_scorm_xblock
--e git+https://github.com/raccoongang/xblock-filestorage@1e44c36915c00bbac4534d2ed37b504ea515f60e#egg=xblock_filestorage-master
--e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow-control-xblock
