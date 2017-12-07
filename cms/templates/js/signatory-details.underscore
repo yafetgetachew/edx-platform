@@ -6,7 +6,7 @@
     </span>
   </div>
   <% } %>
-  <div class="signatory-panel-header">Signatory <%= signatory_number %>&nbsp;</div>
+  <div class="signatory-panel-header"><%= gettext("Signatory ") %><%= signatory_number %>&nbsp;</div>
   <div class="signatory-panel-body">
     <div>
         <div>

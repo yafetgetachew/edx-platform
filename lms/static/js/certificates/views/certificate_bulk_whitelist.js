@@ -161,8 +161,8 @@
                                 break;
 
                             case MESSAGE_GROUP.data_format_error:
-                                text = qty > 1 ? gettext(qty + ' records are not in correct format and not added to' +
-                                    ' the exception list'):
+                                text = qty > 1 ? gettext(qty) + gettext(' records are not in correct format and not added to') +
+                                    gettext(' the exception list'):
                                     gettext(qty + ' record is not in correct format and not added to the exception' +
                                         ' list');
                                 break;

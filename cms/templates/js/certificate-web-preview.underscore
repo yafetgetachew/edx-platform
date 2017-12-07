@@ -1,7 +1,7 @@
 <label for="course-modes"><%= gettext("Choose mode") %></label>
 <select id="course-modes">
 <% _.each(course_modes, function(course_mode) { %>
-     <option value= "<%= course_mode %>"><%= course_mode %></option>
+     <option value= "<%= course_mode %>"><%= gettext(course_mode) %></option>
 <% }); %>
 </select>
 <a href=<%= certificate_web_view_url %> class="button preview-certificate-link" target="_blank">

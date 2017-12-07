@@ -205,7 +205,10 @@ def get_task_completion_info(instructor_task):
         elif num_succeeded == num_attempted:
             succeeded = True
             # Translators: {action} is a past-tense verb that is localized separately. {attempted} is a count.
-            msg_format = _("Message successfully {action} for {attempted} recipients")
+            if num_attempted == 1:
+                msg_format = _("Message successfully {action} for {attempted} recipient")
+            else:
+                msg_format = _("Message successfully {action} for {attempted} recipients")
         else:  # num_succeeded < num_attempted
             # Translators: {action} is a past-tense verb that is localized separately. {succeeded} and {attempted} are counts.
             msg_format = _("Message {action} for {succeeded} of {attempted} recipients")

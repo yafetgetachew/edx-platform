@@ -25,7 +25,7 @@ var CourseGrader = Backbone.Model.extend({
         var errors = {};
         if (_.has(attrs, 'type')) {
             if (_.isEmpty(attrs['type'])) {
-                errors.type = "The assignment type must have a name.";
+                errors.type = gettext("The assignment type must have a name.");
             }
             else {
                 // FIXME somehow this.collection is unbound sometimes. I can't track down when
