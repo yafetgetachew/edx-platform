@@ -5,6 +5,7 @@ import random
 import sys
 
 from collections import namedtuple
+from django.utils.translation import ugettext as _
 
 log = logging.getLogger("edx.courseware")
 
@@ -358,7 +359,7 @@ class AssignmentFormatGrader(CourseGrader):
         total_percent, dropped_indices = total_with_drops(breakdown, self.drop_count)
 
         for dropped_index in dropped_indices:
-            breakdown[dropped_index]['mark'] = {'detail': u"The lowest {drop_count} {section_type} scores are dropped."
+            breakdown[dropped_index]['mark'] = {'detail': _(u"The lowest {drop_count} {section_type} scores are dropped.")
                                                 .format(drop_count=self.drop_count, section_type=self.section_type)}
 
         if len(breakdown) == 1:
