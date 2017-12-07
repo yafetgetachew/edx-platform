@@ -1027,7 +1027,7 @@ EDXNOTES_READ_TIMEOUT = 1.5  # time in seconds
 
 # The age at which a learner no longer requires parental consent, or None
 # if parental consent is never required.
-PARENTAL_CONSENT_AGE_LIMIT = 13
+PARENTAL_CONSENT_AGE_LIMIT = None
 
 ################################# Jasmine ##################################
 JASMINE_TEST_DIRECTORY = PROJECT_ROOT + '/static/coffee'
