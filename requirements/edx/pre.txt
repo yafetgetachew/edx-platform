@@ -16,3 +16,8 @@ pip==7.1.2
 
 # Needed for meliae
 Cython==0.21.2
+
+# RaccoonGang
+# Needed pyOpenSSL->scrapy>=1.0.5->pa11ycrawler==0.0.4
+# placed here to satisfy requirements before installing github.txt requirements
+cryptography==1.3.4
