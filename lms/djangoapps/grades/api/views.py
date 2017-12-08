@@ -33,7 +33,7 @@ from lms.djangoapps.courseware.courses import get_course
 log = logging.getLogger(__name__)
 USER_MODEL = get_user_model()
 
-
+from django.apps import apps
 
 from lms.djangoapps.grades.tasks import compute_grades_for_course, get_user_course_response_task
 
