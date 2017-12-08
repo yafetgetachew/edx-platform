@@ -24276,3 +24276,7 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "גרסה חדשה נוצרה: מיזוג בין גרסה #%(r1)d וגרסה #%(r2)d"
+
+#: lms/templates/emails/activation_email_subject.txt
+msgid "Activate Your {platform_name} Account"
+msgstr "להפעלת חשבונך בפלטפורמת הקורס המקוונת"
