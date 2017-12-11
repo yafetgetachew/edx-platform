@@ -8315,15 +8315,15 @@ msgstr "Зарегистрироваться через edX"
 
 #: lms/templates/student_account/login.underscore
 msgid "First time here?"
-msgstr ""
+msgstr "Первый раз на сайте Intellectuale?"
 
 #: lms/templates/student_account/login.underscore
 msgid "Create an Account."
-msgstr ""
+msgstr "Cоздать аккаунт."
 
 #: lms/templates/student_account/login.underscore
 msgid "Sign In"
-msgstr ""
+msgstr "Регистрация"
 
 #: lms/templates/student_account/login.underscore
 #: test_root/staticfiles/templates/student_account/login.underscore
@@ -8387,12 +8387,16 @@ msgid "Already have an account?"
 msgstr "Уже есть учётная запись?"
 
 #: lms/templates/student_account/register.underscore
+msgid "Already have an {platformName} account?"
+msgstr "Уже зарегистрированы на сайте {platformName}?"
+
+#: lms/templates/student_account/register.underscore
 msgid "Sign in."
-msgstr ""
+msgstr "Войти"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create an Account"
-msgstr ""
+msgstr "Создать аккаунт"
 
 #: lms/templates/student_account/register.underscore
 #: test_root/staticfiles/templates/student_account/register.underscore
@@ -8412,7 +8416,7 @@ msgstr "или создать новую в этом сервисе"
 
 #: lms/templates/student_account/register.underscore
 msgid "Create account"
-msgstr ""
+msgstr "Создать аккаунт"
 
 #: lms/templates/student_profile/badge.underscore
 #: test_root/staticfiles/templates/student_profile/badge.underscore
