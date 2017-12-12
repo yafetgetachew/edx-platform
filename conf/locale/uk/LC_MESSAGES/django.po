@@ -12343,6 +12343,9 @@ msgstr "Зберегти налаштування"
 msgid "Unenroll"
 msgstr "Відписатися від курсу"
 
+msgid "Unenroll Student"
+msgstr "Відписати від курсу"
+
 #: lms/templates/edit_unit_link.html
 msgid "View Unit in Studio"
 msgstr "Переглянути блок в Студії"
@@ -12383,6 +12386,9 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Enroll"
 msgstr "Зареєструватися на курс"
+
+msgid "Enroll Student"
+msgstr "Записати на курс"
 
 #: lms/templates/enroll_staff.html
 msgid "Don't enroll"
@@ -18589,7 +18595,7 @@ msgstr "Персоналу та адміністраторам"
 
 #: lms/templates/instructor/instructor_dashboard_2/send_email.html
 msgid "All (students, staff, and admins)"
-msgstr "Уусім (студентам, персоналу та адміністраторам)"
+msgstr "Усім (студентам, персоналу та адміністраторам)"
 
 #: lms/templates/instructor/instructor_dashboard_2/send_email.html
 msgid "Cohort: "
@@ -22941,8 +22947,8 @@ msgid ""
 "Course Team list."
 msgstr ""
 "На кожному курсі повинен бути адміністратор. Якщо ви адміністратор та хочете "
-"передати право власності на курс, натисніть <strong>\"Додати адміністраторський "
-"доступ\"</strong>, щоб зробити іншого користувача адміністратором. Потім попросіть "
+"передати право власності на курс, натисніть <strong>\"Додати доступ адміністратору\""
+"</strong>, щоб зробити іншого користувача адміністратором. Потім попросіть "
 "нового адміністратора вилучити вас із списку команди курсу."
 
 #: cms/templates/manage_users_lib.html
@@ -23901,6 +23907,17 @@ msgid ""
 " access settings defined here."
 msgstr ""
 
+#. Translators: Any text between {screen_reader_start} and {screen_reader_end}
+#. is only read by screen readers and never shown in the browser.
+#: cms/templates/visibility_editor.html
+msgid ""
+"{screen_reader_start}Warning:{screen_reader_end} The Unit this component is "
+"contained in is hidden from students. Visibility settings here will be "
+"trumped by this."
+msgstr ""
+"{screen_reader_start}Попередження:{screen_reader_end} блок, який містить цей "
+"компонент, прихований від студентів. Налаштування видимості будуть перезаписані."
+
 #: cms/templates/visibility_editor.html
 msgid "Access is restricted to:"
 msgstr ""
@@ -23940,6 +23957,22 @@ msgstr ""
 "Використовуйте контентні групи, щоб надати групам студентів доступ до "
 "певної частини курсу. Створіть одну чи кілька контентних груп та додайте "
 "до них певні компоненти."
+
+#: cms/templates/visibility_editor.html
+msgid "Make visible to:"
+msgstr "Зробити видимим для:"
+
+#: cms/templates/visibility_editor.html
+msgid "All Students and Staff"
+msgstr "Усі студенти і персонал"
+
+#: cms/templates/visibility_editor.html
+msgid "Specific Content Groups"
+msgstr "Конкретні контентні групи"
+
+#: cms/templates/visibility_editor.html
+msgid "Deleted Content Group"
+msgstr "Видалені контентні групи"
 
 #: cms/templates/emails/activation_email.txt
 msgid ""
@@ -24875,6 +24908,9 @@ msgstr "Ваші зміни були збережені."
 msgid "A new revision of the article was successfully added."
 msgstr "Нова версія статті була успішно додана"
 
+msgid "A new revision of the article was succesfully added."
+msgstr "Нова версія статті була успішно додана."
+
 #: wiki/views/article.py
 msgid "Restoring article"
 msgstr "Відновлення статті"
@@ -25128,3 +25164,19 @@ msgstr "Місце роботи"
 
 msgid "Position"
 msgstr "Посада"
+
+#: wiki/templates/wiki/dir.html
+msgid ""
+"\n"
+"      Browsing <strong><a href=\"%(self_url)s\">/%(path)s</a></strong>. "
+"There %(articles_plur_verb)s <strong>%(cnt)s %(articles_plur)s</strong> in this level.\n"
+"    "
+msgstr ""
+"\n"
+"      Пошук <strong><a href=\"%(self_url)s\">/%(path)s</a></strong>. "
+"Знайдено <strong>%(cnt)s статті</strong> на цьому рівні.\n"
+"    "
+
+#: wiki/templates/wiki/dir.html
+msgid "There are no articles in this level"
+msgstr "На цьому рівні немає жодної статті"

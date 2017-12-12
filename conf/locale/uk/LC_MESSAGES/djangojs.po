@@ -4331,6 +4331,18 @@ msgid "Sent By:"
 msgstr "Відправлено:"
 
 #: lms/static/js/instructor_dashboard/util.js
+msgid "myself"
+msgstr "cобі"
+
+#: lms/static/js/instructor_dashboard/util.js
+msgid "staff"
+msgstr "персонал"
+
+#: lms/static/js/instructor_dashboard/util.js
+msgid "all"
+msgstr "усі"
+
+#: lms/static/js/instructor_dashboard/util.js
 msgid "Time Sent:"
 msgstr "Час відправлення:"
 
@@ -6009,11 +6021,17 @@ msgstr "%(display_name)s налаштування"
 
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "Publish {display_name}"
-msgstr ""
+msgstr "Опублікувати {display_name}"
+
+msgid "Publish %(display_name)s"
+msgstr "Опублікувати %(display_name)s"
 
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "Publish all unpublished changes for this {item}?"
-msgstr ""
+msgstr "Опублікувати всі неопубліковані зміни для {item}?"
+
+msgid "Publish all unpublished changes for this %(item)s?"
+msgstr "Опублікувати всі неопубліковані зміни для %(item)s?"
 
 #: cms/static/js/views/modals/course_outline_modals.js
 #: cms/templates/js/course-outline.underscore
@@ -6048,6 +6066,15 @@ msgstr ""
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "Change the settings for %(display_name)s"
 msgstr "Змінити налаштування для %(display_name)s"
+
+msgid "Change the settings for section"
+msgstr "Змінити налаштування для Розділу"
+
+msgid "Change the settings for subsection"
+msgstr "Змінити налаштування для Підрозділу"
+
+msgid "Change the settings for unit"
+msgstr "Змінити налаштування для Блоку"
 
 #. Translators: "title" is the name of the current component being edited.
 #: cms/static/js/views/modals/edit_xblock.js
@@ -6213,8 +6240,8 @@ msgid ""
 "Showing %(current_item_range)s out of %(total_items_count)s, filtered by "
 "%(asset_type)s, sorted by %(sort_name)s ascending"
 msgstr ""
-"Показано %(current_item_range)s з %(total_items_count)s, профільтровано за "
-"%(asset_type)s, упорядковано за %(sort_name)s у висхідному порядку"
+"Показано %(current_item_range)s з %(total_items_count)s, профільтровано за полем "
+"\"%(asset_type)s\", упорядковано за полем \"%(sort_name)s\" у висхідному порядку"
 
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, filtered by Images, sorted by Date Added
@@ -6229,8 +6256,8 @@ msgid ""
 "Showing %(current_item_range)s out of %(total_items_count)s, filtered by "
 "%(asset_type)s, sorted by %(sort_name)s descending"
 msgstr ""
-"Показано %(current_item_range)s з %(total_items_count)s, профільтровано за "
-"%(asset_type)s, упорядковано за %(sort_name)s у низхідному порядку"
+"Показано %(current_item_range)s з %(total_items_count)s, профільтровано за полем "
+"\"%(asset_type)s\", упорядковано за полем \"%(sort_name)s\" у низхідному порядку"
 
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, sorted by Date Added ascending"
@@ -6239,15 +6266,15 @@ msgid ""
 "Showing {currentItemRange} out of {totalItemsCount}, sorted by {sortName} "
 "ascending"
 msgstr ""
-"Відображається {currentItemRange} з {totalItemsCount}, упорядковано за "
-"{sortName} у висхідному порядку"
+"Відображається {currentItemRange} з {totalItemsCount}, упорядковано за полем "
+"\"{sortName}\" у висхідному порядку"
 
 msgid ""
 "Showing %(current_item_range)s out of %(total_items_count)s, sorted by "
 "%(sort_name)s ascending"
 msgstr ""
-"Показано %(current_item_range)s з %(total_items_count)s, упорядковано за "
-"%(sort_name)s у висхідному порядку"
+"Показано %(current_item_range)s з %(total_items_count)s, упорядковано за полем "
+"\"%(sort_name)s\" у висхідному порядку"
 
 #. Translators: sample result:
 #. "Showing 0-9 out of 25 total, sorted by Date Added descending"
@@ -6256,15 +6283,15 @@ msgid ""
 "Showing {currentItemRange} out of {totalItemsCount}, sorted by {sortName} "
 "descending"
 msgstr ""
-"Відображається {currentItemRange} з {totalItemsCount}, упорядковано за "
-"{sortName} у низхідному порядку"
+"Відображається {currentItemRange} з {totalItemsCount}, упорядковано за полем "
+"\"{sortName}\" у низхідному порядку"
 
 msgid ""
 "Showing %(current_item_range)s out of %(total_items_count)s, sorted by "
 "%(sort_name)s descending"
 msgstr ""
-"Показано %(current_item_range)s з %(total_items_count)s , упорядковано за "
-"%(sort_name)s у низхідному порядку"
+"Показано %(current_item_range)s з %(total_items_count)s , упорядковано за полем "
+"\"%(sort_name)s\" у низхідному порядку"
 
 #. Translators: turns into "25 total" to be used in other sentences, e.g.
 #. "Showing 0-9 out of 25 total".
@@ -7999,7 +8026,7 @@ msgid "Learners are added to this cohort automatically."
 msgstr ""
 
 msgid "Students are added to this cohort automatically."
-msgstr ""
+msgstr "Студенти додані до цієї когорти автоматично."
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-selector.underscore
 msgid "Select a cohort"
@@ -8094,7 +8121,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
 msgid "No content-specific discussion topics exist."
-msgstr ""
+msgstr "Немає жодного обговорення конкретного контенту."
 
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Used"
@@ -9507,6 +9534,7 @@ msgstr "Неопубліковані блоки не відображатиму�
 #: cms/templates/js/course-outline.underscore
 msgid "Unpublished changes to content that will release in the future"
 msgstr ""
+"Неопубліковані зміни до контенту, який буде випущений в майбутньому"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Access to this unit is restricted to: {selectedGroupsLabel}"
@@ -9972,7 +10000,7 @@ msgstr ""
 #: cms/templates/js/list.underscore
 #, python-format
 msgid "New %(item_type)s"
-msgstr ""
+msgstr "Нова %(item_type)s"
 
 #: cms/templates/js/metadata-dict-entry.underscore
 #: cms/templates/js/metadata-file-uploader-entry.underscore
@@ -10080,11 +10108,11 @@ msgstr "Опубліковане та доступне студентам"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Published (not yet released)"
-msgstr ""
+msgstr "Опубліковано (ще не випущено)"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Draft (Unpublished changes)"
-msgstr ""
+msgstr "Чернетка (Неопубліковані зміни)"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Release:"
@@ -10114,19 +10142,19 @@ msgstr ""
 #: cms/templates/js/publish-xblock.underscore
 #, python-format
 msgid "with %(release_date_from)s"
-msgstr "для %(release_date_from)s"
+msgstr "%(release_date_from)s"
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Is Visible To:"
 msgstr "Видимо для:"
 
 #: cms/templates/js/publish-xblock.underscore
-msgid "Will Be Visible To:"
+msgid "Will с:"
 msgstr "Буде видимо для: "
 
 #: cms/templates/js/publish-xblock.underscore
 msgid "Staff Only"
-msgstr ""
+msgstr "Тількі персонал"
 
 #: cms/templates/js/publish-xblock.underscore
 #, python-format
@@ -10154,6 +10182,10 @@ msgstr "Персонал та студенти"
 #: cms/templates/js/publish-xblock.underscore
 msgid "Note: Do not hide graded assignments after they have been released."
 msgstr ""
+
+#: cms/templates/js/publish-xblock.underscore
+msgid "Will Be Visible To:"
+msgstr "Буде видимий для:"
 
 #: cms/templates/js/release-date-editor.underscore
 msgid "Release Date and Time"
@@ -10349,9 +10381,15 @@ msgstr ""
 msgid "Add {role} Access"
 msgstr "Додати доступ для {role}"
 
+msgid "Add Admin Access"
+msgstr "Додати доступ адміністратору"
+
 #: cms/templates/js/team-member.underscore
 msgid "Remove {role} Access"
 msgstr "Видалити доступ для {role}"
+
+msgid "Remove Admin Access"
+msgstr "Видалити доступ адміністратора"
 
 #: cms/templates/js/team-member.underscore
 msgid "Delete the user, {username}"
@@ -10527,6 +10565,10 @@ msgid ""
 "another version. These URLs cannot be YouTube URLs. The first listed video "
 "that's compatible with the student's computer will play."
 msgstr ""
+"Щоб переконатися, що всі студенти можуть отримати доступ до цього відео, "
+"рекомендуємо надати як відео .mp4, так і .webm. Натисніть нижче, щоб додати "
+"URL-адресу для іншої версії. Ці URL-адреси не можуть бути URL-адресами YouTube. "
+"В ідтворюватиметься перше відео зі списку, яке сумісне із комп'ютером студента."
 
 #: cms/templates/js/video/transcripts/metadata-videolist-entry.underscore
 msgid "Default Timed Transcript"
@@ -10732,6 +10774,17 @@ msgstr ""
 msgid "Your email was successfully queued for sending."
 msgstr "Ваш електронний лист успішно поставлений в чергу для відправки."
 
+#: lms/static/coffee/src/instructor_dashboard/send_email.js
+msgid ""
+"Your email was successfully queued for sending. Please note that for large "
+"classes, it may take up to an hour (or more, if other courses are "
+"simultaneously sending email) to send all emails."
+msgstr ""
+"Ваш лист був успішно поставлений в чергу на відправлення. Будь ласка, "
+"зверніть увагу, що для великих класів може знадобитись до години часу (або "
+"більше, якщо інші курси паралельно відправляють листи), щоб відправити всі "
+"листи."
+
 #: lms/templates/instructor/instructor_dashboard_2/send_email.html
 msgid "Myself"
 msgstr "Собі"
@@ -10746,4 +10799,5 @@ msgstr ""
 
 msgid "Sorry"
 msgstr "Вибачте"
+
 

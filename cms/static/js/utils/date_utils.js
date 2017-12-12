@@ -1,4 +1,4 @@
-define(["jquery", "date", "jquery.ui", "jquery.timepicker"], function($, date) {
+define(["jquery", "date", "jquery.ui", "jquery.timepicker", "datepicker-uk"], function($, date) {
     var getDate = function (datepickerInput, timepickerInput) {
         // given a pair of inputs (datepicker and timepicker), return a JS Date
         // object that corresponds to the datetime.js that they represent. Assume

@@ -40,6 +40,7 @@ require.config({
         "jquery.immediateDescendents": "coffee/src/jquery.immediateDescendents",
         "datepair": "js/vendor/timepicker/datepair",
         "date": "js/vendor/date",
+        "datepicker-uk": "js/vendor/datepicker-uk",
         "moment": "js/vendor/moment.min",
         "moment-with-locales": "js/vendor/moment-with-locales.min",
         "text": 'js/vendor/requirejs/text',
@@ -104,6 +105,9 @@ require.config({
         "jquery.ui": {
             deps: ["jquery"],
             exports: "jQuery.ui"
+        },
+        "datepicker-uk": {
+            deps: ["jquery.ui"]
         },
         "jquery.form": {
             deps: ["jquery"],

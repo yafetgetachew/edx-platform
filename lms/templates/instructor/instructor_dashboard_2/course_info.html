@@ -91,7 +91,10 @@
 
     <li class="field text is-not-editable" id="field-grade-cutoffs">
       <label for="start-date">${_("Grade Cutoffs:")}</label>
-      <b>${ section_data['grade_cutoffs'] }</b>
+      <% grade_cutoffs_split = section_data['grade_cutoffs'].split(':') %>
+      %if len(grade_cutoffs_split) == 2:
+        <b>${_(grade_cutoffs_split[0]) }: ${ grade_cutoffs_split[1] }</b>
+      %endif
     </li>
   </ul>
 
