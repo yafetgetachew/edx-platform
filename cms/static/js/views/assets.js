@@ -262,7 +262,7 @@ define(["jquery", "underscore", "gettext", "js/views/baseview", "js/models/asset
                         titleText.text(titleText.data('alllabel'));
                     }
                     else {
-                        titleText.text(assettype);
+                        titleText.text(gettext(assettype));
                     }
                 }
                 if ($subnav.hasClass('is-shown')) {

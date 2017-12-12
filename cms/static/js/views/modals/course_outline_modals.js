@@ -110,10 +110,26 @@ define(['jquery', 'backbone', 'underscore', 'gettext', 'js/views/baseview',
         },
 
         getIntroductionMessage: function () {
-            return interpolate(
-                gettext('Change the settings for %(display_name)s'),
-                { display_name: this.model.get('display_name') }, true
-            );
+            var that = this;
+            var display_name = that.model.get('display_name');
+            if (display_name  == 'Розділ') {
+                return interpolate(
+                    gettext('Change the settings for section'), true
+                );
+            } else if (display_name  == 'Підрозділ') {
+                return interpolate(
+                    gettext('Change the settings for subsection'), true
+                );
+            } else if (display_name  == 'Блок') {
+                return interpolate(
+                    gettext('Change the settings for unit'), true
+                );
+            } else {
+                return interpolate(
+                    gettext('Change the settings for %(display_name)s'),
+                    { display_name: this.model.get('display_name') }, true
+                );
+            }
         }
     });
 
