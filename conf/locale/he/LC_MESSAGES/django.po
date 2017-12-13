@@ -24280,3 +24280,8 @@ msgstr "גרסה חדשה נוצרה: מיזוג בין גרסה #%(r1)d וגר�
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Activate Your {platform_name} Account"
 msgstr "להפעלת חשבונך בפלטפורמת הקורס המקוונת"
+
+#: /edx/app/edxapp/themes/hasa-dna-ficus/lms/templates/index.html
+msgid "TIPS FOR BETTER TIME MANAGEMENT"
+msgstr "תקציביזם – אקטיביסטים משפיעים על התקציב"
+
