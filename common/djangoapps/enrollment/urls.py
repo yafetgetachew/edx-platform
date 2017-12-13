@@ -11,6 +11,8 @@ from .views import (
     EnrollmentCourseDetailView
 )
 
+from .submission_history_api import SubmissionHistoryView
+
 
 urlpatterns = patterns(
     'enrollment.views',
@@ -33,3 +35,7 @@ urlpatterns = patterns(
         name='courseenrollmentdetails'
     ),
 )
+
+urlpatterns += [
+    url(r'^submission_history$', SubmissionHistoryView.as_view()),
+]
