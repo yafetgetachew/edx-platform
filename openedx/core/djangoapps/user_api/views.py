@@ -453,7 +453,7 @@ class RegistrationView(APIView):
         )
 
     def _add_interested_topic_field(self, form_desc, required=False):
-        label = _(u"What specific topics related to civil resistance are you interested in?")
+        label = _(u"List civil resistance topics of interest to you")
 
         form_desc.add_field(
             "interested_topic",
