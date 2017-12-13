@@ -186,6 +186,7 @@ class AccountCreationForm(forms.Form):
             "country": _("A country is required"),
             "prefix": _("A prefix is required"),
             "hear_details": _("Please specify how did you hear about ICNC online courses"),
+            "confirm_email": _("Please retype your email address"),
         }
 
         for field_name, field_value in extra_fields.items():
@@ -267,6 +268,17 @@ class AccountCreationForm(forms.Form):
                 ).format(email=email)
             )
         return email
+
+    def clean_confirm_email(self):
+        email = self.cleaned_data["email"]
+        confirm_email = self.cleaned_data["confirm_email"]
+        if email != confirm_email:
+            raise ValidationError(
+                _(
+                    "Email confirmation does not match to email field."
+                ).format(email=email)
+            )
+        return True
 
     def clean_year_of_birth(self):
         """

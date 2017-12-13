@@ -177,7 +177,7 @@ class LoginSessionView(APIView):
 class RegistrationView(APIView):
     """HTTP end-points for creating a new user. """
 
-    DEFAULT_FIELDS = ["email", "name", "prefix", "custom_prefix", "gender", "username", "password"]
+    DEFAULT_FIELDS = ["email", "confirm_email", "name", "prefix", "custom_prefix", "gender", "username", "password"]
 
     EXTRA_FIELDS = [
         "city_of_residence",
@@ -381,6 +381,17 @@ class RegistrationView(APIView):
         response = JsonResponse({"success": True})
         set_logged_in_cookies(request, response, user)
         return response
+
+
+    def _add_confirm_email_field(self, form_desc, required=True):
+        label = _(u"Please retype your email address")
+        options = [(name, _(title)) for name, title in UserProfile.PREFIX_CHOICES]
+
+        form_desc.add_field(
+            "confirm_email",
+            label=label,
+            required=required
+        )
 
     def _add_prefix_field(self, form_desc, required=True):
         label = _(u"Prefix")
