@@ -202,10 +202,10 @@ class VerifiedUpgradeDeadlineDate(DateSummary):
     css_class = 'verified-upgrade-deadline'
     title = ugettext_lazy('Verification Upgrade Deadline')
     description = ugettext_lazy(
-        'You are still eligible to upgrade to a Verified Certificate! '
+        'You are still eligible to upgrade to a Verified! '
         'Pursue it to highlight the knowledge and skills you gain in this course.'
     )
-    link_text = ugettext_lazy('Upgrade to Verified Certificate')
+    link_text = ugettext_lazy('Upgrade to Verified')
 
     @property
     def link(self):

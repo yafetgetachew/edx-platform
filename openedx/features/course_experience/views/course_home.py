@@ -1,7 +1,6 @@
 """
 Views for the course home page.
 """
-
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
 from django.template.loader import render_to_string
@@ -14,6 +13,8 @@ from web_fragments.fragment import Fragment
 from courseware.courses import get_course_info_section, get_course_with_access
 from lms.djangoapps.courseware.views.views import CourseTabView
 from openedx.core.djangoapps.plugin_api.views import EdxFragmentView
+from student.models import CourseEnrollment
+from ospp_api import utils as ospp_utils
 from util.views import ensure_valid_course_key
 
 from ..utils import get_course_outline_block_tree
@@ -35,6 +36,14 @@ class CourseHomeView(CourseTabView):
         """
         Displays the home page for the specified course.
         """
+        # NOTE(OSPP Feature) Check whether user is sponsored by the partner
+        course_enrollment = CourseEnrollment.objects.filter(course_id__icontains=course_id, user=request.user).last()
+        if course_enrollment and course_enrollment.mode != 'verified':
+            eligible, verify_id_free = ospp_utils.student_is_verified(request.user.id)
+            if eligible and verify_id_free:
+                course_enrollment.mode = 'verified'
+                course_enrollment.save()
+
         return super(CourseHomeView, self).get(request, course_id, 'courseware', **kwargs)
 
     def render_to_fragment(self, request, course=None, tab=None, **kwargs):

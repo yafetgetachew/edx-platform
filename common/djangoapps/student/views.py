@@ -88,6 +88,7 @@ from openedx.core.djangoapps.user_api.preferences import api as preferences_api
 from openedx.core.djangolib.markup import HTML
 from openedx.features.course_experience import course_home_url_name
 from openedx.features.enterprise_support.api import get_dashboard_consent_notification
+from ospp_api import utils as ospp_utils
 from shoppingcart.api import order_history
 from shoppingcart.models import CourseRegistrationCode, DonationConfiguration
 from student.cookies import delete_logged_in_cookies, set_logged_in_cookies, set_user_info_cookie
@@ -655,6 +656,15 @@ def dashboard(request):
     course_org_filter = configuration_helpers.get_current_site_orgs()
     if course_org_filter:
         org_filter_out_set = org_filter_out_set - set(course_org_filter)
+
+    # NOTE(OSPP Feature) Check whether user is sponsored by the partner
+    eligible, verify_id_free = ospp_utils.student_is_verified(user.id)
+    course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
+    if eligible and verify_id_free:
+        for enrollment in course_enrollments:
+            if enrollment.mode != 'verified':
+                enrollment.mode = 'verified'
+                enrollment.save()
 
     # Build our (course, enrollment) list for the user, but ignore any courses that no
     # longer exist (because the course IDs have changed). Still, we don't delete those
