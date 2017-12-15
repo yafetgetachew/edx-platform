@@ -15,7 +15,7 @@ class CertificateSerializer(serializers.ModelSerializer):
         fields = ('username', 'user_fullname', 'course_id', 'course_title',
                   'download_url', 'certificate_url', 'uuid', 'profile_image',
                   'status', 'mode', 'name', 'created_date',
-                  'modified_date', 'error_reason','grade',
+                  'modified_date', 'error_reason','grade', 'grade_cutoffs',
                   'grade_summary',)
 
     username = serializers.SerializerMethodField()
@@ -25,6 +25,10 @@ class CertificateSerializer(serializers.ModelSerializer):
     profile_image = serializers.SerializerMethodField()
     grade_summary = serializers.SerializerMethodField()
     course_title = serializers.SerializerMethodField()
+    grade_cutoffs = serializers.SerializerMethodField()
+
+    def _get_course(self, course_id):
+        return get_course_by_id(course_id, depth=2)
 
     def get_profile_image(self, cert):
         return get_profile_image_urls_for_user(cert.user)
@@ -37,13 +41,14 @@ class CertificateSerializer(serializers.ModelSerializer):
 
     def get_grade_summary(self, cert):
         with modulestore().bulk_operations(cert.course_id):
-            course = get_course_by_id(cert.course_id, depth=2)
-            course_grade = CourseGradeFactory().create(cert.user, course)
+            course_grade = CourseGradeFactory().create(cert.user, self._get_course(cert.course_id))
             return course_grade.summary
 
     def get_course_title(self, cert):
-        course = get_course_by_id(cert.course_id, depth=2)
-        return course.display_name
+        return self._get_course(cert.course_id).display_name
+
+    def get_grade_cutoffs(self, cert):
+        return self._get_course(cert.course_id).grade_cutoffs
 
 class CertificateViewSet(viewsets.ReadOnlyModelViewSet):
     lookup_field = 'verify_uuid'
