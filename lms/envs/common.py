@@ -3221,3 +3221,17 @@ COURSES_API_CACHE_TIMEOUT = 3600  # Value is in seconds
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = LOW_PRIORITY_QUEUE
+
+# For enabling tracking
+TRACKING_BACKENDS['ossp_tracking'] = {
+    'ENGINE': 'ospp_api.backends.tracking.TrackingBackend'
+}
+
+EVENT_TRACKING_BACKENDS['ossp_tracking'] = {
+    'ENGINE': 'ospp_api.backends.tracking.TrackingBackend'
+}
+
+ASU_TRACKER_BUFFER_SIZE = 10
+ASU_TRACKER_BUFFER_LIFE_TIME = 120
+ASU_API_URL = 'https://qr0vf9lwi5.execute-api.us-east-2.amazonaws.com/dev'
+ASU_API_KEY = 'TqTWwPtNjO7VTpWmstEA79AfEgyxL5vO1PTvwBnt'
