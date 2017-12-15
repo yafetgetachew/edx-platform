@@ -12,7 +12,7 @@ from xmodule.modulestore.django import modulestore
 class CertificateSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = GeneratedCertificate
-        fields = ('username', 'user_fullname', 'course_id',
+        fields = ('username', 'user_fullname', 'course_id', 'course_title',
                   'download_url', 'certificate_url', 'uuid', 'profile_image',
                   'status', 'mode', 'name', 'created_date',
                   'modified_date', 'error_reason','grade',
@@ -24,6 +24,7 @@ class CertificateSerializer(serializers.ModelSerializer):
     uuid = serializers.CharField(source='verify_uuid')
     profile_image = serializers.SerializerMethodField()
     grade_summary = serializers.SerializerMethodField()
+    course_title = serializers.SerializerMethodField()
 
     def get_profile_image(self, cert):
         return get_profile_image_urls_for_user(cert.user)
@@ -40,6 +41,9 @@ class CertificateSerializer(serializers.ModelSerializer):
             course_grade = CourseGradeFactory().create(cert.user, course)
             return course_grade.summary
 
+    def get_course_title(self, cert):
+        course = get_course_by_id(cert.course_id, depth=2)
+        return course.display_name
 
 class CertificateViewSet(viewsets.ReadOnlyModelViewSet):
     lookup_field = 'verify_uuid'
