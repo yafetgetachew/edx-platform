@@ -33,7 +33,7 @@ class CertificateSerializer(serializers.ModelSerializer):
         return cert.user.username
 
     def get_user_fullname(self, cert):
-        return cert.user.profile.name or cert.user.get_fullname()
+        return cert.user.profile.name or cert.user.get_full_name()
 
     def get_grade_summary(self, cert):
         with modulestore().bulk_operations(cert.course_id):
