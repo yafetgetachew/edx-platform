@@ -11,6 +11,8 @@ def student_is_verified(user_id):
         'x-api-key': getattr(settings, 'ASU_API_KEY', '')
     }
     student_status = requests.get(url, headers=headers).json()
-    eligible = student_status.get('eligibilityStatus') == 'true'
-    verify_id_free = int(student_status.get('benefitType', 0)) in (1, 2)
-    return eligible, verify_id_free
+    if isinstance(student_status, dict):
+        eligible = student_status.get('eligibilityStatus') == 'true'
+        verify_id_free = int(student_status.get('benefitType', 0)) in (1, 2)
+        return eligible, verify_id_free
+    return False, False
