@@ -14,7 +14,8 @@ log = logging.getLogger(__name__)
 
 def add_verify_status(statistic_map):
     from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification
-    for (username, course_id), data in statistic_map.iteritems():
+    for statistic_id, data in statistic_map.iteritems():
+        username, course_id = statistic_id.split(':', 1)
         cache_key = 'ospp_verify_user_stat_' + username
         status = cache.get(cache_key)
         if not status:
