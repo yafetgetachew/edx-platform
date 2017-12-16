@@ -610,6 +610,7 @@ class GitLogs(TemplateView):
                 mongo_db[config_item] = settings.MONGODB_LOG.get(
                     config_item, mongo_db[config_item])
 
+        mongo_db['host'] = ','.join(mongo_db['host'])
         mongouri = 'mongodb://{user}:{password}@{host}/{db}'.format(**mongo_db)
 
         error_msg = ''
