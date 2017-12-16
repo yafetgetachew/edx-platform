@@ -1,12 +1,15 @@
 """
 Views for the course home page.
 """
+import logging
+
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
 from django.template.loader import render_to_string
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_control
 from django.views.decorators.csrf import ensure_csrf_cookie
+from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from web_fragments.fragment import Fragment
 
@@ -23,6 +26,8 @@ from .course_outline import CourseOutlineFragmentView
 from .course_sock import CourseSockFragmentView
 from .welcome_message import WelcomeMessageFragmentView
 
+log = logging.getLogger(__name__)
+
 
 class CourseHomeView(CourseTabView):
     """
@@ -37,12 +42,18 @@ class CourseHomeView(CourseTabView):
         Displays the home page for the specified course.
         """
         # NOTE(OSPP Feature) Check whether user is sponsored by the partner
-        course_enrollment = CourseEnrollment.objects.filter(course_id__icontains=course_id, user=request.user).last()
-        if course_enrollment and course_enrollment.mode != 'verified':
-            eligible, verify_id_free = ospp_utils.student_is_verified(request.user.id)
-            if eligible and verify_id_free:
-                course_enrollment.mode = 'verified'
-                course_enrollment.save()
+        try:
+            enrollment_course_id = CourseKey.from_string(course_id)
+            course_enrollment = CourseEnrollment.objects.get(course_id=enrollment_course_id, user=request.user)
+            if course_enrollment and course_enrollment.mode != 'verified':
+                eligible, verify_id_free = ospp_utils.student_is_verified(request.user.id)
+                if eligible and verify_id_free:
+                    course_enrollment.mode = 'verified'
+                    course_enrollment.save()
+        except (InvalidKeyError, CourseEnrollment.DoesNotExist) as err:
+            log.warning(
+                "Cannot provide student ckecking for eligibility and partner benefits, the Error is: {}".format(err)
+            )
 
         return super(CourseHomeView, self).get(request, course_id, 'courseware', **kwargs)
 

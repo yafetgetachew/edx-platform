@@ -1,12 +1,10 @@
+from abc import ABCMeta, abstractmethod
+from datetime import datetime as dt
 import logging
 
-from abc import ABCMeta, abstractmethod
-
-import ospp_api.tasks as celery_task
-from threading import Lock
 from django.conf import settings
-from datetime import datetime as dt
 
+from ospp_api import tasks as celery_task
 from track.backends import BaseBackend
 
 log = logging.getLogger(__name__)
@@ -63,7 +61,11 @@ class StatisticProcessor(object):
 class LastLoginStaticsOperator(StatisticProcessor):
 
     def is_can_process(self, event):
-        course_id = event['context']['course_id']
+        try:
+            course_id = event['context']['course_id']
+        except KeyError:
+            log.warning("Cannot process the event: {}".format(event))
+            return False
         return course_id is not None and len(course_id) > 0
 
     def process(self, event):
@@ -71,11 +73,11 @@ class LastLoginStaticsOperator(StatisticProcessor):
             'lastLoginInCourse': self.get_event_timestamp(event).strftime("%Y-%m-%d %H:%M:%S")
         }
 
+
 class TrackingBackend(BaseBackend):
 
     def __init__(self, **kwargs):
         super(TrackingBackend, self).__init__(**kwargs)
-        self.mutex = Lock()
 
         self.max_statistic_buffer_size = getattr(settings, 'ASU_TRACKER_BUFFER_SIZE', 10)
         self.max_statistic_buffer_life_time = getattr(settings, 'ASU_TRACKER_BUFFER_LIFE_TIME', 60)
@@ -88,23 +90,25 @@ class TrackingBackend(BaseBackend):
         self.last_statistic_submit = dt.now()
 
     def send(self, event):
-        # log.error(event)
         for processor in self.statistic_processors:
             if processor.is_can_process(event):
                 body = processor.process(event)
                 course_id = event['context']['course_id']
                 username = StatisticProcessor.get_event_user(event)
                 statistic_id = (username, course_id)
-                self.mutex.acquire()
                 if statistic_id in self.statistic:
                     self.statistic[statistic_id].update(body)
                 else:
                     self.statistic[statistic_id] = body
                     self.statistic_item_count += 1
-                if (self.statistic_item_count > self.max_statistic_buffer_size
-                        or (dt.now()-self.last_statistic_submit).seconds > self.max_statistic_buffer_life_time):
+                if (
+                    self.statistic_item_count > self.max_statistic_buffer_size
+                    or (
+                        (dt.now()-self.last_statistic_submit).seconds > self.max_statistic_buffer_life_time
+                        and self.statistic
+                    )
+                ):
                     self.send_statistic()
-                self.mutex.release()
 
     def send_statistic(self):
         self.statistic_item_count = 0

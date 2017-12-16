@@ -1,14 +1,13 @@
 """
 Asynchronous tasks for the CCX app.
 """
-
 import logging
 import requests
+
 from django.conf import settings
+from django.core.cache import cache
 
 from lms import CELERY_APP
-
-from django.core.cache import cache
 
 log = logging.getLogger(__name__)
 
@@ -22,8 +21,8 @@ def add_verify_status(statistic_map):
             status = SoftwareSecurePhotoVerification.objects.filter(
                     user__username=username,
                     status=SoftwareSecurePhotoVerification.STATUS.approved
-            ).values_list('status_changed', flat=True)
-        if len(status) > 0:
+            ).values_list('updated_at', flat=True)
+        if status:
             data['idVerify'] = 'Y'
             data['idVerifyDate'] = status[0].strftime("%Y-%m-%d %H:%M:%S")
             cache.set(cache_key, status)
@@ -33,16 +32,15 @@ def add_verify_status(statistic_map):
 def send_statistic(statistic_map):
     add_verify_status(statistic_map)
     log.info("receive statistic map" + str(statistic_map))
-    statistic_list = [
+    statistic_list = []
+    for (username, course_id), data in statistic_map.iteritems():
         data.update({
             'asuRite': username,
             "courseInfo": {
                 "openEdxCourseId": course_id,
             }
-
-        }) or data
-        for (username, course_id), data in statistic_map.iteritems()
-    ]
+        })
+        statistic_list.append(data)
     url = getattr(settings, 'ASU_API_URL', '') + "/api/enrollments"
     headers = {
         'Content-Type': 'application/json',
