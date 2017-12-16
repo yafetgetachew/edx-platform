@@ -33,7 +33,8 @@ def send_statistic(statistic_map):
     add_verify_status(statistic_map)
     log.info("receive statistic map" + str(statistic_map))
     statistic_list = []
-    for (username, course_id), data in statistic_map.iteritems():
+    for statistic_id, data in statistic_map.iteritems():
+        username, course_id = statistic_id.split(':', 1)
         data.update({
             'asuRite': username,
             "courseInfo": {
