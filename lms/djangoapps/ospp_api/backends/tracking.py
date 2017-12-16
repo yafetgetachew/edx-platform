@@ -95,7 +95,7 @@ class TrackingBackend(BaseBackend):
                 body = processor.process(event)
                 course_id = event['context']['course_id']
                 username = StatisticProcessor.get_event_user(event)
-                statistic_id = (username, course_id)
+                statistic_id = '{}:{}'.format(username, course_id)
                 if statistic_id in self.statistic:
                     self.statistic[statistic_id].update(body)
                 else:
