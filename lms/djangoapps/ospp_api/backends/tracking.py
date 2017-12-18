@@ -3,6 +3,9 @@ from datetime import datetime as dt
 import logging
 
 from django.conf import settings
+from django.contrib.auth.models import User
+from opaque_keys import InvalidKeyError
+from opaque_keys.edx.keys import CourseKey
 
 from ospp_api import tasks as celery_task
 from track.backends import BaseBackend
@@ -58,7 +61,7 @@ class StatisticProcessor(object):
         return event['context']['username']
 
 
-class LastLoginStaticsOperator(StatisticProcessor):
+class LastLoginStaticsProcessor(StatisticProcessor):
 
     def is_can_process(self, event):
         try:
@@ -74,6 +77,21 @@ class LastLoginStaticsOperator(StatisticProcessor):
         }
 
 
+class GradeStaticsProcessor(StatisticProcessor):
+
+    def is_can_process(self, event):
+        return (
+                self.get_event_name(event) == 'problem_check'
+                and 'event' in event
+                and event['event']['success'] == 'correct'
+        )
+
+    def process(self, event):
+        return {
+            'finalGrade': 'need calculation'
+        }
+
+
 class TrackingBackend(BaseBackend):
 
     def __init__(self, **kwargs):
@@ -82,7 +100,8 @@ class TrackingBackend(BaseBackend):
         self.max_statistic_buffer_size = getattr(settings, 'ASU_TRACKER_BUFFER_SIZE', 10)
         self.max_statistic_buffer_life_time = getattr(settings, 'ASU_TRACKER_BUFFER_LIFE_TIME', 60)
         self.statistic_processors = [
-            LastLoginStaticsOperator(),
+            LastLoginStaticsProcessor(),
+            GradeStaticsProcessor(),
         ]
 
         self.statistic = {}
@@ -93,9 +112,11 @@ class TrackingBackend(BaseBackend):
         for processor in self.statistic_processors:
             if processor.is_can_process(event):
                 body = processor.process(event)
+                if not body:
+                    continue
                 course_id = event['context']['course_id']
                 username = StatisticProcessor.get_event_user(event)
-                statistic_id = '{}:{}'.format(username, course_id)
+                statistic_id = '{}::{}'.format(username, course_id)
                 if statistic_id in self.statistic:
                     self.statistic[statistic_id].update(body)
                 else:
@@ -116,3 +137,4 @@ class TrackingBackend(BaseBackend):
         self.last_statistic_submit = dt.now()
         self.statistic = {}
         celery_task.send_statistic.delay(data_for_send)
+
