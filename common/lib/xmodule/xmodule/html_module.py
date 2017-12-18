@@ -426,7 +426,8 @@ class HtmlDescriptor(HtmlBlock, XmlDescriptor, EditingDescriptor):  # pylint: di
 
         return {'last_modified': last_modified,
                 'html_data': html_data,
-                'size': size}
+                'size': size,
+                'icon_class': self.icon_class}
 
 
 class AboutFields(object):
