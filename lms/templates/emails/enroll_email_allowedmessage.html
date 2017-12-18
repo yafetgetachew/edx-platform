@@ -3,7 +3,7 @@
 
 <%block name="message">
 <p>
-${_("Dear student,")}
+${_("Dear learner,")}
 </p>
 <p>
 ${_("You have been invited to join {course_name} at {site_name} by a "
@@ -24,31 +24,37 @@ ${_("To access the course visit {course_about_url} and register for the course."
 % endif
 % else:
 
-${_("To finish your registration, please visit {registration_url} and fill "
-	"out the registration form making sure to use {email_address} in the E-mail field.").format(
-		registration_url=registration_url,
-		email_address=email_address
-	)}
-<p>
-% if auto_enroll:
-${_("Once you have registered and activated your account, you will see "
-	"{course_name} listed on your dashboard.").format(
-		course_name=display_name or course.display_name_with_default_escaped
-	)}
-% elif course_about_url is not None:
-${_("Once you have registered and activated your account, visit {course_about_url} "
-	"to join the course.").format(course_about_url=course_about_url)}
-% else:
-${_("You can then enroll in {course_name}.").format(course_name=display_name or course.display_name_with_default_escaped)}
+${_("To finish your registration, please complete the following steps:")}  
+    <ol>
+      <li>
+          ${_("Visit {registration_url} and <b>fill out the registration form</b>. "
+              "Make sure to use your correct {email_address} in the E-mail field "
+              "on the registration form.").format(
+                  registration_url=registration_url,
+                  email_address=email_address
+              )}
+      </li>
+      <li>
+          ${_("<b>After registering</b>, you will automatically receive an email "
+              "from {email_address} with an <b>activation link</b>. "
+              "This will be sent to the email address that you registered with. "
+              "If you do not see the activation email in your mailbox please check your spam folder.").format(
+                  email_address=from_email_address
+              )}
+      </li>
+      <li>
+          ${_("<b>Click</b> on the activation link to be taken to your Dashboard in order to join the course. "
+              "Once in the Dashboard, you will see {course_name}. Click on the course to access it.").format(
+                  course_name=display_name or course.display_name_with_default_escaped
+              )}
+      </li>
+    </ol>
 % endif
 </p>
-% endif
-</p>
 <p>
-<hr />
-${_("This email was automatically sent from {site_name} to "
-	"{email_address}").format(
-		site_name=site_name, email_address=email_address
-	)}
+<br />
+${_("If you have any problems with these registration steps, please email: {email_address}").format(
+        email_address=from_email_address
+    )}
 </p>
 </%block>

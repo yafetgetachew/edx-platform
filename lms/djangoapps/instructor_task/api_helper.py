@@ -98,7 +98,8 @@ def _get_xmodule_instance_args(request, task_id):
                         'nationality',
                         'hear',
                         'hear_details',
-                        'interested_topic'
+                        'interested_topic',
+                        'date_joined'
                     ]}
 
     xmodule_instance_args = {'xqueue_callback_url_prefix': get_xqueue_callback_url_prefix(request),

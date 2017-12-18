@@ -31,7 +31,7 @@ from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 
-STUDENT_FEATURES = ('id', 'username', 'first_name', 'last_name', 'is_staff', 'email')
+STUDENT_FEATURES = ('id', 'username', 'first_name', 'last_name', 'is_staff', 'email', 'date_joined')
 PROFILE_FEATURES = ('name', 'language', 'location', 'year_of_birth', 'gender',
                     'level_of_education', 'mailing_address', 'goals', 'meta',
                     'city', 'country', 'prefix', 'city_of_residence', 'country_of_residence',

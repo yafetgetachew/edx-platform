@@ -666,7 +666,6 @@ section.self-assessment {
   }
 }
 
-
 /*
  * CodeMirror color contrast overrides
  * (so we don't change the vendor file)
@@ -677,4 +676,11 @@ section.self-assessment {
     .CodeMirror-linenumber.CodeMirror-gutter-elt {
         color: $gray-d3 !important;
     }
+}
+
+a.jitsi-link div {
+    background: url('#{$static-path}/images/join.png') center no-repeat;
+    height: 90px;
+    width: auto;
+    background-size: contain;
 }

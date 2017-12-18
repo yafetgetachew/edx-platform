@@ -1053,9 +1053,17 @@ def upload_students_csv(_xmodule_instance_args, _entry_id, course_id, task_input
     task_progress.attempted = task_progress.succeeded = len(rows)
     task_progress.skipped = task_progress.total - task_progress.attempted
 
-    header[-3] = 'How hear about online courses'
-    header[-2] = 'How hear about online courses(details)'
-    rows.insert(0, header)
+    new_header = []
+    for title in header:
+        if title == 'hear':
+            title = 'How hear about online courses'
+        elif title == 'hear_details':
+            title = 'How hear about online courses(details)'
+        elif title == 'date_joined':
+            title = 'date_of_registration'
+        new_header.append(title)
+
+    rows.insert(0, new_header)
 
     current_step = {'step': 'Uploading CSV'}
     task_progress.update_task_state(extra_meta=current_step)

@@ -1207,7 +1207,8 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'nationality',
         'hear',
         'hear_details',
-        'interested_topic'
+        'interested_topic',
+        'date_joined'
     )
 
     # Allow for sites to be able to define additional columns.
@@ -1253,7 +1254,8 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'nationality': _('Nationality'),
         'hear': _('How Did You Hear About ICNC Online Courses?'),
         'hear_details': _('How did you hear about ICNC online courses?(details)'),
-        'interested_topic': _('Interested Topic')
+        'interested_topic': _('Interested Topic'),
+        'date_joined': _('Date Of Registration')
     }
 
     if is_course_cohorted(course.id):

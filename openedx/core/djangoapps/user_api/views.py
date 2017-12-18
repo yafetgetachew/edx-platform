@@ -177,7 +177,7 @@ class LoginSessionView(APIView):
 class RegistrationView(APIView):
     """HTTP end-points for creating a new user. """
 
-    DEFAULT_FIELDS = ["email", "name", "prefix", "custom_prefix", "gender", "username", "password"]
+    DEFAULT_FIELDS = ["email", "confirm_email", "name", "prefix", "custom_prefix", "gender", "username", "password"]
 
     EXTRA_FIELDS = [
         "city_of_residence",
@@ -382,6 +382,17 @@ class RegistrationView(APIView):
         set_logged_in_cookies(request, response, user)
         return response
 
+
+    def _add_confirm_email_field(self, form_desc, required=True):
+        label = _(u"Please retype your email address")
+        options = [(name, _(title)) for name, title in UserProfile.PREFIX_CHOICES]
+
+        form_desc.add_field(
+            "confirm_email",
+            label=label,
+            required=required
+        )
+
     def _add_prefix_field(self, form_desc, required=True):
         label = _(u"Prefix")
         options = [(name, _(title)) for name, title in UserProfile.PREFIX_CHOICES]
@@ -395,7 +406,7 @@ class RegistrationView(APIView):
         )
 
     def _add_custom_prefix_field(self, form_desc, required=False):
-        label = _(u"If other, please specify here")
+        label = _(u"If Prefix was \"Other\", please specify here")
 
         form_desc.add_field(
             "custom_prefix",
@@ -439,6 +450,7 @@ class RegistrationView(APIView):
             field_type="select",
             options=options,
             label=label,
+            include_default_option=True,
             required=required
         )
 
@@ -452,7 +464,7 @@ class RegistrationView(APIView):
         )
 
     def _add_interested_topic_field(self, form_desc, required=False):
-        label = _(u"What specific topics related to civil resistance are you interested in?")
+        label = _(u"List civil resistance topics of interest to you")
 
         form_desc.add_field(
             "interested_topic",
