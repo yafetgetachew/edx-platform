@@ -691,18 +691,26 @@ class SoftwareSecurePhotoVerification(PhotoVerification):
             self.save()
             return
 
-        aes_key = random_aes_key()
-        rsa_key_str = settings.VERIFY_STUDENT["SOFTWARE_SECURE"]["RSA_PUBLIC_KEY"]
-        rsa_encrypted_aes_key = rsa_encrypt(aes_key, rsa_key_str)
+        # NOTE(OSPP changes) Change images encrypting for manual student verification
+        aes_key_str = settings.VERIFY_STUDENT["SOFTWARE_SECURE"]["FACE_IMAGE_AES_KEY"]
+        aes_key = aes_key_str.decode("hex")
 
-        # Save this to the storage backend
         path = self._get_path("photo_id")
         buff = ContentFile(encrypt_and_encode(img_data, aes_key))
         self._storage.save(path, buff)
 
-        # Update our record fields
-        self.photo_id_key = rsa_encrypted_aes_key.encode('base64')
-        self.save()
+        # aes_key = random_aes_key()
+        # rsa_key_str = settings.VERIFY_STUDENT["SOFTWARE_SECURE"]["RSA_PUBLIC_KEY"]
+        # rsa_encrypted_aes_key = rsa_encrypt(aes_key, rsa_key_str)
+        #
+        # # Save this to the storage backend
+        # path = self._get_path("photo_id")
+        # buff = ContentFile(encrypt_and_encode(img_data, aes_key))
+        # self._storage.save(path, buff)
+        #
+        # # Update our record fields
+        # self.photo_id_key = rsa_encrypted_aes_key.encode('base64')
+        # self.save()
 
     @status_before_must_be("must_retry", "ready", "submitted")
     def submit(self, copy_id_photo_from=None):
@@ -821,6 +829,7 @@ class SoftwareSecurePhotoVerification(PhotoVerification):
         if "S3_BUCKET" in config:
             storage_kwargs["bucket"] = config["S3_BUCKET"]
             storage_kwargs["querystring_expire"] = self.IMAGE_LINK_DURATION
+            storage_kwargs["host"] = settings.S3_HOST
 
         return get_storage(storage_class, **storage_kwargs)
 
@@ -879,17 +888,18 @@ class SoftwareSecurePhotoVerification(PhotoVerification):
             else self.image_url("photo_id", override_receipt_id=copy_id_photo_from.receipt_id)
         )
 
-        photo_id_key = (
-            self.photo_id_key
-            if copy_id_photo_from is None else
-            copy_id_photo_from.photo_id_key
-        )
+        # NOTE(OSPP changes) photo_id_key id default
+        # photo_id_key = (
+        #     self.photo_id_key
+        #     if copy_id_photo_from is None else
+        #     copy_id_photo_from.photo_id_key
+        # )
 
         body = {
             "EdX-ID": str(self.receipt_id),
             "ExpectedName": self.name,
             "PhotoID": photo_id_url,
-            "PhotoIDKey": photo_id_key,
+            "PhotoIDKey": "default key is used",
             "SendResponseTo": callback_url,
             "UserPhoto": self.image_url("face"),
             "UserPhotoKey": self._encrypted_user_photo_key_str(),
@@ -901,7 +911,10 @@ class SoftwareSecurePhotoVerification(PhotoVerification):
         _message, _sig, authorization = generate_signed_message(
             "POST", headers, body, access_key, secret_key
         )
-        headers['Authorization'] = authorization
+        # NOTE(OSPP feature) Change request headers
+        #headers['Authorization'] = authorization
+        asu_api_key = getattr(settings, 'ASU_API_KEY', '')
+        headers.update({'tokentype': 'OPENEDX', 'x-api-key': asu_api_key})
 
         return headers, body
 
