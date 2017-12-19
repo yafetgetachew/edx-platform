@@ -1023,3 +1023,10 @@ ORA2_FILEUPLOAD_CACHE_NAME = ENV_TOKENS.get('ORA2_FILEUPLOAD_CACHE_NAME', 'defau
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = ENV_TOKENS.get('COURSEGRAPH_JOB_QUEUE', LOW_PRIORITY_QUEUE)
+
+############## OSPP S3 HOST ###############################
+S3_HOST = ENV_TOKENS.get('S3_HOST')
+S3_USE_SIGV4 = ENV_TOKENS.get('S3_USE_SIGV4', False)
+
+if S3_USE_SIGV4 and S3_HOST:
+    os.environ['S3_USE_SIGV4'] = 'True'
