@@ -129,6 +129,7 @@ from util.json_request import JsonResponse
 from util.milestones_helpers import get_pre_requisite_courses_not_completed
 from util.password_policy_validators import validate_password_strength
 from xmodule.modulestore.django import modulestore
+from util.course_utils import country_filter
 
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
@@ -171,10 +172,12 @@ def index(request, extra_context=None, user=AnonymousUser()):
     extra_context is used to allow immediate display of certain modal windows, eg signup,
     as used by external_auth.
     """
+    country = request.GET.get('country')
+
     if extra_context is None:
         extra_context = {}
 
-    courses = get_courses(user)
+    courses = get_courses(user, country=country)
 
     if configuration_helpers.get_value(
             "ENABLE_COURSE_SORTING_BY_START_DATE",
@@ -184,7 +187,7 @@ def index(request, extra_context=None, user=AnonymousUser()):
     else:
         courses = sort_by_announcement(courses)
 
-    context = {'courses': courses}
+    context = {'courses': courses, 'country': country}
 
     context['homepage_overlay_html'] = configuration_helpers.get_value('homepage_overlay_html')
 
@@ -628,6 +631,7 @@ def dashboard(request):
 
     """
     user = request.user
+    country = request.GET.get('country')
     if not UserProfile.objects.filter(user=user).exists():
         return redirect(reverse('account_settings'))
 
@@ -659,6 +663,7 @@ def dashboard(request):
     # longer exist (because the course IDs have changed). Still, we don't delete those
     # enrollments, because it could have been a data push snafu.
     course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
+    course_enrollments = country_filter(course_enrollments, country)
 
     # Record how many courses there are so that we can get a better
     # understanding of usage patterns on prod.
@@ -874,6 +879,7 @@ def dashboard(request):
         'disable_courseware_js': True,
         'display_course_modes_on_dashboard': enable_verified_certificates and display_course_modes_on_dashboard,
         'display_sidebar_on_dashboard': display_sidebar_on_dashboard,
+        'country': country
     }
 
     ecommerce_service = EcommerceService()
