@@ -24085,3 +24085,16 @@ msgstr "العودة الى الصفحة الرئيسية للمفكرين ال�
 #: lms/templates/course.html
 msgid "Course starts: "
 msgstr "بدء الدورة: "
+
+msgid "Code of Conduct"
+msgstr "قواعد السلوك"
+
+msgid "https://youngthinker.org/en/terms-of-service"
+msgstr "https://youngthinker.org/ar/terms-of-service"
+
+msgid "https://youngthinker.org/en/privacy-policy"
+msgstr "https://youngthinker.org/ar/privacy-policy"
+
+msgid "https://youngthinker.org/en/code-of-conduct"
+msgstr "https://youngthinker.org/ar/code-of-conduct"
+

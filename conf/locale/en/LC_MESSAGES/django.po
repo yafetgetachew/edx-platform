@@ -21008,3 +21008,16 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr ""
+
+msgid "Code of Conduct"
+msgstr ""
+
+msgid "https://youngthinker.org/en/terms-of-service"
+msgstr ""
+
+msgid "https://youngthinker.org/en/privacy-policy"
+msgstr ""
+
+msgid "https://youngthinker.org/en/code-of-conduct"
+msgstr ""
+

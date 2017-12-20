@@ -10200,3 +10200,13 @@ msgstr[2] "{earned}/{possible}  نقاط (غير مقيمة)"
 msgstr[3] "{earned}/{possible}  نقاط (غير مقيمة)"
 msgstr[4] "{earned}/{possible}  نقاط (غير مقيمة)"
 msgstr[5] "{earned}/{possible} نقاط (دون علامة)"
+
+msgid "https://youngthinker.org/en/terms-of-service"
+msgstr "https://youngthinker.org/ar/terms-of-service"
+
+msgid "https://youngthinker.org/en/privacy-policy"
+msgstr "https://youngthinker.org/ar/privacy-policy"
+
+msgid "https://youngthinker.org/en/code-of-conduct"
+msgstr "https://youngthinker.org/ar/code-of-conduct"
+
