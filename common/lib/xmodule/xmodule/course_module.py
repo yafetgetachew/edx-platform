@@ -859,6 +859,16 @@ class CourseFields(object):
         ),
         scope=Scope.settings, default=False
     )
+    price_zmw = Integer(
+        display_name=_("Zambian kwacha price"),
+        default=0,
+        scope=Scope.settings,
+    )
+    price_kes = Integer(
+        display_name=_("Kenyan shilling price"),
+        default=0,
+        scope=Scope.settings,
+    )
 
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method

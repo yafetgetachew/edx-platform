@@ -104,6 +104,13 @@ from openedx.core.lib.courses import course_image_url
 
 <%block name="pagetitle">${course.display_name_with_default_escaped}</%block>
 
+<%
+    price_zmw = course.price_zmw and 'Zk {}'.format(course.price_zmw) or ''
+    price_kes = course.price_kes and 'KSh {}'.format(course.price_kes) or ''
+    html_price_zmw = course.price_zmw and '<span>(Zk {})</span>'.format(course.price_zmw) or ''
+    html_price_kes = course.price_kes and '<span>(KSh {})</span>'.format(course.price_kes) or ''
+%>
+
 <section class="course-info">
   <header class="course-profile">
     <div class="intro-inner-wrapper">
@@ -162,8 +169,8 @@ from openedx.core.lib.courses import course_image_url
               reg_element_id = ""
           %>
           <a href="${reg_href}" class="add-to-cart" id="${reg_element_id}">
-            ${_("Add {course_name} to Cart <span>({price} USD)</span>")\
-              .format(course_name=course.display_number_with_default, price=course_price)}
+              ${_("Add {course_name} to Cart <span>({price})</span> {price_zmw} {price_kes}")\
+              .format(course_name=course.display_number_with_default, price=course_price, price_zmw=html_price_zmw, price_kes=html_price_kes)}
           </a>
           <div id="register_error"></div>
         %else:
@@ -268,10 +275,13 @@ from openedx.core.lib.courses import course_image_url
           ##<li class="important-dates-item"><span class="icon fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_('Course Length')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
 
           %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
+            <%
+                price = ', '.join(p for p in [course_price, price_kes, price_zmw] if p)
+            %>
             <li class="important-dates-item">
               <span class="icon fa fa-money" aria-hidden="true"></span>
               <p class="important-dates-item-title">${_("Price")}</p>
-              <span class="important-dates-item-text">${course_price}</span>
+              <span class="important-dates-item-text">${price}</span>
             </li>
           %endif
 

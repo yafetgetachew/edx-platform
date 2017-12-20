@@ -53,7 +53,7 @@ from openedx.core.lib.courses import course_image_url
             "{currency_symbol}{price}"
           ).format(
             currency_symbol=currency_symbol,
-            price="{0:0.2f}".format(item.unit_cost)
+            price="%d" % item.unit_cost
           )
         %>
         % if loop.index > 0 :
@@ -84,7 +84,7 @@ from openedx.core.lib.courses import course_image_url
                         ## Translators: currency_symbol is a symbol indicating type of currency, ex "$".
                         ## This string would look like this when all variables are in:
                         ## "$500.00"
-                        ${_("{currency_symbol}{price}").format(currency_symbol=currency_symbol, price="{0:0.2f}".format(item.list_price))}
+                        ${_("{currency_symbol}{price}").format(currency_symbol=currency_symbol, price="%d" % item.list_price)}
                       </span>
                     </div>
                     <div class="price green">${_('Discount Applied:')}
@@ -146,11 +146,11 @@ from openedx.core.lib.courses import course_image_url
               </div>
             % endif
                 <span class="pull-right">${_('TOTAL:')}
-                  <b id="total-amount" data-amount="${'{price:0.2f}'.format(price=amount)}">
+                    <b id="total-amount" data-amount="${'%d' % amount}">
                     ## Translators: currency_symbol is a symbol indicating type of currency, ex "$". currency_abbr is
                     ## an abbreviation for the currency, ex "USD". This string would look like this when all variables are in:
                     ## "$500.00 USD"
-                    ${_("{currency_symbol}{price} {currency_abbr}").format(currency_symbol=currency_symbol, price="{0:0.2f}".format(amount), currency_abbr=currency.upper())}
+                    ${_("{currency_symbol}{price}").format(currency_symbol=currency_symbol, price="%d" % amount)}
                   </b>
                 </span>
             </div>

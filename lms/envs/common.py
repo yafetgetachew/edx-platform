@@ -628,7 +628,7 @@ COURSE_SETTINGS = {
 
 COURSE_MODE_DEFAULTS = {
     'bulk_sku': None,
-    'currency': 'usd',
+    'currency': 'tzs',
     'description': None,
     'expiration_datetime': None,
     'min_price': 0,

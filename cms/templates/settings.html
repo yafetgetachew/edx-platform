@@ -249,6 +249,17 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 <span class="tip tip-stacked timezone">${_("(UTC)")}</span>
               </div>
             </li>
+
+            <li class="field" id="field-price-kes">
+                <label for="course-hours">${_("Kenyan shilling price")}</label>
+                <input type="text"  dir="ltr" class="long" id="price-kes" value="" placeholder="${_("0.0")}" autocomplete="off" />
+            </li>
+
+            <li class="field" id="field-price-zmw">
+                <label for="course-hours">${_("Zambian kwacha price")}</label>
+                <input type="text"  dir="ltr" class="long" id="price-zmw" value="" placeholder="${_("0.0")}" autocomplete="off" />
+            </li>
+
           </ol>
 
           % if not about_page_editable:

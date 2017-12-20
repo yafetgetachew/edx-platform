@@ -17,7 +17,7 @@ define([
 
             var STEP_DATA = {
                 minPrice: '12',
-                currency: 'usd',
+                currency: 'tzs',
                 processors: ['test-payment-processor'],
                 courseKey: 'edx/test/test',
                 courseModeSlug: 'verified'

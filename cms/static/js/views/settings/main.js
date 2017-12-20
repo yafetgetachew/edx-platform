@@ -28,6 +28,8 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                initialize: function(options) {
                    options = options || {};
         // fill in fields
+                   this.$el.find("#price-zmw").val(this.model.get('price_zmw'));
+                   this.$el.find("#price-kes").val(this.model.get('price_kes'));
                    this.$el.find('#course-language').val(this.model.get('language'));
                    this.$el.find('#course-organization').val(this.model.get('org'));
                    this.$el.find('#course-number').val(this.model.get('course_id'));
@@ -154,6 +156,8 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    return this;
                },
                fieldToSelectorMap: {
+                   'price_zmw': 'price-zmw',
+                   'price_kes': 'price-kes',
                    'language': 'course-language',
                    'start_date': 'course-start',
                    'end_date': 'course-end',
@@ -303,6 +307,8 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    case 'course-subtitle':
                    case 'course-duration':
                    case 'course-description':
+                   case 'price-zmw':
+                   case 'price-kes':
                    case 'course-short-description':
                        this.setField(event);
                        break;
