@@ -8,6 +8,7 @@ from functools import wraps
 from threading import Timer
 import argparse
 import glob
+import os
 import traceback
 
 from paver import tasks
