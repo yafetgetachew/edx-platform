@@ -2,6 +2,7 @@
 Module rendering
 """
 
+import requests
 import hashlib
 import json
 import logging
@@ -77,6 +78,7 @@ from xmodule.modulestore.django import modulestore
 from xmodule.modulestore.exceptions import ItemNotFoundError
 from xmodule.x_module import XModuleDescriptor
 from .field_overrides import OverrideFieldData
+from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
 
 log = logging.getLogger(__name__)
 
@@ -382,7 +384,8 @@ def get_module_for_descriptor(user, request, descriptor, field_data_cache, cours
         user_location=user_location,
         request_token=xblock_request_token(request),
         disable_staff_debug_info=disable_staff_debug_info,
-        course=course
+        course=course,
+        request=request
     )
 
 
@@ -391,7 +394,7 @@ def get_module_system_for_user(user, student_data,  # TODO  # pylint: disable=to
                                descriptor, course_id, track_function, xqueue_callback_url_prefix,
                                request_token, position=None, wrap_xmodule_display=True, grade_bucket_type=None,
                                static_asset_path='', user_location=None, disable_staff_debug_info=False,
-                               course=None):
+                               course=None, request=None):
     """
     Helper function that returns a module system and student_data bound to a user and a descriptor.
 
@@ -460,7 +463,8 @@ def get_module_system_for_user(user, student_data,  # TODO  # pylint: disable=to
             static_asset_path=static_asset_path,
             user_location=user_location,
             request_token=request_token,
-            course=course
+            course=course,
+            request=request
         )
 
     def publish(block, event_type, event):
@@ -474,6 +478,28 @@ def get_module_system_for_user(user, student_data,  # TODO  # pylint: disable=to
                 raw_possible=event['max_value'],
                 only_if_higher=event.get('only_if_higher'),
             )
+            if request:
+                course = modulestore().get_course(course_id)
+                student = User.objects.prefetch_related("groups").get(id=user.id)
+
+                course_grade = CourseGradeFactory().create(student, course)
+
+                if course_grade.passed:
+                    access_token = user.social_auth.extra()[0].access_token
+                    api_url = '{}/api/UpdateCourseStatus'.format(settings.SSO_ML_API_URL)
+                    headers = {'Authorization': 'Bearer {}'.format(access_token)}
+                    params = {
+                        'EdxCompleteCourseId': course_id.to_deprecated_string(),
+                        'status': 'Completed'
+                    }
+
+                    r = requests.get(api_url, headers=headers,
+                                     params=params, verify=False)
+
+                    if r.ok:
+                        log.info('Call millonligts API for user "{}" and course "{}"'.format(student, course_id))
+                    else:
+                        log.error('Millionlights API returned: "[{}] {}"'.format(r.status_code, r.text))
         else:
             aside_context = {}
             for aside in block.runtime.get_asides(block):
@@ -524,7 +550,8 @@ def get_module_system_for_user(user, student_data,  # TODO  # pylint: disable=to
             static_asset_path=static_asset_path,
             user_location=user_location,
             request_token=request_token,
-            course=course
+            course=course,
+            request=request
         )
 
         module.descriptor.bind_for_student(
@@ -717,7 +744,7 @@ def get_module_for_descriptor_internal(user, descriptor, student_data, course_id
                                        track_function, xqueue_callback_url_prefix, request_token,
                                        position=None, wrap_xmodule_display=True, grade_bucket_type=None,
                                        static_asset_path='', user_location=None, disable_staff_debug_info=False,
-                                       course=None):
+                                       course=None, request=None):
     """
     Actually implement get_module, without requiring a request.
 
@@ -741,7 +768,8 @@ def get_module_for_descriptor_internal(user, descriptor, student_data, course_id
         user_location=user_location,
         request_token=request_token,
         disable_staff_debug_info=disable_staff_debug_info,
-        course=course
+        course=course,
+        request=request
     )
 
     descriptor.bind_for_student(
