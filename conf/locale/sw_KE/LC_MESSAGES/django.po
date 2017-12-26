@@ -4598,7 +4598,8 @@ msgstr "KUna kitu makosa na faili za nyaraka za SubRip katika uchanganuzi."
 #: common/lib/xmodule/xmodule/video_module/transcripts_utils.py
 #, python-brace-format
 msgid "{exception_message}: Can't find uploaded transcripts: {user_filename}"
-msgstr "{exception_message}: Haiwezi kupata nyaraka zilizopakiwa: {user_filename}"
+msgstr ""
+"{exception_message}: Haiwezi kupata nyaraka zilizopakiwa: {user_filename}"
 
 #: common/lib/xmodule/xmodule/video_module/video_handlers.py
 msgid "Invalid encoding type, transcripts should be UTF-8 encoded."
@@ -9293,7 +9294,7 @@ msgstr "Usajili uliotenguliwa {user} kutoka kwa {course_id}"
 #: lms/djangoapps/support/views/refund.py
 #, python-brace-format
 msgid "Refunded {cost} for order id {order_id}"
-msgstr "Malipo ya ridhaa {cost} kwa kitambulisho cha uagizaji {order_id} "
+msgstr "Malipo ya ridhaa {cost} kwa kitambulisho cha uagizaji {order_id}"
 
 #: lms/djangoapps/teams/models.py
 msgid "Optional language the team uses as ISO 639-1 code."
@@ -16190,7 +16191,7 @@ msgstr "Kiungo-wavuti hiki kitafungua tovuti ya kukuonesha cheti"
 
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid "View {cert_name_short}"
-msgstr "Angalia {sert_name_short}"
+msgstr "Angalia {cert_name_short}"
 
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid "This link will open/download a PDF document"
@@ -23329,7 +23330,7 @@ msgid ""
 " randomly selected and displayed to each student."
 msgstr ""
 "Tumia yaliyomo ya maktaba katika kozi kwa kuongezea "
-"{em_start}yaliyomo_maktaba{en_end} kanuni halisi kwa Orodha ya Kipimo "
+"{em_start}yaliyomo_maktaba{em_end} kanuni halisi kwa Orodha ya Kipimo "
 "Kilichoboreshwa kwenye  Mikakati Ilioboreshwa ya kozi, kisha ongeza Pande "
 "kubwa la yaliyomo ya kubahatisha kwenye koziwea. Kwenye Mikakati ya kila "
 "pande la yaliyomo ya kubahatisha, chagua maktaba hii kama maktaba asili, na "
