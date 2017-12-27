@@ -23,24 +23,19 @@ from django.core.urlresolvers import reverse
         partner_email = settings.PARTNER_SUPPORT_EMAIL
 
         links = [{
-            'href': 'http://docs.edx.org',
+            'href': 'https://training.barwit.com/courses/course-v1:BarWit+CS101+2017/about',
             'sr_mouseover_text': _('Access documentation on http://docs.edx.org'),
-            'text': _('edX Documentation'),
+            'text': _('KnowledgeBase'),
             'condition': True
         }, {
-            'href': 'https://open.edx.org',
+            'href': 'https://goo.gl/forms/6ejtqq4JYxmiopiz2',
             'sr_mouseover_text': _('Access the Open edX Portal'),
-            'text': _('Open edX Portal'),
+            'text': _('Help'),
             'condition': True
         }, {
-            'href': 'https://www.edx.org/course/overview-creating-edx-course-edx-edx101#.VO4eaLPF-n1',
+            'href': 'https://twitter.com/thebarwit',
             'sr_mouseover_text': _('Enroll in edX101: Overview of Creating an edX Course'),
-            'text': _('Enroll in edX101'),
-            'condition': True
-        }, {
-            'href': 'https://www.edx.org/course/creating-course-edx-studio-edx-studiox',
-            'sr_mouseover_text': _('Enroll in StudioX: Creating a Course with edX Studio'),
-            'text': _('Enroll in StudioX'),
+            'text': _('Twitter'),
             'condition': True
         }, {
             'href': 'mailto:{email}'.format(email=partner_email),
