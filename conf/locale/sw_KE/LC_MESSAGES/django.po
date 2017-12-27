@@ -23519,7 +23519,7 @@ msgid ""
 "your first {platform_name} course today."
 msgstr ""
 "Uko tayari kuanza kubuni kozi inayotawaliwa na mtandao? Jiandikishe hapo "
-"chini na uanze kubuni kozi {start_name} yako ya kwanza leo."
+"chini na uanze kubuni kozi {platform_name} yako ya kwanza leo."
 
 #: cms/templates/register.html
 msgid "Required Information to Sign Up for {studio_name}"
