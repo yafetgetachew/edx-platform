@@ -95,23 +95,23 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.18#egg=xblock-
 
 # RaccoonGang XBlocks
 -e git+https://github.com/mitodl/edx-sga@release#egg=edx-sga
--e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx_xblock_scorm
--e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow_control_xblock
--e git+https://github.com/ExtensionEngine/xblock_charting.git#egg=xblock_charting&subdirectory=piechart
+-e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx-xblock-scorm
+-e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow-control-xblock
+-e git+https://github.com/ExtensionEngine/xblock_charting.git#egg=xblock-charting&subdirectory=piechart
 -e git+https://github.com/TinMarkovic/ChartsXBlock.git#egg=chartsxblock
--e git+https://github.com/raccoongang/edx_xblock_firechat.git#egg=edx_xblock_firechat
--e git+https://github.com/raccoongang/edx_xblock_firepad.git#egg=edx_xblock_firepad
+-e git+https://github.com/raccoongang/edx_xblock_firechat.git#egg=edx-xblock-firechat
+-e git+https://github.com/raccoongang/edx_xblock_firepad.git#egg=edx-xblock-firepad
 -e git+https://github.com/raccoongang/edx-xblock-in-video-quiz.git#egg=invideoquiz-xblock
 
--e git+https://github.com/OfficeDev/xblock-officemix.git#egg=xblock_officemix
--e git+https://github.com/edx-solutions/xblock-image-explorer.git@release-2016-06-05#egg=xblock_image_explorer==0.2
--e git+https://github.com/open-craft/problem-builder.git@v2.7.9#egg=xblock_problem_builder==v2.7.9
--e git+https://github.com/ubc/ubcpi.git@0.6.4#egg=xblock_ubcpi==0.6.4
--e git+https://github.com/schoolyourself/schoolyourself-xblock#egg=xblock_schoolyourself_xblock
--e git+https://github.com/pmitros/FeedbackXBlock.git#egg=xblock_rate_feedback==0.0
--e git+https://github.com/edx-solutions/xblock-ooyala.git#egg=xblock_ooyala
+-e git+https://github.com/OfficeDev/xblock-officemix.git#egg=xblock-officemix
+-e git+https://github.com/edx-solutions/xblock-image-explorer.git@release-2016-06-05#egg=xblock-image-explorer==0.2
+-e git+https://github.com/open-craft/problem-builder.git@v2.7.9#egg=xblock-problem-builder==v2.7.9
+-e git+https://github.com/ubc/ubcpi.git@0.6.4#egg=xblock-ubcpi==0.6.4
+-e git+https://github.com/schoolyourself/schoolyourself-xblock#egg=xblock-schoolyourself-xblock
+-e git+https://github.com/pmitros/FeedbackXBlock.git#egg=xblock-rate-feedback==0.0
+-e git+https://github.com/edx-solutions/xblock-ooyala.git#egg=xblock-ooyala
 -e git+https://github.com/MamlukiSn/xblock-free-text-response.git#egg=xblock-free-text-response
 
 -e git+https://github.com/raccoongang/voicerecxblock#egg=xblock-voicerecxblock
--e git://github.com/edx-solutions/xblock-mentoring.git@8837eb5d91fed05ec4758dfd9b9e7adc5c906210#egg=xblock_mentoring
+-e git://github.com/edx-solutions/xblock-mentoring.git@8837eb5d91fed05ec4758dfd9b9e7adc5c906210#egg=xblock-mentoring
 -e git+https://github.com/raccoongang/xblock-adventure#egg=xblock-adventure
