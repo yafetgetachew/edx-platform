@@ -19,3 +19,24 @@
 // #SHAME
 // ------------------------------
 
+* * {
+    font-family: "Lato", sans-serif !important;
+}
+
+.fa {
+    font-family: FontAwesome !important;
+}
+.header-app .logo {
+    width: 285px;
+}
+body {
+    .copy-lead a, .copy-large a, .badges-overlay .badges-modal a, .copy-base a, .alert-copy a, .alert-copy-with-title a, .accomplishment-metadata .metadata .value a, .accomplishment-metadata .recipient-details a, .copy-meta a, .table caption a, .table-simplified caption a, .accomplishment-metadata .metadata .label a, .copy-micro a, a, .link, .btn-link, .table-sortable .sortable .action-sort {
+        color: #9250f0;
+        &:hover, &:focus {
+            color: darken(#9250f0,20%);
+        }
+    }
+}
+.layout-accomplishment .accomplishment-orgs .organization-logo {
+    max-width: 180%;
+}
