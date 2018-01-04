@@ -975,3 +975,16 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+# Include edX global analytics application urls.
+EDX_GLOBAL_ANALYTICS_APP_URL = 'edx_global_analytics_app/'
+
+urlpatterns += (
+    url(
+        r'^{0}'.format(EDX_GLOBAL_ANALYTICS_APP_URL),
+        include(
+            'openedx.core.djangoapps.edx_global_analytics.urls',
+            namespace='global-analytics'
+        )
+    ),
+)
