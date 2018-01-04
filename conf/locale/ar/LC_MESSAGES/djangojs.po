@@ -10210,3 +10210,9 @@ msgstr "https://youngthinker.org/ar/privacy-policy"
 msgid "https://youngthinker.org/en/code-of-conduct"
 msgstr "https://youngthinker.org/ar/code-of-conduct"
 
+msgid "You are about to explore the Young Thinkers Program Courses"
+msgstr "أنت على وشك إستكشاف دورات برنامج المفكرين اليافعين"
+
+msgid "View Courses"
+msgstr "شاهد الدورات"
+
