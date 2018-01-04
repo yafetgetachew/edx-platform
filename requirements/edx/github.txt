@@ -94,6 +94,11 @@ git+https://github.com/open-craft/xblock-poll@v1.2.7#egg=xblock-poll==1.2.7
 git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.18#egg=xblock-drag-and-drop-v2==2.0.18
 
 # RaccoonGang XBlocks
+# tools:
+-e git+https://github.com/ubc/ubcpi.git@0.6.4#egg=xblock-ubcpi==0.6.4
+-e git://github.com/edx-solutions/xblock-mentoring.git@8837eb5d91fed05ec4758dfd9b9e7adc5c906210#egg=xblock-mentoring
+
+# xblocks:
 -e git+https://github.com/mitodl/edx-sga@release#egg=edx-sga
 -e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx-xblock-scorm
 -e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow-control-xblock
@@ -106,12 +111,10 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.18#egg=xblock-
 -e git+https://github.com/OfficeDev/xblock-officemix.git#egg=xblock-officemix
 -e git+https://github.com/edx-solutions/xblock-image-explorer.git@release-2016-06-05#egg=xblock-image-explorer==0.2
 -e git+https://github.com/open-craft/problem-builder.git@v2.7.9#egg=xblock-problem-builder==v2.7.9
--e git+https://github.com/ubc/ubcpi.git@0.6.4#egg=xblock-ubcpi==0.6.4
 -e git+https://github.com/schoolyourself/schoolyourself-xblock#egg=xblock-schoolyourself-xblock
 -e git+https://github.com/pmitros/FeedbackXBlock.git#egg=xblock-rate-feedback==0.0
 -e git+https://github.com/edx-solutions/xblock-ooyala.git#egg=xblock-ooyala
 -e git+https://github.com/MamlukiSn/xblock-free-text-response.git#egg=xblock-free-text-response
 
 -e git+https://github.com/raccoongang/voicerecxblock#egg=xblock-voicerecxblock
--e git://github.com/edx-solutions/xblock-mentoring.git@8837eb5d91fed05ec4758dfd9b9e7adc5c906210#egg=xblock-mentoring
 -e git+https://github.com/raccoongang/xblock-adventure#egg=xblock-adventure
