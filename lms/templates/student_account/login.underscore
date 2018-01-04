@@ -20,14 +20,14 @@
     <div class="login-providers">
         <div class="section-title lines">
             <h2>
-                <span class="text"><%- gettext("Get signed in with Young Thinkers") %></span>
+                <span class="text"><%- gettext("You are about to explore the Young Thinkers Program Courses") %></span>
             </h2>
         </div>
 
         <% _.each( context.providers, function( provider ) {
             if ( provider.loginUrl ) { %>
                 <button type="button" class="button button-primary button-<%- provider.id %> login-provider login-<%- provider.id %>" data-provider-url="<%- provider.loginUrl %>">
-                    <span class="login-icon" aria-hidden="true"><%- gettext("Sign in now") %></span>
+                    <span class="login-icon" aria-hidden="true"><%- gettext("View Courses") %></span>
                     <span class="sr"><%- _.sprintf( gettext("Sign in with %(providerName)s"), {providerName: provider.name} ) %></span>
                 </button>
             <% }
