@@ -1,4 +1,4 @@
-body .wrapper {
+body {
     .view-howitworks.not-signedin .wrapper-content-header,
     .not-signedin .wrapper-header .nav-pitch .action-signup, .view-util .wrapper-header .nav-pitch .action-signup {
         background: #9250f0;
@@ -63,5 +63,34 @@ body .wrapper {
 }
 
 .wrapper-sock .list-cta .cta-show-sock:hover {
-    background-color: #9250f0;
+    background-color: #9250f0 !important;
+}
+body .view-howitworks.not-signedin .wrapper-content-header {
+    background: #9250f0 !important;
+    background-image: none;
+    background-color: none;
+}
+
+body #content > div.wrapper-content-header.wrapper {
+    background: #9250f0 !important;
+    background-image: none;
+    background-color: none;
+}
+#content > div.wrapper-content-cta.wrapper > section > ul > li:nth-child(1) > a {
+    background: #9250f0;
+        border-color: #9250f0;
+        color: #fff;
+
+        &:hover, &:focus {
+            background: lighten(#9250f0, 20%);
+            border-color: lighten(#9250f0, 20%);
+            color: #fff;
+        }
+}
+
+body .view-howitworks.not-signedin .content-header .tagline {
+    color: #fff;
+}
+body .view-howitworks.not-signedin .content-header h1 {
+    border-color: #fff;
 }
