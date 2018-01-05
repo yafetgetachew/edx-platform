@@ -22,6 +22,7 @@ import warnings
 
 import dateutil
 from celery.schedules import crontab
+import random
 
 from .common import *
 from openedx.core.lib.logsettings import get_logger_config
