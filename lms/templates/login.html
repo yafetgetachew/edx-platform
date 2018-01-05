@@ -178,6 +178,7 @@ from openedx.core.djangolib.js_utils import js_escaped_string
 
       <div class="group group-form group-form-requiredinformation">
         <h2 class="sr">${_('Required Information')}</h2>
+        <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }" />
 
         <ol class="list-input">
           <li class="field required text" id="field-email">
