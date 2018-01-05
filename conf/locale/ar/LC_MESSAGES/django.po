@@ -24098,3 +24098,7 @@ msgstr "https://youngthinker.org/ar/privacy-policy"
 msgid "https://youngthinker.org/en/code-of-conduct"
 msgstr "https://youngthinker.org/ar/code-of-conduct"
 
+#: ../themes/asu-ficus/lms/templates/navigation.html
+msgid "Back to YTP Dashboard"
+msgstr "العودة إلى لوحة التحكم في الصفحة الرئيسية"
+
