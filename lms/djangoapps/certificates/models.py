@@ -1099,6 +1099,7 @@ def generate_pdf(sender, instance, **kwargs):
     cmd = ('xvfb-run -a --server-args="-screen 0, 1024x768x24" wkhtmltopdf --zoom 1.2887 '
           '--margin-top 4 --margin-bottom 3 --margin-left 5 --margin-right 5 '
           '-s A4 -O Portrait --print-media-type {} {}')
+    os.remove(os.path.join(pdf_dir, pdf_filename))
     os.system(cmd.format(html_cert_url, os.path.join(pdf_dir, pdf_filename)))
 
     sender.objects.filter(id=instance.id).update(download_url=pdf_url)
