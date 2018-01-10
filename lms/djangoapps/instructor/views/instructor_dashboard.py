@@ -117,7 +117,7 @@ def instructor_dashboard_2(request, course_id):
 
     is_white_label = CourseMode.is_white_label(course_key)
 
-    reports_enabled = configuration_helpers.get_value('SHOW_ECOMMERCE_REPORTS', False)
+    reports_enabled = configuration_helpers.get_value('SHOW_ECOMMERCE_REPORTS', True)
 
     sections = [
         _section_course_info(course, access),
