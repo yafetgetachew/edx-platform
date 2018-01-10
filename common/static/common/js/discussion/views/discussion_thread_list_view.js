@@ -318,6 +318,11 @@
                         gettext('Additional posts could not be loaded. Refresh the page and try again.')
                     );
                 };
+                var discussionId = $(event.target).data('discussion-id');
+                if (discussionId) {
+                    this.mode = 'inline';
+                    options.discussion_id = discussionId;
+                }
                 return this.collection.retrieveAnotherPage(this.mode, options, {
                     sort_key: this.$('.forum-nav-sort-control').val()
                 }, error);

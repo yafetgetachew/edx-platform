@@ -122,6 +122,8 @@
 
             this.newPostView.render();
 
+            this.$('.forum-nav-load-more-link').attr('data-discussion-id', discussionId);
+
             this.listenTo(this.newPostView, 'newPost:createPost', this.onNewPostCreated);
             this.listenTo(this.newPostView, 'newPost:cancel', this.hideNewPost);
             this.discussion.on('add', this.addThread);

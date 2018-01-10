@@ -107,6 +107,8 @@
                     break;
                 case 'followed':
                     url = DiscussionUtil.urlFor('followed_threads', options.user_id);
+                case 'inline':
+                    url = DiscussionUtil.urlFor('retrieve_discussion', options.discussion_id);
                 }
                 if (options.group_id) {
                     data.group_id = options.group_id;
