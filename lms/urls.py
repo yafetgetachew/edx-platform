@@ -753,6 +753,17 @@ urlpatterns += (
     ),
 )
 
+if settings.FEATURES.get('ENABLE_CALENDAR'):
+    urlpatterns += (
+       url(
+           r'^courses/{}/tab/calendar/'.format(
+               settings.COURSE_ID_PATTERN,
+           ),
+           include('calendar_tab.urls'),
+           name='calendar_tab_endpoints',
+       ),
+    )
+
 urlpatterns += (
     # This MUST be the last view in the courseware--it's a catch-all for custom tabs.
     url(
