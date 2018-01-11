@@ -907,3 +907,5 @@ if AUTH_TOKENS.get('SENTRY_DSN'):
     import raven
     raven.fetch_git_sha("/edx/app/edxapp/edx-platform")
 
+# ooyala-player xblock
+COMPLETION_VIDEO_COMPLETE_PERCENTAGE = ENV_TOKENS.get('COMPLETION_VIDEO_COMPLETE_PERCENTAGE', 1)
