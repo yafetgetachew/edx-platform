@@ -523,7 +523,7 @@ def course_about(request, course_id):
 
     Assumes the course_id is in a valid format.
     """
-
+    return redirect('https://opusplace.com/sv/kurskatalog')
     course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
 
     if hasattr(course_key, 'ccx'):
