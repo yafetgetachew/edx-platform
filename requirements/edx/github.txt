@@ -99,7 +99,7 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.18#egg=xblock-
 -e git://github.com/edx-solutions/xblock-mentoring.git@8837eb5d91fed05ec4758dfd9b9e7adc5c906210#egg=xblock-mentoring
 
 # xblocks:
--e git+https://github.com/mitodl/edx-sga@release#egg=edx-sga
+-e git+https://github.com/mitodl/edx-sga#egg=edx-sga
 -e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx-xblock-scorm
 -e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow-control-xblock
 -e git+https://github.com/ExtensionEngine/xblock_charting.git#egg=xblock-charting&subdirectory=piechart
