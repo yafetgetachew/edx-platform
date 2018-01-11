@@ -96,4 +96,4 @@ git+https://github.com/MarCnu/pdfXBlock.git@master#egg=pdfXBlock
 git+https://github.com/raccoongang/xblock-video.git@ginkgo-rg#egg=video_xblock
 
 # Raccoongang XBlocks
-git+https://github.com/raccoongang/reddin.git#egg=reddin-xblock
+-e git+https://github.com/raccoongang/reddin.git#egg=reddin-xblock
