@@ -176,7 +176,9 @@ def index(request, extra_context=None, user=AnonymousUser()):
     programs_list = []
     courses = get_courses(user)
 
-    if configuration_helpers.get_value(
+    if (settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')):
+        courses = []
+    elif configuration_helpers.get_value(
             "ENABLE_COURSE_SORTING_BY_START_DATE",
             settings.FEATURES["ENABLE_COURSE_SORTING_BY_START_DATE"],
     ):
@@ -186,6 +188,7 @@ def index(request, extra_context=None, user=AnonymousUser()):
 
     context = {'courses': courses}
 
+    context['course_discovery_meanings'] = getattr(settings, 'COURSE_DISCOVERY_MEANINGS', {})
     context['homepage_overlay_html'] = configuration_helpers.get_value('homepage_overlay_html')
 
     # This appears to be an unused context parameter, at least for the master templates...
@@ -216,9 +219,12 @@ def index(request, extra_context=None, user=AnonymousUser()):
         programs_list = get_programs_data(user)
 
     context["programs_list"] = programs_list
+    context["is_index_pade"] = True
 
-    return render_to_response('index.html', context)
-
+    return render_to_response(
+        "courseware/index_and_courses.html",
+        context
+    )
 
 def process_survey_link(survey_link, user):
     """

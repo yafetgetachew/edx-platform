@@ -3149,3 +3149,21 @@ TINYMCE_DEFAULT_CONFIG = {
         {"title": "Pre", "format": "pre"}
     ]
 }
+
+########################## Course Discovery #######################
+LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Language'}
+COURSE_DISCOVERY_MEANINGS = {
+    'org': {
+        'name': 'ICNC & Partners',
+    },
+    'modes': {
+        'name': 'Course Mode',
+        'terms': {
+            'honor': 'Certificate (free)',
+            'verified': 'Credit (paid)',
+            'professional': 'Professional (paid)',
+            'audit': 'No Certificate free',
+        },
+    },
+    'language': LANGUAGE_MAP,
+}
