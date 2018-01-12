@@ -318,7 +318,7 @@
                         gettext('Additional posts could not be loaded. Refresh the page and try again.')
                     );
                 };
-                var discussionId = $(event.target).data('discussion-id');
+                var discussionId = (event ? $(event.target).data('discussion-id') : null);
                 if (discussionId) {
                     this.mode = 'inline';
                     options.discussion_id = discussionId;
