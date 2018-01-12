@@ -16890,7 +16890,7 @@ msgid ""
 "This email message was automatically sent by {lms_url} because someone "
 "attempted to create an account on {platform_name} using this email address."
 msgstr ""
-"Ujumbe wa barua pepe hii ulitumwa moja kwa moja na {site_name} kwasababu "
+"Ujumbe wa barua pepe hii ulitumwa moja kwa moja na {lms_url} kwasababu "
 "kuna mtu alijaribu kutengeneza akaunti kwenye{platform_name} kwa kutumia "
 "anwani hii ya barua pepe."
 
