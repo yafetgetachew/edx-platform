@@ -96,6 +96,7 @@ class UserReadOnlySerializer(serializers.Serializer):
             "mailing_address": profile.mailing_address,
             "requires_parental_consent": profile.requires_parental_consent(),
             "account_privacy": self._get_profile_visibility(profile, user),
+            "region": profile.region,
             "phone": profile.phone,
             "work": profile.work,
             "position": profile.position,
@@ -170,7 +171,7 @@ class AccountLegacyProfileSerializer(serializers.HyperlinkedModelSerializer, Rea
     class Meta(object):
         model = UserProfile
         fields = (
-            "name", "gender", "goals", "year_of_birth", "level_of_education", "country",
+            "name", "gender", "goals", "year_of_birth", "level_of_education", "country", "region",
             "mailing_address", "bio", "profile_image", "requires_parental_consent", "language_proficiencies",
             "phone", "work", "position", "qualification"
         )

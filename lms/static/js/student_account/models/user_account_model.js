@@ -13,6 +13,7 @@
                 password: '',
                 language: null,
                 country: null,
+                region: null,
                 date_joined: "",
                 gender: null,
                 goals: "",

@@ -256,6 +256,12 @@ import calendar
             <input id="city" type="text" name="city" value="" placeholder="${_('example: New York')}" aria-describedby="city-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['city'] == 'required' else ''} />
           </li>
           % endif
+          % if settings.REGISTRATION_EXTRA_FIELDS['region'] != 'hidden':
+          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['region']} text" id="field-region">
+            <label for="region">${_('Region')}</label>
+            <input id="region" type="text" name="region" value="" aria-describedby="region-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['region'] == 'required' else ''} />
+          </li>
+          % endif
           % if settings.REGISTRATION_EXTRA_FIELDS['country'] != 'hidden':
           <li class="field-group">
           <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['country']} select" id="field-country">

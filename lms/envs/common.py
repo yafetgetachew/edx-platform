@@ -2544,6 +2544,7 @@ ACCOUNT_VISIBILITY_CONFIGURATION = {
         "is_active",
         "bio",
         "country",
+        "region",
         "profile_image",
         "language_proficiencies",
         "name",

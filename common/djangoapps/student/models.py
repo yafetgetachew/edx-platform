@@ -292,6 +292,7 @@ class UserProfile(models.Model):
         blank=True, null=True, max_length=25, db_index=True,
         choices=QUALIFICATION_CHOICES
     )
+    region = models.CharField(max_length=255, null=True, blank=True)
 
     @property
     def has_profile_image(self):

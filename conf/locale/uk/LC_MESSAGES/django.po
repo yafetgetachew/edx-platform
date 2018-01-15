@@ -25180,3 +25180,6 @@ msgstr ""
 #: wiki/templates/wiki/dir.html
 msgid "There are no articles in this level"
 msgstr "На цьому рівні немає жодної статті"
+
+msgid "Region"
+msgstr "Область"

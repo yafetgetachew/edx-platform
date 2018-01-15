@@ -10800,4 +10800,5 @@ msgstr ""
 msgid "Sorry"
 msgstr "Вибачте"
 
-
+msgid "Region"
+msgstr "Область"

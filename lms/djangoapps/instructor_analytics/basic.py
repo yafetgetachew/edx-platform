@@ -28,7 +28,7 @@ from certificates.models import CertificateStatuses
 STUDENT_FEATURES = ('id', 'username', 'first_name', 'last_name', 'is_staff', 'email')
 PROFILE_FEATURES = ('name', 'language', 'location', 'year_of_birth', 'gender',
                     'level_of_education', 'mailing_address', 'goals', 'meta',
-                    'phone', 'work', 'position', 'qualification',)
+                    'phone', 'work', 'position', 'qualification', 'region')
 ORDER_ITEM_FEATURES = ('list_price', 'unit_cost', 'status')
 ORDER_FEATURES = ('purchase_time',)
 

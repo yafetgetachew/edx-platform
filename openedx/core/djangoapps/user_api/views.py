@@ -158,6 +158,7 @@ class RegistrationView(APIView):
 
     EXTRA_FIELDS = [
         "city",
+        "region",
         "country",
         "gender",
         "year_of_birth",
@@ -604,6 +605,15 @@ class RegistrationView(APIView):
             error_messages={
                 "required": error_msg
             }
+        )
+
+    def _add_region_field(self, form_desc, required=True):
+        region_label = _(u"Region")
+
+        form_desc.add_field(
+            "region",
+            label=region_label,
+            required=required
         )
 
     def _add_phone_field(self, form_desc, required=True):

@@ -134,6 +134,15 @@
                         { 
                             view: new FieldViews.TextFieldView({
                                 model: userAccountModel,
+                                title: gettext('Region'),
+                                valueAttribute: 'region',
+                                helpMessage: gettext('Region'),
+                                persistChanges: true
+                            })
+                        },
+                        { 
+                            view: new FieldViews.TextFieldView({
+                                model: userAccountModel,
                                 title: gettext('Phone'),
                                 valueAttribute: 'phone',
                                 helpMessage: gettext('Phone number'),

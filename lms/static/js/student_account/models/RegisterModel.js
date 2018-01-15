@@ -17,7 +17,8 @@
                 position: '',
                 qualification: '',
                 mailing_address: '',
-                goals: ''
+                goals: '',
+                region: ''
             },
             ajaxType: '',
             urlRoot: '',

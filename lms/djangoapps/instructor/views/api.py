@@ -1156,6 +1156,7 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'work',
         'position',
         'qualification',
+        'region'
     )
 
     # Allow for microsites to be able to define additional columns (e.g. )
@@ -1187,6 +1188,7 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'work': _('Work'),
         'position': _('Position'),
         'qualification': _('Qualification'),
+        'region': _('Region'),
     }
 
     if is_course_cohorted(course.id):
