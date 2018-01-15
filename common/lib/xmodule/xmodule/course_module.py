@@ -853,6 +853,20 @@ class CourseFields(object):
         scope=Scope.settings, default=False
     )
 
+    audience = String(
+        display_name=_("Audience"),
+        help='',
+        scope=Scope.settings,
+        values=[
+            {"display_name": _("General Audience"), "value": "general_audience"},
+            {"display_name": _("Activists & Organizers"), "value": "activists_organizers"},
+            {"display_name": _("Scholars & Students"), "value": "scholars_students"},
+            {"display_name": _("Policy Community"), "value": "policy_community"},
+            {"display_name": _("Nongovernmental Organizations"), "value": "nongovernmental_organizations"},
+            {"display_name": _("Journalists & Media"), "value": "journalists_media"}
+        ]
+    )
+
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """

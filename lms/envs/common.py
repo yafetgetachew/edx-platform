@@ -3151,7 +3151,10 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 ########################## Course Discovery #######################
+COURSE_DISCOVERY_FILTERS = ["org", "language", "modes", "audience"]
+
 LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Language'}
+
 COURSE_DISCOVERY_MEANINGS = {
     'org': {
         'name': 'ICNC & Partners',
@@ -3166,4 +3169,15 @@ COURSE_DISCOVERY_MEANINGS = {
         },
     },
     'language': LANGUAGE_MAP,
+    'audience': {
+        'name': 'Audience',
+        'terms': {
+            'general_audience': 'General Audience',
+            'activists_organizers': 'Activists & Organizers',
+            'scholars_students': 'Scholars & Students',
+            'policy_community': 'Policy Community',
+            'nongovernmental_organizations': 'Nongovernmental Organizations',
+            'journalists_media': 'Journalists & Media',
+        },
+    }
 }

@@ -1,7 +1,7 @@
 """
 Django module for Course Metadata class -- manages advanced settings and related parameters
 """
-from xblock.fields import Scope
+from xblock.fields import Scope, String
 from xblock_django.models import XBlockStudioConfigurationFlag
 from xmodule.modulestore.django import modulestore
 
@@ -129,7 +129,9 @@ class CourseMetadata(object):
                 'value': field.read_json(descriptor),
                 'display_name': _(field.display_name),    # pylint: disable=translation-of-non-string
                 'help': _(field.help),                    # pylint: disable=translation-of-non-string
-                'deprecated': field.runtime_options.get('deprecated', False)
+                'deprecated': field.runtime_options.get('deprecated', False),
+                'values': field.values or [],
+                'editor_type': 'select' if isinstance(field, String) and isinstance(field.values, list) else ''
             }
         return result
 
