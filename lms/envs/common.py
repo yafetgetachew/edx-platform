@@ -3210,7 +3210,7 @@ COURSE_DISCOVERY_MEANINGS = {
         'terms': {
             'self_directed': 'Self-Directed',
             'moderated_by_instructor': 'Moderated by Instructor(s)',
-            'participant_led': 'Participant-Leda',
+            'participant_led': 'Participant-Led',
         },
     },
 }

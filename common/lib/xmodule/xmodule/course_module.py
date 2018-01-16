@@ -909,7 +909,7 @@ class CourseFields(object):
         values=[
             {"display_name": _("Self-Directed"), "value": "self_directed"},
             {"display_name": _("Moderated by Instructor(s)"), "value": "moderated_by_instructor"},
-            {"display_name": _("Participant-Leda"), "value": "participant_led"}
+            {"display_name": _("Participant-Led"), "value": "participant_led"}
         ]
     )
 
