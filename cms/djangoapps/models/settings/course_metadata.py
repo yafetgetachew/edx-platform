@@ -135,16 +135,20 @@ class CourseMetadata(object):
                 'help': _(field.help),                    # pylint: disable=translation-of-non-string
                 'deprecated': field.runtime_options.get('deprecated', False),
                 'values': field.values or [],
-                'editor_type': 'select' if isinstance(field, String) and isinstance(field.values, list) else '',
+                'editor_type': '',
                 'disabled': False
             }
+
+            if field.name in ('audience', 'availability', 'level', 'course_type'):
+                result[field.name].update({
+                    'editor_type': 'select'
+                })
 
             if field.name == 'course_type' and not (SelfPacedConfiguration.current().enabled and
                                                     descriptor.can_toggle_course_pacing):
                 result[field.name].update({
                     'disabled': True
                 })
-
         return result
 
     @classmethod

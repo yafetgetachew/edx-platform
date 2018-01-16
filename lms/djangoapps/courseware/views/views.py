@@ -81,6 +81,7 @@ from openedx.core.djangoapps.credit.api import (
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from shoppingcart.utils import is_shopping_cart_enabled
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
+from student.helpers import translate_course_discovery_meanings
 from student.models import UserTestGroup, CourseEnrollment
 from student.roles import GlobalStaff
 from util.cache import cache, cache_if_anonymous
@@ -137,7 +138,7 @@ def courses(request):
     """
     courses_list = []
     programs_list = []
-    course_discovery_meanings = getattr(settings, 'COURSE_DISCOVERY_MEANINGS', {})
+    course_discovery_meanings = translate_course_discovery_meanings(settings.COURSE_DISCOVERY_MEANINGS)
     if not settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
         courses_list = get_courses(request.user)
 

@@ -858,12 +858,46 @@ class CourseFields(object):
         help='',
         scope=Scope.settings,
         values=[
+            {"display_name": "----------", "value": ""},
             {"display_name": _("General Audience"), "value": "general_audience"},
             {"display_name": _("Activists & Organizers"), "value": "activists_organizers"},
             {"display_name": _("Scholars & Students"), "value": "scholars_students"},
             {"display_name": _("Policy Community"), "value": "policy_community"},
             {"display_name": _("Nongovernmental Organizations"), "value": "nongovernmental_organizations"},
             {"display_name": _("Journalists & Media"), "value": "journalists_media"}
+        ]
+    )
+
+    availability = String(
+        display_name=_("Course Availability"),
+        help='',
+        scope=Scope.settings,
+        values=[
+            {"display_name": "----------", "value": ""},
+            {"display_name": _("Open Now"), "value": "open_now"},
+            {"display_name": _("Open Now (General Audience)"), "value": "open_now_general"},
+            {"display_name": _("Open Now (Invitation Only)"), "value": "open_now_invitation"},
+            {"display_name": _("Open Now (Specific Audience)"), "value": "open_now_specific"},
+            {"display_name": _("Coming Soon"), "value": "coming_soon"},
+            {"display_name": _("Coming Soon (General Audience)"), "value": "coming_soon_general"},
+            {"display_name": _("Coming Soon (Invitation Only)"), "value": "coming_soon_invitation"},
+            {"display_name": _("Coming Soon (Specific Audience)"), "value": "coming_soon_specific"},
+            {"display_name": _("Closed"), "value": "closed"},
+        ]
+    )
+
+    level = String(
+        display_name=_("Course Level"),
+        help='',
+        scope=Scope.settings,
+        values=[
+            {"display_name": "----------", "value": ""},
+            {"display_name": _("Introductory"), "value": "introductory"},
+            {"display_name": _("Intermediate"), "value": "intermediate"},
+            {"display_name": _("Advanced"), "value": "advanced"},
+            {"display_name": _("Undergraduate"), "value": "undergraduate"},
+            {"display_name": _("Graduate"), "value": "graduate"},
+            {"display_name": _("Undergraduate & Graduate"), "value": "undergraduate_graduate"},
         ]
     )
 
@@ -878,7 +912,6 @@ class CourseFields(object):
             {"display_name": _("Participant-Leda"), "value": "participant_led"}
         ]
     )
-
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
