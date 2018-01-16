@@ -9,11 +9,13 @@
         <thead>
             <tr>
                 <th><%- gettext("Name") %></th>
-                <th><%- gettext("Duration") %></th>
                 <th><%- gettext("Date Added") %></th>
                 <th><%- gettext("Video ID") %></th>
                 <th><%- gettext("Status") %></th>
                 <th><%- gettext("Action") %></th>
+                <% if (storageService == 'azure') { %>
+                <th><%- gettext("Encrypt") %></th>
+                <% } %>
             </tr>
         </thead>
         <tbody class="js-table-body"></tbody>
