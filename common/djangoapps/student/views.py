@@ -57,6 +57,7 @@ from student.models import (
     DashboardConfiguration, LinkedInAddToProfileConfiguration, ManualEnrollmentAudit, ALLOWEDTOENROLL_TO_ENROLLED,
     LogoutViewConfiguration, RegistrationCookieConfiguration)
 from student.forms import AccountCreationForm, PasswordResetFormNoActive, get_registration_extension_form
+from student.helpers import translate_course_discovery_meanings
 from student.tasks import send_activation_email
 from lms.djangoapps.commerce.utils import EcommerceService  # pylint: disable=import-error
 from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification  # pylint: disable=import-error
@@ -188,7 +189,7 @@ def index(request, extra_context=None, user=AnonymousUser()):
 
     context = {'courses': courses}
 
-    context['course_discovery_meanings'] = getattr(settings, 'COURSE_DISCOVERY_MEANINGS', {})
+    context['course_discovery_meanings'] = translate_course_discovery_meanings(settings.COURSE_DISCOVERY_MEANINGS)
     context['homepage_overlay_html'] = configuration_helpers.get_value('homepage_overlay_html')
 
     # This appears to be an unused context parameter, at least for the master templates...

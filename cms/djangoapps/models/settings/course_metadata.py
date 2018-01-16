@@ -131,8 +131,13 @@ class CourseMetadata(object):
                 'help': _(field.help),                    # pylint: disable=translation-of-non-string
                 'deprecated': field.runtime_options.get('deprecated', False),
                 'values': field.values or [],
-                'editor_type': 'select' if isinstance(field, String) and isinstance(field.values, list) else ''
+                'editor_type': ''
             }
+
+            if field.name in ('audience'):
+                result[field.name].update({
+                    'editor_type': 'select'
+                })
         return result
 
     @classmethod

@@ -858,6 +858,7 @@ class CourseFields(object):
         help='',
         scope=Scope.settings,
         values=[
+            {"display_name": "----------", "value": ""},
             {"display_name": _("General Audience"), "value": "general_audience"},
             {"display_name": _("Activists & Organizers"), "value": "activists_organizers"},
             {"display_name": _("Scholars & Students"), "value": "scholars_students"},
