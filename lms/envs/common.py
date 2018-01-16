@@ -3151,7 +3151,7 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 ########################## Course Discovery #######################
-COURSE_DISCOVERY_FILTERS = ["org", "language", "modes", "audience"]
+COURSE_DISCOVERY_FILTERS = ["org", "language", "modes", "audience", "availability", "level"]
 
 LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Language'}
 
@@ -3179,5 +3179,30 @@ COURSE_DISCOVERY_MEANINGS = {
             'nongovernmental_organizations': 'Nongovernmental Organizations',
             'journalists_media': 'Journalists & Media',
         },
-    }
+    },
+    'availability': {
+        'name': 'Course Availability',
+        'terms': {
+            'open_now': 'Open Now',
+            'open_now_general': 'Open Now (General Audience)',
+            'open_now_invitation': 'Open Now (Invitation Only)',
+            'open_now_specific': 'Open Now (Specific Audience)',
+            'coming_soon': 'Coming Soon',
+            'coming_soon_general': 'Coming Soon (General Audience)',
+            'coming_soon_invitation': 'Coming Soon (Invitation Only)',
+            'coming_soon_specific': 'Coming Soon (Specific Audience)',
+            'closed': 'Closed',
+        },
+    },
+    'level': {
+        'name': 'Course Level',
+        'terms': {
+            'introductory': 'Introductory',
+            'intermediate': 'Intermediate',
+            'advanced': 'Advanced',
+            'undergraduate': 'Undergraduate',
+            'graduate': 'Graduate',
+            'undergraduate_graduate': 'Undergraduate & Graduate',
+        },
+    },
 }

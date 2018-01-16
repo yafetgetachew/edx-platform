@@ -134,7 +134,7 @@ class CourseMetadata(object):
                 'editor_type': ''
             }
 
-            if field.name in ('audience'):
+            if field.name in ('audience', 'availability', 'level'):
                 result[field.name].update({
                     'editor_type': 'select'
                 })
