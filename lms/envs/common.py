@@ -3151,7 +3151,7 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 ########################## Course Discovery #######################
-COURSE_DISCOVERY_FILTERS = ["org", "language", "modes", "audience"]
+COURSE_DISCOVERY_FILTERS = ["org", "language", "modes", "audience", "course_type"]
 
 LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Language'}
 
@@ -3178,6 +3178,14 @@ COURSE_DISCOVERY_MEANINGS = {
             'policy_community': 'Policy Community',
             'nongovernmental_organizations': 'Nongovernmental Organizations',
             'journalists_media': 'Journalists & Media',
+        },
+    },
+    'course_type': {
+        'name': 'Course Type',
+        'terms': {
+            'self_directed': 'Self-Directed',
+            'moderated_by_instructor': 'Moderated by Instructor(s)',
+            'participant_led': 'Participant-Leda',
         },
     }
 }

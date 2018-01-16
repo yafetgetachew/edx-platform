@@ -8,7 +8,7 @@
 
         <% if (editor_type == 'select') { %>
 
-        <select id="<%= valueUniqueId %>">
+        <select id="<%= valueUniqueId %>" <% if (disabled) { %> disabled <% } %> >
             <% _.each(values, function(val) { %>
             <option value="<%= val.value %>" <% if (val.value == valueOrigin) { %> selected <% } %> ><%= val.display_name %></option>
             <% }) %>

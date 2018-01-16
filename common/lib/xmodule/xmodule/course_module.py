@@ -867,6 +867,18 @@ class CourseFields(object):
         ]
     )
 
+    course_type = String(
+        display_name=_("Course Type"),
+        help=_("Course pacing cannot be changed once a course has started."),
+        scope=Scope.settings,
+        default='moderated_by_instructor',
+        values=[
+            {"display_name": _("Self-Directed"), "value": "self_directed"},
+            {"display_name": _("Moderated by Instructor(s)"), "value": "moderated_by_instructor"},
+            {"display_name": _("Participant-Leda"), "value": "participant_led"}
+        ]
+    )
+
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
