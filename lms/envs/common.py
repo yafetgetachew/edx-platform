@@ -3153,7 +3153,7 @@ TINYMCE_DEFAULT_CONFIG = {
 ########################## Course Discovery #######################
 COURSE_DISCOVERY_FILTERS = ["org", "language", "modes", "audience", "availability", "level", "course_type"]
 
-LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Language'}
+LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Course Language'}
 
 COURSE_DISCOVERY_MEANINGS = {
     'org': {
