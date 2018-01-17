@@ -124,16 +124,15 @@ urlpatterns = (
 if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
     # Backwards compatibility with old URL structure, but serve the new views
     urlpatterns += (
-#        url(r'^login$', 'student_account.views.login_and_registration_form',
-#            {'initial_mode': 'login'}, name="signin_user"),
-        url(r'^register$', register_auth0(login_and_registration_form),
-            {'initial_mode': 'register'}, name="register_user"),
+        #        url(r'^login$', 'student_account.views.login_and_registration_form',
+        #            {'initial_mode': 'login'}, name="signin_user"),
+        url(r'^register$', 'ospp_api.views.ospp_registration_stub', name="register_user"),
     )
 else:
     # Serve the old views
     urlpatterns += (
-#        url(r'^login$', 'student.views.signin_user', name="signin_user"),
-        url(r'^register$', register_auth0(register_user), name="register_user"),
+        #        url(r'^login$', 'student.views.signin_user', name="signin_user"),
+        url(r'^register$', 'ospp_api.views.ospp_registration_stub', name="register_user"),
     )
 
 if settings.FEATURES["ENABLE_MOBILE_REST_API"]:

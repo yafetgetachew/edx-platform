@@ -14,6 +14,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from social_django.models import UserSocialAuth
 
+from edxmako.shortcuts import render_to_response
 from enrollment import api
 from enrollment.errors import CourseEnrollmentError, CourseModeNotFoundError, CourseEnrollmentExistsError
 from enrollment.views import REQUIRED_ATTRIBUTES
@@ -364,3 +365,7 @@ class EnrollUserView(APIView):
                     actual_activation=current_enrollment['is_active'] if current_enrollment else None,
                     user_id=user.id
             )
+
+
+def ospp_registration_stub(request):
+    return render_to_response('ospp/blank_registration.html', {})
