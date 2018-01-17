@@ -854,8 +854,11 @@ class CourseFields(object):
     )
 
     audience = String(
-        display_name=_("Audience"),
-        help='',
+        display_name=_("Course Audience"),
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX users "
+            "will be able to use the search bar to search for courses based on the course audience."
+        ),
         scope=Scope.settings,
         values=[
             {"display_name": "----------", "value": ""},
@@ -870,7 +873,10 @@ class CourseFields(object):
 
     availability = String(
         display_name=_("Course Availability"),
-        help='',
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX users "
+            "will be able to use the search bar to search for courses based on the course availability."
+        ),
         scope=Scope.settings,
         values=[
             {"display_name": "----------", "value": ""},
@@ -888,7 +894,10 @@ class CourseFields(object):
 
     level = String(
         display_name=_("Course Level"),
-        help='',
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX "
+            "users will be able to use the search bar to search for courses based on the course level."
+        ),
         scope=Scope.settings,
         values=[
             {"display_name": "----------", "value": ""},
@@ -903,7 +912,10 @@ class CourseFields(object):
 
     course_type = String(
         display_name=_("Course Type"),
-        help=_("Course pacing cannot be changed once a course has started."),
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX users "
+            "will be able to use the search bar to search for courses based on the course type."
+        ),
         scope=Scope.settings,
         default='moderated_by_instructor',
         values=[

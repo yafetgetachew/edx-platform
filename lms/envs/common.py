@@ -3170,7 +3170,7 @@ COURSE_DISCOVERY_MEANINGS = {
     },
     'language': LANGUAGE_MAP,
     'audience': {
-        'name': 'Audience',
+        'name': 'Course Audience',
         'terms': {
             'general_audience': 'General Audience',
             'activists_organizers': 'Activists & Organizers',
