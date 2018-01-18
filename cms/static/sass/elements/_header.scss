@@ -37,7 +37,7 @@
     @include text-align(right);
   }
 
-  .branding, .info-course, .nav-course, .nav-account, .nav-pitch {
+  .branding, .studio-branding, .info-course, .nav-course, .nav-account, .nav-pitch {
     @include box-sizing(border-box);
     display: inline-block;
     vertical-align: middle;
@@ -123,6 +123,21 @@
 
   // specific elements - branding
   .branding {
+    padding: ($baseline*0.75) 0;
+
+    a {
+      display: block;
+
+      img {
+        max-height: ($baseline*2);
+        display: block;
+      }
+    }
+  }
+
+  // ====================
+
+  .studio-branding {
     padding: ($baseline*0.75) 0;
 
     a {
@@ -259,6 +274,10 @@
     @include margin-right(2%);
   }
 
+  .studio-branding {
+    @include margin-right(2%);
+  }
+
   .nav-account {
     top: ($baseline/4);
   }
@@ -280,6 +299,10 @@
     }
 
     .branding {
+      @include margin-right(2%);
+    }
+
+    .studio-branding {
       @include margin-right(2%);
     }
 
@@ -311,6 +334,10 @@
     }
 
     .branding {
+      width: 100%;
+    }
+
+    .studio-branding {
       width: 100%;
     }
 
