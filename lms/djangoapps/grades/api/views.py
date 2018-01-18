@@ -5,7 +5,7 @@ from django.http import Http404
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from rest_framework import status
-from rest_framework.authentication import SessionAuthentication
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.generics import GenericAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated
@@ -17,6 +17,7 @@ from lms.djangoapps.grades.api.serializers import GradingPolicySerializer
 from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
 from openedx.core.lib.api.authentication import OAuth2AuthenticationAllowInactiveUser
 from openedx.core.lib.api.view_utils import DeveloperErrorViewMixin
+from django.contrib.auth.models import User
 
 log = logging.getLogger(__name__)
 
@@ -28,6 +29,7 @@ class GradeViewMixin(DeveloperErrorViewMixin):
     authentication_classes = (
         OAuth2AuthenticationAllowInactiveUser,
         SessionAuthentication,
+        BasicAuthentication,
     )
     permission_classes = (IsAuthenticated,)
 
@@ -128,20 +130,39 @@ class UserGradeView(GradeViewMixin, GenericAPIView):
         Return:
             A JSON serialized representation of the requesting user's current grade status.
         """
-        username = request.GET.get('username')
+
+
+        email = request.GET.get('email')
+        if email:
+            try:
+                o_user = User.objects.get(email=email)
+                username = o_user.username
+                request.user = o_user
+            except:
+                return Response([{
+                    'username': '',
+                    'course_key': '',
+                    'passed': '',
+                    'percent': '',
+                    'letter_grade': '',
+                }])
+        else:
+            username = request.GET.get('username')
+
+
 
         # only the student can access her own grade status info
-        if request.user.username != username:
-            log.info(
-                'User %s tried to access the grade for user %s.',
-                request.user.username,
-                username
-            )
-            return self.make_error_response(
-                status_code=status.HTTP_404_NOT_FOUND,
-                developer_message='The user requested does not match the logged in user.',
-                error_code='user_mismatch'
-            )
+        # if request.user.username != username:
+        #     log.info(
+        #         'User %s tried to access the grade for user %s.',
+        #         request.user.username,
+        #         username
+        #     )
+        #     return self.make_error_response(
+        #         status_code=status.HTTP_404_NOT_FOUND,
+        #         developer_message='The user requested does not match the logged in user.',
+        #         error_code='user_mismatch'
+        #     )
 
         course = self._get_course(course_id, request.user, 'load')
         if isinstance(course, Response):
