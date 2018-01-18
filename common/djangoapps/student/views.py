@@ -45,7 +45,7 @@ from social.apps.django_app import utils as social_utils
 from social.backends import oauth as social_oauth
 from social.exceptions import AuthException, AuthAlreadyAssociated
 
-from edxmako.shortcuts import render_to_response, render_to_string
+from edxmako.shortcuts import render_to_response, render_to_string, marketing_link
 
 from util.enterprise_helpers import data_sharing_consent_requirement_at_login
 from course_modes.models import CourseMode
@@ -586,8 +586,11 @@ def dashboard(request):
         The dashboard response.
 
     """
-    if settings.MAGENTO_URL:
-        return HttpResponseRedirect('{}'.format(settings.MAGENTO_URL))
+
+    url_dashboard = marketing_link("DASHBOARD")
+
+    if url_dashboard != '#':
+        return HttpResponseRedirect('{}'.format(url_dashboard))
 
     user = request.user
 

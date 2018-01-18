@@ -930,5 +930,3 @@ OIDC_PROVIDERS = {
        },
    }
 }
-
-MAGENTO_URL = FEATURES.get('MAGENTO_URL', '')
