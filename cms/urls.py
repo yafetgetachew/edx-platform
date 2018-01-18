@@ -77,7 +77,7 @@ urlpatterns += patterns(
 
     url(r'^$', 'howitworks', name='homepage'),
     url(r'^howitworks$', 'howitworks'),
-    url(r'^signup$', 'signup', name='signup'),
+
     url(r'^signin$', 'login_page', name='login'),
     url(r'^request_course_creator$', 'request_course_creator', name='request_course_creator'),
 
@@ -141,6 +141,11 @@ if settings.FEATURES.get('ENABLE_CONTENT_LIBRARIES'):
             'contentstore.views.library_handler', name='library_handler'),
         url(r'^library/{}/team/$'.format(LIBRARY_KEY_PATTERN),
             'contentstore.views.manage_library_users', name='manage_library_users'),
+    )
+
+if settings.FEATURES.get('ALLOW_PUBLIC_ACCOUNT_CREATION'):
+    urlpatterns += (
+        url(r'^signup$', 'signup', name='signup'),
     )
 
 if settings.FEATURES.get('ENABLE_EXPORT_GIT'):
