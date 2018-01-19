@@ -1,6 +1,9 @@
 import logging
 
+from django.contrib.auth.models import User
+
 from .utils import CommentClientRequestError, extract, perform_request
+
 
 log = logging.getLogger(__name__)
 
@@ -123,7 +126,7 @@ class Model(object):
     def after_save(cls, instance):
         pass
 
-    def save(self, params=None):
+    def save(self, params=None, is_resend=False):
         """
         Invokes Forum's POST/PUT service to create/update thread
         """
@@ -133,13 +136,23 @@ class Model(object):
             if params:
                 request_params.update(params)
             url = self.url(action='put', params=self.attributes)
-            response = perform_request(
-                'put',
-                url,
-                request_params,
-                metric_tags=self._metric_tags,
-                metric_action='model.update'
-            )
+            try:
+                response = perform_request(
+                        'put',
+                        url,
+                        request_params,
+                        metric_tags=self._metric_tags,
+                        metric_action='model.update'
+                )
+            except CommentClientRequestError:
+                if not is_resend:
+                    self.delete()
+                    user = User.objects.filter(username=self.username).first()
+                    if user:
+                        from .user import User as ccUser
+                        cc_user = ccUser.from_django_user(user)
+                        cc_user.save(is_resend = True)
+                        return
         else:   # otherwise, treat this as an insert
             url = self.url(action='post', params=self.attributes)
             response = perform_request(
@@ -155,7 +168,13 @@ class Model(object):
 
     def delete(self):
         url = self.url(action='delete', params=self.attributes)
-        response = perform_request('delete', url, metric_tags=self._metric_tags, metric_action='model.delete')
+        response = perform_request(
+                'delete',
+                url,
+                metric_tags=self._metric_tags,
+                metric_action='model.delete',
+                data_or_params =self.attributes
+        )
         self.retrieved = True
         self._update_from_response(response)
 
