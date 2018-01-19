@@ -1201,7 +1201,7 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         query_features_names['team'] = _('Team')
 
     if not csv:
-        student_data = instructor_analytics.basic.enrolled_students_features(course_key, query_features)
+        student_data = instructor_analytics.basic.enrolled_students_features(course_key, query_features, [])
         response_payload = {
             'course_id': unicode(course_key),
             'students': student_data,

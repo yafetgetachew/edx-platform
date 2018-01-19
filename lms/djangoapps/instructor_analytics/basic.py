@@ -248,7 +248,7 @@ def enrolled_students_features(course_key, features, additional_fields):
                 elif feature == 'level_of_education':
                     attr = dict(UserProfile.LEVEL_OF_EDUCATION_CHOICES).get(attr, '')
                 elif feature == 'qualification':
-                    attr = dict(UserProfile.QUALIFICATION_CHOICES).get(attr, '')
+                    attr = unicode(dict(UserProfile.QUALIFICATION_CHOICES).get(attr, ''))
                 return attr
 
             profile_dict = dict((feature, _display(feature, getattr(profile, feature)))
