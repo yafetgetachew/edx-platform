@@ -165,7 +165,14 @@ class AdminUserPageTest(TestCase):
         super(AdminUserPageTest, self).setUp()
         self.admin = UserAdmin(User, AdminSite())
 
-    def test_username_is_readonly(self):
+    def test_username_is_readonly_for_empty_user(self):
+        """
+        Ensures that the username is not readonly, when admin creates new user.
+        """
+        request = Mock()
+        self.assertNotIn('username', self.admin.get_readonly_fields(request))
+
+    def test_username_is_readonly_for_user(self):
         """
         Ensures that the username is readonly to skip Django validation in the `auth_user_change` view.
 
@@ -175,4 +182,5 @@ class AdminUserPageTest(TestCase):
         stores the username in a different database.
         """
         request = Mock()
-        self.assertIn('username', self.admin.get_readonly_fields(request))
+        user = Mock()
+        self.assertIn('username', self.admin.get_readonly_fields(request, user))
