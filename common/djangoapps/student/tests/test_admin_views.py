@@ -165,7 +165,7 @@ class AdminUserPageTest(TestCase):
         super(AdminUserPageTest, self).setUp()
         self.admin = UserAdmin(User, AdminSite())
 
-    def test_username_is_readonly_for_empty_user(self):
+    def test_username_is_writable_for_user_creation(self):
         """
         Ensures that the username is not readonly, when admin creates new user.
         """
