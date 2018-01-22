@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 """HTTP end-points for the User API. """
 import copy
 from opaque_keys import InvalidKeyError
@@ -610,10 +611,14 @@ class RegistrationView(APIView):
     def _add_region_field(self, form_desc, required=True):
         region_label = _(u"Region")
 
+        options = [(name, _(label)) for name, label in UserProfile.REGION_CHOICES]  # pylint: disable=translation-of-non-string
         form_desc.add_field(
             "region",
             label=region_label,
-            required=required
+            field_type="select",
+            required=required,
+            options=options,
+            include_default_option=True
         )
 
     def _add_phone_field(self, form_desc, required=True):

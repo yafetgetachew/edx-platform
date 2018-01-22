@@ -1641,7 +1641,7 @@ def create_account_with_params(request, params):
                 'education': profile.level_of_education_display,
                 'address': profile.mailing_address,
                 'gender': profile.gender_display,
-                "region": profile.region,
+                "region": profile.region_display,
                 'country': unicode(profile.country),
                 'phone': profile.phone,
                 'work': profile.work,

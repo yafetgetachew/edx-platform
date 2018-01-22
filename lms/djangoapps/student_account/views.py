@@ -388,6 +388,8 @@ def account_settings_context(request):
                 'options': settings.ALL_LANGUAGES,
             }, 'qualification': {
                 'options': [(choice[0], _(choice[1])) for choice in UserProfile.QUALIFICATION_CHOICES],  # pylint: disable=translation-of-non-string
+            }, 'region': {
+                'options': [(choice[0], _(choice[1])) for choice in UserProfile.REGION_CHOICES],  # pylint: disable=translation-of-non-string
             },
         },
         'platform_name': settings.PLATFORM_NAME,

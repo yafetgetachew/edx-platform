@@ -292,7 +292,8 @@ class UserProfile(models.Model):
         blank=True, null=True, max_length=25, db_index=True,
         choices=QUALIFICATION_CHOICES
     )
-    region = models.CharField(max_length=255, null=True, blank=True)
+    REGION_CHOICES = [(r[0], _(r[1])) for r in getattr(settings, 'REGIONS', [])]
+    region = models.CharField(max_length=255, null=True, blank=True, choices=REGION_CHOICES)
 
     @property
     def has_profile_image(self):
@@ -321,6 +322,12 @@ class UserProfile(models.Model):
     def qualification_display(self):
         if self.qualification:
             return self.__enumerable_to_display(self.QUALIFICATION_CHOICES, self.qualification)
+
+
+    @property
+    def region_display(self):
+        if self.region:
+            return self.__enumerable_to_display(self.REGION_CHOICES, self.region)
 
 
     @property

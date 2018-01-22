@@ -79,8 +79,13 @@
                                 options: fieldsData.language.options,
                                 persistChanges: true
                             })
-                        },
-                        {
+                        }
+                    ]
+                },
+                {
+                    title: gettext('Additional Information (optional)'),
+                    fields: [
+                        { 
                             view: new FieldViews.DropdownFieldView({
                                 model: userAccountModel,
                                 required: true,
@@ -89,12 +94,7 @@
                                 options: fieldsData['country']['options'],
                                 persistChanges: true
                             })
-                        }
-                    ]
-                },
-                {
-                    title: gettext('Additional Information (optional)'),
-                    fields: [
+                        },
                         {
                             view: new FieldViews.DropdownFieldView({
                                 model: userAccountModel,
@@ -132,11 +132,11 @@
                             })
                         },
                         { 
-                            view: new FieldViews.TextFieldView({
+                            view: new FieldViews.DropdownFieldView({
                                 model: userAccountModel,
                                 title: gettext('Region'),
                                 valueAttribute: 'region',
-                                helpMessage: gettext('Region'),
+                                options: fieldsData.region.options,
                                 persistChanges: true
                             })
                         },

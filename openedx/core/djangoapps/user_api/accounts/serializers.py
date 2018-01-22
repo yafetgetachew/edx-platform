@@ -96,7 +96,7 @@ class UserReadOnlySerializer(serializers.Serializer):
             "mailing_address": profile.mailing_address,
             "requires_parental_consent": profile.requires_parental_consent(),
             "account_privacy": self._get_profile_visibility(profile, user),
-            "region": profile.region,
+            "region": AccountLegacyProfileSerializer.convert_empty_to_None(profile.region),
             "phone": profile.phone,
             "work": profile.work,
             "position": profile.position,
