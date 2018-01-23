@@ -2,6 +2,7 @@
 import settings
 
 import models
+from django.contrib.auth.models import User as DjangoUser
 
 from .utils import CommentClientPaginatedResult, CommentClientRequestError, merge_dict, perform_request
 
@@ -113,6 +114,17 @@ class User(models.Model):
             paged_results=True,
         )
         return response.get('collection', []), response.get('page', 1), response.get('num_pages', 1)
+
+    def save(self, params=None, is_resend=False):
+        try:
+            super(User, self).save(params)
+        except CommentClientRequestError as cc_error:
+            if not is_resend and cc_error.status_code == 400:
+                self.delete()
+                user = DjangoUser.objects.filter(username=self.username).first()
+                cc_user = User.from_django_user(user)
+                cc_user.save(is_resend=True)
+                return
 
     def subscribed_threads(self, query_params={}):
         if not self.course_id:
