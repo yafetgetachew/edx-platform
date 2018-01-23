@@ -1159,7 +1159,7 @@ class CertificateEventTests(CommonCertificatesTestCase, EventTrackingTestCase):
             user_id=self.user.id,
             course_id=unicode(self.course.id)
         )
-        import ipdb; ipdb.set_trace()
+        # import ipdb; ipdb.set_trace()
         print self.course.location.course_key._to_deprecated_string()
         print self.course.location.course_key._to_string()
         print dir(self.course.location.course_key)
