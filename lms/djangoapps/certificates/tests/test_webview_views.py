@@ -1159,6 +1159,11 @@ class CertificateEventTests(CommonCertificatesTestCase, EventTrackingTestCase):
             user_id=self.user.id,
             course_id=unicode(self.course.id)
         )
+        import ipdb; ipdb.set_trace()
+        print self.course.location.course_key._to_deprecated_string()
+        print self.course.location.course_key._to_string()
+        print dir(self.course.location.course_key)
+        print self.course.course_id
         response = self.client.get(test_url)
         self.assertEqual(response.status_code, 200)
         actual_event = self.get_event()

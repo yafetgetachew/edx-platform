@@ -84,8 +84,7 @@ class ResetPasswordTests(EventTestMixin, CacheIsolationTestCase):
         self.assertEquals(bad_email_resp.status_code, 200)
         obj = json.loads(bad_email_resp.content)
         self.assertEquals(obj, {
-            'success': True,
-            'value': "('registration/password_reset_done.html', [])",
+            'success': False,
         })
         self.assert_no_events_were_emitted()
 
