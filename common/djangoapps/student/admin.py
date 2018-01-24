@@ -17,8 +17,6 @@ from student.models import (
 from student.roles import REGISTERED_ACCESS_ROLES
 
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-#from django.contrib.auth.admin import UserAdmin
 from django import forms
 
 User = get_user_model()  # pylint:disable=invalid-name
