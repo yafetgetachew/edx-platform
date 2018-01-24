@@ -16890,7 +16890,7 @@ msgid ""
 "This email message was automatically sent by {lms_url} because someone "
 "attempted to create an account on {platform_name} using this email address."
 msgstr ""
-"Ujumbe wa barua pepe hii ulitumwa moja kwa moja na {site_name} kwasababu "
+"Ujumbe wa barua pepe hii ulitumwa moja kwa moja na {lms_url} kwasababu "
 "kuna mtu alijaribu kutengeneza akaunti kwenye{platform_name} kwa kutumia "
 "anwani hii ya barua pepe."
 
@@ -25388,3 +25388,10 @@ msgid ""
 msgstr ""
 "Marudio mapya yametengenezwa: Unganisha marudio namba #%(r1)d na marudio "
 "namba #%(r2)d"
+
+msgid "If you need help, please contact {support_email}."
+msgstr "Kama Unahitaji Msaada, tafadhali wasiliana na: {support_email}."
+
+msgid "You're receiving this e-mail because you requested a password reset for your user account at {{ site_name }}."
+msgstr "Umepokea Ujumbe huu kwasababu uliomba kubadilisha nenosiri (nywila) katika akaunti yako ya {{ site_name }}."
+
