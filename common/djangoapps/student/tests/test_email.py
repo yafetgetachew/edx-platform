@@ -297,7 +297,7 @@ class EmailChangeRequestTests(EventTestMixin, TestCase):
         }
 
         try:
-            html_message = render_to_string('emails/email_change.html', context)
+            html_message = mock_render_to_string('emails/email_change.html', context)
         except:
             html_message = None
 
@@ -430,5 +430,4 @@ class EmailChangeConfirmationTests(EmailTestMixin, TransactionTestCase):
         with patch.object(connection, 'rollback', wraps=connection.rollback) as mock_rollback:
             with self.assertRaises(TestException):
                 confirm_email_change(self.request, self.key)
-
             mock_rollback.assert_called_with()

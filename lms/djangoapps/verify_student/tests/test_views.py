@@ -1968,7 +1968,7 @@ class TestPhotoVerificationResultsCallback(ModuleStoreTestCase):
         # now check that '_send_email' method is called on result callback
         # with required parameters
         subject = "Re-verification Status"
-        mock_send_email.assert_called_once_with(self.user.id, subject, ANY)
+        mock_send_email.assert_called_once_with(self.user.id, subject, ANY, html_message=ANY)
 
     def create_reverification_xblock(self):
         """
