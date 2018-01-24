@@ -16,6 +16,11 @@ from student.models import (
 )
 from student.roles import REGISTERED_ACCESS_ROLES
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+#from django.contrib.auth.admin import UserAdmin
+from django import forms
+
 User = get_user_model()  # pylint:disable=invalid-name
 
 
@@ -162,6 +167,14 @@ class UserProfileInline(admin.StackedInline):
     verbose_name_plural = _('User profile')
 
 
+class UserCreationFormExtended(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super(UserCreationFormExtended, self).__init__(*args, **kwargs)
+        self.fields['email'] = forms.EmailField(label=_("E-mail"), max_length=75)
+
+
+
+
 class UserAdmin(BaseUserAdmin):
     """ Admin interface for the User model. """
     inlines = (UserProfileInline,)
@@ -179,6 +192,15 @@ class UserAttributeAdmin(admin.ModelAdmin):
         model = UserAttribute
 
 
+UserAdmin.add_form = UserCreationFormExtended
+UserAdmin.add_fieldsets = (
+    (None, {
+        'classes': ('wide',),
+        'fields': ('email', 'username', 'password1', 'password2',)
+    }),
+)
+
+
 admin.site.register(UserTestGroup)
 admin.site.register(CourseEnrollmentAllowed)
 admin.site.register(Registration)
@@ -190,3 +212,4 @@ admin.site.register(RegistrationCookieConfiguration, ConfigurationModelAdmin)
 
 # We must first un-register the User model since it may also be registered by the auth app.
 admin.site.register(User, UserAdmin)
+
