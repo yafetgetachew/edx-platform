@@ -41,6 +41,6 @@ def user_timezone_locale_prefs(request):
                     key: user_preferences.get(pref_name, None)
                     for key, pref_name in RETRIEVABLE_PREFERENCES.iteritems()
                 }
-
+        user_prefs['user_language'] = None
         cached_value.update(user_prefs)
     return cached_value
