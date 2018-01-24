@@ -155,7 +155,13 @@ class Model(object):
 
     def delete(self):
         url = self.url(action='delete', params=self.attributes)
-        response = perform_request('delete', url, metric_tags=self._metric_tags, metric_action='model.delete')
+        response = perform_request(
+                'delete',
+                url,
+                metric_tags=self._metric_tags,
+                metric_action='model.delete',
+                data_or_params=self.attributes
+        )
         self.retrieved = True
         self._update_from_response(response)
 
