@@ -2,7 +2,6 @@ import logging
 
 from .utils import CommentClientRequestError, extract, perform_request
 
-
 log = logging.getLogger(__name__)
 
 
@@ -135,11 +134,11 @@ class Model(object):
                 request_params.update(params)
             url = self.url(action='put', params=self.attributes)
             response = perform_request(
-                    'put',
-                    url,
-                    request_params,
-                    metric_tags=self._metric_tags,
-                    metric_action='model.update'
+                'put',
+                url,
+                request_params,
+                metric_tags=self._metric_tags,
+                metric_action='model.update'
             )
         else:   # otherwise, treat this as an insert
             url = self.url(action='post', params=self.attributes)
