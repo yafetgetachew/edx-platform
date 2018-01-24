@@ -9658,8 +9658,10 @@ msgstr "Hitilafu"
 #, python-format
 msgid ""
 "You're receiving this e-mail because you requested a password reset for your"
-" user account at %(platform_name)s."
+" user account at %(site_name)s."
 msgstr ""
+"Umepokea Ujumbe huu kwasababu uliomba kubadilisha nenosiri (nywila) katika"
+" akaunti yako ya %(site_name)s."
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
@@ -25391,7 +25393,4 @@ msgstr ""
 
 msgid "If you need help, please contact {support_email}."
 msgstr "Kama Unahitaji Msaada, tafadhali wasiliana na: {support_email}."
-
-msgid "You're receiving this e-mail because you requested a password reset for your user account at {{ site_name }}."
-msgstr "Umepokea Ujumbe huu kwasababu uliomba kubadilisha nenosiri (nywila) katika akaunti yako ya {{ site_name }}."
 
