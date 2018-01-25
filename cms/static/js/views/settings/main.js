@@ -168,16 +168,19 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
 
                    var selfPacedButton = this.$('#course-pace-self-paced'),
                        instructorPacedButton = this.$('#course-pace-instructor-paced'),
+                       participantLedaPacedButton = this.$('#course-pace-participant-leda-paced'),
                        paceToggleTip = this.$('#course-pace-toggle-tip');
-                   (this.model.get('self_paced') ? selfPacedButton : instructorPacedButton).attr('checked', true);
+                   this.$('[name = "course_type"][value = "' + this.model.get('course_type') + '"]').attr('checked', true);
                    if (this.model.canTogglePace()) {
                        selfPacedButton.removeAttr('disabled');
                        instructorPacedButton.removeAttr('disabled');
+                       participantLedaPacedButton.removeAttr('disabled');
                        paceToggleTip.text('');
                    }
                    else {
                        selfPacedButton.attr('disabled', true);
                        instructorPacedButton.attr('disabled', true);
+                       participantLedaPacedButton.attr('disabled', true);
                        paceToggleTip.text(gettext('Course pacing cannot be changed once a course has started.'));
                    }
 
@@ -329,7 +332,8 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    case 'course-pace-self-paced':
             // Fallthrough to handle both radio buttons
                    case 'course-pace-instructor-paced':
-                       this.model.set('self_paced', JSON.parse(event.currentTarget.value));
+                   case 'course-pace-participant-leda-paced':
+                       this.model.set('course_type', $(event.currentTarget).val());
                        break;
                    case 'course-language':
                    case 'course-effort':

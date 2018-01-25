@@ -1,7 +1,8 @@
 """
 Django module for Course Metadata class -- manages advanced settings and related parameters
 """
-from xblock.fields import Scope
+from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
+from xblock.fields import Scope, String
 from xblock_django.models import XBlockStudioConfigurationFlag
 from xmodule.modulestore.django import modulestore
 
@@ -100,6 +101,9 @@ class CourseMetadata(object):
         if not XBlockStudioConfigurationFlag.is_enabled():
             filtered_list.append('allow_unsupported_xblocks')
 
+        if not SelfPacedConfiguration.current().enabled:
+            filtered_list.append('course_type')
+
         return filtered_list
 
     @classmethod
@@ -129,8 +133,22 @@ class CourseMetadata(object):
                 'value': field.read_json(descriptor),
                 'display_name': _(field.display_name),    # pylint: disable=translation-of-non-string
                 'help': _(field.help),                    # pylint: disable=translation-of-non-string
-                'deprecated': field.runtime_options.get('deprecated', False)
+                'deprecated': field.runtime_options.get('deprecated', False),
+                'values': field.values or [],
+                'editor_type': '',
+                'disabled': False
             }
+
+            if field.name in ('audience', 'availability', 'level', 'course_type'):
+                result[field.name].update({
+                    'editor_type': 'select'
+                })
+
+            if field.name == 'course_type' and not (SelfPacedConfiguration.current().enabled and
+                                                    descriptor.can_toggle_course_pacing):
+                result[field.name].update({
+                    'disabled': True
+                })
         return result
 
     @classmethod
@@ -189,8 +207,15 @@ class CourseMetadata(object):
         for key, model in filtered_dict.iteritems():
             try:
                 val = model['value']
-                if hasattr(descriptor, key) and getattr(descriptor, key) != val:
+                if key == 'course_type' and descriptor.course_type != val and not (SelfPacedConfiguration.current().enabled
+                                                                                 and descriptor.can_toggle_course_pacing):
+                    raise ValueError(_('Course type cannot be changed once a course has started.'))
+                elif hasattr(descriptor, key) and getattr(descriptor, key) != val:
                     key_values[key] = descriptor.fields[key].from_json(val)
+
+                    if key == 'course_type':
+                        key_values['self_paced'] = descriptor.fields['self_paced'].from_json(True if val == 'self_directed' else False)
+
             except (TypeError, ValueError) as err:
                 did_validate = False
                 errors.append({'message': err.message, 'model': model})

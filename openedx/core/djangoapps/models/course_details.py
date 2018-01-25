@@ -70,6 +70,7 @@ class CourseDetails(object):
             '50'
         )  # minimum passing score for entrance exam content module/tree,
         self.self_paced = None
+        self.course_type = None
         self.learning_info = []
         self.instructor_info = []
 
@@ -116,6 +117,7 @@ class CourseDetails(object):
         course_details.video_thumbnail_image_asset_path = course_image_url(course_descriptor, 'video_thumbnail_image')
         course_details.language = course_descriptor.language
         course_details.self_paced = course_descriptor.self_paced
+        course_details.course_type = course_descriptor.course_type
         course_details.learning_info = course_descriptor.learning_info
         course_details.instructor_info = course_descriptor.instructor_info
 
@@ -264,12 +266,20 @@ class CourseDetails(object):
         if 'language' in jsondict and jsondict['language'] != descriptor.language:
             descriptor.language = jsondict['language']
             dirty = True
+        #
+        # if (SelfPacedConfiguration.current().enabled
+        #         and descriptor.can_toggle_course_pacing
+        #         and 'self_paced' in jsondict
+        #         and jsondict['self_paced'] != descriptor.self_paced):
+        #     descriptor.self_paced = jsondict['self_paced']
+        #     dirty = True
 
         if (SelfPacedConfiguration.current().enabled
                 and descriptor.can_toggle_course_pacing
-                and 'self_paced' in jsondict
-                and jsondict['self_paced'] != descriptor.self_paced):
-            descriptor.self_paced = jsondict['self_paced']
+                and 'course_type' in jsondict
+                and jsondict['course_type'] != descriptor.course_type):
+            descriptor.course_type = jsondict['course_type']
+            descriptor.self_paced = True if jsondict['course_type'] == 'self_directed' else False
             dirty = True
 
         if dirty:

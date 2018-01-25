@@ -3149,3 +3149,68 @@ TINYMCE_DEFAULT_CONFIG = {
         {"title": "Pre", "format": "pre"}
     ]
 }
+
+########################## Course Discovery #######################
+COURSE_DISCOVERY_FILTERS = ["org", "language", "modes", "audience", "availability", "level", "course_type"]
+
+LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Course Language'}
+
+COURSE_DISCOVERY_MEANINGS = {
+    'org': {
+        'name': 'ICNC & Partners',
+    },
+    'modes': {
+        'name': 'Course Mode',
+        'terms': {
+            'honor': 'Certificate (free)',
+            'verified': 'Credit (paid)',
+            'professional': 'Professional (paid)',
+            'audit': 'No Certificate free',
+        },
+    },
+    'language': LANGUAGE_MAP,
+    'audience': {
+        'name': 'Course Audience',
+        'terms': {
+            'general_audience': 'General Audience',
+            'activists_organizers': 'Activists & Organizers',
+            'scholars_students': 'Scholars & Students',
+            'policy_community': 'Policy Community',
+            'nongovernmental_organizations': 'Nongovernmental Organizations',
+            'journalists_media': 'Journalists & Media',
+        },
+    },
+    'availability': {
+        'name': 'Course Availability',
+        'terms': {
+            'open_now': 'Open Now',
+            'open_now_general': 'Open Now (General Audience)',
+            'open_now_invitation': 'Open Now (Invitation Only)',
+            'open_now_specific': 'Open Now (Specific Audience)',
+            'coming_soon': 'Coming Soon',
+            'coming_soon_general': 'Coming Soon (General Audience)',
+            'coming_soon_invitation': 'Coming Soon (Invitation Only)',
+            'coming_soon_specific': 'Coming Soon (Specific Audience)',
+            'closed': 'Closed',
+        },
+    },
+    'level': {
+        'name': 'Course Level',
+        'terms': {
+            'introductory': 'Introductory',
+            'intermediate': 'Intermediate',
+            'advanced': 'Advanced',
+            'undergraduate': 'Undergraduate',
+            'graduate': 'Graduate',
+            'undergraduate_graduate': 'Undergraduate & Graduate',
+        },
+    },
+    'course_type': {
+        'name': 'Course Type',
+        'terms': {
+            'self_directed': 'Self-Directed',
+            'moderated_by_instructor': 'Moderated by Instructor(s)',
+            'participant_led': 'Participant-Led',
+        },
+    },
+}

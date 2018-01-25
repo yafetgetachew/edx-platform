@@ -6,6 +6,7 @@ import urllib
 from pytz import UTC
 from django.core.urlresolvers import reverse, NoReverseMatch
 from django.utils import http
+from django.utils.translation import ugettext as _
 from oauth2_provider.models import (
     AccessToken as dot_access_token,
     RefreshToken as dot_refresh_token
@@ -278,3 +279,20 @@ def destroy_oauth_tokens(user):
     dop_refresh_token.objects.filter(user=user.id).delete()
     dot_access_token.objects.filter(user=user.id).delete()
     dot_refresh_token.objects.filter(user=user.id).delete()
+
+
+def translate_course_discovery_meanings(course_settings):
+    course_discovery_meanings = {}
+    for key, value in course_settings.items():
+        course_discovery_item = {}
+        course_discovery_item['name'] = _(value.get("name"))
+        if value.get('terms'):
+            terms = {}
+            for inner_key, inner_value in value['terms'].items():
+                if key == 'language':
+                    terms[inner_key] = value['terms'].get(inner_key)
+                else:
+                    terms[inner_key] = _(value['terms'].get(inner_key))
+            course_discovery_item['terms'] = terms
+        course_discovery_meanings[key] = course_discovery_item
+    return course_discovery_meanings

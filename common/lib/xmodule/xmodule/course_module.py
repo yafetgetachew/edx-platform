@@ -853,6 +853,77 @@ class CourseFields(object):
         scope=Scope.settings, default=False
     )
 
+    audience = String(
+        display_name=_("Course Audience"),
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX users "
+            "will be able to use the search bar to search for courses based on the course audience."
+        ),
+        scope=Scope.settings,
+        values=[
+            {"display_name": "----------", "value": ""},
+            {"display_name": _("General Audience"), "value": "general_audience"},
+            {"display_name": _("Activists & Organizers"), "value": "activists_organizers"},
+            {"display_name": _("Scholars & Students"), "value": "scholars_students"},
+            {"display_name": _("Policy Community"), "value": "policy_community"},
+            {"display_name": _("Nongovernmental Organizations"), "value": "nongovernmental_organizations"},
+            {"display_name": _("Journalists & Media"), "value": "journalists_media"}
+        ]
+    )
+
+    availability = String(
+        display_name=_("Course Availability"),
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX users "
+            "will be able to use the search bar to search for courses based on the course availability."
+        ),
+        scope=Scope.settings,
+        values=[
+            {"display_name": "----------", "value": ""},
+            {"display_name": _("Open Now"), "value": "open_now"},
+            {"display_name": _("Open Now (General Audience)"), "value": "open_now_general"},
+            {"display_name": _("Open Now (Invitation Only)"), "value": "open_now_invitation"},
+            {"display_name": _("Open Now (Specific Audience)"), "value": "open_now_specific"},
+            {"display_name": _("Coming Soon"), "value": "coming_soon"},
+            {"display_name": _("Coming Soon (General Audience)"), "value": "coming_soon_general"},
+            {"display_name": _("Coming Soon (Invitation Only)"), "value": "coming_soon_invitation"},
+            {"display_name": _("Coming Soon (Specific Audience)"), "value": "coming_soon_specific"},
+            {"display_name": _("Closed"), "value": "closed"},
+        ]
+    )
+
+    level = String(
+        display_name=_("Course Level"),
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX "
+            "users will be able to use the search bar to search for courses based on the course level."
+        ),
+        scope=Scope.settings,
+        values=[
+            {"display_name": "----------", "value": ""},
+            {"display_name": _("Introductory"), "value": "introductory"},
+            {"display_name": _("Intermediate"), "value": "intermediate"},
+            {"display_name": _("Advanced"), "value": "advanced"},
+            {"display_name": _("Undergraduate"), "value": "undergraduate"},
+            {"display_name": _("Graduate"), "value": "graduate"},
+            {"display_name": _("Undergraduate & Graduate"), "value": "undergraduate_graduate"},
+        ]
+    )
+
+    course_type = String(
+        display_name=_("Course Type"),
+        help=_(
+            "Select one of the available options using the dropdown menu. Only one option can be selected. edX users "
+            "will be able to use the search bar to search for courses based on the course type."
+        ),
+        scope=Scope.settings,
+        default='moderated_by_instructor',
+        values=[
+            {"display_name": _("Self-Directed"), "value": "self_directed"},
+            {"display_name": _("Moderated by Instructor(s)"), "value": "moderated_by_instructor"},
+            {"display_name": _("Participant-Led"), "value": "participant_led"}
+        ]
+    )
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
