@@ -1,17 +1,22 @@
 <%! from django.utils.translation import ugettext as _ %>
 
-${_("Dear {full_name}").format(full_name=full_name)}
+${_("Dear participant,")}
 
-${_("You have been enrolled in {course_name} at {site_name} by a member "
-	"of the course staff. The course should now appear on your {site_name} "
-	"dashboard.").format(
+${_("Now you must activate your {site_name} account, follow the link {registration_url}. "
+        "After successful activation, you will see the {course_name} course in your main panel.").format(
 		course_name=display_name or course.display_name_with_default_escaped,
-		site_name=site_name
+		site_name=site_name,
+                registration_url=registration_url
 	)}
 
-${_("To start accessing course materials, please visit {course_url}").format(
+${_("The next step is to register in the {course_name} course. Enter the {course_name} course in "
+        "{course_url}, select from the menu the option Course to display the vertical menu on the left. "
+        "Select the Register to course option and press Register.").format(
+		course_name=display_name or course.display_name_with_default_escaped,
 		course_url=course_url
 	)}
+
+${_("By completing these steps, you will be able to complete your preparatory homework.")}
 
 ----
 ${_("This email was automatically sent from {site_name} to "

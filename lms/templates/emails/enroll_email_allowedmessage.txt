@@ -1,9 +1,8 @@
 <%! from django.utils.translation import ugettext as _ %>
 
-${_("Dear student,")}
+${_("Dear participant,")}
 
-${_("You have been invited to join {course_name} at {site_name} by a "
-	"member of the course staff.").format(
+${_("You have been invited to join {course_name} at {site_name}.").format(
 		course_name=display_name or course.display_name_with_default_escaped,
 		site_name=site_name
 	)}
@@ -18,11 +17,18 @@ ${_("To access the course visit {course_about_url} and register for the course."
 % endif
 % else:
 
-${_("To finish your registration, please visit {registration_url} and fill "
-	"out the registration form making sure to use {email_address} in the E-mail field.").format(
+${_("The registration process is two stages: 1. Create your {site_name} account and activate it, "
+        "2. Then register for the course.").format(site_name=site_name)}
+
+${_("To create your {site_name} account, please visit {registration_url} and complete the "
+        "form making sure to use {email_address} in the email box.").format(
+                site_name=site_name,
 		registration_url=registration_url,
 		email_address=email_address
 	)}
+
+${_("The account you have created must be activated, for this you will receive an email with the instructions.")}
+
 % if auto_enroll:
 ${_("Once you have registered and activated your account, you will see "
 	"{course_name} listed on your dashboard.").format(

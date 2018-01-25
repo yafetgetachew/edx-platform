@@ -16136,7 +16136,7 @@ msgstr "Acción Requerida: Activar tu cuenta para {platform_name}"
 #: lms/templates/emails/remove_beta_tester_email_message.txt
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
 msgid "Dear {full_name}"
-msgstr "Apreciado {full_name}"
+msgstr "Apreciado {full_name},"
 
 #: lms/templates/emails/add_beta_tester_email_message.txt
 msgid ""
@@ -16405,12 +16405,20 @@ msgid "Dear student,"
 msgstr "Apreciado estudiante,"
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid "Dear participant,"
+msgstr "Apreciado participante,"
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
 "You have been invited to join {course_name} at {site_name} by a member of "
 "the course staff."
 msgstr ""
 "Ha sido invitado para participar como miembro del equipo para el curso "
 "{course_name} en {site_name}."
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid "You have been invited to join {course_name} at {site_name}."
+msgstr "Ha sido invitado al curso {course_name} en {site_name}."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid "To access the course visit {course_url} and login."
@@ -16430,6 +16438,27 @@ msgstr ""
 "Para concluir su proceso de registro, visite {registration_url} y diligencie"
 " el fomulario asegurándose de utilizar {email_address} en la casilla de "
 "correo electrónico."
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid ""
+"The registration process is two stages: 1. Create your {site_name} account and activate it, 2. Then register for the course."
+msgstr ""
+"El proceso de registro es de dos etapas: 1. Crear su cuenta {site_name} y activarla, 2. Después registrarse en el curso."
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid ""
+"To create your {site_name} account, please visit {registration_url} and complete the "
+"form making sure to use {email_address} in the email box."
+msgstr ""
+""
+"Para crear su cuenta {site_name}, por favor visite {registration_url} y complete el "
+"formulario asegurándose de utilizar el {email_address} en la casilla de correo electrónico."
+
+#: lms/templates/emails/enroll_email_allowedmessage.txt
+msgid ""
+"The account you have created must be activated, for this you will receive an email with the instructions."
+msgstr ""
+"La cuenta que ha creado debe ser activada, para ello recibirá un correo con las indicaciones."
 
 #: lms/templates/emails/enroll_email_allowedmessage.txt
 msgid ""
@@ -16463,6 +16492,28 @@ msgstr ""
 "Usted ha sido inscrito en el curso {course_name} en {site_name} por un "
 "miembro del equipo del curso. El curso debe aparecer ahora en su panel "
 "principal de {site_name}."
+
+#: lms/templates/emails/enroll_email_enrolledmessage.txt
+msgid ""
+"Now you must activate your {site_name} account, follow the link {registration_url}. "
+"After successful activation, you will see the {course_name} course in your main panel."
+msgstr ""
+"Ahora debe activar su cuenta {site_name}, siga la liga {registration_url}. "
+"Después de la activación exitosa, verá el curso {course_name} en su panel principal."
+
+#: lms/templates/emails/enroll_email_enrolledmessage.txt
+msgid ""
+"The next step is to register in the {course_name} course. Enter the {course_name} course in "
+"{course_url}, select from the menu the option Course to display the vertical menu on the left. "
+"Select the Register to course option and press Register."
+msgstr ""
+"El siguiente paso es registrarse en el curso {course_name}. Ingrese al curso {course_name} en "
+"{course_url}, seleccione del menú la opción Curso para desplegar el menú vertical a la izquierda. "
+"Seleccione la opción Registro al curso y oprima Registrarse."
+
+#: lms/templates/emails/enroll_email_enrolledmessage.txt
+msgid "By completing these steps, you will be able to complete your preparatory homework."
+msgstr "Completando estos pasos, podrá realizar su tarea preparatoria."
 
 #: lms/templates/emails/enroll_email_enrolledmessage.txt
 #: lms/templates/emails/unenroll_email_enrolledmessage.txt
