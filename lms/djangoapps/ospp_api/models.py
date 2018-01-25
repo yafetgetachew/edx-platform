@@ -2,6 +2,8 @@
 from django.db import models
 
 from student.models import CourseEnrollment
+from edx_proctoring.models import ProctoredExamStudentAttempt
+from eventtracking import tracker as eventtracking
 
 
 class OSPPEnrollmentFeature(models.Model):
@@ -14,4 +16,20 @@ class OSPPEnrollmentFeature(models.Model):
     partner_logo = models.TextField(null=True)
     eligibility_status = models.BooleanField(default=False)
 
+
+def on_proctoring_attempts_save(self):
+    tracker = eventtracking.get_tracker()
+    context = {
+        'username':self.user.username,
+        'course_id':self.proctored_exam.course_id
+    }
+    with tracker.context('custom_user_context', context):
+        tracker.emit('ospp.proctoring.attempts.change', {
+            'status': self.status
+        })
+    super(ProctoredExamStudentAttempt, self).save()
+
+
+# Hook for implement custom save method for the library model `ProctoredExamStudentAttempt`
+ProctoredExamStudentAttempt.save = on_proctoring_attempts_save
 
