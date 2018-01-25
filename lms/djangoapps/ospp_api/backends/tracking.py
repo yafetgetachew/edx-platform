@@ -3,9 +3,7 @@ from datetime import datetime as dt
 import logging
 
 from django.conf import settings
-from django.contrib.auth.models import User
-from opaque_keys import InvalidKeyError
-from opaque_keys.edx.keys import CourseKey
+from edx_proctoring.models import ProctoredExamStudentAttemptStatus
 
 from ospp_api import tasks as celery_task
 from track.backends import BaseBackend
@@ -92,6 +90,19 @@ class GradeStaticsProcessor(StatisticProcessor):
         }
 
 
+class ProctoringAttemptsProcessor(StatisticProcessor):
+
+    def is_can_process(self, event):
+        return (
+                self.get_event_name(event) == 'ospp.proctoring.attempts.change'
+        )
+
+    def process(self, event):
+        return {
+            'proctoringStatus': (event['data']['status'] == ProctoredExamStudentAttemptStatus.verified) and 'Y' or 'N'
+        }
+
+
 class TrackingBackend(BaseBackend):
 
     def __init__(self, **kwargs):
@@ -102,6 +113,7 @@ class TrackingBackend(BaseBackend):
         self.statistic_processors = [
             LastLoginStaticsProcessor(),
             GradeStaticsProcessor(),
+            ProctoringAttemptsProcessor(),
         ]
 
         self.statistic = {}
