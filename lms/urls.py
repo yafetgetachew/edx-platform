@@ -119,21 +119,11 @@ urlpatterns = (
     url(r'^(?P<key>.+)/openassessment-filesystem-storage', views_filesystem.filesystem_storage, name='openassessment-filesystem-storage'),
 )
 
-# TODO: This needs to move to a separate urls.py once the student_account and
-# student views below find a home together
-if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
-    # Backwards compatibility with old URL structure, but serve the new views
-    urlpatterns += (
-        #        url(r'^login$', 'student_account.views.login_and_registration_form',
-        #            {'initial_mode': 'login'}, name="signin_user"),
-        url(r'^register$', 'ospp_api.views.ospp_registration_stub', name="register_user"),
-    )
-else:
-    # Serve the old views
-    urlpatterns += (
-        #        url(r'^login$', 'student.views.signin_user', name="signin_user"),
-        url(r'^register$', 'ospp_api.views.ospp_registration_stub', name="register_user"),
-    )
+# urls for beta-testers login and for registration stub
+urlpatterns += (
+    url(r'^beta-testers-login$', 'student.views.signin_user', name="signin_user"),
+    url(r'^register$', 'ospp_api.views.ospp_registration_stub', name="register_user"),
+)
 
 if settings.FEATURES["ENABLE_MOBILE_REST_API"]:
     urlpatterns += (
