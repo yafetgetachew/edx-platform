@@ -172,9 +172,11 @@ from openedx.core.djangolib.markup import HTML, Text
                     <div class="status-pacing">
                         <h2 class=status-pacing-label>${_("Course Pacing:")}</h2>
                         % if context_course.self_paced:
-                            <p class="status-pacing-value">${_("Self-Paced")}</p>
+                            <p class="status-pacing-value">${_("Self-Directed")}</p>
+                        % elif context_course.course_type == 'moderated_by_instructor':
+                            <p class="status-pacing-value">${_("Moderated by Instructor(s)")}</p>
                         % else:
-                            <p class="status-pacing-value">${_("Instructor-Paced")}</p>
+                            <p class="status-pacing-value">${_("Participant-Led")}</p>
                         % endif
                     </div>
                % endif
