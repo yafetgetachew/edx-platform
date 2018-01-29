@@ -17,6 +17,7 @@
                 gender: null,
                 goals: "",
                 level_of_education: null,
+                city: '',
                 mailing_address: "",
                 year_of_birth: null,
                 bio: null,
@@ -24,7 +25,10 @@
                 requires_parental_consent: true,
                 profile_image: null,
                 accomplishments_shared: false,
-                default_public_account_fields: []
+                default_public_account_fields: [],
+                work: '',
+                position: '',
+                phone: ''
             },
 
             parse : function(response) {

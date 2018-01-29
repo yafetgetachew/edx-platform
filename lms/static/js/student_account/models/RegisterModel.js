@@ -12,8 +12,12 @@
                 level_of_education: '',
                 gender: '',
                 year_of_birth: '',
+                city: '',
                 mailing_address: '',
-                goals: ''
+                goals: '',
+                work: '',
+                position: '',
+                phone: ''
             },
             ajaxType: '',
             urlRoot: '',

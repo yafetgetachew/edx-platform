@@ -162,7 +162,6 @@ class RegistrationView(APIView):
     EXTRA_FIELDS = [
         "first_name",
         "last_name",
-        "city",
         "state",
         "country",
         "gender",
@@ -170,10 +169,14 @@ class RegistrationView(APIView):
         "level_of_education",
         "company",
         "title",
+        "city",
         "mailing_address",
         "goals",
         "honor_code",
         "terms_of_service",
+        "work",
+        "position",
+        "phone",
     ]
 
     # This end-point is available to anonymous users,
@@ -352,6 +355,28 @@ class RegistrationView(APIView):
         response = JsonResponse({"success": True})
         set_logged_in_cookies(request, response, user)
         return response
+
+    def _add_work_field(self, form_desc, required=True):
+        form_desc.add_field(
+            "work",
+            label=_(u'Place of work'),
+            required=required 
+        )
+
+    def _add_position_field(self, form_desc, required=True):
+        form_desc.add_field(
+            "position", 
+            label=_(u'Position'),
+            required=required
+        )
+
+
+    def _add_phone_field(self, form_desc, required=True):
+        form_desc.add_field(
+            "phone",
+            label=_(u'Phone for communication'),
+            required=required
+        )
 
     def _add_email_field(self, form_desc, required=True):
         """Add an email field to a form description.

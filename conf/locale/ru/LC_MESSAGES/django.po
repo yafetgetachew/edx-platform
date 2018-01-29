@@ -7037,7 +7037,7 @@ msgstr "Уровень образования"
 #: lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
 msgid "Mailing Address"
-msgstr "Почтовый адрес"
+msgstr "Адрес"
 
 #: lms/djangoapps/instructor/views/api.py
 #: lms/djangoapps/instructor_task/tasks_helper/enrollments.py
@@ -11128,7 +11128,7 @@ msgstr "Maria_Ivanova"
 #. form used to select the user's highest completed level of education.
 #: openedx/core/djangoapps/user_api/api.py
 msgid "Highest level of education completed"
-msgstr "Наивысший уровень полученного вами образования"
+msgstr "Образование, научная степень (звание)"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: This label appears above a dropdown menu on the registration
@@ -11154,7 +11154,7 @@ msgstr ""
 #. meant to hold the user's mailing address.
 #: openedx/core/djangoapps/user_api/api.py lms/templates/signup_modal.html
 msgid "Mailing address"
-msgstr "Почтовый адрес"
+msgstr "Адрес"
 
 #. Translators: This phrase appears above a field on the registration form
 #. meant to hold the user's reasons for registering with edX.
@@ -13327,7 +13327,7 @@ msgstr "например: Нью-Йорк"
 #: lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
 msgid "Highest Level of Education Completed"
-msgstr "Наивысший уровень полученного вами образования"
+msgstr "Образование, научная степень (звание)"
 
 #: lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
@@ -25419,3 +25419,11 @@ msgstr ""
 "Вы больше не получите писем от нас. Пожалуйста, не отвечайте на это письмо, "
 "если Вам необходима помощь, обратитесь в соответствующий раздел на сайте {platform_name}."
 
+msgid "Phone for communication"
+msgstr "Телефон для связи"
+
+msgid "Place of work"
+msgstr "Место работы"
+
+msgid "Position"
+msgstr "Должность"
