@@ -19,6 +19,7 @@ from celery.states import SUCCESS, FAILURE
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.storage import DefaultStorage
+from django.core.files.base import ContentFile
 from django.db import reset_queries
 from django.db.models import Q
 from django.utils.translation import ugettext as _
@@ -677,7 +678,9 @@ def upload_exec_summary_to_store(data_dict, report_name, course_id, generated_at
     report_store = ReportStore.from_config(config_name)
 
     # Use the data dict and html template to generate the output buffer
-    output_buffer = StringIO(render_to_string("instructor/instructor_dashboard_2/executive_summary.html", data_dict))
+
+    output_buffer = ContentFile(render_to_string("instructor/instructor_dashboard_2/executive_summary.html", data_dict))
+    output_buffer.seek(0)
 
     report_store.store(
         course_id,
