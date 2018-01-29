@@ -27,7 +27,8 @@ define([
                 'click .column-sort-link': 'onToggleColumn',
                 'click .upload-button': 'showUploadModal',
                 'click .filterable-column .nav-item': 'onFilterColumn',
-                'click .filterable-column .column-filter-link': 'toggleFilterColumn'
+                'click .filterable-column .column-filter-link': 'toggleFilterColumn',
+                'change input.assets-search': 'onSearch'
             },
 
             typeData: ['Images', 'Documents'],
@@ -51,6 +52,8 @@ define([
                 this.maxFileSizeRedirectUrl = options.maxFileSizeRedirectUrl || '';
                 // error message modal for large file uploads
                 this.largeFileErrorMsg = null;
+                this.searchLoader = $('.assets-search-loader');
+                $('input.assets-search').on('change', _.bind(this.onSearch, this));
             },
 
             PagingAssetView: PagingView.extend({
@@ -353,6 +356,17 @@ define([
                 $progressFill.text(resp.msg);
                 $('.upload-modal .choose-file-button').text(gettext('Load Another File')).show();
                 $progressFill.width('0%');
+            },
+
+            onSearch: function(event) {
+                this.searchLoader.removeClass('hidden');
+                this.collection.assetSearch = $(event.target).val();
+                this.collection.state.currentPage = 0;
+                var self = this;
+                this.collection.fetch({success: function() {
+                    self.render();
+                    self.searchLoader.addClass('hidden');
+                }});
             }
         });
 

@@ -7,6 +7,7 @@ define([
 
     var AssetCollection = PagingCollection.extend({
         assetType: '',
+        assetSearch: '',
         model: AssetModel,
 
         state: {
@@ -28,7 +29,8 @@ define([
                 asc: 'asc',
                 desc: 'desc'
             },
-            asset_type: function() { return this.assetType; }
+            asset_type: function() { return this.assetType; },
+            search: function() { return this.assetSearch; }
         },
 
         parse: function(response, options) {

@@ -44,6 +44,11 @@
             <h3 class="sr">${_("Page Actions")}</h3>
             <ul>
                 <li class="nav-item">
+                    <img class="hidden assets-search-loader" src="${static.url("images/spinner-on-grey.gif")}" />
+                    <input type="text" placeholder="${_('Search')}" class="assets-search" />
+                    <img class="assets-search" src="${static.url("images/search-icon.png")}" />
+                </li>
+                <li class="nav-item">
                     <a href="#" class="button upload-button new-button"><span class="icon fa fa-plus" aria-hidden="true"></span> ${_("Upload New File")}</a>
                 </li>
             </ul>

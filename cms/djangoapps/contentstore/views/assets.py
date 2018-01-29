@@ -98,9 +98,10 @@ def _assets_json(request, course_key):
     requested_page_size = int(request.GET.get('page_size', 50))
     requested_sort = request.GET.get('sort', 'date_added')
     requested_filter = request.GET.get('asset_type', '')
+    search = request.GET.get('search', '')
     requested_file_types = settings.FILES_AND_UPLOAD_TYPE_FILTERS.get(
         requested_filter, None)
-    filter_params = None
+    filter_params = {}
     if requested_filter:
         if requested_filter == 'OTHER':
             all_filters = settings.FILES_AND_UPLOAD_TYPE_FILTERS
@@ -119,6 +120,9 @@ def _assets_json(request, course_key):
             filter_params = {
                 "$where": ' || '.join(where),
             }
+    if  search:
+        requested_page = 0
+        filter_params.update({"displayname": {"$regex": u".*{}.*".format(search), "$options": "i"}})
 
     sort_direction = DESCENDING
     if request.GET.get('direction', '').lower() == 'asc':
@@ -137,7 +141,7 @@ def _assets_json(request, course_key):
         'current_page': current_page,
         'page_size': requested_page_size,
         'sort': sort,
-        'filter_params': filter_params
+        'filter_params': filter_params or None
     }
     assets, total_count = _get_assets_for_page(request, course_key, options)
     end = start + len(assets)
