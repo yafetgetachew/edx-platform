@@ -19,6 +19,7 @@ class StatisticProcessor(object):
 
     YES = 'Y'
     NO = 'N'
+    TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
     @abstractmethod
     def is_can_process(self, event):
@@ -47,6 +48,10 @@ class StatisticProcessor(object):
         return event['timestamp']
 
     @staticmethod
+    def get_event_timestamp_as_string(event):
+        return StatisticProcessor.get_event_timestamp(event).strftime(StatisticProcessor.TIME_FORMAT)
+
+    @staticmethod
     def get_event_name(event):
         if 'event_type' in event:
             return event['event_type']
@@ -71,7 +76,7 @@ class LastLoginStaticsProcessor(StatisticProcessor):
 
     def process(self, event):
         return {
-            'lastLoginInCourse': self.get_event_timestamp(event).strftime("%Y-%m-%d %H:%M:%S")
+            'lastLoginInCourse': self.get_event_timestamp_as_string(event)
         }
 
 
@@ -108,7 +113,9 @@ class CreditProcessor(StatisticProcessor):
 
     def process(self, event):
         return {
-            'creditConverted': (event['data']['mode'] == 'credit') and 'Y' or 'N'
+            'creditConverted': (event['data']['mode'] == 'credit') and 'Y' or 'N',
+            'creditConvertedDate': self.get_event_timestamp_as_string(event),
+            'courseCompletedDate': self.get_event_timestamp_as_string(event),
         }
 
 
