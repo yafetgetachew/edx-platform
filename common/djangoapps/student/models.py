@@ -1029,17 +1029,13 @@ class CourseEnrollment(models.Model):
         # NOTE needed for OSPP
         if self.mode == 'credit':
             from openedx.core.djangoapps.credit.models import CreditCourse, CreditRequest, CreditProvider
-            try:
-                with transaction.atomic():
-                    CreditRequest.objects.create(
-                            username=self.user.username,
-                            course=CreditCourse.objects.filter(course_key=self.course_id).first(),
-                            provider_id=CreditProvider.objects.first().id,
-                            uuid=uuid.uuid4().hex
-                    )
-            except IntegrityError:
-                # ignore, when record already exist
-                pass
+            with transaction.atomic():
+                CreditRequest.objects.get_or_create(
+                        username=self.user.username,
+                        course=CreditCourse.objects.filter(course_key=self.course_id).first(),
+                        provider_id=CreditProvider.objects.first().id,
+                        uuid=uuid.uuid4().hex
+                )
 
             eventtracking = tracker.get_tracker()
             context = {
@@ -1051,12 +1047,15 @@ class CourseEnrollment(models.Model):
                     'mode': self.mode
                 })
 
-        super(CourseEnrollment, self).save(force_insert=force_insert, force_update=force_update, using=using,
-                                           update_fields=update_fields)
+        super(CourseEnrollment, self).save(
+                force_insert=force_insert,
+                force_update=force_update,
+                using=using,
+                update_fields=update_fields
+        )
 
         # Delete the cached status hash, forcing the value to be recalculated the next time it is needed.
         cache.delete(self.enrollment_status_hash_cache_key(self.user))
-
 
     @classmethod
     def get_or_create_enrollment(cls, user, course_key):

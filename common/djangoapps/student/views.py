@@ -663,7 +663,7 @@ def dashboard(request):
     course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
 
     # NOTE(OSPP Feature) Check whether user is sponsored by the partner
-    student_state = ospp_utils.student_is_verified(request.user.id)
+    student_state = ospp_utils.get_learner_info(request.user.id)
     if student_state:
         for enrollment in course_enrollments:
             ospp_utils.applay_user_status_to_enroll(

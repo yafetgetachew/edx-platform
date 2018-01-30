@@ -42,14 +42,8 @@ class StatisticProcessor(object):
         pass
 
     @staticmethod
-    def get_event_timestamp(event):
-        if 'time' in event:
-            return event['time']
-        return event['timestamp']
-
-    @staticmethod
     def get_event_timestamp_as_string(event):
-        return StatisticProcessor.get_event_timestamp(event).strftime(StatisticProcessor.TIME_FORMAT)
+        return (event['time'] if 'time' in event else event['timestamp']).strftime(StatisticProcessor.TIME_FORMAT)
 
     @staticmethod
     def get_event_name(event):
@@ -112,10 +106,11 @@ class CreditProcessor(StatisticProcessor):
         return self.get_event_name(event) == 'common.student.CourseEnrollment'
 
     def process(self, event):
+        timestamp = self.get_event_timestamp_as_string(event)
         return {
             'creditConverted': (event['data']['mode'] == 'credit') and 'Y' or 'N',
-            'creditConvertedDate': self.get_event_timestamp_as_string(event),
-            'courseCompletedDate': self.get_event_timestamp_as_string(event),
+            'creditConvertedDate': timestamp,
+            'courseCompletedDate': timestamp,
         }
 
 

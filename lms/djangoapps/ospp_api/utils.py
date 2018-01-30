@@ -12,7 +12,7 @@ VERIFY_ELIGIBLE = (1, 2)
 CREDIT_ELIGIBLE = (1, 3)
 
 
-def student_is_verified(user_id):
+def get_learner_info(user_id):
     url = getattr(settings, 'ASU_API_URL', '') + "/api/learner?openEdxId={}".format(user_id)
     headers = {
         'Content-Type': 'application/json',
@@ -35,21 +35,19 @@ def change_user_enrollment(enrollment, type):
 
 
 def applay_user_status_to_enroll(user, course_enrollment, status):
-    benefit_ype = int(status.get('benefitType', 0))
-    if not status and status.get('eligibilityStatus') != 'true' and not benefit_ype:
+    benefit_type = status.get('benefitType')
+    if not status and status.get('eligibilityStatus') != 'true' and not benefit_type:
         return
 
-    if benefit_ype in CREDIT_ELIGIBLE and get_credit_convert_eligibility(user, course_enrollment):
+    if benefit_type in CREDIT_ELIGIBLE and get_credit_convert_eligibility(user, course_enrollment):
         change_user_enrollment(course_enrollment, 'credit')
-    elif benefit_ype in VERIFY_ELIGIBLE:
+    elif benefit_type in VERIFY_ELIGIBLE:
         change_user_enrollment(course_enrollment, 'verified')
 
 
 def update_user_state_from_eligible(user, course_key):
     try:
         course_enrollment = CourseEnrollment.objects.get(course_id=course_key, user=user)
-        if course_enrollment and course_enrollment.mode in ('honor' or 'audit'):
-            return
     except (CourseEnrollment.DoesNotExist) as err:
         log.warning(
                 "Cannot provide student ckecking for eligibility and partner benefits, the Error is: {}".format(err)
@@ -59,5 +57,5 @@ def update_user_state_from_eligible(user, course_key):
     if course_enrollment.mode == 'credit':
         return
 
-    status = student_is_verified(user.id)
+    status = get_learner_info(user.id)
     applay_user_status_to_enroll(user, course_enrollment, status)

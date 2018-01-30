@@ -17,8 +17,9 @@ class OSPPEnrollmentFeature(models.Model):
     eligibility_status = models.BooleanField(default=False)
 
 
-def on_proctoring_attempts_save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
+def on_proctoring_attempts_save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+):
     tracker = eventtracking.get_tracker()
     context = {
         'username':self.user.username,
