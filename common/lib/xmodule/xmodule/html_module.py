@@ -89,7 +89,13 @@ class HtmlBlock(object):
             {"display_name": _("Presentation slides"), "value": "presentation_slides"},
             {"display_name": _("Discussion"), "value": "discussion"},
             {"display_name": _("Learning objectives/session description"), "value": "problem"},
-            {"display_name": _("Video (youtube, vimeo, etc)"), "value": "video"}
+            {"display_name": _("Video (youtube, vimeo, etc)"), "value": "video"},
+            {"display_name": _("Group Exercise:"), "value": "group_exercise"},
+            {"display_name": _("Google Doc"), "value": "google_doc"},
+            {"display_name": _("Surveys"), "value": "surveys"},
+            {"display_name": _("Text"), "value": "text_icon"},
+            {"display_name": _("\"How to\""), "value": "how_to"},
+            {"display_name": _("Learner location maps"), "value": "maps"},
         ],
         scope=Scope.settings
     )
