@@ -30,10 +30,10 @@ def on_proctoring_attempts_save(
             'status': self.status
         })
     super(ProctoredExamStudentAttempt, self).save(
-            force_insert=force_insert,
-            force_update=force_update,
-            using=using,
-            update_fields=update_fields,
+        force_insert=force_insert,
+        force_update=force_update,
+        using=using,
+        update_fields=update_fields,
     )
 
 

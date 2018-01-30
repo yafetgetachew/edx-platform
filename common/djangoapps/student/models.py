@@ -1033,7 +1033,7 @@ class CourseEnrollment(models.Model):
                 CreditRequest.objects.get_or_create(
                         username=self.user.username,
                         course=CreditCourse.objects.filter(course_key=self.course_id).first(),
-                        provider_id=CreditProvider.objects.first().id,
+                        provider_id=CreditProvider.objects.first().id,  # NOTE valid only system with single provider.
                         uuid=uuid.uuid4().hex
                 )
 
