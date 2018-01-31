@@ -3,8 +3,57 @@
 from django.utils.translation import ugettext as _
 %>
 
+<style type="text/css">
+
+		ul.tabs{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+
+		ul.tabs li{
+			background: none;
+			color: #222;
+			padding: 20px 20px;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		ul.tabs li.current{
+			background: #ededed;
+			color: #222;
+		}
+
+		.tab-content{
+			display: none;
+		}
+
+		.tab-content.current{
+			display: inherit;
+		}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})
+</script>
+
 <header class="wrapper-header-courses">
-  <h2 class="header-courses">${_("My Courses")}</h2>
+ 	<div class="container">
+		<ul class="tabs">
+			<li class="tab-link current" data-tab="tab-1">My Courses</li>
+			<li class="tab-link" data-tab="tab-2">Past Courses</li>
+		</ul>
+	</div>
 </header>
 
 <h2 class="hd hd-2 sr" id="courses-tab">${_('My Courses')}</h2>
