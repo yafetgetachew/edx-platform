@@ -100,4 +100,4 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow-control-xblock
 
 # Raccoongang XBlocks
--e git+git@github.com:raccoongang/edx_scorm_xblock.git#egg=edx_scorm_xblock
+-e git+git@gitlab.raccoongang.com:andrey.kryachko/edx_scorm_xblock.git#egg=edx_scorm_xblock
