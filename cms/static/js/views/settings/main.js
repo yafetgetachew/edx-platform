@@ -20,7 +20,10 @@ var DetailsView = ValidatingView.extend({
         // would love to move to a general superclass, but event hashes don't inherit in backbone :-(
         'focus :input' : "inputFocus",
         'blur :input' : "inputUnfocus",
-        'click .action-upload-image': "uploadImage"
+        'click .action-upload-course-image': "uploadImage",
+        'click .action-upload-cert-image1': "uploadCertImage1",
+        'click .action-upload-cert-image2': "uploadCertImage2",
+        'click .action-upload-cert-image3': "uploadCertImage3"
     },
 
     initialize : function(options) {
@@ -83,8 +86,17 @@ var DetailsView = ValidatingView.extend({
         this.$el.find('#' + this.fieldToSelectorMap['effort']).val(this.model.get('effort'));
 
         var imageURL = this.model.get('course_image_asset_path');
+        var certImageURL1 = this.model.get('cert_image_asset_path1');
+        var certImageURL2 = this.model.get('cert_image_asset_path2');
+        var certImageURL3 = this.model.get('cert_image_asset_path3');
         this.$el.find('#course-image-url').val(imageURL);
         this.$el.find('#course-image').attr('src', imageURL);
+        this.$el.find('#cert-image-url1').val(certImageURL1);
+        this.$el.find('#cert-image1').attr('src', certImageURL1);
+        this.$el.find('#cert-image-url2').val(certImageURL2);
+        this.$el.find('#cert-image2').attr('src', certImageURL2);
+        this.$el.find('#cert-image-url3').val(certImageURL3);
+        this.$el.find('#cert-image3').attr('src', certImageURL3);
 
         var pre_requisite_courses = this.model.get('pre_requisite_courses');
         pre_requisite_courses = pre_requisite_courses.length > 0 ? pre_requisite_courses : '';
@@ -130,6 +142,9 @@ var DetailsView = ValidatingView.extend({
         'intro_video' : 'course-introduction-video',
         'effort' : "course-effort",
         'course_image_asset_path': 'course-image-url',
+        'cert_image_asset_path1': 'cert-image-url1',
+        'cert_image_asset_path2': 'cert-image-url2',
+        'cert_image_asset_path3': 'cert-image-url3',
         'pre_requisite_courses': 'pre-requisite-course',
         'entrance_exam_enabled': 'entrance-exam-enabled',
         'entrance_exam_minimum_score_pct': 'entrance-exam-minimum-score-pct'
@@ -192,6 +207,18 @@ var DetailsView = ValidatingView.extend({
         }
     },
 
+    updateCertImage: function(event, num) {
+        this.setField(event);
+        var url = $(event.currentTarget).val();
+        var cert_image_name = _.last(url.split('/'));
+        this.model.set('cert_image_name' + num, cert_image_name);
+        // Wait to set the image src until the user stops typing
+        clearTimeout(this.certImageTimer);
+        this.certImageTimer = setTimeout(function() {
+            $('#cert-image' + num).attr('src', $(event.currentTarget).val());
+        }, 1000);
+    },
+
     updateModel: function(event) {
         switch (event.currentTarget.id) {
         case 'course-language':
@@ -207,6 +234,15 @@ var DetailsView = ValidatingView.extend({
             this.imageTimer = setTimeout(function() {
                 $('#course-image').attr('src', $(event.currentTarget).val());
             }, 1000);
+            break;
+        case 'cert-image-url1':
+            this.updateCertImage(event, 1);
+            break;
+        case 'cert-image-url2':
+            this.updateCertImage(event, 2);
+            break;
+        case 'cert-image-url3':
+            this.updateCertImage(event, 3);
             break;
         case 'course-effort':
             this.setField(event);
@@ -343,27 +379,56 @@ var DetailsView = ValidatingView.extend({
                                                           _.bind(this.revertView, this));
     },
 
-    uploadImage: function(event) {
+    uploadImage: function(event, success) {
         event.preventDefault();
         var upload = new FileUploadModel({
-            title: gettext("Upload your course image."),
+            title: gettext("Upload your image."),
             message: gettext("Files must be in JPEG or PNG format."),
             mimeTypes: ['image/jpeg', 'image/png']
         });
         var self = this;
-        var modal = new FileUploadDialog({
-            model: upload,
-            onSuccess: function(response) {
+        if (!success) {
+            success = function(response) {
                 var options = {
                     'course_image_name': response.asset.display_name,
                     'course_image_asset_path': response.asset.url
-                };
+                }
                 self.model.set(options);
                 self.render();
                 $('#course-image').attr('src', self.model.get('course_image_asset_path'));
             }
+        }
+        var modal = new FileUploadDialog({
+            model: upload,
+            onSuccess: success
         });
         modal.show();
+    },
+
+    uploadCertImage: function(event, num) {
+        var self = this;
+        var img_num = num;
+        this.uploadImage(event, function(response) {
+            var options = {};
+            options['cert_image_name' + img_num] = response.asset.display_name,
+            options['cert_image_asset_path' + img_num] = response.asset.url
+
+            self.model.set(options);
+            self.render();
+            $('#cert-image' + img_num).attr('src', self.model.get('cert_image_asset_path' + img_num));
+        })
+    },
+
+    uploadCertImage1: function(event) {
+        this.uploadCertImage(event, 1);
+    },
+
+    uploadCertImage2: function(event) {
+        this.uploadCertImage(event, 2);
+    },
+
+    uploadCertImage3: function(event) {
+        this.uploadCertImage(event, 3);
     },
 
     handleLicenseChange: function() {

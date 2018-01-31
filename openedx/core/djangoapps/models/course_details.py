@@ -50,6 +50,12 @@ class CourseDetails(object):
         self.license = "all-rights-reserved"  # default course license is all rights reserved
         self.course_image_name = ""
         self.course_image_asset_path = ""  # URL of the course image
+        self.cert_image_name1 = ""
+        self.cert_image_asset_path1 = ""
+        self.cert_image_name2 = ""
+        self.cert_image_asset_path2 = ""
+        self.cert_image_name3 = ""
+        self.cert_image_asset_path3 = ""
         self.pre_requisite_courses = []  # pre-requisite courses
         self.entrance_exam_enabled = ""  # is entrance exam enabled
         self.entrance_exam_id = ""  # the content location for the entrance exam
@@ -90,6 +96,12 @@ class CourseDetails(object):
         course_details.pre_requisite_courses = descriptor.pre_requisite_courses
         course_details.course_image_name = descriptor.course_image
         course_details.course_image_asset_path = course_image_url(descriptor)
+        course_details.cert_image_name1 = descriptor.cert_image1
+        course_details.cert_image_asset_path1 = course_image_url(descriptor, 'cert_image1')
+        course_details.cert_image_name2 = descriptor.cert_image2
+        course_details.cert_image_asset_path2 = course_image_url(descriptor, 'cert_image2')
+        course_details.cert_image_name3 = descriptor.cert_image3
+        course_details.cert_image_asset_path3 = course_image_url(descriptor, 'cert_image3')
         course_details.language = descriptor.language
         course_details.self_paced = descriptor.self_paced
 
@@ -207,6 +219,18 @@ class CourseDetails(object):
 
         if 'course_image_name' in jsondict and jsondict['course_image_name'] != descriptor.course_image:
             descriptor.course_image = jsondict['course_image_name']
+            dirty = True
+
+        if 'cert_image_name1' in jsondict and jsondict['cert_image_name1'] != descriptor.cert_image1:
+            descriptor.cert_image1 = jsondict['cert_image_name1']
+            dirty = True
+
+        if 'cert_image_name2' in jsondict and jsondict['cert_image_name2'] != descriptor.cert_image2:
+            descriptor.cert_image2 = jsondict['cert_image_name2']
+            dirty = True
+
+        if 'cert_image_name3' in jsondict and jsondict['cert_image_name3'] != descriptor.cert_image3:
+            descriptor.cert_image3 = jsondict['cert_image_name3']
             dirty = True
 
         if 'pre_requisite_courses' in jsondict \
