@@ -27,14 +27,14 @@ class HarambeeOAuth2(BaseOAuth2):
     ID_KEY = 'username'
     STATE_PARAMETER = True
     AUTHORIZATION_URL = \
-        'https://mvpdev.harambeecloud.com/identityserver/connect/authorize'
+        'https://prod.harambeecloud.com/identityserver/connect/authorize'
     ACCESS_TOKEN_URL = \
-        'https://mvpdev.harambeecloud.com/identityserver/connect/token'
+        'https://prod.harambeecloud.com/identityserver/connect/token'
     ACCESS_TOKEN_METHOD = 'POST'
     RESPONSE_TYPE = 'code id_token'
     REDIRECT_IS_HTTPS = True
     REVOKE_TOKEN_URL = \
-        'https://mvpdev.harambeecloud.com/identityserver/connect/endsession'
+        'https://prod.harambeecloud.com/identityserver/connect/endsession'
     REVOKE_TOKEN_METHOD = 'GET'
 
     # The order of the default scope is important
@@ -142,5 +142,5 @@ class HarambeeOAuth2(BaseOAuth2):
         return {
             'id_token_hint': social_user.extra_data['id_token'],
             'state': self.get_session_state(),
-            'post_logout_redirect_uri': 'https://learn.harambeecloud.com'
+            'post_logout_redirect_uri': 'https://learn.harambeecloud.com/logout'
         }
