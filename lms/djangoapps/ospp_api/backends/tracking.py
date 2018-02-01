@@ -41,9 +41,8 @@ class StatisticProcessor(object):
         """
         pass
 
-    @classmethod
-    def get_event_timestamp_as_string(cls, event):
-        return (event['time'] if 'time' in event else event['timestamp']).strftime(cls.TIME_FORMAT)
+    def get_event_timestamp_as_string(self, event):
+        return (event['time'] if 'time' in event else event['timestamp']).strftime(self.TIME_FORMAT)
 
     @staticmethod
     def get_event_name(event):
