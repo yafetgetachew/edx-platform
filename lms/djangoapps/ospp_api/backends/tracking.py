@@ -95,7 +95,8 @@ class ProctoringAttemptsProcessor(StatisticProcessor):
 
     def process(self, event):
         return {
-            'proctoringStatus': (event['data']['status'] == ProctoredExamStudentAttemptStatus.verified) and 'Y' or 'N'
+            'proctoringStatus': event['data']['status'],
+            'proctoringDate': self.get_event_timestamp_as_string(event),
         }
 
 
