@@ -657,19 +657,20 @@ def dashboard(request):
     if course_org_filter:
         org_filter_out_set = org_filter_out_set - set(course_org_filter)
 
-    # NOTE(OSPP Feature) Check whether user is sponsored by the partner
-    eligible, verify_id_free = ospp_utils.student_is_verified(user.id)
-    course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
-    if eligible and verify_id_free:
-        for enrollment in course_enrollments:
-            if enrollment.mode != 'verified':
-                enrollment.mode = 'verified'
-                enrollment.save()
-
     # Build our (course, enrollment) list for the user, but ignore any courses that no
     # longer exist (because the course IDs have changed). Still, we don't delete those
     # enrollments, because it could have been a data push snafu.
     course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
+
+    # NOTE(OSPP Feature) Check whether user is sponsored by the partner
+    student_state = ospp_utils.get_learner_info(request.user.id)
+    if student_state:
+        for enrollment in course_enrollments:
+            ospp_utils.applay_user_status_to_enroll(
+                    user=request.user,
+                    course_enrollment=enrollment,
+                    status=student_state,
+            )
 
     # Record how many courses there are so that we can get a better
     # understanding of usage patterns on prod.

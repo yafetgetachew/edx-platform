@@ -17,7 +17,9 @@ class OSPPEnrollmentFeature(models.Model):
     eligibility_status = models.BooleanField(default=False)
 
 
-def on_proctoring_attempts_save(self):
+def on_proctoring_attempts_save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+):
     tracker = eventtracking.get_tracker()
     context = {
         'username':self.user.username,
@@ -27,7 +29,12 @@ def on_proctoring_attempts_save(self):
         tracker.emit('ospp.proctoring.attempts.change', {
             'status': self.status
         })
-    super(ProctoredExamStudentAttempt, self).save()
+    super(ProctoredExamStudentAttempt, self).save(
+        force_insert=force_insert,
+        force_update=force_update,
+        using=using,
+        update_fields=update_fields,
+    )
 
 
 # Hook for implement custom save method for the library model `ProctoredExamStudentAttempt`

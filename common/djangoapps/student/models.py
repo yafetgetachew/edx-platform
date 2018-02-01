@@ -28,7 +28,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.signals import user_logged_in, user_logged_out
 from django.core.cache import cache
 from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
-from django.db import IntegrityError, models
+from django.db import IntegrityError, models, transaction
 from django.db.models import Count
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import Signal, receiver
@@ -1025,8 +1025,34 @@ class CourseEnrollment(models.Model):
         ).format(self.user, self.course_id, self.created, self.is_active)
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        super(CourseEnrollment, self).save(force_insert=force_insert, force_update=force_update, using=using,
-                                           update_fields=update_fields)
+
+        # NOTE needed for OSPP
+        if self.mode == 'credit':
+            from openedx.core.djangoapps.credit.models import CreditCourse, CreditRequest, CreditProvider
+            with transaction.atomic():
+                CreditRequest.objects.get_or_create(
+                        username=self.user.username,
+                        course=CreditCourse.objects.filter(course_key=self.course_id).first(),
+                        provider_id=CreditProvider.objects.first().id,  # NOTE valid only system with single provider.
+                        uuid=uuid.uuid4().hex
+                )
+
+            eventtracking = tracker.get_tracker()
+            context = {
+                'username': self.user.username,
+                'course_id': self.course_id
+            }
+            with eventtracking.context('custom_user_context', context):
+                eventtracking.emit('common.student.CourseEnrollment', {
+                    'mode': self.mode
+                })
+
+        super(CourseEnrollment, self).save(
+                force_insert=force_insert,
+                force_update=force_update,
+                using=using,
+                update_fields=update_fields
+        )
 
         # Delete the cached status hash, forcing the value to be recalculated the next time it is needed.
         cache.delete(self.enrollment_status_hash_cache_key(self.user))

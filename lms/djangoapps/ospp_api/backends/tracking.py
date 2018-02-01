@@ -19,6 +19,7 @@ class StatisticProcessor(object):
 
     YES = 'Y'
     NO = 'N'
+    TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
     @abstractmethod
     def is_can_process(self, event):
@@ -40,11 +41,8 @@ class StatisticProcessor(object):
         """
         pass
 
-    @staticmethod
-    def get_event_timestamp(event):
-        if 'time' in event:
-            return event['time']
-        return event['timestamp']
+    def get_event_timestamp_as_string(self, event):
+        return (event['time'] if 'time' in event else event['timestamp']).strftime(self.TIME_FORMAT)
 
     @staticmethod
     def get_event_name(event):
@@ -71,7 +69,7 @@ class LastLoginStaticsProcessor(StatisticProcessor):
 
     def process(self, event):
         return {
-            'lastLoginInCourse': self.get_event_timestamp(event).strftime("%Y-%m-%d %H:%M:%S")
+            'lastLoginInCourse': self.get_event_timestamp_as_string(event)
         }
 
 
@@ -93,13 +91,25 @@ class GradeStaticsProcessor(StatisticProcessor):
 class ProctoringAttemptsProcessor(StatisticProcessor):
 
     def is_can_process(self, event):
-        return (
-                self.get_event_name(event) == 'ospp.proctoring.attempts.change'
-        )
+        return self.get_event_name(event) == 'ospp.proctoring.attempts.change'
 
     def process(self, event):
         return {
             'proctoringStatus': (event['data']['status'] == ProctoredExamStudentAttemptStatus.verified) and 'Y' or 'N'
+        }
+
+
+class CreditProcessor(StatisticProcessor):
+
+    def is_can_process(self, event):
+        return self.get_event_name(event) == 'common.student.CourseEnrollment'
+
+    def process(self, event):
+        timestamp = self.get_event_timestamp_as_string(event)
+        return {
+            'creditConverted': (event['data']['mode'] == 'credit') and 'Y' or 'N',
+            'creditConvertedDate': timestamp,
+            'courseCompletedDate': timestamp,
         }
 
 
@@ -114,6 +124,7 @@ class TrackingBackend(BaseBackend):
             LastLoginStaticsProcessor(),
             GradeStaticsProcessor(),
             ProctoringAttemptsProcessor(),
+            CreditProcessor(),
         ]
 
         self.statistic = {}

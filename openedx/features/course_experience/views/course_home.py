@@ -42,18 +42,7 @@ class CourseHomeView(CourseTabView):
         Displays the home page for the specified course.
         """
         # NOTE(OSPP Feature) Check whether user is sponsored by the partner
-        try:
-            enrollment_course_id = CourseKey.from_string(course_id)
-            course_enrollment = CourseEnrollment.objects.get(course_id=enrollment_course_id, user=request.user)
-            if course_enrollment and course_enrollment.mode != 'verified':
-                eligible, verify_id_free = ospp_utils.student_is_verified(request.user.id)
-                if eligible and verify_id_free:
-                    course_enrollment.mode = 'verified'
-                    course_enrollment.save()
-        except (InvalidKeyError, CourseEnrollment.DoesNotExist) as err:
-            log.warning(
-                "Cannot provide student ckecking for eligibility and partner benefits, the Error is: {}".format(err)
-            )
+        ospp_utils.update_user_state_from_eligible(request.user, course_id)
 
         return super(CourseHomeView, self).get(request, course_id, 'courseware', **kwargs)
 
