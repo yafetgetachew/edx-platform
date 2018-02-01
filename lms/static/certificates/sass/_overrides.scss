@@ -19,3 +19,264 @@
 // #SHAME
 // ------------------------------
 
+.header-app .logo {
+    display: inline-block;
+    width: auto;
+    height: 70px;    
+}
+
+.header-app .logo-img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.accomplishment-rendering {
+    padding: 0;
+    border-top: none;
+}
+
+.accomplishment-rendering .accomplishment-type {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-align-items: center;
+    align-items: center;
+    min-height: 152px;
+    margin: 0;
+    padding:  22px 16px 16px;
+    color: #fff;
+    text-align: left;
+    background: #0077be;
+}
+
+.accomplishment-rendering .accomplishment-type-symbol {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: auto;
+    height: auto;
+    max-width: 72%;
+    max-height: 80px;
+    margin: 0 auto 0 0;
+}
+
+.accomplishment-rendering .certificate-images {
+    display: -webkit-flex;
+    display: flex;
+    max-height: 80px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.accomplishment-rendering .certificate-images li{
+    width: auto;
+    max-width: 30%;
+    margin: 0 1.3%;
+}
+
+.accomplishment .accomplishment-type-symbol .src {
+    display: initial;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.certificate .accomplishment-rendering .accomplishment-type-label {
+    width: auto;
+    max-width: 50%;
+    margin: 0 0 0 auto;
+    color: #fff;
+    text-align: right;
+}
+
+.accomplishment  .accomplishment-type-label-name {
+    font-size: 38px;
+    line-height: 44px;
+    text-transform: uppercase;
+}
+
+.accomplishment  .accomplishment-type-label-date{
+    display: block;
+    font-size: 26px;
+    line-height: 30px;
+    font-style: italic;
+    font-weight: 300;
+}
+.certificate .accomplishment-rendering .accomplishment-statement,
+.certificate .accomplishment-rendering .accomplishment-statement-lead,
+.certificate .accomplishment-rendering .accomplishment-recipient,
+.certificate .accomplishment-rendering .accomplishment-course {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.wrapper-statement-and-signatories {
+    padding: 80px 12px 20px;
+}
+.accomplishment-rendering .accomplishment-statement {
+    min-height: 430px;
+    padding: 0 48px;
+    color: #18365f;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: left;
+    border: none;
+}
+.accomplishment .hd-1.emphasized,
+.accomplishment .hd-2.emphasized{
+    color: #014289;
+}
+.accomplishment .hd-1.emphasized {
+    width: initial;
+    font-size: 70px;
+    line-height: 82px;
+    letter-spacing: 1.4px;
+    margin-bottom: 26px;
+}
+.accomplishment .hd-2.emphasized {
+    font-size: 44px;
+    line-height: 52px;
+    margin: 0 0 74px 0;
+    letter-spacing: 0.5px;
+}
+.accomplishment .hd-1.emphasized:before,
+.accomplishment .hd-2.emphasized:before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 69px;
+    margin-right: 18px;
+    vertical-align: middle;
+    background: url(../images/certificate-emphasized-icon.png) no-repeat 50% 50%;
+}
+.layout-accomplishment .accomplishment-rendering .accomplishment-summary{
+    margin-bottom: 14px;
+    width: initial;
+}
+.accomplishment-course-label {
+    font-size: 25px;
+    line-height: 31px;
+    letter-spacing: 0.4px;
+    margin-bottom: 19px;
+}
+.layout-accomplishment .accomplishment-rendering .accomplishment-statement-detail {
+    width: initial;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.26px;
+}
+.accomplishment-rendering .accomplishment-signatories {
+    padding: 0;
+    color: #18365f;
+    border: none;
+}
+.layout-accomplishment .accomplishment-signatories .wrapper-signatories {
+    text-align: left;
+
+}
+.accomplishment-rendering .accomplishment-signatories .list-signatories {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.layout-accomplishment .accomplishment-signatories .signatory {
+    width: 33.33333%;
+    text-align: center;
+    padding: 0 28px;
+    min-width: 0;
+}
+.accomplishment-rendering .accomplishment-signatories .signatory-credentials {
+    margin: 0;
+    font-size: 18px;
+    line-height: 22px;
+    padding-top: 8px;
+    margin: 0;
+    border-top: 1px solid #18365f;
+}
+.accomplishment-rendering .accomplishment-signatories .signatory-name {
+    color: #18365f;
+    font-weight: bold;
+}
+
+@media print {
+    body.layout-accomplishment {
+        margin-top: 1.875rem !important;
+    }
+
+    .accomplishment-rendering .accomplishment-type {
+        min-height: 120px;
+    }
+
+    .accomplishment .accomplishment-type-label-name {
+        font-size: 26px;
+        line-height: 32px;
+    }
+
+    .accomplishment-course-label {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .accomplishment .accomplishment-type-label-date {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .wrapper-statement-and-signatories {
+        padding: 40px 12px 10px;
+    }
+
+    .accomplishment-rendering .accomplishment-signatories {
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .layout-accomplishment .accomplishment-rendering .accomplishment-statement-detail {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0;
+    }
+
+    .accomplishment .accomplishment-type-symbol .src {
+        max-width: 140px !important;
+        max-height: 60px;
+    }
+
+    .accomplishment-rendering .accomplishment-statement {
+        width: 100%;
+        min-height: 240px;
+        margin: 0;
+        padding: 0 15px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .accomplishment .hd-1.emphasized {
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: 0;
+    }
+
+    .accomplishment .hd-2.emphasized {
+        margin-bottom: 20px;
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+    .accomplishment .hd-1.emphasized:before,
+    .accomplishment .hd-2.emphasized:before {
+       width: 24px;
+       height: 40px;
+       background-size: contain; 
+    }
+
+    .accomplishment-rendering .accomplishment-signatories .signatory-credentials {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}

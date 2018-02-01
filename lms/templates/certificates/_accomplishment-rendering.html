@@ -8,47 +8,35 @@ course_mode_class = course_mode if course_mode else ''
 
     <div class="wrapper-accomplishment-rendering">
         <div class="accomplishment-rendering">
-            <span class="deco-corner deco-corner-tl"></span>
-            <span class="deco-corner deco-corner-tr"></span>
-            <span class="deco-corner deco-corner-bl"></span>
-            <span class="deco-corner deco-corner-br"></span>
 
             <div class="accomplishment-type">
-                <span class="accomplishment-type-symbol">
-                    <img class="src" src="/static/certificates/images/ico-${course_mode_class}.png" alt="">
+                <div class="accomplishment-type-symbol">
+                    <ul class="certificate-images">
+                      % if image1:
+                        <li><img class="src" src="${image1}" alt=""></li>
+                      % endif
+                      % if image2:
+                        <li><img class="src" src="${image2}" alt=""></li>
+                      % endif
+                      % if image3:
+                        <li><img class="src" src="${image3}" alt=""></li>
+                      % endif
+                    </ul>
+                </div>
+
+                <span class="accomplishment-type-label hd-4">
+                    <div class="accomplishment-type-label-name">${document_title}</div>
+                    <div class="accomplishment-type-label-date">Bиданий 17.11.17</div>
                 </span>
-
-                <span class="accomplishment-type-label hd-4">${document_title}</span>
-            </div>
-
-            <div class="certificate-images">
-                <ul>
-                  % if image1:
-                    <li class="image-1"><img src="${image1}" /></li>
-                  % endif
-                  % if image2:
-                    <li class="image-2"><img src="${image2}" /></li>
-                  % endif
-                  % if image3:
-                    <li class="image-3"><img src="${image3}" /></li>
-                  % endif
-                </ul>
             </div>
 
             <div class="wrapper-statement-and-signatories">
                 <div class="accomplishment-statement">
-                    <p class="accomplishment-statement-lead">
-                        <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</strong>
-                        <span class="accomplishment-summary copy copy-lead">${accomplishment_copy_description_full}</span>
-
-                        <span class="accomplishment-course hd-1 emphasized">
-                            <span class="accomplishment-course-org">${accomplishment_copy_course_org}  </span>
-                            <span class="accomplishment-course-number">${course_number}</span>:
-                            <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
-                        </span>
-                    </p>
-
-                    <p class="accomplishment-statement-detail copy copy-lead">${accomplishment_copy_course_description}</p>
+                    <p>Цей сертифiкат засвiдчуе, що</p>
+                    <p class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</p>
+                    <p class="accomplishment-course-label">${accomplishment_copy_description_full}</p>
+                    <p class="accomplishment-course-name hd-2 emphasized">${accomplishment_copy_course_name}</p>
+                    <p class="accomplishment-statement-detail">${accomplishment_copy_course_description}</p>
                 </div>
 
                 % if mode != 'base':
@@ -60,13 +48,10 @@ course_mode_class = course_mode if course_mode else ''
                             % if certificate_data:
                                 % for signatory in certificate_data.get('signatories', []):
                                 <div class="signatory">
-                                    <img class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
-
-                                    <h4 class="signatory-name hd-5">${signatory['name']}</h4>
-                                    <p class="signatory-credentials copy copy-micro">
-                                        <span class="role">${signatory['title']}</span>
-                                        <span class="organization">${signatory['organization']}</span>
+                                    <p class="signatory-credentials">
+                                        ${signatory['title']} ${signatory['organization']}
                                     </p>
+                                    <h4 class="signatory-name">${signatory['name']}</h4>
                                 </div>
                                 % endfor
                             % endif
@@ -76,25 +61,6 @@ course_mode_class = course_mode if course_mode else ''
                 % endif
             </div>
 
-            <div class="accomplishment-orgs">
-                <h3 class="accomplishment-orgs-title sr-only">${_("Supported by the following organizations")}</h3>
-
-                <ul class="wrapper-orgs list-orgs">
-                    <li class="wrapper-organization">
-                        <div class="organization organization-edX">
-                            <img class="organization-logo" src="${logo_src}" alt="${platform_name}">
-                        </div>
-                    </li>
-
-                    % if organization_logo:
-                    <li class="wrapper-organization">
-                        <div class="organization">
-                            <img class="organization-logo" src="${organization_logo.url}" alt="${platform_name}">
-                        </div>
-                    </li>
-                    % endif
-                </ul>
-            </div>
         </div>
     </div>
 
