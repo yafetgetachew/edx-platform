@@ -5662,8 +5662,8 @@ msgid ""
 msgstr "Курс надано {partner_short_name} за ініціативою {partner_long_name}."
 
 msgid ""
-"a course of study offered by {partner_short_name}, through {platform_name}."
-msgstr "Курс надано {partner_short_name} за ініціативою {partner_long_name}."
+"a course of study offered by {partner_short_name}, an online learning initiative of {partner_long_name} through {platform_name}."
+msgstr "Курс надано {partner_short_name} за ініціативою {partner_long_name} {platform_name}."
 
 #. Translators:  This text represents the description of course
 #: lms/djangoapps/certificates/views/webview.py
