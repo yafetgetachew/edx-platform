@@ -142,7 +142,7 @@
                 windowHeight = $(window).height();
                 $discussionBody = this.$('.discussion-column');
                 discussionsBodyTop = $discussionBody[0] ? $discussionBody.offset().top : undefined;
-                discussionsBodyBottom = discussionsBodyTop + $discussionBody.outerHeight();
+                sidebarHeight = Math.min(sidebarHeight + 45, $discussionBody.offsetHeight);
                 $sidebar = this.$('.forum-nav');
                 if (scrollTop > discussionsBodyTop - this.sidebar_padding) {
                     $sidebar.css('top', scrollTop - discussionsBodyTop + this.sidebar_padding);
