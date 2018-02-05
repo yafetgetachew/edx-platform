@@ -145,40 +145,61 @@ $seq-nav-height: 44px;
         //problems
         &.seq_problem {
           .icon:before {
-            content: "\f044";  // .fa-pencil-square-o
+            content: "\f14a";  // .fa-check-square
           }
         }
 
         &.seq_video_conferencing {
           .icon:before {
-            content: "";
-            display: block;
-            height: 23px;
-            width: 26px;
-            background-size: cover;
-            background-image: url("#{$static-path}/images/video_conferencing.svg")
+            content: "\f03d";  // .fa-video-camera
           }
         }
 
         &.seq_presentation_slides {
           .icon:before {
-            content: "";
-            display: block;
-            height: 23px;
-            width: 26px;
-            background-size: cover;
-            background-image: url("#{$static-path}/images/presentation_slides.svg")
+            content: "\f1c4";  // .fa-file-powerpoint-o
           }
         }
 
         &.seq_discussion {
           .icon:before {
-            content: "";
-            display: block;
-            height: 23px;
-            width: 26px;
-            background-size: cover;
-            background-image: url("#{$static-path}/images/discussion.svg")
+            content: "\f0e6";  // .fa-comments-o
+          }
+        }
+
+        &.seq_group_exercise {
+          .icon:before {
+            content: "\f0c0";  // .fa-users
+          }
+        }
+
+        &.seq_google_doc {
+          .icon:before {
+            content: "\f0d4";  // .fa-google-plus-square
+          }
+        }
+
+        &.seq_surveys {
+          .icon:before {
+            content: "\f200";  // .fa-pie-chart
+          }
+        }
+
+        &.seq_text_icon {
+          .icon:before {
+            content: "\f15c";  // .fa-file-text
+          }
+        }
+
+        &.seq_how_to {
+          .icon:before {
+            content: "\f059";  // .fa-question-circle
+          }
+        }
+
+        &.seq_maps {
+          .icon:before {
+            content: "\f041";  // .fa-map-marker
           }
         }
 

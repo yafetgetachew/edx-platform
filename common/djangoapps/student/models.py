@@ -517,6 +517,7 @@ def user_post_save_callback(sender, **kwargs):
         excluded_fields=['last_login', 'first_name', 'last_name'],
         hidden_fields=['password']
     )
+    up = UserProfile.objects.get_or_create(user=user)
 
 
 class UserSignupSource(models.Model):
