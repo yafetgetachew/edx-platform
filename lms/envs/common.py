@@ -3235,3 +3235,6 @@ ASU_TRACKER_BUFFER_SIZE = 10
 ASU_TRACKER_BUFFER_LIFE_TIME = 300
 ASU_API_URL = 'https://qr0vf9lwi5.execute-api.us-east-2.amazonaws.com/dev'
 ASU_API_KEY = 'TqTWwPtNjO7VTpWmstEA79AfEgyxL5vO1PTvwBnt'
+
+# Leave registration opened for the lms
+FEATURES['ALLOW_PUBLIC_ACCOUNT_CREATION'] = True

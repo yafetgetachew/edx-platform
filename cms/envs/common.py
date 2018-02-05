@@ -1345,3 +1345,6 @@ RECALCULATE_GRADES_ROUTING_KEY = LOW_PRIORITY_QUEUE
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = LOW_PRIORITY_QUEUE
+
+# Close registration for the studio
+FEATURES['ALLOW_PUBLIC_ACCOUNT_CREATION'] = False
