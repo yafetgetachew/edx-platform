@@ -154,7 +154,7 @@
                 discussionBottomOffset = discussionsBodyBottom + this.sidebar_padding;
                 amount = Math.max(topOffset - discussionBottomOffset, 0);
                 sidebarHeight = sidebarHeight - this.sidebar_padding - amount;
-                sidebarHeight = Math.min(sidebarHeight + 1, $discussionBody.outerHeight());
+                sidebarHeight = Math.min(sidebarHeight + 45, $discussionBody.offsetHeight);
                 $sidebar.css('height', sidebarHeight);
                 headerHeight = this.$('.forum-nav-header').outerHeight();
                 refineBarHeight = this.$('.forum-nav-refine-bar').outerHeight();
