@@ -3165,7 +3165,7 @@ COURSE_DISCOVERY_MEANINGS = {
             'honor': 'Certificate (free)',
             'verified': 'Credit (paid)',
             'professional': 'Professional (paid)',
-            'audit': 'No Certificate free',
+            'audit': 'No Certificate (free)',
         },
     },
     'language': LANGUAGE_MAP,
