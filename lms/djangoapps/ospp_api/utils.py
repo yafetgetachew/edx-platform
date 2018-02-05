@@ -49,6 +49,9 @@ def applay_user_status_to_enroll(user, course_enrollment, status):
 def update_user_state_from_eligible(user, course_key):
     if isinstance(course_key, basestring):
         course_key = CourseKey.from_string(course_key)
+    if not isinstance(course_key, CourseKey):
+        raise Exception("Unknown format of the Course Key : `{}`".format(course_key))
+
     try:
         course_enrollment = CourseEnrollment.objects.get(course_id=course_key, user=user)
     except (CourseEnrollment.DoesNotExist) as err:
