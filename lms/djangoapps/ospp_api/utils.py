@@ -2,6 +2,7 @@ import requests
 import logging
 
 from django.conf import settings
+from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.credit.models import CreditEligibility
 
 from student.models import CourseEnrollment
@@ -46,6 +47,8 @@ def applay_user_status_to_enroll(user, course_enrollment, status):
 
 
 def update_user_state_from_eligible(user, course_key):
+    if isinstance(course_key, basestring):
+        course_key = CourseKey.from_string(course_key)
     try:
         course_enrollment = CourseEnrollment.objects.get(course_id=course_key, user=user)
     except (CourseEnrollment.DoesNotExist) as err:
