@@ -887,6 +887,15 @@ class CourseFields(object):
         ),
         scope=Scope.settings, default=False
     )
+    free_lessons_number = String(
+        display_name=_("Course Number of Free Lessons"),
+        help=_(
+            'Enter the number of lessons that a student can view without the paid in the course. For example: "2". '
+            'To allow to view an unlimited number of free lessons, enter "all".'
+        ),
+        default="3",
+        scope=Scope.settings
+    )
 
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
@@ -1410,6 +1419,19 @@ class CourseDescriptor(CourseFields, SequenceDescriptor, LicenseMixin):
           bool: False if the course has already started, True otherwise.
         """
         return datetime.now(utc) <= self.start
+
+    def all_lessons_are_free(self):
+        if self.free_lessons_number == 'all':
+            return True
+        return False
+
+    def get_free_lessons_number(self):
+        if not self.all_lessons_are_free():
+            try:
+                free_lessons_number = int(self.free_lessons_number)
+            except (ValueError, TypeError):
+                free_lessons_number = 3
+            return free_lessons_number
 
 
 class CourseSummary(object):

@@ -4,7 +4,10 @@ xModule implementation of a learning sequence
 
 # pylint: disable=abstract-method
 import collections
+import requests
 from datetime import datetime
+from django.contrib.auth.models import User
+from django.conf import settings
 from django.utils.timezone import UTC
 import json
 import logging
@@ -222,7 +225,8 @@ class SequenceModule(SequenceFields, ProctoringFields, XModule):
         context = context or {}
         self._capture_basic_metrics()
         banner_text = None
-        special_html_view = self._hidden_content_student_view(context) or self._special_exam_student_view()
+        special_html_view = self._hidden_content_student_view(context) or self._special_exam_student_view() \
+                            or self.hidden_not_free_lessons()
         if special_html_view:
             masquerading_as_specific_student = context.get('specific_masquerade', False)
             banner_text, special_html = special_html_view
@@ -256,7 +260,6 @@ class SequenceModule(SequenceFields, ProctoringFields, XModule):
                 banner_text = _("Because the course has ended, this assignment is hidden from the learner.")
             else:
                 banner_text = _("Because the due date has passed, this assignment is hidden from the learner.")
-
             hidden_content_html = self.system.render_template(
                 'hidden_content.html',
                 {
@@ -519,6 +522,67 @@ class SequenceModule(SequenceFields, ProctoringFields, XModule):
             if c in child_classes:
                 new_class = c
         return new_class
+
+    def hidden_not_free_lessons(self):
+        lesson_is_free = self.lesson_is_free()
+        if not lesson_is_free:
+            course_was_paid, payment_link = self.get_payment_data()
+            if not course_was_paid:
+                banner_text = _("I Believe I Can Fly.")
+                hidden_content_html = self.system.render_template(
+                    'hidenn_not_free_lessons.html',
+                    {
+                        'payment_link': payment_link,
+                    }
+                )
+                return banner_text, hidden_content_html
+
+    def get_free_lessons(self):
+        free_lessons = []
+        course = self._get_course()
+        free_lessons_number = course.get_free_lessons_number()
+        sections = course.get_children()
+        for section in sections:
+            subsections = section.get_children()
+            if len(free_lessons) >= free_lessons_number:
+                break
+
+            for subsection in subsections:
+                if len(free_lessons) < free_lessons_number:
+                    free_lessons.append(subsection.location)
+                else:
+                    break
+
+        return free_lessons
+
+    def lesson_is_free(self):
+        course = self._get_course()
+
+        if course.all_lessons_are_free():
+            return True
+
+        free_lessons = self.get_free_lessons()
+        if self.location in free_lessons:
+            return True
+
+        return False
+
+    def get_payment_data(self):
+        url = '{}/api/payment/'.format(settings.FEATURES.get('SPALAH_ROOT_URL', ''))
+        username = User.objects.get(id=self.runtime.user_id).username
+        params = {
+            'course_id': self.course_id,
+            'username': username
+        }
+        response = requests.get(url, params=params)
+
+        if response.status == 200:
+            data = response.json()
+            user_was_paid = data.get('paid', False)
+            payment_link = data.get('payment_link', '')
+            return user_was_paid, payment_link
+
+        return False, 'url'
 
 
 class SequenceDescriptor(SequenceFields, ProctoringFields, MakoModuleDescriptor, XmlDescriptor):

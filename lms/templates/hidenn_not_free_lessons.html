@@ -1,0 +1,28 @@
+<%page expression_filter="h"/>
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+<div class="sequence hidden-content proctored-exam completed">
+    <h3>
+        ${_("I believe I can fly.")}
+    </h3>
+    <hr>
+    <p>
+        ${Text(_(
+            "I believe I can fly{line_break}"
+            "I believe I can touch the sky{line_break}"
+        )).format(
+            line_break=HTML("<br>"),
+        )}
+        % if payment_link:
+            ${Text(_(
+                "{link_start}Place for the payment link.{link_end}"
+            )).format(
+                link_start=HTML("<a href='{}'>").format(payment_link),
+                link_end=HTML("</a>"),
+            )}
+        % endif
+    </p>
+</div>
