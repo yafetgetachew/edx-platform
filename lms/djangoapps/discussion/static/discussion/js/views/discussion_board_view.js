@@ -142,7 +142,7 @@
                 windowHeight = $(window).height();
                 $discussionBody = this.$('.discussion-column');
                 discussionsBodyTop = $discussionBody[0] ? $discussionBody.offset().top : undefined;
-                sidebarHeight = Math.min(sidebarHeight + 45, $discussionBody.offsetHeight);
+                discussionsBodyBottom = discussionsBodyTop + $discussionBody.outerHeight();
                 $sidebar = this.$('.forum-nav');
                 if (scrollTop > discussionsBodyTop - this.sidebar_padding) {
                     $sidebar.css('top', scrollTop - discussionsBodyTop + this.sidebar_padding);
@@ -154,7 +154,7 @@
                 discussionBottomOffset = discussionsBodyBottom + this.sidebar_padding;
                 amount = Math.max(topOffset - discussionBottomOffset, 0);
                 sidebarHeight = sidebarHeight - this.sidebar_padding - amount;
-                sidebarHeight = Math.min(sidebarHeight + 45, $discussionBody.offsetHeight);
+                sidebarHeight = Math.min(sidebarHeight + 1, $discussionBody.outerHeight());
                 $sidebar.css('height', sidebarHeight);
                 headerHeight = this.$('.forum-nav-header').outerHeight();
                 refineBarHeight = this.$('.forum-nav-refine-bar').outerHeight();
