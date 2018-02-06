@@ -2056,7 +2056,7 @@ INSTALLED_APPS = (
     'openedx.core.djangoapps.auth_exchange',
 
     # For the wiki
-    'wiki',  # The new django-wiki from benjaoming
+    # 'wiki',  # The new django-wiki from benjaoming
     'django_notify',
     'course_wiki',  # Our customizations
     'mptt',
