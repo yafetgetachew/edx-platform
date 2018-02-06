@@ -5,9 +5,11 @@ define(
         'backbone',
         'js/views/previous_video_upload',
         'common/js/spec_helpers/template_helpers',
-        'common/js/spec_helpers/view_helpers'
+        'common/js/spec_helpers/view_helpers',
+        'edx-ui-toolkit/js/utils/spec-helpers/ajax-helpers',
+        'mock-ajax'
     ],
-    function($, _, Backbone, PreviousVideoUploadView, TemplateHelpers, ViewHelpers) {
+    function($, _, Backbone, PreviousVideoUploadView, TemplateHelpers, ViewHelpers, AjaxHelpers) {
         'use strict';
         describe('PreviousVideoUploadView', function() {
             var previousVideoUploadView = function(modelData) {
@@ -33,6 +35,11 @@ define(
             beforeEach(function() {
                 setFixtures('<div id="page-prompt"></div><div id="page-notification"></div>');
                 TemplateHelpers.installTemplate('previous-video-upload', false);
+                jasmine.Ajax.install();
+            });
+
+            afterEach(function() {
+                jasmine.Ajax.uninstall();
             });
 
             it('should render video name correctly', function() {
@@ -40,6 +47,63 @@ define(
                 var $el = render({client_video_id: testName});
                 expect($el.find('.name-col>span').text()).toEqual(testName);
             });
+
+            it('called checkStatusVideo if video status is in_progress and storage is equal to azure',
+                function() {
+                    var view = previousVideoUploadView({status_value: 'transcode_active'});
+                    view.storageService = 'azure';
+                    view.checkStatusVideo = jasmine.createSpy();
+
+                    view.render();
+
+                    expect(view.checkStatusVideo).toHaveBeenCalled();
+                }
+            );
+
+            it('should render correct new video status',
+                function() {
+                    var requests,
+                        view = previousVideoUploadView({status_value: 'transcode_active'});
+                    view.storageService = 'azure';
+                    view.render();
+
+                    jasmine.Ajax.uninstall();
+                    jasmine.clock().install();
+
+                    requests = AjaxHelpers.requests(this);
+                    view.checkStatusVideo();
+
+                    jasmine.clock().tick(20000);
+
+                    AjaxHelpers.respond(requests, {
+                        status: 200,
+                        body: {
+                            "videos": [
+                                {
+                                    "status": "Ready",
+                                    "created": "2018-02-06T11:03:22.421Z",
+                                    "client_video_id": "video.mp4",
+                                    "status_value": "file_complete",
+                                    "duration": 10.0,
+                                    "edx_video_id": "dummy_id_1"
+                                },
+                                {
+                                    "status": "Test status",
+                                    "created": "2018-02-06T10:57:20.997Z",
+                                    "client_video_id": "TEST.mp4",
+                                    "status_value": "test_status",
+                                    "duration": 20.0,
+                                    "edx_video_id": "dummy_id"
+                                }
+                            ]
+                        }
+                    });
+
+                    expect(view.$('.status-col').text().trim()).toEqual('Test status');
+                    jasmine.clock().uninstall();
+                    jasmine.Ajax.install();
+                }
+            );
 
             it('called renderTranscripts if video status is equal to file_complete and storage is equal to azure',
                 function() {
