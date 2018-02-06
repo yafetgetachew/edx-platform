@@ -2551,7 +2551,7 @@ ALL_LANGUAGES = (
     [u"ks", u"Kashmiri"],
     [u"kr", u"Kanuri"],
     [u"kk", u"Kazakh"],
-    [u"km", u"Central Khmer"],
+    [u"km", u"Khmer"],
     [u"ki", u"Kikuyu"],
     [u"rw", u"Kinyarwanda"],
     [u"ky", u"Kirghiz"],

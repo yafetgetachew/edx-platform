@@ -29,6 +29,16 @@ from course_modes.models import CourseMode, CourseModeExpirationConfig
 from lms.djangoapps.verify_student import models as verification_models
 
 
+DISPLAY_NAME_MODES = {
+    "honor": _("Certificate (free)"),
+    "professional": _("Professional (paid)"),
+    "verified": _("Credit (paid)"),
+    "audit": _("No Certificate (free)"),
+    "no-id-professional": _("no-id-professional"),
+    "credit": _("credit"),
+}
+
+
 class CourseModeForm(forms.ModelForm):
 
     class Meta(object):
@@ -36,15 +46,17 @@ class CourseModeForm(forms.ModelForm):
         fields = '__all__'
 
     COURSE_MODE_SLUG_CHOICES = (
-        [(CourseMode.DEFAULT_MODE_SLUG, CourseMode.DEFAULT_MODE_SLUG)] +
-        [(mode_slug, mode_slug) for mode_slug in CourseMode.VERIFIED_MODES] +
+        [(CourseMode.DEFAULT_MODE_SLUG, DISPLAY_NAME_MODES.get(CourseMode.DEFAULT_MODE_SLUG,
+                                                               CourseMode.DEFAULT_MODE_SLUG))] +
+        [(CourseMode.DEFAULT_SHOPPINGCART_MODE_SLUG, DISPLAY_NAME_MODES.get(CourseMode.DEFAULT_SHOPPINGCART_MODE_SLUG,
+                                                                            CourseMode.DEFAULT_SHOPPINGCART_MODE_SLUG))] +
+        [(mode_slug, DISPLAY_NAME_MODES.get(mode_slug, mode_slug)) for mode_slug in CourseMode.VERIFIED_MODES] +
         [(CourseMode.NO_ID_PROFESSIONAL_MODE, CourseMode.NO_ID_PROFESSIONAL_MODE)] +
-        [(mode_slug, mode_slug) for mode_slug in CourseMode.CREDIT_MODES] +
+        [(mode_slug, DISPLAY_NAME_MODES.get(mode_slug, mode_slug)) for mode_slug in CourseMode.CREDIT_MODES]
         # need to keep legacy modes around for awhile
-        [(CourseMode.DEFAULT_SHOPPINGCART_MODE_SLUG, CourseMode.DEFAULT_SHOPPINGCART_MODE_SLUG)]
     )
 
-    mode_slug = forms.ChoiceField(choices=COURSE_MODE_SLUG_CHOICES, label=_("Mode"))
+    mode_slug = forms.ChoiceField(choices=COURSE_MODE_SLUG_CHOICES, label=_("Course Mode"))
 
     # The verification deadline is stored outside the course mode in the verify_student app.
     # (we used to use the course mode expiration_datetime as both an upgrade and verification deadline).
@@ -193,7 +205,7 @@ class CourseModeAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'course_id',
-        'mode_slug',
+        'view_mode_slug',
         'min_price',
         'expiration_datetime_custom',
         'sku',
@@ -208,6 +220,11 @@ class CourseModeAdmin(admin.ModelAdmin):
     # Display a more user-friendly name for the custom expiration datetime field
     # in the Django admin list view.
     expiration_datetime_custom.short_description = "Upgrade Deadline"
+
+    def view_mode_slug(self, obj):
+        return DISPLAY_NAME_MODES.get(obj.mode_slug, obj.mode_slug)
+
+    view_mode_slug.short_description = "Course Mode"
 
 
 class CourseModeExpirationConfigAdmin(admin.ModelAdmin):
