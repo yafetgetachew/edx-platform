@@ -1610,14 +1610,14 @@ def _do_create_account(form, custom_form=None):
         "year_of_birth", "prefix", "city_of_residence", "country_of_residence", "nationality",
         "hear", "hear_details", "interested_topic"
     ]
-    profile = UserProfile(
-        user=user,
-        **{key: form.cleaned_data.get(key) for key in profile_fields}
-    )
-    extended_profile = form.cleaned_extended_profile
-    if extended_profile:
-        profile.meta = json.dumps(extended_profile)
     try:
+        profile, _created = UserProfile.objects.get_or_create(
+            user=user,
+            defaults={key: form.cleaned_data.get(key) for key in profile_fields}
+        )
+        extended_profile = form.cleaned_extended_profile
+        if extended_profile:
+            profile.meta = json.dumps(extended_profile)
         profile.save()
     except Exception:  # pylint: disable=broad-except
         log.exception("UserProfile creation failed for user {id}.".format(id=user.id))
