@@ -968,6 +968,7 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
 
 urlpatterns += (
     url(r'^tinymce/', include('tinymce.urls')),
+)
 
 # Include edX global analytics application urls.
 EDX_GLOBAL_ANALYTICS_APP_URL = 'edx_global_analytics_app/'
