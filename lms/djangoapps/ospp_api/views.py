@@ -1,34 +1,39 @@
 import logging
-import string
 import random
+import string
 
-from django.core.exceptions import ValidationError, ObjectDoesNotExist
+from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.core.urlresolvers import reverse
 from django.db.models import Q
+from django.http import HttpResponse
+from django.shortcuts import redirect
+from django.views.generic import View
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
+from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
 from openedx.core.djangoapps.user_api.preferences.api import update_email_opt_in
+from openedx.core.lib.api.authentication import OAuth2AuthenticationAllowInactiveUser
+from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
 from openedx.core.lib.exceptions import CourseNotFoundError
 from openedx.core.lib.log_utils import audit_log
-from openedx.features.enterprise_support.api import enterprise_enabled, EnterpriseApiClient, EnterpriseApiException
+from openedx.features.course_experience import course_home_url_name
+from openedx.features.enterprise_support.api import EnterpriseApiClient, EnterpriseApiException, enterprise_enabled
+from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_406_NOT_ACCEPTABLE
 from rest_framework.views import APIView
-from rest_framework.response import Response
 from social_django.models import UserSocialAuth
 
 from edxmako.shortcuts import render_to_response
 from enrollment import api
-from enrollment.errors import CourseEnrollmentError, CourseModeNotFoundError, CourseEnrollmentExistsError
+from enrollment.errors import CourseEnrollmentError, CourseEnrollmentExistsError, CourseModeNotFoundError
 from enrollment.views import REQUIRED_ATTRIBUTES
 from ospp_api.models import OSPPEnrollmentFeature
-from third_party_auth.models import SAMLProviderConfig, SAMLProviderData
-from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
-from openedx.core.lib.api.authentication import OAuth2AuthenticationAllowInactiveUser
-from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
+from student.models import CourseEnrollment, User
 from student.views import create_account_with_params
-from student.models import User, CourseEnrollment
+from third_party_auth.models import SAMLProviderConfig
 
 log = logging.getLogger(__name__)
-
 
 REQUIRED_CREATE_USER_PARAMS = ('username', 'email', 'name_id')
 
@@ -216,10 +221,10 @@ class EnrollUserView(APIView):
             user = User.objects.get(id=user_id)
         except ObjectDoesNotExist:
             return Response(
-                status=HTTP_406_NOT_ACCEPTABLE,
-                data={
-                    'message': u'The user with id {} does not exist.'.format(user_id)
-                }
+                    status=HTTP_406_NOT_ACCEPTABLE,
+                    data={
+                        'message': u'The user with id {} does not exist.'.format(user_id)
+                    }
             )
         username = user.username
 
@@ -227,7 +232,6 @@ class EnrollUserView(APIView):
 
         partner_logo = request.data.get('partner_logo', '')
         eligibility_status = request.data.get('eligibility_status', False)
-
 
         try:
             is_active = request.data.get('is_active')
@@ -237,7 +241,7 @@ class EnrollUserView(APIView):
                         status=HTTP_400_BAD_REQUEST,
                         data={
                             'message': (u"'{value}' is an invalid enrollment activation status.").format(
-                                value=is_active)
+                                    value=is_active)
                         }
                 )
 
@@ -310,7 +314,6 @@ class EnrollUserView(APIView):
                         enrollment_attributes=enrollment_attributes
                 )
 
-
             email_opt_in = request.data.get('email_opt_in', None)
             if email_opt_in is not None:
                 org = course_id.org
@@ -352,7 +355,7 @@ class EnrollUserView(APIView):
             )
         finally:
             current_enrollment = api.get_enrollment(username, unicode(course_id))
-            enrollment = CourseEnrollment.objects.get(course_id=course_id, user_id=user.id) # type: CourseEnrollment
+            enrollment = CourseEnrollment.objects.get(course_id=course_id, user_id=user.id)  # type: CourseEnrollment
             if not OSPPEnrollmentFeature.objects.filter(enrollment_id=enrollment.id).exists():
                 OSPPEnrollmentFeature(
                         enrollment_id=enrollment.id,
@@ -376,3 +379,36 @@ class EnrollUserView(APIView):
 
 def ospp_registration_stub(request):
     return render_to_response('ospp/blank_registration.html', {})
+
+
+class RoutView(View):
+    @staticmethod
+    def course_key_from_request(request):
+        return request.GET['course_id'].replace(' ', '+')
+
+    def _rout_to_course(self, request):
+        course_id = self.course_key_from_request(request)
+        course_key = CourseKey.from_string(course_id)
+        redirect_url = reverse(course_home_url_name(course_key), args=[course_id])
+        return redirect(redirect_url)
+
+    def _rout_to_credit(self, request):
+        credit_redirect = '{root}/credit/checkout/{course_id}/'.format(
+                root=settings.ECOMMERCE_PUBLIC_URL_ROOT,
+                course_id=self.course_key_from_request(request)
+        )
+        return redirect(credit_redirect)
+
+    def _rout_to_verify(self, request):
+        course_id = self.course_key_from_request(request)
+        redirect_url = reverse('verify_student_verify_now', kwargs={'course_id': course_id})
+        return redirect(redirect_url)
+
+    def get(self, request, lms_page_name):
+        return (
+                {
+                    'view': self._rout_to_course,
+                    'audit': self._rout_to_course,
+                    'get_credit': self._rout_to_credit,
+                    'pursue_credit': self._rout_to_verify,
+                }.get(lms_page_name, None) or (lambda _: redirect('/')))(request)
