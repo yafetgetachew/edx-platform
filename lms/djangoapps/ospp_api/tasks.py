@@ -67,7 +67,7 @@ def add_grades(statistic_map):
                     assessment_key_next = assessments_sorted[count + 1][0]
         if assessment_key_next:
             data['finalGrade'] = assessment_key_next
-            data['numberGrade'] = persent_current/100
+            data['grade'] = persent_current/100
         else:
             data.pop('finalGrade', None)
 
