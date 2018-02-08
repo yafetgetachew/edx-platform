@@ -1,12 +1,13 @@
 import re
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
+
 from courseware.access import has_access
 from edxmako.shortcuts import render_to_response
 
 
 class FromStudentProtectMiddleware(object):
-    COURSE_PATTERN = r'([^/:]+:[^/+]+\+[^/+]+\+[^/]+)'
+    COURSE_PATTERN = r'([^/:]+:[^/+]+\+[^/+]+\+[^/]+)(\+type@|/|[$]?)'
     DEPRECATED_COURSE_PATTERN = r'([^/]+/[^/]+/[^/]+)'
 
     def process_request(self, request):
@@ -14,8 +15,10 @@ class FromStudentProtectMiddleware(object):
                 re.search(self.COURSE_PATTERN, request.path)
                 or re.search(self.DEPRECATED_COURSE_PATTERN, request.path)
         )
+
         if course_id_regexp:
-            course_id = course_id_regexp.group(1)
+            # convert item locator to the course ID.
+            course_id = course_id_regexp.group(1).replace('block-v1:', 'course-v1:')
             try:
                 course_key = CourseKey.from_string(course_id)
             except InvalidKeyError:
