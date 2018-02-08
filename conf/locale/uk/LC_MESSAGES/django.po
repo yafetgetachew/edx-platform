@@ -5517,15 +5517,13 @@ msgid ""
 "successfully completed, received a passing grade, and was awarded this "
 "{platform_name} {certificate_type} Certificate of Completion in "
 msgstr ""
-"успішно завершив, отримав прохідний бал, і був удостоєний Сертифіката "
-"{certificate_type} про закінчення курсу на {platform_name}"
+"успішно закінчив(ла) курс"
 
 msgid ""
 "successfully completed, received a passing grade, and was awarded a "
 "{platform_name} {certificate_type} Certificate of Completion in "
 msgstr ""
-"успішно завершив, отримав прохідний бал, і був удостоєний Сертифіката "
-"{certificate_type} про закінчення курсу на {platform_name}"
+"успішно закінчив(ла) курс"
 
 #. Translators: This text describes the purpose (and therefore, value) of a
 #. course certificate
@@ -25183,3 +25181,6 @@ msgstr "На цьому рівні немає жодної статті"
 
 msgid "Region"
 msgstr "Область"
+
+msgid "Certificate"
+msgstr "Сертифікат"

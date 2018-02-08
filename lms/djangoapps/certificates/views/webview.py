@@ -1,4 +1,5 @@
 # pylint: disable=bad-continuation
+#-*-coding: utf-8-*-
 """
 Certificate HTML webview.
 """
@@ -100,6 +101,11 @@ def _update_certificate_context(context, user_certificate, platform_name):
         day=user_certificate.modified_date.day,
         year=user_certificate.modified_date.year
     )
+    context['certificate_date_issued_digits'] = _('{day}.{month}.{year}').format(
+        month=user_certificate.modified_date.month,
+        day=user_certificate.modified_date.day,
+        year=user_certificate.modified_date.strftime("%y")
+    )
 
     # Translators:  This text represents the verification of the certificate
     context['document_meta_description'] = _('This is a valid {platform_name} certificate for {user_name}, '
@@ -111,11 +117,11 @@ def _update_certificate_context(context, user_certificate, platform_name):
     )
 
     # Translators:  This text is bound to the HTML 'title' element of the page and appears in the browser title bar
-    context['document_title'] = _("{partner_short_name} {course_number} Certificate | {platform_name}").format(
-        partner_short_name=context['organization_short_name'],
-        course_number=context['course_number'],
-        platform_name=platform_name
-    )
+    context['document_title'] = _("Certificate") #_("{partner_short_name} {course_number} Certificate | {platform_name}").format(
+        #partner_short_name=context['organization_short_name'],
+        #course_number=context['course_number'],
+        #platform_name=platform_name
+    #)
 
     # Translators:  This text fragment appears after the student's name (displayed in a large font) on the certificate
     # screen.  The text describes the accomplishment represented by the certificate information displayed to the user
@@ -237,20 +243,23 @@ def _update_course_context(request, context, course, platform_name):
     context['image3'] = course.cert_image3 and request.build_absolute_uri(course_image_url(course, 'cert_image3')) or ''
     course_number = course.display_coursenumber if course.display_coursenumber else course.number
     context['course_number'] = course_number
+
+    ukr_text = (u'наданий фахiвцями Державної установи «Центр громадського здоров`я Мiнiстерства охорони здоров`я України» '
+            u'та Благодiйної органiзацiї «Український iнститут полiтики громадського здоров`я»')
     if context['organization_long_name']:
         # Translators:  This text represents the description of course
-        context['accomplishment_copy_course_description'] = _('a course of study offered by {partner_short_name}, '
-                                                              'an online learning initiative of {partner_long_name} '
-                                                              'through {platform_name}.').format(
-            partner_short_name=context['organization_short_name'],
-            partner_long_name=context['organization_long_name'],
-            platform_name=platform_name)
+        context['accomplishment_copy_course_description'] = ukr_text #_('a course of study offered by {partner_short_name}, '
+                                                              #'an online learning initiative of {partner_long_name} '
+                                                              #'through {platform_name}.').format(
+            #partner_short_name=context['organization_short_name'],
+            #partner_long_name=context['organization_long_name'],
+            #platform_name=platform_name)
     else:
         # Translators:  This text represents the description of course
-        context['accomplishment_copy_course_description'] = _('a course of study offered by {partner_short_name}, '
-                                                              'through {platform_name}.').format(
-            partner_short_name=context['organization_short_name'],
-            platform_name=platform_name)
+        context['accomplishment_copy_course_description'] = ukr_text #_('a course of study offered by {partner_short_name}, '
+                                                              #'through {platform_name}.').format(
+            #partner_short_name=context['organization_short_name'],
+            #platform_name=platform_name)
 
 
 def _update_social_context(request, context, course, user, user_certificate, platform_name):

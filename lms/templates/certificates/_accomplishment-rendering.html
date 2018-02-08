@@ -11,28 +11,26 @@ course_mode_class = course_mode if course_mode else ''
 
             <div class="accomplishment-type">
                 <div class="accomplishment-type-symbol">
-                    <ul class="certificate-images">
-                      % if image1:
-                        <li><img class="src" src="${image1}" alt=""></li>
-                      % endif
-                      % if image2:
-                        <li><img class="src" src="${image2}" alt=""></li>
-                      % endif
-                      % if image3:
-                        <li><img class="src" src="${image3}" alt=""></li>
-                      % endif
-                    </ul>
+                    % if image1:
+                    <img class="src" src="${image1}" alt="">
+                    % endif
+                    % if image2:
+                    <img class="src" src="${image2}" alt="">
+                    % endif
+                    % if image3:
+                    <img class="src" src="${image3}" alt="">
+                    % endif
                 </div>
 
                 <span class="accomplishment-type-label hd-4">
                     <div class="accomplishment-type-label-name">${document_title}</div>
-                    <div class="accomplishment-type-label-date">Bиданий 17.11.17</div>
+                    <div class="accomplishment-type-label-date">Bиданий ${certificate_date_issued_digits}</div>
                 </span>
             </div>
 
             <div class="wrapper-statement-and-signatories">
                 <div class="accomplishment-statement">
-                    <p>Цей сертифiкат засвiдчуе, що</p>
+                    <p>Цей сертифiкат засвiдчує, що</p>
                     <p class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</p>
                     <p class="accomplishment-course-label">${accomplishment_copy_description_full}</p>
                     <p class="accomplishment-course-name hd-2 emphasized">${accomplishment_copy_course_name}</p>
@@ -48,6 +46,7 @@ course_mode_class = course_mode if course_mode else ''
                             % if certificate_data:
                                 % for signatory in certificate_data.get('signatories', []):
                                 <div class="signatory">
+                                    <img class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
                                     <p class="signatory-credentials">
                                         ${signatory['title']} ${signatory['organization']}
                                     </p>
