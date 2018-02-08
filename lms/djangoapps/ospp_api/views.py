@@ -5,11 +5,10 @@ import string
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import View
-from django.core.exceptions import ValidationError, ObjectDoesNotExist
-from django.db.models import Q
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
@@ -35,7 +34,6 @@ from student.views import create_account_with_params
 from third_party_auth.models import SAMLProviderConfig
 
 log = logging.getLogger(__name__)
-
 
 REQUIRED_CREATE_USER_PARAMS = ('username', 'email', 'name_id')
 
@@ -223,10 +221,10 @@ class EnrollUserView(APIView):
             user = User.objects.get(id=user_id)
         except ObjectDoesNotExist:
             return Response(
-                status=HTTP_406_NOT_ACCEPTABLE,
-                data={
-                    'message': u'The user with id {} does not exist.'.format(user_id)
-                }
+                    status=HTTP_406_NOT_ACCEPTABLE,
+                    data={
+                        'message': u'The user with id {} does not exist.'.format(user_id)
+                    }
             )
         username = user.username
 
@@ -234,7 +232,6 @@ class EnrollUserView(APIView):
 
         partner_logo = request.data.get('partner_logo', '')
         eligibility_status = request.data.get('eligibility_status', False)
-
 
         try:
             is_active = request.data.get('is_active')
@@ -244,7 +241,7 @@ class EnrollUserView(APIView):
                         status=HTTP_400_BAD_REQUEST,
                         data={
                             'message': (u"'{value}' is an invalid enrollment activation status.").format(
-                                value=is_active)
+                                    value=is_active)
                         }
                 )
 
@@ -317,7 +314,6 @@ class EnrollUserView(APIView):
                         enrollment_attributes=enrollment_attributes
                 )
 
-
             email_opt_in = request.data.get('email_opt_in', None)
             if email_opt_in is not None:
                 org = course_id.org
@@ -359,7 +355,7 @@ class EnrollUserView(APIView):
             )
         finally:
             current_enrollment = api.get_enrollment(username, unicode(course_id))
-            enrollment = CourseEnrollment.objects.get(course_id=course_id, user_id=user.id) # type: CourseEnrollment
+            enrollment = CourseEnrollment.objects.get(course_id=course_id, user_id=user.id)  # type: CourseEnrollment
             if not OSPPEnrollmentFeature.objects.filter(enrollment_id=enrollment.id).exists():
                 OSPPEnrollmentFeature(
                         enrollment_id=enrollment.id,
@@ -410,9 +406,9 @@ class RoutView(View):
 
     def get(self, request, lms_page_name):
         return (
-            {
-                'view': self._rout_to_course,
-                'audit': self._rout_to_course,
-                'get_credit': self._rout_to_credit,
-                'pursue_credit': self._rout_to_verify,
-            }.get(lms_page_name, None) or (lambda _: redirect('/')))(request)
+                {
+                    'view': self._rout_to_course,
+                    'audit': self._rout_to_course,
+                    'get_credit': self._rout_to_credit,
+                    'pursue_credit': self._rout_to_verify,
+                }.get(lms_page_name, None) or (lambda _: redirect('/')))(request)
