@@ -1,38 +1,36 @@
 import logging
-import string
 import random
+import string
 
-from abc import ABCMeta, abstractmethod
-from django.core.exceptions import ValidationError, ObjectDoesNotExist
-from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import View
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
+from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
 from openedx.core.djangoapps.user_api.preferences.api import update_email_opt_in
+from openedx.core.lib.api.authentication import OAuth2AuthenticationAllowInactiveUser
+from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
 from openedx.core.lib.exceptions import CourseNotFoundError
 from openedx.core.lib.log_utils import audit_log
 from openedx.features.course_experience import course_home_url_name
-from openedx.features.enterprise_support.api import enterprise_enabled, EnterpriseApiClient, EnterpriseApiException
+from openedx.features.enterprise_support.api import EnterpriseApiClient, EnterpriseApiException, enterprise_enabled
+from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_406_NOT_ACCEPTABLE
 from rest_framework.views import APIView
-from rest_framework.response import Response
 from social_django.models import UserSocialAuth
 
 from edxmako.shortcuts import render_to_response
 from enrollment import api
-from enrollment.errors import CourseEnrollmentError, CourseModeNotFoundError, CourseEnrollmentExistsError
+from enrollment.errors import CourseEnrollmentError, CourseEnrollmentExistsError, CourseModeNotFoundError
 from enrollment.views import REQUIRED_ATTRIBUTES
 from ospp_api.models import OSPPEnrollmentFeature
-from third_party_auth.models import SAMLProviderConfig, SAMLProviderData
-from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
-from openedx.core.lib.api.authentication import OAuth2AuthenticationAllowInactiveUser
-from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
+from student.models import CourseEnrollment, User
 from student.views import create_account_with_params
-from student.models import User, CourseEnrollment
-
+from third_party_auth.models import SAMLProviderConfig
 
 log = logging.getLogger(__name__)
 
@@ -380,60 +378,33 @@ def ospp_registration_stub(request):
 
 
 class RoutView(View):
-    class BaseRout:
-        __metaclass__ = ABCMeta
+    @staticmethod
+    def course_key_from_request(request):
+        return request.GET['course_id'].replace(' ', '+')
 
-        @abstractmethod
-        def is_can_rout(self, lms_page_name):
-            pass
+    def _rout_to_course(self, request):
+        course_id = self.course_key_from_request(request)
+        course_key = CourseKey.from_string(course_id)
+        redirect_url = reverse(course_home_url_name(course_key), args=[course_id])
+        return redirect(redirect_url)
 
-        @abstractmethod
-        def rout(self, request):
-            pass
+    def _rout_to_credit(self, request):
+        credit_redirect = '{root}/credit/checkout/{course_id}/'.format(
+                root=settings.ECOMMERCE_PUBLIC_URL_ROOT,
+                course_id=self.course_key_from_request(request)
+        )
+        return redirect(credit_redirect)
 
-        def course_key_from_request(self, request):
-            return request.GET['course_id'].replace(' ', '+')
-
-    class CourseContent(BaseRout):
-
-        def is_can_rout(self, lms_page_name):
-            return lms_page_name in ('view', 'audit')
-
-        def rout(self, request):
-            course_id = self.course_key_from_request(request)
-            course_key = CourseKey.from_string(course_id)
-            redirect_url = reverse(course_home_url_name(course_key), args=[course_id])
-            return redirect(redirect_url)
-
-    class CreditRedirect(BaseRout):
-
-        def is_can_rout(self, lms_page_name):
-            return lms_page_name in ('get_credit',)
-
-        def rout(self, request):
-            credit_redirect = '{root}/credit/checkout/{course_id}/'.format(
-                    root=settings.ECOMMERCE_PUBLIC_URL_ROOT,
-                    course_id=self.course_key_from_request(request)
-            )
-            return redirect(credit_redirect)
-
-    class VerifyRedirect(BaseRout):
-
-        def is_can_rout(self, lms_page_name):
-            return lms_page_name in ('pursue_credit',)
-
-        def rout(self, request):
-            course_id = self.course_key_from_request(request)
-            redirect_url = reverse('verify_student_verify_now', kwargs={'course_id': course_id})
-            return redirect(redirect_url)
+    def _rout_to_verify(self, request):
+        course_id = self.course_key_from_request(request)
+        redirect_url = reverse('verify_student_verify_now', kwargs={'course_id': course_id})
+        return redirect(redirect_url)
 
     def get(self, request, lms_page_name):
-        redirects = [
-            RoutView.CourseContent(),
-            RoutView.CreditRedirect(),
-            RoutView.VerifyRedirect(),
-        ]
-        for redirect_item in redirects:
-            if redirect_item.is_can_rout(lms_page_name):
-                return redirect_item.rout(request)
-        return redirect('https://example.com/')
+        return (
+            {
+                'view': self._rout_to_course,
+                'audit': self._rout_to_course,
+                'get_credit': self._rout_to_credit,
+                'pursue_credit': self._rout_to_verify,
+            }.get(lms_page_name, None) or (lambda _: redirect('/')))(request)
