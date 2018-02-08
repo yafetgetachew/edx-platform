@@ -39,9 +39,6 @@ class CreateUserView(APIView):
 
     USER_ALREADY_EXIST_ERROR = 1
 
-    def __init__(self, **kwargs):
-        super(CreateUserView, self).__init__(**kwargs)
-
     def post(self, request):
         """
         Creates a new user account
@@ -88,7 +85,7 @@ class CreateUserView(APIView):
             errors = {
                 "user_message": "User already exists",
                 "error_code": CreateUserView.USER_ALREADY_EXIST_ERROR,
-                "user_id": User.objects.filter(Q(email=data['email']) | Q(username=username)).first().id
+                "user_id": User.objects.filter(Q(email=data['email']) | Q(username=username)).first().id,
             }
             return Response(errors, status=409)
         # Generate fake password and set name equal to the username
