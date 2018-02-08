@@ -8,6 +8,8 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import View
+from django.core.exceptions import ValidationError, ObjectDoesNotExist
+from django.db.models import Q
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.user_api.accounts.api import check_account_exists
@@ -41,6 +43,8 @@ REQUIRED_CREATE_USER_PARAMS = ('username', 'email', 'name_id')
 class CreateUserView(APIView):
     authentication_classes = OAuth2AuthenticationAllowInactiveUser,
     permission_classes = ApiKeyHeaderPermission,
+
+    USER_ALREADY_EXIST_ERROR = 1
 
     def post(self, request):
         """
@@ -85,7 +89,11 @@ class CreateUserView(APIView):
         # Handle duplicate email/username
         conflicts = check_account_exists(email=data['email'], username=username)
         if conflicts:
-            errors = {"user_message": "User already exists"}
+            errors = {
+                "user_message": "User already exists",
+                "error_code": CreateUserView.USER_ALREADY_EXIST_ERROR,
+                "user_id": User.objects.filter(Q(email=data['email']) | Q(username=username)).first().id,
+            }
             return Response(errors, status=409)
         # Generate fake password and set name equal to the username
         data['password'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))

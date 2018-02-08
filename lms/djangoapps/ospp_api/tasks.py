@@ -67,7 +67,7 @@ def add_grades(statistic_map):
                     assessment_key_next = assessments_sorted[count + 1][0]
         if assessment_key_next:
             data['finalGrade'] = assessment_key_next
-            data['numberGrade'] = persent_current/100
+            data['grade'] = persent_current/100
         else:
             data.pop('finalGrade', None)
 
@@ -81,7 +81,7 @@ def send_statistic(statistic_map):
     for statistic_id, data in statistic_map.iteritems():
         username, course_id = statistic_id.split('::', 1)
         data.update({
-            'asuRite': username,
+            'username': username,
             "courseInfo": {
                 "openEdxCourseId": course_id,
             }
