@@ -81,7 +81,7 @@ def send_statistic(statistic_map):
     for statistic_id, data in statistic_map.iteritems():
         username, course_id = statistic_id.split('::', 1)
         data.update({
-            'asuRite': username,
+            'username': username,
             "courseInfo": {
                 "openEdxCourseId": course_id,
             }

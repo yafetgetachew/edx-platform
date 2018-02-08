@@ -88,18 +88,6 @@ class GradeStaticsProcessor(StatisticProcessor):
         }
 
 
-class ProctoringAttemptsProcessor(StatisticProcessor):
-
-    def is_can_process(self, event):
-        return self.get_event_name(event) == 'ospp.proctoring.attempts.change'
-
-    def process(self, event):
-        return {
-            'proctoringStatus': event['data']['status'],
-            'proctoringDate': self.get_event_timestamp_as_string(event),
-        }
-
-
 class CreditProcessor(StatisticProcessor):
 
     def is_can_process(self, event):
@@ -124,7 +112,6 @@ class TrackingBackend(BaseBackend):
         self.statistic_processors = [
             LastLoginStaticsProcessor(),
             GradeStaticsProcessor(),
-            ProctoringAttemptsProcessor(),
             CreditProcessor(),
         ]
 
