@@ -1,6 +1,7 @@
 import logging
 import random
 import string
+import urllib
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
@@ -192,7 +193,7 @@ class EnrollUserView(APIView):
             HttpResponse: 406 if an account with the given user id not found
 
         """
-        course_id = request.data.get('course_details', {}).get('course_id')
+        course_id = urllib.unquote(request.data.get('course_details', {}).get('course_id')).replace(' ', '+')
         if not course_id:
             return Response(
                     status=HTTP_400_BAD_REQUEST,
