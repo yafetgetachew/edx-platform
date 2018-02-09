@@ -119,3 +119,5 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.18#egg=xblock-
 -e git+https://github.com/raccoongang/voicerecxblock#egg=xblock-voicerecxblock
 -e git+https://github.com/raccoongang/xblock-adventure#egg=xblock-adventure
 -e git+https://github.com/raccoongang/edx-calendar-tab#egg=edx-calendar-tab
+
+-e git+https://github.com/Microsoft/xblock-azure-media-services.git#egg=azure-media-services-xblock
