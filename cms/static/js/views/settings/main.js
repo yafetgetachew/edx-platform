@@ -169,30 +169,30 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                    return this;
                },
                fieldToSelectorMap: {
-                   'language': 'course-language',
-                   'start_date': 'course-start',
-                   'end_date': 'course-end',
-                   'enrollment_start': 'enrollment-start',
-                   'enrollment_end': 'enrollment-end',
-                   'overview': 'course-overview',
-                   'title': 'course-title',
-                   'subtitle': 'course-subtitle',
-                   'duration': 'course-duration',
-                   'description': 'course-description',
-                   'short_description': 'course-short-description',
-                   'intro_video': 'course-introduction-video',
-                   'intro_video_source': 'intro-video-source',
-                   'effort': 'course-effort',
-                   'course_image_asset_path': 'course-image-url',
-                   'banner_image_asset_path': 'banner-image-url',
-                   'video_thumbnail_image_asset_path': 'video-thumbnail-image-url',
-                   'pre_requisite_courses': 'pre-requisite-course',
-                   'entrance_exam_enabled': 'entrance-exam-enabled',
-                   'entrance_exam_minimum_score_pct': 'entrance-exam-minimum-score-pct',
-                   'course_settings_learning_fields': 'course-settings-learning-fields',
-                   'add_course_learning_info': 'add-course-learning-info',
-                   'add_course_instructor_info': 'add-course-instructor-info',
-                   'course_learning_info': 'course-learning-info'
+                   language: 'course-language',
+                   start_date: 'course-start',
+                   end_date: 'course-end',
+                   enrollment_start: 'enrollment-start',
+                   enrollment_end: 'enrollment-end',
+                   overview: 'course-overview',
+                   title: 'course-title',
+                   subtitle: 'course-subtitle',
+                   duration: 'course-duration',
+                   description: 'course-description',
+                   short_description: 'course-short-description',
+                   intro_video: 'course-introduction-video',
+                   intro_video_source: 'intro-video-source',
+                   effort: 'course-effort',
+                   course_image_asset_path: 'course-image-url',
+                   banner_image_asset_path: 'banner-image-url',
+                   video_thumbnail_image_asset_path: 'video-thumbnail-image-url',
+                   pre_requisite_courses: 'pre-requisite-course',
+                   entrance_exam_enabled: 'entrance-exam-enabled',
+                   entrance_exam_minimum_score_pct: 'entrance-exam-minimum-score-pct',
+                   course_settings_learning_fields: 'course-settings-learning-fields',
+                   add_course_learning_info: 'add-course-learning-info',
+                   add_course_instructor_info: 'add-course-instructor-info',
+                   course_learning_info: 'course-learning-info'
                },
 
                addLearningFields: function() {
@@ -238,7 +238,6 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                        $checkedCaptions,
                        captions;
                    var index = event.currentTarget.getAttribute('data-index');
-                   var lang = event.currentTarget.getAttribute('data-lang');
                    switch (event.currentTarget.id) {
                    case 'course-learning-info-' + index:
                        value = $(event.currentTarget).val();
@@ -330,7 +329,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                        }
                        this.render();
                        break;
-                   case 'captions-' + lang:
+                   case 'captions-' + index:
                        $checkedCaptions = $('input[type=checkbox]:checked.intro-captions');
                        captions = _.map($checkedCaptions, function(captionInput) {
                            return captionInput.dataset;

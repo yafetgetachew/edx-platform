@@ -197,7 +197,7 @@ define(
                         type: 'GET'
                     }).done(function(responseData) {
                         video = _.find(responseData.videos, function(v) {
-                            return v.edx_video_id === view.model.get('edx_video_id')
+                            return v.edx_video_id === view.model.get('edx_video_id');
                         });
 
                         if (video && video.status_value !== view.model.get('status_value')) {

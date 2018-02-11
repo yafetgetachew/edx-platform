@@ -78,22 +78,22 @@ define(
                     AjaxHelpers.respond(requests, {
                         status: 200,
                         body: {
-                            "videos": [
+                            videos: [
                                 {
-                                    "status": "Ready",
-                                    "created": "2018-02-06T11:03:22.421Z",
-                                    "client_video_id": "video.mp4",
-                                    "status_value": "file_complete",
-                                    "duration": 10.0,
-                                    "edx_video_id": "dummy_id_1"
+                                    status: 'Ready',
+                                    created: '2018-02-06T11:03:22.421Z',
+                                    client_video_id: 'video.mp4',
+                                    status_value: 'file_complete',
+                                    duration: 10.0,
+                                    edx_video_id: 'dummy_id_1'
                                 },
                                 {
-                                    "status": "Test status",
-                                    "created": "2018-02-06T10:57:20.997Z",
-                                    "client_video_id": "TEST.mp4",
-                                    "status_value": "test_status",
-                                    "duration": 20.0,
-                                    "edx_video_id": "dummy_id"
+                                    status: 'Test status',
+                                    created: '2018-02-06T10:57:20.997Z',
+                                    client_video_id: 'TEST.mp4',
+                                    status_value: 'test_status',
+                                    duration: 20.0,
+                                    edx_video_id: 'dummy_id'
                                 }
                             ]
                         }
