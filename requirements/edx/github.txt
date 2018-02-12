@@ -99,6 +99,7 @@ git+https://github.com/edx/edx-proctoring.git@0.17.0#egg=edx-proctoring==0.17.0
 git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-drag-and-drop-v2==2.0.15
 
 -e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx_xblock_scorm
+-e git+git@gitlab.raccoongang.com:andrey.kryachko/edx_scorm_xblock.git#egg=scorm_xblock
 -e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow_control_xblock
 -e git+https://github.com/ExtensionEngine/xblock_charting.git#egg=xblock_charting&subdirectory=piechart
 -e git+https://github.com/TinMarkovic/ChartsXBlock.git#egg=chartsxblock
