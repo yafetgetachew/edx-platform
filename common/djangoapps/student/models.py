@@ -1040,7 +1040,7 @@ class CourseEnrollment(models.Model):
             eventtracking = tracker.get_tracker()
             context = {
                 'username': self.user.username,
-                'course_id': self.course_id
+                'course_id': self.course_id.to_deprecated_string()
             }
             with eventtracking.context('custom_user_context', context):
                 eventtracking.emit('common.student.CourseEnrollment', {
