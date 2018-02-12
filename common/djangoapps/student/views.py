@@ -295,7 +295,7 @@ def reverification_info(statuses):
     return reverifications
 
 
-def get_course_enrollments(user, org_whitelist, org_blacklist):
+def get_course_enrollments(user, org_whitelist, org_blacklist, archiving=False):
     """
     Given a user, return a filtered set of his or her course enrollments.
 
@@ -309,9 +309,9 @@ def get_course_enrollments(user, org_whitelist, org_blacklist):
         on the user's dashboard.
     """
     for enrollment in CourseEnrollment.enrollments_for_user_with_overviews_preload(user):
-
         # If the course is missing or broken, log an error and skip it.
         course_overview = enrollment.course_overview
+        course = modulestore().get_course(course_overview.id)
         if not course_overview:
             log.error(
                 "User %s enrolled in broken or non-existent course %s",
@@ -328,9 +328,21 @@ def get_course_enrollments(user, org_whitelist, org_blacklist):
         elif org_blacklist and course_overview.location.org in org_blacklist:
             continue
 
-        # Else, include the enrollment.
-        else:
+        # For the current courses tab
+        if not archiving:
+            # filter out course enrollments belonging in past courses tab
+            if course.archive_course_in_lms and course.archive_course_in_lms < datetime.datetime.now(UTC):
+                continue
             yield enrollment
+
+        # For the past courses tab
+        elif archiving:
+            # Include the enrollment when the archiving date has past the current date
+            if course.archive_course_in_lms and course.archive_course_in_lms < datetime.datetime.now(UTC):
+                yield enrollment
+
+
+
 
 
 def get_org_black_and_whitelist_for_site(user):
@@ -702,8 +714,7 @@ def dashboard(request):
 
     # get the org whitelist or the org blacklist for the current site
     site_org_whitelist, site_org_blacklist = get_org_black_and_whitelist_for_site(user)
-    course_enrollments = list(get_course_enrollments(user, site_org_whitelist, site_org_blacklist))
-
+    course_enrollments = list(get_course_enrollments(user, site_org_whitelist, site_org_blacklist, archiving=False))
     # Record how many courses there are so that we can get a better
     # understanding of usage patterns on prod.
     monitoring_utils.accumulate('num_courses', len(course_enrollments))
@@ -755,7 +766,6 @@ def dashboard(request):
         )
 
     enterprise_message = get_dashboard_consent_notification(request, user, course_enrollments)
-
     # Account activation message
     account_activation_messages = [
         message for message in messages.get_messages(request) if 'account-activation' in message.tags
@@ -779,7 +789,6 @@ def dashboard(request):
     # information on the dashboard.
     meter = ProgramProgressMeter(request.site, user, enrollments=course_enrollments)
     inverted_programs = meter.invert_programs()
-
     # Construct a dictionary of course mode information
     # used to render the course list.  We re-use the course modes dict
     # we loaded earlier to avoid hitting the database.
@@ -888,6 +897,56 @@ def dashboard(request):
             reverse=True
         )
 
+
+    ##################################################################################
+    # Context data for courses that need to be displayed under the "Past Courses" tab
+    ##################################################################################
+
+    # Define the course enrollments which need to be placed in the "Past Courses" tab
+    old_course_enrollments = list(get_course_enrollments(user, site_org_whitelist, site_org_blacklist, archiving=True))
+    old_enrolled_course_ids = [enrollment.course_id for enrollment in old_course_enrollments]
+    __old, old_unexpired_course_modes = CourseMode.all_and_unexpired_modes_for_courses(old_enrolled_course_ids)
+    old_course_modes_by_course = {
+        course_id: {
+            mode.slug: mode
+            for mode in modes
+        }
+        for course_id, modes in old_unexpired_course_modes.iteritems()
+    }
+    old_enterprise_message = get_dashboard_consent_notification(request, user, course_enrollments)
+    old_show_courseware_links_for = frozenset(
+        enrollment.course_id for enrollment in old_course_enrollments
+        if has_access(request.user, 'load', enrollment.course_overview)
+    )
+    old_verify_status_by_course = check_verify_status_by_course(user, old_course_enrollments)
+    old_inverted_programs = ProgramProgressMeter(request.site, user, enrollments=old_course_enrollments).invert_programs()
+    old_cert_statuses = {
+        enrollment.course_id: cert_info(request.user, enrollment.course_overview, enrollment.mode)
+        for enrollment in old_course_enrollments
+    }
+    old_block_courses = frozenset(
+        enrollment.course_id for enrollment in old_course_enrollments
+        if is_course_blocked(
+            request,
+            CourseRegistrationCode.objects.filter(
+                course_id=enrollment.course_id,
+                registrationcoderedemption__redeemed_by=request.user
+            ),
+            enrollment.course_id
+        )
+    )
+    old_enrolled_courses_either_paid = frozenset(
+        enrollment.course_id for enrollment in old_course_enrollments
+        if enrollment.is_paid_course()
+    )
+    old_course_mode_info = {
+        enrollment.course_id: complete_course_mode_info(
+            enrollment.course_id, enrollment,
+            modes=old_course_modes_by_course[enrollment.course_id]
+        )
+        for enrollment in old_course_enrollments
+    }
+    
     context = {
         'enterprise_message': enterprise_message,
         'enrollment_message': enrollment_message,
@@ -925,6 +984,15 @@ def dashboard(request):
         'disable_courseware_js': True,
         'display_course_modes_on_dashboard': enable_verified_certificates and display_course_modes_on_dashboard,
         'display_sidebar_on_dashboard': display_sidebar_on_dashboard,
+        'old_block_courses': old_block_courses, # Past Courses Tab
+        'old_course_enrollments': old_course_enrollments,  # Past Courses Tab
+        'old_show_courseware_links_for': old_show_courseware_links_for,  # Past Courses Tab
+        'old_all_course_modes': old_course_mode_info,  # Past Courses Tab
+        'old_cert_statuses': old_cert_statuses,  # Past Courses Tab
+        'old_credit_statuses': _credit_statuses(user, old_course_enrollments),  # Past Courses Tab
+        'old_inverted_programs': old_inverted_programs,  # Past Courses Tab
+        'old_verification_status_by_course': old_verify_status_by_course,  # Past Courses Tab
+        'old_enrolled_courses_either_paid': old_enrolled_courses_either_paid,  # Past Courses Tab
     }
 
     ecommerce_service = EcommerceService()

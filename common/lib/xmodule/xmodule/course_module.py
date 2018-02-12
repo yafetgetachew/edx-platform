@@ -196,6 +196,13 @@ class CourseFields(object):
         help=_("Date that certificates become available to learners"),
         scope=Scope.content
     )
+
+    archive_course_in_lms = Date(
+        display_name=_("Archive course in lms Date"),
+        help=_("Date that this course will be shown in a separate 'Past Courses' tab"),
+        scope=Scope.settings
+    )
+
     cosmetic_display_price = Integer(
         display_name=_("Cosmetic Course Display Price"),
         help=_(
