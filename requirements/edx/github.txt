@@ -122,4 +122,4 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git://github.com/edx-solutions/xblock-mentoring.git@8837eb5d91fed05ec4758dfd9b9e7adc5c906210#egg=xblock_mentoring
 -e git+https://github.com/raccoongang/xblock-adventure#egg=xblock-adventure
 
--e git+https://github.com/raccoongang/xblock-azure-media-services.git@browse_select_video_and_transcript_files#egg=xblock-azure-media-services
+-e git+https://github.com/raccoongang/xblock-azure-media-services.git#egg=xblock-azure-media-services
