@@ -25427,3 +25427,16 @@ msgstr "Место работы"
 
 msgid "Position"
 msgstr "Должность"
+
+msgid "Public username"
+msgstr "Ваш логин"
+
+msgid "Full name"
+msgstr "ФИО"
+
+msgid ""
+"The name that will identify you in your courses - {bold_start}(cannot be "
+"changed later){bold_end}"
+msgstr ""
+"Имя, под которым вы будете проходить курс - {bold_start}(не может быть впоследствии "
+"изменено){bold_end}"

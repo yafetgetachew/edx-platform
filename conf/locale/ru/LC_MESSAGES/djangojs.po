@@ -9528,3 +9528,28 @@ msgstr "Использовать субтитры"
 
 msgid "Explore courses"
 msgstr "Просмотреть курсы"
+
+#: lms/templates/student_account/register.underscore
+msgid "Create a new account"
+msgstr "Создайте новую учетную запись"
+
+#: lms/templates/student_account/register.underscore
+msgid "Create your account"
+msgstr "Создать мою учетную запись"
+
+#: lms/templates/student_account/register.underscore
+msgid "Required field"
+msgstr "Обязательно для заполнения"
+
+#: lms/templates/student_account/register.underscore
+msgid "Already have an account?"
+msgstr "Уже есть учетная запись?"
+
+#: lms/templates/student_account/login.underscore
+#, python-format
+msgid "New to %(platformName)s?"
+msgstr "Впервые на %(platformName)s?"
+
+#: lms/templates/student_account/login.underscore
+msgid "Create an account"
+msgstr "Создайте учётную запись"
