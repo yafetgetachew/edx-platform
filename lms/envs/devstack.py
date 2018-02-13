@@ -157,7 +157,8 @@ FEATURES['LICENSING'] = True
 
 ########################## Courseware Search #######################
 FEATURES['ENABLE_COURSEWARE_SEARCH'] = True
-SEARCH_ENGINE = "search.elastic.ElasticSearchEngine"
+# SEARCH_ENGINE = "search.elastic.ElasticSearchEngine"
+SEARCH_ENGINE = "lms.lib.courseware_search.lms_filter_generator.ElasticSearchEngineCustom"
 
 
 ########################## Dashboard Search #######################

@@ -754,7 +754,8 @@ if FEATURES.get('ENABLE_COURSEWARE_SEARCH') or \
    FEATURES.get('ENABLE_COURSE_DISCOVERY') or \
    FEATURES.get('ENABLE_TEAMS'):
     # Use ElasticSearch as the search engine herein
-    SEARCH_ENGINE = "search.elastic.ElasticSearchEngine"
+    # SEARCH_ENGINE = "search.elastic.ElasticSearchEngine"
+    SEARCH_ENGINE = "lms.lib.courseware_search.lms_filter_generator.ElasticSearchEngineCustom"
 
 ELASTIC_SEARCH_CONFIG = ENV_TOKENS.get('ELASTIC_SEARCH_CONFIG', [{}])
 
