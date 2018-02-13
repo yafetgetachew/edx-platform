@@ -1030,7 +1030,6 @@ class CourseEnrollment(models.Model):
         if self.mode == 'credit':
             from openedx.core.djangoapps.credit.models import CreditCourse, CreditRequest, CreditProvider
             with transaction.atomic():
-                log.error("")
                 course = CreditCourse.objects.filter(course_key=self.course_id).first()
                 username = self.user.username
                 if not CreditRequest.objects.filter(username=username, course=course).exists():
