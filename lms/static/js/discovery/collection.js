@@ -7,7 +7,6 @@ define([
     'use strict';
 
     return Backbone.Collection.extend({
-
         model: CourseCard,
         pageSize: 20,
         totalCount: 0,
@@ -18,6 +17,7 @@ define([
         page: 0,
         url: '/search/course_discovery/',
         fetchXhr: null,
+        catalog_visibility: 'both',
 
         performSearch: function (searchTerm, facets) {
             this.fetchXhr && this.fetchXhr.abort();
@@ -60,7 +60,8 @@ define([
             var data = {
                 search_string: this.searchTerm,
                 page_size: this.pageSize,
-                page_index: pageNumber
+                page_index: pageNumber,
+                catalog_visibility: this.catalog_visibility
             };
             if(this.selectedFacets.length > 0) {
                 this.selectedFacets.each(function(facet) {
