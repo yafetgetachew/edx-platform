@@ -1042,16 +1042,15 @@ class CourseEnrollment(models.Model):
                         status=CreditRequest.REQUEST_STATUS_PENDING,
                     )
 
-            eventtracking = tracker.get_tracker()
-            context = {
-                'username': self.user.username,
-                'course_id': self.course_id.to_deprecated_string()
-            }
-            with eventtracking.context('custom_user_context', context):
-                eventtracking.emit('common.student.CourseEnrollment', {
-                    'mode': self.mode
-                })
-
+        eventtracking = tracker.get_tracker()
+        context = {
+            'username': self.user.username,
+            'course_id': self.course_id.to_deprecated_string()
+        }
+        with eventtracking.context('custom_user_context', context):
+            eventtracking.emit('common.student.CourseEnrollment', {
+                'mode': self.mode
+            })
         super(CourseEnrollment, self).save(
                 force_insert=force_insert,
                 force_update=force_update,

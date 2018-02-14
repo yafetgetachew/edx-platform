@@ -1,9 +1,8 @@
-from abc import ABCMeta, abstractmethod
-from datetime import datetime as dt
 import logging
+from datetime import datetime as dt
 
+from abc import ABCMeta, abstractmethod
 from django.conf import settings
-from edx_proctoring.models import ProctoredExamStudentAttemptStatus
 
 from ospp_api import tasks as celery_task
 from track.backends import BaseBackend
@@ -95,11 +94,17 @@ class CreditProcessor(StatisticProcessor):
 
     def process(self, event):
         timestamp = self.get_event_timestamp_as_string(event)
-        return {
-            'creditConverted': (event['data']['mode'] == 'credit') and 'Y' or 'N',
-            'creditConvertedDate': timestamp,
-            'courseCompletedDate': timestamp,
+        result = {
+            'enrollmentMode': event['data']['mode'],
+            'enrollmentModeDate': timestamp,
         }
+        if event['data']['mode'] == 'credit':
+            result.update({
+                'creditConverted': 'Y',
+                'creditConvertedDate': timestamp,
+                'courseCompletedDate': timestamp,
+            })
+        return result
 
 
 class TrackingBackend(BaseBackend):
