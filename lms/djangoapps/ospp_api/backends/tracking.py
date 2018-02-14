@@ -95,7 +95,8 @@ class CreditProcessor(StatisticProcessor):
     def process(self, event):
         timestamp = self.get_event_timestamp_as_string(event)
         result = {
-            'enrollmentMode': event['data']['mode']
+            'enrollmentMode': event['data']['mode'],
+            'enrollmentModeDate': timestamp,
         }
         if event['data']['mode'] == 'credit':
             result.update({
