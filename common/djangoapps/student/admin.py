@@ -163,8 +163,14 @@ class UserProfileInline(admin.StackedInline):
 
 class UserAdmin(BaseUserAdmin):
     """ Admin interface for the User model. """
+    list_display = ('username', 'email', 'first_name', 'last_name',
+                    'is_staff', 'date_joined', 'city')
+    list_filter = ('is_staff', 'is_superuser', 'is_active', 'profile__city')
     inlines = (UserProfileInline,)
 
+    def city(self, obj):
+        return hasattr(obj, 'profile') and obj.profile.city or None
+    city.admin_order_field = 'profile__city'
 
 @admin.register(UserAttribute)
 class UserAttributeAdmin(admin.ModelAdmin):
