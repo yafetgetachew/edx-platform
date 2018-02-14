@@ -162,7 +162,8 @@ def index(request, extra_context=None, user=AnonymousUser()):
     if extra_context is None:
         extra_context = {}
 
-    courses = get_courses(user)
+    now = datetime.datetime.now()
+    courses = get_courses(user, filter_={'start__lte': now, 'end__gt': now})
 
     if configuration_helpers.get_value(
             "ENABLE_COURSE_SORTING_BY_START_DATE",
