@@ -58,7 +58,7 @@ locales:
     # - nl_NL  # Dutch (Netherlands)
     # - or  # Oriya
     # - pl  # Polish
-    # - pt_BR  # Portuguese (Brazil)
+    - pt_BR  # Portuguese (Brazil)
     # - pt_PT  # Portuguese (Portugal)
     # - ro  # Romanian
     - ru  # Russian
@@ -79,7 +79,7 @@ locales:
     # - vi  # Vietnamese
     - zh_CN  # Chinese (China)
     # - zh_HK  # Chinese (Hong Kong)
-    # - zh_TW  # Chinese (Taiwan)
+    - zh_TW  # Chinese (Taiwan)
 
 
 # The locales used for fake-accented English, for testing.
