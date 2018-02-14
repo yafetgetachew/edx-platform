@@ -3231,10 +3231,5 @@ EVENT_TRACKING_BACKENDS['ossp_tracking'] = {
     'ENGINE': 'ospp_api.backends.tracking.TrackingBackend'
 }
 
-ASU_TRACKER_BUFFER_SIZE = 10
-ASU_TRACKER_BUFFER_LIFE_TIME = 300
-ASU_API_URL = 'https://qr0vf9lwi5.execute-api.us-east-2.amazonaws.com/stage'
-ASU_API_KEY = 'RiuSiHtjbL9Kiukdhd2WMaqkXXZ5rU6p5pYwxJqJ'
-
 # Leave registration opened for the lms
 FEATURES['ALLOW_PUBLIC_ACCOUNT_CREATION'] = True
