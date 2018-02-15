@@ -7,16 +7,15 @@ from student.models import CourseEnrollment
 from edx_proctoring.models import ProctoredExamStudentAttempt
 from eventtracking import tracker as eventtracking
 
-
 log = logging.getLogger(__name__)
 
 
 class OSPPEnrollmentFeature(models.Model):
     enrollment = models.OneToOneField(
-            CourseEnrollment,
-            on_delete=models.CASCADE,
-            primary_key=True,
-            related_name='ospp_feature'
+        CourseEnrollment,
+        on_delete=models.CASCADE,
+        primary_key=True,
+        related_name='ospp_feature'
     )
     partner_logo = models.TextField(null=True)
     eligibility_status = models.BooleanField(default=False)
@@ -40,9 +39,9 @@ def on_proctoring_attempts_save(
         'proctoringId': self.id,
         'examName': self.proctored_exam.exam_name,
         'attemptCode': self.attempt_code,
-        'startedAt': self.started_at.strftime(TIME_FORMAT),
-        'completedAt': self.completed_at.strftime(TIME_FORMAT),
-        'lastPollTimestamp': self.last_poll_timestamp.strftime(TIME_FORMAT),
+        'startedAt': self.started_at.strftime(TIME_FORMAT) if self.started_at else None,
+        'completedAt': self.completed_at.strftime(TIME_FORMAT) if self.completed_at else None,
+        'lastPollTimestamp': self.last_poll_timestamp.strftime(TIME_FORMAT) if self.last_poll_timestamp else None,
         'lastPollIpaddr': self.last_poll_ipaddr,
         'externalId': self.external_id,
         'allowedTimeLimitMins': self.allowed_time_limit_mins,
@@ -62,4 +61,3 @@ def on_proctoring_attempts_save(
 
 # Hook for implement custom save method for the library model `ProctoredExamStudentAttempt`
 ProctoredExamStudentAttempt.save = on_proctoring_attempts_save
-
