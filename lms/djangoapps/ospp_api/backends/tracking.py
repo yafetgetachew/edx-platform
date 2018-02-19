@@ -87,6 +87,17 @@ class GradeStaticsProcessor(StatisticProcessor):
         }
 
 
+class CreditEligibilityProcessor(StatisticProcessor):
+
+    def is_can_process(self, event):
+        return self.get_event_name(event) == 'credit.CreditEligibility'
+
+    def process(self, event):
+        return {
+            'creditEligible': event['data']['creditEligible']
+        }
+
+
 class CreditProcessor(StatisticProcessor):
 
     def is_can_process(self, event):
@@ -118,6 +129,7 @@ class TrackingBackend(BaseBackend):
             LastLoginStaticsProcessor(),
             GradeStaticsProcessor(),
             CreditProcessor(),
+            CreditEligibilityProcessor(),
         ]
 
         self.statistic = {}

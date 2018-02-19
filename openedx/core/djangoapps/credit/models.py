@@ -25,6 +25,8 @@ from simple_history.models import HistoricalRecords
 
 from openedx.core.djangoapps.xmodule_django.models import CourseKeyField
 from request_cache.middleware import RequestCache, ns_request_cached
+from eventtracking import tracker
+
 
 CREDIT_PROVIDER_ID_REGEX = r"[a-z,A-Z,0-9,\-]+"
 log = logging.getLogger(__name__)
@@ -620,6 +622,18 @@ class CreditEligibility(TimeStampedModel):
             user=self.username,
             course=self.course.course_key,
         )
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        super(CreditEligibility, self).save(force_insert, force_update, using, update_fields)
+        eventtracking = tracker.get_tracker()
+        context = {
+            'username': self.username,
+            "course_id": self.course.course_key.to_deprecated_string(),
+        }
+        with eventtracking.context('custom_user_context', context):
+            eventtracking.emit('credit.CreditEligibility', {
+                'creditEligible': 'Y'
+            })
 
 
 class CreditRequest(TimeStampedModel):
