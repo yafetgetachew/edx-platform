@@ -120,10 +120,10 @@ urlpatterns = (
 )
 
 # urls for beta-testers login and for registration stub
-urlpatterns += (
-    url(r'^beta-testers-login$', 'student.views.signin_user', name="signin_user"),
-    url(r'^register$', 'ospp_api.views.ospp_registration_stub', name="register_user"),
-)
+urlpatterns += (url(r'^register$', 'ospp_api.views.ospp_registration_stub', name="register_user"),)
+if settings.BETTA_TESTERS_ENABLE:
+    urlpatterns += (url(r'^beta-testers-login$', 'student.views.signin_user', name="signin_user"),)
+
 
 if settings.FEATURES["ENABLE_MOBILE_REST_API"]:
     urlpatterns += (

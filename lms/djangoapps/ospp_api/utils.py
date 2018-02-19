@@ -25,7 +25,13 @@ def get_learner_info(user_id):
     if student_status and isinstance(student_status, dict):
         return student_status
     else:
-        raise Http404
+        if settings.BETTA_TESTERS_ENABLE:
+            return {
+                'eligibilityStatus': True,
+                'benefitType': 4,
+            }
+        else:
+            raise Http404
 
 
 def get_credit_convert_eligibility(user, enrollment):
