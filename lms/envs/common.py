@@ -1975,6 +1975,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'djcelery',
+    'rg_instructor_analytics',
 
     # Common views
     'openedx.core.djangoapps.common_views',
@@ -3219,3 +3220,5 @@ COURSES_API_CACHE_TIMEOUT = 3600  # Value is in seconds
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = LOW_PRIORITY_QUEUE
+
+FEATURES['ENABLE_XBLOCK_VIEW_ENDPOINT'] = True

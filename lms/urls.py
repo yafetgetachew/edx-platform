@@ -115,6 +115,12 @@ urlpatterns = (
     url(r'^api/experiments/', include('experiments.urls', namespace='api_experiments')),
 
     url(r'^(?P<key>.+)/openassessment-filesystem-storage', views_filesystem.filesystem_storage, name='openassessment-filesystem-storage'),
+
+    url(r'^courses/{}/tab/instructor_analytics/'.format(settings.COURSE_ID_PATTERN,),
+        include('rg_instructor_analytics.urls'),
+        name='instructor_analytics_endpoint',
+    ),
+
 )
 
 # TODO: This needs to move to a separate urls.py once the student_account and
@@ -1033,4 +1039,5 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
 
