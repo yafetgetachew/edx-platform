@@ -3233,3 +3233,5 @@ EVENT_TRACKING_BACKENDS['ossp_tracking'] = {
 
 # Leave registration opened for the lms
 FEATURES['ALLOW_PUBLIC_ACCOUNT_CREATION'] = True
+
+BETTA_TESTERS_ENABLE = True
