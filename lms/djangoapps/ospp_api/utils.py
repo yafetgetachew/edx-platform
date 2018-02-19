@@ -1,7 +1,8 @@
-import requests
 import logging
 
+import requests
 from django.conf import settings
+from django.http import Http404
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.credit.models import CreditEligibility
 
@@ -21,11 +22,17 @@ def get_learner_info(user_id):
         'x-api-key': getattr(settings, 'ASU_API_KEY', '')
     }
     student_status = requests.get(url, headers=headers).json()
-    return isinstance(student_status, dict) and student_status or {}
+    if student_status and isinstance(student_status, dict):
+        return student_status
+    else:
+        raise Http404
 
 
 def get_credit_convert_eligibility(user, enrollment):
-    return CreditEligibility.objects.get(course_id=enrollment.course_id, username=user.username)
+    return CreditEligibility.objects.filter(
+        course__course_key=enrollment.course_id,
+        username=user.username
+    ).exists()
 
 
 def change_user_enrollment(enrollment, type):
@@ -36,8 +43,8 @@ def change_user_enrollment(enrollment, type):
 
 
 def applay_user_status_to_enroll(user, course_enrollment, status):
-    benefit_type = status.get('benefitType')
-    if not status and status.get('eligibilityStatus') != 'true' and not benefit_type:
+    benefit_type = int(status.get('benefitType', 0))
+    if not status or status.get('eligibilityStatus') != 'true' or not benefit_type:
         return
 
     if benefit_type in CREDIT_ELIGIBLE and get_credit_convert_eligibility(user, course_enrollment):
@@ -56,7 +63,7 @@ def update_user_state_from_eligible(user, course_key):
         course_enrollment = CourseEnrollment.objects.get(course_id=course_key, user=user)
     except (CourseEnrollment.DoesNotExist) as err:
         log.warning(
-                "Cannot provide student ckecking for eligibility and partner benefits, the Error is: {}".format(err)
+            "Cannot provide student ckecking for eligibility and partner benefits, the Error is: {}".format(err)
         )
         return
 
