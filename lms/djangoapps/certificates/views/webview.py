@@ -244,7 +244,7 @@ def _update_course_context(request, context, course, platform_name):
     course_number = course.display_coursenumber if course.display_coursenumber else course.number
     context['course_number'] = course_number
 
-    ukr_text = (u'наданий фахiвцями Державної установи «Центр громадського здоров`я Мiнiстерства охорони здоров`я України» '
+    ukr_text = course.course_info or (u'наданий фахiвцями Державної установи «Центр громадського здоров`я Мiнiстерства охорони здоров`я України» '
             u'та Благодiйної органiзацiї «Український iнститут полiтики громадського здоров`я»')
     if context['organization_long_name']:
         # Translators:  This text represents the description of course
@@ -314,7 +314,7 @@ def _update_context_with_user_info(context, user, user_certificate):
     """
     Updates context dictionary with user related info.
     """
-    user_fullname = user.profile.name
+    user_fullname = user.get_full_name() or user.profile.name
     context['username'] = user.username
     context['course_mode'] = user_certificate.mode
     context['accomplishment_user_id'] = user.id

@@ -30,6 +30,7 @@ var DetailsView = ValidatingView.extend({
         options = options || {};
         this.fileAnchorTemplate = _.template('<a href="<%= fullpath %>"> <i class="icon fa fa-file"></i><%= filename %></a>');
         // fill in fields
+        this.$el.find("#course-info").val(this.model.get('course_info'));
         this.$el.find("#course-language").val(this.model.get('language'));
         this.$el.find("#course-organization").val(this.model.get('org'));
         this.$el.find("#course-number").val(this.model.get('course_id'));
@@ -132,6 +133,7 @@ var DetailsView = ValidatingView.extend({
         return this;
     },
     fieldToSelectorMap : {
+        'course_info' : 'course-info',
         'language' : 'course-language',
         'start_date' : "course-start",
         'end_date' : 'course-end',
@@ -221,6 +223,7 @@ var DetailsView = ValidatingView.extend({
 
     updateModel: function(event) {
         switch (event.currentTarget.id) {
+        case 'course-info':
         case 'course-language':
             this.setField(event);
             break;
