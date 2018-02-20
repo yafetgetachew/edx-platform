@@ -15,7 +15,6 @@ from opaque_keys.edx.locations import SlashSeparatedCourseKey
 from openedx.core.djangoapps.content.course_overviews.models import CourseOverview
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
-
 def get_visible_courses(org=None, filter_=None):
     """
     Return the set of CourseOverviews that should be visible in this branded
@@ -62,8 +61,8 @@ def get_visible_courses(org=None, filter_=None):
         return [course for course in courses if course.id in filtered_visible_ids]
     else:
         # Filter out any courses based on current org, to avoid leaking these.
-        orgs = configuration_helpers.get_all_orgs()
-        return [course for course in courses if course.location.org not in orgs]
+        orgs = [org.lower() for org in configuration_helpers.get_all_orgs()]
+        return [course for course in courses if course.location.org.lower() not in orgs]
 
 
 def get_university_for_request():
