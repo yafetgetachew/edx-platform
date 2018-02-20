@@ -432,8 +432,6 @@ MIDDLEWARE_CLASSES = (
     # This must be last so that it runs first in the process_response chain
     'openedx.core.djangoapps.site_configuration.middleware.SessionCookieDomainOverrideMiddleware',
 
-    # For remove student access to studio
-    'ospp.middleware.FromStudentProtectMiddleware',
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
