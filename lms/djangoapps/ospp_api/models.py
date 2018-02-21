@@ -45,8 +45,8 @@ def on_proctoring_attempts_save(
         'lastPollIpaddr': self.last_poll_ipaddr,
         'externalId': self.external_id,
         'allowedTimeLimitMins': self.allowed_time_limit_mins,
-        'takingAsProctored': 'true' if self.taking_as_proctored else 'false',
-        'isSampleAttempt': 'true' if self.is_sample_attempt else 'false',
+        'takingAsProctored': True if self.taking_as_proctored else False,
+        'isSampleAttempt': True if self.is_sample_attempt else False,
         'reviewPolicyId': self.review_policy_id,
     }
     url = getattr(settings, 'ASU_API_URL', '') + "/api/proctoring"
