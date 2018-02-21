@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.contrib.admin.sites import NotRegistered
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import ugettext_lazy as _
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
@@ -171,18 +172,23 @@ class UserProfileInline(admin.StackedInline):
     verbose_name_plural = _('User profile')
 
 
-class UserAdmin(BaseUserAdmin):
+class NewUserCreationForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super(NewUserCreationForm, self).__init__(*args, **kwargs)
+        self.fields['email'].required = True
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'is_active')
+
+
+class UserAdmin(admin.ModelAdmin):
     """ Admin interface for the User model. """
     inlines = (UserProfileInline,)
-
-    def get_readonly_fields(self, *args, **kwargs):
-        """
-        Allows editing the users while skipping the username check, so we can have Unicode username with no problems.
-        The username is marked read-only regardless of `ENABLE_UNICODE_USERNAME`, to simplify the bokchoy tests.
-        """
-
-        django_readonly = super(UserAdmin, self).get_readonly_fields(*args, **kwargs)
-        return django_readonly + ('username',)
+    form = NewUserCreationForm
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'is_active')
 
 
 @admin.register(UserAttribute)
