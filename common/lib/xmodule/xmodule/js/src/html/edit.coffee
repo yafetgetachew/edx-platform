@@ -1,7 +1,7 @@
 class @HTMLEditingDescriptor
 
   # custom fonts are prepended to font selection dropdown
-  CUSTOM_FONTS = "Default='Open Sans', Verdana, Arial, Helvetica, sans-serif;"
+  CUSTOM_FONTS = "Default= Arial, Helvetica, sans-serif;"
 
   # list of standard tinyMCE fonts: http://www.tinymce.com/wiki.php/Configuration:font_formats
   STANDARD_FONTS = "Andale Mono=andale mono,times;"+
