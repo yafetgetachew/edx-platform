@@ -43,7 +43,11 @@
     </ul>
 
     <div class="enrollment-status-footer">
+    <div>
+      <img class="thumbnail" src="/static/images/checkout-gray.svg" alt="Checkout"/>
       <h4 class="title"><%- gettext( "Verified Status" ) %></h4>
+    </div>
+      
       <p class="verify-pending-msg">
         <%- _.sprintf( gettext( "Thank you for submitting your photos. We will review them shortly. You can now sign up for any %(platformName)s course that offers credit conversion and/or proctoring. Verification is good for one year. After one year, you must submit photos for verification again." ), { platformName: platformName } ) %></p>
       <a class="action action-primary" href="/dashboard"><%- gettext("Go to your Dashboard") %></a>  

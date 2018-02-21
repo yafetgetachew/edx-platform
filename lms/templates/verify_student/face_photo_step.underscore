@@ -1,7 +1,7 @@
 <div id="wrapper-facephoto" class="wrapper-view block-photo face-photo-step">
-
+    <h2 class="title"><%- gettext( "What You Need for Verification" ) %></h2>
     <div class="requirements">
-        <h2 class="title"><%- gettext( "What You Need for Verification" ) %></h2>
+        
         <div class="requirement">
             <h3 class="title"><%- gettext( "Webcam" ) %></h3>
             <p class="copy"><%- gettext( "You need a computer that has a webcam. When you receive a browser prompt, make sure that you allow access to the camera." ) %></p>
@@ -60,7 +60,7 @@
       <button id="next_step_button" class="next action-primary is-disabled right" aria-disabled="true" title="Next">
       <span class="sr" id="photo_message"></span>
         <%- _.sprintf(
-          gettext( "Next: %(nextStepTitle)s" ),
+          gettext( "%(nextStepTitle)s" ),
           { nextStepTitle: nextStepTitle }
         ) %>
       </button>

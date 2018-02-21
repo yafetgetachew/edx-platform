@@ -6,11 +6,13 @@
     </div>
 
     <div class="wrapper-task">
+      <h3><%- gettext("Take a photo of your ID" ) %></h3>
+      <p class="photo-tip"><%- gettext("Use your webcam to take a picture of your photo ID card. Acceptable forms of photo IDs include a driver’s license, passport, national ID card, state or province ID card, or an official student ID card." ) %></p>
       <div id="idcam" class="task cam"></div>
 
       <div class="wrapper-help">
          <div class="help help-task photo-tips idtips">
-          <p class="photo-tip"><%- gettext( "You need an ID with your name and photo. A driver's license, passport, or other government-issued IDs are all acceptable." ) %></p>
+          
 
           <h4 class="title"><%- gettext( "Tips on taking a successful photo" ) %></h4>
 
@@ -50,7 +52,7 @@
     <nav class="nav-wizard" id="face_next_button_nav">
       <button id="next_step_button" class="next action-primary right" disabled title="Next">
         <%- _.sprintf(
-          gettext( "Next: %(nextStepTitle)s" ),
+          gettext( "%(nextStepTitle)s" ),
           { nextStepTitle: nextStepTitle }
         ) %>
       </button>

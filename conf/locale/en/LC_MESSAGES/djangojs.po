@@ -2637,6 +2637,10 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
+#: lms/templates/verify_student/review_photos_step.underscore
+msgid "Submit"
+msgstr ""
+
 #: lms/djangoapps/teams/static/teams/js/views/team_profile_header_actions.js
 msgid "You already belong to another team."
 msgstr ""

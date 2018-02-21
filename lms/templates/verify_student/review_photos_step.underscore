@@ -6,6 +6,7 @@
     </div>
 
     <div class="wrapper-task">
+
       <div class="review-task review-task-photos">
         <div class="wrapper-photos">
           <div class="wrapper-photo">
@@ -30,9 +31,9 @@
               <li class="tip"><%- _.sprintf(  gettext( "Does the name on your ID match your account name: %(fullName)s?" ), { fullName: fullName } ) %>
                 <div class="help-tip is-expandable">
                   <label for="new-name">
-                    <button type="button" class="title title-expand" aria-expanded="false">
+                    <span type="button" class="title title-expand" aria-expanded="false">
                       <%- gettext( "Edit Your Name" ) %>
-                    </button>
+                    </span>
                   </label>
 
                   <div class="copy expandable-area">
@@ -67,7 +68,7 @@
       <ol class="wizard-steps">
         <li class="wizard-step step-proceed">
           <button id="next_step_button" class="next action-primary right" aria-hidden="true" aria-disabled="true" title="Confirmation">
-            <%- gettext( "Confirm" ) %>
+            <%- gettext( "Submit" ) %>
           </button>
         </li>
       </ol>
