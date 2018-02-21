@@ -44,7 +44,7 @@
 
     <div class="enrollment-status-footer">
     <div>
-      <img class="thumbnail" src="/static/images/checkout-gray.svg" alt="Checkout"/>
+      <img class="thumbnail" src="/static/images/id_verify_confirmation.svg" alt="Checkout"/>
       <h4 class="title"><%- gettext( "Verified Status" ) %></h4>
     </div>
       

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="113px" viewBox="0 0 108 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="id-verification-confirmation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-906.000000, -279.000000)">
+        <g id="Group-4" transform="translate(906.000000, 279.000000)">
+            <ellipse id="Oval" stroke="#5C6670" stroke-width="4.2" cx="54" cy="58.9042553" rx="51.9" ry="51.9957447"></ellipse>
+            <ellipse id="Oval" stroke="#5C6670" stroke-width="1.2" cx="54" cy="58.9042553" rx="46.8" ry="46.8840426"></ellipse>
+            <g id="user" transform="translate(33.000000, 31.000000)" stroke="#5C6670" stroke-width="4.2">
+                <path d="M30.8711282,11.78934 C30.8711282,6.60795404 26.6236023,2.39994 21.3738465,2.39994 C16.1240907,2.39994 11.8765648,6.60795404 11.8765648,11.78934 C11.8765648,16.970726 16.1240907,21.17874 21.3738465,21.17874 C26.6236023,21.17874 30.8711282,16.970726 30.8711282,11.78934 Z" id="Stroke-1"></path>
+                <path d="M40.3449972,46.82264 C40.3449972,36.457854 31.8556121,28.04744 21.3737859,28.04744 C10.8919597,28.04744 2.40257465,36.457854 2.40257465,46.82264 C2.40257465,50.3699768 10.6254825,53.36939 21.3737859,53.36939 C32.1220894,53.36939 40.3449972,50.3699768 40.3449972,46.82264 Z" id="Stroke-3"></path>
+            </g>
+            <g id="yes" transform="translate(66.600000, 0.000000)">
+                <path d="M0,20.1716492 C0,9.36310306 8.746848,0.600746468 19.536264,0.600746468 C30.32568,0.600746468 39.071736,9.36310306 39.071736,20.1716492 C39.071736,30.9801954 30.32568,39.742552 19.536264,39.742552 C8.746848,39.742552 0,30.9801954 0,20.1716492" id="Fill-1" fill="#FFC627"></path>
+                <polyline id="Stroke-4" stroke="#FFFFFF" stroke-width="3.168" stroke-linecap="round" stroke-linejoin="round" points="10.8120672 21.7274356 16.8787872 28.5903824 28.6494912 11.9645963"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
