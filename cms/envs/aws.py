@@ -166,7 +166,9 @@ REGISTRATION_EMAIL_PATTERNS_ALLOWED = ENV_TOKENS.get('REGISTRATION_EMAIL_PATTERN
 # allow for environments to specify what cookie name our login subsystem should use
 # this is to fix a bug regarding simultaneous logins between edx.org and edge.edx.org which can
 # happen with some browsers (e.g. Firefox)
-if ENV_TOKENS.get('SESSION_COOKIE_NAME', None):
+if ENV_TOKENS.get('CMS_SESSION_COOKIE_NAME'):
+    SESSION_COOKIE_NAME = str(ENV_TOKENS.get('CMS_SESSION_COOKIE_NAME'))
+elif ENV_TOKENS.get('SESSION_COOKIE_NAME', None):
     # NOTE, there's a bug in Django (http://bugs.python.org/issue18012) which necessitates this being a str()
     SESSION_COOKIE_NAME = str(ENV_TOKENS.get('SESSION_COOKIE_NAME'))
 
