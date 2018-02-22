@@ -4,11 +4,11 @@
         
         <div class="requirement">
             <h3 class="title"><%- gettext( "Webcam" ) %></h3>
-            <p class="copy"><%- gettext( "You need a computer that has a webcam. When you receive a browser prompt, make sure that you allow access to the camera." ) %></p>
+            <p class="copy"><%- gettext( "You will be prompted to take a webcam photo of yourself as well as an acceptable form of photo ID." ) %></p>
         </div>
         <div class="requirement">
             <h3 class="title"><%- gettext( "Photo Identification" ) %></h3>
-            <p class="copy"><%- gettext( "You need a driver's license, passport, or other government-issued ID that has your name and photo." ) %></p>
+            <p class="copy"><%- gettext( "Acceptable forms of photo IDs include a driver's license, passport, national ID card, state or province ID card, or an official student ID card. " ) %></p>
         </div>
     </div>
 
