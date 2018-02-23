@@ -295,18 +295,11 @@ class EmailChangeRequestTests(EventTestMixin, TestCase):
             'old_email': old_email,
             'new_email': new_email
         }
-
-        try:
-            html_message = mock_render_to_string('emails/email_change.html', context)
-        except:
-            html_message = None
-
         send_mail.assert_called_with(
             mock_render_to_string('emails/email_change_subject.txt', context),
             mock_render_to_string('emails/email_change.txt', context),
             configuration_helpers.get_value('email_from_address', settings.DEFAULT_FROM_EMAIL),
-            [new_email],
-            html_message=html_message
+            [new_email]
         )
         self.assert_event_emitted(
             SETTING_CHANGE_INITIATED, user_id=self.user.id, setting=u'email', old=old_email, new=new_email
@@ -430,4 +423,5 @@ class EmailChangeConfirmationTests(EmailTestMixin, TransactionTestCase):
         with patch.object(connection, 'rollback', wraps=connection.rollback) as mock_rollback:
             with self.assertRaises(TestException):
                 confirm_email_change(self.request, self.key)
+
             mock_rollback.assert_called_with()
