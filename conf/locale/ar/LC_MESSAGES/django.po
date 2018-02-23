@@ -24126,3 +24126,6 @@ msgstr "برنامج الغرير للمفكرين اليافعين"
 msgid "Issued On"
 msgstr "اصدر بتاريخ:"
 
+msgid "a course of study offered by the<br>Al Ghurair Young Thinkers Programm."
+msgstr "دورة دراسية مقدمة من قبل برنامج الغرير للمفكرين اليافعين."
+
