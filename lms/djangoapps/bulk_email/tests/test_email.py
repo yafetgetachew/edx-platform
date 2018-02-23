@@ -170,13 +170,6 @@ class TestEmailSendFromDashboardMockedHtmlToText(EmailSendFromDashboardTestCase)
         self.assertEqual(len(mail.outbox[0].to), 1)
         self.assertEquals(mail.outbox[0].to[0], self.instructor.email)
         self.assertEquals(mail.outbox[0].subject, 'test subject for myself')
-        self.assertEquals(
-            mail.outbox[0].from_email,
-            u'"{course_display_name}" Course Staff <{course_name}-no-reply@example.com>'.format(
-                course_display_name=self.course.display_name,
-                course_name=self.course.id.course
-            )
-        )
 
     def test_send_to_staff(self):
         """
@@ -391,17 +384,6 @@ class TestEmailSendFromDashboardMockedHtmlToText(EmailSendFromDashboardTestCase)
         self.assertTrue(json.loads(response.content)['success'])
 
         self.assertEqual(len(mail.outbox), 1)
-        from_email = mail.outbox[0].from_email
-
-        expected_from_addr = (
-            u'"{course_name}" Course Staff <{course_name}-no-reply@courseupdates.edx.org>'
-        ).format(course_name=course.id.course)
-
-        self.assertEqual(
-            from_email,
-            expected_from_addr
-        )
-        self.assertEqual(len(from_email), 61)
 
     @override_settings(BULK_EMAIL_EMAILS_PER_TASK=3)
     @patch('bulk_email.tasks.update_subtask_status')
