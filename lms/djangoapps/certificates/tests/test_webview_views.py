@@ -85,7 +85,6 @@ class CommonCertificatesTestCase(ModuleStoreTestCase):
         )
         self.user.profile.name = "Joe User"
         self.user.profile.save()
-        self.user.save()
         self.client.login(username=self.user.username, password='foo')
         self.request = RequestFactory().request()
         self.linkedin_url = 'http://www.linkedin.com/profile/add?{params}'
@@ -1160,17 +1159,6 @@ class CertificateEventTests(CommonCertificatesTestCase, EventTrackingTestCase):
             user_id=self.user.id,
             course_id=unicode(self.course.id)
         )
-
-        new_user = UserFactory.create(
-                email='other_user@edx.org',
-                username='other_user',
-                password='foo'
-        )
-        new_user.profile.name = "Other User"
-        new_user.profile.save()
-        new_user.save()
-        self.client.login(username=new_user.username, password='foo')
-        self.recreate_tracker()
         response = self.client.get(test_url)
         self.assertEqual(response.status_code, 200)
         actual_event = self.get_event()
@@ -1186,7 +1174,6 @@ class CertificateEventTests(CommonCertificatesTestCase, EventTrackingTestCase):
             },
             actual_event['data']
         )
-
 
     @override_settings(FEATURES=FEATURES_WITH_CERTS_ENABLED)
     def test_evidence_event_sent(self):
