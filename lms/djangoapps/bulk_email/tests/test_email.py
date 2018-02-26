@@ -16,7 +16,7 @@ from django.core.urlresolvers import reverse
 from django.core.management import call_command
 from django.test.utils import override_settings
 
-from bulk_email.models import Optout, BulkEmailFlag
+from bulk_email.models import Optout, BulkEmailFlag, CourseEmail
 from bulk_email.tasks import _get_source_address, _get_course_email_context
 from openedx.core.djangoapps.course_groups.models import CourseCohort
 from openedx.core.djangoapps.course_groups.cohorts import add_user_to_cohort
@@ -152,6 +152,7 @@ class TestEmailSendFromDashboardMockedHtmlToText(EmailSendFromDashboardTestCase)
         self.assertContains(response, "Email is not enabled for this course.", status_code=403)
 
     @patch('bulk_email.models.html_to_text', Mock(return_value='Mocking CourseEmail.text_message', autospec=True))
+    @patch.object(CourseEmail, 'DEFAULT_FROM_EMAIL', None)
     def test_send_to_self(self):
         """
         Make sure email send to myself goes to myself.
@@ -170,6 +171,13 @@ class TestEmailSendFromDashboardMockedHtmlToText(EmailSendFromDashboardTestCase)
         self.assertEqual(len(mail.outbox[0].to), 1)
         self.assertEquals(mail.outbox[0].to[0], self.instructor.email)
         self.assertEquals(mail.outbox[0].subject, 'test subject for myself')
+        self.assertEquals(
+            mail.outbox[0].from_email,
+            u'"{course_display_name}" Course Staff <{course_name}-no-reply@example.com>'.format(
+                course_display_name=self.course.display_name,
+                course_name=self.course.id.course
+            )
+        )
 
     def test_send_to_staff(self):
         """
@@ -338,6 +346,7 @@ class TestEmailSendFromDashboardMockedHtmlToText(EmailSendFromDashboardTestCase)
         )
 
     @override_settings(BULK_EMAIL_DEFAULT_FROM_EMAIL="no-reply@courseupdates.edx.org")
+    @patch.object(CourseEmail, 'DEFAULT_FROM_EMAIL', None)
     def test_long_course_display_name(self):
         """
         This test tests that courses with exorbitantly large display names
@@ -384,6 +393,16 @@ class TestEmailSendFromDashboardMockedHtmlToText(EmailSendFromDashboardTestCase)
         self.assertTrue(json.loads(response.content)['success'])
 
         self.assertEqual(len(mail.outbox), 1)
+        from_email = mail.outbox[0].from_email
+        expected_from_addr = (
+            u'"{course_name}" Course Staff <{course_name}-no-reply@courseupdates.edx.org>'
+        ).format(course_name=course.id.course)
+
+        self.assertEqual(
+            from_email,
+            expected_from_addr
+        )
+        self.assertEqual(len(from_email), 61)
 
     @override_settings(BULK_EMAIL_EMAILS_PER_TASK=3)
     @patch('bulk_email.tasks.update_subtask_status')
