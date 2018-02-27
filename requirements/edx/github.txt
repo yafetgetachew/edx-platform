@@ -102,4 +102,4 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git+https://github.com/Microsoft/xblock-azure-media-services#egg=xblock-azure-media-services
 
 -e git+https://github.com/raccoongang/edx-xblock-in-video-quiz.git#egg=invideoquiz-xblock
-
+-e git+https://github.com/OfficeDev/xblock-officemix.git#egg=xblock_officemix
