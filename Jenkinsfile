@@ -48,7 +48,7 @@ def coverageTest() {
                     echo "Setting target_commit as '${target_commit}'"
 
                     if (branch_name =~ /^PR-.*$/) {
-                        echo "Branch name variable singifies that its '${branch_name}'"
+                        echo "Branch name variable signifies that its '${branch_name}'"
                         merge_commit_parents= sh(returnStdout: true, script: 'git rev-parse HEAD | git log --pretty=%P -n 1 --date-order').trim()   
                         if (merge_commit_parents.length() > 40) {
                             echo "Changing ci_commit from '${ci_commit}' to '${merge_commit_parents.take(40)}'"
@@ -57,7 +57,7 @@ def coverageTest() {
                             echo "Keeping ci_commit as '${ci_commit}'"
                         }
                     } else {
-                        echo "Branch name '${branch_name}' singifies that its not PR."
+                        echo "Branch name '${branch_name}' signifies that its not PR."
                         ci_commit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
                         echo "Setting ci_commit as '${ci_commit}'"
                     }
