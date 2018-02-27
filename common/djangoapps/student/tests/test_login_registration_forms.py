@@ -143,9 +143,6 @@ class LoginFormTest(ThirdPartyAuthTestMixin, UrlResetMixin, SharedModuleStoreTes
         # Verify that the parameters are sent on to the next page correctly
         post_login_handler = _finish_auth_url(params)
         js_success_var = 'var nextUrl = "{}";'.format(js_escaped_string(post_login_handler))
-        test_file = open('/edx/app/edxapp/edx-platform/test_log_file.txt', 'w')
-        test_file.write(str(response))
-        test_file.close()
         self.assertContains(response, js_success_var)
 
         # Verify that the login link preserves the querystring params
