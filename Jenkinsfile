@@ -37,11 +37,14 @@ def coverageTest() {
             try {
                 withCredentials([string(credentialsId: 'rg-codecov-edx-platform-token', variable: 'CODE_COV_TOKEN')]) {
                     branch_name = env.BRANCH_NAME
-
+                    change_target = env.CHANGE_TARGET
+                    
                     target_commit = sh(returnStdout: true, script: 'git rev-parse HEAD^1').trim()
                     echo "Setting target_commit as '${target_commit}'"
 
-                    if (branch_name =~ /^PR-.*$/) {
+                    ci_commit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+
+                    if (branch_name != change_target) {
                         echo "Branch name variable signifies that its '${branch_name}'"
                         merge_commit_parents= sh(returnStdout: true, script: 'git rev-parse HEAD | git log --pretty=%P -n 1 --date-order').trim()
                         if (merge_commit_parents.length() > 40) {
@@ -52,8 +55,7 @@ def coverageTest() {
                         }
                     } else {
                         echo "Branch name '${branch_name}' signifies that its not PR."
-                        ci_commit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-                        echo "Setting ci_commit as '${ci_commit}'"
+                        echo "Keeping ci_commit as '${ci_commit}'"
                     }
                     unstash "artifacts-lms-unit-1"
                     unstash "artifacts-lms-unit-2"
