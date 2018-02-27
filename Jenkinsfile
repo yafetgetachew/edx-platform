@@ -63,7 +63,7 @@ def coverageTest() {
                     unstash "artifacts-lms-unit-4"
                     unstash "artifacts-cms-unit-all"
                     sh """source ./scripts/jenkins-common.sh
-                    paver coverage -b ${target_commit}
+                    paver coverage -b ${change_target}
                     pip install codecov==2.0.5
                     codecov --token=$CODE_COV_TOKEN --branch=${ci_commit}"""
                 }
