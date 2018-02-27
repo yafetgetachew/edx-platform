@@ -34,12 +34,6 @@ def coverageTest() {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
             cleanWs()
             checkout scm
-            unstash "artifacts-lms-unit-1"
-            unstash "artifacts-lms-unit-2"
-            unstash "artifacts-lms-unit-3"
-            unstash "artifacts-lms-unit-4"
-            unstash "artifacts-cms-unit-all"
-
             try {
                 withCredentials([string(credentialsId: 'rg-codecov-edx-platform-token', variable: 'CODE_COV_TOKEN')]) {
                     branch_name = env.BRANCH_NAME
@@ -49,7 +43,7 @@ def coverageTest() {
 
                     if (branch_name =~ /^PR-.*$/) {
                         echo "Branch name variable signifies that its '${branch_name}'"
-                        merge_commit_parents= sh(returnStdout: true, script: 'git rev-parse HEAD | git log --pretty=%P -n 1 --date-order').trim()   
+                        merge_commit_parents= sh(returnStdout: true, script: 'git rev-parse HEAD | git log --pretty=%P -n 1 --date-order').trim()
                         if (merge_commit_parents.length() > 40) {
                             echo "Changing ci_commit from '${ci_commit}' to '${merge_commit_parents.take(40)}'"
                             ci_commit = merge_commit_parents.take(40)
@@ -61,7 +55,11 @@ def coverageTest() {
                         ci_commit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
                         echo "Setting ci_commit as '${ci_commit}'"
                     }
-
+                    unstash "artifacts-lms-unit-1"
+                    unstash "artifacts-lms-unit-2"
+                    unstash "artifacts-lms-unit-3"
+                    unstash "artifacts-lms-unit-4"
+                    unstash "artifacts-cms-unit-all"
                     sh """source ./scripts/jenkins-common.sh
                     paver coverage -b ${target_commit}
                     pip install codecov==2.0.5
@@ -70,7 +68,7 @@ def coverageTest() {
             } finally {
                 archiveArtifacts 'reports/**, test_root/log/**'
                 cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'reports/coverage.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false
-                /* deleteDir() */
+                deleteDir()
             }
         }
     }
