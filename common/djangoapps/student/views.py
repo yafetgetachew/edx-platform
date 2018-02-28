@@ -129,6 +129,7 @@ from util.json_request import JsonResponse
 from util.milestones_helpers import get_pre_requisite_courses_not_completed
 from util.password_policy_validators import validate_password_strength
 from xmodule.modulestore.django import modulestore
+from course_category.models import CourseCategory
 
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
@@ -174,7 +175,17 @@ def index(request, extra_context=None, user=AnonymousUser()):
     if extra_context is None:
         extra_context = {}
 
-    courses = get_courses(user)
+    filter = {}
+    category = request.GET.get('category', None)
+    if category:
+        try:
+            category = CourseCategory.objects.get(slug=category)
+        except CourseCategory.DoesNotExist:
+            pass
+        else:
+            filter['id__in'] = category.get_course_ids()
+
+    courses = get_courses(user, filter_=filter)
 
     if configuration_helpers.get_value(
             "ENABLE_COURSE_SORTING_BY_START_DATE",
@@ -208,6 +219,9 @@ def index(request, extra_context=None, user=AnonymousUser()):
     context.update(extra_context)
 
     context['programs_list'] = get_programs_with_type(include_hidden=False)
+
+    context['categories'] = CourseCategory.objects.filter(enabled=True)
+    context['current_category'] = category
 
     return render_to_response('index.html', context)
 
