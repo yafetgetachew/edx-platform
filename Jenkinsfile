@@ -37,25 +37,16 @@ def coverageTest() {
             try {
                 withCredentials([string(credentialsId: 'rg-codecov-edx-platform-token', variable: 'CODE_COV_TOKEN')]) {
                     branch_name = env.BRANCH_NAME
+                    codecov_token = env.CODE_COV_TOKEN
                     change_target = env.CHANGE_TARGET
                     
-                    target_commit = sh(returnStdout: true, script: 'git rev-parse HEAD^1').trim()
-                    echo "Setting target_commit as '${target_commit}'"
-
-                    ci_commit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-
-                    if (branch_name != change_target) {
-                        echo "Branch name variable signifies that its '${branch_name}'"
-                        merge_commit_parents= sh(returnStdout: true, script: 'git rev-parse HEAD | git log --pretty=%P -n 1 --date-order').trim()
-                        if (merge_commit_parents.length() > 40) {
-                            echo "Changing ci_commit from '${ci_commit}' to '${merge_commit_parents.take(40)}'"
-                            ci_commit = merge_commit_parents.take(40)
-                        } else {
-                            echo "Keeping ci_commit as '${ci_commit}'"
-                        }
+                    if (branch_name == change_target) {
+                        echo "BRANCH_NAME variable signifies that this is '?{branch_name}'."
+                        echo "Changing ci_commit to HEAD^1."
+                        ci_commit = sh(returnStdout: true, script: 'git rev-parse --short HEAD^1').trim()
                     } else {
-                        echo "Branch name '${branch_name}' signifies that its not PR."
-                        echo "Keeping ci_commit as '${ci_commit}'"
+                        echo "This is not the PR. Changing ci_commit to HEAD."
+                        ci_commit = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
                     }
                     unstash "artifacts-lms-unit-1"
                     unstash "artifacts-lms-unit-2"
@@ -63,9 +54,9 @@ def coverageTest() {
                     unstash "artifacts-lms-unit-4"
                     unstash "artifacts-cms-unit-all"
                     sh """source ./scripts/jenkins-common.sh
-                    paver coverage -b ${change_target}
+                    paver coverage -b origin/${change_target}
                     pip install codecov==2.0.5
-                    codecov --token=$CODE_COV_TOKEN --branch=${ci_commit}"""
+                    codecov --token=${codecov_token} --branch=${ci_commit}"""
                 }
             } finally {
                 archiveArtifacts 'reports/**, test_root/log/**'
