@@ -1034,3 +1034,6 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
         )
     )
 
+urlpatterns += (
+    url(r'^category/', include('course_category.urls')),
+)

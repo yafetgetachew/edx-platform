@@ -24,6 +24,7 @@ from xmodule.course_module import CourseDescriptor, DEFAULT_START_DATE
 from xmodule.error_module import ErrorDescriptor
 from xmodule.modulestore.django import modulestore
 from openedx.core.djangoapps.xmodule_django.models import CourseKeyField, UsageKeyField
+from course_category.models import CourseCategory
 
 log = logging.getLogger(__name__)
 
@@ -659,6 +660,16 @@ class CourseOverview(TimeStampedModel):
     def __unicode__(self):
         """Represent ourselves with the course key."""
         return unicode(self.id)
+
+    @property
+    def course_category(self):
+        try:
+            category = CourseCategory.objects.select_related()\
+                       .get(coursecategorycourse__course_id=self.id)
+        except CourseCategory.DoesNotExist:
+            category = None
+
+        return category
 
 
 class CourseOverviewTab(models.Model):

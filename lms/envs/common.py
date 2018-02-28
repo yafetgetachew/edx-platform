@@ -2244,6 +2244,10 @@ INSTALLED_APPS = (
     'openedx.features.enterprise_support',
 
     'experiments',
+
+    'course_category',
+
+    'django_mptt_admin',
 )
 
 ######################### CSRF #########################################

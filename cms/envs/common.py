@@ -1037,6 +1037,10 @@ INSTALLED_APPS = (
 
     # Waffle related utilities
     'openedx.core.djangoapps.waffle_utils',
+
+    'course_category',
+
+    'django_mptt_admin',
 )
 
 
