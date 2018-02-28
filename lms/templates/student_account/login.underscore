@@ -8,7 +8,7 @@
 </div>
 <% } %>
 
-<h2><%- gettext("Sign In") %></h2>
+<h2><%- gettext("تسجيل الدخول") %></h2>
 
 <form id="login" class="login-form" tabindex="-1" method="POST">
 
