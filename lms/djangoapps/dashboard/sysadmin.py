@@ -43,6 +43,7 @@ import track.views
 from xmodule.modulestore.django import modulestore
 from opaque_keys.edx.locations import SlashSeparatedCourseKey
 from search.search_engine_base import SearchEngine
+from openedx.core.djangoapps.content.course_overviews.models import CourseOverview
 
 
 log = logging.getLogger(__name__)
@@ -561,11 +562,14 @@ class Courses(SysadminDashboardView):
                 # delete course that is stored with mongodb backend
                 self.def_ms.delete_course(course.id, request.user.id)
 
-                response = self._searcher.search(doc_type="courseware_content", field_dictionary={'course': course_id})
-                result_ids = [result["data"]["id"] for result in response["results"]]
-                self._searcher.remove('courseware_content', result_ids)
-                self._searcher.remove('course_info', [course_id])
-
+                try:
+                    response = self._searcher.search(doc_type="courseware_content", field_dictionary={'course': course_id})
+                    result_ids = [result["data"]["id"] for result in response["results"]]
+                    self._searcher.remove('courseware_content', result_ids)
+                    self._searcher.remove('course_info', [course_id])
+                except Exception as e:
+                    log.error(e.message)
+                CourseOverview.objects.filter(id=course.id).delete()
                 # don't delete user permission groups, though
                 self.msg += \
                     u"<font color='red'>{0} {1} = {2} ({3})</font>".format(
