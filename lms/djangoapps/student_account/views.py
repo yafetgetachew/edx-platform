@@ -488,7 +488,7 @@ def account_settings_context(request):
                 state.provider.provider_id,
                 pipeline.AUTH_ENTRY_ACCOUNT_SETTINGS,
                 # The url the user should be directed to after the auth process has completed.
-                redirect_url=reverse('account_settings'),
+                redirect_url='#',
             ),
             'accepts_logins': state.provider.accepts_logins,
             # If the user is connected, sending a POST request to this url removes the connection

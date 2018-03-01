@@ -6,12 +6,13 @@ import json
 import logging
 import urllib
 from collections import OrderedDict, namedtuple
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import analytics
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, AnonymousUser
+from django.contrib.auth import login, logout
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse
 from django.core.context_processors import csrf
@@ -22,6 +23,7 @@ from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.utils.timezone import UTC
 from django.utils.translation import ugettext as _
+from django.utils.text import slugify
 from django.views.decorators.cache import cache_control
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_GET, require_POST, require_http_methods
@@ -49,6 +51,7 @@ from certificates.models import CertificateStatuses
 from openedx.core.djangoapps.models.course_details import CourseDetails
 from commerce.utils import EcommerceService
 from enrollment.api import add_enrollment
+from enrollment.data import create_course_enrollment
 from course_modes.models import CourseMode
 from courseware.access import has_access, has_ccx_coach_role, _adjust_start_date_for_beta_testers
 from courseware.access_response import StartDateError
@@ -95,6 +98,9 @@ from xmodule.tabs import CourseTabList
 from xmodule.x_module import STUDENT_VIEW
 from ..entrance_exams import user_must_complete_entrance_exam
 from ..module_render import get_module_for_descriptor, get_module, get_module_by_usage_id
+from student.views import create_account_with_params
+from third_party_auth.pipeline import make_random_password
+
 
 log = logging.getLogger("edx.courseware")
 
@@ -282,13 +288,65 @@ def course_info(request, course_id):
 
     Assumes the course_id is in a valid format.
     """
+    edx_url = '{HTTP_X_FORWARDED_PROTO}://{HTTP_HOST}{PATH_INFO}'.format(**request.META)
+    redirect_url = '{}/login.aspx?returnUrl={}'.format(settings.FEATURES['PORTAL_URL'], edx_url)
+
     course_key = CourseKey.from_string(course_id)
     with modulestore().bulk_operations(course_key):
         course = get_course_by_id(course_key, depth=2)
         access_response = has_access(request.user, 'load', course, course_key)
 
-        if not access_response:
+        if access_response:
+            email = request.GET.get('email')
+            lastlogindate = request.GET.get('lastlogindate')
+            fname = request.GET.get('fname')
+            lname = request.GET.get('lname')
 
+            if email and lastlogindate:
+                try:
+                    lastlogindate = datetime.strptime(lastlogindate, '%m/%d/%Y %I:%M:%S %p')
+                except ValueError:
+                    return redirect(redirect_url)
+                else:
+                    if lastlogindate < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
+                        logout(request)
+                        return redirect(redirect_url)
+
+                try:
+                    user = User.objects.get(email=email)
+                except User.DoesNotExist:
+                    username = slugify(email)
+                    if User.objects.filter(username=username).exists():
+                        username = '{}{}'.format(username, slugify('_'.join([fname, lname])))
+                    user_data = {
+                        'email': email,
+                        'username': username,
+                        'name': ' '.join([fname, lname]),
+                        'terms_of_service': "True",
+                        'honor_code': 'True',
+                        'password': make_random_password()
+                    }
+                    create_account_with_params(request, user_data)
+                    user.first_name = fname
+                    user.last_name = lname
+                    user.is_active = True
+                    user.save()
+                    user = request.user
+
+                try:
+                    create_course_enrollment(
+                        user.username,
+                        course_id,
+                        mode='honor',
+                        is_active=True
+                    )
+                except Exception:
+                    pass
+                user.backend = 'fake_backend'
+                login(request, user)
+                return redirect(edx_url)
+        else:
+            return redirect(redirect_url)
             # The user doesn't have access to the course. If they're
             # denied permission due to the course not being live yet,
             # redirect to the dashboard page.
@@ -1412,7 +1470,7 @@ def financial_assistance_form(request):
         'header_text': FINANCIAL_ASSISTANCE_HEADER,
         'student_faq_url': marketing_link('FAQ'),
         'dashboard_url': reverse('dashboard'),
-        'account_settings_url': reverse('account_settings'),
+        'account_settings_url': '#',
         'platform_name': configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
         'user_details': {
             'email': user.email,

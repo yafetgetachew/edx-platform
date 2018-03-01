@@ -483,7 +483,7 @@ def user_profile(request, course_key, user_id):
                 'num_pages': query_params['num_pages'],
                 'sort_preference': user.default_sort_key,
                 'course_settings': course_settings,
-                'learner_profile_page_url': reverse('learner_profile', kwargs={'username': django_user.username}),
+                'learner_profile_page_url': '#',
                 'disable_courseware_js': True,
                 'uses_pattern_library': True,
             }
