@@ -114,6 +114,67 @@ REQUIREMENTS_DISPLAY_MODES = CourseMode.CREDIT_MODES + [CourseMode.VERIFIED]
 
 CertData = namedtuple("CertData", ["cert_status", "title", "msg", "download_url", "cert_web_view_url"])
 
+def check_sso(request, course_id):
+    edx_url = '{HTTP_X_FORWARDED_PROTO}://{HTTP_HOST}{PATH_INFO}'.format(**request.META)
+    redirect_url = '{}/login.aspx?returnUrl={}'.format(settings.FEATURES['PORTAL_URL'], edx_url)
+
+    p = request.GET.get('p')
+    if p:
+        key = md5.new(settings.CLOUDSOCIETY_SECRET).digest()
+
+        des = pyDes.triple_des(key, pyDes.ECB, "\0\0\0\0\0\0\0\0", pad=None, padmode=pyDes.PAD_PKCS5)
+        qs = des.decrypt(base64.b64decode(p.replace(' ', '+')))
+
+        params = dict(urllib2.urlparse.parse_qsl(qs))
+
+        email = params.get('email')
+        lastlogindate = params.get('lastlogindate')
+        fname = params.get('fname')
+        lname = params.get('lname')
+
+        if email and lastlogindate:
+            try:
+                lastlogindate = datetime.strptime(lastlogindate, '%m/%d/%Y %I:%M:%S %p')
+            except ValueError:
+                return redirect(redirect_url)
+            else:
+                if lastlogindate < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
+                    logout(request)
+                    return redirect(redirect_url)
+
+            try:
+                user = User.objects.get(email=email)
+            except User.DoesNotExist:
+                username = slugify(email)
+                if User.objects.filter(username=username).exists():
+                    username = '{}{}'.format(username, slugify('_'.join([fname, lname])))
+                user_data = {
+                    'email': email,
+                    'username': username,
+                    'name': ' '.join([fname, lname]),
+                    'terms_of_service': "True",
+                    'honor_code': 'True',
+                    'password': make_random_password()
+                }
+                create_account_with_params(request, user_data)
+                user.first_name = fname
+                user.last_name = lname
+                user.is_active = True
+                user.save()
+                user = request.user
+
+            try:
+                create_course_enrollment(
+                    user.username,
+                    course_id,
+                    mode='honor',
+                    is_active=True
+                )
+            except Exception:
+                pass
+            user.backend = 'fake_backend'
+            login(request, user)
+            return redirect(edx_url)
 
 def user_groups(user):
     """
@@ -300,65 +361,9 @@ def course_info(request, course_id):
         access_response = has_access(request.user, 'load', course, course_key)
 
         if access_response:
-            p = request.GET.get('p')
-            log.error(p)
-            log.error(settings.CLOUDSOCIETY_SECRET)
-            if p:
-                key = md5.new(settings.CLOUDSOCIETY_SECRET).digest()
-
-                des = pyDes.triple_des(key, pyDes.ECB, "\0\0\0\0\0\0\0\0", pad=None, padmode=pyDes.PAD_PKCS5)
-                qs = des.decrypt(base64.b64decode(p.replace(' ', '+')))
-                log.error(qs)
-                params = dict(urllib2.urlparse.parse_qsl(qs))
-
-                email = params.get('email')
-                lastlogindate = params.get('lastlogindate')
-                fname = params.get('fname')
-                lname = params.get('lname')
-
-                if email and lastlogindate:
-                    try:
-                        lastlogindate = datetime.strptime(lastlogindate, '%m/%d/%Y %I:%M:%S %p')
-                    except ValueError:
-                        return redirect(redirect_url)
-                    else:
-                        if lastlogindate < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
-                            logout(request)
-                            return redirect(redirect_url)
-
-                    try:
-                        user = User.objects.get(email=email)
-                    except User.DoesNotExist:
-                        username = slugify(email)
-                        if User.objects.filter(username=username).exists():
-                            username = '{}{}'.format(username, slugify('_'.join([fname, lname])))
-                        user_data = {
-                            'email': email,
-                            'username': username,
-                            'name': ' '.join([fname, lname]),
-                            'terms_of_service': "True",
-                            'honor_code': 'True',
-                            'password': make_random_password()
-                        }
-                        create_account_with_params(request, user_data)
-                        user.first_name = fname
-                        user.last_name = lname
-                        user.is_active = True
-                        user.save()
-                        user = request.user
-
-                    try:
-                        create_course_enrollment(
-                            user.username,
-                            course_id,
-                            mode='honor',
-                            is_active=True
-                        )
-                    except Exception:
-                        pass
-                    user.backend = 'fake_backend'
-                    login(request, user)
-                    return redirect(edx_url)
+            resp = check_sso(request, course_id)
+            if resp:
+                return resp
         else:
             return redirect(redirect_url)
             # The user doesn't have access to the course. If they're
@@ -614,6 +619,10 @@ def course_about(request, course_id):
     """
 
     course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
+
+    resp = check_sso(request, course_key)
+    if resp:
+        return resp
 
     if hasattr(course_key, 'ccx'):
         # if un-enrolled/non-registered user try to access CCX (direct for registration)
