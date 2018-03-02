@@ -175,6 +175,7 @@ def check_sso(request, course_id):
             user.backend = 'fake_backend'
             login(request, user)
             return redirect(edx_url)
+    return None
 
 def user_groups(user):
     """
@@ -610,7 +611,7 @@ class EnrollStaffView(View):
 
 
 @ensure_csrf_cookie
-@cache_if_anonymous()
+#@cache_if_anonymous()
 def course_about(request, course_id):
     """
     Display the course's about page.
