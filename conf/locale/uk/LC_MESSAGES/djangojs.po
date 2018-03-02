@@ -2,7 +2,7 @@
 # edX community translations have been downloaded from Ukrainian (http://www.transifex.com/open-edx/edx-platform/language/uk/).
 # Copyright (C) 2017 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # annburdyliak <annburdyliak@ya.ru>, 2014
 # annburdyliak <annburdyliak@ya.ru>, 2014
@@ -35,7 +35,7 @@
 # edX translation file.
 # Copyright (C) 2017 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Abetka <chalikushu2@gmail.com>, 2014
 # Denis <prohibiti@gmail.com>, 2015
@@ -51,7 +51,7 @@
 # edX translation file
 # Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Irene Korotkova <irca.gav@gmail.com>, 2017
 # IvanPrimachenko <jastudent1@gmail.com>, 2014
@@ -66,7 +66,7 @@
 # edX translation file
 # Copyright (C) 2017 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# 
+#
 # Translators:
 # Denis <prohibiti@gmail.com>, 2015
 # Irene Korotkova <irca.gav@gmail.com>, 2017
@@ -80,13 +80,15 @@ msgstr ""
 "POT-Creation-Date: 2017-12-17 20:42+0000\n"
 "PO-Revision-Date: 2018-01-12 10:16+0000\n"
 "Last-Translator: Natalia Vynogradenko <tannaha@gmail.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/open-edx/edx-platform/language/uk/)\n"
+"Language-Team: Ukrainian (http://www.transifex.com/open-edx/edx-platform/"
+"language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: cms/static/cms/js/xblock/cms.runtime.v1.js
 #: cms/static/js/certificates/views/signatory_details.js
@@ -94,8 +96,7 @@ msgstr ""
 #: cms/static/js/views/asset.js cms/static/js/views/container.js
 #: cms/static/js/views/course_info_handout.js
 #: cms/static/js/views/course_info_update.js
-#: cms/static/js/views/edit_textbook.js
-#: cms/static/js/views/list_item_editor.js
+#: cms/static/js/views/edit_textbook.js cms/static/js/views/list_item_editor.js
 #: cms/static/js/views/modals/edit_xblock.js cms/static/js/views/tabs.js
 #: cms/static/js/views/utils/xblock_utils.js lms/static/js/ccx/schedule.js
 #: lms/static/js/views/fields.js
@@ -186,8 +187,7 @@ msgstr "Обрати файл"
 msgid "OK"
 msgstr "Гаразд"
 
-#: cms/static/js/views/course_video_settings.js
-#: cms/static/js/views/metadata.js
+#: cms/static/js/views/course_video_settings.js cms/static/js/views/metadata.js
 #: cms/static/js/views/previous_video_upload.js
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 #: lms/static/js/views/image_field.js
@@ -270,33 +270,49 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
+#. Translators: %(num_points)s is the number of points possible (examples: 1,
+#. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(num_points)s point possible (graded)"
 msgid_plural "%(num_points)s points possible (graded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num_points)s бал"
+msgstr[1] "%(num_points)s балів"
+msgstr[2] "%(num_points)s балів"
+msgstr[3] "%(num_points)s балів"
 
+#. Translators: %(num_points)s is the number of points possible (examples: 1,
+#. 3, 10).;
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(num_points)s point possible (ungraded)"
 msgid_plural "%(num_points)s points possible (ungraded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num_points)s бал"
+msgstr[1] "%(num_points)s балів"
+msgstr[2] "%(num_points)s балів"
+msgstr[3] "%(num_points)s балів"
 
+#. Translators: %(earned)s is the number of points earned. %(possible)s is the
+#. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
+#. points will always be at least 1. We pluralize based on the total number of
+#. points (example: 0/1 point; 1/2 points);
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(earned)s/%(possible)s point (graded)"
 msgid_plural "%(earned)s/%(possible)s points (graded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Отримано %(earned)s з можливих %(possible)s балла (оцінюється)"
+msgstr[1] "Отримано %(earned)s з можливих %(possible)s баллов (оцінюється)"
+msgstr[2] "Отримано %(earned)s з можливих %(possible)s баллов (оцінюється)"
+msgstr[3] "Отримано %(earned)s з можливих %(possible)s баллов (оцінюється)"
 
+#. Translators: %(earned)s is the number of points earned. %(possible)s is the
+#. total number of points (examples: 0/1, 1/1, 2/3, 5/10). The total number of
+#. points will always be at least 1. We pluralize based on the total number of
+#. points (example: 0/1 point; 1/2 points);
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "%(earned)s/%(possible)s point (ungraded)"
 msgid_plural "%(earned)s/%(possible)s points (ungraded)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Отримано %(earned)s з можливих %(possible)s балла (не оцінюється)"
+msgstr[1] "Отримано %(earned)s з можливих %(possible)s баллов (не оцінюється)"
+msgstr[2] "Отримано %(earned)s з можливих %(possible)s баллов (не оцінюється)"
+msgstr[3] "Отримано %(earned)s з можливих %(possible)s баллов (не оцінюється)"
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "The grading process is still running. Refresh the page to see updates."
@@ -344,13 +360,15 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
 msgid ""
-"Click OK to have your username and e-mail address sent to a 3rd party application.\n"
+"Click OK to have your username and e-mail address sent to a 3rd party "
+"application.\n"
 "\n"
 "Click Cancel to return to this page without sending your information."
 msgstr ""
 "Натисніть OK щоб відправити ваше ім’я та адресу email сторонньому доданку.\n"
 "\n"
-"Натисніть Відміна щоб повернутись до сторінки без відправлення вашої інформації."
+"Натисніть Відміна щоб повернутись до сторінки без відправлення вашої "
+"інформації."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
 msgid ""
@@ -360,7 +378,8 @@ msgid ""
 msgstr ""
 "Натисніть OK щоб відправити ваше ім’я сторонньому доданку.\n"
 "\n"
-"Натисніть Відміна щоб повернутись до сторінки без відправлення вашої інформації."
+"Натисніть Відміна щоб повернутись до сторінки без відправлення вашої "
+"інформації."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
 msgid ""
@@ -370,15 +389,16 @@ msgid ""
 msgstr ""
 "Натисніть OK щоб відправити вашу адресу email сторонньому доданку.\n"
 "\n"
-"Натисніть Відміна щоб повернутись до сторінки без відправлення вашої інформації."
+"Натисніть Відміна щоб повернутись до сторінки без відправлення вашої "
+"інформації."
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "incorrect"
-msgstr "неправильно"
+msgstr "невірно"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "correct"
-msgstr "правильно"
+msgstr "вірно"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "answer"
@@ -394,11 +414,13 @@ msgstr "Коротке пояснення"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid ""
-"If you use the Advanced Editor, this problem will be converted to XML and you will not be able to return to the Simple Editor Interface.\n"
+"If you use the Advanced Editor, this problem will be converted to XML and "
+"you will not be able to return to the Simple Editor Interface.\n"
 "\n"
 "Proceed to the Advanced Editor and convert this problem to XML?"
 msgstr ""
-"Якщо ви використовуєте розширений редактор, ця проблема буде перетворена в XML і ви не зможете повернутися до інтерфейсу простого редактора.\n"
+"Якщо ви використовуєте розширений редактор, ця проблема буде перетворена в "
+"XML і ви не зможете повернутися до інтерфейсу простого редактора.\n"
 "\n"
 "Перейти до розширеного редактора і конвертувати цю проблему в XML?"
 
@@ -598,16 +620,16 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "Start of transcript. Skip to the end."
-msgstr ""
+msgstr "Початок стенограми. Натисніть, щоб перейти на кінець стенограми."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "End of transcript. Skip to the start."
-msgstr ""
+msgstr "Кінець стенограми. Натисніть, щоб перейти на початок стенограми."
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid ""
-"Press the UP arrow key to enter the language menu then use UP and DOWN arrow"
-" keys to navigate language options. Press ENTER to change to the selected "
+"Press the UP arrow key to enter the language menu then use UP and DOWN arrow "
+"keys to navigate language options. Press ENTER to change to the selected "
 "language."
 msgstr ""
 
@@ -705,8 +727,7 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
 msgid ""
-"You could not be unsubscribed from this post. Refresh the page and try "
-"again."
+"You could not be unsubscribed from this post. Refresh the page and try again."
 msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_content_view.js
@@ -791,13 +812,12 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid ""
-"No results found for {original_query}. Showing results for "
-"{suggested_query}."
+"No results found for {original_query}. Showing results for {suggested_query}."
 msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "No posts matched your query."
-msgstr ""
+msgstr "Немає повідомлень, які відповідають Вашому запиту."
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Show posts by {username}."
@@ -819,16 +839,18 @@ msgstr ""
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} other response"
 msgid_plural "{numResponses} other responses"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Ещё {numResponses} відповідь"
+msgstr[1] "Ещё {numResponses} відповіді"
+msgstr[2] "Ещё {numResponses} відповідей"
+msgstr[3] "Ещё {numResponses} відповідей"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} response"
 msgid_plural "{numResponses} responses"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{numResponses} відповідь"
+msgstr[1] "{numResponses} відповіді"
+msgstr[2] "{numResponses} відповідей"
+msgstr[3] "{numResponses} відповідей"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing all responses"
@@ -877,7 +899,7 @@ msgstr "Ви впевнені, що хочете видалити цю відп�
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "The email address you've provided isn't formatted correctly."
-msgstr "Наданий Вами електронний адрес має неправильний формат."
+msgstr "Надана Вами електронна пошта має неправильний формат."
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "%(field)s must have at least %(count)d characters."
@@ -1282,11 +1304,11 @@ msgstr "Видалити цього члена команди?"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid ""
-"This learner will be removed from the team, allowing another learner to take"
-" the available spot."
+"This learner will be removed from the team, allowing another learner to take "
+"the available spot."
 msgstr ""
-"Цей студент буде виключений з команди, щоб дозволити іншому студенту зайняти"
-" звільнене місце."
+"Цей студент буде виключений з команди, щоб дозволити іншому студенту зайняти "
+"звільнене місце."
 
 #: lms/djangoapps/teams/static/teams/js/views/instructor_tools.js
 msgid "Delete this team?"
@@ -1335,8 +1357,8 @@ msgid ""
 "If you leave, you can no longer post in this team's discussions. Your place "
 "will be available to another learner."
 msgstr ""
-"Покинувши команду, Ви більше не зможете брати участь в обговореннях команди."
-"  Ваше місце зможе зайняти інший студент."
+"Покинувши команду, Ви більше не зможете брати участь в обговореннях "
+"команди.  Ваше місце зможе зайняти інший студент."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 #: lms/static/js/verify_student/views/reverify_view.js
@@ -1373,12 +1395,12 @@ msgstr "Теми"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
-"See all teams in your course, organized by topic. Join a team to collaborate"
-" with other learners who are interested in the same topic as you are."
+"See all teams in your course, organized by topic. Join a team to collaborate "
+"with other learners who are interested in the same topic as you are."
 msgstr ""
 "Перегляньте усі команди Вашого курсу, відсортованих за темою. Приєднайтесь "
-"до команди для співпраці з іншими студентами, які зацікавлені у тій же темі,"
-" що і Ви."
+"до команди для співпраці з іншими студентами, які зацікавлені у тій же темі, "
+"що і Ви."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "My Team"
@@ -1392,13 +1414,12 @@ msgstr "Огляд"
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Your request could not be completed. Reload the page and try again."
 msgstr ""
-"Ваш запит не може бути виконаний. Перезавантажте сторінку та спробуйте "
-"знову."
+"Ваш запит не може бути виконаний. Перезавантажте сторінку та спробуйте знову."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
-"Your request could not be completed due to a server problem. Reload the page"
-" and try again. If the issue persists, click the Help tab to report the "
+"Your request could not be completed due to a server problem. Reload the page "
+"and try again. If the issue persists, click the Help tab to report the "
 "problem."
 msgstr ""
 "Не вдалося виконати Ваш запит у зв'язку з проблемой на сервері.  "
@@ -1495,8 +1516,8 @@ msgid ""
 msgstr ""
 "{browse_span_start}Перегляд команд з інших тем{span_end} або "
 "{search_span_start} пошук{span_end} по цій темі. Якщо Ви все ще не можете "
-"знайти команду, щоб приєднатися, {create_span_start}створіть нову команду по"
-" цій темі{span_end}."
+"знайти команду, щоб приєднатися, {create_span_start}створіть нову команду по "
+"цій темі{span_end}."
 
 #: lms/djangoapps/teams/static/teams/js/views/topics.js
 msgid "All topics"
@@ -1531,8 +1552,8 @@ msgid ""
 "Type in a URL or use the \"Choose File\" button to upload a file from your "
 "machine. (e.g. 'http://example.com/img/clouds.jpg')"
 msgstr ""
-"Введіть URL (напр. 'http://example.com/img/clouds.jpg') або натисніть кнопку"
-" \\\"Вибрати файл\\\" для завантаження файлу."
+"Введіть URL (напр. 'http://example.com/img/clouds.jpg') або натисніть кнопку "
+"\\\"Вибрати файл\\\" для завантаження файлу."
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Image Description"
@@ -1799,8 +1820,8 @@ msgstr ""
 
 #: lms/static/js/certificates/views/certificate_invalidation_view.js
 msgid ""
-"Could not find Certificate Invalidation in the list. Please refresh the page"
-" and try again"
+"Could not find Certificate Invalidation in the list. Please refresh the page "
+"and try again"
 msgstr ""
 "Не вдалося знайти анульований сертифікат в списку. Будь ласка, оновіть "
 "сторінку та повторіть спробу."
@@ -1827,8 +1848,8 @@ msgid ""
 "<%= user %> has been successfully added to the exception list. Click "
 "Generate Exception Certificate below to send the certificate."
 msgstr ""
-"<%= user %> успішно доданий. Для видачі сертифіката натисніть кнопку "
-"\\\"Створити сертифікати для виняткових випадків\\\"."
+"<%= user %> успішно доданий. Для видачі сертифіката натисніть кнопку \\"
+"\"Створити сертифікати для виняткових випадків\\\"."
 
 #: lms/static/js/course_survey.js
 msgid "There has been an error processing your survey."
@@ -1979,8 +2000,8 @@ msgstr ""
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 #: lms/static/js/edxnotes/views/search_box.js
 msgid ""
-"An error has occurred. Make sure that you are connected to the Internet, and"
-" then try refreshing the page."
+"An error has occurred. Make sure that you are connected to the Internet, and "
+"then try refreshing the page."
 msgstr ""
 "Виникла помилка. Будь ласка, переконайтесь, що ви під'єднанні до мережі та "
 "спробуйте оновити сторінку."
@@ -2026,7 +2047,7 @@ msgstr ""
 #: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
 #: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
 msgid "Search Results"
-msgstr "Результати Пошуку"
+msgstr "Результати пошуку"
 
 #: lms/static/js/edxnotes/views/tabs/tags.js
 msgid "[no tags]"
@@ -2039,8 +2060,7 @@ msgstr ""
 #: lms/static/js/financial-assistance/views/financial_assistance_form_view.js
 #: lms/static/js/student_account/views/LoginView.js
 msgid "An error has occurred. Check your Internet connection and try again."
-msgstr ""
-"Сталася помилка. Перевірте ваше інтернет з'єднання і спробуйте ще раз."
+msgstr "Сталася помилка. Перевірте ваше інтернет з'єднання і спробуйте ще раз."
 
 #: lms/static/js/financial-assistance/views/financial_assistance_form_view.js
 msgid "Choose one"
@@ -2090,8 +2110,8 @@ msgstr "{email}"
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid ""
-"{numPreassigned} learner was pre-assigned for this cohort. This learner will"
-" automatically be added to the cohort when they enroll in the course."
+"{numPreassigned} learner was pre-assigned for this cohort. This learner will "
+"automatically be added to the cohort when they enroll in the course."
 msgid_plural ""
 "{numPreassigned} learners were pre-assigned for this cohort. These learners "
 "will automatically be added to the cohort when they enroll in the course."
@@ -2149,8 +2169,8 @@ msgstr "Додати когорти"
 
 #: lms/static/js/groups/views/cohorts.js
 msgid ""
-"The {cohortGroupName} cohort has been created. You can manually add students"
-" to this cohort below."
+"The {cohortGroupName} cohort has been created. You can manually add students "
+"to this cohort below."
 msgstr ""
 "Навчальна група {cohortGroupName} була створена. Нижче ви можете вручну "
 "додати студентів в цю групу."
@@ -2186,23 +2206,23 @@ msgstr "Когорти вимкнені"
 
 #: lms/static/js/groups/views/verified_track_settings_notification.js
 msgid ""
-"This course uses automatic cohorting for verified track learners. You cannot"
-" disable cohorts, and you cannot rename the manual cohort named "
+"This course uses automatic cohorting for verified track learners. You cannot "
+"disable cohorts, and you cannot rename the manual cohort named "
 "'{verifiedCohortName}'. To change the configuration for verified track "
 "cohorts, contact your edX partner manager."
 msgstr ""
 
 #: lms/static/js/groups/views/verified_track_settings_notification.js
 msgid ""
-"This course has automatic cohorting enabled for verified track learners, but"
-" the required cohort does not exist. You must create a manually-assigned "
+"This course has automatic cohorting enabled for verified track learners, but "
+"the required cohort does not exist. You must create a manually-assigned "
 "cohort named '{verifiedCohortName}' for the feature to work."
 msgstr ""
 
 #: lms/static/js/groups/views/verified_track_settings_notification.js
 msgid ""
-"This course has automatic cohorting enabled for verified track learners, but"
-" cohorts are disabled. You must enable cohorts for the feature to work."
+"This course has automatic cohorting enabled for verified track learners, but "
+"cohorts are disabled. You must enable cohorts for the feature to work."
 msgstr ""
 
 #: lms/static/js/instructor_dashboard/certificates.js
@@ -2291,11 +2311,11 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid ""
-"There was a problem creating the report. Select \"Create Executive Summary\""
-" to try again."
+"There was a problem creating the report. Select \"Create Executive Summary\" "
+"to try again."
 msgstr ""
-"При складанні звіту сталася помилка. Повторіть спробу, натиснувши "
-"\\\"Створити зведений звіт\\\"."
+"При складанні звіту сталася помилка. Повторіть спробу, натиснувши \\"
+"\"Створити зведений звіт\\\"."
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid "Enter the enrollment code."
@@ -2479,8 +2499,8 @@ msgid ""
 "Emails successfully sent. The following users are no longer enrolled in the "
 "course:"
 msgstr ""
-"Листи успішно надіслано. Наступні користувачі більше не зареєстровані на цей"
-" курс:"
+"Листи успішно надіслано. Наступні користувачі більше не зареєстровані на цей "
+"курс:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "The following users are no longer enrolled in the course:"
@@ -2540,8 +2560,8 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid ""
-"You are sending an email message with the subject {subject} to the following"
-" recipients."
+"You are sending an email message with the subject {subject} to the following "
+"recipients."
 msgstr ""
 
 #: lms/static/js/instructor_dashboard/send_email.js
@@ -2591,9 +2611,9 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Error resetting problem attempts for problem '<%= problem_id %>' and student"
-" '<%- student_id %>'. Make sure that the problem and student identifiers are"
-" complete and correct."
+"Error resetting problem attempts for problem '<%= problem_id %>' and student "
+"'<%- student_id %>'. Make sure that the problem and student identifiers are "
+"complete and correct."
 msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -2603,8 +2623,8 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Error deleting student '<%- student_id %>'s state on problem '<%- problem_id"
-" %>'. Make sure that the problem and student identifiers are complete and "
+"Error deleting student '<%- student_id %>'s state on problem '<%- problem_id "
+"%>'. Make sure that the problem and student identifiers are complete and "
 "correct."
 msgstr ""
 
@@ -2625,8 +2645,8 @@ msgstr "Спроби здати вступний іспит скидаються
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Error resetting entrance exam attempts for student '{student_id}'. Make sure"
-" student identifier is correct."
+"Error resetting entrance exam attempts for student '{student_id}'. Make sure "
+"student identifier is correct."
 msgstr ""
 "Помилка очищення лічильника спроб виконання вступного тесту для студента "
 "'{student_id}'. Перевірте вірність ідентифікатора студента."
@@ -2637,16 +2657,15 @@ msgstr "Зазначте ім'я користувача або електрон�
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Do you want to allow this student ('{student_id}') to skip the entrance "
-"exam?"
+"Do you want to allow this student ('{student_id}') to skip the entrance exam?"
 msgstr ""
 "Ви хочете дозволити цьому студенту ('{student_id}') пропустити вступний "
 "іспит?"
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"An error occurred. Make sure that the student's username or email address is"
-" correct and try again."
+"An error occurred. Make sure that the student's username or email address is "
+"correct and try again."
 msgstr ""
 "Виникла помилка. Переконайтеся, що ім'я користувача та адреса електронної "
 "пошти студента правильні і повторіть спробу."
@@ -2677,8 +2696,8 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Successfully started task to reset attempts for problem '<%- problem_id %>'."
-" Click the 'Show Task Status' button to see the status of the task."
+"Successfully started task to reset attempts for problem '<%- problem_id %>'. "
+"Click the 'Show Task Status' button to see the status of the task."
 msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
@@ -2696,15 +2715,15 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Started rescore problem task for problem '<%- problem_id %>' and student "
-"'<%- student_id %>'. Click the 'Show Task Status' button to see the status "
-"of the task."
+"Started rescore problem task for problem '<%- problem_id %>' and student '<"
+"%- student_id %>'. Click the 'Show Task Status' button to see the status of "
+"the task."
 msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Error starting a task to rescore problem '<%- problem_id %>' for student "
-"'<%- student_id %>'. Make sure that the the problem and student identifiers "
+"Error starting a task to rescore problem '<%- problem_id %>' for student '<"
+"%- student_id %>'. Make sure that the the problem and student identifiers "
 "are complete and correct."
 msgstr ""
 
@@ -2754,8 +2773,8 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Error starting a task to rescore problem '<%- problem_id %>'. Make sure that"
-" the problem identifier is complete and correct."
+"Error starting a task to rescore problem '<%- problem_id %>'. Make sure that "
+"the problem identifier is complete and correct."
 msgstr ""
 
 #. Translators: a "Task" is a background process such as grading students or
@@ -2823,11 +2842,11 @@ msgstr "Прогрес завдання"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid ""
-"An error occurred retrieving your email. Please try again later, and contact"
-" technical support if the problem persists."
+"An error occurred retrieving your email. Please try again later, and contact "
+"technical support if the problem persists."
 msgstr ""
-"Виникла помилка при виділенні вашої адреси. Будь ласка, спробуйте пізніше та"
-" зверніться до служби підтримки в разі повторення проблеми."
+"Виникла помилка при виділенні вашої адреси. Будь ласка, спробуйте пізніше та "
+"зверніться до служби підтримки в разі повторення проблеми."
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Subject"
@@ -3070,7 +3089,7 @@ msgstr "Завантаження ваших курсів"
 #: lms/static/js/student_account/views/FormView.js
 #: lms/static/js/student_account/views/RegisterView.js
 msgid "An error occurred."
-msgstr ""
+msgstr "ВИНИКЛА ПОМИЛКА."
 
 #. Translators: This string is appended to optional field labels on the
 #. student login, registration, and
@@ -3092,18 +3111,25 @@ msgstr ""
 #: lms/static/js/student_account/views/LoginView.js
 #: lms/templates/verify_student/intro_step.underscore
 msgid "Check Your Email"
-msgstr "Перевірте вашу електрону поштову скриньку"
+msgstr "Перевірте Вашу електронну поштову скриньку"
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
 "{paragraphStart}You entered {boldStart}{email}{boldEnd}. If this email "
 "address is associated with your {platform_name} account, we will send a "
-"message with password reset instructions to this email "
-"address.{paragraphEnd}{paragraphStart}If you do not receive a password reset"
-" message, verify that you entered the correct email address, or check your "
-"spam folder.{paragraphEnd}{paragraphStart}If you need further assistance, "
-"{anchorStart}contact technical support{anchorEnd}.{paragraphEnd}"
+"message with password reset instructions to this email address.{paragraphEnd}"
+"{paragraphStart}If you do not receive a password reset message, verify that "
+"you entered the correct email address, or check your spam folder."
+"{paragraphEnd}{paragraphStart}If you need further assistance, {anchorStart}"
+"contact technical support{anchorEnd}.{paragraphEnd}"
 msgstr ""
+"{paragraphStart}Ви ввели {boldStart}{email}{boldEnd}. Якщо ця адреса електронної "
+"пошти пов'язана з Вашим обліковим записом {platform_name}, ми надішлемо повідомлення "
+"з інструкціями з оновлення пароля на цю адресу електронної пошти.{paragraphEnd}"
+"{paragraphStart}Якщо Ви не отримуєте повідомлення про оновлення пароля, переконайтеся, "
+"що ввели правильну адресу електронної пошти або перевірте папку зі спамом."
+"{paragraphEnd}{paragraphStart}Якщо Вам потрібна додаткова допомога, {anchorStart}"
+"зв'яжіться з технічною підтримкою{anchorEnd}.{paragraphEnd}"
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
@@ -3115,8 +3141,8 @@ msgstr ""
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
 "You have successfully signed into %(currentProvider)s, but your "
-"%(currentProvider)s account does not have a linked %(platformName)s account."
-" To link your accounts, sign in now using your %(platformName)s password."
+"%(currentProvider)s account does not have a linked %(platformName)s account. "
+"To link your accounts, sign in now using your %(platformName)s password."
 msgstr ""
 "Ви успішно увійшли в %(currentProvider)s, але ваш обліковий запис "
 "%(currentProvider)s не має під'єднаного облікового запису %(platformName)s. "
@@ -3204,7 +3230,7 @@ msgstr "Пароль"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Reset Your Password"
-msgstr "Скинути свій пароль"
+msgstr "Оновити свій пароль"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Check your email account for instructions to reset your password."
@@ -3220,7 +3246,7 @@ msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Time Zone"
-msgstr ""
+msgstr "Часовий пояс"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
@@ -3228,6 +3254,9 @@ msgid ""
 "time zone, course dates, including assignment deadlines, will be displayed "
 "in your browser's local time zone."
 msgstr ""
+"Оберіть часовий пояс для правильного відображення ключових дат курсу. Якщо "
+"Ви не вказали часовий пояс, ключові дати курсу, включаючи дедлайни по завданням, "
+"будуть відображатися у місцевому часовому поясі Вашого браузера."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "All Time Zones"
@@ -3286,7 +3315,7 @@ msgid ""
 "You can link your social media accounts to simplify signing in to "
 "{platform_name}."
 msgstr ""
-"Ви можете під'єднати ваші облікові записи у соціальних мережах, щоби "
+"Ви можете під'єднати Ваші облікові записи у соціальних мережах, щоб "
 "спростити процес входу до {platform_name}."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
@@ -3313,8 +3342,7 @@ msgstr "Мої замовлення"
 msgid ""
 "This page contains information about orders that you have placed with "
 "{platform_name}."
-msgstr ""
-"Ця сторінка містить інформацію про ваші замовлення на {platform_name}."
+msgstr "Ця сторінка містить інформацію про ваші замовлення на {platform_name}."
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid ""
@@ -3333,8 +3361,8 @@ msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid ""
-"We've sent a message to {email}. Click the link in the message to reset your"
-" password. Didn't receive the message? Contact {anchorStart}technical "
+"We've sent a message to {email}. Click the link in the message to reset your "
+"password. Didn't receive the message? Contact {anchorStart}technical "
 "support{anchorEnd}."
 msgstr ""
 
@@ -3397,8 +3425,7 @@ msgstr "Помилка завантаження зображення"
 #: lms/static/js/verify_student/views/image_input_view.js
 msgid "Please verify that you have uploaded a valid image (PNG and JPEG)."
 msgstr ""
-"Будь ласка, перевірте, чи ви завантажили правильне зображення (PNG або "
-"JPEG)."
+"Будь ласка, перевірте, чи ви завантажили правильне зображення (PNG або JPEG)."
 
 #: lms/static/js/verify_student/views/incourse_reverify_view.js
 #: lms/static/js/verify_student/views/review_photos_step_view.js
@@ -3568,11 +3595,11 @@ msgstr ""
 
 #: lms/static/js/views/image_field.js
 msgid ""
-"Removal is in progress. To avoid errors, stay on this page until the process"
-" is complete."
+"Removal is in progress. To avoid errors, stay on this page until the process "
+"is complete."
 msgstr ""
-"Іде процес видалення. Щоб уникнути помилок, залишайтесь на цій сторінці доки"
-" процес не завершиться."
+"Іде процес видалення. Щоб уникнути помилок, залишайтесь на цій сторінці доки "
+"процес не завершиться."
 
 #: lms/static/js/views/image_field.js
 msgid "bytes"
@@ -3627,9 +3654,9 @@ msgstr "Кількість Студентів"
 msgid "Overall Score"
 msgstr ""
 
-#: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmark_button.js
+#: lms/static/js/bookmarks/views/bookmark_button.js
 msgid "Bookmark this page"
-msgstr ""
+msgstr "Додати сторінку до моїх закладок"
 
 #: openedx/features/course_experience/static/course_experience/js/CourseHome.js
 msgid "You have successfully updated your goal."
@@ -3733,7 +3760,7 @@ msgstr "Зображення для профілю {username}"
 
 #: openedx/features/learner_profile/static/learner_profile/js/views/learner_profile_view.js
 msgid "About Me"
-msgstr ""
+msgstr "Про мене"
 
 #: openedx/features/learner_profile/static/learner_profile/js/views/learner_profile_view.js
 msgid "Accomplishments"
@@ -3877,8 +3904,7 @@ msgid "Already a library team member"
 msgstr "Вже є членом бібліотечної команди"
 
 #: cms/static/js/factories/manage_users_lib.js
-msgid ""
-"Are you sure you want to delete {email} from the library “{container}”?"
+msgid "Are you sure you want to delete {email} from the library “{container}”?"
 msgstr "Ви впевнені, що хочете видалити {email} з бібліотеки “{container}”?"
 
 #: cms/static/js/factories/manage_users_lib.js
@@ -3915,8 +3941,7 @@ msgid "Choose new file"
 msgstr "Виберіть новий файл"
 
 #: cms/static/js/features/import/factories/import.js
-msgid ""
-"File format not supported. Please upload a file with a {ext} extension."
+msgid "File format not supported. Please upload a file with a {ext} extension."
 msgstr ""
 
 #: cms/static/js/features/import/factories/import.js
@@ -4089,8 +4114,8 @@ msgstr ""
 
 #: cms/static/js/models/uploads.js
 msgid ""
-"Only <%= fileTypes %> files can be uploaded. Please select a file ending in "
-"<%= fileExtensions %> to upload."
+"Only <%= fileTypes %> files can be uploaded. Please select a file ending in <"
+"%= fileExtensions %> to upload."
 msgstr ""
 "Лише файли типів <%= fileTypes %> можуть бути завантажені. Будь ласка, "
 "оберіть для завантаження файл з розширенням <%= fileExtensions %>."
@@ -4168,11 +4193,13 @@ msgstr "Підтвердження видалення файлу. "
 msgid ""
 "Are you sure you wish to delete this item. It cannot be reversed!\n"
 "\n"
-"Also any content that links/refers to this item will no longer work (e.g. broken images and/or links)"
+"Also any content that links/refers to this item will no longer work (e.g. "
+"broken images and/or links)"
 msgstr ""
 "Ви впевнені, що хочете видалити цю деталь? Ця дія є незворотньою. \n"
 "\n"
-"Будь-який контент, що посилається на цю деталь більше не працюватиме. (наприклад пошкоджене зображення та/чи недіюче посилання)"
+"Будь-який контент, що посилається на цю деталь більше не працюватиме. "
+"(наприклад пошкоджене зображення та/чи недіюче посилання)"
 
 #: cms/static/js/views/asset.js
 msgid "Your file has been deleted."
@@ -4199,8 +4226,8 @@ msgstr "Тип"
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
 msgstr ""
-"Файл {filename} перевищує максимально допустимий розмір в {maxFileSizeInMBs}"
-" MБ"
+"Файл {filename} перевищує максимально допустимий розмір в {maxFileSizeInMBs} "
+"MБ"
 
 #: cms/static/js/views/assets.js
 msgid ""
@@ -4214,8 +4241,7 @@ msgstr ""
 msgid "Max file size exceeded"
 msgstr "Перевищено максимально допустимий розмір файла"
 
-#: cms/static/js/views/assets.js
-#: cms/templates/js/asset-upload-modal.underscore
+#: cms/static/js/views/assets.js cms/templates/js/asset-upload-modal.underscore
 msgid "Upload New File"
 msgstr "Завантажити новий файл"
 
@@ -4334,8 +4360,8 @@ msgstr "Перейти на головну сторінку бібліотеки
 
 #: cms/static/js/views/export.js
 msgid ""
-"Your course could not be exported to XML. There is not enough information to"
-" identify the failed component. Inspect your course to identify any "
+"Your course could not be exported to XML. There is not enough information to "
+"identify the failed component. Inspect your course to identify any "
 "problematic components and try again."
 msgstr ""
 "Ваш курс не може бути експортовано в XML. Недостатньо інформації, що "
@@ -4419,8 +4445,8 @@ msgstr "Creative Commons"
 #: cms/static/js/views/license.js
 msgid "You waive some rights for your work, such that others can use it too"
 msgstr ""
-"Ви відмовляєтесь від деяких прав на свою роботу, наприклад, дозволяєте іншим"
-" також її використовувати."
+"Ви відмовляєтесь від деяких прав на свою роботу, наприклад, дозволяєте іншим "
+"також її використовувати."
 
 #: cms/static/js/views/license.js
 msgid "Version"
@@ -4465,8 +4491,8 @@ msgstr "Розповсюджувати за тих же умов"
 #: cms/static/js/views/license.js
 msgid ""
 "Allow others to distribute derivative works only under a license identical "
-"to the license that governs your work. This option is incompatible with \"No"
-" Derivatives\"."
+"to the license that governs your work. This option is incompatible with \"No "
+"Derivatives\"."
 msgstr ""
 
 #: cms/static/js/views/list_item.js
@@ -4514,8 +4540,8 @@ msgstr "Вже є членом"
 
 #: cms/static/js/views/manage_users_and_roles.js
 msgid ""
-"{email} is already on the {container} team. Recheck the email address if you"
-" want to add a new member."
+"{email} is already on the {container} team. Recheck the email address if you "
+"want to add a new member."
 msgstr ""
 "{email} вже доданий до {container} команди. Перевірте електронну адресу ще "
 "раз, якщо хочете додати нового члена."
@@ -4722,8 +4748,8 @@ msgid ""
 "you want to proceed?"
 msgstr ""
 "Якщо до цього блок був опублікований і випущений для студентів, будь-які "
-"зміни, які ви зробили у ньому, доки блок був прихований, будуть зараз видимі"
-" студентам. Ви хочете продовжити?"
+"зміни, які ви зробили у ньому, доки блок був прихований, будуть зараз видимі "
+"студентам. Ви хочете продовжити?"
 
 #: cms/static/js/views/pages/container_subviews.js
 msgid "Making Visible to Students"
@@ -4857,8 +4883,8 @@ msgstr "Видалити “<%= name %>”?"
 
 #: cms/static/js/views/show_textbook.js
 msgid ""
-"Deleting a textbook cannot be undone and once deleted any reference to it in"
-" your courseware's navigation will also be removed."
+"Deleting a textbook cannot be undone and once deleted any reference to it in "
+"your courseware's navigation will also be removed."
 msgstr ""
 "Видалення підручника є незворотнім і призведе до того, що всі посилання на "
 "нього в навігації по вашому курсу також будуть видалені. "
@@ -4895,8 +4921,8 @@ msgid ""
 "The combined length of the organization and library code fields cannot be "
 "more than <%=limit%> characters."
 msgstr ""
-"Сукупна довжина назви організації та коду бібліотеки не може перевищувати "
-"<%=limit%> символів."
+"Сукупна довжина назви організації та коду бібліотеки не може перевищувати <"
+"%=limit%> символів."
 
 #: cms/static/js/views/utils/move_xblock_utils.js
 msgid "Success! \"{displayName}\" has been moved."
@@ -5058,8 +5084,8 @@ msgstr ""
 
 #: cms/static/js/views/video_thumbnail.js
 msgid ""
-"{ReqTextSpanStart}Requirements{spanEnd}{lineBreak}{InstructionsSpanStart}{videoImageResoultion}{lineBreak}"
-" {videoImageSupportedFileFormats}{spanEnd}"
+"{ReqTextSpanStart}Requirements{spanEnd}{lineBreak}{InstructionsSpanStart}"
+"{videoImageResoultion}{lineBreak} {videoImageSupportedFileFormats}{spanEnd}"
 msgstr ""
 
 #: cms/static/js/views/video_thumbnail.js
@@ -5337,10 +5363,11 @@ msgstr "Всі групи"
 msgid ""
 "Add a clear and descriptive title to encourage participation. (Required)"
 msgstr ""
+"Додайте чітку назву, щоб залучити учасників до обговорення. (Обов’язково)"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "Your question or idea (required)"
-msgstr ""
+msgstr "Ваше питання або ідея (required)"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
@@ -5495,7 +5522,7 @@ msgstr "Додати коментар"
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
 msgid "discussion posted %(time_ago)s by %(author)s"
-msgstr ""
+msgstr "Обговорення опубліковане %(time_ago)s %(author)s"
 
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
@@ -5548,15 +5575,19 @@ msgstr "Додати відповідь:"
 
 #: common/static/common/templates/discussion/topic.underscore
 msgid "Topic area"
-msgstr ""
+msgstr "Тема"
 
 #: common/static/common/templates/discussion/topic.underscore
 msgid "Add your post to a relevant topic to help others find it. (Required)"
-msgstr ""
+msgstr "Додайте ваше повідомлення до відповідної теми, щоб допомогти іншим знайти його."
+
+#: common/static/common/templates/discussion/topic.underscore
+msgid "Add your post to a relevant topic to help others find it."
+msgstr "Додайте ваше повідомлення до відповідної теми, щоб допомогти іншим знайти його."
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Discussion Home"
-msgstr " Обговореня Головна сторінка"
+msgstr "Головна сторінка обговорень"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #, python-format
@@ -5569,7 +5600,7 @@ msgstr "Знайти обговорення"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Use the All Topics menu to find specific topics."
-msgstr ""
+msgstr "Використовуйте меню «Всі теми» для пошуку конкретних тем."
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #: lms/djangoapps/discussion/static/discussion/templates/search.underscore
@@ -5594,7 +5625,7 @@ msgstr "Повідомити про порушення у темах та від
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Follow or unfollow posts"
-msgstr "Підписатися або відписатся від повідомлень"
+msgstr "Підписатися або відписатися від повідомлень"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Receive updates"
@@ -5772,9 +5803,9 @@ msgid ""
 "characteristics for your team. Choose carefully, because fewer people might "
 "be interested in joining your team if it seems too restrictive."
 msgstr ""
-"Допоможіть студентам вирішити, чи приєднуватися до вашої команди, зазначивши"
-" характеристики вашої команди. Обирайте обережно, бо небагато людей захочуть"
-" приєднатись, якщо ваша команда буде виглядати занадто обмеженою."
+"Допоможіть студентам вирішити, чи приєднуватися до вашої команди, зазначивши "
+"характеристики вашої команди. Обирайте обережно, бо небагато людей захочуть "
+"приєднатись, якщо ваша команда буде виглядати занадто обмеженою."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Create team."
@@ -5839,8 +5870,8 @@ msgstr "Пожертвувати"
 
 #: lms/templates/api_admin/catalog-error.underscore
 msgid ""
-"There was an error retrieving preview results for this catalog. Please check"
-" that your query is correct and try again."
+"There was an error retrieving preview results for this catalog. Please check "
+"that your query is correct and try again."
 msgstr ""
 
 #: lms/templates/api_admin/catalog-results.underscore
@@ -5931,12 +5962,11 @@ msgstr "Дякуємо, %(full_name)s! Ми отримали ваш платіж
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid ""
-"Please print this page for your records; it serves as your receipt. You will"
-" also receive an email with the same information."
+"Please print this page for your records; it serves as your receipt. You will "
+"also receive an email with the same information."
 msgstr ""
 "Будь ласка, роздрукуйте цю сторінку для себе; вона може використовуватись "
-"вами як чек. Також ви отримаєте лист підтвердження з такою самою "
-"інформацією."
+"вами як чек. Також ви отримаєте лист підтвердження з такою самою інформацією."
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
@@ -5982,8 +6012,8 @@ msgstr "В особистий кабінет"
 #: lms/templates/commerce/receipt.underscore
 msgid ""
 "If you don't verify your identity now, you can still explore your course "
-"from your dashboard. You will receive periodic reminders from {platformName}"
-" to verify your identity."
+"from your dashboard. You will receive periodic reminders from {platformName} "
+"to verify your identity."
 msgstr ""
 
 #: lms/templates/commerce/receipt.underscore
@@ -6105,8 +6135,8 @@ msgstr ""
 
 #: lms/templates/financial-assistance/financial_assessment_form.underscore
 msgid ""
-"The following information is already a part of your {platform} profile. "
-"We\\'ve included it here for your application."
+"The following information is already a part of your {platform} profile. We"
+"\\'ve included it here for your application."
 msgstr ""
 
 #: lms/templates/financial-assistance/financial_assessment_form.underscore
@@ -6147,8 +6177,8 @@ msgid ""
 "include an optional note describing the reason for the exception in the "
 "second comma separated field."
 msgstr ""
-"Завантажте файл зі значеннями, розділеними комами (.csv), який містить імена"
-" користувачів або адреси електронної пошти тих студентів, яким надано "
+"Завантажте файл зі значеннями, розділеними комами (.csv), який містить імена "
+"користувачів або адреси електронної пошти тих студентів, яким надано "
 "виняток. Першим введіть ім'я користувача або адресу електронної пошти та "
 "відокремте комою. За бажанням Ви можете додати примітку, яка б описувала "
 "причину винятку. Вона буде відображатися у другому полі."
@@ -6353,8 +6383,8 @@ msgstr ""
 msgid ""
 "{screen_reader_start}Warning:{screen_reader_end} No content groups exist."
 msgstr ""
-"{screen_reader_start}Попередження:{screen_reader_end} жодної контентої групи"
-" не створено. "
+"{screen_reader_start}Попередження:{screen_reader_end} жодної контентої групи "
+"не створено. "
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Only the parent course staff of a CCX can create content groups."
@@ -6571,13 +6601,10 @@ msgstr ""
 msgid "Explore New Programs"
 msgstr ""
 
-#: lms/templates/learner_dashboard/program_card.underscore
 #: lms/templates/verify_student/enrollment_confirmation_step.underscore
 msgid "Course"
 msgid_plural "Courses"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Курс"
 
 #: lms/templates/learner_dashboard/program_card.underscore
 msgid "Completed"
@@ -6734,7 +6761,7 @@ msgstr "Створити обліковий запис"
 
 #: lms/templates/student_account/login.underscore
 msgid "Sign In"
-msgstr "Увійти"
+msgstr "Вхід"
 
 #: lms/templates/student_account/login.underscore
 msgid ""
@@ -6842,10 +6869,10 @@ msgid ""
 "certificates. Verification is good for one year. After one year, you must "
 "submit photos for verification again."
 msgstr ""
-"Дякуємо, що завантажили ваші фотографії. Ми переглянемо їх найближчим часом."
-" Зараз ви можете записатись на будь-який курс на %(platformName)s, які "
-"надають верифіковані сертифікати. Верифікація валідна один рік. Після одного"
-" року вам доведеться знову завантажити фотографії для повторної верифікації."
+"Дякуємо, що завантажили ваші фотографії. Ми переглянемо їх найближчим часом. "
+"Зараз ви можете записатись на будь-який курс на %(platformName)s, які "
+"надають верифіковані сертифікати. Верифікація валідна один рік. Після одного "
+"року вам доведеться знову завантажити фотографії для повторної верифікації."
 
 #: lms/templates/verify_student/error.underscore
 msgid "Error:"
@@ -6959,8 +6986,8 @@ msgstr "Що %(platformName)s робить з цими фото?"
 msgid ""
 "We use the highest levels of security available to encrypt your photo and "
 "send it to our authorization service for review. Your photo and information "
-"are not saved or visible anywhere on %(platformName)s after the verification"
-" process is complete."
+"are not saved or visible anywhere on %(platformName)s after the verification "
+"process is complete."
 msgstr ""
 "Ми використовуємо найвищий рівень безпеки щоб закодувати ваше фото та "
 "відправити його на розгляд. Ваша інформація та фото не зберігаються та не є "
@@ -7030,8 +7057,8 @@ msgid ""
 "Use your webcam to take a photo of your face. We will match this photo with "
 "the photo on your ID."
 msgstr ""
-"Скористайтесь своєю веб-камерою щоб зробити фотографію свого обличчя, аби ми"
-" могли зіставити його з фото на вашому документі"
+"Скористайтесь своєю веб-камерою щоб зробити фотографію свого обличчя, аби ми "
+"могли зіставити його з фото на вашому документі"
 
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Make sure your face is well-lit"
@@ -7131,8 +7158,7 @@ msgid "Government-Issued Photo ID"
 msgstr "Документ, що підтверджує вашу особу"
 
 #: lms/templates/verify_student/make_payment_step.underscore
-msgid ""
-"ID-Verification is not required for this Professional Education course."
+msgid "ID-Verification is not required for this Professional Education course."
 msgstr ""
 
 #: lms/templates/verify_student/make_payment_step.underscore
@@ -7197,8 +7223,8 @@ msgstr ""
 msgid ""
 "Your ID must be a government-issued photo ID that clearly shows your face."
 msgstr ""
-"Ваш документ має бути виданий державою та містити фото, на якому чітко видно"
-" ваше обличчя."
+"Ваш документ має бути виданий державою та містити фото, на якому чітко видно "
+"ваше обличчя."
 
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
 msgid ""
@@ -7625,8 +7651,8 @@ msgstr "Підписанти сертифікатів"
 #: cms/templates/js/certificate-editor.underscore
 msgid ""
 "It is strongly recommended that you include four or fewer signatories. If "
-"you include additional signatories, preview the certificate in Print View to"
-" ensure the certificate will print correctly on one page."
+"you include additional signatories, preview the certificate in Print View to "
+"ensure the certificate will print correctly on one page."
 msgstr ""
 "Наполегливо рекомендується залучити не більше чотирьох підписантів. Якщо ви "
 "залучите додаткових підписантів, попередньо перегляньте сертифікат у вікні "
@@ -8063,8 +8089,8 @@ msgstr "Абревіатура"
 
 #: cms/templates/js/course_grade_policy.underscore
 msgid ""
-"This short name for the assignment type (for example, HW or Midterm) appears"
-" next to assignments on a learner's Progress page."
+"This short name for the assignment type (for example, HW or Midterm) appears "
+"next to assignments on a learner's Progress page."
 msgstr ""
 
 #: cms/templates/js/course_grade_policy.underscore
@@ -8107,8 +8133,8 @@ msgstr ""
 
 #: cms/templates/js/course_info_handouts.underscore
 msgid ""
-"There is invalid code in your content. Please check to make sure it is valid"
-" HTML."
+"There is invalid code in your content. Please check to make sure it is valid "
+"HTML."
 msgstr ""
 
 #: cms/templates/js/course_info_update.underscore
@@ -8146,8 +8172,7 @@ msgstr ""
 #: cms/templates/js/edit-chapter.underscore
 msgid "provide the title/name of the chapter that will be used in navigating"
 msgstr ""
-"Створіть заголовок / назву розділу, який буде використовуватися для "
-"навігації"
+"Створіть заголовок / назву розділу, який буде використовуватися для навігації"
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "Chapter Asset"
@@ -8159,8 +8184,7 @@ msgstr ""
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "upload a PDF file or provide the path to a Studio asset file"
-msgstr ""
-"Завантажте файл у форматі PDF або вкажіть шлях до файлу об'єкта Студії"
+msgstr "Завантажте файл у форматі PDF або вкажіть шлях до файлу об'єкта Студії"
 
 #: cms/templates/js/edit-chapter.underscore
 msgid "Upload PDF"
@@ -8219,8 +8243,8 @@ msgstr ""
 
 #: cms/templates/js/group-configuration-details.underscore
 msgid ""
-"This Group Configuration is not in use. Start by adding a content experiment"
-" to any Unit via the {linkStart}Course Outline{linkEnd}."
+"This Group Configuration is not in use. Start by adding a content experiment "
+"to any Unit via the {linkStart}Course Outline{linkEnd}."
 msgstr ""
 
 #: cms/templates/js/group-configuration-editor.underscore
@@ -8277,8 +8301,8 @@ msgstr "Видалити групу"
 
 #: cms/templates/js/highlights-editor.underscore
 msgid ""
-"This feature is currently in testing. Course teams can enter highlights, but"
-" learners will not receive email messages."
+"This feature is currently in testing. Course teams can enter highlights, but "
+"learners will not receive email messages."
 msgstr ""
 
 #: cms/templates/js/highlights-editor.underscore
@@ -8466,8 +8490,8 @@ msgstr ""
 
 #: cms/templates/js/publish-xblock.underscore
 msgid ""
-"Draft saved on {lastSavedStart}{editedOn}{lastSavedEnd} by "
-"{editedByStart}{editedBy}{editedByEnd}"
+"Draft saved on {lastSavedStart}{editedOn}{lastSavedEnd} by {editedByStart}"
+"{editedBy}{editedByEnd}"
 msgstr ""
 
 #: cms/templates/js/publish-xblock.underscore
@@ -8579,8 +8603,8 @@ msgstr ""
 
 #: cms/templates/js/show-correctness-editor.underscore
 msgid ""
-"If the subsection does not have a due date, learners always see their scores"
-" when they submit answers to assessments."
+"If the subsection does not have a due date, learners always see their scores "
+"when they submit answers to assessments."
 msgstr ""
 
 #: cms/templates/js/show-textbook.underscore
@@ -8754,8 +8778,8 @@ msgstr ""
 #: cms/templates/js/timed-examination-preference-editor.underscore
 msgid ""
 "Select a time allotment for the exam. If it is over 24 hours, type in the "
-"amount of time. You can grant individual learners extra time to complete the"
-" exam through the Instructor Dashboard."
+"amount of time. You can grant individual learners extra time to complete the "
+"exam through the Instructor Dashboard."
 msgstr ""
 
 #: cms/templates/js/timed-examination-preference-editor.underscore
@@ -8876,8 +8900,8 @@ msgstr ""
 
 #: cms/templates/js/maintenance/force-published-course-response.underscore
 msgid ""
-"You have done a dry run of force publishing the course. Nothing has changed."
-" Had you run it, the following course versions would have been change."
+"You have done a dry run of force publishing the course. Nothing has changed. "
+"Had you run it, the following course versions would have been change."
 msgstr ""
 
 #: cms/templates/js/maintenance/force-published-course-response.underscore
@@ -8892,8 +8916,8 @@ msgstr ""
 
 #: cms/templates/js/video/transcripts/metadata-videolist-entry.underscore
 msgid ""
-"To be sure all students can access the video, we recommend providing both an"
-" .mp4 and a .webm version of your video. Click below to add a URL for "
+"To be sure all students can access the video, we recommend providing both "
+"an .mp4 and a .webm version of your video. Click below to add a URL for "
 "another version. These URLs cannot be YouTube URLs. The first listed video "
 "that's compatible with the student's computer will play."
 msgstr ""
@@ -8909,8 +8933,8 @@ msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-choose.underscore
 msgid ""
-"The timed transcript for the first video file does not appear to be the same"
-" as the timed transcript for the second video file."
+"The timed transcript for the first video file does not appear to be the same "
+"as the timed transcript for the second video file."
 msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-choose.underscore
@@ -8968,9 +8992,9 @@ msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
 msgid ""
-"EdX doesn't have a timed transcript for this video in Studio, but we found a"
-" transcript on YouTube. You can import the YouTube transcript or upload your"
-" own .srt transcript file."
+"EdX doesn't have a timed transcript for this video in Studio, but we found a "
+"transcript on YouTube. You can import the YouTube transcript or upload your "
+"own .srt transcript file."
 msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
@@ -8989,8 +9013,8 @@ msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-replace.underscore
 msgid ""
-"The timed transcript for this video on edX is out of date, but YouTube has a"
-" current timed transcript for this video."
+"The timed transcript for this video on edX is out of date, but YouTube has a "
+"current timed transcript for this video."
 msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-replace.underscore
@@ -9019,10 +9043,1598 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid ""
 "You changed a video URL, but did not change the timed transcript file. Do "
-"you want to use the current timed transcript or upload a new .srt transcript"
-" file?"
+"you want to use the current timed transcript or upload a new .srt transcript "
+"file?"
 msgstr ""
 
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/js/src/annotatable/display.js
+msgid "Show Annotations"
+msgstr "Показати анотації"
+
+#: common/lib/xmodule/xmodule/js/src/annotatable/display.js
+msgid "Hide Annotations"
+msgstr "Сховати анотації"
+
+#: common/lib/xmodule/xmodule/js/src/annotatable/display.js
+msgid "Expand Instructions"
+msgstr "Розкрити інструкції"
+
+#: common/lib/xmodule/xmodule/js/src/annotatable/display.js
+msgid "Collapse Instructions"
+msgstr "Сховати інструкції"
+
+#: common/lib/xmodule/xmodule/js/src/annotatable/display.js
+msgid "Commentary"
+msgstr "Коментарі"
+
+#: common/lib/xmodule/xmodule/js/src/annotatable/display.js
+msgid "Reply to Annotation"
+msgstr "Відповісти на анотацію"
+
+#: common/lib/xmodule/xmodule/js/src/capa/display.js
+msgid ""
+"Answers to this problem are now shown. Navigate through the problem to "
+"review it with answers inline."
+msgstr ""
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Paragraph"
+msgstr "Параграф"
+
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Preformatted"
+msgstr "Відформатований"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Heading 3"
+msgstr "Заголовок 3"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Heading 4"
+msgstr "Заголовок 4"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Heading 5"
+msgstr "Заголовок 5"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Heading 6"
+msgstr "Заголовок 6"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Add to Dictionary"
+msgstr "Додати у Словник"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Align center"
+msgstr "По центру"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Align left"
+msgstr "Зліва"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Align right"
+msgstr "Вирівняти за правим краєм"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Alignment"
+msgstr "Вирівнювання"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Alternative source"
+msgstr "Альтернативні джерела"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Anchor"
+msgstr "Якір"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Anchors"
+msgstr "Якори"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Author"
+msgstr "Автор"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Background color"
+msgstr "Колір фону"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Blocks"
+msgstr "Блоки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Body"
+msgstr "Тіло"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Bold"
+msgstr "Жирний"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Border color"
+msgstr "Колір границь"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Border"
+msgstr "Границя"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Bottom"
+msgstr "Низ"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Bullet list"
+msgstr "Ненумерований список"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Caption"
+msgstr "Заголовок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cell padding"
+msgstr "Параметр заповнення клітинки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cell properties"
+msgstr "Властивості комірки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cell spacing"
+msgstr "Відступ комірки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cell type"
+msgstr "Тип комірки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cell"
+msgstr "Комірка"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Center"
+msgstr "Центр"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Circle"
+msgstr "Коло"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Clear formatting"
+msgstr "Прибрати форматування"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Code block"
+msgstr "Блок коду"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Color"
+msgstr "Колір"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cols"
+msgstr "Стовпці"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Column group"
+msgstr "Група стовпців"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Column"
+msgstr "Стовпчик"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Constrain proportions"
+msgstr "Властивості"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Copy row"
+msgstr "Скопіювати рядок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Copy"
+msgstr "Копіювати"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Could not find the specified string."
+msgstr "Неможливо знайти вказаний рядок."
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Custom color"
+msgstr "Довільний колір"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Custom..."
+msgstr "Обрати..."
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cut row"
+msgstr "Видалити рядок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Cut"
+msgstr "Видалити"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Decrease indent"
+msgstr "Зменшити відступ"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Default"
+msgstr "Основний"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Delete column"
+msgstr "Видалити стовпчик"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Delete row"
+msgstr "Видалити рядок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Delete table"
+msgstr "Видалити таблицю"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Dimensions"
+msgstr "Розмірність"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Disc"
+msgstr "Диск"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Div"
+msgstr "DIV"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Document properties"
+msgstr "Властивості документа"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Edit HTML"
+msgstr "Редагувати HTML"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Embed"
+msgstr "Вбудований"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Emoticons"
+msgstr "Смайлики"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Encoding"
+msgstr "Кодування"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "File"
+msgstr "Файл"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Find and replace"
+msgstr "Пошук та заміна"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Find next"
+msgstr "Шукати далі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Find previous"
+msgstr "Шукати назад"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Find"
+msgstr "Пошук"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Finish"
+msgstr "Завершити"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Font Family"
+msgstr "Тип шрифту"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Font Sizes"
+msgstr "Розмір шрифту"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Footer"
+msgstr "Підпис"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Format"
+msgstr "Формат"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Formats"
+msgstr "Формати"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "General"
+msgstr "Загальне"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "H Align"
+msgstr "Вирівнювання"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Header 1"
+msgstr "Заголовок 1"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Header 2"
+msgstr "Заголовок 2"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Header 3"
+msgstr "Заголовок 3"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Header 4"
+msgstr "Заголовок 4"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Header 5"
+msgstr "Заголовок 5"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Header 6"
+msgstr "Заголовок 6"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Header cell"
+msgstr "Комірки заголовку"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Headers"
+msgstr "Заголовки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Heading 1"
+msgstr "Заголовок 1"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Heading 2"
+msgstr "Заголовок 2"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Headings"
+msgstr "Заголовки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Height"
+msgstr "Висота"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Horizontal line"
+msgstr "Горизонтальна лінія"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Horizontal space"
+msgstr "Горизонтальний проміжок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "HTML source code"
+msgstr "Оригінальний код HTML"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Ignore all"
+msgstr "Пропустити всі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Ignore"
+msgstr "Пропустити"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Image description"
+msgstr "Опис зображення"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Increase indent"
+msgstr "Збільшити відступ"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Inline"
+msgstr "У тексті"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert column after"
+msgstr "Вставити стовпчик справа"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert column before"
+msgstr "Вставити стовпчик зліва"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert date/time"
+msgstr "Вставити дату/час"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert image"
+msgstr "Вставити зображення"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert link"
+msgstr "Вставити посилання"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert row after"
+msgstr "Вставити рядок знизу"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert row before"
+msgstr "Вставити рядок згори"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert table"
+msgstr "Вставити таблицю"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert template"
+msgstr "Вставити шаблон"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert video"
+msgstr "Вставити відео"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert"
+msgstr "Вставка"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert/edit image"
+msgstr "Вставити/редагувати зображення"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert/edit link"
+msgstr "Вставити/редагувати посилання"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Insert/edit video"
+msgstr "Вставити/редагувати відео"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Italic"
+msgstr "Курсив"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Justify"
+msgstr "Вирівняти за шириною"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Keywords"
+msgstr "Ключові слова"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Left to right"
+msgstr "Зліва направо"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Left"
+msgstr "Вирівняти за лівим краєм"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Lower Alpha"
+msgstr "Латинські букви в нижньому регістрі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Lower Greek"
+msgstr "Грецькі букви в нижньому регістрі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Lower Roman"
+msgstr "Римські числа в нижньому регістрі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Match case"
+msgstr "Враховувати регістр"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Merge cells"
+msgstr "Злити комірки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Middle"
+msgstr "Середня"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "New document"
+msgstr "Новий документ"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "New window"
+msgstr "Нове вікно"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "No color"
+msgstr "Немає кольору"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Nonbreaking space"
+msgstr "Неперервний проміжок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Numbered list"
+msgstr "Нумерований список"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Page break"
+msgstr "Розрив сторінки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Paste as text"
+msgstr "Вставити як текст"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid ""
+"Paste is now in plain text mode. Contents will now be pasted as plain text "
+"until you toggle this option off."
+msgstr ""
+"Вставка відбувається зараз у вигляді простого тексту допоки ви не вимкнете "
+"цю опцію."
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Paste row after"
+msgstr "Вставити рядок знизу"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Paste row before"
+msgstr "Вставити рядок згори"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Paste your embed code below:"
+msgstr "Вставте ваш вбудований код нижче:"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Paste"
+msgstr "Вставити"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Poster"
+msgstr "Постер"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Pre"
+msgstr "Попередньо"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Prev"
+msgstr "Попередній"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Print"
+msgstr "Друкувати"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Redo"
+msgstr "Повернути відміну"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Remove link"
+msgstr "Прибрати посилання"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Replace all"
+msgstr "Замінити всі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Replace with"
+msgstr "Замінити з"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Restore last draft"
+msgstr "Повернути попередню чернетку"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid ""
+"Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press "
+"ALT-0 for help"
+msgstr ""
+"Форматувння текстової області. Меню, натисніть клавішу ALT-F9. Натисніть ALT-"
+"F10 для панелі інструментів. Натисніть ALT-0 для допомоги"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Right to left"
+msgstr "Справа наліво"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Right"
+msgstr "Вирівняти за правим краєм"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Robots"
+msgstr "Роботи"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Row group"
+msgstr "Група рядків"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Row properties"
+msgstr "Властивості рядка"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Row type"
+msgstr "Тип рядка"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Row"
+msgstr "Рядок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Rows"
+msgstr "Рядки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Scope"
+msgstr "Масштаб"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Select all"
+msgstr "Вибрати всі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Show blocks"
+msgstr "Показати блоки"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Show invisible characters"
+msgstr "Показати невидимі символи"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Source code"
+msgstr "Вихідний код"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Source"
+msgstr "Першоджерело"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Special character"
+msgstr "Спеціальний символ"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Spellcheck"
+msgstr "Перевірка правопису"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Split cell"
+msgstr "Розбити комірку"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Square"
+msgstr "Квадрат"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Start search"
+msgstr "Почати пошук"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Strikethrough"
+msgstr "Закреслити"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Style"
+msgstr "Стиль"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Subscript"
+msgstr "Нижній індекс"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Superscript"
+msgstr "Верхній індекс"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Table properties"
+msgstr "Властивості таблиці"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Table"
+msgstr "Таблиця"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Target"
+msgstr "Ціль"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Templates"
+msgstr "Шаблони"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Text color"
+msgstr "Колір тексту"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Text to display"
+msgstr "Текст для відображення"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid ""
+"The URL you entered seems to be an email address. Do you want to add the "
+"required mailto: prefix?"
+msgstr ""
+"Ваше посилання схоже на адресу електронної пошти. Чи хочете ви додати до "
+"нього префікс mailto:?"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid ""
+"The URL you entered seems to be an external link. Do you want to add the "
+"required http:// prefix?"
+msgstr ""
+"Ваше посилання схоже на зовнішнє. Чи хочете ви додати до нього префікс "
+"http://?"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Tools"
+msgstr "Інструменти"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Top"
+msgstr "Верх"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Underline"
+msgstr "Підкреслений"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Undo"
+msgstr "Відмінити"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Upper Alpha"
+msgstr "Латинські букви у верхньому регістрі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Upper Roman"
+msgstr "Римські числа у верхньому регістрі"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Url"
+msgstr "URL-адреса"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "V Align"
+msgstr "Вертикальне вирівнювання"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Vertical space"
+msgstr "Вертикальний проміжок"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Visual aids"
+msgstr "Наочні елементи"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Whole words"
+msgstr "Цілі слова"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Width"
+msgstr "Ширина"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "Words: {0}"
+msgstr "Слів: {0}"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid "You have unsaved changes are you sure you want to navigate away?"
+msgstr "Ви не зберегли зміни. Чи ви впевнені, що хочете залишити редагування?"
+
+#. Translators: this is a message from the raw HTML editor displayed in the
+#. browser when a user needs to edit HTML
+#: common/lib/xmodule/xmodule/js/src/html/edit.js
+msgid ""
+"Your browser doesn't support direct access to the clipboard. Please use the "
+"Ctrl+X/C/V keyboard shortcuts instead."
+msgstr ""
+"Ваш браузер не підтримує прямий доступ до буферу обміну. Будь ласка, замість "
+"цього використайте комбінації клавіш Ctrl+X/C/V."
+
+#: common/lib/xmodule/xmodule/js/src/video/02_html5_video.js
+msgid "VideoPlayer: Element corresponding to the given selector was not found."
+msgstr "Відео-плеєр: Елемент, що відповідає цьому вибору, не був знайдений."
+
+#: lms/djangoapps/teams/static/teams/js/views/topic_card.js
+msgid "Topic:"
+msgstr "Тема:"
+
+#: lms/static/coffee/src/calculator.js
+msgid "Open Calculator"
+msgstr "Відкрити калькулятор"
+
+#: lms/static/coffee/src/calculator.js
+msgid "Close Calculator"
+msgstr "Закрити калькулятор"
+
+#: lms/static/coffee/src/customwmd.js
+msgid "HTML preview of post"
+msgstr ""
+
+#: lms/static/coffee/src/customwmd.js
+msgid "Post body"
+msgstr "Тіло публікації"
+
+#: lms/static/js/dashboard/legacy.js
+msgid "An error occurred. Please try again later."
+msgstr "Помилка. Будь ласка, спробуйте пізніше."
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "Error adding students."
+msgstr "Помилка при додаванні студентів."
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "{numUsersAdded} student has been added to this cohort"
+msgid_plural "{numUsersAdded} students have been added to this cohort"
+msgstr[0] "{numUsersAdded} студент доданий до цієї когорти"
+msgstr[1] "{numUsersAdded} студенти додано до цієї когорти"
+msgstr[2] "{numUsersAdded} студентів додано до цієї когорти"
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "{numMoved} student was removed from {oldCohort}"
+msgid_plural "{numMoved} students were removed from {oldCohort}"
+msgstr[0] "{numMoved} студент був видалений з {oldCohort}"
+msgstr[1] "{numMoved} студенти було видалено з {oldCohort}"
+msgstr[2] "{numMoved} студентів було видалено з {oldCohort}"
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "{numPresent} student was already in the cohort"
+msgid_plural "{numPresent} students were already in the cohort"
+msgstr[0] "{numPresent} студент вже був у цій когорті"
+msgstr[1] "{numPresent} студенти вже було у цій когорті"
+msgstr[2] "{numPresent} студентів вже було у цій когорті"
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "Unknown user: {user}"
+msgstr "Невідомий користувач: {user}"
+
+#: lms/static/js/groups/views/cohort_editor.js
+msgid "There was an error when trying to add students:"
+msgid_plural "There were {numErrors} errors when trying to add students:"
+msgstr[0] "Виникла помилка при додаванні студентів:"
+msgstr[1] "Виникло {numErrors} помилки при додаванні студентів:"
+msgstr[2] "Виникло {numErrors} помилок при додаванні студентів:"
+
+#: lms/static/js/search/base/views/search_results_view.js
+#, javascript-format
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s результат"
+msgstr[1] "%s результати"
+msgstr[2] "%s результатів"
+
+#: lms/static/js/staff_debug_actions.js
+msgid "Unknown Error Occurred."
+msgstr "Сталася невідома помилка."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"These settings include basic information about your account. You can also "
+"specify additional information and see your linked social accounts on this "
+"page."
+msgstr ""
+"Ці параметри включають в себе основну інформацію стосовно Вашого облікового "
+"запису. На цій сторінці Ви можете також надати додаткову інформацію і "
+"побачити Ваші облікові записи в соціальних мережах."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"The name that identifies you throughout {platform_name}. You cannot change "
+"your username."
+msgstr ""
+"Ім’я для ідентифікації на {platform_name}. Ви не зможете змінити ім’я "
+"користувача."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"The name that is used for ID verification and appears on your certificates. "
+"Other learners never see your full name. Make sure to enter your name "
+"exactly as it appears on your government-issued photo ID, including any non-"
+"Roman characters."
+msgstr ""
+"ПІБ, використовуються при підтвердженні особистості і будуть зазначені на "
+"Ваших сертифікатах. Обов’язково переконайтесь в правильності введення Ваших ПІБ. "
+"Вони повинні бути написані саме так, як зазначено у Вашому посвідченні особи. "
+"Вказуйте тільки достовірну інформацію."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Email Address"
+msgstr "Поштова скринька"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"The email address you use to sign in. Communications from {platform_name} "
+"and your courses are sent to this address."
+msgstr ""
+"Адреса електронної пошти, яку ви використовуєте, щоб увійти на сайт. "
+"Повідомлення з {platform_name} і Ваших курсів будуть відправлятися на цю "
+"адресу."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"When you select \"Reset Your Password\", a message will be sent to the email "
+"address for your {platform_name} account. Click the link in the message to "
+"reset your password."
+msgstr ""
+"Коли ви натиснете \"Оновити свій пароль\", буде відправлено повідомлення на "
+"email вашого облікового запису {platform_name}. Перейдіть за посиланням в "
+"повідомленні для того, щоб оновити старий пароль та встановити новий."
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Country or Region"
+msgstr "Країна або Регіон"
+
+#: lms/static/js/student_account/views/account_settings_fields.js
+msgid ""
+"We've sent a message to {email_address}. Click the link in the message to "
+"reset your password."
+msgstr ""
+"Ми вислали повідомлення на {email_address}. Перейдіть за посиланням в листі "
+"для того, щоб оновити Ваш пароль."
+
+#: lms/static/js/student_profile/views/learner_profile_factory.js
+msgid "{platform_name} learners can see my:"
+msgstr "Користувачі {platform_name} можуть бачити мій:"
+
+#: cms/static/js/factories/import.js
+msgid ""
+"File format not supported. Please upload a file with a {file_extension} "
+"extension."
+msgstr ""
+"Формат файлу не підтримується. Будь ласка, завантажте файл з розширенням "
+"{file_extension}. "
+
+#. Translators: 'count' is number of units that the group
+#. configuration is used in.
+#: cms/static/js/views/content_group_details.js
+#: cms/static/js/views/group_configuration_details.js
+msgid "Used in {count} unit"
+msgid_plural "Used in {count} units"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: cms/static/js/views/modals/course_outline_modals.js
+msgid "Change the settings for {display_name}"
+msgstr ""
+
+#. Translators: "title" is the name of the current component being edited.
+#: cms/static/js/views/pages/container.js
+msgid "Editing visibility for: %(title)s"
+msgstr "Редагування видимості для: %(title)s"
+
+#. Translators: This is listed as the duration for a video
+#. that has not yet reached the point in its processing by
+#. the servers where its duration is determined.
+#: cms/static/js/views/previous_video_upload.js
+msgid "Pending"
+msgstr "В очікуванні"
+
+#: common/static/common/templates/discussion/new-post.underscore
+msgid ""
+"Discussion admins, moderators, and TAs can make their posts visible to all "
+"students or specify a single cohort."
+msgstr ""
+
+msgid "Add a clear and descriptive title to encourage participation."
+msgstr "Додайте зрозумілу та вичерпну назву."
+
+msgid "Your question or idea"
+msgstr "Введіть Ваше запитання або коментар"
+
+#: common/static/common/templates/discussion/thread-show.underscore
+#, python-format
+msgid "%(post_type)s posted %(time_ago)s by %(author)s"
+msgstr "%(post_type)s виставлено %(time_ago)s автором %(author)s"
+
+#: common/static/common/templates/discussion/thread-type.underscore
+msgid ""
+"Questions raise issues that need answers. Discussions share ideas and start "
+"conversations."
+msgstr ""
+"Запитання використовуються тоді, коли вам потрібні конкретні відповіді. Обговорення "
+"використовуються для того, щоб ділитися ідеями та вести дискусії."
+
+#: lms/templates/bookmarks/bookmarks-list.underscore
+msgid "My Bookmarks"
+msgstr "Мої закладки"
+
+#: lms/templates/bookmarks/bookmarks-list.underscore
+msgid "You have not bookmarked any courseware pages yet."
+msgstr "Ви ще не зберегли жодної сторінки курсу в закладках."
+
+#: lms/templates/bookmarks/bookmarks-list.underscore
+msgid ""
+"Use bookmarks to help you easily return to courseware pages. To bookmark a "
+"page, select Bookmark in the upper right corner of that page. To see a list "
+"of all your bookmarks, select Bookmarks in the upper left corner of any "
+"courseware page."
+msgstr ""
+"Використовуйте закладки, щоб швидко повертатися до сторінок курсу. Для того, "
+"щоб додати сторінку в закладки, натисніть «Додати закладку». Якщо Ви бажаєте "
+"побачити список усіх Ваших закладок, натисніть «Закладки» у верхньому лівому куті."
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-course-wide.underscore
+#: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
+msgid "Specify whether discussion topics are divided by cohort"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-course-wide.underscore
+msgid ""
+"Select the course-wide discussion topics that you want to divide by cohort."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
+msgid ""
+"Specify whether content-specific discussion topics are divided by cohort."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
+msgid "Always cohort content-specific discussion topics"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-inline.underscore
+msgid "Cohort selected content-specific discussion topics"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-discussions-subcategory.underscore
+msgid "Cohorted"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
+msgid "Manage Students"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
+msgid "Add students to this cohort"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
+msgid ""
+"Note: Students can be in only one cohort. Adding students to this group "
+"overrides any previous group assignment."
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
+msgid ""
+"Enter email addresses and/or usernames, separated by new lines or commas, "
+"for the students you want to add. *"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
+msgid "Add Students"
+msgstr "Додати студентів"
+
+#: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
+msgid "Assign students to cohorts by uploading a CSV file"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
+msgid ""
+"To review student cohort assignments or see the results of uploading a CSV "
+"file, download course profile information or cohort results on the "
+"{link_start}Data Download{link_end} page."
+msgstr ""
+
+#: lms/templates/learner_dashboard/certificate.underscore
+msgid "Program Certificates"
+msgstr ""
+
+#: lms/templates/learner_dashboard/certificate_status.underscore
+msgid "Congratulations! You have earned a certificate for this course."
+msgstr "Вітаємо! Ви заробили сертифікат з даного курсу."
+
+#: lms/templates/learner_dashboard/certificate_status.underscore
+msgid "View Certificate"
+msgstr "Показати сертифікат"
+
+#: lms/templates/learner_dashboard/course_card.underscore
+#, python-format
+msgid "%(courseName)s Home Page."
+msgstr ""
+
+#: lms/templates/learner_dashboard/course_enroll.underscore
+msgid "enrolled"
+msgstr "зараховано"
+
+#: lms/templates/learner_dashboard/course_enroll.underscore
+msgid "Not Enrolled"
+msgstr ""
+
+#: lms/templates/learner_dashboard/course_enroll.underscore
+msgid "Please select a course date"
+msgstr ""
+
+#: lms/templates/learner_dashboard/course_enroll.underscore
+msgid "Select Course Run"
+msgstr ""
+
+#: lms/templates/learner_dashboard/course_enroll.underscore
+msgid "Choose Course Date"
+msgstr ""
+
+#: lms/templates/learner_dashboard/course_enroll.underscore
+#, python-format
+msgid "Starts %(start)s"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_card.underscore
+#, python-format
+msgid ""
+"You have earned certificates in %(completed_courses)s of the "
+"%(total_courses)s courses so far."
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_header_view.underscore
+msgid "You are here"
+msgstr ""
+
+#: lms/templates/learner_dashboard/program_header_view.underscore
+msgid "Dashboard"
+msgstr "Панель курсів"
+
+#: lms/templates/learner_dashboard/program_header_view.underscore
+msgid "Programs"
+msgstr "Програми"
+
+#: lms/templates/learner_dashboard/upgrade_message.underscore
+msgid ""
+"You need a certificate in this course to be eligible for a program "
+"certificate."
+msgstr ""
+
+#: lms/templates/learner_dashboard/upgrade_message.underscore
+msgid "Upgrade Now"
+msgstr ""
+
+#: lms/templates/search/course_search_results.underscore
+#: lms/templates/search/dashboard_search_results.underscore
+#, python-format
+msgid "Load next %(num_items)s result"
+msgid_plural "Load next %(num_items)s results"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: lms/templates/search/dashboard_search_results.underscore
+msgid "Back to Dashboard"
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
+#, python-format
+msgid "New to %(platformName)s?"
+msgstr "Вперше на %(platformName)s?"
+
+#: lms/templates/student_account/login.underscore
+msgid "Create an account"
+msgstr "Створити обліковий запис"
+
+#: lms/templates/student_account/register.underscore
+msgid "Create a new account"
+msgstr "Створити новий акаунт"
+
+#: lms/templates/student_account/register.underscore
+msgid "Create your account"
+msgstr "Створити обліковий запис"
+
+#: lms/templates/student_account/register.underscore
+msgid "Required field"
+msgstr "Обов'язкове поле"
+
+#: lms/templates/student_account/register.underscore
+msgid "Already have an account?"
+msgstr "Вже маєте аккаунт?"
+
+#: lms/templates/student_profile/learner_profile.underscore
+msgid "An error occurred. Try loading the page again."
+msgstr ""
+
+#: cms/templates/js/active-video-upload-list.underscore
+msgid "Drag and drop or click here to upload video files."
+msgstr "Перетяніть відеофайли для їх завантаження."
+
+#: cms/templates/js/content-group-details.underscore
+msgid "This content group is used in:"
+msgstr ""
+
+#: cms/templates/js/content-group-details.underscore
+msgid ""
+"This content group is not in use. Add a content group to any unit from the "
+"{linkStart}Course Outline{linkEnd}."
+msgstr ""
+
+#: cms/templates/js/previous-video-upload-list.underscore
+msgid "Duration"
+msgstr "Тривалість"
+
+#: cms/templates/js/publish-xblock.underscore
+#, python-format
+msgid "Draft saved on %(last_saved_date)s by %(edit_username)s"
+msgstr ""
+
+#: cms/templates/js/publish-xblock.underscore
+msgid "Some content in this unit is visible only to particular content groups"
+msgstr ""
+
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid ""
+"Specify any additional rules or rule exceptions that the proctoring review "
+"team should enforce when reviewing the videos. For example, you could "
+"specify that calculators are allowed."
+msgstr ""
+
+#: cms/templates/js/xblock-string-field-editor.underscore
+msgid "Edit the name"
 msgstr ""
