@@ -157,11 +157,11 @@ def check_sso(request, course_id):
                     'password': make_random_password()
                 }
                 create_account_with_params(request, user_data)
+                user = request.user
                 user.first_name = fname
                 user.last_name = lname
                 user.is_active = True
                 user.save()
-                user = request.user
 
             try:
                 create_course_enrollment(
