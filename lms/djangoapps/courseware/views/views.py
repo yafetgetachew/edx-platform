@@ -1,10 +1,13 @@
 """
 Courseware views functions
 """
-
+import md5
+import base64
+import pyDes
 import json
 import logging
 import urllib
+import urllib2
 from collections import OrderedDict, namedtuple
 from datetime import datetime, timedelta
 
@@ -297,54 +300,65 @@ def course_info(request, course_id):
         access_response = has_access(request.user, 'load', course, course_key)
 
         if access_response:
-            email = request.GET.get('email')
-            lastlogindate = request.GET.get('lastlogindate')
-            fname = request.GET.get('fname')
-            lname = request.GET.get('lname')
+            p = request.GET.get('p')
+            log.error(p)
+            log.error(settings.CLOUDSOCIETY_SECRET)
+            if p:
+                key = md5.new(settings.CLOUDSOCIETY_SECRET).digest()
 
-            if email and lastlogindate:
-                try:
-                    lastlogindate = datetime.strptime(lastlogindate, '%m/%d/%Y %I:%M:%S %p')
-                except ValueError:
-                    return redirect(redirect_url)
-                else:
-                    if lastlogindate < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
-                        logout(request)
+                des = pyDes.triple_des(key, pyDes.ECB, "\0\0\0\0\0\0\0\0", pad=None, padmode=pyDes.PAD_PKCS5)
+                qs = des.decrypt(base64.b64decode(p.replace(' ', '+')))
+                log.error(qs)
+                params = dict(urllib2.urlparse.parse_qsl(qs))
+
+                email = params.get('email')
+                lastlogindate = params.get('lastlogindate')
+                fname = params.get('fname')
+                lname = params.get('lname')
+
+                if email and lastlogindate:
+                    try:
+                        lastlogindate = datetime.strptime(lastlogindate, '%m/%d/%Y %I:%M:%S %p')
+                    except ValueError:
                         return redirect(redirect_url)
+                    else:
+                        if lastlogindate < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
+                            logout(request)
+                            return redirect(redirect_url)
 
-                try:
-                    user = User.objects.get(email=email)
-                except User.DoesNotExist:
-                    username = slugify(email)
-                    if User.objects.filter(username=username).exists():
-                        username = '{}{}'.format(username, slugify('_'.join([fname, lname])))
-                    user_data = {
-                        'email': email,
-                        'username': username,
-                        'name': ' '.join([fname, lname]),
-                        'terms_of_service': "True",
-                        'honor_code': 'True',
-                        'password': make_random_password()
-                    }
-                    create_account_with_params(request, user_data)
-                    user.first_name = fname
-                    user.last_name = lname
-                    user.is_active = True
-                    user.save()
-                    user = request.user
+                    try:
+                        user = User.objects.get(email=email)
+                    except User.DoesNotExist:
+                        username = slugify(email)
+                        if User.objects.filter(username=username).exists():
+                            username = '{}{}'.format(username, slugify('_'.join([fname, lname])))
+                        user_data = {
+                            'email': email,
+                            'username': username,
+                            'name': ' '.join([fname, lname]),
+                            'terms_of_service': "True",
+                            'honor_code': 'True',
+                            'password': make_random_password()
+                        }
+                        create_account_with_params(request, user_data)
+                        user.first_name = fname
+                        user.last_name = lname
+                        user.is_active = True
+                        user.save()
+                        user = request.user
 
-                try:
-                    create_course_enrollment(
-                        user.username,
-                        course_id,
-                        mode='honor',
-                        is_active=True
-                    )
-                except Exception:
-                    pass
-                user.backend = 'fake_backend'
-                login(request, user)
-                return redirect(edx_url)
+                    try:
+                        create_course_enrollment(
+                            user.username,
+                            course_id,
+                            mode='honor',
+                            is_active=True
+                        )
+                    except Exception:
+                        pass
+                    user.backend = 'fake_backend'
+                    login(request, user)
+                    return redirect(edx_url)
         else:
             return redirect(redirect_url)
             # The user doesn't have access to the course. If they're
