@@ -114,7 +114,7 @@ class DarkLangMiddleware(object):
 
         new_accept = ", ".join(new_accept)
 
-        request.META['HTTP_ACCEPT_LANGUAGE'] = new_accept
+        request.META['HTTP_ACCEPT_LANGUAGE'] = "{};q=0.9".format(settings.LANGUAGE_CODE) #new_accept
 
     def _activate_preview_language(self, request):
         """
