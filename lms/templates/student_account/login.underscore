@@ -3,12 +3,15 @@
 
 <% if ( context.createAccountOption !== false ) { %>
 <div class="toggle-form">
-    <span class="text"><%- gettext("First time here?") %></span>
-    <a href="#login" class="form-toggle" data-type="register"><%- gettext("Create an Account.") %></a>
+    <!-- <span class="text"><%- gettext("First time here?") %></span> -->
+    <span class="text"><%- "لأول مرة هنا؟" %></span>
+    <!-- <a href="#login" class="form-toggle" data-type="register"><%- gettext("Create an Account.") %></a> -->
+    <a href="#login" class="form-toggle" data-type="register"><%- gettext("إنشاء حساب") %></a>
 </div>
 <% } %>
 
-<h2><%- gettext("Sign In") %></h2>
+<!-- <h2><%- gettext("Sign In") %></h2> -->
+<h2><%- "تسجيل الدخول" %></h2>
 
 <form id="login" class="login-form" tabindex="-1" method="POST">
 

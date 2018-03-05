@@ -1,9 +1,500 @@
 @import 'lms/static/sass/partials/base/variables';
 
 // Theming overrides for sample theme
-$header-bg: rgb(140,21,21);
-$footer-bg: rgb(140,21,21);
-$container-bg: rgb(241,241,241);
-$content-wrapper-bg: rgb(241,241,241);
-$serif: 'Comic Sans', 'Comic Sans MS';
-$sans-serif: 'Comic Sans', 'Comic Sans MS';
+$header-bg: rgb(255,255,255);
+$footer-bg: rgb(247,247,247);
+$container-bg: rgb(255,255,255);
+$content-wrapper-bg: rgb(255,255,255);
+$serif: 'DINNextLTArabic-Light', 'DINNextLTArabic-Light';
+$sans-serif: 'DINNextLTArabic-Light', 'DINNextLTArabic-Light';
+
+@font-face {
+  font-family: 'DINNextLTArabic-Light';
+  src:
+    url('http://54.146.177.95/static/stanford-style/images/DINNextLTArabic-Light.woff') format('woff'),
+    url('http://54.146.177.95/static/stanford-style/images/DINNextLTArabic-Light.eot') format('eot'),
+    url('http://54.146.177.95/static/stanford-style/images/DINNextLTArabic-Light.ttf') format('ttf'),
+    url('http://54.146.177.95/static/stanford-style/images/DINNextLTArabic-Light.svg') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+.home>header {
+    height: 500px;
+    background-image: url("http://staging.ilearn-portal.com/lms/header.jpg");
+
+    .outer-wrapper {
+        padding: 120px 0 !important;
+    }
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+    font-family: "DINNextLTArabic-Light"!important;
+}
+
+.home>header {
+    height: 500px;
+    background-image: url("http://staging.ilearn-portal.com/lms/header.jpg");
+
+    .outer-wrapper {
+        padding: 120px 0 !important;
+    }
+}
+
+.home>header {
+    height: 500px;
+    background-image: url("http://staging.ilearn-portal.com/lms/header.jpg");
+
+    .outer-wrapper {
+        padding: 120px 0 !important;
+    }
+}
+.outer-wrapper {
+    background-image: url('http://staging.ilearn-portal.com/lms/header.jpg')!important;
+    height: 300px!important;
+}
+.btn {
+    box-shadow: none!important;
+    color: rgb(255, 255, 255)!important;
+    background: rgb(22, 175, 163)!important;
+}
+.header-global {
+height: 120px!important;
+} 
+
+.home>header .title {
+    float: right;
+    display: block;
+    margin-left: 2.35765%;
+    width: 65.88078%;
+    
+    box-sizing: border-box;
+    transition: all 0.2s linear 0s;
+    position: relative;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.90);
+    padding: 20px 30px;
+    min-height: 120px;
+    font-size: 12px!important;
+    margin-right: 10px!important;
+    vertical-align: top;
+}
+.courses-container .courses .course .course-image .cover-image .learn-more {
+    right: calc(50% - 100px);
+    box-sizing: border-box;
+    position: absolute;
+    top: 55px;
+    padding: 0 20px;
+    width: 200px;
+    height: 50px;
+    border-color: #0075b4;
+    border-radius: 3px;
+    background: rgb(22, 175, 163)!important;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    opacity: 0;
+    text-transform: none;
+}
+.home {
+    background: #f5f9fa!important;
+}
+.courses-container .courses .course {
+    box-sizing: border-box;
+    transition: all 0.125s linear 0s;
+    position: relative;
+    border-bottom: 3px solid #126f9a;
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.125), inset 0 0 0 1px rgba(255,255,255,0.75);
+    background: #ffffff!important;
+    width: 100%;
+}
+.header-global .nav-global li a, .header-global .nav-global div a {
+    display: block;
+    padding: 5px;
+    color: #16afa3!important;
+    font-size: 18px!important;
+}
+.header-global .nav-global {
+    margin-top: 50px!important;
+    list-style: none;
+    float: right;
+}
+.header-global .nav-courseware {
+    float: left;
+    list-style: none;
+    margin-top: 48px!important;
+}
+.home>header .outer-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 60px;
+    max-width: 6796px!important;
+}
+input[type="submit"], input[type="button"], button, .button {
+    border-radius: 3px;
+    border: 0px solid #000663!important;
+    border-bottom: 0px solid #00003a!important;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 0 #2592c0;
+    color: #fff;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #16afa3!important;
+    background-image: none!important;
+    /* background-image: linear-gradient(to bottom,#0075b4 0%,#004393 50%,#002a84 50%,#002f86 100%); */
+    padding: 7px 18px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none!important;
+    font: normal 1.2rem/1.6rem "DINNextLTArabic-Light","DINNextLTArabic-Light";
+    letter-spacing: 1px;
+    padding: 4px 20px;
+    text-transform: uppercase;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+}
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart {
+    border: 0px solid #000663!important;
+    border-bottom: 0px solid #00003a!important;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 0 #2592c0;
+    color: #fff;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #16afa3!important;
+    background-image: none!important;
+    background-image: none!important;
+    padding: 7px 18px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none!important;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: block;
+    font: normal 1.2rem/1.6rem "DINNextLTArabic-Light","DINNextLTArabic-Light";
+    letter-spacing: 1px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    text-align: center;
+    width: 48.82117%;
+}
+.header-global.slim .logo img {
+    height: 100px!important;
+    vertical-align: middle;
+}
+
+.header-global.slim .course-header {
+    float: right;
+    margin: 10px 10px 0px 10px;
+    display: inline-block;
+    width: 65%;
+    font-weight: 600!important;
+    font-size: 1rem;
+    line-height: 5!important;
+}
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button.focused .icon, .xmodule_display.xmodule_SequenceModule .sequence-nav-button:hover .icon, .xmodule_display.xmodule_SequenceModule .sequence-nav-button:active .icon, .xmodule_display.xmodule_SequenceModule .sequence-nav-button.active .icon, .xmodule_display.xmodule_SequenceModule .sequence-nav button.focused .icon, .xmodule_display.xmodule_SequenceModule .sequence-nav button:hover .icon, .xmodule_display.xmodule_SequenceModule .sequence-nav button:active .icon, .xmodule_display.xmodule_SequenceModule .sequence-nav button.active .icon {
+    color: #ffffff!important;
+}
+.header-global .user .user-dropdown {
+    font-size: 0.875em;
+    padding: 0 10px;
+    color: #ffffff!important;
+    border: none;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+}
+.account-nav-link {
+    float: right;
+    font-size: 0.875em;
+    color:#ffffff !important;
+    font-weight: bold;
+    padding: 5px 25px 23px;
+    display: inline-block;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: transparent none;
+}
+
+
+.account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link {
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #0079bc;
+    color: #ffffff!important;
+    padding: 11px 14px;
+    line-height: normal;
+}
+
+.header-global.slim .course-header {
+    float: right;
+    margin: 10px 10px 0px 10px;
+    display: inline-block;
+    width: 45%!important;
+    font-weight: 600 !important;
+    font-size: 1rem;
+    line-height: 5 !important;
+}
+.single-service {
+    text-align: justify;
+}   
+.ml-30 {
+ text-align: justify;
+}
+
+.pagination .page-divider, .view-student-notes .title-search-container .wrapper-title .page-title, .view-teams .page-header .page-title, .course-wrapper .course-content .proctored-exam-skip-confirm-wrapper .msg-title, .course-wrapper .courseware-results-wrapper .proctored-exam-skip-confirm-wrapper .msg-title, .view-teams .card .card-title, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-settings .form-title, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-edit .form-title, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-group-header .title-value, .dashboard-search-results .search-info h2, .view-student-notes .placeholder-title, .course-index .accordion .course-navigation .button-chapter .group-heading, .home .page-header-secondary .last-accessed-link, div.info-wrapper section.handouts .handouts-header, .view-student-notes .note-group .course-title, .view-student-notes .note-group .tags-title, .view-teams .create-team legend, .view-teams .team-actions .title, .idash-section .message-title, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-group-add .form-title, .view-student-notes .wrapper-tabs .tab-list .tabs-label, .idash-section .subsection-title, .wrapper-course-material .course-tabs li a, .wrapper-course-material .course-tabs li a:visited, .xmodule_display.xmodule_VideoModule .video .video-wrapper .video-controls .control, .xmodule_display.xmodule_VideoModule .video .video-wrapper .video-controls .vcr .vidtime, .content-wrapper .course-license, .content-wrapper .xblock-license, .view-student-notes .title-search-container .wrapper-title .page-title .page-subtitle, .view-student-notes .note-group .course-subtitle, .idash-section .section-title .description, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-settings .form-fields .label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-edit .form-fields .label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-group-add .form-fields .label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .file-upload-form .form-fields .label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-settings .form-fields .form-label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-edit .form-fields .form-label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-group-add .form-fields .form-label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .file-upload-form .form-fields .form-label, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-group-header .group-count, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-group-add .message-title, .instructor-dashboard-wrapper-2 section.idash-section#cohort_management .cohort-management-file-upload .message-title, .nav-utilities .action-toggle-message, .view-student-notes .note-group .note .wrapper-note-excerpts .note-comments .note-comment .note-comment-title, .view-student-notes .note-group .note .reference .wrapper-reference-content .reference-title, div.info-wrapper section.updates>ol>li .date, div.info-wrapper section.updates>ol article .date, div.info-wrapper section.updates section>li .date, div.info-wrapper section.updates section article .date, div.info-wrapper section.updates div>li .date, div.info-wrapper section.updates div article .date, div.info-wrapper section.updates>ol>li .toggle-visibility-button, div.info-wrapper section.updates>ol article .toggle-visibility-button, div.info-wrapper section.updates section>li .toggle-visibility-button, div.info-wrapper section.updates section article .toggle-visibility-button, div.info-wrapper section.updates div>li .toggle-visibility-button, div.info-wrapper section.updates div article .toggle-visibility-button {
+
+font-family: "DINNextLTArabic-Light"!important;
+}
+.window-wrap {
+background-color: #f5f5f5!important;
+}
+.header-global.slim .nav-main, .header-global.slim .nav-global {
+    display: block!important;
+}
+.home>header .title .course-search .search-input, .dashboard .my-courses .wrapper-header-courses .header-courses, .dashboard-banner .wrapper-msg .msg.title, .view-survey .header-survey .course-name, .view-survey .message.submission-error .message-title, .view-profile .profile-section-two-fields .u-field-title, .login-register .status .message-title, .financial-assistance-wrapper .financial-assistance-form .status .message-title, .verification-process .title, .verification-process .page-header .title .sts-label, .verification-process .page-header .title .sts-course-org, .verification-process .page-header .title .sts-course-number, .verification-process .page-header .title .sts-course-name, .verification-process.step-select-track .register-choice .title, .verification-process.step-requirements .list-reqs .req .title, .verification-process.step-requirements .list-reqs .req-activate .title, .confirm-enrollment .enrollment-details .sub-title, .shopping-cart .billing-data h3, .shopping-cart .pattern h2, .shopping-cart .pattern .home>header .title>.heading-group p, .home>header .title>.heading-group .shopping-cart .pattern p, .shopping-cart .pattern section.outside-app h1, section.outside-app .shopping-cart .pattern h1, .empty-cart h2, .empty-cart .home>header .title>.heading-group p, .home>header .title>.heading-group .empty-cart p, .empty-cart section.outside-app h1, section.outside-app .empty-cart h1, #api-access-wrapper h2, #api-access-wrapper .home>header .title>.heading-group p, .home>header .title>.heading-group #api-access-wrapper p, #api-access-wrapper section.outside-app h1, section.outside-app #api-access-wrapper h1, .dashboard-search-results .search-info h2, .dashboard-search-results .search-info .home>header .title>.heading-group p, .home>header .title>.heading-group .dashboard-search-results .search-info p, .dashboard-search-results .search-info section.outside-app h1, section.outside-app .dashboard-search-results .search-info h1, .wrapper-msg .msg-content .title {
+    font-size: 18px;
+    line-height: 26.64px;
+    font-family: DINNextLTArabic-Light!important;
+}
+.dashboard .my-courses .course .details .course-title a, .dashboard .my-courses .course .details .course-title span {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: DINNextLTArabic-Light!important;
+font-size: 28px!important;
+}
+
+.dashboard .my-courses .course .details .course-info [class*="info-"] {
+    color: #5e5e5e;
+    display: inline-block;
+    font-family: DINNextLTArabic-Light!important;
+}
+
+.dashboard .my-courses .course .details .enter-course {
+    float: left;
+    font-family: DINNextLTArabic-Light!important;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white!important;
+}
+.section .icon {
+    width: 20px;
+    text-align: center;
+    color: black!important;
+}
+.course-info header.course-profile {
+    background: #f5f5f5;
+    background-image: none;
+    background-size: cover;
+    box-shadow: 0 1px 80px 0 rgba(0,0,0,0.5);
+    border-bottom: 1px solid #646464;
+    box-shadow: inset 0 1px 5px 0 rgba(0,0,0,0.1);
+    height: 480px!important;
+    margin-top: -69px;
+    padding-top: 150px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.social-sharing .fa {
+color: #000000 !important;
+}
+.course-info .details {
+    float: right;
+    margin-left: 2.35765%;
+    width: 65.88078%;
+    font: normal 1em/1.6em "DINNextLTArabic-Light","DINNextLTArabic-Light";
+    border: 0px!important;
+}
+.btn-link, .view-student-notes .note-group .note .wrapper-note-excerpts .note-excerpt-more-link, .view-student-notes .note-group .note .reference .wrapper-reference-content a.reference-meta, .edx-notes-wrapper .annotator-adder button:after, .edx-notes-wrapper .annotator-viewer .annotator-controls .annotator-edit:before, .edx-notes-wrapper .annotator-viewer .annotator-controls .annotator-delete:before, .edx-notes-wrapper .annotator-viewer .annotator-controls .annotator-close:before, .edx-notes-wrapper .annotator-wrapper .annotator-editor.annotator-outer button.annotator-cancel, .view-student-notes .wrapper-tabs .tab-list .tab .tab-label, .view-student-notes .wrapper-tabs .tab-list .tab .action-close {
+    color: #ffffff!important;
+}
+.wrapper-course-material .course-tabs li a {
+    color: #065683!important;
+}
+
+.tabs a {
+color: #065683!important;
+}
+.dashboard .my-courses .course .details .enter-course:hover {
+    background-color: #16afa3!important;
+    color: #ffffff!important;
+}
+.login-register .form-field .field-link, .financial-assistance-wrapper .financial-assistance-form .form-field .field-link {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    text-transform: initial;
+    letter-spacing: normal;
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    line-height: 25px;
+    font-style: bold;
+    text-shadow: none;
+    font-family: "DINNextLTArabic-Light","DINNextLTArabic-Light";
+}
+.account-nav-link {
+    float: right;
+    font-size: 0.875em;
+    color: #ffffff;
+    padding: 5px 25px 23px;
+    display: inline-block;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: transparent none;
+}
+.wrapper-preview-menu .preview-actions .action-preview .action-preview-select {
+    margin-left: 20px;
+    font-family: "DINNextLTArabic-Light","DINNextLTArabic-Light";
+}
+.action-preview-label {
+font-weight: 600;
+}
+.forgot-password field-link {
+color: #ffffff!important;
+line-height: 30px!important;
+font-weight: 700!important;
+}
+.preview-menu {
+
+padding-right: 0px;
+    padding-left: 0px!important;
+}
+
+body.view-in-course .container {
+padding-right: 0px!important;
+
+}
+.preview-menu {
+
+padding-right: 0px!important;
+    padding-left: 0px!important;
+}
+
+body.view-in-course .container {
+    max-width: 1180px!important;
+    min-width: initial;
+    width: auto;
+    padding-right: 0px!important;
+}
+body.view-in-course .info-wrapper {
+    max-width: 1140px!important;
+    margin: 0 auto;
+}
+.dashboard .my-courses {
+    float: right;
+    margin: 0;
+    margin-bottom: 40px;
+    width: 74.41059%;
+    border: 0px!important;
+}
+.sequence-nav-button.focused, .xmodule_display.xmodule_SequenceModule .sequence-nav-button:hover, .xmodule_display.xmodule_SequenceModule .sequence-nav-button:active, .xmodule_display.xmodule_SequenceModule .sequence-nav-button.active, .xmodule_display.xmodule_SequenceModule .sequence-nav button.focused, .xmodule_display.xmodule_SequenceModule .sequence-nav button:hover, .xmodule_display.xmodule_SequenceModule .sequence-nav button:active, .xmodule_display.xmodule_SequenceModule .sequence-nav button.active {
+   
+    background: #367F7A!important;
+}
+
+
+span.fa.fa-fw.fa-bookmark.bookmark-icon.is-hidden {
+display: none!important;
+}
+
+
+.bookmark-text a {
+color: #ffffff;
+    background-color: #15afa3;
+}
+.btn:hover {
+    box-shadow: none !important;
+    color: #fff;
+    background: #56c5bd !important;
+}
+button.sequence-nav-button.button-previous {
+    color: #ffffff!important;
+font-family: "DINNextLTArabic-Light"!important;
+}
+button.sequence-nav-button.button-next {
+
+color: #ffffff!important;
+font-family: "DINNextLTArabic-Light"!important;
+}
+.wmd-button {
+    background-color: white!important;
+    box-shadow: none!important;
+}
+
+.header-global {
+    border-bottom: 2px solid #00b0a2!important;
+}
+.breadcrumbs {
+    font-family: "DINNextLTArabic-Light" !important;
+    font-size: 1rem!important;
+    line-height: 1.6;
+}
+
+
+.dropdown-menu-container .dropdown-menu .dropdown-item a {
+    color: #0075b4!important;
+    font-size: 1rem;
+}
+button.forgot-password.field-link {
+    color: white!important;
+    font-weight: 700!important;
+    font-size: 14px!important;
+    line-height: 25px!important;
+padding: 3px!important;
+}
+button.toggle-visibility-button {
+    color: white!important;
+    font-weight: 600!important;
+    font-size: 12px!important;
+    line-height: 25px!important;
+    padding: 3px!important;
+}
+h5#msg-date-0 {
+    background: none!important;
+}
+.verification-process .report-receipt-provider .provider-buttons-logos .complete-order button, .dashboard .my-courses .course .details .enter-course, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .verification-cta .btn, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .credit-action .credit-btn, .btn-secondary, .dashboard .my-courses .course .details .enter-course.archived, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link, .account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-link .u-field-link, .account-settings-sections .section .account-settings-section-body .u-field .u-field-order-lines .u-field-order-link .u-field-link, .courseware-bookmarks-button .bookmarks-list-button, .pagination .current-page, .pagination .page-number-input, .pagination .total-pages, .verification-process .carousel #wrapper-review .review-task .copy, .verification-process.step-confirmation .list-info .info-item .copy, .view-survey .instructions, .view-survey .action-primary, .view-survey label, .view-profile .profile-section-two-fields .u-field-value, .view-profile .badge-set-display .badge-display .badge-details .badge-name, .login-register .instructions, .financial-assistance-wrapper .financial-assistance-form .instructions, .login-register .status .message-copy, .financial-assistance-wrapper .financial-assistance-form .status .message-copy, .login-register .status .message-copy p, .financial-assistance-wrapper .financial-assistance-form .status .message-copy p, .login-register .institution-list .institution, .financial-assistance-wrapper .financial-assistance-form .institution-list .institution, .verification-process.step-select-track .register-choice .copy, .verification-process.step-select-track .register-choice .wrapper-copy-inline, .verification-process.step-select-track .register-choice .copy-inline, .verification-process.step-requirements .list-reqs .req .copy-super, .verification-process.step-requirements .list-reqs .req-activate .copy-sub, .cart-errors, .confirm-enrollment .enrollment-details .enrollment-text, .shopping-cart .user-data .data-input h1 span, .shopping-cart .user-data .data-input .three-col .col-1, .shopping-cart .user-data .data-input .three-col .col-2 .numbers-row label, .shopping-cart .discount .code-input input[type="text"], .shopping-cart .col-two .col-1 span.radio-group label, .shopping-cart .col-two .col-2 p, .shopping-cart .billing-data .col-half .data-group label, .shopping-cart .billing-data .col-half .data-group input, .wrapper-authorize p, .financial-assistance-wrapper p, .financial-assistance-wrapper .user-info .title, .financial-assistance-wrapper .user-info .data, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions, #api-access-wrapper #api-access-status, #api-access-wrapper .api-form-container .api-form label, #api-access-wrapper .api-form-container .api-form input, #api-access-wrapper .api-form-container .api-form textarea, #api-access-wrapper .api-form-container .api-form input[type=submit], #api-access-wrapper .api-form-container .api-form textarea[type=submit], #api-access-wrapper .api-form-container .api-form .errorlist li, #api-access-wrapper .api-form-container .api-form #api-access-submit, #api-access-wrapper .api-form-container .api-form .preview-query, #api-access-wrapper .application-info p, .ui-loading, .ui-loading-base, .wrapper-account-settings .ui-loading-indicator, .wrapper-account-settings .ui-loading-error, .view-profile .ui-loading-indicator, .login .deco-divider .copy, .register .deco-divider .copy, .passwordreset .deco-divider .copy, #forgot-password-modal #password-reset .deco-divider .copy, .view-profile .badges-overlay .badges-modal, .verification-process .carousel .view .instruction, .verification-process .deco-divider .copy, .verification-process .content-main .instruction, .verification-process.step-requirements .list-reqs .req-activate .copy-super, .register.is-not-verified.step-confirmation .view .instruction, .confirm-enrollment .enrollment-details .course-dates, .shopping-cart .discount .code-text a, .shopping-cart table.course-receipt tr td:first-child, .confirm-enrollment a.link-button, .confirm-enrollment button[type="submit"], .shopping-cart a.blue, .shopping-cart .user-data .data-input .three-col .col-1 .price span, .shopping-cart .user-data .data-input .three-col .col-2 .numbers-row .counter input[type="text"], .shopping-cart .discount .code-text span b, .shopping-cart .col-two .col-2 button[type="submit"], .empty-cart a.blue, body.error .description, .listing-tools, .listing-tools .listing-sort-select, .verification-process .help-item .copy, .verification-process .carousel .requirements .requirement .copy, .verification-process .carousel .wrapper-task .wrapper-help .help .copy, .verification-process .carousel #wrapper-review .review-task-photos .wrapper-photos .help-tips .copy, .verification-process.step-select-track .register-choice-certificate .action-intro, .verification-process.step-select-track .help-register .copy, .u-field-message, .modal-settings-language .actions-supplemental .list-actions-item, .dashboard .profile-sidebar .user-info>ul li span.copy, .dashboard .my-courses .course .wrapper-messages-primary .message .message-copy, .dashboard .my-courses .course .wrapper-messages-primary .message .message-copy .copy, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .message-copy, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .certificate-explanation, .status-verification .status-data-message, .find-courses .discovery-input, .view-survey .action-cancel, .view-survey button, .view-survey input, .view-survey select, .view-survey textarea, .view-survey .bit p, .view-profile .profile-section-two-fields .u-field.mode-placeholder .u-field-value, .view-profile .badge-set-display .badge-display .badge-details, .view-profile .badge-set-display .badge-display .badge-details .badge-date-stamp, .login-register .form-field .tip, .financial-assistance-wrapper .financial-assistance-form .form-field .tip, .login-register .form-field .label-optional, .financial-assistance-wrapper .financial-assistance-form .form-field .label-optional, .verification-process .wrapper-msg .msg-content .copy, .verification-process .nav-wizard .help-inline, .verification-process.step-select-track .register-choice-certificate .title-expand, .verification-process.step-review .nav-wizard .prompt-verify .copy, .verification-process.step-review .nav-wizard .prompt-verify .action-verify label, .verification-process.step-review .nav-wizard .step-match label, .verification-process .pay-and-verify .photo-tip, .verification-process .incourse-reverify .photo-tip, .verification-process .reverify .photo-tip, #expiry-msg, .shopping-cart .col-two .row-inside .billing-detail-label, .shopping-cart .col-two .row-inside .billing-detail-value, .shopping-cart .bordered-bar h2 span .blue-link, .shopping-cart .bordered-bar .home>header .title>.heading-group p span .blue-link, .home>header .title>.heading-group .shopping-cart .bordered-bar p span .blue-link, .shopping-cart .bordered-bar section.outside-app h1 span .blue-link, section.outside-app .shopping-cart .bordered-bar h1 span .blue-link, .shopping-cart table.course-receipt tr td:last-child span, .empty-cart p, .enrollment-modal-wrapper.is-shown .enrollment-modal .enrollment-change-field p, .enrollment-modal-wrapper.is-shown .enrollment-modal .enrollment-change-field label, .enrollment-modal-wrapper.is-shown .enrollment-modal .enrollment-change-field select, .enrollment-modal-wrapper.is-shown .enrollment-modal .enrollment-change-field input, .enrollment-modal-wrapper.is-shown .enrollment-modal .enrollment-change-errors, #api-access-wrapper p, #api-access-wrapper .api-form-container .api-form p .helptext, .wrapper-msg .msg-content .copy, .wrapper-msg .msg-content .copy p, .message, .wrapper-notification .copy, .wrapper-alert .copy, .prompt .copy, .notification .copy, .alert:not(.pattern-library-shim) .action-dismiss .button-copy, .wrapper-message .message, .wrapper-message .message.information, .main-wrapper .alert, .msg__copy, .dashboard .profile-sidebar .user-info>ul .heads-up .copy, .dashboard .profile-sidebar .user-info .reverify-status-list .status-item, .status-verification .status-note, .status-verification .status-note p, .login .instructions .note, .register .instructions .note, .passwordreset .instructions .note, #forgot-password-modal #password-reset .instructions .note, .course-info .container .wrap-instructor-info .instructor-info-action, .course-info section.outside-app .wrap-instructor-info .instructor-info-action, .course-info .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy .wrap-instructor-info .instructor-info-action, .view-profile .profile-self .wrapper-profile-field-account-privacy .course-info .u-field-account_privacy .wrap-instructor-info .instructor-info-action, .course-info .view-profile .wrapper-profile-sections .wrap-instructor-info .instructor-info-action, .view-profile .course-info .wrapper-profile-sections .wrap-instructor-info .instructor-info-action, .course-info .view-profile .badge-set-display .wrap-instructor-info .instructor-info-action, .view-profile .course-info .badge-set-display .wrap-instructor-info .instructor-info-action, .view-survey .list-input .field .tip, .login-register .note, .financial-assistance-wrapper .financial-assistance-form .note, .login-register .form-field .field-link, .financial-assistance-wrapper .financial-assistance-form .form-field .field-link, .verification-process.step-requirements .list-reqs .req .copy-sub, .shopping-cart .discount .code-input .error-text, .shopping-cart .error-text, .enrollment-results, .search-results .search-results-item .search-results-ellipsis, .msg__copy p {
+    font-family: "DINNextLTArabic-Light" !important;
+}
+.btn-default {
+    border-color: transparent;
+    background: transparent;
+    color: #ffffff!important;
+}
+
+.light-button, div.history-controls input[type="submit"], a.light-button, .gray-button, input[type="reset"], input[type="submit"], input[type="button"], button, .button, form input[type="reset"], form input[type="submit"], form input[type="button"], form button, form .button, .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window {
+    border: 1px solid #d2c9c9;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 #fff;
+    color: #fff!important;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    background-image: -webkit-linear-gradient(#f1f1f1,#d9d1d1);
+    background-image: linear-gradient(#f1f1f1,#d9d1d1);
+    padding: 7px 18px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fcfbfb;
+    background-clip: padding-box;
+    font-size: 0.8125em;
+}

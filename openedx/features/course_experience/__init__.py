@@ -36,7 +36,8 @@ def default_course_url_name(course_id):
     Arguments:
         course_id (CourseKey): The course id of the current course.
     """
-    if COURSE_OUTLINE_PAGE_FLAG.is_enabled(course_id):
+    # if COURSE_OUTLINE_PAGE_FLAG.is_enabled(course_id):
+    if False:
         return 'openedx.course_experience.course_home'
     else:
         return 'courseware'
