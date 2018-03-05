@@ -25666,3 +25666,6 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr "أُنشأت مراجعة جديدة: الدمج بين المراجعة #%(r1)d والمراجعة #%(r2)d "
+
+msgid "Enroll"
+msgstr "سجّل"
