@@ -24129,3 +24129,22 @@ msgstr "اصدر بتاريخ:"
 msgid "a course of study offered by the<br>Al Ghurair Young Thinkers Programm."
 msgstr "دورة دراسية مقدمة من قبل برنامج الغرير للمفكرين اليافعين."
 
+msgid "Hello, {full_name}"
+msgstr "مرحباً {full_name}"
+
+msgid ""
+"You have now been enrolled in {course_name} on {site_name} by the course staff. "
+"The course should be available in your My Courses' list on {site_name}."
+msgstr ""
+"لقد تم تسجيلك في دورة {course_name} على الموقع {site_name} من قبل أحد أعضاء طاقم الدورة. "
+"يجب أن تكون الدورة متوفرة الآن على قائمة الدورات الخاصة بك على موقع {site_name}."
+
+msgid "To start viewing course materials, please visit the page below:"
+msgstr "للبدء بالاطلاع على مواد الدورة، يُرجى زيارة الصفحة"
+
+msgid "This email was automatically sent from: {site_name} to {email_address}"
+msgstr "تم إرسال هذه الرسالة الإلكترونية تلقائياً من {site_name} الى {email_address}"
+
+msgid "You are now enrolled in {course_name}"
+msgstr "الموضوع: لقد تم تسجيلك في دورة {course_name}"
+
