@@ -646,7 +646,12 @@ class CourseMode(models.Model):
         If there is no mode found, will return the price of DEFAULT_MODE, which is 0
         """
         modes = cls.modes_for_course(course_id)
-        return min(mode.min_price for mode in modes if mode.currency.lower() == currency.lower())
+        try:
+          min_coures_price = min(mode.min_price for mode in modes if mode.currency.lower() == currency.lower())
+        except ValueError:
+          min_coures_price = 0
+
+        return min_coures_price
 
     @classmethod
     def is_eligible_for_certificate(cls, mode_slug):
