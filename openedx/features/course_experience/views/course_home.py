@@ -164,7 +164,10 @@ class CourseHomeFragmentView(EdxFragmentView):
         handouts_html = self._get_course_handouts(request, course)
 
         # Get the course tools enabled for this user and course
-        course_tools = CourseToolsPluginManager.get_enabled_course_tools(request, course_key)
+        if settings.FEATURES.get("DISABLE_COURSE_DATES_SIDEBAR", False):
+            course_tools = ''
+        else:
+            course_tools = CourseToolsPluginManager.get_enabled_course_tools(request, course_key)
 
         # Check if the user can access the course goal functionality
         has_goal_permission = has_course_goal_permission(request, course_id, user_access)
