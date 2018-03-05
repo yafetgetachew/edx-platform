@@ -268,7 +268,7 @@ TINYMCE_FONTS = OrderedDict([
 ])
 
 CUSTOM_FONTS = OrderedDict([
-    ('Default', ['Open Sans', 'Verdana', 'Arial', 'Helvetica', 'sans-serif']),
+    ('Default', [ 'Arial', 'Helvetica', 'sans-serif']),
 ])
 
 
