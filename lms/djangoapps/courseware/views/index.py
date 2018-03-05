@@ -347,7 +347,7 @@ class CoursewareIndex(View):
             'disable_optimizely': not WaffleSwitchNamespace('RET').is_enabled('enable_optimizely_in_courseware'),
             'section_title': None,
             'sequence_title': None,
-            'disable_accordion': False,
+            'disable_accordion': COURSE_OUTLINE_PAGE_FLAG.is_enabled(self.course.id),
             # TODO: (Experimental Code). See https://openedx.atlassian.net/wiki/display/RET/2.+In-course+Verification+Prompts
             'upgrade_link': check_and_get_upgrade_link(request, self.effective_user, self.course.id),
             'upgrade_price': get_cosmetic_verified_display_price(self.course),
