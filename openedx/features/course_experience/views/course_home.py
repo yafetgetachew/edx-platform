@@ -1,7 +1,7 @@
 """
 Views for the course home page.
 """
-
+from django.conf import settings
 from django.template.context_processors import csrf
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
@@ -121,7 +121,11 @@ class CourseHomeFragmentView(EdxFragmentView):
         course = get_course_with_access(request.user, 'load', course_key)
 
         # Render the course dates as a fragment
-        dates_fragment = CourseDatesFragmentView().render_to_fragment(request, course_id=course_id, **kwargs)
+        # set dates fragment to empty string, if setting is on
+        if settings.FEATURES.get("DISABLE_COURSE_DATES_SIDEBAR", False):
+            dates_fragment = ''
+        else:
+            dates_fragment = CourseDatesFragmentView().render_to_fragment(request, course_id=course_id, **kwargs)
 
         # Render the full content to enrolled users, as well as to course and global staff.
         # Unenrolled users who are not course or global staff are given only a subset.
