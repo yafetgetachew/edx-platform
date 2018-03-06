@@ -18,7 +18,7 @@
                       { start_date: start }, true
                     ) %>
             </div>
-                <div class="cost">$ 155.00</div>
+                <div class="cost"><%- price %></div>
         </section>
         <div class="course-hover">
           <p class="course-hover_duration">Training Duration - 50 Hrs</p>
