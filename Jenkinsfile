@@ -11,17 +11,30 @@ def startTests(suite, shard) {
                 wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
                     cleanWs()
                     checkout scm
-                    try {
-                        withEnv(["TEST_SUITE=${suite}", "SHARD=${shard}"]) {
-                            sh './scripts/all-tests.sh'
+                    
+                    if (suite == 'accessibility') {
+                        try {
+                             sh './scripts/accessibility-tests.sh'
+                        } catch (err) {
+                            slackSend channel: channel_name, color: 'danger', message: "Test ${suite}-${shard} failed in ${env.JOB_NAME}. Please check build info. (<${env.BUILD_URL}|Open>)", teamDomain: 'raccoongang', tokenCredentialId: 'slack-secret-token'
+                        } finally {
+                            archiveArtifacts 'reports/**, test_root/log/**'
+                            stash includes: 'reports/**, test_root/log/**', name: "artifacts-${suite}-${shard}"
+                            junit 'reports/**/*.xml'
+                            deleteDir()
+                    } else {
+                        try {
+                            withEnv(["TEST_SUITE=${suite}", "SHARD=${shard}"]) {
+                                sh './scripts/all-tests.sh'
+                            }
+                        } catch (err) {
+                            slackSend channel: channel_name, color: 'danger', message: "Test ${suite}-${shard} failed in ${env.JOB_NAME}. Please check build info. (<${env.BUILD_URL}|Open>)", teamDomain: 'raccoongang', tokenCredentialId: 'slack-secret-token'
+                        } finally {
+                            archiveArtifacts 'reports/**, test_root/log/**'
+                            stash includes: 'reports/**, test_root/log/**', name: "artifacts-${suite}-${shard}"
+                            junit 'reports/**/*.xml'
+                            deleteDir()
                         }
-                    } catch (err) {
-                        slackSend channel: channel_name, color: 'danger', message: "Test ${suite}-${shard} failed in ${env.JOB_NAME}. Please check build info. (<${env.BUILD_URL}|Open>)", teamDomain: 'raccoongang', tokenCredentialId: 'slack-secret-token'
-                    } finally {
-                        archiveArtifacts 'reports/**, test_root/log/**'
-                        stash includes: 'reports/**, test_root/log/**', name: "artifacts-${suite}-${shard}"
-                        junit 'reports/**/*.xml'
-                        deleteDir()
                     }
                 }
             }
@@ -88,6 +101,9 @@ def getSuites() {
             4,
             ]],
         [name: 'cms-unit', 'shards': ['all']],
+        [name: 'accessibility', 'shards': ['all']],
+        [name: 'lms-acceptance', 'shards': ['all']],
+        [name: 'cms-acceptance', 'shards': ['all']],
     ]
 }
 
