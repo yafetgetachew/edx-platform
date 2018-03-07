@@ -7,7 +7,7 @@ channel_name = env.CHANNEL_NAME ?: "ci-open-edx"
 def startTests(suite, shard) {
     return {
         timeout(timeout_ci.toInteger()) {
-            node("worker-.*") {
+            node(^worker-.*$) {
                 wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
                     cleanWs()
                     checkout scm
@@ -44,7 +44,7 @@ def startTests(suite, shard) {
 }
 
 def coverageTest() {
-    node("worker-.*") {
+    node(^worker-.*$) {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
             cleanWs()
             checkout scm
