@@ -7,7 +7,7 @@ channel_name = env.CHANNEL_NAME ?: "ci-open-edx"
 def startTests(suite, shard) {
     return {
         timeout(timeout_ci.toInteger()) {
-            node("${suite}-${shard}-worker") {
+            node("worker-.*") {
                 wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
                     cleanWs()
                     checkout scm
@@ -44,7 +44,7 @@ def startTests(suite, shard) {
 }
 
 def coverageTest() {
-    node('coverage-report-worker') {
+    node("worker-.*") {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
             cleanWs()
             checkout scm
@@ -60,6 +60,7 @@ def coverageTest() {
             unstash "artifacts-lms-unit-2"
             unstash "artifacts-lms-unit-3"
             unstash "artifacts-lms-unit-4"
+            unstash "artifacts-commonlib-unit-all"
             unstash "artifacts-cms-unit-all"
             
             try {
@@ -102,9 +103,7 @@ def getSuites() {
             4,
             ]],
         [name: 'cms-unit', 'shards': ['all']],
-        [name: 'commonlib-js-unit', 'shards': ['all']],
         [name: 'commonlib-unit', 'shards': ['all']],
-        [name: 'quality', 'shards': ['all']],
     ]
 }
 
