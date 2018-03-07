@@ -3,8 +3,10 @@ import logging
 import requests
 from django.conf import settings
 from django.http import Http404
+from djangomako.shortcuts import render_to_string
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.credit.models import CreditEligibility
+from social_django.models import UserSocialAuth
 
 from student.models import CourseEnrollment
 
@@ -14,6 +16,10 @@ VERIFY_ELIGIBLE = (1, 2)
 CREDIT_ELIGIBLE = (1, 3)
 
 
+class HttpLearnerApiException(Exception):
+    pass
+
+
 def get_learner_info(user_id):
     url = getattr(settings, 'ASU_API_URL', '') + "/api/learner?openEdxId={}".format(user_id)
     headers = {
@@ -21,17 +27,17 @@ def get_learner_info(user_id):
         'tokentype': 'OPENEDX',
         'x-api-key': getattr(settings, 'ASU_API_KEY', '')
     }
-    student_status = requests.get(url, headers=headers).json()
-    if student_status and isinstance(student_status, dict):
-        return student_status
-    else:
-        if settings.BETTA_TESTERS_ENABLE:
-            return {
-                'eligibilityStatus': True,
-                'benefitType': 4,
-            }
-        else:
-            raise Http404
+    result = requests.get(url, headers=headers)
+    if result.status_code == 200:
+        student_status = result.json()
+        if student_status and isinstance(student_status, dict):
+            return student_status
+    if not UserSocialAuth.objects.filter(user_id=user_id).exists() and settings.BETTA_TESTERS_ENABLE:
+        return {
+            'eligibilityStatus': True,
+            'benefitType': 4,
+        }
+    raise HttpLearnerApiException
 
 
 def get_credit_convert_eligibility(user, enrollment):

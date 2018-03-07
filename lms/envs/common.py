@@ -1244,6 +1244,9 @@ MIDDLEWARE_CLASSES = (
 
     # This must be last
     'openedx.core.djangoapps.site_configuration.middleware.SessionCookieDomainOverrideMiddleware',
+
+    # Add middleware for handling custom http exception
+    'ospp_api.middleware.CustomHttpExcetionRender',
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
