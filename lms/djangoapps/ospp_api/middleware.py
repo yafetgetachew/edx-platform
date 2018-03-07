@@ -1,7 +1,7 @@
 from edxmako.shortcuts import render_to_response
 
 
-class HttpExcetionRender:
+class CustomHttpExcetionRender:
     def process_exception(self, request, exception):
         if isinstance(exception, Exception):
             name = exception.__class__.__name__
