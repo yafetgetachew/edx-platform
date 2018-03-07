@@ -22,6 +22,7 @@ def startTests(suite, shard) {
                             stash includes: 'reports/**, test_root/log/**', name: "artifacts-${suite}-${shard}"
                             junit 'reports/**/*.xml'
                             deleteDir()
+                        }
                     } else {
                         try {
                             withEnv(["TEST_SUITE=${suite}", "SHARD=${shard}"]) {
