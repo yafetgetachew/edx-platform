@@ -102,9 +102,8 @@ def getSuites() {
             4,
             ]],
         [name: 'cms-unit', 'shards': ['all']],
-        [name: 'accessibility', 'shards': ['all']],
-        [name: 'lms-acceptance', 'shards': ['all']],
-        [name: 'cms-acceptance', 'shards': ['all']],
+        [name: 'commonlib-js-unit', 'shards': ['all']],
+        [name: 'quality', 'shards': ['all']],
     ]
 }
 
