@@ -1,42 +1,21 @@
-#!groovy
-
-timeout_ci = env.CI_TIMEOUT.toInteger() ?: 35
-assert timeout_ci instanceof Integer
-channel_name = env.CHANNEL_NAME ?: "ci-open-edx"
-
 def startTests(suite, shard) {
     return {
-        timeout(timeout_ci.toInteger()) {
-            node('/^worker-.*$/') {
-                wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
-                    cleanWs()
-                    checkout scm
-                    
-                    if (suite == 'accessibility') {
-                        try {
-                             sh './scripts/accessibility-tests.sh'
-                        } catch (err) {
-                            slackSend channel: channel_name, color: 'danger', message: "Test ${suite}-${shard} failed in ${env.JOB_NAME}. Please check build info. (<${env.BUILD_URL}|Open>)", teamDomain: 'raccoongang', tokenCredentialId: 'slack-secret-token'
-                        } finally {
-                            archiveArtifacts 'reports/**, test_root/log/**'
-                            stash includes: 'reports/**, test_root/log/**', name: "artifacts-${suite}-${shard}"
-                            junit 'reports/**/*.xml'
-                            deleteDir()
-                        }
-                    } else {
-                        try {
-                            withEnv(["TEST_SUITE=${suite}", "SHARD=${shard}"]) {
-                                sh './scripts/all-tests.sh'
-                            }
-                        } catch (err) {
-                            slackSend channel: channel_name, color: 'danger', message: "Test ${suite}-${shard} failed in ${env.JOB_NAME}. Please check build info. (<${env.BUILD_URL}|Open>)", teamDomain: 'raccoongang', tokenCredentialId: 'slack-secret-token'
-                        } finally {
-                            archiveArtifacts 'reports/**, test_root/log/**'
-                            stash includes: 'reports/**, test_root/log/**', name: "artifacts-${suite}-${shard}"
-                            junit 'reports/**/*.xml'
-                            deleteDir()
-                        }
+        node("${suite}-${shard}-worker") {
+            wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
+                cleanWs()
+                checkout([$class: 'GitSCM', branches: [[name: '${sha1}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c85e1a1a-1526-4510-8838-eae164048f01', refspec: '+refs/pull/*:refs/remotes/origin/pr/*', url: 'https://github.com/raccoongang/edx-platform']]])
+                
+                try {
+                    withEnv(["TEST_SUITE=${suite}", "SHARD=${shard}"]) {
+                        sh './scripts/all-tests.sh'
                     }
+                } catch (err) {
+                    slackSend channel: channel_name, color: 'danger', message: "Test ${suite}-${shard} failed in ${env.JOB_NAME}. Please check build info. (<${env.BUILD_URL}|Open>)", teamDomain: 'raccoongang', tokenCredentialId: 'slack-secret-token'
+                } finally {
+                    archiveArtifacts 'reports/**, test_root/log/**'
+                    stash includes: 'reports/**, test_root/log/**', name: "artifacts-${suite}-${shard}"
+                    junit 'reports/**/*.xml'
+                    deleteDir()
                 }
             }
         }
@@ -44,10 +23,10 @@ def startTests(suite, shard) {
 }
 
 def coverageTest() {
-    node('/^worker-.*$/') {
+    node("coverage-report-worker") {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
             cleanWs()
-            checkout scm
+            checkout([$class: 'GitSCM', branches: [[name: '${sha1}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c85e1a1a-1526-4510-8838-eae164048f01', refspec: '+refs/pull/*:refs/remotes/origin/pr/*', url: 'https://github.com/raccoongang/edx-platform']]])
             branch_name = env.BRANCH_NAME
             change_target = env.CHANGE_TARGET
 
