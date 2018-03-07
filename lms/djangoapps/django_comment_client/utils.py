@@ -247,22 +247,22 @@ def _sort_map_entries(category_map, sort_alpha):
     """
     Internal helper method to list category entries according to the provided sort order
     """
-    r = re.compile('^([^0-9]*)\s*([0-9]*)[\.,:-_/]*([0-9]*)\s*(.*)$')
+    r = re.compile(ur'^([0-9]*)\s*([0-9]*)([\.,:-_/]*)([0-9]*)\s*(.*)$', re.UNICODE)
     def _title_to_tuple(t):
         res = r.search(t)
         if res:
             res_tuple = res.groups()
-            return (res_tuple[0], int(res_tuple[1] or 0), int(res_tuple[2] or 0), res_tuple[3])
+            return (int(res_tuple[0] or 0), int(res_tuple[1] or 0), res_tuple[2], int(res_tuple[3] or 0), res_tuple[4])
         return t
 
     things = []
     for title, entry in category_map["entries"].items():
         if sort_alpha:
-            if entry["sort_key"] is None:
-                entry["sort_key"] = title
-            entry["sort_key"] = _title_to_tuple(entry["sort_key"])
+            entry["sort_key"] = _title_to_tuple(entry.get("sort_key") or title)
         things.append((title, entry, TYPE_ENTRY))
     for title, category in category_map["subcategories"].items():
+        if sort_alpha:
+            category["sort_key"] = _title_to_tuple(category.get("sort_key") or title)
         things.append((title, category, TYPE_SUBCATEGORY))
         _sort_map_entries(category_map["subcategories"][title], sort_alpha)
     category_map["children"] = [(x[0], x[2]) for x in sorted(things, key=lambda x: x[1]["sort_key"])]
