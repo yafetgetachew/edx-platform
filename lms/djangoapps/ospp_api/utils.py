@@ -16,7 +16,7 @@ VERIFY_ELIGIBLE = (1, 2)
 CREDIT_ELIGIBLE = (1, 3)
 
 
-class HttpLearnerApiExceptin(Exception):
+class HttpLearnerApiException(Exception):
     pass
 
 
@@ -32,12 +32,12 @@ def get_learner_info(user_id):
         student_status = result.json()
         if student_status and isinstance(student_status, dict):
             return student_status
-    if not UserSocialAuth.objects.filter(user_id=user_id).exists():
+    if not UserSocialAuth.objects.filter(user_id=user_id).exists() and settings.BETTA_TESTERS_ENABLE:
         return {
             'eligibilityStatus': True,
             'benefitType': 4,
         }
-    raise HttpLearnerApiExceptin
+    raise HttpLearnerApiException
 
 
 def get_credit_convert_eligibility(user, enrollment):

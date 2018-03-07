@@ -9,7 +9,6 @@ class HttpExcetionRender:
                 return
             name = name.replace('Http', '')
             try:
-                error_response = render_to_response('static_templates/{}.html'.format(name))
-                return error_response
+                return render_to_response('static_templates/{}.html'.format(name))
             except:
                 pass
