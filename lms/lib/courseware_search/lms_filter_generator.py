@@ -133,7 +133,7 @@ class ElasticSearchEngineCustom(ElasticSearchEngine):
 
         body = {
             "query": query,
-            "sort": {"start": {"order": "desc"}}
+            "sort": {"start_date": {"order": "desc"}}
         }
         if facet_terms:
             facet_query = _process_facet_terms(facet_terms)
