@@ -563,7 +563,7 @@ class Courses(SysadminDashboardView):
                 self.def_ms.delete_course(course.id, request.user.id)
 
                 try:
-                    response = self._searcher.search(doc_type="courseware_content", field_dictionary={'course': course_id})
+                    response = self._searcher.search(doc_type="courseware_content", field_dictionary={'course': course_id}, sort={"start_date": {"order": "desc"}})
                     result_ids = [result["data"]["id"] for result in response["results"]]
                     self._searcher.remove('courseware_content', result_ids)
                     self._searcher.remove('course_info', [course_id])

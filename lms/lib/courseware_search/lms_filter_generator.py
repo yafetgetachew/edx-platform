@@ -72,6 +72,7 @@ class ElasticSearchEngineCustom(ElasticSearchEngine):
                facet_terms=None,
                exclude_ids=None,
                use_field_match=False,
+               sort=None,
                **kwargs):  # pylint: disable=too-many-arguments, too-many-locals, too-many-branches
 
         log.debug("searching index with %s", query_string)
@@ -131,9 +132,11 @@ class ElasticSearchEngineCustom(ElasticSearchEngine):
                 }
             }
 
+        sort = sort is None and {"start": {"order": "desc"}} or sort
+
         body = {
             "query": query,
-            "sort": {"start_date": {"order": "desc"}}
+            "sort": sort
         }
         if facet_terms:
             facet_query = _process_facet_terms(facet_terms)
