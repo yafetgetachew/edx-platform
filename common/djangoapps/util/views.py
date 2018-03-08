@@ -632,7 +632,7 @@ def submit_feedback(request):
     if enterprise_learner_data:
         context["tags"]["learner_type"] = "enterprise_learner"
 
-    support_backend = configuration_helpers.get_value('CONTACT_FORM_SUBMISSION_BACKEND', SUPPORT_BACKEND_ZENDESK)
+    support_backend = configuration_helpers.get_value('CONTACT_FORM_SUBMISSION_BACKEND', settings.HELPSDESK_SUPPORT_BACKEND)
 
     if support_backend == SUPPORT_BACKEND_EMAIL:
         try:
