@@ -738,7 +738,12 @@ def students_update_enrollment(request, course_id):
     course_id = CourseKey.from_string(course_id)
     action = request.POST.get('action')
     identifiers_raw = request.POST.get('identifiers')
-    identifiers_raw = _split_input_list(identifiers_raw)
+    refined_identifiers_raw = []
+    
+    for id, details in identifiers_raw:
+        refined_identifiers_raw.append(id)
+    
+    identifiers_raw = _split_input_list(refined_identifiers_raw)
     auto_enroll = _get_boolean_param(request, 'auto_enroll')
     email_students = _get_boolean_param(request, 'email_students')
     is_white_label = CourseMode.is_white_label(course_id)
@@ -900,7 +905,12 @@ def bulk_beta_modify_access(request, course_id):
     course_id = CourseKey.from_string(course_id)
     action = request.POST.get('action')
     identifiers_raw = request.POST.get('identifiers')
-    identifiers = _split_input_list(identifiers_raw)
+    refined_identifiers_raw = []
+
+    for id, details in identifiers_raw:
+        refined_identifiers_raw.append(id)
+    
+    identifiers = _split_input_list(refined_identifiers_raw)
     email_students = _get_boolean_param(request, 'email_students')
     auto_enroll = _get_boolean_param(request, 'auto_enroll')
     results = []
