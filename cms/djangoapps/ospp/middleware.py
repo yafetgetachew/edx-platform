@@ -24,7 +24,10 @@ class FromStudentProtectMiddleware(object):
             except InvalidKeyError:
                 is_forbidden = True
             else:
-                is_forbidden = not has_access(request.user, 'instructor', course_key)
+                is_forbidden = not (
+                        has_access(request.user, 'instructor', course_key)
+                        or has_access(request.user, 'staff', course_key)
+                )
         else:
             is_forbidden = not request.user.is_staff
 
