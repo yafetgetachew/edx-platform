@@ -39,6 +39,7 @@ def add_grades(statistic_map):
     for statistic_id, data in statistic_map.iteritems():
         if 'finalGrade' not in data:
             continue
+
         username, course_id = statistic_id.split('::', 1)
         try:
             course_key = CourseKey.from_string(course_id)
@@ -50,26 +51,12 @@ def add_grades(statistic_map):
 
         course_grade = CourseGradeFactory().create(user, course)
         grade_summary = course_grade.summary
-
-        persent_current = grade_summary['percent']
-
-        assessments = course.grading_policy['GRADE_CUTOFFS']
-        assessments_sorted = sorted(assessments.items(), key=lambda x: x[1])
-
-        assessment_key_maximum = assessments_sorted[-1][0]
-
-        assessment_key_next = ''
-
-        for count, assessment in enumerate(assessments_sorted):
-            if persent_current >= assessment[1]:
-                assessment_key_current = assessment[0]
-                if assessment_key_current != assessment_key_maximum:
-                    assessment_key_next = assessments_sorted[count + 1][0]
-        if assessment_key_next:
-            data['finalGrade'] = assessment_key_next
-            data['grade'] = persent_current/100
+        final_grade = grade_summary['grade']
+        if final_grade:
+            data['finalGrade'] = final_grade
         else:
             data.pop('finalGrade', None)
+        data['grade'] = grade_summary['percent']
 
 
 @CELERY_APP.task
