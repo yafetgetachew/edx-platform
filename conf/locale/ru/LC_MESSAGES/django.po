@@ -790,9 +790,15 @@ msgstr "Начальное"
 msgid "No formal education"
 msgstr "Нет формального образования"
 
+msgid "No Formal Education"
+msgstr "Нет формального образования"
+
 #. Translators: 'Other' refers to the student's level of education
 #: common/djangoapps/student/models.py
 msgid "Other education"
+msgstr "Другое образование"
+
+msgid "Other Education"
 msgstr "Другое образование"
 
 #: common/djangoapps/student/models.py
@@ -12231,6 +12237,9 @@ msgstr "Забыли пароль?"
 msgid "example: Jane Doe"
 msgstr "образец: Мария Иванова"
 
+msgid "Jane Doe"
+msgstr "Ломоносов Михаил Васильевич"
+
 #. Translators: This is the placeholder text for a field that asks the user to
 #. pick a username
 #: cms/templates/register.html lms/templates/register-form.html
@@ -12239,6 +12248,9 @@ msgstr "образец: Мария Иванова"
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "example: JaneDoe"
 msgstr "образец: maria_ivanova"
+
+msgid "JaneDoe"
+msgstr "MihailoLomonosov"
 
 #: cms/templates/settings.html
 #: lms/templates/instructor/instructor_dashboard_2/executive_summary.html
