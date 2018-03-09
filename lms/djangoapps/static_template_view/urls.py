@@ -18,7 +18,7 @@ urlpatterns = (
     url(r'^500$', 'render_500'),
 
     url(r'^blog$', 'render', {'template': 'blog.html'}, name="blog"),
-    url(r'^contact$', 'render', {'template': 'contact.html'}, name="contact"),
+#    url(r'^contact$', 'render', {'template': 'contact.html'}, name="contact"),
     url(r'^donate$', 'render', {'template': 'donate.html'}, name="donate"),
     url(r'^faq$', 'render', {'template': 'faq.html'}, name="faq"),
     url(r'^help$', 'render', {'template': 'help.html'}, name="help_edx"),
@@ -40,7 +40,7 @@ for key, value in settings.MKTG_URL_LINK_MAP.items():
         continue
 
     # These urls are enabled separately
-    if key == "ROOT" or key == "COURSES":
+    if key == "ROOT" or key == "COURSES" or key == 'CONTACT':
         continue
 
     # The MKTG_URL_LINK_MAP key specifies the template filename

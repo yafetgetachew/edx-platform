@@ -2282,7 +2282,7 @@ EDXMKTG_USER_INFO_COOKIE_VERSION = 1
 MKTG_URLS = {}
 MKTG_URL_LINK_MAP = {
     'ABOUT': 'about',
-    'CONTACT': 'contact',
+#    'CONTACT': 'contact',
     'FAQ': 'help',
     'COURSES': 'courses',
     'ROOT': 'root',
