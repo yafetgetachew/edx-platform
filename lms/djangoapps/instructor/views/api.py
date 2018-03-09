@@ -634,7 +634,7 @@ def create_and_register_users_without_email(request):
     enrolled_by = request.user
 
     for id, details in identifiers_raw.items():
-        identifiers.append(id)
+        identifiers.append(str(id))
 
     # compile list of email adresses
     
@@ -741,7 +741,7 @@ def students_update_enrollment(request, course_id):
     refined_identifiers_raw = []
     
     for id, details in identifiers_raw.items():
-        refined_identifiers_raw.append(id)
+        refined_identifiers_raw.append(str(id))
     
     identifiers_raw = refined_identifiers_raw
     auto_enroll = _get_boolean_param(request, 'auto_enroll')
@@ -908,7 +908,7 @@ def bulk_beta_modify_access(request, course_id):
     refined_identifiers_raw = []
 
     for id, details in identifiers_raw.items():
-        refined_identifiers_raw.append(id)
+        refined_identifiers_raw.append(str(id))
     
     identifiers = refined_identifiers_raw
     email_students = _get_boolean_param(request, 'email_students')
