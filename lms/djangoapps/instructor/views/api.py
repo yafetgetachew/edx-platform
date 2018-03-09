@@ -633,7 +633,7 @@ def create_and_register_users_without_email(request):
     course_mode = request.POST.get('course_mode')
     enrolled_by = request.user
 
-    for id, details in identifiers_raw:
+    for id, details in identifiers_raw.items():
         identifiers.append(id)
 
     # compile list of email adresses
@@ -740,10 +740,10 @@ def students_update_enrollment(request, course_id):
     identifiers_raw = request.POST.get('identifiers')
     refined_identifiers_raw = []
     
-    for id, details in identifiers_raw:
+    for id, details in identifiers_raw.items():
         refined_identifiers_raw.append(id)
     
-    identifiers_raw = _split_input_list(refined_identifiers_raw)
+    identifiers_raw = refined_identifiers_raw
     auto_enroll = _get_boolean_param(request, 'auto_enroll')
     email_students = _get_boolean_param(request, 'email_students')
     is_white_label = CourseMode.is_white_label(course_id)
@@ -907,10 +907,10 @@ def bulk_beta_modify_access(request, course_id):
     identifiers_raw = request.POST.get('identifiers')
     refined_identifiers_raw = []
 
-    for id, details in identifiers_raw:
+    for id, details in identifiers_raw.items():
         refined_identifiers_raw.append(id)
     
-    identifiers = _split_input_list(refined_identifiers_raw)
+    identifiers = refined_identifiers_raw
     email_students = _get_boolean_param(request, 'email_students')
     auto_enroll = _get_boolean_param(request, 'auto_enroll')
     results = []
