@@ -473,19 +473,22 @@ def generate_unique_password(generated_passwords, password_length=12):
     return password
 
 
-def create_user_and_user_profile(email, username, name, country, password):
+def create_user_and_user_profile(email, username, name, last_name='', country, password):
     """
     Create a new user, add a new Registration instance for letting user verify its identity and create a user profile.
 
     :param email: user's email address
     :param username: user's username
     :param name: user's name
+    :param last_name: users last name
     :param country: user's country
     :param password: user's password
 
     :return: User instance of the new user.
     """
     user = User.objects.create_user(username, email, password)
+    user.first_name = name
+    user.last_name = last_name
     reg = Registration()
     reg.register(user)
 
@@ -624,11 +627,14 @@ def create_and_register_users_without_email(request):
 
     enrollment_result = {}
     identifiers_raw = request.POST.get('identifiers')
-    identifiers = identifiers_raw.split(',')
+    identifiers = []
     email_extension = request.POST.get('email_extension', None)
     country = request.POST.get('country')
     course_mode = request.POST.get('course_mode')
     enrolled_by = request.user
+
+    for id, details in identifiers_raw:
+        identifiers.append(id)
 
     # compile list of email adresses
     
@@ -638,7 +644,7 @@ def create_and_register_users_without_email(request):
     else:
       list_of_emails_or_usernames = identifiers
 
-    # query database for all users holding these emails
+    # query database for all users holding these emails or identifiers
     user_list = USER_MODEL.objects.filter(
         Q(username__in=list_of_emails_or_usernames) | 
         Q(email__in=list_of_emails_or_usernames)
@@ -651,8 +657,9 @@ def create_and_register_users_without_email(request):
     
     for email in list(new_users_to_register):
         identifier = email.split('@')[0]
-        email = email
-        name = '{}'.format(identifier)
+        details = identifiers_raw.get(identifier)
+        name = '{}'.format(details.get('firstname'))
+        last_name = '{}'.format(details.get('lastname'))
         password = '{}12345'.format(identifier)
         user_exists =\
             User.objects.filter(Q(username=identifier)|Q(email=email)).exists()
@@ -663,6 +670,7 @@ def create_and_register_users_without_email(request):
                     email,
                     identifier,
                     name,
+                    last_name,
                     country,
                     password
                 )

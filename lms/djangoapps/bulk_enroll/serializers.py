@@ -50,7 +50,7 @@ class BulkRegisterEnrollSerializer(serializers.Serializer):
 
     This is mainly useful for implementing validation when performing bulk enrollment operations.
     """
-    identifiers = serializers.CharField(required=True)
+    identifiers = serializers.DictField(required=True)
     courses = StringListField(required=True)
     action = serializers.ChoiceField(
         choices=(
