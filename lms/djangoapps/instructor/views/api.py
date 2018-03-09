@@ -473,7 +473,7 @@ def generate_unique_password(generated_passwords, password_length=12):
     return password
 
 
-def create_user_and_user_profile(email, username, name, last_name='', country, password):
+def create_user_and_user_profile(email, username, name, last_name, country, password):
     """
     Create a new user, add a new Registration instance for letting user verify its identity and create a user profile.
 
@@ -547,7 +547,7 @@ def create_and_enroll_user(email, username, name, country, password, course_id, 
     try:
         with transaction.atomic():
             # Create a new user
-            user = create_user_and_user_profile(email, username, name, country, password)
+            user = create_user_and_user_profile(email, username, name, '', country, password)
 
             # Enroll user to the course and add manual enrollment audit trail
             create_manual_course_enrollment(
