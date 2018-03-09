@@ -14589,7 +14589,7 @@ msgstr "Zkuste kurz s  {platform} online"
 
 #: lms/templates/courseware/course_about_sidebar_header.html
 msgid "I just enrolled in {number} {title} through {platform} {url}"
-msgstr "Právě jsem se zapsal/a do {number} {title} pomocí {account} {url}."
+msgstr "Právě jsem se zapsal/a do {number} {title} pomocí {platform} {url}."
 
 #: lms/templates/courseware/course_about_sidebar_header.html
 #: themes/stanford-style/lms/templates/courseware/course_about_sidebar_header.html
