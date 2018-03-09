@@ -4,6 +4,7 @@ from opaque_keys.edx.keys import CourseKey
 
 from courseware.access import has_access
 from edxmako.shortcuts import render_to_response
+from student.models import CourseAccessRole
 
 
 class FromStudentProtectMiddleware(object):
@@ -29,7 +30,10 @@ class FromStudentProtectMiddleware(object):
                         or has_access(request.user, 'staff', course_key)
                 )
         else:
-            is_forbidden = not request.user.is_staff
+            is_forbidden = not CourseAccessRole.objects.filter(
+                user=request.user,
+                role__in=['instructor', 'staff']
+            ).exists()
 
         if is_forbidden:
             return render_to_response('ospp/now_allowed_user.html', {})

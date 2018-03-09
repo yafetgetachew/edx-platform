@@ -34,8 +34,8 @@ def get_learner_info(user_id):
             return student_status
     if not UserSocialAuth.objects.filter(user_id=user_id).exists() and settings.BETTA_TESTERS_ENABLE:
         return {
-            'eligibilityStatus': True,
-            'benefitType': 4,
+            'eligibilityStatus': "true",
+            'benefitType': 1,
         }
     raise HttpLearnerApiException
 
