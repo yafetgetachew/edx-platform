@@ -12,6 +12,7 @@ from django.utils import translation
 from django.utils.translation.trans_real import get_supported_language_variant
 from django.views.decorators.cache import cache_control
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.http import require_http_methods
 
 import branding.api as branding_api
 import courseware.views.views
@@ -21,6 +22,7 @@ from openedx.core.djangoapps.lang_pref.api import released_languages
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from util.cache import cache_if_anonymous
 from util.json_request import JsonResponse
+from .forms import ContactForm
 
 log = logging.getLogger(__name__)
 
@@ -308,3 +310,19 @@ def footer(request):
 
     else:
         return HttpResponse(status=406)
+
+
+@require_http_methods(['GET', 'POST'])
+def contact_form(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        saved = form.save()
+        if saved:
+            return redirect(reverse('contact_form_sended'))
+    else:
+        form = ContactForm()
+    return render_to_response('static_templates/contact.html', {'form': form})
+
+
+def contact_form_sended(request):
+    return render_to_response('static_templates/contact_form_sended.html')

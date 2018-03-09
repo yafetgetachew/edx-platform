@@ -1,5 +1,8 @@
 <%page expression_filter="h"/>
-<%! from django.utils.translation import ugettext as _ %>
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+%>
 <%inherit file="../main.html" />
 
 <%block name="pagetitle">${_("Contact")}</%block>
@@ -7,6 +10,9 @@
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="container about">
         <h1>${_("Contact")}</h1>
-        <p>${_("This page left intentionally blank. Feel free to add your own content.")}</p>
+        <form id="contact_form" name="contact_form" class="" action="${reverse('contact_form')}" method="post">
+          <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
+          ${form.as_ul() | n}
+          <button type="submit">${_('Submit')}</button>
     </section>
 </main>

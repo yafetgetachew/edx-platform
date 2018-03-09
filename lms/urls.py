@@ -1037,3 +1037,8 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
 urlpatterns += (
     url(r'^category/', include('course_category.urls')),
 )
+
+urlpatterns += (
+    url(r'^contact/$', 'branding.views.contact_form', name='contact_form'),
+    url(r'^contact_form_sended/$', 'branding.views.contact_form_sended', name='contact_form_sended'),
+)
