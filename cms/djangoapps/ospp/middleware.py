@@ -9,6 +9,7 @@ from student.models import CourseAccessRole
 
 class FromStudentProtectMiddleware(object):
     COURSE_PATTERN = r'([^/:]+:[^/+]+\+[^/+]+\+[^/]+)(\+type@|/|[$]?)'
+    LIB_PATTERN = r'([^/:]+:[^/+]+\+[^/+]+)(\+type@|/|[$]?)'
     DEPRECATED_COURSE_PATTERN = r'([^/]+/[^/]+/[^/]+)'
 
     def process_request(self, request):
@@ -19,7 +20,15 @@ class FromStudentProtectMiddleware(object):
 
         if course_id_regexp:
             # convert item locator to the course ID.
-            course_id = course_id_regexp.group(1).replace('block-v1:', 'course-v1:')
+            course_id = course_id_regexp.group(1)
+            if 'block-v1:' in course_id:
+                course_id = course_id.replace('block-v1:', 'course-v1:')
+            if 'lib' in course_id.split(';')[0]:
+                course_id = re.search(self.LIB_PATTERN, course_id).group(1)
+                if 'lib-block-v1' in course_id:
+                    course_id = course_id.replace('lib-block-v1', 'library-v1')
+                elif 'lib-course-v1' in course_id:
+                    course_id = course_id.replace('lib-course-v1', 'library-v1')
             try:
                 course_key = CourseKey.from_string(course_id)
             except InvalidKeyError:
@@ -31,7 +40,7 @@ class FromStudentProtectMiddleware(object):
                 )
         else:
             is_forbidden = not CourseAccessRole.objects.filter(
-                user=request.user,
+                user__id=request.user.id,
                 role__in=['instructor', 'staff']
             ).exists()
 
