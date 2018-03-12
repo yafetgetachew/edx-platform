@@ -387,8 +387,8 @@ class OsppDashboardView(MethodViewWithMakoMixin, View):
     """
     Overwrite original dashboard view.
 
-    This view - wrapper under original dashboard view (student.views.dashboard).
-    It sends studio_access parameter to the template render.
+    This view - wrapper over the original dashboard view (student.views.dashboard).
+    It sends studio_access parameter to the rendered template.
     """
 
     def view_module(self):
