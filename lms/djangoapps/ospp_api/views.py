@@ -30,7 +30,7 @@ from enrollment import api
 from enrollment.errors import CourseEnrollmentError, CourseEnrollmentExistsError, CourseModeNotFoundError
 from enrollment.views import REQUIRED_ATTRIBUTES
 from ospp_api.models import OSPPEnrollmentFeature
-from ospp_api.utils import MethodViewWithMakoWrapper
+from ospp_api.utils import MethodViewWithMakoMixin
 from student.models import CourseEnrollment, User, CourseAccessRole
 from student.views import create_account_with_params
 from third_party_auth.models import SAMLProviderConfig
@@ -383,11 +383,11 @@ def ospp_registration_stub(request):
     return render_to_response('ospp/blank_registration.html', {})
 
 
-class OsppDashboard(MethodViewWithMakoWrapper, View):
+class OsppDashboard(MethodViewWithMakoMixin, View):
 
     def view_module(self):
-        import student.views as ds
-        return ds
+        from student import views
+        return views
 
     def update_context(self, request, context):
         context['studio_access'] = CourseAccessRole.objects.filter(
@@ -397,6 +397,8 @@ class OsppDashboard(MethodViewWithMakoWrapper, View):
         return context
 
     def get(self, request):
+        # Called method dashboard from the patched module (represents original student`s dashboard view with the
+        # updated context)
         return self.get_patched_module(request).dashboard(request)
 
 
