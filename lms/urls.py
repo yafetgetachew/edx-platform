@@ -1,7 +1,7 @@
 """
 URLs for LMS
 """
-
+import logging
 from config_models.views import ConfigurationModelCurrentAPIView
 from django.conf import settings
 from django.conf.urls import include, patterns, url
@@ -21,6 +21,7 @@ from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.features.enterprise_support.api import enterprise_enabled
 
+logger = logging.getLogger(__name__)
 
 if settings.DEBUG or settings.FEATURES.get('ENABLE_DJANGO_ADMIN_SITE'):
     django_autodiscover()
@@ -1068,4 +1069,5 @@ try:
         url(r'^api/', include('genesys.urls')),
     )
 except:
-    print "****************************" 
+    logger.error('Genesys urls could not be loaded, make sure GenesysXBlock is installed')
+    
