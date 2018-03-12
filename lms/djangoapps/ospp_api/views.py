@@ -30,7 +30,8 @@ from enrollment import api
 from enrollment.errors import CourseEnrollmentError, CourseEnrollmentExistsError, CourseModeNotFoundError
 from enrollment.views import REQUIRED_ATTRIBUTES
 from ospp_api.models import OSPPEnrollmentFeature
-from student.models import CourseEnrollment, User
+from ospp_api.utils import MethodViewWithMakoWrapper
+from student.models import CourseEnrollment, User, CourseAccessRole
 from student.views import create_account_with_params
 from third_party_auth.models import SAMLProviderConfig
 
@@ -380,6 +381,23 @@ class EnrollUserView(APIView):
 
 def ospp_registration_stub(request):
     return render_to_response('ospp/blank_registration.html', {})
+
+
+class OsppDashboard(MethodViewWithMakoWrapper, View):
+
+    def view_module(self):
+        import student.views as ds
+        return ds
+
+    def update_context(self, request, context):
+        context['studio_access'] = CourseAccessRole.objects.filter(
+            user__id=request.user.id,
+            role__in=['instructor', 'staff']
+        ).exists()
+        return context
+
+    def get(self, request):
+        return self.get_patched_module(request).dashboard(request)
 
 
 class RoutView(View):

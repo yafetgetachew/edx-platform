@@ -1,9 +1,9 @@
 import logging
 
 import requests
+from abc import abstractmethod, ABCMeta
 from django.conf import settings
-from django.http import Http404
-from djangomako.shortcuts import render_to_string
+from edxmako.shortcuts import render_to_string, render_to_response
 from opaque_keys.edx.keys import CourseKey
 from openedx.core.djangoapps.credit.models import CreditEligibility
 from social_django.models import UserSocialAuth
@@ -84,3 +84,53 @@ def update_user_state_from_eligible(user, course_key):
 
     status = get_learner_info(user.id)
     applay_user_status_to_enroll(user, course_enrollment, status)
+
+
+class MethodViewWithMakoWrapper:
+    """
+    Uses for wrap methodbase view to manipulate context for template render.
+
+    Implement view_module for define parent view module. After that use next construction
+    self.get_patched_module(request).method_base_view(args), where method_base_view - name of the view
+    and args - original set of arguments.
+
+    Note: work only with views, that use render_to_response or render_to_string from the edxmako.shortcuts module,
+    when render template.
+    """
+
+    __metaclass__ = ABCMeta
+
+    def get_patched_module(self, original_request):
+        def fake_render_to_response(template_name,
+                                    dictionary=None,
+                                    context_instance=None,
+                                    namespace='main',
+                                    request=None,
+                                    **kwargs
+                                    ):
+            dictionary = self.update_context(original_request, dictionary or {})
+            return render_to_response(template_name, dictionary, context_instance, namespace, request, **kwargs)
+
+        def fake_render_to_string(template_name, dictionary, context=None, namespace='main', request=None):
+            dictionary = self.update_context(original_request, dictionary or {})
+            return render_to_string(template_name, dictionary, context, namespace, request)
+
+        import student.views as ds
+        ds.render_to_response = fake_render_to_response
+        ds.render_to_string = fake_render_to_string
+        return ds
+
+    @abstractmethod
+    def view_module(self):
+        """
+        :return: Construction like this  import module.submodule as module; return module;
+        """
+        pass
+
+    def update_context(self, request, context):
+        """
+        Update context before template render
+
+        Return new context
+        """
+        return context
