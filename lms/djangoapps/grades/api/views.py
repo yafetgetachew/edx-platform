@@ -91,7 +91,7 @@ def get_user_grades(user, course, course_str, course_grade):
                             "earned" :problem_score.earned,
                             "possible" :problem_score.possible,
                             "xblock_content_url": "{}{}".format(settings.LMS_ROOT_URL, xblock_content_url),
-                            "xblock_structure_url": "{}{}".format(settings.LMS_ROOT_URL,xblock_structure_url)
+                            "xblock_structure_url": "{}".format(xblock_structure_url)
                         }
                     else:
                         sections_scores[str(problem_key)] = "This block has no grades"

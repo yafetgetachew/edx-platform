@@ -1060,3 +1060,12 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+
+try:
+    # include into our URL patterns the HTTP REST API that comes with genesys-xblock.
+    urlpatterns += (
+        url(r'^api/', include('genesys.urls')),
+    )
+except:
+    print "****************************" 
