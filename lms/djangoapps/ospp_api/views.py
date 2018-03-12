@@ -383,7 +383,13 @@ def ospp_registration_stub(request):
     return render_to_response('ospp/blank_registration.html', {})
 
 
-class OsppDashboard(MethodViewWithMakoMixin, View):
+class OsppDashboardView(MethodViewWithMakoMixin, View):
+    """
+    Overwrite original dashboard view.
+
+    This view - wrapper under original dashboard view (student.views.dashboard).
+    It sends studio_access parameter to the template render.
+    """
 
     def view_module(self):
         from student import views

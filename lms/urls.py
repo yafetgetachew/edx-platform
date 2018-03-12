@@ -19,7 +19,7 @@ from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.features.enterprise_support.api import enterprise_enabled
 
-from ospp_api.views import OsppDashboard
+from ospp_api.views import OsppDashboardView
 from student.views import register_auth0, register_user
 from student_account.views import login_and_registration_form
 
@@ -37,7 +37,7 @@ urlpatterns = (
 
     url(r'', include('student.urls')),
     # TODO: Move lms specific student views out of common code
-    url(r'^dashboard$', OsppDashboard.as_view(), name="dashboard"),
+    url(r'^dashboard$', OsppDashboardView.as_view(), name="dashboard"),
     url(r'^change_enrollment$', 'student.views.change_enrollment', name='change_enrollment'),
 
     # Event tracking endpoints
