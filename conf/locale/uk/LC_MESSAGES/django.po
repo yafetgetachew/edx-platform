@@ -20652,13 +20652,15 @@ msgstr ""
 
 #: cms/templates/500.html
 msgid "The {em_start}{studio_name}{em_end} servers encountered an error"
-msgstr ""
+msgstr "На серверах {studio_name} сталася помилка"
 
 #: cms/templates/500.html
 msgid ""
 "An error occurred in {studio_name} and the page could not be loaded. Please "
 "try again in a few moments."
 msgstr ""
+"Виникла помилка в {studio_name}, і не вдалося завантажити сторінку. Будь ласка, "
+"спробуйте ще раз через кілька хвилин."
 
 #: cms/templates/500.html
 msgid ""
@@ -21064,7 +21066,7 @@ msgstr ""
 
 #: cms/templates/course-create-rerun.html
 msgid "Create a re-run of a course"
-msgstr ""
+msgstr "Створити перезапуск курсу"
 
 #: cms/templates/course-create-rerun.html
 msgid "You are creating a re-run from:"
@@ -21075,12 +21077,16 @@ msgid ""
 "Provide identifying information for this re-run of the course. The original "
 "course is not affected in any way by a re-run."
 msgstr ""
+"Надайте інформацію для цього перезапуску курсу. Оригінальний курс ніяким чином "
+"не буде змінено."
 
 #: cms/templates/course-create-rerun.html
 msgid ""
 "Note: Together, the organization, course number, and course run must "
 "uniquely identify this new course instance."
 msgstr ""
+"Примітка: організація, номер курсу та запуск курсу, разом, повинні бути унікальним "
+"ідентифікатором нового екземпляру курсу."
 
 #: cms/templates/course-create-rerun.html
 msgid "Required Information to Create a re-run of a course"
@@ -21097,6 +21103,8 @@ msgid ""
 "The public display name for the new course. (This name is often the same as "
 "the original course name.)"
 msgstr ""
+"Загальнодоступне відображення назви нового курсу. (Ця назва часто така сама, "
+"як і назва оригінального курсу.)"
 
 #: cms/templates/course-create-rerun.html cms/templates/index.html
 #: cms/templates/settings.html
@@ -21117,10 +21125,12 @@ msgid ""
 "The name of the organization sponsoring the new course. (This name is often "
 "the same as the original organization name.)"
 msgstr ""
+"Назва організації, що фінансує новий курс. (Ця назва часто така сама, як і "
+"назва організації оригінального курсу.)"
 
 #: cms/templates/course-create-rerun.html
 msgid "Note: No spaces or special characters are allowed."
-msgstr ""
+msgstr "Примітка. Не дозволяється використовувати пробіли або спеціальні символи."
 
 #. Translators: This is an example for the number used to identify a course,
 #. seen when filling out the form to create a new course. The number here is
@@ -21136,6 +21146,14 @@ msgid ""
 "(This number will be the same as the original course number and cannot be "
 "changed.)"
 msgstr ""
+
+#: cms/templates/course-create-rerun.html
+msgid ""
+"The unique number that identifies the new course within the organization.  "
+"(This number is often the same as the original course number.)"
+msgstr ""
+"Унікальний номер, який визначає новий курс в організації. (Цей номер часто "
+"збігається з номером оригінального курсу.)"
 
 #: cms/templates/course-create-rerun.html cms/templates/index.html
 #: cms/templates/settings.html
@@ -21154,6 +21172,8 @@ msgid ""
 "The term in which the new course will run. (This value is often different "
 "than the original course run value.)"
 msgstr ""
+"Термін в який стартує новий курс. (Це значення часто відрізняється від "
+"значення оригінального курсу.)"
 
 #: cms/templates/course-create-rerun.html
 msgid "Create Re-run"
@@ -21161,15 +21181,15 @@ msgstr "Створити повторну операцію"
 
 #: cms/templates/course-create-rerun.html
 msgid "When will my course re-run start?"
-msgstr ""
+msgstr "Коли розпочнеться мій перезапуск курсу?"
 
 #: cms/templates/course-create-rerun.html
 msgid "The new course is set to start on January 1, 2030 at midnight (UTC)."
-msgstr ""
+msgstr "Новий курс розпочнеться 1 січня 2030 року опівночі (UTC)."
 
 #: cms/templates/course-create-rerun.html
 msgid "What transfers from the original course?"
-msgstr ""
+msgstr "Що буде перенесено з оригінального курсу?"
 
 #: cms/templates/course-create-rerun.html
 msgid ""
@@ -21177,10 +21197,12 @@ msgid ""
 "course. All problems, videos, announcements, and other files are duplicated "
 "to the new course."
 msgstr ""
+"Новий курс має ту ж саму структуру та контент, який мав курс-оригінал. Усі "
+"завдання, видео, оголошення та інші файли будуть дублюватися у новому курсі."
 
 #: cms/templates/course-create-rerun.html
 msgid "What does not transfer from the original course?"
-msgstr ""
+msgstr "Що не буде перенесено з оригінального курсу?"
 
 #: cms/templates/course-create-rerun.html
 msgid ""
@@ -21188,6 +21210,9 @@ msgid ""
 "in the course, and there is no student data. There is no content in the "
 "discussion topics or wiki."
 msgstr ""
+"Тільки ви були додані до списку персоналу нового курсу. Наразі на курс не "
+"зарахований жоден студент, і не існує даних студентів. У темах обговорень "
+"та вікі немає контенту."
 
 #: cms/templates/course-create-rerun.html
 msgid "Learn more about Course Re-runs"

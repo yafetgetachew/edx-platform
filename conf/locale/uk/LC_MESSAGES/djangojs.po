@@ -4161,10 +4161,13 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
-"Error starting a task to reset attempts for all students on problem '<%- "
+"Error starting a task to reset attempts for all students on problem '<%= "
 "problem_id %>'. Make sure that the problem identifier is complete and "
 "correct."
 msgstr ""
+"Неможливо запустити задачу і скинути спроби для усіх студентів у "
+"завданні '<%= problem_id %>'. Переконайтеся, що ідентифікатор завдання повний "
+"та коректний."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Error listing task history for this student and problem."
@@ -10632,7 +10635,7 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-not-found.underscore
 #: cms/templates/js/video/transcripts/messages/transcripts-uploaded.underscore
 msgid "Download Transcript for Editing"
-msgstr ""
+msgstr "Завантажити транскрипт для редагування"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-import.underscore
 msgid "No EdX Timed Transcript"
@@ -10654,13 +10657,13 @@ msgstr "Імпортувати транскрипт з YouTube"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-not-found.underscore
 msgid "No Timed Transcript"
-msgstr ""
+msgstr "Синхронних транскриптів не знайдено"
 
 #: cms/templates/js/video/transcripts/messages/transcripts-not-found.underscore
 msgid ""
 "EdX doesn\\'t have a timed transcript for this video. Please upload an .srt "
 "file."
-msgstr ""
+msgstr "Будь ласка, завантажте .srt file."
 
 #: cms/templates/js/video/transcripts/messages/transcripts-replace.underscore
 msgid ""
