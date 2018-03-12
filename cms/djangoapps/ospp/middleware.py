@@ -8,7 +8,7 @@ from student.models import CourseAccessRole
 
 
 class FromStudentProtectMiddleware(object):
-    COURSE_PATTERN = r'([^/:]+:[^/+]+\+[^/+]+\+[^/]+)(\+type@|/|[$]?)'
+    COURSE_PATTERN = r'([^/:]+:[^/+]+\+[^/+]+\+[^/+]+)(\+type@|/|[$]?)'
     LIB_PATTERN = r'([^/:]+:[^/+]+\+[^/+]+)(\+type@|/|[$]?)'
     DEPRECATED_COURSE_PATTERN = r'([^/]+/[^/]+/[^/]+)'
 
