@@ -2865,6 +2865,7 @@ OPTIONAL_APPS = [
 
     # Organizations App (http://github.com/edx/edx-organizations)
     ('organizations', None),
+    ('genesys', None),
 
     # Enterprise Apps (http://github.com/edx/edx-enterprise)
     ('enterprise', None),
