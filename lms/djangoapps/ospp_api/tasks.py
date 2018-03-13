@@ -51,10 +51,12 @@ def add_grades(statistic_map):
 
         course_grade = CourseGradeFactory().create(user, course)
         grade_summary = course_grade.summary
-        final_grade = grade_summary['grade']
+        final_grade = grade_summary.get('grade')
         if final_grade:
             data['finalGrade'] = final_grade
         else:
+            # finalGrade passed to data map with an empty value for feature calculation.
+            # In case, when we can not calculate the value we don't send an empty value to the server.
             data.pop('finalGrade', None)
         data['grade'] = grade_summary['percent']
 
