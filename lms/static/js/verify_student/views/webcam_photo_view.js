@@ -84,7 +84,11 @@
                  getUserMediaCallback: function(stream) {
                      var video = this.getVideo();
                      this.stream = stream;
-                     video.src = this.URL.createObjectURL(stream);
+                     try {
+                         video.srcObject = stream;
+                     } catch (error) {
+                         video.src = URL.createObjectURL(stream);
+                     }
                      video.play();
                      this.trigger('webcam-loaded');
                  },
