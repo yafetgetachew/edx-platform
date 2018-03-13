@@ -25669,3 +25669,10 @@ msgstr "أُنشأت مراجعة جديدة: الدمج بين المراجعة
 
 msgid "Enroll"
 msgstr "سجّل"
+
+msgid ""
+"Are you sure you want to unenroll from %(course_name)s (%(course_number)s)?"
+msgstr ""
+"هل أنت متأكّد من رغبتك في إلغاء تسجيلك في مساق %(course_name)s "
+"(%(course_number)s)؟"
+
