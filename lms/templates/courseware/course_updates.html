@@ -3,7 +3,12 @@
   % for index, update in enumerate(visible_updates):
     <article class="updates-article">
       % if not update.get("is_error"):
-        <h5 class="date" id="msg-date-${index}">${update.get("date")}</h5>
+        <%
+          update_date = update.get("date")
+          update_month = update_date.split(' ')[0]
+          update_day_year = update_date.replace(update_month, '')
+        %>
+        <h5 class="date" id="msg-date-${index}">${_(update_month)}${update_day_year}</h5>
         <button
             class="toggle-visibility-button"
             data-hide="${_('Hide')}"
@@ -33,7 +38,12 @@
 <div class="old-updates hidden toggle-visibility-element" id="old-updates">
   % for index, update in enumerate(hidden_updates):
     <article class="updates-article">
-      <h5 class="date" id="msg-date-${index + len(visible_updates)}">${update.get("date")}</h5>
+      <%
+        update_date = update.get("date")
+        update_month = update_date.split(' ')[0]
+        update_day_year = update_date.replace(update_month, '')
+      %>
+      <h5 class="date" id="msg-date-${index + len(visible_updates)}">${_(update_month)}${update_day_year}</h5>
       <button
           class="toggle-visibility-button"
           data-hide="${_('Hide')}"

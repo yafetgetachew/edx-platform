@@ -3,10 +3,12 @@
     import bleach
     import json
     import math
-    
+
     from openedx.core.djangolib.js_utils import (
         dump_js_escaped_json, js_escaped_string
     )
+
+    from django.utils.translation import ugettext as _
 %>
 
 $(function () {
@@ -58,7 +60,7 @@ $(function () {
             
       if section['category'] not in categories:
           colorIndex = len(categories) % len(colors)
-          categories[ section['category'] ] = {'label' : section['category'], 
+          categories[ section['category'] ] = {'label' : section['category'],
                                               'data' : [], 
                                               'color' : colors[colorIndex]}
       
@@ -116,7 +118,7 @@ $(function () {
             
             detail_tooltips[section['category'] + "-grade_breakdown"] = [ section['detail'] ]
   
-    ticks += [ [overviewBarX, "Total"] ]
+    ticks += [ [overviewBarX, _("Total ")] ]
     tickIndex += 1 + sectionSpacer
   
   totalScore = grade_summary['percent']
@@ -132,7 +134,7 @@ $(function () {
     for grade in descending_grades:
         percent = grade_cutoffs[grade]
         ## safe-lint: disable=javascript-jquery-append
-        grade_cutoff_ticks.append( [ percent, u"{0} {1:.0%}".format(grade, percent) ] )
+        grade_cutoff_ticks.append( [ percent, u"{0} {1:.0%}".format(_(grade), percent) ] )
   else:
     grade_cutoff_ticks = [ ]
   %>

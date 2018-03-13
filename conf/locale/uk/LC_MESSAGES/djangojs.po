@@ -3656,7 +3656,7 @@ msgstr ""
 
 #: lms/static/js/bookmarks/views/bookmark_button.js
 msgid "Bookmark this page"
-msgstr "Додати сторінку до моїх закладок"
+msgstr "Додати до закладок"
 
 #: openedx/features/course_experience/static/course_experience/js/CourseHome.js
 msgid "You have successfully updated your goal."
@@ -10638,3 +10638,9 @@ msgstr ""
 #: cms/templates/js/xblock-string-field-editor.underscore
 msgid "Edit the name"
 msgstr ""
+
+msgid "Russian"
+msgstr "Роcійська"
+
+msgid "Ukrainian"
+msgstr "Українська"
