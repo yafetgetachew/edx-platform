@@ -10172,7 +10172,7 @@ msgstr ""
 #: cms/templates/login.html cms/templates/widgets/header.html
 #: themes/red-theme/cms/templates/login.html
 msgid "Sign In"
-msgstr "Увійти"
+msgstr "ВХІД"
 
 #: openedx/core/djangoapps/ace_common/templates/ace_common/edx_ace/common/base_body.html
 #: themes/red-theme/lms/templates/ace_common/edx_ace/common/base_body.html
@@ -13473,7 +13473,7 @@ msgstr "Вже зареєстровані?"
 #: lms/templates/register-sidebar.html
 #: themes/stanford-style/lms/templates/register-sidebar.html
 msgid "Log in"
-msgstr "Увійти"
+msgstr "ВХІД"
 
 #: lms/templates/register-sidebar.html
 msgid "Welcome to {platform_name}"
@@ -13599,7 +13599,7 @@ msgstr "Вже маєте аккаунт?"
 
 #: lms/templates/signup_modal.html
 msgid "Login."
-msgstr "Увійти."
+msgstr "ВХІД."
 
 #: lms/templates/split_test_author_view.html
 msgid ""
