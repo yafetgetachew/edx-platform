@@ -111,9 +111,7 @@ from django.utils.text import slugify
 from enrollment.data import create_course_enrollment
 from student.views import create_account_with_params
 from third_party_auth.pipeline import make_random_password
-# import pyDes
-# import urllib2
-# import md5
+from django.http import HttpResponseForbidden
 
 
 import base64
@@ -130,37 +128,46 @@ REQUIREMENTS_DISPLAY_MODES = CourseMode.CREDIT_MODES + [CourseMode.VERIFIED]
 CertData = namedtuple("CertData", ["cert_status", "title", "msg", "download_url", "cert_web_view_url"])
 
 def check_sso(request, course_id):
+    """
+    checks the data in the URL for validity. For the correct operation requires
+    a job in lms.auth.json CAMARA_SECRET key and in lms.env.json settings.FEATURES['LOGIN_TIMEOUT'].
+    By default, in common.py has 30 min.
+    :param request:
+    :param course_id:
+    :return:
+    """
     edx_url = '{HTTP_X_FORWARDED_PROTO}://{HTTP_HOST}{PATH_INFO}'.format(**request.META)
-    #TODO: fix redirect url
-    redirect_url = '{}/login.aspx?returnUrl={}'.format(settings.FEATURES['PORTAL_URL'], edx_url)
 
     access_id = request.GET.get('access_id')
     username = request.GET.get('username')
     signature = request.GET.get('signature')
     timestamp = request.GET.get('timestamp')
-    country = request.GET.get('locale', 'en')
-    email = request.GET.get('email', '{}@{}'.format(username, request.META['HTTP_HOST']))
 
     if access_id and username and signature and  timestamp:
-        # try:
-        #     timestamp = datetime.strptime(timestamp, '%m/%d/%Y %I:%M:%S %p')
-        # except ValueError:
-        #     return redirect(redirect_url)
-        # else:
-        #     if timestamp < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
-        #         logout(request)
-        #         return redirect(redirect_url)
 
-        # thing_to_hash = '{}:{}:{}'.format(access_id, timestamp, username)
-        # dig = hmac.new(access_id, msg=thing_to_hash, digestmod=hashlib.sha256).digest()
-        # verification_signature = base64.b64encode(dig).decode()
-        #
-        # if verification_signature != signature:
-        #     return redirect(redirect_url)
+        try:
+            timestamp = datetime.fromtimestamp(timestamp)
+        except ValueError:
+            return HttpResponseForbidden()
+        else:
+            if timestamp < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
+                logout(request)
+                return HttpResponseForbidden()
+
+        thing_to_hash = '{}:{}:{}'.format(access_id, timestamp, username)
+        dig = hmac.new(settings.CAMARA_SECRET, msg=thing_to_hash, digestmod=hashlib.sha256).digest()
+        verification_signature = base64.b64encode(dig).decode()
+
+        if verification_signature != signature:
+            return HttpResponseForbidden()
 
         try:
             user = User.objects.get(username=username)
         except User.DoesNotExist:
+            country = request.GET.get('locale', 'en')
+            email = request.GET.get('email', '{}@{}'.format(
+                ''.join(e for e in username if e.isalnum()), request.META['HTTP_HOST']
+            ))
             user_data = {
                 'email': email,
                 'country': country,
@@ -187,7 +194,7 @@ def check_sso(request, course_id):
         user.backend = 'fake_backend'
         login(request, user)
         return redirect(edx_url)
-    return None
+    return HttpResponseForbidden()
 
 def user_groups(user):
     """
@@ -326,10 +333,6 @@ def course_info(request, course_id):
         return None
 
     course_key = CourseKey.from_string(course_id)
-
-    edx_url = '{HTTP_X_FORWARDED_PROTO}://{HTTP_HOST}{PATH_INFO}'.format(**request.META)
-    redirect_url = '{}/login.aspx?returnUrl={}'.format(settings.FEATURES['PORTAL_URL'], edx_url)
-
     # If the unified course experience is enabled, redirect to the "Course" tab
     if UNIFIED_COURSE_TAB_FLAG.is_enabled(course_key):
         return redirect(reverse(course_home_url_name(course_key), args=[course_id]))
