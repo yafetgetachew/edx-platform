@@ -16201,8 +16201,8 @@ msgid "View Grading in studio"
 msgstr "استعراض عملية التقييم في استوديو"
 
 #: lms/templates/courseware/progress.html
-msgid "Course Progress for Student '{username}' ({email})"
-msgstr "تقدّم عمل الطالب '{username}'‏ ({email}) في الدورة"
+msgid "Course Progress for Student '{username}'"
+msgstr "تقدّم عمل الطالب '{username}'‏ في الدورة"
 
 #: lms/templates/courseware/progress.html
 msgid "View Certificate"
