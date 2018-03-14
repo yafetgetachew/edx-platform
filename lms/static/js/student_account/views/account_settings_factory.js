@@ -64,7 +64,7 @@
             aboutSectionsData = [
                 {
                     title: gettext('Basic Account Information'),
-                    subtitle: gettext('These settings include basic information about your account. You can also specify additional information and see your linked social accounts on this page.'),  // eslint-disable-line max-len
+                    subtitle: gettext('تتضمّن هذه الإعدادات معلومات أساسية عن حسابك، ويمكنك أيضًا إدخال معلومات إضافية ورؤية حسابات التواصل الاجتماعي خاصتك المربوطة مع حسابك.'),  // eslint-disable-line max-len
                     fields: [
                         {
                             view: new AccountSettingsFieldViews.ReadonlyFieldView({
@@ -72,7 +72,7 @@
                                 title: gettext('Username'),
                                 valueAttribute: 'username',
                                 helpMessage: StringUtils.interpolate(
-                                    gettext('The name that identifies you throughout {platform_name}. You cannot change your username.'),  // eslint-disable-line max-len
+                                    gettext('الإسم الذي يعرّف عنك في {platform_name}. لا يمكنك تغيير إسم المستخدم الخاص بك.'),  // eslint-disable-line max-len
                                     {platform_name: platformName}
                                 )
                             })
@@ -83,7 +83,7 @@
                                 title: gettext('Full Name'),
                                 valueAttribute: 'name',
                                 helpMessage: gettext(
-                                    'The name that is used for ID verification and appears on your certificates. Other learners never see your full name. Make sure to enter your name exactly as it appears on your government-issued photo ID, including any non-Roman characters.'  // eslint-disable-line max-len
+                                    'الإسم المستخدم للتأكّد من الهوية والذي سيظهر على الشهادات. لن يرى المتعلّمون الآخرون إسمك الكامل نهائيًّا. تأكّد من إدخال إسمك بشكل مطابق للإسم الظاهر على هويّتك الرسميّة التي تحمل صورة، بما فيه أي حروف غير لاتينية.'  // eslint-disable-line max-len
                                 ),
                                 persistChanges: true
                             })
@@ -113,7 +113,7 @@
                                 required: true,
                                 refreshPageOnSave: true,
                                 helpMessage: StringUtils.interpolate(
-                                    gettext('The language used throughout this site. This site is currently available in a limited number of languages.'),  // eslint-disable-line max-len
+                                    gettext('اللغة المستخدمة في كافة أقسام هذا الموقع. يتوفّر هذا الموقع حاليًا بعدد محدود من اللغات.'),  // eslint-disable-line max-len
                                     {platform_name: platformName}
                                 ),
                                 options: fieldsData.language.options,
@@ -124,7 +124,7 @@
                             view: new AccountSettingsFieldViews.DropdownFieldView({
                                 model: userAccountModel,
                                 required: true,
-                                title: gettext('Country or Region'),
+                                title: gettext('الدولة أو المنطقة'),
                                 valueAttribute: 'country',
                                 options: fieldsData.country.options,
                                 persistChanges: true
