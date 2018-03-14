@@ -4919,9 +4919,9 @@ msgstr "الإسم الكامل"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
-"The name that is used for ID verification and that appears on your "
-"certificates."
+"The name that is used for ID verification and appears on your certificates. Other learners never see your full name. Make sure to enter your name exactly as it appears on your government-issued photo ID, including any non-Roman characters."
 msgstr ""
+"الإسم المستخدم للتأكّد من الهوية والذي سيظهر على الشهادات. لن يرى المتعلّمون الآخرون إسمك الكامل نهائيًّا. تأكّد من إدخال إسمك بشكل مطابق للإسم الظاهر على هويّتك الرسميّة التي تحمل صورة، بما فيه أي حروف غير لاتينية."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Country or Region of Residence"
@@ -4967,8 +4967,18 @@ msgid ""
 msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
+msgid "Country or Region"
+msgstr "الدولة أو المنطقة"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Time Zone"
 msgstr "المنطقة الزمنية"
+
+#: lms/static/js/student_account/views/account_settings_factory.js
+msgid ""
+"The language used throughout this site. This site is currently available in a limited number of languages"
+msgstr ""
+"اللغة المستخدمة في كافة أقسام هذا الموقع. يتوفّر هذا الموقع حاليًا بعدد محدود من اللغات."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
