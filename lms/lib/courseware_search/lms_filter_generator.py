@@ -132,7 +132,7 @@ class ElasticSearchEngineCustom(ElasticSearchEngine):
                 }
             }
 
-        sort = sort is None and {"start": {"order": "desc"}} or sort
+        sort = sort is None and {"start_date": {"order": "desc"}} or sort
 
         body = {
             "query": query,
