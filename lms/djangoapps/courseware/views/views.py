@@ -113,7 +113,6 @@ from student.views import create_account_with_params
 from third_party_auth.pipeline import make_random_password
 from django.http import HttpResponseForbidden
 
-
 import base64
 import hmac
 import hashlib
@@ -131,43 +130,42 @@ def check_sso(request, course_id):
     """
     checks the data in the URL for validity. For the correct operation requires
     a job in lms.auth.json CAMARA_SECRET key and in lms.env.json settings.FEATURES['LOGIN_TIMEOUT'].
-    By default, in common.py has 30 min.
+    By default, in common.py LOGIN_TIMEOUT has 30 min.
     :param request:
     :param course_id:
     :return:
     """
-    edx_url = '{HTTP_X_FORWARDED_PROTO}://{HTTP_HOST}{PATH_INFO}'.format(**request.META)
-
     access_id = request.GET.get('access_id')
     username = request.GET.get('username')
     signature = request.GET.get('signature')
-    timestamp = request.GET.get('timestamp')
-
-    if access_id and username and signature and  timestamp:
-
+    timestamp_request = request.GET.get('timestamp')
+    if access_id and username and signature and  timestamp_request:
         try:
-            timestamp = datetime.fromtimestamp(timestamp)
+            timestamp = datetime.utcfromtimestamp(float(str(timestamp_request)))
         except ValueError:
             return HttpResponseForbidden()
         else:
-            if timestamp < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
+            if timestamp < datetime.utcnow() - timedelta(seconds=1800):
                 logout(request)
                 return HttpResponseForbidden()
-
-        thing_to_hash = '{}:{}:{}'.format(access_id, timestamp, username)
-        dig = hmac.new(settings.CAMARA_SECRET, msg=thing_to_hash, digestmod=hashlib.sha256).digest()
+        thing_to_hash = '{}:{}:{}'.format(access_id, timestamp_request, username)
+        dig = hmac.new(str(settings.CAMARA_SECRET), msg=thing_to_hash, digestmod=hashlib.sha256).digest()
         verification_signature = base64.b64encode(dig).decode()
 
         if verification_signature != signature:
             return HttpResponseForbidden()
 
+        country = request.GET.get('locale', 'en')
+        http_host = request.META['HTTP_HOST']
+        http_host = http_host.split(':')
+        email = request.GET.get('email', '{0}@{1}'.format(
+            ''.join(e for e in username if e.isalnum()), http_host[0]
+        ))
+
         try:
             user = User.objects.get(username=username)
         except User.DoesNotExist:
-            country = request.GET.get('locale', 'en')
-            email = request.GET.get('email', '{}@{}'.format(
-                ''.join(e for e in username if e.isalnum()), request.META['HTTP_HOST']
-            ))
+
             user_data = {
                 'email': email,
                 'country': country,
@@ -193,7 +191,7 @@ def check_sso(request, course_id):
             pass
         user.backend = 'fake_backend'
         login(request, user)
-        return redirect(edx_url)
+        return None
     return HttpResponseForbidden()
 
 def user_groups(user):
