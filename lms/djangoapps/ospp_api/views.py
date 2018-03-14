@@ -46,6 +46,71 @@ class CreateUserView(APIView):
 
     USER_ALREADY_EXIST_ERROR = 1
 
+    class ValidationException(Exception):
+        """
+        Custom exception, that contains attribute `error_response` with HTTP response that represents validation error.
+        """
+
+        def __init__(self, error_response):
+            super(CreateUserView.ValidationException, self).__init__(error_response)
+            self.error_response = error_response
+
+    def update_user_data_with_default_params(self, data):
+        data['honor_code'] = "True"
+        data['terms_of_service'] = "True"
+
+        # Generate fake password and set name equal to the username
+        data['password'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))
+        if 'first_name' not in data:
+            data['first_name'] = ''
+
+        if 'last_name' not in data:
+            data['last_name'] = ''
+
+        data['name'] = '{} {}'.format(data['first_name'], data['last_name']).strip() or data['username']
+
+        # Avoid sending activation email
+        data['send_activation_email'] = False
+
+    def missed_params_validation(self, data):
+        """
+        Check that requirement field exist.
+        Return None if data valid and error response when some data missed.
+        """
+        missed_params = [param for param in REQUIRED_CREATE_USER_PARAMS if not data.get(param)]
+        if missed_params:
+            error_msg = "Required parameter(s): {} were not provided".format(" ,".join(missed_params))
+            raise self.ValidationException(Response({"user_message": error_msg}, status=400))
+        return
+
+    def try_get_simple_user(self, data):
+        email = data['email']
+        username = data['username']
+        if check_account_exists(email=email, username=username):
+            user = User.objects.filter(Q(email=email) | Q(username=username)).first()
+            if not UserSocialAuth.objects.filter(user=user).exists():
+                return user
+            errors = {
+                "user_message": "User already exists",
+                "error_code": CreateUserView.USER_ALREADY_EXIST_ERROR,
+                "user_id": user.id,
+            }
+            raise self.ValidationException(Response(errors, status=409))
+        return
+
+    def create_new_user(self, request, data):
+        user = create_account_with_params(request, data)
+        user.is_active = True
+        user.first_name = data['first_name']
+        user.last_name = data['last_name']
+        user.save()
+        return user
+
+    def make_user_social(self, user, data):
+        idp_name = SAMLProviderConfig.objects.first().backend_name
+        social_user_id = '{}:{}'.format(idp_name, data.pop('name_id'))
+        UserSocialAuth.objects.create(user=user, provider=idp_name, uid=social_user_id)
+
     def post(self, request):
         """
         Creates a new user account
@@ -71,47 +136,17 @@ class CreateUserView(APIView):
             HttpResponse: 409 if an account with the given username or email address already exists
         """
         data = request.data
+        self.update_user_data_with_default_params(data)
 
-        data['honor_code'] = "True"
-        data['terms_of_service'] = "True"
-
-        # Check that all required parameters are sent
-        missed_params = []
-        for param in REQUIRED_CREATE_USER_PARAMS:
-            if not data.get(param):
-                missed_params.append(param)
-        if missed_params:
-            error_msg = "Required parameter(s): {} were not provided".format(" ,".join(missed_params))
-            return Response({"user_message": error_msg}, status=400)
-
-        username = data['username']
-
-        # Handle duplicate email/username
-        conflicts = check_account_exists(email=data['email'], username=username)
-        if conflicts:
-            errors = {
-                "user_message": "User already exists",
-                "error_code": CreateUserView.USER_ALREADY_EXIST_ERROR,
-                "user_id": User.objects.filter(Q(email=data['email']) | Q(username=username)).first().id,
-            }
-            return Response(errors, status=409)
-        # Generate fake password and set name equal to the username
-        data['password'] = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))
-        first_name = data.get('first_name', '')
-        last_name = data.get('last_name', '')
-        data['name'] = '{}{}{}'.format(first_name, ' ' if first_name else '', last_name) or username
-
-        # Avoid sending activation email
-        data['send_activation_email'] = False
         try:
-            user = create_account_with_params(request, data)
-            user.is_active = True
-            idp_name = SAMLProviderConfig.objects.first().backend_name
-            social_user_id = '{}:{}'.format(idp_name, data.pop('name_id'))
-            UserSocialAuth.objects.create(user=user, provider=idp_name, uid=social_user_id)
-            user.first_name = first_name
-            user.last_name = last_name
-            user.save()
+            self.missed_params_validation(data)
+            user = self.try_get_simple_user(data)
+        except self.ValidationException as e:
+            return e.error_response
+
+        try:
+            user = user or self.create_new_user(request, data)
+            self.make_user_social(user, data)
         except ValidationError:
             errors = {"user_message": "Wrong parameters on user creation"}
             return Response(errors, status=400)
