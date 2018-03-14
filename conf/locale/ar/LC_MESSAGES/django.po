@@ -3717,7 +3717,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
 msgid "The lowest {drop_count} {section_type} scores are dropped."
-msgstr ""
+msgstr "أقل نتائج {drop_count} {section_type} لن تُحسب."
 
 #. Translators: "Homework Average = 0%"
 #: common/lib/xmodule/xmodule/graders.py
@@ -3729,7 +3729,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
 msgid "{short_label} Avg"
-msgstr ""
+msgstr "{short_label} متوسط"
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "Text"
