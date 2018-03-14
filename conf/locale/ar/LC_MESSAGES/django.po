@@ -11379,7 +11379,7 @@ msgstr "كلمة المرور"
 
 #: openedx/core/djangoapps/user_api/api.py lms/templates/login.html
 msgid "Remember me"
-msgstr "تذكُّر بياناتي"
+msgstr "تذكّر بياناتي"
 
 #. Translators: These instructions appear on the registration form,
 #. immediately
