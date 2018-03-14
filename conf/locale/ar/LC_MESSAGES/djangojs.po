@@ -3678,7 +3678,7 @@ msgstr ""
 #: test_root/staticfiles/course_search/templates/course_search_results.underscore
 #: test_root/staticfiles/course_search/templates/dashboard_search_results.underscore
 msgid "Search Results"
-msgstr "بحث في النتائج"
+msgstr "نتائج البحث"
 
 #. Translators: this is a title shown before all Notes that have no associated
 #. tags. It is put within

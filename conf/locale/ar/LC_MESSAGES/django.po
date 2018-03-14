@@ -21016,7 +21016,7 @@ msgstr "آخر تحديث"
 
 #: openedx/features/course_search/templates/course_search/course-search-fragment.html
 msgid "Search Results"
-msgstr "البحث في النتائج"
+msgstr "نتائج البحث"
 
 #: openedx/features/learner_analytics/templates/learner_analytics/dashboard.html
 msgid "My Stats (Beta)"
