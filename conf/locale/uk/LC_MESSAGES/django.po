@@ -25758,3 +25758,16 @@ msgstr "Прохідний рівень"
 
 msgid "Total "
 msgstr "Загальний рівень"
+
+msgid "http://desk.ua/en/politika-privatnosti"
+msgstr "http://desk.ua/politika-privatnosti"
+
+msgid "http://desk.ua/en/ugoda-koristuvacha"
+msgstr "http://desk.ua/ugoda-koristuvacha"
+
+msgid "http://desk.ua/en/etichniy-kodeks"
+msgstr "http://desk.ua/etichniy-kodeks"
+
+msgid "http://desk.ua/en/contact"
+msgstr "http://desk.ua/contact"
+

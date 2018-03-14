@@ -20993,3 +20993,16 @@ msgid ""
 "A new revision was created: Merge between Revision #%(r1)d and Revision "
 "#%(r2)d"
 msgstr ""
+
+msgid "http://desk.ua/en/politika-privatnosti"
+msgstr ""
+
+msgid "http://desk.ua/en/ugoda-koristuvacha"
+msgstr ""
+
+msgid "http://desk.ua/en/etichniy-kodeks"
+msgstr ""
+
+msgid "http://desk.ua/en/contact"
+msgstr ""
+
