@@ -145,7 +145,7 @@ def check_sso(request, course_id):
         except ValueError:
             return HttpResponseForbidden()
         else:
-            if timestamp < datetime.utcnow() - timedelta(seconds=1800):
+            if timestamp < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
                 logout(request)
                 return HttpResponseForbidden()
         thing_to_hash = '{}:{}:{}'.format(access_id, timestamp_request, username)
