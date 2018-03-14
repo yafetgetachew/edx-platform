@@ -139,15 +139,17 @@ def check_sso(request, course_id):
     username = request.GET.get('username')
     signature = request.GET.get('signature')
     timestamp_request = request.GET.get('timestamp')
+
     if access_id and username and signature and  timestamp_request:
         try:
             timestamp = datetime.utcfromtimestamp(float(str(timestamp_request)))
         except ValueError:
             return HttpResponseForbidden()
         else:
-            if timestamp < datetime.utcnow() - timedelta(seconds=settings.FEATURES['LOGIN_TIMEOUT']):
+            if timestamp < datetime.utcnow() - timedelta(seconds=int(settings.FEATURES['LOGIN_TIMEOUT'])):
                 logout(request)
                 return HttpResponseForbidden()
+
         thing_to_hash = '{}:{}:{}'.format(access_id, timestamp_request, username)
         dig = hmac.new(str(settings.CAMARA_SECRET), msg=thing_to_hash, digestmod=hashlib.sha256).digest()
         verification_signature = base64.b64encode(dig).decode()
@@ -344,7 +346,7 @@ def course_info(request, course_id):
             if resp:
                 return resp
         else:
-            return redirect(redirect_url)
+
             # The user doesn't have access to the course. If they're
             # denied permission due to the course not being live yet,
             # redirect to the dashboard page.
