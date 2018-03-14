@@ -4941,9 +4941,9 @@ msgstr "تتضمّن هذه الإعدادات معلومات أساسية عن 
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
-"The name that identifies you on {platform_name}. You cannot change your "
-"username."
+"The name that identifies you on {platform_name}. You cannot change your username."
 msgstr ""
+"الإسم الذي يعرّف عنك في {platform_name}. لا يمكنك تغيير إسم المستخدم الخاص بك"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: lms/templates/student_account/account.underscore
