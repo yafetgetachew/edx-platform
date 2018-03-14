@@ -18189,6 +18189,10 @@ msgid "Course Name:"
 msgstr "إسم الدورة:"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
+msgid "Course Display Name:"
+msgstr "إسم الدورة:"
+
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Course Start Date:"
 msgstr "تاريخ بداية الدورة:"
 
