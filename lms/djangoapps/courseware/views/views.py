@@ -116,6 +116,7 @@ from django.http import HttpResponseForbidden
 import base64
 import hmac
 import hashlib
+import re
 
 log = logging.getLogger("edx.courseware")
 
@@ -154,7 +155,7 @@ def check_sso(request, course_id):
         dig = hmac.new(str(settings.CAMARA_SECRET), msg=thing_to_hash, digestmod=hashlib.sha256).digest()
         verification_signature = base64.b64encode(dig).decode()
 
-        if verification_signature != signature:
+        if verification_signature != signature.replace(' ','+'):
             return HttpResponseForbidden()
 
         country = request.GET.get('locale', 'en')
