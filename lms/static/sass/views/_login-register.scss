@@ -32,6 +32,9 @@
     }
 }
 
+.window-wrap {
+    background: $white;
+}
 
 .login-register-content {
     @include box-sizing(border-box);

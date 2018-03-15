@@ -10,7 +10,14 @@ html, body {
   font-size: 1em;
   font-style: normal;
   line-height: 1em;
-  background: $white;
+}
+
+html{
+  background: white;
+}
+
+body {
+  background: $body-bg;
 }
 
 // removing the outline on any element that we make programmatically focusable
@@ -80,7 +87,7 @@ p {
 
     &:hover, &:focus {
       color: $link-hover;
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 }
@@ -94,7 +101,7 @@ a, a:visited {
   &:hover,
   &:focus {
     color: $link-hover;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   &:disabled, &.is-disabled, &.disabled {
@@ -107,7 +114,7 @@ a, a:visited {
 .content-wrapper {
   width: flex-grid(12);
   margin: 0 auto;
-  background-color: $white;
+  background: $content-wrapper-bg;
 
   @media print {
     padding-bottom: 0;
@@ -314,15 +321,4 @@ mark {
     height: auto;
     margin: 0;
   }
-}
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-
-    &:after,
-    &:before {
-      content: '';
-      display: table;
-    }
 }
