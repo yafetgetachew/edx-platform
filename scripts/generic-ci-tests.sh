@@ -60,7 +60,7 @@ git clean -qxfd
 
 function emptyxunit {
 
-    cat > reports/$1.xml <<END
+cat > reports/$1.xml <<END
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="$1" tests="1" errors="0" failures="0" skip="0">
 <testcase classname="$1" name="$1" time="0.604"></testcase>
