@@ -2850,6 +2850,7 @@ class LogoutView(TemplateView):
             return self.default_target
 
     def dispatch(self, request, *args, **kwargs):  # pylint: disable=missing-docstring
+
         # We do not log here, because we have a handler registered to perform logging on successful logouts.
         request.is_from_logout = True
 

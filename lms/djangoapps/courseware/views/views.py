@@ -104,6 +104,19 @@ from xmodule.x_module import STUDENT_VIEW
 from ..entrance_exams import user_can_skip_entrance_exam
 from ..module_render import get_module, get_module_by_usage_id, get_module_for_descriptor
 
+
+
+from django.contrib.auth import login, logout
+from django.utils.text import slugify
+from enrollment.data import create_course_enrollment
+from student.views import create_account_with_params
+from third_party_auth.pipeline import make_random_password
+from django.http import HttpResponseForbidden
+
+import base64
+import hmac
+import hashlib
+
 log = logging.getLogger("edx.courseware")
 
 
@@ -113,6 +126,75 @@ REQUIREMENTS_DISPLAY_MODES = CourseMode.CREDIT_MODES + [CourseMode.VERIFIED]
 
 CertData = namedtuple("CertData", ["cert_status", "title", "msg", "download_url", "cert_web_view_url"])
 
+def check_sso(request, course_id):
+    """
+    checks the data in the URL for validity. For the correct operation requires
+    a job in lms.auth.json CAMARA_SECRET key and in lms.env.json settings.FEATURES['LOGIN_TIMEOUT'].
+    By default, in common.py LOGIN_TIMEOUT has 30 min.
+    :param request:
+    :param course_id:
+    :return:
+    """
+    access_id = request.GET.get('access_id')
+    username = request.GET.get('username')
+    signature = request.GET.get('signature')
+    timestamp_request = request.GET.get('timestamp')
+
+    if access_id and username and signature and  timestamp_request:
+        try:
+            timestamp = datetime.utcfromtimestamp(float(str(timestamp_request)))
+        except ValueError:
+            return HttpResponseForbidden()
+        else:
+            if timestamp < datetime.utcnow() - timedelta(seconds=int(settings.FEATURES['LOGIN_TIMEOUT'])):
+                logout(request)
+                return HttpResponseForbidden()
+
+        thing_to_hash = '{}:{}:{}'.format(access_id, timestamp_request, username)
+        dig = hmac.new(str(settings.CAMARA_SECRET), msg=thing_to_hash, digestmod=hashlib.sha256).digest()
+        verification_signature = base64.b64encode(dig).decode()
+
+        if verification_signature != signature:
+            return HttpResponseForbidden()
+
+        country = request.GET.get('locale', 'en')
+        http_host = request.META['HTTP_HOST']
+        http_host = http_host.split(':')
+        email = request.GET.get('email', '{0}@{1}'.format(
+            ''.join(e for e in username if e.isalnum()), http_host[0]
+        ))
+
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+
+            user_data = {
+                'email': email,
+                'country': country,
+                'username': username,
+                'name': username,
+                'terms_of_service': "True",
+                'honor_code': 'True',
+                'password': make_random_password()
+            }
+            create_account_with_params(request, user_data)
+            user = request.user
+            user.is_active = True
+            user.save()
+
+        try:
+            create_course_enrollment(
+                user.username,
+                course_id,
+                mode='honor',
+                is_active=True
+            )
+        except Exception:
+            pass
+        user.backend = 'fake_backend'
+        login(request, user)
+        return None
+    return HttpResponseForbidden()
 
 def user_groups(user):
     """
@@ -251,7 +333,6 @@ def course_info(request, course_id):
         return None
 
     course_key = CourseKey.from_string(course_id)
-
     # If the unified course experience is enabled, redirect to the "Course" tab
     if UNIFIED_COURSE_TAB_FLAG.is_enabled(course_key):
         return redirect(reverse(course_home_url_name(course_key), args=[course_id]))
@@ -260,7 +341,11 @@ def course_info(request, course_id):
         course = get_course_by_id(course_key, depth=2)
         access_response = has_access(request.user, 'load', course, course_key)
 
-        if not access_response:
+        if access_response:
+            resp = check_sso(request, course_id)
+            if resp:
+                return resp
+        else:
 
             # The user doesn't have access to the course. If they're
             # denied permission due to the course not being live yet,
@@ -687,12 +772,16 @@ class EnrollStaffView(View):
 
 @ensure_csrf_cookie
 @ensure_valid_course_key
-@cache_if_anonymous()
+#@cache_if_anonymous()
 def course_about(request, course_id):
     """
     Display the course's about page.
     """
     course_key = CourseKey.from_string(course_id)
+
+    resp = check_sso(request, course_id)
+    if resp:
+        return resp
 
     if hasattr(course_key, 'ccx'):
         # if un-enrolled/non-registered user try to access CCX (direct for registration)
@@ -1592,7 +1681,7 @@ def financial_assistance_form(request):
         'header_text': FINANCIAL_ASSISTANCE_HEADER,
         'student_faq_url': marketing_link('FAQ'),
         'dashboard_url': reverse('dashboard'),
-        'account_settings_url': reverse('account_settings'),
+        'account_settings_url': '#', #reverse('account_settings'),
         'platform_name': configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
         'user_details': {
             'email': user.email,
