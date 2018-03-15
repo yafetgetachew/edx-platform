@@ -11755,3 +11755,15 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "استخدم النص الحالي"
+
+#: lms/static/js/student_profile/views/learner_profile_factory.js
+msgid "{platform_name} learners can see my:"
+msgstr "{platform_name} يستطيع المتعلمون ان يروا:"
+
+#: common/djangoapps/student/forms.py
+msgid ""
+"Usernames can only contain Roman letters, western numerals (0-9), "
+"underscores (_), and hyphens (-)."
+msgstr ""
+"يجب أن يحتوي اسم المستخدم على حروف انجليزية وأرقام غربية (0-9) "
+"وخطوط سفلية (_) والوصلات (-) فقط."
