@@ -89,8 +89,13 @@ CELERY_QUEUES = {
     DEFAULT_PRIORITY_QUEUE: {}
 }
 
+############# NON-SECURE ENV CONFIG ##############################
+# Things like server locations, ports, etc.
+with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
+    ENV_TOKENS = json.load(env_file)
+
 # Setup alternate queues, to allow access to cross-process workers
-ALTERNATE_QUEUE_ENVS = os.environ.get('ALTERNATE_WORKER_QUEUES', '').split()
+ALTERNATE_QUEUE_ENVS = ENV_TOKENS.get('ALTERNATE_WORKER_QUEUES', '').split()
 ALTERNATE_QUEUES = [
     DEFAULT_PRIORITY_QUEUE.replace(QUEUE_VARIANT, alternate + '.')
     for alternate in ALTERNATE_QUEUE_ENVS
@@ -103,11 +108,6 @@ CELERY_QUEUES.update(
     }
 )
 CELERY_ROUTES = "{}celery.Router".format(QUEUE_VARIANT)
-
-############# NON-SECURE ENV CONFIG ##############################
-# Things like server locations, ports, etc.
-with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
-    ENV_TOKENS = json.load(env_file)
 
 # STATIC_URL_BASE specifies the base url to use for static files
 STATIC_URL_BASE = ENV_TOKENS.get('STATIC_URL_BASE', None)
@@ -534,3 +534,5 @@ COURSE_TOPICS = (
     ('youth_programme', 'Youth Programme'),
 )
 
+MEDIA_ROOT = ENV_TOKENS.get('MEDIA_ROOT', '/edx/var/edxapp/media/')
+MEDIA_URL = ENV_TOKENS.get('MEDIA_URL', '/media/')

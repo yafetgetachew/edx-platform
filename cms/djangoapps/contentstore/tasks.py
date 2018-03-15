@@ -44,6 +44,7 @@ from xmodule.modulestore.django import modulestore
 from xmodule.modulestore.exceptions import DuplicateCourseError, ItemNotFoundError
 from xmodule.modulestore.xml_importer import import_course_from_xml, import_library_from_xml
 
+from user_tasks.models import UserTaskStatus
 
 LOGGER = get_task_logger(__name__)
 FILE_READ_CHUNK = 1024  # bytes
@@ -373,3 +374,5 @@ def import_olx(self, user_id, course_key_string, archive_path, archive_name, lan
                 from contentstore.views.entrance_exam import add_entrance_exam_milestone
                 add_entrance_exam_milestone(course.id, entrance_exam_chapter)
                 LOGGER.info(u'Course %s Entrance exam imported', course.id)
+
+        self.status.set_state(UserTaskStatus.SUCCEEDED)

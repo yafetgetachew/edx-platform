@@ -100,8 +100,14 @@ CELERY_QUEUES = {
     HIGH_MEM_QUEUE: {},
 }
 
+########################## NON-SECURE ENV CONFIG ##############################
+# Things like server locations, ports, etc.
+
+with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
+    ENV_TOKENS = json.load(env_file)
+
 # Setup alternate queues, to allow access to cross-process workers
-ALTERNATE_QUEUE_ENVS = os.environ.get('ALTERNATE_WORKER_QUEUES', '').split()
+ALTERNATE_QUEUE_ENVS = ENV_TOKENS.get('ALTERNATE_WORKER_QUEUES', '').split()
 ALTERNATE_QUEUES = [
     DEFAULT_PRIORITY_QUEUE.replace(QUEUE_VARIANT, alternate + '.')
     for alternate in ALTERNATE_QUEUE_ENVS
@@ -124,12 +130,6 @@ if os.environ.get('QUEUE') == 'high_mem':
     CELERYD_MAX_TASKS_PER_CHILD = 1
 
 CELERYBEAT_SCHEDULE = {}  # For scheduling tasks, entries can be added to this dict
-
-########################## NON-SECURE ENV CONFIG ##############################
-# Things like server locations, ports, etc.
-
-with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
-    ENV_TOKENS = json.load(env_file)
 
 # STATIC_ROOT specifies the directory where static files are
 # collected
