@@ -1,5 +1,7 @@
 """ Django admin pages for student app """
 from django import forms
+from django.conf import settings
+from django.http import HttpResponse
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import ugettext_lazy as _
@@ -15,6 +17,10 @@ from student.models import (
     RegistrationCookieConfiguration
 )
 from student.roles import REGISTERED_ACCESS_ROLES
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+from course_modes.models import CourseMode
+from django_countries import countries as django_countries
+import unicodecsv
 
 User = get_user_model()  # pylint:disable=invalid-name
 
@@ -162,9 +168,106 @@ class UserProfileInline(admin.StackedInline):
     verbose_name_plural = _('User profile')
 
 
+def _is_shopping_cart_enabled():
+    """
+    Utility method to check the various configuration to verify that
+    all of the settings have been enabled
+    """
+    enable_paid_course_registration = configuration_helpers.get_value(
+        'ENABLE_PAID_COURSE_REGISTRATION',
+        settings.FEATURES.get('ENABLE_PAID_COURSE_REGISTRATION')
+    )
+
+    enable_shopping_cart = configuration_helpers.get_value(
+        'ENABLE_SHOPPING_CART',
+        settings.FEATURES.get('ENABLE_SHOPPING_CART')
+    )
+
+
+def write_users_report(queryset, fd):
+    header = (
+        _('First name'),
+        _('Last name'),
+        _('Email'),
+        _('Job title'),
+        _('Organization Name'),
+        _('Country'),
+        _('Region'),
+        _('MOOC Name'),
+        _('MOOC Code'),
+        _('MOOC Status'),
+        _('Course Start Date'),
+        _('Course End Date'),
+        _('Certified'),
+        _('Certificate of completion date'),
+        _('Price'),
+        _('Currency'),
+    )
+
+    writer = unicodecsv.writer(fd, encoding='utf-8')
+    writer.writerow(header)
+
+    countries = dict(django_countries)
+    for user in queryset.prefetch_related('groups'):
+        if hasattr(user, 'profile'):
+            name_list = user.profile.name and user.profile.name.split() or ['', '']
+            fname = name_list[0]
+            lname = ' '.join(name_list[1:])
+            country = countries.get(user.profile.country, user.profile.country)
+        else:
+            fname = user.first_name
+            lname = user.last_name
+            country = 'N/A'
+
+        user_row = (fname, lname, user.email, _('N/A'), _('N/A'), country, _('N/A'),)
+
+        enrollments = CourseEnrollment.objects.filter(is_active=True, user=user)
+        if not enrollments.exists():
+            writer.writerow(user_row + (_('N/A'),) * 9)
+
+        for enrollment in enrollments:
+            course = enrollment.course
+
+            try:
+                is_passed = is_course_passed(modulestore().get_course(enrollment.course_id), None, user) and _('Y') or _('N')
+            except Exception:
+                is_passed = _('N')
+
+            course_status = course.has_ended() and _('Complete') or course.has_started() and _('In Progress') or _('Not Started')
+
+            price = CourseMode.min_course_price_for_currency(
+                enrollment.course_id,
+                settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
+            )
+            can_add_course_to_cart = _is_shopping_cart_enabled() and price
+
+            row = user_row + (
+                course.display_name_with_default,
+                str(enrollment.course_id),
+                course_status,
+                course.start and course.start.strftime('%d/%m/%Y') or _('N/A'),
+                course.end and course.end.strftime('%d/%m/%Y') or _('N/A'),
+                is_passed,
+                _('N/A'),
+                price,
+                settings.PAID_COURSE_REGISTRATION_CURRENCY[1]
+            )
+            writer.writerow(row)
+
+
+def export_users_as_csv(modeladmin, request, queryset):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=users_report.csv'
+    write_users_report(queryset, response)
+    return response
+
+export_users_as_csv.short_description = _('Export users as CSV')
+
+
 class UserAdmin(BaseUserAdmin):
     """ Admin interface for the User model. """
     inlines = (UserProfileInline,)
+    actions = (export_users_as_csv,)
 
 
 @admin.register(UserAttribute)
