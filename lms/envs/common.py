@@ -368,9 +368,6 @@ FEATURES = {
 
     # Set this to False to facilitate cleaning up invalid xml from your modulestore.
     'ENABLE_XBLOCK_XML_VALIDATION': True,
-
-    # Disable bulk email send from random different addresses when 'False'
-    'BULK_EMAIL_FROM_DIFFERENT_ADDRESSES': False,
 }
 
 # Ignore static asset files on import which match this pattern
@@ -1167,9 +1164,6 @@ MIDDLEWARE_CLASSES = (
     # Detects user-requested locale from 'accept-language' header in http request.
     # Must be after DarkLangMiddleware.
     'django.middleware.locale.LocaleMiddleware',
-
-    #
-    'openedx.core.djangoapps.dark_lang.middleware.DarkLangMiddlewareSetLocaleAdditional',
 
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 
@@ -3043,4 +3037,3 @@ DOC_LINK_BASE_URL = None
 ############## Settings for the Enterprise App ######################
 
 ENTERPRISE_ENROLLMENT_API_URL = LMS_ROOT_URL + "/api/enrollment/v1/"
-
