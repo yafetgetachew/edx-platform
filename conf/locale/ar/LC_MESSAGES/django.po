@@ -18205,7 +18205,7 @@ msgstr "لم يُحدّد تاريخ الانتهاء"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Has the course started?"
-msgstr "هل بدأ الدورة؟"
+msgstr "هل بدأت الدورة؟"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Yes"
