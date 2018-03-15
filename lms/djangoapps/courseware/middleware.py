@@ -17,7 +17,7 @@ from django.contrib.auth.models import AnonymousUser, User
 import base64
 import hmac
 import hashlib
-from openedx.core.djangoapps.site_configuration.helpers import get_value, get_current_site_configuration
+from openedx.core.djangoapps.site_configuration.helpers import get_value
 
 class RedirectMiddleware(object):
     """
@@ -35,13 +35,9 @@ class RedirectMiddleware(object):
 class SsoMiddleware(object):
 
     def process_view(self, request, view_func, view_args, view_kwargs):
-        is_enable_sso = False
-        if get_current_site_configuration():
-            is_enable_sso = get_value('ENABLE_SSO', False)
-        elif 'ENABLE_SSO' in settings.FEATURES:
-            is_enable_sso = settings.FEATURES['ENABLE_SSO']
+        is_enable_sso = get_value('ENABLE_SSO', False)
         if (not request.user.is_authenticated()) and is_enable_sso:
-            status = self.__check_sso(request)
+            status = self._check_sso(request)
 
             if 'course_id' in view_kwargs:
                 if not status:
@@ -57,14 +53,12 @@ class SsoMiddleware(object):
                     pass
 
 
-    def __check_sso(self, request):
-
-        access_id = request.GET.get('access_id')
-        username = request.GET.get('username')
-        signature = request.GET.get('signature')
-        timestamp_request = request.GET.get('timestamp')
-
-        if not (access_id and username and signature and timestamp_request):
+    def _check_sso(self, request):
+        access_id = request.GET.get('access_id', None)
+        username = request.GET.get('username', None)
+        signature = request.GET.get('signature', None)
+        timestamp_request = request.GET.get('timestamp', None)
+        if access_id and username and signature and timestamp_request:
             try:
                 timestamp = datetime.utcfromtimestamp(float(str(timestamp_request)))
             except ValueError:
@@ -108,4 +102,6 @@ class SsoMiddleware(object):
 
             user.backend = 'fake_backend'
             login(request, user)
-
+            return True
+        else:
+            return False
