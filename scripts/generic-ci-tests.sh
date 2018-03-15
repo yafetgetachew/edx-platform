@@ -71,6 +71,7 @@ END
 case "$TEST_SUITE" in
 
     "quality")
+        pip install pylint
         echo "Finding fixme's and storing report..."
         paver find_fixme > fixme.log || { cat fixme.log; EXIT=1; }
         echo "Finding pep8 violations and storing report..."
