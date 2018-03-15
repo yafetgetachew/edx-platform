@@ -398,6 +398,8 @@ FEATURES = {
 
     # Determines how long the external reference is valid. 30 minutes.
     'LOGIN_TIMEOUT': 1800,
+
+    'ENABLE_SSO': False,
 }
 
 # Settings for the course reviews tool template and identification key, set either to None to disable course reviews
@@ -1235,8 +1237,11 @@ MIDDLEWARE_CLASSES = (
     # use Django built in clickjacking protection
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    'courseware.middleware.SsoMiddleware',
+
     # to redirected unenrolled students to the course info page
     'courseware.middleware.RedirectMiddleware',
+
 
     'course_wiki.middleware.WikiAccessMiddleware',
 
