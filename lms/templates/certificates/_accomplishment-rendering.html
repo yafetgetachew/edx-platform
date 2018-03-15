@@ -4,7 +4,7 @@
 course_mode_class = course_mode if course_mode else ''
 %>
 
-<main class="accomplishment accomplishment-main">
+<main class="accomplishment accomplishment-main" style="background:rgb(12, 134, 118)!important">
 
     <div class="wrapper-accomplishment-rendering">
         <div class="accomplishment-rendering">
@@ -15,21 +15,27 @@ course_mode_class = course_mode if course_mode else ''
 
             <div class="accomplishment-type">
                 <span class="accomplishment-type-symbol">
-                    <img class="src" src="/static/certificates/images/ico-${course_mode_class}.png" alt="">
+                    <img class="src" src="http://etraining.moe.gov.sa/static/stanford-style/images/logo.png" alt="">
                 </span>
 
-                <span class="accomplishment-type-label hd-4">${document_title}</span>
+                <span class="accomplishment-type-label hd-4" style="color: #00b0a2!important; font-size: 40px; padding-bottom: 20px;"
+>شهادة إكمال دورة￼</span>
+
+
+            <!--<span class="accomplishment-type-label hd-6"> تم منح شهادة إتمام الدورة للمتدرب</span>
+-->
             </div>
 
             <div class="wrapper-statement-and-signatories">
+                <span class="accomplishment-type-label hd-6">
+                    تم منح شهادة إتمام الدورة للمتدرب
+                </span>
                 <div class="accomplishment-statement">
-                    <p class="accomplishment-statement-lead">
+                    <p class="accomplishment-statement-lead" style="text-align: right; margin-right: 98px;">
                         <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</strong>
-                        <span class="accomplishment-summary copy copy-lead">${accomplishment_copy_description_full}</span>
+                        <span class="accomplishment-summary copy copy-lead"> لإتمام المسار التالي بنجاح</span>
 
                         <span class="accomplishment-course hd-1 emphasized">
-                            <span class="accomplishment-course-org">${accomplishment_copy_course_org}  </span>
-                            <span class="accomplishment-course-number">${course_number}</span>:
                             <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
                         </span>
                     </p>
@@ -48,11 +54,13 @@ course_mode_class = course_mode if course_mode else ''
                                 <div class="signatory">
                                     <img class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
 
-                                    <h4 class="signatory-name hd-5">${signatory['name']}</h4>
+                                    <h4 class="signatory-name hd-5">التوقيع</h4>
                                     <p class="signatory-credentials copy copy-micro">
-                                        <span class="role">${signatory['title']}</span>
-                                        <span class="organization">${signatory['organization']}</span>
                                     </p>
+                                </div>
+                                <div class="signatory">
+                                    <h4 class="signatory-name hd-5" style="font-family: verdana; margin-top: 108px; float: left;">التاريخ: ${certificate_date_issued}</h4>
+                                    <p class="signatory-credentials copy copy-micro"></p>
                                 </div>
                                 % endfor
                             % endif
@@ -68,7 +76,7 @@ course_mode_class = course_mode if course_mode else ''
                 <ul class="wrapper-orgs list-orgs">
                     <li class="wrapper-organization">
                         <div class="organization organization-edX">
-                            <img class="organization-logo" src="${logo_src}" alt="${platform_name}">
+                            <img class="organization-logo" src="http://staging.ilearn-portal.com/lms/star.png" alt="${platform_name}">
                         </div>
                     </li>
 
@@ -86,31 +94,32 @@ course_mode_class = course_mode if course_mode else ''
 
     <div class="wrapper-accomplishment-metadata">
         <div class="accomplishment-metadata">
-            <h2 class="accomplishment-metadata-title hd-6">${accomplishment_copy_more_about | h}</h2>
+            <h2 class="accomplishment-metadata-title hd-6" style="color:white!important">${accomplishment_copy_more_about | h}</h2>
 
             <div class="wrapper-metadata">
                 <dl class="metadata accomplishment-recipient">
                     <dt class="label sr-only">Awarded to:</dt>
-                    <dd class="value copy copy-meta">
+                    <dd class="value copy copy-meta" style="color:white!important">
                         <span class="recipient-img">
                             <img class="src" src="/static/certificates/images/demo-user-profile.png" alt="">
                         </span>
-                        <div class="recipient-details">
+                        <div class="recipient-details" style="color:white!important">
                             <h3 class="recipient-name">${accomplishment_copy_name | h}</h3>
                             <p class="recipient-username">${accomplishment_copy_username} @ ${platform_name}</p>
                         </div>
                     </dd>
                 </dl>
-                <dl class="metadata accomplishment-id">
-                    <dt class="label copy copy-meta">${certificate_id_number_title}:</dt>
-                    <dd class="value copy copy-base">${certificate_id_number}</dd>
+                <dl class="metadata accomplishment-id" style="color:white!important">
+                    <dt class="label copy copy-meta" style="color:white!important">${certificate_id_number_title}:</dt>
+                    <dd class="value copy copy-base" style="color:white!important">${certificate_id_number}</dd>
                 </dl>
-                <dl class="metadata accomplishment-date">
-                    <dt class="label copy copy-meta">${certificate_date_issued_title}</dt>
-                    <dd class="value copy copy-base">${certificate_date_issued}</dd>
+                <dl class="metadata accomplishment-date" style="color:white!important")>
+                    <dt class="label copy copy-meta" style="color:white!important">${certificate_date_issued_title}</dt>
+                    <dd class="value copy copy-base" style="color:white!important">${certificate_date_issued}</dd>
                 </dl>
             </div>
         </div>
     </div>
 
 </main>
+
