@@ -1592,7 +1592,7 @@ def _do_create_account(form, custom_form=None):
 
     profile_fields = [
         "name", "level_of_education", "gender", "mailing_address", "city", "country", "goals",
-        "year_of_birth"
+        "year_of_birth", "job", "organization"
     ]
     profile = UserProfile(
         user=user,
@@ -1777,6 +1777,8 @@ def create_account_with_params(request, params):
                 'address': profile.mailing_address,
                 'gender': profile.gender_display,
                 'country': unicode(profile.country),
+                'job': profile.job,
+                'organization': profile.organization
             }
         ]
 
