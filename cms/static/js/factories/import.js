@@ -53,7 +53,7 @@ define([
         $('#fileupload').fileupload({
             dataType: 'json',
             type: 'POST',
-            maxChunkSize: 20 * 1000000, // 20 MB
+            maxChunkSize: 20 * 1000 * 1000 * 1000, // 2 Gb
             autoUpload: false,
             add: function(e, data) {
                 Import.reset();
