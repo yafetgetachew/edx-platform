@@ -52,7 +52,7 @@
                 editable: 'always',
                 showMessages: false,
                 title: interpolate_text(
-                    gettext('{platform_name} learners can see my:'), {platform_name: options.platform_name}
+                    gettext('{platform_name} يستطيع المتعلمون ان يروا:'), {platform_name: options.platform_name}
                 ),
                 valueAttribute: 'account_privacy',
                 options: [
