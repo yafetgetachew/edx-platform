@@ -54,6 +54,7 @@ log = logging.getLogger(__name__)
 # Regex to capture Content-Range header ranges.
 CONTENT_RE = re.compile(r"(?P<start>\d{1,11})-(?P<stop>\d{1,11})/(?P<end>\d{1,11})")
 
+STATUS_FILTERS = user_tasks_settings.USER_TASKS_STATUS_FILTERS
 
 @transaction.non_atomic_requests
 @login_required

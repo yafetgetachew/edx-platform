@@ -89,14 +89,14 @@ def rerun_course(source_course_key_string, destination_course_key_string, user_i
     except DuplicateCourseError:
         # do NOT delete the original course, only update the status
         CourseRerunState.objects.failed(course_key=destination_course_key)
-        logging.exception(u'Course Rerun Error')
+        LOGGER.exception(u'Course Rerun Error')
         return "duplicate course"
 
     # catch all exceptions so we can update the state and properly cleanup the course.
     except Exception as exc:  # pylint: disable=broad-except
         # update state: Failed
         CourseRerunState.objects.failed(course_key=destination_course_key)
-        logging.exception(u'Course Rerun Error')
+        LOGGER.exception(u'Course Rerun Error')
 
         try:
             # cleanup any remnants of the course
@@ -227,6 +227,8 @@ def export_olx(self, user_id, course_key_string, language):
         if self.status.state != UserTaskStatus.FAILED:
             self.status.fail({'raw_error_msg': text_type(exception)})
         return
+
+    self.status.set_state(UserTaskStatus.SUCCEEDED)
 
 
 def create_export_tarball(course_module, course_key, context, status=None):
