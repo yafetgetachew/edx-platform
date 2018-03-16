@@ -20514,6 +20514,14 @@ msgstr ""
 msgid "This page left intentionally blank. Feel free to add your own content."
 msgstr "لقد تركنا لك هذه الصفحة فارغة كي تستطيع إضافة أي محتوى حسب رغبتك."
 
+#: lms/templates/static_templates/contact_form_sended.html
+msgid "Contact form Submitted successfully."
+msgstr "تم إرسال رسالة الدعم الفني بنجاح."
+
+#: lms/templates/static_templates/contact_form_sended.html
+msgid "Contact Form."
+msgstr "نموذج الإتصال بالدعم الفني."
+
 #: lms/templates/static_templates/embargo.html
 msgid ""
 "Our system indicates that you are trying to access this {platform_name} "
