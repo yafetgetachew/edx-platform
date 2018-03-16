@@ -25941,3 +25941,6 @@ msgstr "http://desk.ua/ru/etichniy-kodeks"
 msgid "http://desk.ua/en/contact"
 msgstr "http://desk.ua/ru/contact"
 
+msgid "All courses"
+msgstr "Все курсы"
+
