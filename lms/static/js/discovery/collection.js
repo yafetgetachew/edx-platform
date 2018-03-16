@@ -18,6 +18,7 @@
             url: '/search/course_discovery/',
             fetchXhr: null,
             catalog_visibility: 'both',
+            sort: 'start',
 
             performSearch: function(searchTerm, facets) {
                 this.fetchXhr && this.fetchXhr.abort();
@@ -61,7 +62,8 @@
                     search_string: this.searchTerm,
                     page_size: this.pageSize,
                     page_index: pageNumber,
-                    catalog_visibility: this.catalog_visibility
+                    catalog_visibility: this.catalog_visibility,
+                    sort: this.sort
                 };
                 if (this.selectedFacets.length > 0) {
                     this.selectedFacets.each(function(facet) {
