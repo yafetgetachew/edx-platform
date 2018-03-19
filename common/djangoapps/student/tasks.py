@@ -3,6 +3,7 @@ This file contains celery tasks for sending email
 """
 import logging
 import StringIO
+from datetime import timedelta
 from django.conf import settings
 from django.core import mail
 from django.contrib.auth import get_user_model
@@ -57,7 +58,7 @@ def send_activation_email(self, subject, message, from_address, dest_addr):
         raise Exception
 
 
-@periodic_task(ignore_result=True, run_every=crontab(day_of_month=settings.FEATURES.get('REPORT_INTERVAL', '*/2')))
+@periodic_task(ignore_result=True, run_every=timedelta(minutes=settings.FEATURES.get('REPORT_INTERVAL', 2880)))
 def send_users_report():
     qs = User.objects.all()
     fd = StringIO.StringIO()
