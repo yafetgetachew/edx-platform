@@ -29752,6 +29752,9 @@ msgid ""
 "Add a clear and descriptive title to encourage participation. (Required)"
 msgstr ""
 
+msgid "Add a clear and descriptive title to encourage participation."
+msgstr "Ajoutez un titre clair pour encourager les membres à participer."
+
 #: common/static/common/templates/discussion/new-post.underscore
 #: test_root/staticfiles/common/templates/discussion/new-post.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/new-post.underscore
@@ -29998,6 +30001,9 @@ msgstr "Ce message est visible par tous."
 msgid "Post type"
 msgstr "Type de message"
 
+msgid "Post type:"
+msgstr "Type de message:"
+
 #: common/static/common/templates/discussion/thread-type.underscore
 #: test_root/staticfiles/common/templates/discussion/thread-type.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/thread-type.underscore
@@ -30008,6 +30014,9 @@ msgstr ""
 "Les questions sont adaptées pour les sujets qui nécessitent une réponse. Les "
 "discussions permettent de partager des idées et de commencer des "
 "conversations. (Requis)"
+
+msgid "Questions raise issues that need answers. Discussions share ideas and start conversations."
+msgstr "\"Questions\" concerne un problème pour lequel vous attendez une réponse. \"Discussion\" permet de démarrer une conversation et de partager des idées."
 
 #: common/static/common/templates/discussion/thread-type.underscore
 #: test_root/staticfiles/common/templates/discussion/thread-type.underscore
@@ -30040,6 +30049,9 @@ msgid "Add your post to a relevant topic to help others find it. (Required)"
 msgstr ""
 "Ajoutez votre message au sujet de discussion qui convient pour aider les "
 "autres participants à le trouver. (Requis)"
+
+msgid "Add your post to a relevant topic to help others find it."
+msgstr "Ajoutez votre sujet dans une section pertinente pour qu'il soit plus simple à trouver."
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #: test_root/staticfiles/discussion/templates/discussion-home.underscore
@@ -33922,3 +33934,12 @@ msgstr ""
 #: cms/templates/js/video/transcripts/messages/transcripts-use-existing.underscore
 msgid "Use Current Transcript"
 msgstr "Utiliser la transcription courante"
+
+msgid "Topic Area:"
+msgstr "Sujet:"
+
+msgid "Enter your question or comment"
+msgstr "Entrez votre question ou votre commentaire"
+
+msgid "Add Post"
+msgstr "Publier le sujet"

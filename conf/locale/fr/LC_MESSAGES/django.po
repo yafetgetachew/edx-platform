@@ -26440,3 +26440,12 @@ msgstr ""
 #: wiki/views/article.py
 msgid "A new revision of the article was successfully added."
 msgstr ""
+
+msgid "Search all posts"
+msgstr "Rechercher..."
+
+msgid "Post type:"
+msgstr "Type de message:"
+
+msgid "Topic Area:"
+msgstr "Sujet:"
