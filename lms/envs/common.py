@@ -2814,7 +2814,8 @@ ACCOUNT_VISIBILITY_CONFIGURATION = {
         "account_privacy",
         "accomplishments_shared",
         "job",
-        "organization"
+        "organization",
+        "region"
     ]
 }
 

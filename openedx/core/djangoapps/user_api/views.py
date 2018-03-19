@@ -176,7 +176,8 @@ class RegistrationView(APIView):
         "honor_code",
         "terms_of_service",
         "job",
-        "organization"
+        "organization",
+        "region"
     ]
 
     # This end-point is available to anonymous users,
@@ -400,6 +401,13 @@ class RegistrationView(APIView):
         form_desc.add_field( 
             "organization",
             label=_('Organization Name'),
+            required=required
+        )
+
+    def _add_region_field(self, form_desc, required=True):
+        form_desc.add_field(
+            "region",
+            label=_('Region'),
             required=required
         )
 

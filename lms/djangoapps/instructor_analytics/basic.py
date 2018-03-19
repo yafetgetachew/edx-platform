@@ -31,7 +31,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 STUDENT_FEATURES = ('id', 'username', 'first_name', 'last_name', 'is_staff', 'email')
 PROFILE_FEATURES = ('name', 'language', 'location', 'year_of_birth', 'gender',
                     'level_of_education', 'mailing_address', 'goals', 'meta',
-                    'city', 'country', 'job', 'organization')
+                    'city', 'country', 'job', 'organization', 'region')
 ORDER_ITEM_FEATURES = ('list_price', 'unit_cost', 'status')
 ORDER_FEATURES = ('purchase_time',)
 

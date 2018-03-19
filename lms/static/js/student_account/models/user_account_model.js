@@ -25,7 +25,8 @@
                 accomplishments_shared: false,
                 default_public_account_fields: [],
                 job: '',
-                organization: ''
+                organization: '',
+                region: ''
             },
 
             parse: function(response) {

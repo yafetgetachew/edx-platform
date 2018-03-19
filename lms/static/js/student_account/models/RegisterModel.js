@@ -14,7 +14,8 @@
                     mailing_address: '',
                     goals: '',
                     job: '',
-                    organization: ''
+                    organization: '',
+                    region: ''
                 },
                 ajaxType: '',
                 urlRoot: '',

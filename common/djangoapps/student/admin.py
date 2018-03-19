@@ -214,12 +214,18 @@ def write_users_report(queryset, fd):
             fname = name_list[0]
             lname = ' '.join(name_list[1:])
             country = countries.get(user.profile.country, user.profile.country)
+            job = user.profile.job
+            org = user.profile.organization
+            region = user.profile.region
         else:
             fname = user.first_name
             lname = user.last_name
-            country = 'N/A'
+            country = _('N/A')
+            job = _('N/A')
+            org = _('N/A')
+            region = _('N/A')
 
-        user_row = (fname, lname, user.email, _('N/A'), _('N/A'), country, _('N/A'),)
+        user_row = (fname, lname, user.email, job, org, country, region,)
 
         enrollments = CourseEnrollment.objects.filter(is_active=True, user=user)
         if not enrollments.exists():
