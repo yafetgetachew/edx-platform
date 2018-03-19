@@ -91,6 +91,14 @@
     ], 
     "%(min_score)s is not a valid grade percentage": "%(min_score)s n'est pas un pourcentage de notation valide", 
     "%(new_item_message)s": "%(new_item_message)s", 
+    "%(numResponses)s other response": [
+      "%(numResponses)s autre r\u00e9ponse", 
+      "%(numResponses)s autres r\u00e9ponses"
+    ], 
+    "%(numResponses)s response": [
+      "%(numResponses)s r\u00e9ponse", 
+      "%(numResponses)s r\u00e9ponses"
+    ], 
     "%(num_points)s point possible (graded)": [
       "%(num_points)s point possible (not\u00e9)", 
       "%(num_points)s points possibles (not\u00e9s)"
@@ -121,6 +129,7 @@
     ], 
     "%(platform_name)s Additions:": "Ajouts %(platform_name)s:", 
     "%(platform_name)s Wiki": "Wiki %(platform_name)s", 
+    "%(post_type)s posted %(time_ago)s by %(author)s": "%(post_type)s publi\u00e9e %(time_ago)s par %(author)s", 
     "%(team_count)s Team": [
       "%(team_count)s Equipe", 
       "%(team_count)s \u00c9quipes"
@@ -788,6 +797,7 @@
     "Chapter information": "Information sur le chapitre", 
     "Chapter name and asset_path are both required": "Titre de chapitre et asset_path sont touts deux n\u00e9cessaires", 
     "Chapter name is required": "Le titre du chapitre est requis", 
+    "Check": "Valider", 
     "Check Your Email": "V\u00e9rifiez votre email", 
     "Check and repair external authentication map": "V\u00e9rifier et r\u00e9parer la correspondance d'authentification externe", 
     "Check here to apply the above permissions recursively to articles under this one.": "Cochez ceci pour appliquer les permissions sup\u00e9rieures aux articles qui d\u00e9pendent de celui-ci.", 
@@ -1175,6 +1185,7 @@
     "Create a New Team": "Cr\u00e9er une nouvelle \u00e9quipe", 
     "Create a content group": "Cr\u00e9er un groupe de contenu", 
     "Create a new Custom Course for edX": "Cr\u00e9er un cours sur mesure pour edX", 
+    "Create a new account": "Cr\u00e9er un nouveau compte", 
     "Create a new team if you can't find an existing team to join, or if you would like to learn with friends you know.": "Cr\u00e9ez une nouvelle \u00e9quipe si vous ne trouvez pas une \u00e9quipe existante \u00e0 rejoindre, ou si vous d\u00e9sirez apprendre avec des amis que vous connaissez d\u00e9j\u00e0.", 
     "Create a re-run of a course": "Cr\u00e9er une nouvelle session d'un cours", 
     "Create a section, then add subsections and units. Open a unit to add course components.": "Cr\u00e9ez une section, puis ajoutez sous-sections et unit\u00e9s. Ouvrez une unit\u00e9 pour ajouter des composants de cours.", 
@@ -1189,6 +1200,7 @@
     "Create one or more pre-paid course enrollment codes. Students can use these codes to enroll in the course.": "Cr\u00e9er un ou plusieurs codes d'inscription pr\u00e9pay\u00e9s. Les \u00e9tudiants peuvent utiliser ces codes pour s'inscrire dans le cours.", 
     "Create team.": "Cr\u00e9er l'\u00e9quipe.", 
     "Create user": "Cr\u00e9er un utilisateur", 
+    "Create your account": "Cr\u00e9er votre compte", 
     "Create your own {platform_name} account below": "Cr\u00e9ez votre propre compte {platform_name} ci-dessous", 
     "Created new group: \"{}\"": "Nouveau groupe cr\u00e9\u00e9 : \"{}\"", 
     "Created new profile for user: \"{}\"": "Cr\u00e9ation du nouveau profil pour l'utilisateur : \"{}\"", 
@@ -2043,6 +2055,7 @@
     "Hi,": "Bonjour,", 
     "Hide": "Cacher", 
     "Hide Annotations": "Cacher les annotations", 
+    "Hide Answer": "Masquer les r\u00e9ponses", 
     "Hide Deprecated Settings": "Cacher les param\u00e8tres obsol\u00e8tes", 
     "Hide Discussion": "Masquer la discussion", 
     "Hide External Tool": "Cacher l'outil externe", 
@@ -2092,6 +2105,7 @@
     "I agree to the {link_start}Honor Code{link_end}": "J'accepte la {link_start}charte utilisateur{link_end}", 
     "I agree to the {link_start}Terms of Service{link_end}": "J'accepte les {link_start}conditions d'utilisation du Service{link_end}", 
     "I agree to the {platform_name} {terms_of_service}": "J'accepte les {terms_of_service} de  {platform_name}", 
+    "I agree to the {platform_name} {terms_of_service}.": "J'accepte les {terms_of_service}<!--de {platform_name}-->", 
     "I allow edX to use the information provided in this application (except for financial information) for edX marketing purposes.": "J'autorise edX \u00e0 utiliser l'information fournie dans cette demande (except\u00e9es les informations financi\u00e8res) pour les fins de marketing edX.", 
     "I completed a course at {platform_name}. Take a look at my certificate.": "J'ai termin\u00e9 un cours sur {platform_name}. Voici mon certificat.", 
     "I completed the {course_title} course on {platform_name}.": "J'ai termin\u00e9 le cours {course_title} sur {platform_name}.", 
@@ -5022,6 +5036,7 @@
       "Vous avez utilis\u00e9 {num_used} essai sur {num_total}", 
       "Vous avez utilis\u00e9 {num_used} essais sur {num_total}"
     ], 
+    "You have used {num_used} of {num_total} submissions": "Vous avez utilis\u00e9 {num_used} soumissions sur {num_total}", 
     "You haven't added any assets to this course yet.": "Vous n'avez encore ajout\u00e9 aucune ressource dans ce cours.", 
     "You haven't added any content to this course yet.": "Vous n'avez pas encore ajout\u00e9 de contenu \u00e0 ce cours.", 
     "You haven't added any textbooks to this course yet.": "Vous n'avez encore ajout\u00e9 aucun manuel \u00e0 ce cours.", 
@@ -5352,8 +5367,8 @@
     "error getting student answer from {student_answers}": "erreur lors de la r\u00e9cup\u00e9ration de la r\u00e9ponse d'un \u00e9tudiant depuis {student_answers}", 
     "error grading {image_input_id} (input={user_input})": "erreur \u00e0 la notation {image_input_id} (input={user_input})", 
     "example: A123DS": "exemple: A123DS", 
-    "example: Jane Doe": "exemple : Jean Dupont", 
-    "example: JaneDoe": "exemple\u00a0: jdupont", 
+    "example: Jane Doe": "exemple: JeanDupont02", 
+    "example: JaneDoe": "exemple: JeanDupont02", 
     "example: New York": "exemple : New York", 
     "example: username@domain.com": "exemple\u00a0: jean.dupont@domaine.com", 
     "factorial function evaluated outside its domain:'{student_answer}'": "fonction factorielle \u00e9valu\u00e9e en dehors de son domaine : '{student_answer}'", 

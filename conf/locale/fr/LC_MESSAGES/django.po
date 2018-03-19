@@ -10351,7 +10351,7 @@ msgstr ""
 #. a field on the password reset form meant to hold the user's email address.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "username@domain.com"
-msgstr "utilisateur@exemple.com"
+msgstr "Email"
 
 #. Translators: These instructions appear on the login form, immediately
 #. below a field meant to hold the user's email address.
@@ -10442,7 +10442,7 @@ msgstr ""
 #. a field on the registration form meant to hold the user's username.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "JaneDoe"
-msgstr "JeanDupont"
+msgstr "Pseudo (exemple: JeanDupont02)"
 
 #. Translators: This label appears above a dropdown menu on the registration
 #. form used to select the user's highest completed level of education.
@@ -26525,3 +26525,14 @@ msgstr ""
 msgid "Show Background Task History for Problem"
 msgstr "Voir l'historique des tâches"
 
+msgid "Create a new account"
+msgstr "Créer un nouveau compte"
+
+msgid "Create your account"
+msgstr "Créer votre compte"
+
+msgid "I agree to the {platform_name} {terms_of_service}."
+msgstr "J'accepte les {terms_of_service}.<!--de {platform_name}-->"
+
+msgid "You have used {num_used} of {num_total} submissions"
+msgstr "Vous avez utilisé {num_used} soumissions sur {num_total}"

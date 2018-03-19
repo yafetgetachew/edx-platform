@@ -10505,6 +10505,9 @@ msgstr ""
 msgid "I agree to the {platform_name} {terms_of_service}"
 msgstr "J'accepte les {terms_of_service} de  {platform_name}"
 
+msgid "I agree to the {platform_name} {terms_of_service}."
+msgstr "J'accepte les {terms_of_service}<!--de {platform_name}-->"
+
 #. Translators: "Terms of Service" is a legal document users must agree to
 #. in order to register a new account.
 #. Translators: "Terms of service" is a legal document users must agree to
@@ -11223,7 +11226,7 @@ msgstr "Mot de passe oublié ?"
 #: cms/templates/register.html lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-form.html
 msgid "example: Jane Doe"
-msgstr "exemple : Jean Dupont"
+msgstr "exemple: JeanDupont02"
 
 #: cms/templates/register.html lms/templates/register-form.html
 #: lms/templates/register-shib.html lms/templates/signup_modal.html
@@ -11239,7 +11242,7 @@ msgstr "Nom d'utilisateur public"
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "example: JaneDoe"
-msgstr "exemple : jdupont"
+msgstr "exemple: JeanDupont02"
 
 #: cms/templates/settings.html
 #: lms/templates/instructor/instructor_dashboard_2/executive_summary.html
@@ -25414,10 +25417,22 @@ msgid ""
 msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
+msgid "%(numResponses)s other response"
+msgid_plural "%(numResponses)s other responses"
+msgstr[0] "%(numResponses)s autre réponse"
+msgstr[1] "%(numResponses)s autres réponses"
+
+#: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} other response"
 msgid_plural "{numResponses} other responses"
 msgstr[0] "{numResponses} autre réponse"
 msgstr[1] "{numResponses} autres réponses"
+
+#: common/static/common/js/discussion/views/discussion_thread_view.js
+msgid "%(numResponses)s response"
+msgid_plural "%(numResponses)s responses"
+msgstr[0] "%(numResponses)s réponse"
+msgstr[1] "%(numResponses)s réponses"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "{numResponses} response"
@@ -29968,6 +29983,9 @@ msgstr "Ajouter un commentaire"
 msgid "discussion posted %(time_ago)s by %(author)s"
 msgstr "discussion publiée il y a %(time_ago)s par %(author)s"
 
+msgid "%(post_type)s posted %(time_ago)s by %(author)s"
+msgstr "%(post_type)s publiée %(time_ago)s par %(author)s"
+
 #: common/static/common/templates/discussion/thread-show.underscore
 #: test_root/staticfiles/common/templates/discussion/thread-show.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/thread-show.underscore
@@ -33946,3 +33964,18 @@ msgstr "Publier le sujet"
 
 msgid "Student Gradebook"
 msgstr "Bulletin de notes de l'étudiant"
+
+msgid "Create a new account"
+msgstr "Créer un nouveau compte"
+
+msgid "Create your account"
+msgstr "Créer votre compte"
+
+msgid "Hide Answer"
+msgstr "Masquer les réponses"
+
+msgid "Check"
+msgstr "Valider"
+
+msgid "You have used {num_used} of {num_total} submissions"
+msgstr "Vous avez utilisé {num_used} soumissions sur {num_total}"

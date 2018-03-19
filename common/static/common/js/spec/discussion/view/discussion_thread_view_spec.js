@@ -213,12 +213,12 @@
             describe("response count and pagination", function() {
                 it("correctly render for a thread with no responses", function() {
                     renderWithTestResponses(this.view, 0);
-                    return assertResponseCountAndPaginationCorrect(this.view, "0 responses", null, null);
+                    return assertResponseCountAndPaginationCorrect(this.view, "0 Réponses", null, null);
                 });
                 it("correctly render for a thread with one response", function() {
                     renderWithTestResponses(this.view, 1);
                     return assertResponseCountAndPaginationCorrect(
-                        this.view, "1 response", "Showing all responses", null
+                        this.view, "1 Réponse", "Showing all responses", null
                     );
                 });
                 it("correctly render for a thread with one additional page", function() {
@@ -226,7 +226,7 @@
                         resp_total: 2
                     });
                     return assertResponseCountAndPaginationCorrect(
-                        this.view, "2 responses", "Showing first response", "Load all responses"
+                        this.view, "2 Réponses", "Showing first response", "Load all responses"
                     );
                 });
                 it("correctly render for a thread with multiple additional pages", function() {
@@ -234,7 +234,7 @@
                         resp_total: 111
                     });
                     return assertResponseCountAndPaginationCorrect(
-                        this.view, "111 responses", "Showing first 2 responses", "Load next 100 responses"
+                        this.view, "111 Réponses", "Showing first 2 responses", "Load next 100 responses"
                     );
                 });
                 describe("on clicking the load more button", function() {
@@ -243,7 +243,7 @@
                             resp_total: 5
                         });
                         return assertResponseCountAndPaginationCorrect(
-                            this.view, "5 responses", "Showing first response", "Load all responses"
+                            this.view, "5 Réponses", "Showing first response", "Load all responses"
                         );
                     });
                     it("correctly re-render when all threads have loaded", function() {
@@ -252,7 +252,7 @@
                         });
                         this.view.$el.find(".load-response-button").click();
                         return assertResponseCountAndPaginationCorrect(
-                            this.view, "5 responses", "Showing all responses", null
+                            this.view, "5 Réponses", "Showing all responses", null
                         );
                     });
                     it("correctly re-render when one page remains", function() {
@@ -261,7 +261,7 @@
                         });
                         this.view.$el.find(".load-response-button").click();
                         return assertResponseCountAndPaginationCorrect(
-                            this.view, "42 responses", "Showing first 3 responses", "Load all responses"
+                            this.view, "42 Réponses", "Showing first 3 responses", "Load all responses"
                         );
                     });
                     it("correctly re-render when multiple pages remain", function() {
@@ -270,7 +270,7 @@
                         });
                         this.view.$el.find(".load-response-button").click();
                         return assertResponseCountAndPaginationCorrect(
-                            this.view, "111 responses", "Showing first 3 responses", "Load next 100 responses"
+                            this.view, "111 Réponses", "Showing first 3 responses", "Load next 100 responses"
                         );
                     });
                 });
@@ -415,7 +415,7 @@
                 expect(view.$(".js-response-list .discussion-response").length).toEqual(numNonEndorsed);
                 return assertResponseCountAndPaginationCorrect(
                     view, "" + numNonEndorsed + " " + (numEndorsed ? "other " : "") +
-                    (numNonEndorsed === 1 ? "response" : "responses"),
+                    (numNonEndorsed === 1 ? "Réponse" : "Réponses"),
                     numNonEndorsed ? "Showing all responses" : null, null
                 );
             };
