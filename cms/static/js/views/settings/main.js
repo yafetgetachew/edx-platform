@@ -148,9 +148,15 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                        paceToggleTip.text(gettext('Course pacing cannot be changed once a course has started.'));
                    }
 
+                   instr_info = this.model.get('instructor_info').instructors
+                   if (instr_info.length > 0) {
+                        $('.add-course-instructor-info').hide()
+                   }
+
                    this.licenseView.render();
                    this.learning_info_view.render();
                    this.instructor_info_view.render();
+
 
                    return this;
                },
@@ -195,6 +201,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
         * Add new course instructor fields.
         * */
                    var instructors = this.model.get('instructor_info').instructors.slice(0);
+
                    instructors.push({
                        name: '',
                        title: '',
@@ -203,6 +210,7 @@ define(['js/views/validation', 'codemirror', 'underscore', 'jquery', 'jquery.ui'
                        bio: ''
                    });
                    this.model.set('instructor_info', {instructors: instructors});
+                   $('.add-course-instructor-info').hide()
                },
 
                updateTime: function(e) {
