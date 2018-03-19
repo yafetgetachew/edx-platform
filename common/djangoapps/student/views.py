@@ -88,7 +88,6 @@ from openedx.core.djangoapps.user_api.preferences import api as preferences_api
 from openedx.core.djangolib.markup import HTML
 from openedx.features.course_experience import course_home_url_name
 from openedx.features.enterprise_support.api import get_dashboard_consent_notification
-from ospp_api import utils as ospp_utils
 from shoppingcart.api import order_history
 from shoppingcart.models import CourseRegistrationCode, DonationConfiguration
 from student.cookies import delete_logged_in_cookies, set_logged_in_cookies, set_user_info_cookie
@@ -661,16 +660,6 @@ def dashboard(request):
     # longer exist (because the course IDs have changed). Still, we don't delete those
     # enrollments, because it could have been a data push snafu.
     course_enrollments = list(get_course_enrollments(user, course_org_filter, org_filter_out_set))
-
-    # NOTE(OSPP Feature) Check whether user is sponsored by the partner
-    student_state = ospp_utils.get_learner_info(request.user.id)
-    if student_state:
-        for enrollment in course_enrollments:
-            ospp_utils.applay_user_status_to_enroll(
-                    user=request.user,
-                    course_enrollment=enrollment,
-                    status=student_state,
-            )
 
     # Record how many courses there are so that we can get a better
     # understanding of usage patterns on prod.

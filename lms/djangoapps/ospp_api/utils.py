@@ -40,9 +40,9 @@ def get_learner_info(user_id):
     raise HttpLearnerApiException
 
 
-def get_credit_convert_eligibility(user, enrollment):
+def get_credit_convert_eligibility(user, course_id):
     return CreditEligibility.objects.filter(
-        course__course_key=enrollment.course_id,
+        course__course_key=course_id,
         username=user.username
     ).exists()
 
@@ -59,7 +59,7 @@ def applay_user_status_to_enroll(user, course_enrollment, status):
     if not status or status.get('eligibilityStatus') != 'true' or not benefit_type:
         return
 
-    if benefit_type in CREDIT_ELIGIBLE and get_credit_convert_eligibility(user, course_enrollment):
+    if benefit_type in CREDIT_ELIGIBLE and get_credit_convert_eligibility(user, course_enrollment.course_id):
         change_user_enrollment(course_enrollment, 'credit')
     elif benefit_type in VERIFY_ELIGIBLE:
         change_user_enrollment(course_enrollment, 'verified')
@@ -101,14 +101,17 @@ class MethodViewWithMakoMixin(object):
     __metaclass__ = ABCMeta
 
     def get_patched_module(self, original_request):
+        def custom_actions(dictionary):
+            dictionary = self.update_context(original_request, dictionary or {})
+
         def patched_render_to_response(
                 template_name, dictionary=None, context_instance=None, namespace='main', request=None, **kwargs
         ):
-            dictionary = self.update_context(original_request, dictionary or {})
+            custom_actions(dictionary)
             return render_to_response(template_name, dictionary, context_instance, namespace, request, **kwargs)
 
         def patched_render_to_string(template_name, dictionary, context=None, namespace='main', request=None):
-            dictionary = self.update_context(original_request, dictionary or {})
+            custom_actions(dictionary)
             return render_to_string(template_name, dictionary, context, namespace, request)
 
         module = self.view_module()
