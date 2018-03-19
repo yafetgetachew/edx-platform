@@ -12116,7 +12116,7 @@ msgstr "Nom :"
 
 #: lms/templates/manage_user_standing.html
 msgid "Choose an action:"
-msgstr "Choisir une action :"
+msgstr "Choisir une action:"
 
 #: lms/templates/manage_user_standing.html
 msgid "View Profile"
@@ -26449,3 +26449,79 @@ msgstr "Type de message:"
 
 msgid "Topic Area:"
 msgstr "Sujet:"
+
+msgid "Student Gradebook"
+msgstr "Bulletin de notes de l'étudiant"
+
+msgid ""
+"Click here to view the gradebook for enrolled students. This feature is only "
+"visible to courses with a small number of total enrolled students."
+msgstr ""
+"Cliquez ici pour voir le bulletin de notes des étudiants participants. Cette fonction est "
+"visible uniquement pour les cours avec peu de participants."
+
+msgid "Student-specific grade inspection"
+msgstr "Inspection du niveau de l'étudiant"
+
+msgid "Click this link to view the student's progress page:"
+msgstr "Cliquez sur ce lien pour voir la page de progression de l'étudiant:"
+
+msgid "Student Progress Page"
+msgstr "Page de progression de l'étudiant"
+
+msgid "Student-specific grade adjustment"
+msgstr "Ajustement de l'état d'un étudiant en particulier"
+
+msgid "Specify a problem in the course here with its complete location:"
+msgstr "Signalez un problème dans le cours en indiquant ici son adresse complète:"
+
+msgid "You must provide the complete location of the problem. In the Staff Debug viewer, the location looks like this:"
+msgstr "Vous devez fournir l'adresse complète du problème. Dans l'outil d'admin de débug, la localisation ressemble à ça:"
+
+msgid "Next, select an action to perform for the given user and problem:"
+msgstr "Ensuite, sélectionnez une action à effectuer pour un problème et un utilisateur donné:"
+
+msgid "Reset Student Attempts"
+msgstr "Remise à zéro du nombre d'essais restants"
+
+msgid "Rescore Student Submission"
+msgstr "Recalculer le score"
+
+msgid "You may also delete the entire state of a student for the specified problem:"
+msgstr "Vous pouvez également supprimer l'intégralité de la réponse de l'étudiant pour un problème spécifique:"
+
+msgid "Delete Student State for Problem"
+msgstr "Supprimer la réponse de l'étudiant pour ce problème"
+
+msgid ""
+"Rescoring runs in the background, and status for active tasks will appear in the 'Pending Tasks' table. "
+"To see status for all tasks submitted for this problem and student, click on this button:"
+msgstr ""
+"Le recalcul du score fonctionne en tâche de fond, et les statuts des tâches actives apparaîtront dans le tableau 'Tâches en cours'. "
+"Pour voir les statuts de toutes les tâches en cours pour ce problème et cet étudiant, cliquez sur ce bouton:"
+
+msgid "Show Background Task History for Student"
+msgstr "Voir l'historique des tâches"
+
+msgid "Course-specific grade adjustment"
+msgstr "Ajustement de l'état d'un cours en particulier"
+
+msgid "Then select an action"
+msgstr "Ensuite, choisissez une action"
+
+msgid "Reset ALL students' attempts"
+msgstr "Remise à zéro de TOUS les essais restants des étudiants"
+
+msgid "Rescore ALL students' problem submissions"
+msgstr "Recalculer TOUTES les réponses des étudiants"
+
+msgid ""
+"The above actions run in the background, and status for active tasks will appear in a table on the Course Info tab. "
+"To see status for all tasks submitted for this problem, click on this button"
+msgstr ""
+"Les actions ci-dessus fonctionnent en tâche de fond, et le statut des tâches actives apparaîtront dans le tableau 'Information du cours'. "
+"Pour voir le statut de toutes les tâches actives pour ce problème, cliquez sur ce bouton:"
+
+msgid "Show Background Task History for Problem"
+msgstr "Voir l'historique des tâches"
+

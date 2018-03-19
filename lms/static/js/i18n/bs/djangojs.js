@@ -3678,6 +3678,7 @@
     "Student Admin": "Admin \u00c9tudiant", 
     "Student Email or Username": "Adresse e-mail \u00c9tudiant ou Nom d'utilisateur", 
     "Student Enrollment Form": "Formulaire d'Inscription \u00c9tudiant", 
+    "Student Gradebook": "Bulletin de notes de l'\u00e9tudiant", 
     "Student Grades": "Notes des \u00e9tudiants", 
     "Student List Management": "Gestion de la liste des \u00e9tudiants", 
     "Student Notes": "Notes", 

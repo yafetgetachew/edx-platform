@@ -33943,3 +33943,6 @@ msgstr "Entrez votre question ou votre commentaire"
 
 msgid "Add Post"
 msgstr "Publier le sujet"
+
+msgid "Student Gradebook"
+msgstr "Bulletin de notes de l'étudiant"
