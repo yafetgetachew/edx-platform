@@ -24,7 +24,7 @@ from student.models import (
 log = logging.getLogger(__name__)
 
 
-def get_course_enrollments(user_id=None):
+def get_course_enrollments(user_id=None, course_id=None):
     """Retrieve a list representing all aggregated data for a user's course enrollments.
 
     Construct a representation of all course enrollment data for a specific user.
@@ -37,8 +37,14 @@ def get_course_enrollments(user_id=None):
 
     """
     qset = CourseEnrollment.objects.filter(is_active=True)
+
     if user_id:
         qset = qset.filter(Q(user__username=user_id) | Q(user__email=user_id))
+
+    if course_id:
+        course_key = CourseKey.from_string(course_id)
+        qset = qset.filter(course_id=course_key)
+
     qset = qset.order_by('created')
 
     enrollments = CourseEnrollmentSerializer(qset, many=True).data
