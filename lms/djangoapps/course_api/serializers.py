@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 from rest_framework import serializers
 from xmodule.modulestore.django import modulestore
 
-from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
+from lms.djangoapps.grades.new.course_grade_factory import CourseGradeFactory
 from openedx.core.djangoapps.models.course_details import CourseDetails
 from openedx.core.lib.api.fields import AbsoluteURLField
 
