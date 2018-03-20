@@ -34,6 +34,7 @@ locales:
     # - fi_FI  # Finnish (Finland)
     # - fil  # Filipino
     - fr  # French
+    - fr_CA # French (Canada)
     # - gl  # Galician
     # - gu  # Gujarati
     - he  # Hebrew
@@ -43,11 +44,11 @@ locales:
     # - hy_AM  # Armenian (Armenia)
     # - id  # Indonesian
     # - it_IT  # Italian (Italy)
-    # - ja_JP  # Japanese (Japan)
+    - ja_JP  # Japanese (Japan)
     # - kk_KZ  # Kazakh (Kazakhstan)
     # - km_KH  # Khmer (Cambodia)
     # - kn  # Kannada
-    # - ko_KR  # Korean (Korea)
+    - ko_KR  # Korean (Korea)
     # - lt_LT  # Lithuanian (Lithuania)
     # - ml  # Malayalam
     # - mn  # Mongolian
@@ -57,7 +58,7 @@ locales:
     # - ne  # Nepali
     # - nl_NL  # Dutch (Netherlands)
     # - or  # Oriya
-    # - pl  # Polish
+    - pl  # Polish
     - pt_BR  # Portuguese (Brazil)
     # - pt_PT  # Portuguese (Portugal)
     # - ro  # Romanian
@@ -68,15 +69,15 @@ locales:
     # - sq  # Albanian
     # - sr  # Serbian
     # - sv  # Swedish
-    # - sw  # Swahili
+    - sw  # Swahili
     # - ta  # Tamil
     # - te  # Telugu
     # - th  # Thai
-    # - tr_TR  # Turkish (Turkey)
+    - tr_TR  # Turkish (Turkey)
     - uk  # Ukranian
     # - ur  # Urdu
     # - uz  # Uzbek
-    # - vi  # Vietnamese
+    - vi  # Vietnamese
     - zh_CN  # Chinese (China)
     # - zh_HK  # Chinese (Hong Kong)
     - zh_TW  # Chinese (Taiwan)

@@ -4,73 +4,102 @@
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
 # Translators:
-# bossnm11 <bossnm11@gmail.com>, 2014
-# kmooc <shevious@gmail.com>, 2015
-# shevious <shevious@yahoo.com>, 2015
-# Jong-Dae Park <jdpark7@gmail.com>, 2013
-# jeon <bluerespect@nate.com>, 2014-2015
-# Jong-Dae Park <jdpark7@gmail.com>, 2013
-# Gu Hong Min <placidmoon1@gmail.com>, 2015
-# Rang Kim <lovinrang@gmail.com>, 2015
-# kmooc <shevious@gmail.com>, 2016-2017
+# NguyenTheTruong <41204219thetruong@gmail.com>, 2016
+# Anh Phan <vietnamesel10n@gmail.com>, 2013
+# Dinh Hung Tu <inactive+dinhhungtu@transifex.com>, 2015
+# Hoang Doan <dthoang92@gmail.com>, 2014
+# Hoang Ha <halink0803@gmail.com>, 2014
+# Ha Ngoc Chung <ngocchung75@gmail.com>, 2013
+# Nguyen Quang Huy <huynq23091@gmail.com>, 2013-2014
+# hoad, 2013
+# HoaD, 2013-2014
+# Hoà Lê Thanh <hoa.lethanh@gmail.com>, 2017
+# Hoang Ha <halink0803@gmail.com>, 2014
+# Minh Trang Dao <minhtrang@kaist.ac.kr>, 2015
+# Minh Tue Vo <mvo@edx.org>, 2014
+# Minh Tue Vo <mvo@edx.org>, 2014
+# Ha Ngoc Chung <ngocchung75@gmail.com>, 2013
+# NGUYEN CONG NAM <congnam0409@gmail.com>, 2014
+# Nguyen Don Binh <donbinhvn@gmail.com>, 2014
+# NGUYEN HOANG AN <neyugn2909@gmail.com>, 2014-2015
+# Nguyen Quang Huy <huynq23091@gmail.com>, 2013-2015
+# Nhan Nguyen <constfang@yahoo.com>, 2015
+# Anh Phan <vietnamesel10n@gmail.com>, 2013
+# Theodora. Tôn Nữ Quý Thiện <thien.tonnu1001@gmail.com>, 2015
+# Trung V. Nguyen <trung.ngvan@gmail.com>, 2015
 # #-#-#-#-#  djangojs-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2018 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
 # Translators:
-# SEUNGWON <baeksw0620@gmail.com>, 2014
-# bossnm11 <bossnm11@gmail.com>, 2014
-# kmooc <shevious@gmail.com>, 2015
-# shevious <shevious@yahoo.com>, 2015
-# Jong-Dae Park <jdpark7@gmail.com>, 2013
-# jeon <bluerespect@nate.com>, 2014-2015
-# chans <kcsgoodboy@naver.com>, 2014
-# seungil <luck8778@gmail.com>, 2014
-# roidog <jimroid@gmail.com>, 2015
-# kmooc <shevious@gmail.com>, 2016
+# Anh Phan <vietnamesel10n@gmail.com>, 2013
+# Hoang Doan <dthoang92@gmail.com>, 2014
+# Hoang Doan <dthoang92@gmail.com>, 2014
+# Hoang Ha <halink0803@gmail.com>, 2014
+# Ha Ngoc Chung <ngocchung75@gmail.com>, 2013
+# Nguyen Quang Huy <huynq23091@gmail.com>, 2013-2014
+# hoad, 2013
+# Hoà Lê Thanh <hoa.lethanh@gmail.com>, 2017
+# Hoang Ha <halink0803@gmail.com>, 2014
+# Minh Tue Vo <mvo@edx.org>, 2014
+# Minh Tue Vo <mvo@edx.org>, 2014
+# Ha Ngoc Chung <ngocchung75@gmail.com>, 2013
+# Nguyen Don Binh <donbinhvn@gmail.com>, 2014
+# Nguyễn Đức An <ndan.cntt@hunre.edu.vn>, 2015
+# NGUYEN HOANG AN <neyugn2909@gmail.com>, 2014
+# NGUYEN HOANG AN <neyugn2909@gmail.com>, 2014
+# Nguyen Nhat Quang <technicalmanager@gmail.com>, 2016
+# Nguyen Quang Huy <huynq23091@gmail.com>, 2014
+# Anh Phan <vietnamesel10n@gmail.com>, 2013
+# Trung V. Nguyen <trung.ngvan@gmail.com>, 2015
+# truong tran <tranminhtruong88@yahoo.com.vn>, 2017
 # #-#-#-#-#  underscore.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2018 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
 # Translators:
-# bossnm11 <bossnm11@gmail.com>, 2014
-# kmooc <shevious@gmail.com>, 2015-2016
-# shevious <shevious@yahoo.com>, 2015
-# jeon <bluerespect@nate.com>, 2014
-# Jong-Dae Park <jdpark7@gmail.com>, 2015
-# Gu Hong Min <placidmoon1@gmail.com>, 2015
-# LEE SI HYEONG <super2451894@gmail.com>, 2014
-# Seo. Junmin <inactive+trans_alice@transifex.com>, 2015
-# kmooc <shevious@gmail.com>, 2016-2017
+# NguyenTheTruong <41204219thetruong@gmail.com>, 2016
+# Dinh Hung Tu <inactive+dinhhungtu@transifex.com>, 2015
+# Hoang Ha <halink0803@gmail.com>, 2014
+# Hoà Lê Thanh <hoa.lethanh@gmail.com>, 2017
+# Nguyen Don Binh <donbinhvn@gmail.com>, 2014
+# NGUYEN HOANG AN <neyugn2909@gmail.com>, 2014
+# Nguyen Nhat Quang <technicalmanager@gmail.com>, 2016
+# Thi Thanh Nga Do <thanhnga.ftu2@gmail.com>, 2015
+# Theodora. Tôn Nữ Quý Thiện <thien.tonnu1001@gmail.com>, 2015
+# Trung V. Nguyen <trung.ngvan@gmail.com>, 2015-2016
 # #-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2018 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
 # Translators:
-# kmooc <shevious@gmail.com>, 2015
-# shevious <shevious@yahoo.com>, 2015
-# jeon <bluerespect@nate.com>, 2014-2015
-# gscavanger0209 <gscavanger@gmail.com>, 2016
-# Gu Hong Min <placidmoon1@gmail.com>, 2015
-# Kunwoo Kim <crazyabtmath@naver.com>, 2015
-# Sam Ryoo <samryoo@gmail.com>, 2014
-# kmooc <shevious@gmail.com>, 2016
+# dangitdang <dangpham@mit.edu>, 2014
+# dangitdang <dangpham@mit.edu>, 2014
+# Doan Viet Hung <viethung.doan@gmail.com>, 2014
+# Hoang Ha <halink0803@gmail.com>, 2014
+# Hoà Lê Thanh <hoa.lethanh@gmail.com>, 2017
+# Hoang Ha <halink0803@gmail.com>, 2014
+# Linh Nguyen <linhvn09@gmail.com>, 2016
+# NGUYEN HOANG AN <neyugn2909@gmail.com>, 2014
+# Nguyen Nhat Quang <technicalmanager@gmail.com>, 2016
+# Son La <thanhson.la310@gmail.com>, 2015
+# Trung V. Nguyen <trung.ngvan@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2018-03-18 20:42+0000\n"
 "PO-Revision-Date: 2018-03-13 13:50+0000\n"
-"Last-Translator: kmooc <shevious@gmail.com>\n"
-"Language-Team: Korean (Korea) (http://www.transifex.com/open-edx/edx-platform/language/ko_KR/)\n"
+"Last-Translator: Hoà Lê Thanh <hoa.lethanh@gmail.com>\n"
+"Language-Team: Vietnamese (http://www.transifex.com/open-edx/edx-platform/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
-"Language: ko_KR\n"
+"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: cms/static/cms/js/xblock/cms.runtime.v1.js
@@ -85,7 +114,7 @@ msgstr ""
 #: cms/static/js/views/utils/xblock_utils.js lms/static/js/ccx/schedule.js
 #: lms/static/js/views/fields.js
 msgid "Saving"
-msgstr "저장중"
+msgstr "Đang lưu"
 
 #: cms/static/js/certificates/views/signatory_editor.js
 #: cms/static/js/views/asset.js cms/static/js/views/list_item.js
@@ -93,8 +122,24 @@ msgstr "저장중"
 #: cms/static/js/views/show_textbook.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: lms/djangoapps/teams/static/teams/js/views/instructor_tools.js
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/certificate-editor.underscore
+#: cms/templates/js/content-group-editor.underscore
+#: cms/templates/js/course-instructor-details.underscore
+#: cms/templates/js/course-outline.underscore
+#: cms/templates/js/course-settings-learning-fields.underscore
+#: cms/templates/js/course_grade_policy.underscore
+#: cms/templates/js/course_info_update.underscore
+#: cms/templates/js/group-configuration-details.underscore
+#: cms/templates/js/group-configuration-editor.underscore
+#: cms/templates/js/partition-group-details.underscore
+#: cms/templates/js/show-textbook.underscore
+#: cms/templates/js/signatory-editor.underscore
+#: cms/templates/js/video-transcripts.underscore
+#: cms/templates/js/xblock-outline.underscore
+#: common/static/common/templates/discussion/forum-action-delete.underscore
 msgid "Delete"
-msgstr "삭제"
+msgstr "Xóa"
 
 #: cms/static/js/certificates/views/signatory_editor.js
 #: cms/static/js/views/asset.js cms/static/js/views/course_info_update.js
@@ -125,19 +170,25 @@ msgstr "삭제"
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 #: lms/templates/learner_dashboard/verification_popover.underscore
 msgid "Cancel"
-msgstr "취소"
+msgstr "Hủy bỏ"
 
 #: cms/static/js/models/active_video_upload.js cms/static/js/views/assets.js
 #: cms/static/js/views/video_thumbnail.js lms/static/js/views/image_field.js
 msgid "Uploading"
-msgstr "업로드 중"
+msgstr "Đang tải lên"
 
 #: cms/static/js/views/active_video_upload.js
 #: cms/static/js/views/modals/edit_xblock.js
 #: cms/static/js/views/video_transcripts.js
 #: lms/static/js/student_account/tos_modal.js
+#: cms/templates/js/course-video-settings.underscore
+#: common/static/common/templates/image-modal.underscore
+#: common/static/common/templates/discussion/alert-popup.underscore
+#: common/static/common/templates/discussion/forum-action-close.underscore
+#: common/static/common/templates/discussion/search-alert.underscore
+#: openedx/features/learner_profile/static/learner_profile/templates/share_modal.underscore
 msgid "Close"
-msgstr "닫기"
+msgstr "Đóng"
 
 #: cms/static/js/views/assets.js lms/static/js/Markdown.Editor.js
 #: cms/templates/js/asset-upload-modal.underscore
@@ -147,7 +198,7 @@ msgstr ""
 #: cms/static/js/views/course_info_update.js cms/static/js/views/tabs.js
 #: lms/static/js/Markdown.Editor.js
 msgid "OK"
-msgstr "확인"
+msgstr "OK"
 
 #: cms/static/js/views/course_video_settings.js
 #: cms/static/js/views/metadata.js
@@ -155,29 +206,31 @@ msgstr "확인"
 #: cms/static/js/views/video_transcripts.js
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 #: lms/static/js/views/image_field.js
+#: cms/templates/js/video/metadata-translations-item.underscore
+#: lms/djangoapps/teams/static/teams/templates/edit-team-member.underscore
 msgid "Remove"
-msgstr "제거"
+msgstr "Loại bỏ"
 
 #: cms/static/js/views/manage_users_and_roles.js
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Unknown"
-msgstr "알 수 없음"
+msgstr "Không biết"
 
 #: cms/static/js/views/metadata.js lms/static/js/views/file_uploader.js
 msgid "Upload File"
-msgstr "파일 업로드"
+msgstr "Tải lên tệp tin"
 
 #: cms/static/js/views/previous_video_upload.js
 #: cms/static/js/views/video_transcripts.js lms/static/js/views/image_field.js
 msgid "Removing"
-msgstr "제거하기"
+msgstr "Đang xoá"
 
 #: cms/static/js/views/validation.js
 #: lms/static/js/discussions_management/views/divided_discussions_course_wide.js
 #: lms/static/js/discussions_management/views/divided_discussions_inline.js
 #: lms/static/js/views/fields.js
 msgid "Your changes have been saved."
-msgstr "변경사항이 저장되었습니다."
+msgstr "Thay đổi của bạn đã được lưu."
 
 #: cms/static/js/views/xblock_validation.js
 #: common/static/common/js/discussion/utils.js
@@ -190,17 +243,17 @@ msgstr "변경사항이 저장되었습니다."
 #: lms/static/js/verify_student/views/step_view.js
 #: lms/static/js/views/fields.js
 msgid "Error"
-msgstr "오류"
+msgstr "Lỗi"
 
 #: common/lib/xmodule/xmodule/assets/library_content/public/js/library_content_edit.js
 #: common/lib/xmodule/xmodule/js/public/js/library_content_edit.js
 msgid "Updating with latest library content"
-msgstr "최신 콘텐츠 보관함으로 업데이트"
+msgstr "Đang cập nhật nội dung thư viện mới nhất"
 
 #: common/lib/xmodule/xmodule/assets/split_test/public/js/split_test_author_view.js
 #: common/lib/xmodule/xmodule/js/public/js/split_test_author_view.js
 msgid "Creating missing groups"
-msgstr "빠진 그룹 만들기"
+msgstr "Tạo nhóm còn thiếu"
 
 #: common/lib/xmodule/xmodule/assets/word_cloud/public/js/word_cloud_main.js
 msgid "{start_strong}{total}{end_strong} words submitted in total."
@@ -250,7 +303,8 @@ msgstr[0] ""
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "The grading process is still running. Refresh the page to see updates."
-msgstr "채점이 진행중입니다. 업데이트 결과를 보기 위해 다시 불러오기를 하십시오."
+msgstr ""
+"Đang trong quá trình chấm điểm. Refresh lại trang để xem cập nhật mới."
 
 #: common/lib/xmodule/xmodule/js/src/capa/display.js
 msgid "Could not grade your answer. The submission was aborted."
@@ -297,8 +351,9 @@ msgid ""
 "\n"
 "Click Cancel to return to this page without sending your information."
 msgstr ""
-"귀하의 아이디와 이메일 주소를 타사 응용프로그램에 보내는 것에 동의하면 OK를 클릭하세요.\n"
-"귀하의 정보를 보내지 않고, 이 페이지를 다시 보려면 Cancel을 클릭하세요."
+"Nhấp chọn OK để gửi tên đăng nhập và địa chỉ e-mail của bạn tới ứng dụng của bên thứ 3.\n"
+"\n"
+"Nhấp chọn Hủy bỏ để quay lại trang và không gửi thông tin của bạn đi."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
 msgid ""
@@ -306,10 +361,9 @@ msgid ""
 "\n"
 "Click Cancel to return to this page without sending your information."
 msgstr ""
-"귀하의아이디를 타사 응용프로그램에 보내는 것에 동의하면 OK를 클릭하세요.\n"
+"Nhấp chọn OK để gửi tên đăng nhập của bạn tới ứng dụng của bên thứ 3.\n"
 "\n"
-"\n"
-"귀하의 정보를 보내지 않고, 이 페이지를 다시 보려면 Cancel을 클릭하세요."
+"Nhấp chọn Hủy bỏ để quay lại trang và không gửi thông tin của bạn đi."
 
 #: common/lib/xmodule/xmodule/js/src/lti/lti.js
 msgid ""
@@ -317,28 +371,29 @@ msgid ""
 "\n"
 "Click Cancel to return to this page without sending your information."
 msgstr ""
-"이메일 주소를 타사 응용프로그램에 보내는 것에 동의하면 OK를 클릭하세요.\n"
-"귀하의 정보를 보내지 않고, 이 페이지를 다시 보려면 Cancel을 클릭하세요."
+"Nhấp chọn OK để gửi địa chỉ e-mail của bạn tới ứng dụng của bên thứ 3.\n"
+"\n"
+"Nhấp chọn Hủy bỏ để quay lại trang và không gửi thông tin của bạn đi."
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "incorrect"
-msgstr "오답을 입력하세요."
+msgstr "sai"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "correct"
-msgstr "정답을 입력하세요."
+msgstr "đúng"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "answer"
-msgstr "답"
+msgstr "trả lời"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Header"
-msgstr "머릿글"
+msgstr "Header "
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Short explanation"
-msgstr "짧은 설명"
+msgstr "Giải thích ngắn gọn"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid ""
@@ -346,8 +401,9 @@ msgid ""
 "\n"
 "Proceed to the Advanced Editor and convert this problem to XML?"
 msgstr ""
-"고급 편집기를 사용한다면, 이 문제는 XML로 전환되며, 간편 편집기 인터페이스로 다시 돌아올 수 없습니다. \n"
-"고급 편집기에서 이 문제를 XML로 전환하시겠습니까?"
+"Nếu bạn sử dụng bộ soạn thảo cao cấp, bài tập này sẽ được chuyển sang định dạng XML và bạn sẽ không thể quay trở lại bộ soạn thảo đơn giản được nữa.\n"
+"\n"
+"Bạn có muốn sử dụng bộ soạn thảo cao cấp và chuyển định dạng bài tập thành XML?"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "Explanation"
@@ -358,8 +414,8 @@ msgid ""
 "Sequence error! Cannot navigate to %(tab_name)s in the current "
 "SequenceModule. Please contact the course staff."
 msgstr ""
-"Sequence error!  현재의 SequenceModule에서는 %(tab_name)s 을 탐색할 수 없습니다. 관리자에게 "
-"문의하세요."
+"Lỗi Sequence! Không thể điều hướng tới tab %(tab_name)s trong SequenceModule"
+" hiện tại. Xin vui lòng liên hệ với nhân viên phụ trách khóa học."
 
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmark_button.js
@@ -370,35 +426,35 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/video/09_play_pause_control.js
 #: common/lib/xmodule/xmodule/js/src/video/09_play_skip_control.js
 msgid "Play"
-msgstr "재생"
+msgstr "Chạy"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/09_play_pause_control.js
 msgid "Pause"
-msgstr "일시정지"
+msgstr "Tạm dừng"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Mute"
-msgstr "음소거"
+msgstr "Tắt tiếng"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Unmute"
-msgstr "음소거 해제"
+msgstr "Bật tiếng"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/04_video_full_screen.js
 msgid "Exit full browser"
-msgstr "전체화면에서 나오기"
+msgstr "Thoát khỏi chế độ toàn màn hình"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/04_video_full_screen.js
 msgid "Fill browser"
-msgstr "브라우저 채우기"
+msgstr "Chế độ toàn màn hình"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/08_video_speed_control.js
 msgid "Speed"
-msgstr "속도"
+msgstr "Tốc độ"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/08_video_auto_advance_control.js
@@ -408,43 +464,43 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/07_video_volume_control.js
 msgid "Volume"
-msgstr "볼륨"
+msgstr "Âm lượng"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Muted"
-msgstr "음소거"
+msgstr "Chế độ câm"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Very low"
-msgstr "매우 낮게"
+msgstr "Rất nhỏ"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Low"
-msgstr "낮게"
+msgstr "Nhỏ"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Average"
-msgstr "보통"
+msgstr "Vừa phải"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Loud"
-msgstr "크게"
+msgstr "To"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Very loud"
-msgstr "매우 크게"
+msgstr "Rất to"
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Maximum"
-msgstr "최대"
+msgstr "Tối đa"
 
 #: common/lib/xmodule/xmodule/js/src/video/02_html5_video.js
 msgid "This browser cannot play .mp4, .ogg, or .webm files."
-msgstr "이 브라우저는 .mp4, .ogg, 또는 .webm file을 재생할 수 없습니다."
+msgstr "Trình duyệt này không thể chơi tệp tin .mp4, .ogg, hoặc .webm."
 
 #: common/lib/xmodule/xmodule/js/src/video/02_html5_video.js
 msgid "Try using a different browser, such as Google Chrome."
-msgstr "구글 Chrome 등 다른 브라우저를 사용하세요."
+msgstr "Thử sử dụng một trình duyệt khác, như Google Chrome."
 
 #: common/lib/xmodule/xmodule/js/src/video/05_video_quality_control.js
 msgid "High Definition"
@@ -464,26 +520,26 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "Video ended"
-msgstr "동영상 끝남"
+msgstr "Video kết thúc"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "Video position"
-msgstr "동영상 위치"
+msgstr "Vị trí video"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "%(value)s hour"
 msgid_plural "%(value)s hours"
-msgstr[0] "%(value)s 시간"
+msgstr[0] "%(value)s giờ"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "%(value)s minute"
 msgid_plural "%(value)s minutes"
-msgstr[0] "%(value)s 분"
+msgstr[0] "%(value)s phút"
 
 #: common/lib/xmodule/xmodule/js/src/video/06_video_progress_slider.js
 msgid "%(value)s second"
 msgid_plural "%(value)s seconds"
-msgstr[0] "%(value)s 초"
+msgstr[0] "%(value)s giây"
 
 #: common/lib/xmodule/xmodule/js/src/video/07_video_volume_control.js
 msgid ""
@@ -512,15 +568,15 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/video/09_play_skip_control.js
 msgid "Skip"
-msgstr "건너뛰기"
+msgstr "Bỏ qua"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_poster.js
 msgid "Play video"
-msgstr "동영상 재생하기"
+msgstr "Play video"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_skip_control.js
 msgid "Do not show again"
-msgstr "다시 재생하지 말기"
+msgstr "Không hiển thị nữa"
 
 #: common/lib/xmodule/xmodule/js/src/video/09_video_caption.js
 msgid "Open language menu"
@@ -577,15 +633,16 @@ msgstr ""
 
 #: common/static/common/js/components/utils/view_utils.js
 msgid "Required field."
-msgstr ""
+msgstr "Thông tin bắt buộc."
 
 #: common/static/common/js/components/utils/view_utils.js
 msgid "Please do not use any spaces in this field."
-msgstr ""
+msgstr "Vui lòng không dùng khoảng trắng trong mục này"
 
 #: common/static/common/js/components/utils/view_utils.js
 msgid "Please do not use any spaces or special characters in this field."
 msgstr ""
+"Vui lòng không sử dụng bất kỳ dấu cách hoặc ký tự đặc biệt trong mục này."
 
 #: common/static/common/js/components/views/paginated_view.js
 #: common/static/common/js/components/views/paging_footer.js
@@ -608,15 +665,16 @@ msgstr ""
 
 #: common/static/common/js/discussion/utils.js
 msgid "Loading content"
-msgstr "콘텐츠 로딩중"
+msgstr "Đang tải nội dung"
 
 #: common/static/common/js/discussion/utils.js
 msgid "Your request could not be processed. Refresh the page and try again."
 msgstr ""
 
 #: common/static/common/js/discussion/utils.js
+#: common/static/common/templates/discussion/pagination.underscore
 msgid "…"
-msgstr "…"
+msgstr "..."
 
 #: common/static/common/js/discussion/utils.js
 msgid "Some images in this post have been omitted"
@@ -701,7 +759,7 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_inline_view.js
 msgid "Hide Discussion"
-msgstr "게시판 감추기"
+msgstr "Ẩn thảo luận"
 
 #: common/static/common/js/discussion/views/discussion_inline_view.js
 msgid "This discussion could not be loaded. Refresh the page and try again."
@@ -709,7 +767,7 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_inline_view.js
 msgid "Show Discussion"
-msgstr "게시판  보기"
+msgstr "Hiện thảo luận"
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "There are no posts in this topic yet."
@@ -717,7 +775,7 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Loading more threads"
-msgstr "다른 게시물 추가 로딩중"
+msgstr "Đang tải thêm chủ đề"
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Additional posts could not be loaded. Refresh the page and try again."
@@ -725,7 +783,7 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Current conversation"
-msgstr "현재 대화"
+msgstr "Đoạn hội thoại hiện tại"
 
 #: common/static/common/js/discussion/views/discussion_thread_list_view.js
 msgid "Loading posts list"
@@ -770,7 +828,7 @@ msgstr[0] ""
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing all responses"
-msgstr "모든 답변 보여주기"
+msgstr "Đang hiện tất cả phản hồi"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Showing first response"
@@ -779,7 +837,7 @@ msgstr[0] ""
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Load all responses"
-msgstr "모든 답변 로드하기"
+msgstr "Tải tất cả các phản hồi"
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Load next {numResponses} responses"
@@ -787,19 +845,21 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/discussion_thread_view.js
 msgid "Are you sure you want to delete this post?"
-msgstr "이 게시물을 삭제하시겠습니까?"
+msgstr "Bạn chắc chắn muốn xóa bài đăng này?"
 
 #: common/static/common/js/discussion/views/new_post_view.js
 msgid "Your post will be discarded."
-msgstr "게시물이 삭제됩니다."
+msgstr "Bài viết sẽ bị xóa."
 
 #: common/static/common/js/discussion/views/response_comment_show_view.js
+#: common/static/common/templates/discussion/post-user-display.underscore
+#: common/static/common/templates/discussion/profile-thread.underscore
 msgid "anonymous"
-msgstr "익명"
+msgstr "ẩn danh"
 
 #: common/static/common/js/discussion/views/response_comment_view.js
 msgid "Are you sure you want to delete this comment?"
-msgstr "이 댓글을 삭제하시겠습니까?"
+msgstr "Bạn chắc chắn muốn xóa bình luận này?"
 
 #: common/static/common/js/discussion/views/response_comment_view.js
 msgid "This comment could not be deleted. Refresh the page and try again."
@@ -807,131 +867,131 @@ msgstr ""
 
 #: common/static/common/js/discussion/views/thread_response_view.js
 msgid "Are you sure you want to delete this response?"
-msgstr "이 답변을 삭제하시겠습니까?"
+msgstr "Bạn chắc chắn muốn xóa phản hồi này?"
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "The email address you've provided isn't formatted correctly."
-msgstr ""
+msgstr "Địa chỉ email bạn cung cấp không hợp lệ."
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "%(field)s must have at least %(count)d characters."
-msgstr ""
+msgstr "%(field)s phải có ít nhất %(count)d kí tự."
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "%(field)s can only contain up to %(count)d characters."
-msgstr ""
+msgstr "%(field)s chỉ được có tối đa %(count)d kí tự."
 
 #: common/static/common/js/utils/edx.utils.validate.js
 msgid "Please enter your %(field)s."
-msgstr ""
+msgstr "Vui lòng nhập %(field)s."
 
 #: common/static/js/capa/drag_and_drop/base_image.js
 msgid "Drop target image"
-msgstr "타겟이미지를 드롭하세요"
+msgstr "Thả hình đã chọn"
 
 #: common/static/js/capa/drag_and_drop/draggable_events.js
 msgid "dragging out of slider"
-msgstr "슬라이더 당기기"
+msgstr "đang kéo khỏi thanh trượt"
 
 #: common/static/js/capa/drag_and_drop/draggable_events.js
 msgid "dragging"
-msgstr "마우스로 끌고 오기"
+msgstr "đang kéo"
 
 #: common/static/js/capa/drag_and_drop/draggable_events.js
 msgid "dropped in slider"
-msgstr "슬라이더에 떨어트렸습니다."
+msgstr "được thả vào thanh trượt"
 
 #: common/static/js/capa/drag_and_drop/draggable_events.js
 msgid "dropped on target"
-msgstr "목표점에 떨어트렸습니다."
+msgstr "được thả lên đối tượng"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format
 msgid "%s ago"
-msgstr "%s 전"
+msgstr "%s trước đó"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format
 msgid "%s from now"
-msgstr "지금으로 부터 %s 이후"
+msgstr "%s kể từ bây giờ"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "less than a minute"
-msgstr "일분 이내"
+msgstr "chưa đến một phút"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about a minute"
-msgstr "1분가량"
+msgstr "khoảng một phút"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d 분"
+msgstr[0] "%d phút"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about an hour"
-msgstr "약 한 시간 정도"
+msgstr "khoảng một giờ"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format
 msgid "about %d hour"
 msgid_plural "about %d hours"
-msgstr[0] "약 %d 시간 정도"
+msgstr[0] "khoảng %d giờ"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "a day"
-msgstr "하루"
+msgstr "một ngày"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] "%d 일"
+msgstr[0] "%d ngày"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about a month"
-msgstr "약 1개월"
+msgstr "khoảng một tháng"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] "%d 개월"
+msgstr[0] "%d tháng"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about a year"
-msgstr "약 1년 "
+msgstr "khoảng một năm"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] "%d 년"
+msgstr[0] "%d năm"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "User"
-msgstr "이용자"
+msgstr "Người dùng"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Annotation"
-msgstr "주석"
+msgstr "Chú thích"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Start"
-msgstr "시작"
+msgstr "Bắt đầu"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "End"
-msgstr "끝"
+msgstr "Kết thúc"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "#Replies"
-msgstr "#답글들"
+msgstr "#Trả lời"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Date posted"
-msgstr "게시된 날짜"
+msgstr "Ngày đăng"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: lms/static/js/courseware/credit_progress.js
@@ -939,100 +999,117 @@ msgstr "게시된 날짜"
 #: lms/templates/discovery/facet.underscore
 #: lms/templates/edxnotes/note-item.underscore
 msgid "More"
-msgstr "더보기"
+msgstr "Thêm"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "My Notes"
-msgstr "내 노트"
+msgstr "Các ghi chú của tôi"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Instructor"
-msgstr "교수자"
+msgstr "Giảng viên"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Public"
-msgstr "공개"
+msgstr "Công khai"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
+#: common/static/common/templates/components/search-field.underscore
+#: lms/djangoapps/discussion/static/discussion/templates/search.underscore
+#: lms/djangoapps/support/static/support/templates/certificates.underscore
+#: lms/djangoapps/support/static/support/templates/enrollment.underscore
+#: lms/djangoapps/support/static/support/templates/manage_user.underscore
 msgid "Search"
-msgstr "검색"
+msgstr "Tìm kiếm"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Users"
-msgstr "이용자"
+msgstr "Người dùng"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: lms/static/js/edxnotes/views/tabs/tags.js
 msgid "Tags"
-msgstr "Tags"
+msgstr "Tag"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Annotation Text"
-msgstr "주석 텍스트"
+msgstr "Lời Chú Thích"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Clear"
-msgstr "지우기"
+msgstr "Xóa"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Text"
-msgstr "Text"
+msgstr "Văn bản"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Video"
-msgstr "동영상"
+msgstr "Video"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: lms/static/js/views/image_field.js
 msgid "Image"
-msgstr "이미지"
+msgstr "Hình ảnh"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Reply"
-msgstr "답글"
+msgstr "Trả lời"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
+#: cms/templates/js/certificate-details.underscore
+#: cms/templates/js/course_info_handouts.underscore
+#: cms/templates/js/course_info_update.underscore
+#: cms/templates/js/group-configuration-details.underscore
+#: cms/templates/js/partition-group-details.underscore
+#: cms/templates/js/show-textbook.underscore
+#: cms/templates/js/signatory-details.underscore
+#: cms/templates/js/xblock-string-field-editor.underscore
+#: common/static/common/templates/discussion/forum-action-edit.underscore
 msgid "Edit"
-msgstr "편집"
+msgstr "Chỉnh sửa"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
+#: lms/templates/edxnotes/note-item.underscore
 msgid "Tags:"
-msgstr "Tags:"
+msgstr "Tag:"
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "Check the box to remove all flags."
-msgstr "모든 플래그를 삭제하려면 확인란을 선택합니다."
+msgstr "Nhấp chọn ô này để gỡ tất cả các cờ."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "Check the box to remove %(totalFlags)s flag."
 msgid_plural "Check the box to remove %(totalFlags)s flags."
-msgstr[0] "%(totalFlags)s 플래그를 삭제하려면 확인란을 선택합니다."
+msgstr[0] "Nhấp chọn ô này để gỡ %(totalFlags)s cờ."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "Check the box to remove %(count)s flag."
 msgid_plural "Check the box to remove %(count)s flags."
-msgstr[0] "%(count)s 플래그를 삭제하려면 확인란을 선택합니다."
+msgstr[0] "Nhấp chọn ô này để gỡ %(count)s cờ."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "All flags have been removed. To undo, uncheck the box."
-msgstr "모든 플래그가 제거되었습니다. 취소하려면 박스 선택을 취소하세요"
+msgstr ""
+"Tất cả các cờ đã bị gỡ bỏ. Để hoàn tác, nhấp chuột xóa lựa chọn trong ô."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "You have already reported this annotation."
-msgstr "이 주석은 이미 신고되었습니다."
+msgstr "Bạn đã báo cáo về giải thích này rồi."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "Report annotation as inappropriate or offensive."
-msgstr "부적절한 주석으로 신고합니다."
+msgstr ""
+"Báo cáo rằng chú thích này không thích hợp hoặc mang nội dung tiêu cực."
 
 #: common/static/js/vendor/ova/flagging-annotator.js
 msgid "This annotation has %(count)s flag."
 msgid_plural "This annotation has %(count)s flags."
-msgstr[0] "이 주석은 %(count)s 플래그가 있습니다."
+msgstr[0] "Chú thích này có %(count)s cờ."
 
 #: lms/djangoapps/support/static/support/js/views/certificates.js
 msgid "An unexpected error occurred.  Please try again."
-msgstr ""
+msgstr "Đã có một lỗi xảy ra. Vui lòng thử lại."
 
 #: lms/djangoapps/support/static/support/js/views/enrollment.js
 msgid "Financial Assistance"
@@ -1056,136 +1133,138 @@ msgstr ""
 
 #: lms/djangoapps/teams/static/teams/js/collections/team.js
 msgid "last activity"
-msgstr ""
+msgstr "hoạt động gần nhất"
 
 #: lms/djangoapps/teams/static/teams/js/collections/team.js
 msgid "open slots"
-msgstr ""
+msgstr "vị trí còn trống"
 
 #: lms/djangoapps/teams/static/teams/js/collections/topic.js
 msgid "name"
-msgstr "이름"
+msgstr "tên"
 
 #: lms/djangoapps/teams/static/teams/js/collections/topic.js
 msgid "team count"
-msgstr "팀 인원 수"
+msgstr "số lượng nhóm"
 
 #: lms/djangoapps/teams/static/teams/js/teams_tab_factory.js
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Teams"
-msgstr "팀"
+msgstr "Những nhóm"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
-#: cms/templates/js/certificate-editor.underscore
-#: cms/templates/js/content-group-editor.underscore
-#: cms/templates/js/group-configuration-editor.underscore
 msgid "Create"
-msgstr ""
+msgstr "Tạo mới"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Update"
-msgstr ""
+msgstr "Cập nhật"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Team Name (Required) *"
-msgstr ""
+msgstr "Tên nhóm (bắt buộc) *"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "A name that identifies your team (maximum 255 characters)."
-msgstr ""
+msgstr "Tên để phân biệt nhóm của bạn (tối đa 255 ký tự)."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Team Description (Required) *"
-msgstr ""
+msgstr "Giới thiệu nhóm (bắt buộc) *"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid ""
 "A short description of the team to help other learners understand the goals "
 "or direction of the team (maximum 300 characters)."
 msgstr ""
+"Giới thiệu ngắn về nhóm để giúp người học khác hiểu mục đích và phương hướng"
+" của nhóm (tối đa 300 ký tự)."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Language"
-msgstr "언어"
+msgstr "Ngôn ngữ"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 #: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
 msgid ""
 "The language that team members primarily use to communicate with each other."
-msgstr ""
+msgstr "Ngôn ngữ mà thành viên nhóm sử dụng chính để giao tiếp với nhau."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Country"
-msgstr "국가"
+msgstr "Quốc gia"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 #: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
 msgid "The country that team members primarily identify with."
-msgstr ""
+msgstr "Quốc gia chính của các thành viên nhóm."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 #: lms/static/js/views/fields.js
 msgid "An error occurred. Please try again."
-msgstr "오류가 발생했습니다. 잠시 후에 다시 시도하세요."
+msgstr "Có lỗi xảy ra. Vui lòng thử lại."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Check the highlighted fields below and try again."
-msgstr ""
+msgstr "Kiểm tra lại mục được bôi sáng bên dưới và thử lại lần nữa."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Enter team name."
-msgstr ""
+msgstr "Nhập tên nhóm."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Team name cannot have more than 255 characters."
-msgstr ""
+msgstr "Tên nhóm không thể có trên 255 ký tự."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Enter team description."
-msgstr ""
+msgstr "Nhập giới thiệu nhóm."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team.js
 msgid "Team description cannot have more than 300 characters."
-msgstr ""
+msgstr "Giới thiệu nhóm không thể có trên 300 ký tự."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid "An error occurred while removing the member from the team. Try again."
-msgstr ""
+msgstr "Có lỗi xảy ra trong lúc xóa thành viên khỏi nhóm. Xin thử lại."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid "This team does not have any members."
-msgstr ""
+msgstr "Nhóm này không có bất kỳ thành viên nào."
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid "Joined %(date)s"
-msgstr ""
+msgstr "Tham gia ngày %(date)s"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid "Last Activity %(date)s"
-msgstr ""
+msgstr "Hoạt động gần nhất %(date)s"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid "Remove this team member?"
-msgstr ""
+msgstr "Xóa thành viên này?"
 
 #: lms/djangoapps/teams/static/teams/js/views/edit_team_members.js
 msgid ""
 "This learner will be removed from the team, allowing another learner to take"
 " the available spot."
 msgstr ""
+"Người học này sẽ bị xóa khỏi nhóm để nhường chỗ cho một người học khác."
 
 #: lms/djangoapps/teams/static/teams/js/views/instructor_tools.js
 msgid "Delete this team?"
-msgstr ""
+msgstr "Xóa nhóm này?"
 
 #: lms/djangoapps/teams/static/teams/js/views/instructor_tools.js
 msgid ""
 "Deleting a team is permanent and cannot be undone. All members are removed "
 "from the team, and team discussions can no longer be accessed."
 msgstr ""
+"Xóa một nhóm là hành động không thể thu lại được, tất cả thành viên sẽ bị "
+"xóa khỏi nhóm và các thảo luận nhóm cũng sẽ bị xóa."
 
 #: lms/djangoapps/teams/static/teams/js/views/instructor_tools.js
 msgid "Team \"{team}\" successfully deleted."
@@ -1193,57 +1272,59 @@ msgstr ""
 
 #: lms/djangoapps/teams/static/teams/js/views/my_teams.js
 msgid "You are not currently a member of any team."
-msgstr ""
+msgstr "Bạn hiện không phải thành viên của bất kỳ nhóm nào."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_card.js
 msgid "and others"
-msgstr ""
+msgstr "và các thành viên khác"
 
 #: lms/djangoapps/teams/static/teams/js/views/team_card.js
 msgid "Last activity %(date)s"
-msgstr ""
+msgstr "Hoạt động gần nhất %(date)s"
 
 #: lms/djangoapps/teams/static/teams/js/views/team_card.js
 msgid "View %(span_start)s %(team_name)s %(span_end)s"
-msgstr "%(span_start)s %(team_name)s %(span_end)s 보기"
+msgstr "Xem %(span_start)s %(team_name)s %(span_end)s"
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 #: lms/djangoapps/teams/static/teams/js/views/team_profile_header_actions.js
 msgid "An error occurred. Try again."
-msgstr ""
+msgstr "Có lỗi xảy ra. Vui lòng thử lại."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 msgid "Leave this team?"
-msgstr ""
+msgstr "Rời nhóm này?"
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 msgid ""
 "If you leave, you can no longer post in this team's discussions. Your place "
 "will be available to another learner."
 msgstr ""
+"Nếu bạn rời nhóm, bạn sẽ không thể tham gia vào thảo luận nhóm nữa. Chỗ của "
+"bạn trong nhóm sẽ có thể được thay bằng người học khác."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile.js
 #: lms/static/js/verify_student/views/reverify_view.js
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Confirm"
-msgstr "확인"
+msgstr "Xác nhận"
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile_header_actions.js
 msgid "You already belong to another team."
-msgstr ""
+msgstr "Bạn đã nằm trong một nhóm khác."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_profile_header_actions.js
 msgid "This team is full."
-msgstr ""
+msgstr "Nhóm này đã đủ thành viên."
 
 #: lms/djangoapps/teams/static/teams/js/views/team_utils.js
 msgid "%(memberCount)s / %(maxMemberCount)s Member"
 msgid_plural "%(memberCount)s / %(maxMemberCount)s Members"
-msgstr[0] ""
+msgstr[0] "%(memberCount)s / %(maxMemberCount)s thành viên tối đa"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams.js
 msgid "All teams"
-msgstr ""
+msgstr "Tất cả các nhóm"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams.js
 msgid "Teams Pagination"
@@ -1251,17 +1332,20 @@ msgstr ""
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Topics"
-msgstr ""
+msgstr "Các chủ đề"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
 "See all teams in your course, organized by topic. Join a team to collaborate"
 " with other learners who are interested in the same topic as you are."
-msgstr "강좌에서 주제별로 조직된 모든 팀을 보세요. 관심사가 같은 다른 학습자들과 협력하기 위해 팀에 참여하세요."
+msgstr ""
+"Xem tất cả các nhóm học trong khóa học của bạn, sắp xếp theo chủ đề. Tham "
+"gia một nhóm học để hợp tác với những người học cùng hứng thú với chủ đề mà "
+"bạn thích."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "My Team"
-msgstr ""
+msgstr "Nhóm của tôi"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 #: lms/templates/instructor/instructor_dashboard_2/certificate-bulk-white-list.underscore
@@ -1271,6 +1355,7 @@ msgstr ""
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Your request could not be completed. Reload the page and try again."
 msgstr ""
+"Yêu cầu của bạn không thực hiện được. Xin mở lại trang và thử lại lần nữa."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
@@ -1281,7 +1366,7 @@ msgstr ""
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Team Search"
-msgstr ""
+msgstr "Tìm nhóm"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Showing results for \"{searchString}\""
@@ -1289,43 +1374,48 @@ msgstr ""
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Create a New Team"
-msgstr ""
+msgstr "Tạo một nhóm mới"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
 "Create a new team if you can't find an existing team to join, or if you "
 "would like to learn with friends you know."
 msgstr ""
+"Tạo một nhóm mới nếu bạn không thể tìm được một nhóm để gia nhập, hoặc nếu "
+"bạn muốn học với những người bạn biết."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 #: lms/djangoapps/teams/static/teams/templates/team-profile-header-actions.underscore
 msgid "Edit Team"
-msgstr ""
+msgstr "Chỉnh sửa nhóm"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
 "If you make significant changes, make sure you notify members of the team "
 "before making these changes."
 msgstr ""
+"Trong trường hợp bạn muốn tạo ra những thay đổi lớn, bạn nên thông báo trước"
+" với các thành viên của nhóm về những thay đổi này."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Membership"
-msgstr ""
+msgstr "Thành viên"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid ""
 "You can remove members from this team, especially if they have not "
 "participated in the team's activity."
 msgstr ""
+"Bạn có thể xóa thành viên khỏi nhóm, đặc biệt là khi họ không tham gia vào "
+"các hoạt động của nhóm."
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "Search teams"
-msgstr ""
+msgstr "Tìm kiếm nhóm"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
-#: lms/djangoapps/discussion/static/discussion/templates/fake-breadcrumbs.underscore
 msgid "All Topics"
-msgstr ""
+msgstr "Tất cả chủ đề"
 
 #: lms/djangoapps/teams/static/teams/js/views/teams_tab.js
 msgid "The page \"{route}\" could not be found."
@@ -1342,15 +1432,15 @@ msgstr ""
 #: lms/djangoapps/teams/static/teams/js/views/topic_card.js
 msgid "%(team_count)s Team"
 msgid_plural "%(team_count)s Teams"
-msgstr[0] "%(team_count)s 팀"
+msgstr[0] "%(team_count)s nhóm"
 
 #: lms/djangoapps/teams/static/teams/js/views/topic_card.js
 msgid "Topic"
-msgstr ""
+msgstr "Chủ đề"
 
 #: lms/djangoapps/teams/static/teams/js/views/topic_card.js
 msgid "View Teams in the %(topic_name)s Topic"
-msgstr "%(topic_name)s 주제의 팀 보기"
+msgstr "Xem các nhóm học trong chủ đề %(topic_name)s "
 
 #: lms/djangoapps/teams/static/teams/js/views/topic_teams.js
 msgid ""
@@ -1359,14 +1449,18 @@ msgid ""
 "find a team to join, {create_span_start}create a new team in this "
 "topic{span_end}."
 msgstr ""
+"{browse_span_start}Xem các nhóm trong các chủ đề khác{span_end} hoặc "
+"{search_span_start}tìm kiếm nhóm{span_end} trong chủ đề này. "
+"{create_span_start}Tạo một nhóm mới{span_end} nếu bạn vẫn không tìm được "
+"nhóm nào."
 
 #: lms/djangoapps/teams/static/teams/js/views/topics.js
 msgid "All topics"
-msgstr ""
+msgstr "Tất cả chủ đề"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Insert Hyperlink"
-msgstr "하이퍼링크 삽입"
+msgstr "Nhập Đường Dẫn "
 
 #: lms/static/js/Markdown.Editor.js
 msgid "e.g. 'http://google.com'"
@@ -1422,7 +1516,7 @@ msgstr ""
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Markdown Editing Help"
-msgstr "Markdow 편집 도움말"
+msgstr "Trợ Giúp Chỉnh Sửa Markdown"
 
 #: lms/static/js/Markdown.Editor.js cms/templates/js/asset-library.underscore
 msgid "URL"
@@ -1439,83 +1533,83 @@ msgstr[0] ""
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Bold (Ctrl+B)"
-msgstr "진하게 (Ctrl+B)"
+msgstr "In đậm (Ctrl+B)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Italic (Ctrl+I)"
-msgstr "기울임 (Ctrl+I)"
+msgstr "In nghiêng (Ctrl+I)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Hyperlink (Ctrl+L)"
-msgstr "하이퍼링크 (Ctrl+L)"
+msgstr "Liên kết (Ctrl+L)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Blockquote (Ctrl+Q)"
-msgstr "블록인용 (Ctrl+Q)"
+msgstr "Đoạn trích dẫn (Ctrl+Q)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Code Sample (Ctrl+K)"
-msgstr "코드 샘플 (Ctrl+K)"
+msgstr "Code Mẫu (Ctrl+K)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Image (Ctrl+G)"
-msgstr "이미지 (Ctrl+G)"
+msgstr "Hình Ảnh (Ctrl+G)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Numbered List (Ctrl+O)"
-msgstr "문단 번호 (Ctrl+O)"
+msgstr "Danh Sách Đánh Số (Ctrl+O)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Bulleted List (Ctrl+U)"
-msgstr "글머리표 (Ctrl+U)"
+msgstr "Danh Sách Gạch Đầu dòng (Ctrl+U)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Heading (Ctrl+H)"
-msgstr "제목 (Ctrl+H)"
+msgstr "Tiêu đề (Ctrl+H)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Horizontal Rule (Ctrl+R)"
-msgstr "가로선 (Ctrl+R)"
+msgstr "Dòng kẻ ngang (Ctrl+R)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Undo (Ctrl+Z)"
-msgstr "되돌리기 (Ctrl+Z)"
+msgstr "Hoàn tác (Ctrl+Z)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Redo (Ctrl+Y)"
-msgstr "다시실행 (Ctrl+Y)"
+msgstr "Làm lại thao tác (Ctrl+Y)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Redo (Ctrl+Shift+Z)"
-msgstr "다시실행 (Ctrl+Shift+Z)"
+msgstr "Làm lại thao tác (Ctrl+Shift+Z)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "strong text"
-msgstr "강하게"
+msgstr "dòng văn mạnh"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "emphasized text"
-msgstr "강조된 문장"
+msgstr "nhấn mạnh chữ"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "enter link description here"
-msgstr "링크 설명을 여기에 입력하세요"
+msgstr "nhập mô tả cho liên kết ở đây"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Blockquote"
-msgstr "블록 인용"
+msgstr "Đoạn trích dẫn"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "enter code here"
-msgstr "코드 입력하세요"
+msgstr "nhập code ở đây"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "List item"
-msgstr "문단번호"
+msgstr "Liệt kê các mục"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Heading"
-msgstr "제목"
+msgstr "Tiêu đề"
 
 #: lms/static/js/ajax-error.js
 msgid ""
@@ -1530,23 +1624,23 @@ msgstr ""
 
 #: lms/static/js/ccx/schedule.js
 msgid "All subsections"
-msgstr "모든 소주제"
+msgstr "Toàn bộ các tiểu mục"
 
 #: lms/static/js/ccx/schedule.js
 msgid "All units"
-msgstr "전체 학습활동"
+msgstr "Tất cả đơn vị"
 
 #: lms/static/js/ccx/schedule.js lms/templates/ccx/schedule.underscore
 msgid "Click to change"
-msgstr ""
+msgstr "Nhấp vào để thay đổi"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Select a chapter"
-msgstr "chapter 선택"
+msgstr "Chọn một chương"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Save changes"
-msgstr "변경사항 저장"
+msgstr "Lưu thay đổi"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Please enter valid start date and time."
@@ -1558,11 +1652,11 @@ msgstr ""
 
 #: lms/static/js/ccx/schedule.js
 msgid "Enter Due Date and Time"
-msgstr ""
+msgstr "Nhập vào hạn chót"
 
 #: lms/static/js/ccx/schedule.js
 msgid "Enter Start Date and Time"
-msgstr ""
+msgstr "Nhập vào ngày giờ bắt đầu"
 
 #: lms/static/js/certificates/models/certificate_exception.js
 msgid ""
@@ -1671,19 +1765,21 @@ msgstr ""
 
 #: lms/static/js/course_survey.js
 msgid "There has been an error processing your survey."
-msgstr "설문을 처리하는 동안 오류가 발생했습니다."
+msgstr "Xảy ra lỗi khi xử lí phiếu điều tra của bạn."
 
 #: lms/static/js/courseware/credit_progress.js
+#: lms/templates/discovery/facet.underscore
+#: lms/templates/edxnotes/note-item.underscore
 msgid "Less"
-msgstr "적게"
+msgstr "Ít hơn"
 
 #: lms/static/js/dashboard/donation.js
 msgid "Please enter a valid donation amount."
-msgstr "유효한 기부 금액을 입력하십시오."
+msgstr "Vui lòng nhập số tiền tài trợ."
 
 #: lms/static/js/dashboard/donation.js
 msgid "Your donation could not be submitted."
-msgstr "기부 처리가 될 수 없습니다."
+msgstr "Số tiền tài trợ của bạn không gửi được."
 
 #: lms/static/js/dashboard/legacy.js
 msgid "You will be refunded the amount you paid."
@@ -1733,17 +1829,17 @@ msgstr ""
 #, javascript-format
 msgid "Viewing %s course"
 msgid_plural "Viewing %s courses"
-msgstr[0] "%s 강좌 보기"
+msgstr[0] "Đang xem %s khóa"
 
 #: lms/static/js/discovery/views/search_form.js
 #, javascript-format
 msgid "We couldn't find any results for \"%s\"."
-msgstr "\"%s\"를 찾을 수 없습니다. "
+msgstr "Không thể tìm thấy kết quả cho \"%s\"."
 
 #: lms/static/js/discovery/views/search_form.js
 #: openedx/features/course_search/static/course_search/templates/search_error.underscore
 msgid "There was an error, try searching again."
-msgstr "오류가 발생했습니다. 다시 검색하세요."
+msgstr "Đã có lỗi xảy ra, xin thử tìm lần nữa."
 
 #: lms/static/js/discussions_management/views/discussions.js
 msgid "Not divided"
@@ -1804,30 +1900,30 @@ msgstr ""
 #: lms/static/js/groups/views/cohort_form.js
 #: lms/static/js/groups/views/cohorts.js
 msgid "We've encountered an error. Refresh your browser and then try again."
-msgstr "오류가 발생했습니다. 페이지를 새로고침한 후, 다시 시도하세요. "
+msgstr "Đã có lỗi xảy ra. Hãy refresh trình duyệt của bạn rồi thử lại."
 
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 #: lms/static/js/edxnotes/views/search_box.js
 msgid ""
 "An error has occurred. Make sure that you are connected to the Internet, and"
 " then try refreshing the page."
-msgstr "오류가 발생했습니다. 인터넷에 연결되어 있는지 확인한 후, 페이지를 새로고침 하세요."
+msgstr "Đã có lỗi xảy ra. Hãy kiểm tra kết nối Internet và thử refresh lại."
 
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 msgid "Hide notes"
-msgstr "노트 감추기"
+msgstr "Ẩn ghi chú"
 
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 msgid "Notes visible"
-msgstr "볼 수 있는 노트"
+msgstr "Hiện ghi chú"
 
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 msgid "Show notes"
-msgstr "노트 보이기"
+msgstr "Hiển thị chú thích. "
 
 #: lms/static/js/edxnotes/views/notes_visibility_factory.js
 msgid "Notes hidden"
-msgstr "감춰진 노트"
+msgstr "Ẩn ghi chú"
 
 #: lms/static/js/edxnotes/views/search_box.js
 msgid "Please enter a term in the {anchorStart} search field{anchorEnd}."
@@ -1835,29 +1931,31 @@ msgstr ""
 
 #: lms/static/js/edxnotes/views/tab_item.js
 msgid "Current tab"
-msgstr "현재 탭"
+msgstr "Tab hiện tại"
 
 #: lms/static/js/edxnotes/views/tabs/course_structure.js
 msgid "Location in Course"
-msgstr "강좌의 위치"
+msgstr "Vị trí trong Khoá học"
 
 #: lms/static/js/edxnotes/views/tabs/recent_activity.js
 msgid "Recent Activity"
-msgstr "최근 활동"
+msgstr "Hoạt động gần đây"
 
 #: lms/static/js/edxnotes/views/tabs/search_results.js
 msgid "No results found for \"%(query_string)s\". Please try searching again."
-msgstr "\"%(query_string)s\"로 검색된 결과가 없습니다. 다시 검색하세요."
+msgstr ""
+"Không có kết quả nào cho \"%(query_string)s\". Hãy thử tìm kiếm với từ khoá "
+"khác."
 
 #: lms/static/js/edxnotes/views/tabs/search_results.js
 #: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
 #: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
 msgid "Search Results"
-msgstr "검색 결과"
+msgstr "Kết quả tìm kiếm"
 
 #: lms/static/js/edxnotes/views/tabs/tags.js
 msgid "[no tags]"
-msgstr "[no tags]"
+msgstr "[không tags]"
 
 #: lms/static/js/financial-assistance/views/financial_assistance_form_view.js
 msgid "Unable to submit application"
@@ -1875,11 +1973,11 @@ msgstr ""
 #: lms/static/js/groups/views/cohort_editor.js
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Selected tab"
-msgstr "선택된 탭"
+msgstr "Tab đã chọn"
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid "Saved cohort"
-msgstr "학습 집단이 저장되었습니다."
+msgstr "Nhóm học viên đã lưu / Saved cohort"
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid "Error adding learners."
@@ -1887,7 +1985,7 @@ msgstr ""
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid "Enter a username or email."
-msgstr "아이디 혹은 이메일을 입력하세요."
+msgstr "Nhập một tên đăng nhập hoặc email."
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid "{numUsersAdded} learner has been added to this cohort. "
@@ -1932,70 +2030,74 @@ msgstr[0] ""
 
 #: lms/static/js/groups/views/cohort_editor.js
 msgid "View all errors"
-msgstr "모든 오류 보기"
+msgstr "Xem toàn bộ lỗi"
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "You must specify a name for the cohort"
-msgstr "학습 집단의 이름을 입력해야 합니다."
+msgstr "Bạn phải đặt tên cho nhóm."
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "You did not select a content group"
-msgstr "콘텐츠 그룹을 선택하지 않았습니다. "
+msgstr "Bạn chưa chọn nội dung cho nhóm học:"
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "The selected content group does not exist"
-msgstr "선택된 콘텐츠 그룹이 존재하지 않습니다."
+msgstr "Nội dung cho nhóm học được chọn không tồn tại"
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "The cohort cannot be saved"
-msgstr "학습 집단이 저장될 수 없습니다."
+msgstr "Không lưu được nhóm học viên này"
 
 #: lms/static/js/groups/views/cohort_form.js
 msgid "The cohort cannot be added"
-msgstr "학습 집단이 추가될 수 없습니다."
+msgstr "Không thêm được nhóm học viên này"
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "You currently have no cohorts configured"
-msgstr "설정된 학습 집단이 현재 없습니다."
+msgstr "Hiện tại bạn chưa xác lập các nhóm học viên"
 
 #: lms/static/js/groups/views/cohorts.js
+#: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Add Cohort"
-msgstr "학습집단 추가하기"
+msgstr "Thêm nhóm học viên"
 
 #: lms/static/js/groups/views/cohorts.js
 msgid ""
 "The {cohortGroupName} cohort has been created. You can manually add students"
 " to this cohort below."
-msgstr "{cohortGroupName} 학습집단이 생성되었습니다. 수작업으로 학습자를 추가할 수 있습니다. "
+msgstr ""
+"Nhóm học viên {cohortGroupName} vừa được tạo. Bạn có thể thêm học viên vào "
+"nhóm dưới đây."
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "Assign students to cohorts by uploading a CSV file."
-msgstr "CSV 파일을 업로드하여 학습 집단에 학습자를 추가하세요."
+msgstr "Tải lên một tệp tin CSV dùng để phân học viên vào các nhóm."
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "Choose a .csv file"
-msgstr ".csv 파일을 선택하십시오. "
+msgstr "Chọn một tệp tin .csv"
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "Only properly formatted .csv files will be accepted."
-msgstr "적합한 .csv 파일만 올릴 수 있습니다. "
+msgstr "Chỉ những tệp tin theo định dạng .csv chuẩn được chấp nhận."
 
 #: lms/static/js/groups/views/cohorts.js
 msgid "Upload File and Assign Students"
-msgstr "파일 업로드 및 학습자 할당하기"
+msgstr "Tải tệp tin lên và chia nhóm học viên"
 
 #: lms/static/js/groups/views/cohorts.js
 msgid ""
 "Your file '{file}' has been uploaded. Allow a few minutes for processing."
-msgstr "'{file}' 파일이 업로드 되었습니다. 처리하는데 잠시 시간이 필요합니다. "
+msgstr ""
+"Tệp tin '{file}' của bạn đã được tải lên. Xin chờ một vài phút để xử lý."
 
 #: lms/static/js/groups/views/course_cohort_settings_notification.js
 msgid "Cohorts Enabled"
-msgstr "학습집단이 활성화되었습니다."
+msgstr "Cho phép phân nhóm học viên"
 
 #: lms/static/js/groups/views/course_cohort_settings_notification.js
 msgid "Cohorts Disabled"
-msgstr "학습집단이 비활성화되었습니다."
+msgstr "Không cho phép phân nhóm học viên"
 
 #: lms/static/js/groups/views/verified_track_settings_notification.js
 msgid ""
@@ -2020,19 +2122,19 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Allow students to generate certificates for this course?"
-msgstr "학습자의 이수증 생성을 허용하시겠습니까?"
+msgstr "Cho phép cấp chứng chỉ cho khóa học này?"
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Prevent students from generating certificates in this course?"
-msgstr "학습자의 이수증 생성을 제한하시겠습니까?"
+msgstr "Không cấp chứng chỉ cho khóa học này?"
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Start generating certificates for all students in this course?"
-msgstr "본 강좌의 모든 학습자를 위한 강좌 이수증 생성을 시작하시겠습니까?"
+msgstr "Bắt đầu cấp chứng chỉ cho tất cả học viên trong khóa học này?"
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Error while generating certificates. Please try again."
-msgstr "강좌 이수증을 발급하는 동안 오류가 발생했습니다. 다시 시도하세요."
+msgstr "Lỗi xả ra khi tạo chứng chỉ. Xin vui lòng thử lại."
 
 #: lms/static/js/instructor_dashboard/certificates.js
 msgid "Start regenerating certificates for students in this course?"
@@ -2044,15 +2146,15 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Loading data..."
-msgstr ""
+msgstr "đang tải dữ liệu..."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error getting issued certificates list."
-msgstr ""
+msgstr "lỗi khi nhận danh sách chứng chỉ đã phát hành."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating proctored exam results. Please try again."
-msgstr ""
+msgstr "Đã có lỗi xảy ra khi phát kết quả thi. Xin vui lòng thử lại lần nữa."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating survey results. Please try again."
@@ -2060,34 +2162,36 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating student profile information. Please try again."
-msgstr "학습자 정보를 만드는 중 오류가 발생했습니다. 다시 시도하세요."
+msgstr "Xảy ra lỗi khi xuất thông tin hồ sơ học viên. Xin vui lòng thử lại."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmarks_list.js
 #: cms/templates/js/move-xblock-modal.underscore
 #: openedx/features/course_search/static/course_search/templates/search_loading.underscore
 msgid "Loading"
-msgstr "로딩"
+msgstr "Đang tải"
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error getting student list."
-msgstr "학습자 목록 가져오기 에러."
+msgstr "Lỗi khi xem danh sách học viên."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating list of students who may enroll. Please try again."
-msgstr "수강신청한 학습자 목록을 생성하는 중 오류가 발생했습니다. 다시 시도하세요."
+msgstr ""
+"Xảy ra lỗi khi xuất danh sách học viên có thể ghi danh. Xin vui lòng thử "
+"lại."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error retrieving grading configuration."
-msgstr "성적설정 가져오기 에러"
+msgstr "Lỗi khi xem kết cấu điểm."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating grades. Please try again."
-msgstr "성적 생성 중 오류가 발생했습니다. 다시 시도하세요."
+msgstr "Lỗi khi xuất điểm số. Vui lòng thử lại."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating problem grade report. Please try again."
-msgstr "성적 보고서 생성 중 오류가 발생했습니다. 다시 시도하세요."
+msgstr "Lỗi khi xuất bảng điểm. Vui lòng thử lại."
 
 #: lms/static/js/instructor_dashboard/data_download.js
 msgid "Error generating ORA data report. Please try again."
@@ -2097,37 +2201,37 @@ msgstr ""
 msgid ""
 "There was a problem creating the report. Select \"Create Executive Summary\""
 " to try again."
-msgstr "보고서를 생성하는 동안 문제가 있었습니다. 다시 시도하기 위해 Create Executive Summary를 선택하세요."
+msgstr "Lỗi khi truy xuất báo cáo. Chọn \"Tạo tóm tắt thực hiện\" để thử lại."
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid "Enter the enrollment code."
-msgstr "수강신청 코드를 입력하세요."
+msgstr "Nhập mã đăng ký ghi danh."
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid "Cancel enrollment code"
-msgstr "수강신청 코드를 취소하세요."
+msgstr "Huỷ mã ghi danh "
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid "Restore enrollment code"
-msgstr "수강신청 코드를 복구하세요."
+msgstr "Hồi phục mã ghi danh"
 
 #: lms/static/js/instructor_dashboard/ecommerce.js
 msgid "Mark enrollment code as unused"
-msgstr "사용되지 않은 수강 신청 코드를 표시하세요."
+msgstr "Đánh dấu mã ghi dành thành chưa dùng"
 
 #: lms/static/js/instructor_dashboard/membership.js
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Username"
-msgstr "아이디"
+msgstr "Tên đăng nhập"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Email"
-msgstr "이메일"
+msgstr "Email"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Revoke access"
-msgstr "접근 권한 취소"
+msgstr "Hủy bỏ truy cập"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Group"
@@ -2135,11 +2239,11 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Enter username or email"
-msgstr "아이디 또는 이메일을 입력하세요"
+msgstr "Nhập tên đăng nhập hoặc email"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Please enter a username or email."
-msgstr "아이디 또는 이메일을 입력하세요"
+msgstr "Vui lòng nhập tên đăng nhập hoặc email."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "This role requires a divided discussions scheme."
@@ -2147,7 +2251,7 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Error changing user's permissions."
-msgstr "이용자의 권한 변경 에러"
+msgstr "Lỗi khi thay quyền hạn của người dùng."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid ""
@@ -2162,40 +2266,41 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Error: You cannot remove yourself from the Instructor group!"
-msgstr "오류: 자신을 교수자 그룹에서 제거할 수 없습니다. "
+msgstr "Error: You cannot remove yourself from the Instructor group!"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Errors"
-msgstr "오류"
+msgstr "Lỗi"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "The following errors were generated:"
-msgstr "다음 오류가 발생했습니다."
+msgstr "Có những lỗi sau:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Warnings"
-msgstr "경고!"
+msgstr "Lưu ý"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "The following warnings were generated:"
-msgstr "다음 경고가 발생했습니다:"
+msgstr "Có những thông báo lỗi sau:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 #: lms/static/js/views/fields.js
 msgid "Success"
-msgstr "성공"
+msgstr "Thành công"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "All accounts were created successfully."
-msgstr "모든 계정이 생성되었습니다."
+msgstr "Tất cả tài khoản đã được tạo thành công."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Error adding/removing users as beta testers."
-msgstr "베타테스터 추가/삭제 중 오류 발생"
+msgstr "Lỗi khi thêm/bỏ thành viên bản thử nghiệm."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "These users were successfully added as beta testers:"
-msgstr "이 이용자들이 성공적으로 베타테스터로 추가되었습니다."
+msgstr ""
+"Những thành viên này đã được thêm vào danh sách thành viên bản thử nghiệm:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid ""
@@ -2205,88 +2310,102 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "These users were successfully removed as beta testers:"
-msgstr "이 이용자들이 성공적으로 베타테스터에서 삭제되었습니다."
+msgstr ""
+"Những thành viên này đã được bỏ khỏi danh sách thành viên bản thử nghiệm:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "These users were not added as beta testers:"
-msgstr "이 이용자들은  베타테스터로 추가되지 않았습니다."
+msgstr ""
+"Những thành viên này không được thêm vào danh sách thành viên bản thử "
+"nghiệm:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "These users were not removed as beta testers:"
-msgstr "이 이용자들은 베타테스터에서 삭제되지 않았습니다."
+msgstr ""
+"Những thành viên này không được bỏ khỏi danh sách thành viên bản thử nghiệm:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid ""
 "Users must create and activate their account before they can be promoted to "
 "beta tester."
-msgstr "이용자는 베타테스터로 등록되기 전에 계정을 생성하고 활성화해야 합니다."
+msgstr ""
+"Người dùng phải tạo và kích hoạt tài khoản trước khi có thể dùng thử bản thử"
+" nghiệm."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Could not find users associated with the following identifiers:"
-msgstr "다음 식별자와 연관된 사용자를 찾을 수 없습니다."
+msgstr "Không thể tìm thành viên có các thông tin danh tính:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Reason field should not be left blank."
-msgstr "이유를 입력하는 필드는 비워둘 수 없습니다."
+msgstr "Vui lòng điền vào mục Lý do."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Error enrolling/unenrolling users."
-msgstr "사용자 등록/삭제 시 발생한 오류"
+msgstr "Lỗi khi ghi danh/hủy ghi danh thành viên."
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "The following email addresses and/or usernames are invalid:"
-msgstr "다음의 이메일 주소  또는 아이디는 유효하지 않습니다. "
+msgstr "Các địa chỉ email và/hoặc tên đăng nhập sau không hợp lệ:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Successfully enrolled and sent email to the following users:"
-msgstr "성공적으로 등록하고, 다음 이용자에게 이메일을 발송했습니다. "
+msgstr "Đã ghi danh thành công và đã gửi email tới thành viên sau:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "Successfully enrolled the following users:"
-msgstr "다음 이용자들을 성공적으로 등록했습니다."
+msgstr "Đã ghi danh thành công cho những thành viên sau:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid ""
 "Successfully sent enrollment emails to the following users. They will be "
 "allowed to enroll once they register:"
-msgstr "등록 이메일을 다음 이용자들에게  발송했습니다. "
+msgstr ""
+"Đã gửi email ghi danh thành công cho những thành viên sau đây - họ sẽ được "
+"ghi danh ngay sau khi đăng ký:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "These users will be allowed to enroll once they register:"
-msgstr "이 사용자들은 등록하면 바로 수강신청할 수 있습니다. "
+msgstr "Những thành viên này sẽ được ghi danh ngay sau khi đăng ký:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid ""
 "Successfully sent enrollment emails to the following users. They will be "
 "enrolled once they register:"
-msgstr "다음 사용자에게  성공적으로 등록 이메일을 발송했습니다. 가입신청하면 강좌에 등록이 될 것입니다: "
+msgstr ""
+"Đã gửi email ghi danh thành công cho những thành viên sau đây - họ sẽ được "
+"ghi danh ngay sau khi đăng ký:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "These users will be enrolled once they register:"
-msgstr "가입 신청하면 강좌에 등록이 될 것입니다: "
+msgstr "Những thành viên này sẽ được ghi danh ngay sau khi đăng ký:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid ""
 "Emails successfully sent. The following users are no longer enrolled in the "
 "course:"
-msgstr "이메일 전송완료. 다음 사용자들은 이 강좌에 더이상 등록되어 있지 않습니다:"
+msgstr ""
+"Gửi email thành công . Những thành viên sau không còn ghi danh trong khóa "
+"học:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid "The following users are no longer enrolled in the course:"
-msgstr "다음 사용자들은 이 강좌에 더이상 등록되어 있지 않습니다:"
+msgstr "Những thành viên sau không còn ghi danh trong khóa học:"
 
 #: lms/static/js/instructor_dashboard/membership.js
 msgid ""
 "These users were not affiliated with the course so could not be unenrolled:"
-msgstr "이 사용자들은 이 강좌와 관련없으므로 수강취소할 수 없습니다."
+msgstr ""
+"Những thành viên sau không tham gia chính thức với khóa học nên không thể "
+"hủy ghi danh:"
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Your message must have a subject."
-msgstr "제목을 입력해야 합니다."
+msgstr "Tin nhắn của bạn phải có tiêu đề."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Your message cannot be blank."
-msgstr "내용을 입력해야 합니다."
+msgstr "Tin nhắn của bạn phải có nội dung."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Your message must have at least one target."
@@ -2337,19 +2456,19 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Error sending email."
-msgstr "메일 전송 오류"
+msgstr "Lỗi khi gửi email."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "There is no email history for this course."
-msgstr "이 강좌에는 메일 전송 기록이 없습니다."
+msgstr "Không có lịch sử email của khóa học này."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "There was an error obtaining email task history for this course."
-msgstr "이 강좌의 이메일 발송 기록 가져오기에 실패하였습니다."
+msgstr "Lỗi khi xem lịch sử tác vụ email của khóa học này."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "There was an error obtaining email content history for this course."
-msgstr "이 강좌의 메일 전송 기록을 가져오는데 오류가 발생했습니다."
+msgstr "Xảy ra lỗi khi xem lịch sử tác vụ email của khóa học này."
 
 #: lms/static/js/instructor_dashboard/send_email.js
 msgid "Send to:"
@@ -2357,7 +2476,7 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Please enter a student email address or username."
-msgstr "학습자의 이메일 주소나 아이디를 입력하세요."
+msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -2367,7 +2486,7 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Please enter a problem location."
-msgstr "문제 위치를 입력하세요."
+msgstr "Vui lòng nhập vị trí của vấn đề."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -2396,7 +2515,7 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Module state successfully deleted."
-msgstr "모듈 상태가 성공적으로 삭제되었습니다."
+msgstr "Thành công khi xóa trạng thái của mô-đun."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -2407,47 +2526,57 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Entrance exam attempts is being reset for student '{student_id}'."
-msgstr "'{student_id}' 학습자가 시도한 사전 평가 횟수는 초기화됩니다."
+msgstr ""
+"Số lần kiểm tra đầu vào lại đã được cài đặt lại cho học sinh '{student_id}'."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "Error resetting entrance exam attempts for student '{student_id}'. Make sure"
 " student identifier is correct."
-msgstr " '{student_id}' 학습자의 사전 평가 초기화에 오류가 발생했습니다. 학습자 ID가 정확한지 확인하세요."
+msgstr ""
+"Lỗi khi tái thiết lập số lần thi thử đầu vào của học viên '{student_id}'. "
+"Xin hãy kiểm tra lại danh tính học viên cho chuẩn xác."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Enter a student's username or email address."
-msgstr "학습자의 아이디 또는 이메일 주소를 입력하세요."
+msgstr "Nhập tên đăng nhập hoặc email của học viên."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "Do you want to allow this student ('{student_id}') to skip the entrance "
 "exam?"
-msgstr "학습자 ('{student_id}')의 사전 평가 면제를 허용하시겠습니까?"
+msgstr ""
+"Bạn có muốn cho phép sinh viên này ('{student_id}') được phép bỏ qua bài "
+"kiểm tra đầu vào?"
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "An error occurred. Make sure that the student's username or email address is"
 " correct and try again."
-msgstr "오류가 발생했습니다. 학습자의 아이디와 이메일 주소가 올바른지 확인하고 다시 시도해 주세요."
+msgstr ""
+"Đã có lỗi xảy ra. Hãy kiểm tra username của học viên hoặc địa chỉ email của "
+"học viên cho chính xác và thử lại."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Entrance exam state is being deleted for student '{student_id}'."
-msgstr "학습자 '{student_id}'의 사전 평가 상태는 삭제됩니다."
+msgstr ""
+"Trạng thái bài kiểm tra đầu vào của học viên '{student_id}' đang được xóa."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "Error deleting entrance exam state for student '{student_id}'. Make sure "
 "student identifier is correct."
 msgstr ""
-"학습자 '{student_id}'의 사전 평가 상태를 삭제하는 도중 오류가 발생했습니다.  학습자의 고유번호가 올바른지 확인하세요."
+"Lỗi khi xóa trạng thái bài kiểm tra đầu vào của học viên '{student_id}'. Xin"
+" kiểm tra xem tên của học viên viết đã đúng chưa."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
 "Error getting entrance exam task history for student '{student_id}'. Make "
 "sure student identifier is correct."
 msgstr ""
-"학습자 '{student_id}'의 사전 평가의 과제이력을 삭제하는 도중 오류가 발생했습니다. 학습자의 고유번호가 올바른지 확인하세요."
+"Lỗi khi truy xuất lịch sử các bài kiểm tra đầu vào của học viên "
+"'{student_id}'. Xin kiểm tra xem tên của học viên viết đã đúng chưa."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Reset attempts for all students on problem '<%- problem_id %>'?"
@@ -2468,7 +2597,7 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Error listing task history for this student and problem."
-msgstr "학습자 및 문제 대한 작업 오류 내역 표시에서 오류가 발생했습니다."
+msgstr "Lỗi khi xem lịch sử tác vụ của học viên và câu hỏi này."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid ""
@@ -2514,8 +2643,9 @@ msgid ""
 "Make sure that entrance exam has problems in it and student identifier is "
 "correct."
 msgstr ""
-" '{student_id}' 학습자의 사전 평가 재채점에 오류가 발생했습니다. 사전 평가에 문항이 있는지와 학습자 아이디가 정확한지 "
-"확인하세요."
+"Lỗi khi bắt đầu tác vụ chấm lại bài thi đầu vào cho học viên '{student_id}'."
+" Hãy kiểm tra lại xem bài thi có ít nhất một câu hỏi và danh tính học viên "
+"là chính xác."
 
 #: lms/static/js/instructor_dashboard/student_admin.js
 msgid "Rescore problem '<%- problem_id %>' for all students?"
@@ -2538,77 +2668,79 @@ msgstr ""
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Task Type"
-msgstr "작업 유형"
+msgstr "Loại Tác Vụ"
 
 #. Translators: a "Task" is a background process such as grading students or
 #. sending email
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Task inputs"
-msgstr "작업 입력"
+msgstr "Nhập dữ liệu tác vụ"
 
 #. Translators: a "Task" is a background process such as grading students or
 #. sending email
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Task ID"
-msgstr "작업 ID"
+msgstr "Mã Tác Vụ"
 
 #. Translators: a "Requester" is a username that requested a task such as
 #. sending email
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Requester"
-msgstr "요청자"
+msgstr "Người yêu cầu"
 
 #. Translators: A timestamp of when a task (eg, sending email) was submitted
 #. appears after this
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Submitted"
-msgstr "제출했습니다."
+msgstr "Đã gửi"
 
 #. Translators: The length of a task (eg, sending email) in seconds appears
 #. this
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Duration (sec)"
-msgstr "기간(초)"
+msgstr "Thời hạn (giây)"
 
 #. Translators: The state (eg, "In progress") of a task (eg, sending email)
 #. appears after this.
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "State"
-msgstr "상태"
+msgstr "Trạng thái "
 
 #. Translators: a "Task" is a background process such as grading students or
 #. sending email
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Task Status"
-msgstr "작업 상태"
+msgstr "Trạng Thái Tác Vụ"
 
 #. Translators: a "Task" is a background process such as grading students or
 #. sending email
 #. */
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Task Progress"
-msgstr "작업 진행상황"
+msgstr "Tiến Trình Tác Vụ"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid ""
 "An error occurred retrieving your email. Please try again later, and contact"
 " technical support if the problem persists."
-msgstr "이메일을 검색하는 동안 오류가 발생했습니다. 나중에 다시 시도한 후, 문제가 지속되면 기술 지원팀에 연락주세요."
+msgstr ""
+"Xảy ra lỗi khi mở email của bạn. Vui lòng thử lại sau và liên hệ với hỗ trợ "
+"kỹ thuật nếu tiếp tục xảy ra sự cố."
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Subject"
-msgstr "제목"
+msgstr "Chủ đề"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Sent By"
-msgstr "보낸 사람"
+msgstr "Gửi Bởi"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Sent To"
@@ -2616,49 +2748,51 @@ msgstr ""
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Time Sent"
-msgstr "보낸 시간"
+msgstr "Gửi Lúc"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Number Sent"
-msgstr "보낸 횟수"
+msgstr "Số Lượng Đã Gửi"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Copy Email To Editor"
-msgstr "편집기로 이메일 복사하기"
+msgstr "Sao chép Email ra Thanh Hiệu Chỉnh"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Subject:"
-msgstr "제목:"
+msgstr "Chủ đề:"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Sent By:"
-msgstr "보내는 사람:"
+msgstr "Gửi Bởi:"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Time Sent:"
-msgstr "보낸 시간:"
+msgstr "Gửi Lúc:"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Sent To:"
-msgstr "받는사람:"
+msgstr "Gửi Tới:"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "Message:"
-msgstr "본문: "
+msgstr "Tin nhắn:"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "No tasks currently running."
-msgstr "작업이 없습니다."
+msgstr ""
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid "File Name"
-msgstr "파일이름"
+msgstr "Tên Tệp"
 
 #: lms/static/js/instructor_dashboard/util.js
 msgid ""
 "Links are generated on demand and expire within 5 minutes due to the "
 "sensitive nature of student information."
-msgstr "요청에 의해 생성된 링크는 학습자 정보 보호를 위해  5분 내에 소멸됩니다."
+msgstr ""
+"Các đường dẫn đang được xuất theo yêu cầu nhưng sẽ hết hạn trong vòng 5 phút"
+" vì độ nhạy cảm của thông tin về học viên."
 
 #: lms/static/js/learner_dashboard/models/course_card_model.js
 msgid "(Self-paced) Starts {start}"
@@ -2751,7 +2885,8 @@ msgstr ""
 
 #: lms/static/js/staff_debug_actions.js
 msgid "Successfully reset the attempts for user {user}"
-msgstr "{user} 이용자의 시도를 초기화 하였습니다."
+msgstr ""
+"Đã tái thiết lập thành công số lần có quyền nộp bài cho thành viên {user}"
 
 #: lms/static/js/staff_debug_actions.js
 msgid "Failed to reset attempts for user."
@@ -2759,7 +2894,7 @@ msgstr ""
 
 #: lms/static/js/staff_debug_actions.js
 msgid "Successfully deleted student state for user {user}"
-msgstr " {user} 학습자 상태 삭제 성공"
+msgstr "Thành công khi xóa trạng thái học viên cho thành viên {user}"
 
 #: lms/static/js/staff_debug_actions.js
 msgid "Failed to delete student state for user."
@@ -2767,7 +2902,7 @@ msgstr ""
 
 #: lms/static/js/staff_debug_actions.js
 msgid "Successfully rescored problem for user {user}"
-msgstr "{user} 이용자의 문제가 재채점 되었습니다."
+msgstr "Thành công khi chấm lại câu hỏi cho học viên {user}"
 
 #: lms/static/js/staff_debug_actions.js
 msgid "Failed to rescore problem for user."
@@ -2791,29 +2926,31 @@ msgstr ""
 
 #: lms/static/js/student_account/account.js
 msgid "The data could not be saved."
-msgstr "자료가 저장되지 않았습니다."
+msgstr "Không thể lưu dữ liệu."
 
 #: lms/static/js/student_account/account.js
 msgid "Please enter a valid email address"
-msgstr "유효한 이메일 주소를 입력하세요."
+msgstr "Hãy nhập địa chỉ email hợp lệ"
 
 #: lms/static/js/student_account/account.js
 msgid "Please enter a valid password"
-msgstr "유효한 비밀번호를 입력하세요."
+msgstr "Hãy nhập mật khẩu hợp lệ"
 
 #: lms/static/js/student_account/account.js
 msgid ""
 "Password reset email sent. Follow the link in the email to change your "
 "password."
-msgstr "비밀번호를 재설정하기 위한 이메일을 보냈습니다.  비밀번호를 변경하기 위해 이메일에 있는 링크를 클릭하세요."
+msgstr ""
+"Email về việc thiết lập lại mật khẩu đã được gửi. Thực hiện theo  link trong"
+" email để đổi mật khẩu."
 
 #: lms/static/js/student_account/account.js
 msgid "We weren't able to send you a password reset email."
-msgstr "귀하에게 비밀번호 재설정 이메일을 보낼 수 없었습니다."
+msgstr "Chúng tôi không thể gửi email về việc thiết lập lại mật khẩu cho bạn"
 
 #: lms/static/js/student_account/account.js
 msgid "Please check your email to confirm the change"
-msgstr "변경을 확인하기 위해 이메일을 확인하세요."
+msgstr "Hãy kiểm tra email để xác nhận việc thay đổi"
 
 #: lms/static/js/student_account/tos_modal.js
 msgid "Terms of Service and Honor Code"
@@ -2821,19 +2958,19 @@ msgstr ""
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Saving your email preference"
-msgstr "원하는 이메일을 저장중입니다. "
+msgstr "Đang lưu tuỳ chọn email của bạn"
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Enrolling you in the selected course"
-msgstr "선택된 강좌에 수강신청 처리중입니다. "
+msgstr "Đang ghi danh cho khoá học đã chọn"
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Adding the selected course to your cart"
-msgstr "장바구니에 선택된 강좌를 추가하고 있습니다."
+msgstr "Đang thêm khoá học đã chọn vào giỏ hàng "
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Loading your courses"
-msgstr "강좌를 불러오고 있습니다."
+msgstr "Đang tải các khoá học"
 
 #: lms/static/js/student_account/views/FormView.js
 #: lms/static/js/student_account/views/RegisterView.js
@@ -2857,10 +2994,9 @@ msgstr ""
 msgid "An error occurred when signing you in to %s."
 msgstr ""
 
-#: lms/static/js/student_account/views/LoginView.js
 #: lms/templates/verify_student/intro_step.underscore
 msgid "Check Your Email"
-msgstr ""
+msgstr "Kiểm tra email của bạn"
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
@@ -2927,7 +3063,7 @@ msgstr ""
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Full Name"
-msgstr "실명"
+msgstr "Tên đầy đủ"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
@@ -2960,7 +3096,7 @@ msgstr ""
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: lms/templates/student_account/account.underscore
 msgid "Password"
-msgstr "비밀번호"
+msgstr "Mật khẩu"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Reset Your Password"
@@ -3002,20 +3138,20 @@ msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Education Completed"
-msgstr "최종 학력"
+msgstr "Học vấn cao nhất"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Gender"
-msgstr "성 "
+msgstr "Giới tính"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Year of Birth"
-msgstr "출생연도"
+msgstr "Năm sinh"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Preferred Language"
-msgstr "선호하는 언어"
+msgstr "Ngôn ngữ ưa thích"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "Social Media Links"
@@ -3081,7 +3217,9 @@ msgstr ""
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid ""
 "You must sign out and sign back in before your language changes take effect."
-msgstr "언어가 바뀌어졌는지 확인하기 위해 로그아웃 하고 다시 로그인 하세요."
+msgstr ""
+"Bạn cần đăng xuất và đăng nhập lại để lựa chọn ngôn ngữ được đưa vào hiệu "
+"lực."
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid ""
@@ -3120,15 +3258,15 @@ msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid "Unlinking"
-msgstr "연결 해제하기"
+msgstr "Bỏ kết nối"
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid "Linking"
-msgstr "연결하기"
+msgstr "Đang kết nối"
 
 #: lms/static/js/student_account/views/account_settings_fields.js
 msgid "Successfully unlinked."
-msgstr "성공적 연결이 해제되었습니다."
+msgstr "Đã bỏ kết nối."
 
 #: lms/static/js/student_account/views/account_settings_view.js
 msgid "Account Information"
@@ -3140,49 +3278,50 @@ msgstr ""
 
 #: lms/static/js/verify_student/views/image_input_view.js
 msgid "Image Upload Error"
-msgstr "이미지 업로드 오류"
+msgstr "Lỗi tải ảnh lên"
 
 #: lms/static/js/verify_student/views/image_input_view.js
 msgid "Please verify that you have uploaded a valid image (PNG and JPEG)."
-msgstr "적합한 이미지 형식(PNG 및 JPEG)인지 확인해 주십시오."
+msgstr ""
+"Xin hãy chắc chắn rằng bạn đã chọn ảnh đúng định dạng (PNG hoặc JPEG)."
 
 #: lms/static/js/verify_student/views/incourse_reverify_view.js
 #: lms/static/js/verify_student/views/review_photos_step_view.js
 msgid "An error has occurred. Please try again later."
-msgstr "오류가 발생했습니다. 다시 시도하세요."
+msgstr "Có lỗi xảy ra. Vui lòng thử lại sau."
 
 #: lms/static/js/verify_student/views/incourse_reverify_view.js
 #: lms/static/js/verify_student/views/review_photos_step_view.js
 msgid "Could not submit photos"
-msgstr "사진을 제출 할 수 없습니다."
+msgstr "Không thể tải ảnh lên."
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Professional Education Verified Certificate"
-msgstr "전문 과정 이수증"
+msgstr "Giấy chứng nhận xác thực cho giáo dục chuyên nghiệp"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Professional Education"
-msgstr "전문 교육 과정"
+msgstr "Giáo Dục Chuyên Nghiệp"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Verified Certificate upgrade"
-msgstr "인증 이수증 업그레이드하기"
+msgstr "Nâng cấp lên chứng chỉ có xác nhận"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Verified Certificate"
-msgstr "인증 이수증"
+msgstr "Chứng chỉ có xác nhận"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Checkout"
-msgstr "결제하기"
+msgstr "Thanh toán"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Checkout with PayPal"
-msgstr "PayPal로 결제하기"
+msgstr "Thanh toán với Paypal"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Checkout with {processor}"
-msgstr "{processor}로 결제하기"
+msgstr "Thanh toán với {processor}"
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "All payment options are currently unavailable."
@@ -3196,119 +3335,129 @@ msgstr ""
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmark_button.js
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmarks_list.js
 msgid "An error has occurred. Please try again."
-msgstr "오류가 발생했습니다. 다시 시도하세요."
+msgstr "Có lỗi xảy ra. Vui lòng thử lại sau."
 
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "Could not submit order"
-msgstr "주문할 수 없습니다."
+msgstr "Không gửi được đơn hàng"
 
 #: lms/static/js/verify_student/views/payment_confirmation_step_view.js
 msgid "Could not retrieve payment information"
-msgstr "결제 정보를 검색할 수 없습니다."
+msgstr "Không nhận được thông tin tài khoản"
 
 #: lms/static/js/verify_student/views/reverify_view.js
 msgid "Take a photo of your ID"
-msgstr "신분증 사진을 찍어 주세요."
+msgstr "Chụp ảnh cho ID của bạn"
 
 #: lms/static/js/verify_student/views/reverify_view.js
 msgid "Review your info"
-msgstr "입력 정보를 확인하세요."
+msgstr "Xem lại thông tin của bạn"
 
 #: lms/static/js/verify_student/views/step_view.js
 msgid "An error has occurred. Please try reloading the page."
-msgstr "오류가 발생했습니다. 페이지를 다시 불러오세요."
+msgstr "Có lỗi xảy ra. Vui lòng thử tải lại trang."
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "Video Capture Error"
-msgstr "동영상 캡쳐 오류"
+msgstr "Lỗi ghi hình"
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid ""
 "Please verify that your webcam is connected and that you have allowed your "
 "browser to access it."
-msgstr "웹캠이 연결되어 있는지, 브라우저가 액세스를 허용하는지 확인하세요."
+msgstr ""
+"Hãy kiểm tra xem webcam đã được kết nối và trình duyệt đã được cho phép dùng"
+" webcam chưa?"
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "No Webcam Detected"
-msgstr "웹캠 미감지"
+msgstr "Không phát hiện được Webcam"
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "You don't seem to have a webcam connected."
-msgstr "웹캠이 연결되지 않은 것 같습니다."
+msgstr "Có vẻ bạn chưa kết nối webcam."
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "Double-check that your webcam is connected and working to continue."
-msgstr "웹캠이 연결되었는지 재확인 후에 진행해주세요."
+msgstr ""
+"Hãy kiểm tra xem webcam của bạn đã được kết nối và đang hoạt động để tiếp "
+"tục."
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "Photo Captured successfully."
-msgstr "사진이 성공적으로 캡쳐되었습니다."
+msgstr "Đã chụp hình thành công"
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid "No Flash Detected"
-msgstr "플래시 미감지"
+msgstr "Không phát hiện được Flash"
 
 #: lms/static/js/verify_student/views/webcam_photo_view.js
 msgid ""
 "You don't seem to have Flash installed. Get Flash to continue your "
 "verification."
-msgstr "Flash가 설치되어 있지 않은 것 같습니다. Flash 설치 후 계속 진행하세요."
+msgstr ""
+"Bạn dường như không có cài đặt Flash. Hãy cài đặt Flash để tiếp tục quá "
+"trình xác minh."
 
 #: lms/static/js/views/fields.js
 msgid "Editable"
-msgstr "편집 가능"
+msgstr "Chỉnh sửa được"
 
 #: lms/static/js/views/fields.js
 msgid "Validation Error"
-msgstr "유효성 에러"
+msgstr "Lỗi xác nhận"
 
 #: lms/static/js/views/fields.js
 msgid "In Progress"
-msgstr "진행 중"
+msgstr "Trong tiến trình"
 
 #: lms/static/js/views/fields.js
 msgid "Placeholder"
-msgstr "플레이스홀더"
+msgstr "Placeholder"
 
 #: lms/static/js/views/file_uploader.js
 msgid "Your upload of '{file}' succeeded."
-msgstr "'{file}'파일 업로드를 성공했습니다."
+msgstr "Tệp tin '{file}' đã được tải lên thành công."
 
 #: lms/static/js/views/file_uploader.js
 msgid "Your upload of '{file}' failed."
-msgstr "'{file}'파일 업로드를 실패했습니다."
+msgstr "việc tải được tệp tin '{file}' thất bại"
 
 #: lms/static/js/views/image_field.js
 msgid "Upload an image"
-msgstr "이미지 업로드"
+msgstr "Tải lên hình ảnh"
 
 #: lms/static/js/views/image_field.js
 msgid "Change image"
-msgstr "이미지 변경"
+msgstr "Thay đổi hình ảnh"
 
 #: lms/static/js/views/image_field.js
 msgid "An error has occurred. Refresh the page, and then try again."
-msgstr "오류가 발생했습니다. 페이지를 새로고침한 후, 다시 시도하세요. "
+msgstr "Có lỗi xảy ra. Vui lòng thử tải lại trang."
 
 #: lms/static/js/views/image_field.js
 msgid "The file must be at least {size} in size."
-msgstr "파일의 크기가 적어도 {size} 여야 합니다. "
+msgstr "Tệp tin phải có dung lượng lớn hơn {size}."
 
 #: lms/static/js/views/image_field.js
 msgid "The file must be smaller than {size} in size."
-msgstr "파일의 크기가 {size} 보다 작아야 합니다. "
+msgstr "Tệp tin phải có dung lượng nhỏ hơn {size}."
 
 #: lms/static/js/views/image_field.js
 msgid ""
 "Upload is in progress. To avoid errors, stay on this page until the process "
 "is complete."
-msgstr "업로드가 진행 중입니다. 오류 발생을 방지하기 위해 완료될 때까지 본 페이지에 머물러 주십시오"
+msgstr ""
+"Đang tải lên. Để tránh có lỗi xảy ra, xin đừng đóng trang này cho đến khi "
+"tải lên xong."
 
 #: lms/static/js/views/image_field.js
 msgid ""
 "Removal is in progress. To avoid errors, stay on this page until the process"
 " is complete."
-msgstr "삭제가 진행 중입니다. 오류 발생을 방지하기 위해 완료될 때까지 본 페이지에 머물러 주십시오. "
+msgstr ""
+"Đang xoá. Để tránh có lỗi xảy ra, xin đừng đóng trang này cho đến khi xoá "
+"xong."
 
 #: lms/static/js/views/image_field.js
 msgid "bytes"
@@ -3335,21 +3484,21 @@ msgstr ""
 #: lms/templates/class_dashboard/d3_stacked_bar_graph.js
 msgid "%(num_students)s student opened Subsection"
 msgid_plural "%(num_students)s students opened Subsection"
-msgstr[0] "소주제를 열어본 학습자들 : %(num_students)s"
+msgstr[0] "%(num_students)s học viên mở Tiểu mục"
 
 #: lms/templates/class_dashboard/d3_stacked_bar_graph.js
 msgid "%(num_students)s student"
 msgid_plural "%(num_students)s students"
-msgstr[0] " %(num_students)s 명 "
+msgstr[0] "%(num_students)s học viên"
 
 #: lms/templates/class_dashboard/d3_stacked_bar_graph.js
 msgid "%(num_questions)s question"
 msgid_plural "%(num_questions)s questions"
-msgstr[0] "%(num_questions)s개"
+msgstr[0] "%(num_questions)s câu hỏi"
 
 #: lms/templates/class_dashboard/d3_stacked_bar_graph.js
 msgid "Number of Students"
-msgstr "학습자 수 "
+msgstr "Số Lượng Học Viên"
 
 #: lms/templates/courseware/progress_graph.js
 msgid "Overall Score"
@@ -3534,7 +3683,7 @@ msgstr ""
 
 #: cms/static/js/certificates/views/signatory_editor.js
 msgid "Upload signature image."
-msgstr "서명 이미지 업로드하기"
+msgstr ""
 
 #: cms/static/js/certificates/views/signatory_editor.js
 msgid "Image must be in PNG format."
@@ -3567,10 +3716,9 @@ msgid ""
 "“{container}”?"
 msgstr ""
 
-#: cms/static/js/factories/manage_users.js
-#: cms/static/js/factories/manage_users_lib.js
+#: common/static/common/templates/discussion/thread-list-item.underscore
 msgid "Staff"
-msgstr "운영팀"
+msgstr "Nhân viên"
 
 #: cms/static/js/factories/manage_users.js
 #: cms/static/js/factories/manage_users_lib.js
@@ -3678,7 +3826,7 @@ msgstr ""
 
 #: cms/static/js/models/course.js cms/static/js/models/section.js
 msgid "You must specify a name"
-msgstr "이름을 명시해야 합니다."
+msgstr ""
 
 #: cms/static/js/models/course_update.js
 msgid "Action required: Enter a valid date."
@@ -3794,12 +3942,11 @@ msgid ""
 "<%= fileExtensions %> to upload."
 msgstr ""
 
-#: cms/static/js/models/uploads.js
 #: lms/templates/student_account/hinted_login.underscore
 #: lms/templates/student_account/institution_login.underscore
 #: lms/templates/student_account/institution_register.underscore
 msgid "or"
-msgstr ""
+msgstr "hoặc là"
 
 #: cms/static/js/models/xblock_validation.js
 msgid "This unit has validation issues."
@@ -3887,10 +4034,10 @@ msgstr ""
 msgid "Date Added"
 msgstr ""
 
-#: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
+#: cms/templates/js/asset-library.underscore
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Type"
-msgstr ""
+msgstr "Loại"
 
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
@@ -3907,8 +4054,9 @@ msgid "Max file size exceeded"
 msgstr ""
 
 #: cms/static/js/views/assets.js
+#: cms/templates/js/asset-upload-modal.underscore
 msgid "Upload New File"
-msgstr "파일 업로드"
+msgstr ""
 
 #: cms/static/js/views/assets.js
 msgid "Load Another File"
@@ -3983,7 +4131,7 @@ msgstr ""
 
 #: cms/static/js/views/edit_chapter.js
 msgid "Please select a PDF file to upload."
-msgstr "업로드할 PDF 파일을 선택하세요."
+msgstr ""
 
 #: cms/static/js/views/export.js
 msgid "There has been an error while exporting."
@@ -4215,7 +4363,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/divided-discussions-course-wide.underscore
 #: lms/templates/instructor/instructor_dashboard_2/divided-discussions-inline.underscore
 msgid "Save"
-msgstr "저장"
+msgstr "Lưu"
 
 #: cms/static/js/views/modals/course_outline_modals.js
 msgid "{display_name} Settings"
@@ -4386,7 +4534,7 @@ msgid ""
 "If the unit was previously published and released to students, any changes "
 "you made to the unit when it was hidden will now be visible to students. Do "
 "you want to proceed?"
-msgstr "비공개 상태에서 변경된 내용이 학습자에게 보일 것입니다. 계속 하시겠습니까?"
+msgstr ""
 
 #: cms/static/js/views/pages/container_subviews.js
 msgid "Making Visible to Students"
@@ -4516,7 +4664,7 @@ msgstr ""
 msgid ""
 "Deleting a textbook cannot be undone and once deleted any reference to it in"
 " your courseware's navigation will also be removed."
-msgstr "교재를 삭제하면 되돌릴 수 없습니다. 삭제 후 강좌 내용 탐색에 들어있는 모든 참조도 함께 삭제될 것입니다."
+msgstr ""
 
 #: cms/static/js/views/tabs.js
 msgid "Delete Page Confirmation"
@@ -4616,11 +4764,13 @@ msgstr ""
 
 #: cms/static/js/views/validation.js
 msgid "You've made some changes"
-msgstr "수정 완료"
+msgstr ""
 
 #: cms/static/js/views/validation.js
 msgid "Your changes will not take effect until you save your progress."
-msgstr "저장하기 전에는 변경사항이 적용되지 않습니다."
+msgstr ""
+"Thay đổi của bạn sẽ không có hiệu lực cho đến khi bạn lưu lại tiến độ của "
+"mình."
 
 #: cms/static/js/views/validation.js
 msgid "You've made some changes, but there are some errors"
@@ -4629,7 +4779,7 @@ msgstr ""
 #: cms/static/js/views/validation.js
 msgid ""
 "Please address the errors on this page first, and then save your progress."
-msgstr ""
+msgstr "Vui lòng sửa các lỗi trên trang này, sau đó lưu tiến độ của bạn."
 
 #: cms/static/js/views/validation.js
 msgid "Save Changes"
@@ -4637,7 +4787,7 @@ msgstr ""
 
 #: cms/static/js/views/video/transcripts/file_uploader.js
 msgid "Please select a file in .srt format."
-msgstr ".srt 파일을 선택해 주세요."
+msgstr ""
 
 #: cms/static/js/views/video/transcripts/file_uploader.js
 msgid "Error: Uploading failed."
@@ -4822,7 +4972,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Settings"
-msgstr "설정"
+msgstr "Thiết lập"
 
 #: cms/static/js/views/xblock_outline.js
 msgid "New {component_type}"
@@ -4840,14 +4990,14 @@ msgstr ""
 #: cms/templates/js/basic-modal.underscore
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Actions"
-msgstr ""
+msgstr "Hoạt động"
 
 #: cms/templates/js/certificate-editor.underscore
 #: cms/templates/js/group-configuration-editor.underscore
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Description"
-msgstr "설명"
+msgstr "Mô tả"
 
 #: cms/templates/js/course-instructor-details.underscore
 #: cms/templates/js/signatory-details.underscore
@@ -4866,24 +5016,24 @@ msgstr ""
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Date"
-msgstr "날짜"
+msgstr "Ngày"
 
 #: cms/templates/js/paging-header.underscore
 #: common/static/common/templates/components/paging-footer.underscore
 #: common/static/common/templates/discussion/pagination.underscore
 msgid "Previous"
-msgstr ""
+msgstr "Trước"
 
 #: cms/templates/js/paging-header.underscore
 #: common/static/common/templates/components/paging-footer.underscore
 #: common/static/common/templates/discussion/pagination.underscore
 msgid "Next"
-msgstr ""
+msgstr "Tiếp theo"
 
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Status"
-msgstr "상태"
+msgstr "Trạng Thái"
 
 #: cms/templates/js/previous-video-upload-list.underscore
 #: lms/djangoapps/support/static/support/templates/manage_user.underscore
@@ -4894,19 +5044,19 @@ msgstr ""
 
 #: common/static/common/templates/image-modal.underscore
 msgid "Fullscreen"
-msgstr ""
+msgstr "Toàn màn hình"
 
 #: common/static/common/templates/image-modal.underscore
 msgid "Large"
-msgstr ""
+msgstr "Lớn"
 
 #: common/static/common/templates/image-modal.underscore
 msgid "Zoom In"
-msgstr ""
+msgstr "Thu nhỏ lại"
 
 #: common/static/common/templates/image-modal.underscore
 msgid "Zoom Out"
-msgstr ""
+msgstr "phóng to ra"
 
 #: common/static/common/templates/components/paging-footer.underscore
 #, python-format
@@ -4915,67 +5065,67 @@ msgstr ""
 
 #: common/static/common/templates/components/paging-footer.underscore
 msgid "Enter the page number you'd like to quickly navigate to."
-msgstr ""
+msgstr "Nhập số trang bạn muốn nhanh chóng điều hướng đến."
 
 #: common/static/common/templates/components/paging-header.underscore
 msgid "Sorted by"
-msgstr ""
+msgstr "Sắp xếp theo"
 
 #: common/static/common/templates/components/search-field.underscore
 msgid "Clear search"
-msgstr ""
+msgstr "Xoá tìm kiếm"
 
 #: common/static/common/templates/discussion/forum-action-answer.underscore
 msgid "Mark as Answer"
-msgstr ""
+msgstr "Đánh dấu câu trả lời"
 
 #: common/static/common/templates/discussion/forum-action-answer.underscore
 msgid "Unmark as Answer"
-msgstr ""
+msgstr "Bỏ đánh dấu câu trả lời"
 
 #: common/static/common/templates/discussion/forum-action-close.underscore
 msgid "Open"
-msgstr ""
+msgstr "Mở"
 
 #: common/static/common/templates/discussion/forum-action-endorse.underscore
 msgid "Endorse"
-msgstr ""
+msgstr "Thừa nhận"
 
 #: common/static/common/templates/discussion/forum-action-endorse.underscore
 msgid "Unendorse"
-msgstr ""
+msgstr "Không thừa nhận"
 
 #: common/static/common/templates/discussion/forum-action-follow.underscore
 msgid "Follow"
-msgstr ""
+msgstr "Theo dõi"
 
 #: common/static/common/templates/discussion/forum-action-follow.underscore
 msgid "Unfollow"
-msgstr ""
+msgstr "Bỏ theo dõi"
 
 #: common/static/common/templates/discussion/forum-action-pin.underscore
 msgid "Pin"
-msgstr ""
+msgstr "Ghim"
 
 #: common/static/common/templates/discussion/forum-action-pin.underscore
 msgid "Unpin"
-msgstr ""
+msgstr "Gỡ ghim"
 
 #: common/static/common/templates/discussion/forum-action-report.underscore
 msgid "Report abuse"
-msgstr ""
+msgstr "Báo cáo vi phạm"
 
 #: common/static/common/templates/discussion/forum-action-report.underscore
 msgid "Report"
-msgstr ""
+msgstr "Báo cáo"
 
 #: common/static/common/templates/discussion/forum-action-report.underscore
 msgid "Unreport"
-msgstr ""
+msgstr "Bỏ báo cáo"
 
 #: common/static/common/templates/discussion/forum-action-vote.underscore
 msgid "Vote for this post,"
-msgstr ""
+msgstr "Bình chọn cho bài này,"
 
 #: common/static/common/templates/discussion/nav-load-more-link.underscore
 msgid "Load more"
@@ -5010,7 +5160,7 @@ msgstr ""
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "All Groups"
-msgstr ""
+msgstr "Tất Cả Các Nhóm"
 
 #: common/static/common/templates/discussion/new-post.underscore
 #: common/static/common/templates/discussion/thread-edit.underscore
@@ -5024,22 +5174,22 @@ msgstr ""
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "follow this post"
-msgstr ""
+msgstr "theo dõi bài này"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "post anonymously"
-msgstr ""
+msgstr "bài viết ẩn danh"
 
 #: common/static/common/templates/discussion/new-post.underscore
 msgid "post anonymously to classmates"
-msgstr ""
+msgstr "bài viết ẩn danh với các bạn cùng lớp"
 
 #: common/static/common/templates/discussion/new-post.underscore
 #: common/static/common/templates/discussion/thread-response.underscore
 #: common/static/common/templates/discussion/thread.underscore
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Submit"
-msgstr ""
+msgstr "Nộp"
 
 #: common/static/common/templates/discussion/post-user-display.underscore
 msgid "(Community TA)"
@@ -5052,34 +5202,34 @@ msgstr ""
 #: common/static/common/templates/discussion/profile-thread.underscore
 #: common/static/common/templates/discussion/thread.underscore
 msgid "This thread is closed."
-msgstr ""
+msgstr "Chủ đề này đã đóng."
 
 #: common/static/common/templates/discussion/profile-thread.underscore
 msgid "View discussion"
-msgstr ""
+msgstr "Xem thảo luận"
 
 #: common/static/common/templates/discussion/response-comment-edit.underscore
 msgid "Editing comment"
-msgstr ""
+msgstr "Đang chỉnh sửa bình luận"
 
 #: common/static/common/templates/discussion/response-comment-edit.underscore
 msgid "Update comment"
-msgstr ""
+msgstr "Cập nhật bình luận"
 
 #: common/static/common/templates/discussion/response-comment-show.underscore
 #, python-format
 msgid "posted %(time_ago)s by %(author)s"
-msgstr ""
+msgstr "Viết vào lúc %(time_ago)s bởi %(author)s"
 
 #: common/static/common/templates/discussion/response-comment-show.underscore
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #: common/static/common/templates/discussion/thread-show.underscore
 msgid "Reported"
-msgstr ""
+msgstr "Báo cáo"
 
 #: common/static/common/templates/discussion/thread-edit.underscore
 msgid "Editing post"
-msgstr ""
+msgstr "Đang chỉnh sửa bài viết"
 
 #: common/static/common/templates/discussion/thread-edit.underscore
 msgid "Edit your post below."
@@ -5087,32 +5237,32 @@ msgstr ""
 
 #: common/static/common/templates/discussion/thread-edit.underscore
 msgid "Update post"
-msgstr ""
+msgstr "Cập nhật bài viết"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 msgid "discussion"
-msgstr ""
+msgstr "thảo luận"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 msgid "answered question"
-msgstr ""
+msgstr "Câu hỏi đã trả lời"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 msgid "unanswered question"
-msgstr ""
+msgstr "Câu hỏi chưa được trả lời"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 #: common/static/common/templates/discussion/thread-show.underscore
 msgid "Pinned"
-msgstr ""
+msgstr "Đã ghim"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 msgid "Following"
-msgstr ""
+msgstr "Đang theo dõi"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 msgid "Community TA"
-msgstr ""
+msgstr "Cộng Đồng Trợ Giảng"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 msgid "{unread_comments_count} new"
@@ -5124,39 +5274,41 @@ msgid ""
 "%(comments_count)s %(span_sr_open)scomments (%(unread_comments_count)s "
 "unread comments)%(span_close)s"
 msgstr ""
+"%(comments_count)s %(span_sr_open)sbình luận (%(unread_comments_count)s bình"
+" luận chưa đọc)%(span_close)s"
 
 #: common/static/common/templates/discussion/thread-list-item.underscore
 #, python-format
 msgid "%(comments_count)s %(span_sr_open)scomments %(span_close)s"
-msgstr ""
+msgstr "%(comments_count)s %(span_sr_open)sbình luận %(span_close)s"
 
 #: common/static/common/templates/discussion/thread-response-edit.underscore
 msgid "Editing response"
-msgstr ""
+msgstr "Đang chỉnh sửa các phản hồi"
 
 #: common/static/common/templates/discussion/thread-response-edit.underscore
 msgid "Update response"
-msgstr ""
+msgstr "Cập nhật phản hồi"
 
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #, python-format
 msgid "marked as answer %(time_ago)s by %(user)s"
-msgstr ""
+msgstr "đánh dấu các câu trả lời của %(user)s lúc %(time_ago)s"
 
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #, python-format
 msgid "marked as answer %(time_ago)s"
-msgstr ""
+msgstr "đánh dấu câu trả lời %(time_ago)s"
 
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #, python-format
 msgid "endorsed %(time_ago)s by %(user)s"
-msgstr ""
+msgstr "tán thành vào lúc %(time_ago)s bởi %(user)s"
 
 #: common/static/common/templates/discussion/thread-response-show.underscore
 #, python-format
 msgid "endorsed %(time_ago)s"
-msgstr ""
+msgstr "tán thành vào lúc %(time_ago)s"
 
 #: common/static/common/templates/discussion/thread-response.underscore
 #, python-format
@@ -5166,7 +5318,7 @@ msgstr[0] ""
 
 #: common/static/common/templates/discussion/thread-response.underscore
 msgid "Add a comment"
-msgstr ""
+msgstr "Thêm bình luận"
 
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
@@ -5180,21 +5332,21 @@ msgstr ""
 
 #: common/static/common/templates/discussion/thread-show.underscore
 msgid "Closed"
-msgstr ""
+msgstr "Đã đóng"
 
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
 msgid "Related to: %(courseware_title_linked)s"
-msgstr ""
+msgstr "Liên quan đến: %(courseware_title_linked)s"
 
 #: common/static/common/templates/discussion/thread-show.underscore
 #, python-format
 msgid "This post is visible only to %(group_name)s."
-msgstr ""
+msgstr "Bài đăng này chỉ hiển thị cho %(group_name)s."
 
 #: common/static/common/templates/discussion/thread-show.underscore
 msgid "This post is visible to everyone."
-msgstr ""
+msgstr "Bài đăng này hiển thị cho tất cả mọi người."
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Post type"
@@ -5208,15 +5360,15 @@ msgstr ""
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Question"
-msgstr ""
+msgstr "Câu hỏi"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 msgid "Discussion"
-msgstr ""
+msgstr "Thảo Luận"
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Add a Response"
-msgstr ""
+msgstr "Thêm một Phản hồi"
 
 #: common/static/common/templates/discussion/thread.underscore
 msgid "Add a response:"
@@ -5237,11 +5389,11 @@ msgstr ""
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #, python-format
 msgid "How to use %(platform_name)s discussions"
-msgstr "%(platform_name)s 게시판 사용법"
+msgstr "Cách thảo luận trên %(platform_name)s"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Find discussions"
-msgstr ""
+msgstr "Tìm kiếm thảo luận"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Use the All Topics menu to find specific topics."
@@ -5258,7 +5410,7 @@ msgstr ""
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Engage with posts"
-msgstr ""
+msgstr "Quan tâm đến bài đăng"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Vote for good posts and responses"
@@ -5274,17 +5426,19 @@ msgstr ""
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Receive updates"
-msgstr ""
+msgstr "Nhận thông báo khi có bài đăng mới"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Toggle Notifications Setting"
-msgstr ""
+msgstr "Cài đặt thông báo chuyển đổi"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid ""
 "Check this box to receive an email digest once a day notifying you about "
 "new, unread activity from posts you are following."
 msgstr ""
+"Chọn ô này để nhận thư tóm tắt hàng ngày về các hoạt động mới từ các bài "
+"posts mà bạn đang theo dõi. "
 
 #: lms/djangoapps/discussion/static/discussion/templates/user-profile.underscore
 msgid "All Posts"
@@ -5292,7 +5446,7 @@ msgstr ""
 
 #: lms/djangoapps/support/static/support/templates/certificates.underscore
 msgid "username or email"
-msgstr ""
+msgstr "Tên người dùng hoặc email"
 
 #: lms/djangoapps/support/static/support/templates/certificates.underscore
 msgid "course id"
@@ -5302,39 +5456,39 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/certificate-invalidation.underscore
 #: lms/templates/instructor/instructor_dashboard_2/certificate-white-list.underscore
 msgid "No results"
-msgstr ""
+msgstr "Không có kết quả"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Course Key"
-msgstr ""
+msgstr "Key khoá học"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Download URL"
-msgstr ""
+msgstr "Tải URL"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Grade"
-msgstr ""
+msgstr "Điểm"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Last Updated"
-msgstr ""
+msgstr "Cập nhật cuối cùng"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Download the user's certificate"
-msgstr ""
+msgstr "Tải về giấy chứng nhận của người sử dụng"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Not available"
-msgstr ""
+msgstr "Không thể"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Regenerate"
-msgstr ""
+msgstr "Tái tạo"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Regenerate the user's certificate"
-msgstr ""
+msgstr "Tạo lại chứng chỉ của người sử dụng"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Generate"
@@ -5436,21 +5590,23 @@ msgstr ""
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Your team could not be created."
-msgstr ""
+msgstr "Đội của bạn không thể được tạo ra."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Your team could not be updated."
-msgstr ""
+msgstr "Nhóm của bạn có thể không được cập nhật."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid ""
 "Enter information to describe your team. You cannot change these details "
 "after you create the team."
 msgstr ""
+"Nhập thông tin để mô tả nhóm của bạn. Bạn không thể thay đổi các chi tiết "
+"này sau khi bạn tạo nhóm."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Optional Characteristics"
-msgstr ""
+msgstr "Đặc điểm tùy chọn"
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid ""
@@ -5458,67 +5614,70 @@ msgid ""
 "characteristics for your team. Choose carefully, because fewer people might "
 "be interested in joining your team if it seems too restrictive."
 msgstr ""
+"Giúp học viên khác quyết định việc tham gia nhóm của bạn bằng cách chỉ định "
+"một số đặc trưng cho nhóm của bạn. Chọn một cách cẩn thận, bởi vì ít người "
+"có thể quan tâm đến việc gia nhập nhóm của bạn nếu nó có vẻ quá hạn chế."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Create team."
-msgstr ""
+msgstr "Tạo nhóm."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Update team."
-msgstr ""
+msgstr "Cập nhật đội."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Cancel team creating."
-msgstr ""
+msgstr "Hủy bỏ đội tạo ra."
 
 #: lms/djangoapps/teams/static/teams/templates/edit-team.underscore
 msgid "Cancel team updating."
-msgstr ""
+msgstr "Hủy bỏ đội cập nhật."
 
 #: lms/djangoapps/teams/static/teams/templates/instructor-tools.underscore
 msgid "Instructor tools"
-msgstr ""
+msgstr "Công cụ giảng dạy"
 
 #: lms/djangoapps/teams/static/teams/templates/instructor-tools.underscore
 msgid "Delete Team"
-msgstr ""
+msgstr "Xóa nhóm"
 
 #: lms/djangoapps/teams/static/teams/templates/instructor-tools.underscore
 msgid "Edit Membership"
-msgstr ""
+msgstr "chỉnh sửa thành viên"
 
 #: lms/djangoapps/teams/static/teams/templates/team-actions.underscore
 msgid "Are you having trouble finding a team to join?"
-msgstr ""
+msgstr "Bạn có gặp khó khăn khi tìm một đội để tham gia?"
 
 #: lms/djangoapps/teams/static/teams/templates/team-profile-header-actions.underscore
 msgid "Join Team"
-msgstr ""
+msgstr "Tham gia nhóm"
 
 #: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
 msgid "Team Details"
-msgstr ""
+msgstr "Chi tiết nhóm"
 
 #: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
 msgid "You are a member of this team."
-msgstr ""
+msgstr "Bạn là một thành viên của nhóm này."
 
 #: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
 msgid "Team member profiles"
-msgstr ""
+msgstr "Hồ sơ thành viên nhóm"
 
 #: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
 msgid "Team capacity"
-msgstr ""
+msgstr "Năng lực nhóm"
 
 #: lms/djangoapps/teams/static/teams/templates/team-profile.underscore
 msgid "Leave Team"
-msgstr ""
+msgstr "Rời bỏ nhóm"
 
 #: lms/static/js/fixtures/donation.underscore
 #: lms/templates/dashboard/donation.underscore
 msgid "Donate"
-msgstr "기부하기"
+msgstr "Quyên góp"
 
 #: lms/templates/api_admin/catalog-error.underscore
 msgid ""
@@ -5532,23 +5691,23 @@ msgstr ""
 
 #: lms/templates/ccx/schedule.underscore
 msgid "Expand All"
-msgstr ""
+msgstr "Mở rộng tất cả"
 
 #: lms/templates/ccx/schedule.underscore
 msgid "Collapse All"
-msgstr ""
+msgstr "Thu gọn tất cả"
 
 #: lms/templates/ccx/schedule.underscore
 msgid "Start Date"
-msgstr ""
+msgstr "Ngày bắt đầu"
 
 #: lms/templates/ccx/schedule.underscore
 msgid "Due Date"
-msgstr ""
+msgstr "Hạn nộp bài"
 
 #: lms/templates/ccx/schedule.underscore
 msgid "remove all"
-msgstr ""
+msgstr "xoá bỏ tất cả"
 
 #: lms/templates/ccx/schedule.underscore
 #, python-format
@@ -5557,7 +5716,7 @@ msgstr ""
 
 #: lms/templates/ccx/schedule.underscore
 msgid "Section"
-msgstr ""
+msgstr "Mục"
 
 #: lms/templates/ccx/schedule.underscore
 #, python-format
@@ -5566,7 +5725,7 @@ msgstr ""
 
 #: lms/templates/ccx/schedule.underscore
 msgid "remove"
-msgstr ""
+msgstr "bỏ"
 
 #: lms/templates/ccx/schedule.underscore
 #, python-format
@@ -5575,7 +5734,7 @@ msgstr ""
 
 #: lms/templates/ccx/schedule.underscore
 msgid "Subsection"
-msgstr ""
+msgstr "Tiểu mục"
 
 #: lms/templates/ccx/schedule.underscore
 #, python-format
@@ -5593,6 +5752,8 @@ msgid ""
 "You still need to visit the %(display_name)s website to complete the credit "
 "process."
 msgstr ""
+"Bạn vẫn cần phải truy cập vào các trang web %(display_name)s để hoàn tất quá"
+" trình tín chỉ."
 
 #: lms/templates/commerce/provider.underscore
 #, python-format
@@ -5603,7 +5764,7 @@ msgstr ""
 
 #: lms/templates/commerce/provider.underscore
 msgid "Get Credit"
-msgstr ""
+msgstr "Lấy tín chỉ"
 
 #: lms/templates/commerce/receipt.underscore
 #, python-format
@@ -5617,47 +5778,49 @@ msgid ""
 "Please print this page for your records; it serves as your receipt. You will"
 " also receive an email with the same information."
 msgstr ""
+"Hãy in trang này để lưu trữ, nó phục vụ như là biên lai của bạn. Bạn cũng sẽ"
+" nhận được một email với các thông tin tương tự."
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Order No."
-msgstr "주문 번호"
+msgstr "Đơn hàng số"
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Amount"
-msgstr ""
+msgstr "Số lượng"
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Total"
-msgstr ""
+msgstr "Tổng cộng"
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Please Note"
-msgstr ""
+msgstr "Xin lưu ý"
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Crossed out items have been refunded."
-msgstr ""
+msgstr "Các mặt hàng gạch chéo là đã được hoàn trả."
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Billed to"
-msgstr ""
+msgstr "Đã gửi hóa đơn cho"
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "No receipt available"
-msgstr ""
+msgstr "Không biên nhận có sẵn"
 
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/financial-assistance/financial_assessment_submitted.underscore
 msgid "Go to Dashboard"
-msgstr ""
+msgstr "Đi đến bảng điều khiển"
 
 #: lms/templates/commerce/receipt.underscore
 msgid ""
@@ -5669,15 +5832,15 @@ msgstr ""
 #: lms/templates/commerce/receipt.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Want to confirm your identity later?"
-msgstr ""
+msgstr "Bạn muốn xác nhận danh tính của bạn vào lúc khác?"
 
 #: lms/templates/commerce/receipt.underscore
 msgid "Verify Now"
-msgstr ""
+msgstr "Xác nhận ngay bây giờ"
 
 #: lms/templates/courseware/proctored-exam-controls.underscore
 msgid "Mark Exam As Completed"
-msgstr ""
+msgstr "Đánh dấu bài thi đã hoàn thành"
 
 #: lms/templates/courseware/proctored-exam-status.underscore
 msgid "timed"
@@ -5691,7 +5854,7 @@ msgstr ""
 
 #: lms/templates/courseware/proctored-exam-status.underscore
 msgid "End My Exam"
-msgstr ""
+msgstr "Kết thúc bài thi của tôi"
 
 #: lms/templates/courseware/proctored-exam-status.underscore
 msgid "Hide Timer"
@@ -5699,50 +5862,50 @@ msgstr ""
 
 #: lms/templates/discovery/course_card.underscore
 msgid "LEARN MORE"
-msgstr ""
+msgstr "Tìm hiểu thêm"
 
 #: lms/templates/discovery/course_card.underscore
 #, python-format
 msgid "Starts: %(start_date)s"
-msgstr ""
+msgstr "Bắt đầu: %(start_date)s"
 
 #: lms/templates/discovery/course_card.underscore
 msgid "Starts"
-msgstr "개강일"
+msgstr "bắt đầu"
 
 #: lms/templates/discovery/filter_bar.underscore
 msgid "Clear All"
-msgstr ""
+msgstr "Xoá tất cả"
 
 #: lms/templates/edxnotes/note-item.underscore
 msgid "Highlighted text"
-msgstr ""
+msgstr "Chữ tô đậm"
 
 #: lms/templates/edxnotes/note-item.underscore
 msgid "Note"
-msgstr ""
+msgstr "Ghi chú"
 
 #: lms/templates/edxnotes/note-item.underscore
 msgid "You commented..."
-msgstr ""
+msgstr "Bạn đã bình luận..."
 
 #: lms/templates/edxnotes/note-item.underscore
 msgid "Noted in:"
-msgstr ""
+msgstr "Đã ghi chú ở:"
 
 #: lms/templates/edxnotes/note-item.underscore
 msgid "Last Edited:"
-msgstr ""
+msgstr "Lần cuối cùng được sửa"
 
 #: lms/templates/edxnotes/tab-item.underscore
 msgid "Clear search results"
-msgstr ""
+msgstr "Xóa các kết quả tìm kiếm"
 
 #: lms/templates/fields/field_dropdown.underscore
 #: lms/templates/fields/field_dropdown_account.underscore
 #: lms/templates/fields/field_textarea.underscore
 msgid "Click to edit"
-msgstr ""
+msgstr "Nhấp vào để sửa"
 
 #: lms/templates/fields/field_order_history.underscore
 msgid "Order Number"
@@ -5945,17 +6108,19 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "(Required Field)"
-msgstr ""
+msgstr "(Thông tin bắt buộc)"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "e.g. johndoe@example.com, JaneDoe, joeydoe@example.com"
-msgstr ""
+msgstr "ví dụ:  johndoe@example.com, JaneDoe, joeydoe@example.com"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid ""
 "You will not receive notification for emails that bounce, so double-check "
 "your spelling."
 msgstr ""
+"Bạn sẽ không nhận được thông báo cho các email bị trả lại, vì vậy nên kiểm "
+"tra chính tả."
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Add Learners"
@@ -5963,15 +6128,15 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Add a New Cohort"
-msgstr "신규 학습 집단 추가"
+msgstr "Thêm một nhóm mới"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Enter the name of the cohort"
-msgstr "학습집단명을 입력하세요."
+msgstr "Nhập tên của nhóm"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Cohort Name"
-msgstr "학습집단명"
+msgstr "Tên nhóm"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Cohort Assignment Method"
@@ -5979,16 +6144,16 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Automatic"
-msgstr ""
+msgstr "Tự động"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Manual"
-msgstr ""
+msgstr "Hướng dẫn sử dụng"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid ""
 "There must be one cohort to which students can automatically be assigned."
-msgstr ""
+msgstr "Phải có một nhóm mà học viên có thể tự đọc được xếp vào."
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Associated Content Group"
@@ -5996,7 +6161,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "No Content Group"
-msgstr "콘텐츠 그룹 없음"
+msgstr "Nhóm không có nội dung"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Select a Content Group"
@@ -6004,15 +6169,15 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Choose a content group to associate"
-msgstr ""
+msgstr "Chọn một nhóm nội dung để liên kết"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Not selected"
-msgstr ""
+msgstr "Không được chọn"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Deleted Content Group"
-msgstr "컨텐츠 그룹 삭제"
+msgstr "Xóa nội dung nhóm"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid ""
@@ -6031,13 +6196,13 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-form.underscore
 msgid "Create a content group"
-msgstr ""
+msgstr "Tạo một nhóm nội dung"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-group-header.underscore
 #, python-format
 msgid "(contains %(student_count)s student)"
 msgid_plural "(contains %(student_count)s students)"
-msgstr[0] ""
+msgstr[0] "(chứa %(student_count)s sinh viên)"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-group-header.underscore
 msgid ""
@@ -6047,7 +6212,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-group-header.underscore
 msgid "What does this mean?"
-msgstr ""
+msgstr "Điều này có nghĩa là gì?"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-group-header.underscore
 msgid "Learners are added to this cohort automatically."
@@ -6055,12 +6220,12 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-selector.underscore
 msgid "Select a cohort"
-msgstr ""
+msgstr "Chọn một nhóm"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-selector.underscore
 #, python-format
 msgid "%(cohort_name)s (%(user_count)s)"
-msgstr ""
+msgstr "%(cohort_name)s (%(user_count)s)"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Enable Cohorts"
@@ -6068,11 +6233,11 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Select a cohort to manage"
-msgstr ""
+msgstr "Chọn một nhóm để quản lý"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "View Cohort"
-msgstr ""
+msgstr "Xem Nhóm"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Assign learners to cohorts by uploading a CSV file"
@@ -6119,15 +6284,15 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Code"
-msgstr ""
+msgstr "Mã"
 
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Used"
-msgstr ""
+msgstr "Được sử dụng"
 
 #: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
 msgid "Valid"
-msgstr ""
+msgstr "Có hiệu lực"
 
 #: lms/templates/learner_dashboard/certificate_status.underscore
 #: lms/templates/learner_dashboard/upgrade_message.underscore
@@ -6329,67 +6494,67 @@ msgstr ""
 
 #: lms/templates/student_account/account.underscore
 msgid "New Address"
-msgstr "새 주소"
+msgstr "Địa Chỉ Mới"
 
 #: lms/templates/student_account/account.underscore
 msgid "Change My Email Address"
-msgstr ""
+msgstr "Thay Đổi Địa Chỉ Email Của Tôi"
 
 #: lms/templates/student_account/account.underscore
 msgid "Reset Password"
-msgstr "비밀번호 재설정"
+msgstr "Đặt Lại Mật Khẩu"
 
 #: lms/templates/student_account/account_settings.underscore
 msgid "Account Settings"
-msgstr "계정 설정"
+msgstr "Thiết lập tài khoản"
 
 #: lms/templates/student_account/account_settings_section.underscore
 msgid "An error occurred. Please reload the page."
-msgstr ""
+msgstr "Có lỗi xảy ra. Hãy tải lại trang."
 
 #: lms/templates/student_account/form_field.underscore
 msgid "Forgot password?"
-msgstr ""
+msgstr "Quên mật khẩu?"
 
 #: lms/templates/student_account/hinted_login.underscore
 #: lms/templates/student_account/login.underscore
 msgid "Sign in"
-msgstr "로그인"
+msgstr "Đăng nhập"
 
 #: lms/templates/student_account/hinted_login.underscore
 #, python-format
 msgid "Would you like to sign in using your %(providerName)s credentials?"
-msgstr ""
+msgstr "Bạn có muốn đăng nhập bằng %(providerName)s thông tin?"
 
 #: lms/templates/student_account/hinted_login.underscore
 #, python-format
 msgid "Sign in using %(providerName)s"
-msgstr ""
+msgstr "Đăng nhập bằng cách sử dụng %(providerName)s"
 
 #: lms/templates/student_account/hinted_login.underscore
 msgid "Show me other ways to sign in or register"
-msgstr ""
+msgstr "Chỉ cho tôi những cách khác để đăng nhập hoặc đăng ký"
 
 #: lms/templates/student_account/institution_login.underscore
 msgid "Sign in with Institution/Campus Credentials"
-msgstr ""
+msgstr "Đăng nhập với tổ chức / thông tin trường"
 
 #: lms/templates/student_account/institution_login.underscore
 #: lms/templates/student_account/institution_register.underscore
 msgid "Choose your institution from the list below:"
-msgstr ""
+msgstr "Chọn trường của bạn từ danh sách dưới đây:"
 
 #: lms/templates/student_account/institution_login.underscore
 msgid "Back to sign in"
-msgstr ""
+msgstr "Trở lại để đăng nhập"
 
 #: lms/templates/student_account/institution_register.underscore
 msgid "Register with Institution/Campus Credentials"
-msgstr ""
+msgstr "Đăng ký với thông tin của tổ chức / trường"
 
 #: lms/templates/student_account/institution_register.underscore
 msgid "Register through edX"
-msgstr ""
+msgstr "Đăng ký qua edX"
 
 #: lms/templates/student_account/login.underscore
 msgid "First time here?"
@@ -6472,7 +6637,7 @@ msgstr ""
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "Reset my password"
-msgstr "비밀번호 재설정"
+msgstr ""
 
 #: lms/templates/student_account/register.underscore
 msgid "Already have an {platformName} account?"
@@ -6484,7 +6649,7 @@ msgstr ""
 
 #: lms/templates/student_account/register.underscore
 msgid "Create an account using"
-msgstr "계정 연동하기"
+msgstr ""
 
 #: lms/templates/student_account/register.underscore
 #, python-format
@@ -6536,14 +6701,18 @@ msgid ""
 "certificates. Verification is good for one year. After one year, you must "
 "submit photos for verification again."
 msgstr ""
+"Cảm ơn bạn đã gửi hình ảnh của bạn. Chúng tôi sẽ xem lại chúng. Bây giờ bạn "
+"có thể đăng ký khóa học bất kỳ %(platformName)s mà cung cấp chứng chỉ xác "
+"nhận. Xác minh là tốt cho một năm. Sau một năm, bạn phải nộp ảnh để xác minh"
+" một lần nữa."
 
 #: lms/templates/verify_student/error.underscore
 msgid "Error:"
-msgstr "오류:"
+msgstr "Lỗi:"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid "What You Need for Verification"
-msgstr ""
+msgstr "Những gì bạn cần để xác minh"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 #: lms/templates/verify_student/intro_step.underscore
@@ -6551,13 +6720,15 @@ msgstr ""
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Webcam"
-msgstr "웹캠"
+msgstr "Webcam"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid ""
 "You need a computer that has a webcam. When you receive a browser prompt, "
 "make sure that you allow access to the camera."
 msgstr ""
+"Bạn cần một máy tính có một webcam. Khi bạn nhận được dấu nhắc trình duyệt, "
+"hãy chắc chắn rằng bạn cho phép truy cập vào máy ảnh."
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid "Photo Identification"
@@ -6568,11 +6739,13 @@ msgid ""
 "You need a driver's license, passport, or other government-issued ID that "
 "has your name and photo."
 msgstr ""
+"Bạn cần có bằng lái xe, hộ chiếu, hoặc ID chính phủ phát hành có tên và ảnh "
+"của bạn."
 
 #: lms/templates/verify_student/face_photo_step.underscore
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Take Your Photo"
-msgstr ""
+msgstr "Ảnh chụp của bạn"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid ""
@@ -6582,7 +6755,7 @@ msgstr ""
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid "To take a successful photo, make sure that:"
-msgstr ""
+msgstr "Để có một bức ảnh thành công, hãy đảm bảo rằng:"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid "Your face is well-lit."
@@ -6590,11 +6763,12 @@ msgstr ""
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid "Your entire face fits inside the frame."
-msgstr ""
+msgstr "Toàn bộ khuôn mặt của bạn phù hợp với bên trong khung."
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid "The photo of your face matches the photo on your ID."
 msgstr ""
+"Những hình ảnh của khuôn mặt của bạn phù hợp với hình ảnh trên ID của bạn."
 
 #: lms/templates/verify_student/face_photo_step.underscore
 msgid ""
@@ -6606,14 +6780,14 @@ msgstr ""
 #: lms/templates/verify_student/id_photo_step.underscore
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Các câu hỏi thường gặp"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 #: lms/templates/verify_student/id_photo_step.underscore
 #: lms/templates/verify_student/incourse_reverify.underscore
 #, python-format
 msgid "Why does %(platformName)s need my photo?"
-msgstr ""
+msgstr "Tại sao %(platformName)s cần ảnh của bạn?"
 
 #: lms/templates/verify_student/face_photo_step.underscore
 #: lms/templates/verify_student/id_photo_step.underscore
@@ -6641,6 +6815,10 @@ msgid ""
 "are not saved or visible anywhere on %(platformName)s after the verification"
 " process is complete."
 msgstr ""
+"Chúng tôi sử dụng các mức bảo mật cao nhất có sẵn để mã hóa hình ảnh của bạn"
+" và gửi nó đến dịch vụ ủy quyền của chúng tôi để xem xét. Ảnh và thông tin "
+"của bạn sẽ không được lưu hay bất cứ nơi nào có thể nhìn thấy trên "
+"%(platformName)s sau khi quá trình xác minh hoàn tất."
 
 #: lms/templates/verify_student/face_photo_step.underscore
 #: lms/templates/verify_student/id_photo_step.underscore
@@ -6648,32 +6826,36 @@ msgstr ""
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 #, python-format
 msgid "Next: %(nextStepTitle)s"
-msgstr ""
+msgstr "Tiếp theo: %(nextStepTitle)s"
 
 #: lms/templates/verify_student/id_photo_step.underscore
 msgid "Take a Photo of Your ID"
-msgstr ""
+msgstr "Hãy hình ảnh của ID của bạn"
 
 #: lms/templates/verify_student/id_photo_step.underscore
 msgid ""
 "Use your webcam to take a photo of your ID. We will match this photo with "
 "the photo of your face and the name on your account."
 msgstr ""
+"Sử dụng webcam của bạn để có một bức ảnh của ID của bạn. Chúng tôi sẽ đối "
+"bức ảnh này với hình ảnh của khuôn mặt của bạn và tên tài khoản của bạn."
 
 #: lms/templates/verify_student/id_photo_step.underscore
 msgid ""
 "You need an ID with your name and photo. A driver's license, passport, or "
 "other government-issued IDs are all acceptable."
 msgstr ""
+"Bạn cần một ID có tên và ảnh của bạn. Giấy phép, hộ chiếu, hoặc ID chính phủ"
+" phát hành của một trình điều khiển được tất cả chấp nhận được."
 
 #: lms/templates/verify_student/id_photo_step.underscore
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Tips on taking a successful photo"
-msgstr ""
+msgstr "Mẹo để chụp ảnh thành công"
 
 #: lms/templates/verify_student/id_photo_step.underscore
 msgid "Ensure that you can see your photo and read your name"
-msgstr ""
+msgstr "Đảm bảo rằng bạn có thể xem ảnh của bạn và đọc tên của bạn"
 
 #: lms/templates/verify_student/id_photo_step.underscore
 msgid "Make sure your ID is well-lit"
@@ -6687,20 +6869,24 @@ msgstr ""
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Use the retake photo button if you are not pleased with your photo"
 msgstr ""
+"Sử dụng các nút photo chiếm lại nếu bạn không hài lòng với bức ảnh của bạn"
 
 #: lms/templates/verify_student/image_input.underscore
 msgid "Preview of uploaded image"
-msgstr ""
+msgstr "Xem trước hình ảnh tải lên"
 
 #: lms/templates/verify_student/image_input.underscore
 msgid "Upload an image or capture one with your web or phone camera."
 msgstr ""
+"Tải lên một hình ảnh hoặc chụp một với web của bạn hoặc camera điện thoại."
 
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid ""
 "Use your webcam to take a photo of your face. We will match this photo with "
 "the photo on your ID."
 msgstr ""
+"Sử dụng webcam của bạn để có một hình ảnh của khuôn mặt của bạn để chúng tôi"
+" có thể kết hợp nó với hình ảnh trên ID của bạn."
 
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Make sure your face is well-lit"
@@ -6708,7 +6894,7 @@ msgstr ""
 
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Be sure your entire face is inside the frame"
-msgstr ""
+msgstr "Hãy chắc chắn toàn bộ khuôn mặt của bạn trong khung"
 
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Once in position, use the camera button {icon} to capture your photo"
@@ -6717,6 +6903,8 @@ msgstr ""
 #: lms/templates/verify_student/incourse_reverify.underscore
 msgid "Can we match the photo you took with the one on your ID?"
 msgstr ""
+"Chúng ta có thể phù hợp với hình ảnh mà bạn đã có một trong những ID của "
+"bạn?"
 
 #: lms/templates/verify_student/intro_step.underscore
 msgid "Thanks for returning to verify your ID in: {courseName}"
@@ -6732,7 +6920,7 @@ msgstr ""
 #: lms/templates/verify_student/intro_step.underscore
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Activate Your Account"
-msgstr ""
+msgstr "Kích hoạt tài khoản của bạn"
 
 #: lms/templates/verify_student/intro_step.underscore
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
@@ -6745,6 +6933,8 @@ msgid ""
 "A driver's license, passport, or other government-issued ID with your name "
 "and photo"
 msgstr ""
+"Giấy phép, hộ chiếu, hoặc ID chính phủ phát hành của một người lái xe với "
+"tên và ảnh của bạn"
 
 #: lms/templates/verify_student/make_payment_step.underscore
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
@@ -6759,6 +6949,8 @@ msgstr ""
 msgid ""
 "You can now enter your payment information and complete your enrollment."
 msgstr ""
+"Bạn có thể điền thông tin thanh toán ngay bây giờ và hoàn thành việc ghi "
+"danh."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
@@ -6788,25 +6980,30 @@ msgid ""
 "You can pay now even if you don't have the following items available, but "
 "you will need to have these to qualify to earn a Verified Certificate."
 msgstr ""
+"Bạn có thể thanh toán ngay tại ngay cả khi bạn không có các mục sau đây có "
+"sẵn, nhưng bạn sẽ cần phải có những hội đủ điều kiện để kiếm được một giấy "
+"chứng nhận Verified."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "Government-Issued Photo ID"
-msgstr ""
+msgstr "Hình ảnh ID được cấp bới chính phủ"
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
 "ID-Verification is not required for this Professional Education course."
-msgstr ""
+msgstr "Khoá học cao cấp này không yêu cầu xác nhận ID."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid ""
 "All professional education courses are fee-based, and require payment to "
 "complete the enrollment process."
 msgstr ""
+"Tất cả khoá học cao cấp đều tính học phí, và cần thanh toán để hoàn tất quá "
+"trình ghi danh."
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "You have already verified your ID!"
-msgstr ""
+msgstr "ID của bạn đã được xác nhận!"
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "Your verification status is good until {verificationGoodUntil}."
@@ -6814,7 +7011,7 @@ msgstr ""
 
 #: lms/templates/verify_student/make_payment_step.underscore
 msgid "price"
-msgstr ""
+msgstr "giá tiền"
 
 #: lms/templates/verify_student/make_payment_step_ab_testing.underscore
 msgid "Account Not Activated"
@@ -6872,23 +7069,27 @@ msgstr ""
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Next Step: Confirm your identity"
-msgstr ""
+msgstr "Bước tiếp theo: "
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid "Check your email"
-msgstr "이메일을 확인하십시요."
+msgstr "Kiểm tra email của bạn"
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid ""
 "You need to activate your account before you can enroll in courses. Check "
 "your inbox for an activation email."
 msgstr ""
+"Bạn cần kích hoạt tài khoản trước khi ghi danh vào khoá học. Kiểm tra hộp "
+"thư đến cho email cần kích hoạt."
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 msgid ""
 "A driver's license, passport, or government-issued ID with your name and "
 "photo."
 msgstr ""
+"Bằng lái xe, hộ chiếu, chứng minh nhân dân hoặc thẻ học viên có tên và ảnh "
+"của bạn."
 
 #: lms/templates/verify_student/payment_confirmation_step.underscore
 #, python-format
@@ -6897,10 +7098,13 @@ msgid ""
 "from your dashboard. You will receive periodic reminders from "
 "%(platformName)s to verify your identity."
 msgstr ""
+"Nếu bạn không xác minh danh tính của bạn bây giờ, bạn vẫn có thể khám phá "
+"khóa học của bạn từ bảng điều khiển của bạn. Bạn sẽ nhận được nhắc nhở định "
+"kỳ từ %(platformName)s là để xác minh danh tính của bạn."
 
 #: lms/templates/verify_student/reverify_success_step.underscore
 msgid "Identity Verification In Progress"
-msgstr ""
+msgstr "Việc xác nhận danh tính đang được tiến hành"
 
 #: lms/templates/verify_student/reverify_success_step.underscore
 msgid ""
@@ -6909,46 +7113,52 @@ msgid ""
 "(usually within 1-2 days). In the meantime, you can still access all "
 "available course content."
 msgstr ""
+"Chúng tôi đã nhận được thông tin của bạn và đang tiến xác nhận danh tính của"
+" bạn. Bạn sẽ thấy một tin nhắn trên bảng điều khiển khi quá trình xác nhận "
+"hoàn tất (thông thường trong vòng 1-2 ngày). Trong thời gian chờ đợi, bạn "
+"vãn có thể truy cập nội dung các khoá học có sẵn."
 
 #: lms/templates/verify_student/reverify_success_step.underscore
 msgid "Return to Your Dashboard"
-msgstr ""
+msgstr "Quay Lại Bảng Điều Khiển Của Bạn"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Review Your Photos"
-msgstr ""
+msgstr "Xem lại ảnh của bạn"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid ""
 "Make sure we can verify your identity with the photos and information you "
 "have provided."
 msgstr ""
+"Hãy chắc chắn rằng chúng tôi có thể xác thực danh tính của bạn qua các bức "
+"ảnh và thông tin mà bạn cung cấp."
 
 #: lms/templates/verify_student/review_photos_step.underscore
 #, python-format
 msgid "Photo of %(fullName)s"
-msgstr ""
+msgstr "Hình của %(fullName)s"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 #, python-format
 msgid "Photo of %(fullName)s's ID"
-msgstr ""
+msgstr "Ảnh của %(fullName)s ID"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Photo requirements:"
-msgstr ""
+msgstr "Những yêu cầu của hình:"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Does the photo of you show your whole face?"
-msgstr ""
+msgstr "Hình của bạn có hiển thị toàn bộ khuôn mặt không?"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Does the photo of you match your ID photo?"
-msgstr ""
+msgstr "Hình của bạn có giống với hình trên chứng minh nhân dân không?"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Is your name on your ID readable?"
-msgstr ""
+msgstr "Tên của bạn trên chứng minh nhân dân có  dễ dàng đọc đuợc không?"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 #, python-format
@@ -6957,7 +7167,7 @@ msgstr ""
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Edit Your Name"
-msgstr ""
+msgstr "Chỉnh sửa tên của bạn"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid ""
@@ -6966,33 +7176,35 @@ msgstr ""
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Photos don't meet the requirements?"
-msgstr ""
+msgstr "Hình ảnh không đáp ứng được yêu cầu?"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Retake Your Photos"
-msgstr ""
+msgstr "Chụp lại hình ảnh của bạn"
 
 #: lms/templates/verify_student/review_photos_step.underscore
 msgid "Before proceeding, please confirm that your details match"
-msgstr ""
+msgstr "Trước khi tiếp tục, hãy kiểm tra lại thông tin của bạn"
 
 #: lms/templates/verify_student/webcam_photo.underscore
 msgid ""
 "Don't see your picture? Make sure to allow your browser to use your camera "
 "when it asks for permission."
 msgstr ""
+"Không nhìn thấy hình ảnh của bạn? Hãy chắc chắn để cho phép trình duyệt của "
+"bạn để sử dụng máy ảnh của bạn khi nó yêu cầu sự cho phép."
 
 #: lms/templates/verify_student/webcam_photo.underscore
 msgid "Live view of webcam"
-msgstr ""
+msgstr "Hình ảnh thực tế trên webcam"
 
 #: lms/templates/verify_student/webcam_photo.underscore
 msgid "Retake Photo"
-msgstr ""
+msgstr "Chụp lại hình"
 
 #: lms/templates/verify_student/webcam_photo.underscore
 msgid "Take Photo"
-msgstr "사진 촬영"
+msgstr "Ảnh chụp"
 
 #: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
 msgid "Bookmarked on"
@@ -7002,7 +7214,7 @@ msgstr ""
 #: openedx/features/course_search/static/course_search/templates/course_search_item.underscore
 #: openedx/features/course_search/static/course_search/templates/dashboard_search_item.underscore
 msgid "View"
-msgstr "보기"
+msgstr "Xem"
 
 #: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
 msgid "You have not bookmarked any courseware pages yet"
@@ -7023,7 +7235,7 @@ msgstr[0] ""
 #: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
 #: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
 msgid "Sorry, no results were found."
-msgstr ""
+msgstr "Xin lỗi, không có kết quả nào được tìm thấy"
 
 #: openedx/features/learner_profile/static/learner_profile/templates/badge.underscore
 #, python-format
@@ -7192,7 +7404,7 @@ msgstr ""
 
 #: cms/templates/js/asset-library.underscore
 msgid "Other"
-msgstr ""
+msgstr "Lựa chọn khác"
 
 #: cms/templates/js/asset-library.underscore
 msgid "You haven't added any assets to this course yet."
@@ -7740,7 +7952,7 @@ msgstr ""
 
 #: cms/templates/js/course_info_handouts.underscore
 msgid "Course Handouts"
-msgstr ""
+msgstr "Course Handouts"
 
 #: cms/templates/js/course_info_handouts.underscore
 msgid "You have no handouts defined"
