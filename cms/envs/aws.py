@@ -12,6 +12,7 @@ This is the default template for our main set of AWS servers.
 # pylint: disable=invalid-name
 
 import json
+import datetime
 
 from .common import *
 
@@ -481,7 +482,7 @@ DOC_LINK_BASE_URL = ENV_TOKENS.get('DOC_LINK_BASE_URL', DOC_LINK_BASE_URL)
 ################ CUSTOM CONFIGURATIONS ################
 CMS_MKTG_URLS = ENV_TOKENS.get('CMS_MKTG_URLS', {})
 
-COPYRIGHT_YEAR = ENV_TOKENS.get('COPYRIGHT_YEAR', COPYRIGHT_YEAR)
+COPYRIGHT_YEAR = ENV_TOKENS.get('COPYRIGHT_YEAR', None) or datetime.datetime.now().year
 
 ELASTIC_SEARCH_HOST = ENV_TOKENS.get('ELASTIC_SEARCH_HOST', 'localhost')
 
