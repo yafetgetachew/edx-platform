@@ -58,6 +58,7 @@ define([
                 var index = event.currentTarget.getAttribute('data-index'),
                     instructors = this.model.get('instructor_info').instructors.slice(0);
                 instructors.splice(index, 1);
+                $('.add-course-instructor-info').show()
                 this.model.set('instructor_info', {instructors: instructors});
             },
 

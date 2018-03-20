@@ -1022,6 +1022,10 @@ def settings_handler(request, course_key_string):
 
             add_nodes(course_category_nodes, u'')
 
+            course_details = CourseDetails.fetch(course_key)
+            instructors = course_details.instructor_info['instructors']
+            is_has_instructors = True if instructors else False
+
             settings_context = {
                 'context_course': course_module,
                 'course_locator': course_key,
@@ -1044,6 +1048,7 @@ def settings_handler(request, course_key_string):
                 'self_paced_enabled': self_paced_enabled,
                 'enable_extended_course_details': enable_extended_course_details,
                 'course_category_options': course_category_options,
+                "is_has_instructors": is_has_instructors
             }
             if is_prerequisite_courses_enabled():
                 courses, in_process_course_actions = get_courses_accessible_to_user(request)
