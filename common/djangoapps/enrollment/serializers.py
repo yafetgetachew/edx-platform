@@ -6,7 +6,7 @@ import logging
 from rest_framework import serializers
 
 from course_modes.models import CourseMode
-from lms.djangoapps.grades.new.course_grade import CourseGradeFactory
+from lms.djangoapps.grades.new.course_grade_factory import CourseGradeFactory
 from student.models import CourseEnrollment
 from xmodule.modulestore.django import modulestore
 
