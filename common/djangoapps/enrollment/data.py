@@ -5,6 +5,7 @@ source to be used throughout the API.
 import logging
 
 from django.contrib.auth.models import User
+from django.db.models import Q
 from opaque_keys.edx.keys import CourseKey
 
 from enrollment.errors import (
@@ -23,7 +24,7 @@ from student.models import (
 log = logging.getLogger(__name__)
 
 
-def get_course_enrollments(user_id):
+def get_course_enrollments(user_id=None):
     """Retrieve a list representing all aggregated data for a user's course enrollments.
 
     Construct a representation of all course enrollment data for a specific user.
@@ -35,10 +36,10 @@ def get_course_enrollments(user_id):
         A serializable list of dictionaries of all aggregated enrollment data for a user.
 
     """
-    qset = CourseEnrollment.objects.filter(
-        user__username=user_id,
-        is_active=True
-    ).order_by('created')
+    qset = CourseEnrollment.objects.filter(is_active=True)
+    if user_id:
+        qset = qset.filter(Q(user__username=user_id) | Q(user__email=user_id))
+    qset = qset.order_by('created')
 
     enrollments = CourseEnrollmentSerializer(qset, many=True).data
 
