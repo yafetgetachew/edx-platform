@@ -1213,7 +1213,7 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         query_features = [
             'id', 'username', 'name', 'email', 'language', 'location',
             'year_of_birth', 'gender', 'level_of_education', 'mailing_address',
-            'goals', 'enrollment_mode', 'verification_status',
+            'goals', 'enrollment_mode', 'verification_status', 'job', 'organization', 'region'
         ]
 
     # Provide human-friendly and translatable names for these features. These names
@@ -1233,6 +1233,9 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'goals': _('Goals'),
         'enrollment_mode': _('Enrollment Mode'),
         'verification_status': _('Verification Status'),
+        'job': _('Job title'),
+        'organization': _('Organization Name'),
+        'region': _('Region')
     }
 
     if is_course_cohorted(course.id):

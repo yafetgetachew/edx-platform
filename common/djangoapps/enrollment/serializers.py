@@ -72,14 +72,18 @@ class CourseEnrollmentSerializer(serializers.ModelSerializer):
     """
     course_details = CourseSerializer(source="course_overview")
     user = serializers.SerializerMethodField('get_username')
+    email = serializers.SerializerMethodField('get_user_email')
 
     def get_username(self, model):
         """Retrieves the username from the associated model."""
         return model.username
 
+    def get_user_email(self, model):
+        return model.user.email
+
     class Meta(object):
         model = CourseEnrollment
-        fields = ('created', 'mode', 'is_active', 'course_details', 'user')
+        fields = ('created', 'mode', 'is_active', 'course_details', 'user', 'email')
         lookup_field = 'username'
 
 

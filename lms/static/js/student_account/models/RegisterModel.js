@@ -12,7 +12,10 @@
                     gender: '',
                     year_of_birth: '',
                     mailing_address: '',
-                    goals: ''
+                    goals: '',
+                    job: '',
+                    organization: '',
+                    region: ''
                 },
                 ajaxType: '',
                 urlRoot: '',

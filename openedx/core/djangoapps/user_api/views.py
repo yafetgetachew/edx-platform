@@ -175,6 +175,9 @@ class RegistrationView(APIView):
         "goals",
         "honor_code",
         "terms_of_service",
+        "job",
+        "organization",
+        "region"
     ]
 
     # This end-point is available to anonymous users,
@@ -384,6 +387,27 @@ class RegistrationView(APIView):
                 "min_length": EMAIL_MIN_LENGTH,
                 "max_length": EMAIL_MAX_LENGTH,
             },
+            required=required
+        )
+
+    def _add_job_field(self, form_desc, required=True):
+        form_desc.add_field(
+            "job",
+            label=_('Job title'),
+            required=required
+        )
+
+    def _add_organization_field(self, form_desc, required=True):
+        form_desc.add_field( 
+            "organization",
+            label=_('Organization Name'),
+            required=required
+        )
+
+    def _add_region_field(self, form_desc, required=True):
+        form_desc.add_field(
+            "region",
+            label=_('Region'),
             required=required
         )
 
