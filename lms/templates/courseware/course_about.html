@@ -36,7 +36,8 @@ from openedx.core.lib.courses import course_image_url
             .css("display", "block");
         }
         else if (jqXHR.status == 403) {
-            location.href = "${reg_then_add_to_cart_link}";
+
+          location.href = "${reg_then_add_to_cart_link}";
         }
       };
 

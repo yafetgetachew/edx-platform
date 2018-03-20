@@ -113,7 +113,6 @@ REQUIREMENTS_DISPLAY_MODES = CourseMode.CREDIT_MODES + [CourseMode.VERIFIED]
 
 CertData = namedtuple("CertData", ["cert_status", "title", "msg", "download_url", "cert_web_view_url"])
 
-
 def user_groups(user):
     """
     TODO (vshnayder): This is not used. When we have a new plan for groups, adjust appropriately.
@@ -251,7 +250,6 @@ def course_info(request, course_id):
         return None
 
     course_key = CourseKey.from_string(course_id)
-
     # If the unified course experience is enabled, redirect to the "Course" tab
     if UNIFIED_COURSE_TAB_FLAG.is_enabled(course_key):
         return redirect(reverse(course_home_url_name(course_key), args=[course_id]))
@@ -260,7 +258,9 @@ def course_info(request, course_id):
         course = get_course_by_id(course_key, depth=2)
         access_response = has_access(request.user, 'load', course, course_key)
 
-        if not access_response:
+        if access_response:
+            pass
+        else:
 
             # The user doesn't have access to the course. If they're
             # denied permission due to the course not being live yet,
@@ -1592,7 +1592,7 @@ def financial_assistance_form(request):
         'header_text': FINANCIAL_ASSISTANCE_HEADER,
         'student_faq_url': marketing_link('FAQ'),
         'dashboard_url': reverse('dashboard'),
-        'account_settings_url': reverse('account_settings'),
+        'account_settings_url': '#', #reverse('account_settings'),
         'platform_name': configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
         'user_details': {
             'email': user.email,

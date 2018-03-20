@@ -97,7 +97,7 @@ FEATURES = {
 
     'ENABLE_SYSADMIN_DASHBOARD': False,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
 
-    'DISABLE_LOGIN_BUTTON': False,  # used in systems where login is automatic, eg MIT SSL
+    'DISABLE_LOGIN_BUTTON': True,  # used in systems where login is automatic, eg MIT SSL
 
     # extrernal access methods
     'AUTH_USE_OPENID': False,
@@ -395,6 +395,11 @@ FEATURES = {
 
     # Disable bulk email send from random different addresses when 'False'
     'BULK_EMAIL_FROM_DIFFERENT_ADDRESSES': False,
+
+    # Determines how long the external reference is valid. 30 minutes.
+    'LOGIN_TIMEOUT': 1800,
+
+    'ENABLE_SSO': False,
 }
 
 # Settings for the course reviews tool template and identification key, set either to None to disable course reviews
@@ -1232,8 +1237,11 @@ MIDDLEWARE_CLASSES = (
     # use Django built in clickjacking protection
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    'courseware.middleware.SsoMiddleware',
+
     # to redirected unenrolled students to the course info page
     'courseware.middleware.RedirectMiddleware',
+
 
     'course_wiki.middleware.WikiAccessMiddleware',
 
