@@ -194,6 +194,7 @@ def write_users_report(queryset, fd):
         _('Country'),
         _('Region'),
         _('MOOC Name'),
+        _('MOOC Number'),
         _('MOOC Code'),
         _('MOOC Status'),
         _('Course Start Date'),
@@ -249,6 +250,7 @@ def write_users_report(queryset, fd):
 
             row = user_row + (
                 course.display_name_with_default,
+                course.display_number_with_default,
                 str(enrollment.course_id),
                 course_status,
                 course.start and course.start.strftime('%d/%m/%Y') or _('N/A'),
