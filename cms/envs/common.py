@@ -1056,11 +1056,11 @@ ADVANCED_SECURITY_CONFIG = {}
 SHIBBOLETH_DOMAIN_PREFIX = 'shib:'
 OPENID_DOMAIN_PREFIX = 'openid:'
 
-### Size of chunks into which asset uploads will be divided
-UPLOAD_CHUNK_SIZE_IN_MB = 10
-
 ### Max size of asset uploads to GridFS
-MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB = 10
+MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB = 200
+
+### Size of chunks into which asset uploads will be divided
+UPLOAD_CHUNK_SIZE_IN_MB = MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB
 
 # FAQ url to direct users to if they upload
 # a file that exceeds the above size
