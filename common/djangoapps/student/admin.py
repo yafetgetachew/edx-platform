@@ -240,7 +240,10 @@ def write_users_report(queryset, fd):
             except Exception:
                 is_passed = _('N')
 
-            course_status = course.has_ended() and _('Complete') or course.has_started() and _('In Progress') or _('Not Started')
+            if course:
+                course_status = course.has_ended() and _('Complete') or course.has_started() and _('In Progress') or _('Not Started')
+            else:
+                course_status = _('Deleted')
 
             price = CourseMode.min_course_price_for_currency(
                 enrollment.course_id,
@@ -249,12 +252,12 @@ def write_users_report(queryset, fd):
             can_add_course_to_cart = _is_shopping_cart_enabled() and price
 
             row = user_row + (
-                course.display_name_with_default,
-                course.display_number_with_default,
+                course and course.display_name_with_default or _('N/A'),
+                course and course.display_number_with_default or _('N/A'),
                 str(enrollment.course_id),
                 course_status,
-                course.start and course.start.strftime('%d/%m/%Y') or _('N/A'),
-                course.end and course.end.strftime('%d/%m/%Y') or _('N/A'),
+                course and course.start and course.start.strftime('%d/%m/%Y') or _('N/A'),
+                course and course.end and course.end.strftime('%d/%m/%Y') or _('N/A'),
                 is_passed,
                 _('N/A'),
                 price,
