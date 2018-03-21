@@ -210,7 +210,7 @@ def page_title_breadcrumbs(*crumbs, **kwargs):
     Pass in a `separator` kwarg to override the default of " | "
     """
     platform_name = get_value('platform_name', settings.PLATFORM_NAME)
-    separator = kwargs.get("separator", " | ")
+    separator = kwargs.get("separator", " ")
     if crumbs:
         return u'{}{}{}'.format(separator.join(crumbs), separator, platform_name)
     else:
