@@ -8,7 +8,6 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
-from django.core.cache import cache
 
 from lms import CELERY_APP
 
@@ -19,17 +18,12 @@ def add_verify_status(statistic_map):
     from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification
     for statistic_id, data in statistic_map.iteritems():
         username, course_id = statistic_id.split('::', 1)
-        cache_key = 'ospp_verify_user_stat_' + username
-        status = cache.get(cache_key)
-        if not status:
-            status = SoftwareSecurePhotoVerification.objects.filter(
-                    user__username=username,
-                    status=SoftwareSecurePhotoVerification.STATUS.approved
-            ).values_list('updated_at', flat=True)
+        status = SoftwareSecurePhotoVerification.objects.filter(
+                user__username=username,
+        ).values('updated_at', 'STATUS').first()
         if status:
-            data['idVerify'] = 'Y'
-            data['idVerifyDate'] = status[0].strftime("%Y-%m-%d %H:%M:%S")
-            cache.set(cache_key, status)
+            data['idVerify'] = status['STATUS']
+            data['idVerifyDate'] = status['updated_at'].strftime("%Y-%m-%d %H:%M:%S")
 
 
 def add_grades(statistic_map):
