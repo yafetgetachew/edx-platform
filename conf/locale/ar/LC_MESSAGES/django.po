@@ -6299,7 +6299,7 @@ msgstr "مخطّط المنهج الدراسي"
 #: lms/templates/peer_grading/peer_grading.html
 #: lms/templates/ux/reference/bootstrap/course-skeleton.html
 msgid "Progress"
-msgstr "العلامات"
+msgstr "الدرجات"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: 'Textbooks' refers to the tab in the course that leads to the
