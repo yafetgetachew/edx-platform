@@ -3490,14 +3490,14 @@ msgid ""
 "Are you sure you want to unenroll from the purchased course %(courseName)s "
 "(%(courseNumber)s)?"
 msgstr ""
-"هل أنت متأكّد من رغبتك في إلغاء تسجيلك في الدورات %(courseName)s "
+"هل أنت متأكد من رغبتك في إلغاء تسجيلك في الدورات %(courseName)s "
 "(%(courseNumber)s) الذي اشتريته؟"
 
 #: lms/static/js/dashboard/legacy.js
 msgid ""
 "Are you sure you want to unenroll from %(courseName)s (%(courseNumber)s)?"
 msgstr ""
-"هل أنت متأكّد من رغبتك في إلغاء تسجيلك في دورة %(courseName)s "
+"هل أنت متأكد من رغبتك في إلغاء تسجيلك في دورة %(courseName)s "
 "(%(courseNumber)s)؟"
 
 #: lms/static/js/dashboard/legacy.js
@@ -3505,7 +3505,7 @@ msgid ""
 "Are you sure you want to unenroll from the verified %(certNameLong)s  track "
 "of %(courseName)s  (%(courseNumber)s)?"
 msgstr ""
-"هل أنت متأكّد من رغبتك بإلغاء تسجيلك من المسار الموثق%(certNameLong)s "
+"هل أنت متأكد من رغبتك بإلغاء تسجيلك من المسار الموثق%(certNameLong)s "
 "لـ%(courseName)s (%(courseNumber)s)؟"
 
 #: lms/static/js/dashboard/legacy.js
@@ -3513,7 +3513,7 @@ msgid ""
 "Are you sure you want to unenroll from the verified %(certNameLong)s track "
 "of %(courseName)s (%(courseNumber)s)?"
 msgstr ""
-"هل أنت متأكّد من رغبتك بإلغاء تسجيلك من المسار الموثق%(certNameLong)s "
+"هل أنت متأكد من رغبتك بإلغاء تسجيلك من المسار الموثق%(certNameLong)s "
 "لـ%(courseName)s (%(courseNumber)s)؟"
 
 #: lms/static/js/dashboard/legacy.js
@@ -5635,7 +5635,7 @@ msgstr "عضو مسبق في فريق الدورات"
 msgid ""
 "Are you sure you want to delete {email} from the course team for "
 "“{container}”?"
-msgstr "هل أنت متأكّد من رغبتك في حذف {email} من فريق الدورات لـ \"{container}\"؟"
+msgstr "هل أنت متأكد من رغبتك في حذف {email} من فريق الدورات لـ \"{container}\"؟"
 
 #: cms/static/js/factories/manage_users.js
 #: cms/static/js/factories/manage_users_lib.js
@@ -5657,7 +5657,7 @@ msgstr "عضو مسبَق في فريق المكتبة"
 #: cms/static/js/factories/manage_users_lib.js
 msgid ""
 "Are you sure you want to delete {email} from the library “{container}”?"
-msgstr "هل أنت متأكّد من رغبتك في حذف {email} من مكتبة \"{container}\"؟"
+msgstr "هل أنت متأكد من رغبتك في حذف {email} من مكتبة \"{container}\"؟"
 
 #: cms/static/js/factories/manage_users_lib.js
 msgid "Library User"
