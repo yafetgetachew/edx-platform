@@ -12846,7 +12846,7 @@ msgstr "جرى وضع علامة"
 
 #: lms/templates/bookmark_button.html
 msgid "Bookmark this page"
-msgstr "إضافة الصفحة للمفضلة"
+msgstr "إضافة علامة مرجعية"
 
 #: lms/templates/conditional_module.html
 msgid "You do not have access to this dependency module."
