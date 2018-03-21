@@ -209,6 +209,7 @@ def write_users_report(queryset, fd):
     writer.writerow(header)
 
     countries = dict(django_countries)
+
     for user in queryset.prefetch_related('groups'):
         if hasattr(user, 'profile'):
             name_list = user.profile.name and user.profile.name.split() or ['', '']
@@ -236,6 +237,7 @@ def write_users_report(queryset, fd):
             course = enrollment.course
 
             try:
+                from lms.djangoapps.courseware.views.views import is_course_passed
                 is_passed = is_course_passed(modulestore().get_course(enrollment.course_id), None, user) and _('Y') or _('N')
             except Exception:
                 is_passed = _('N')
