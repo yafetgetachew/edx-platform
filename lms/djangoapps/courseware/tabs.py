@@ -61,7 +61,7 @@ class CourseInfoTab(CourseTab):
     @classmethod
     def is_enabled(cls, course, user=None):
         """
-        The "Home" tab is not shown for the new unified course experience.
+        The "Information" tab is not shown for the new unified course experience.
         """
         return not UNIFIED_COURSE_TAB_FLAG.is_enabled(course.id)
 
