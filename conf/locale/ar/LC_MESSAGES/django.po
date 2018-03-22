@@ -6296,6 +6296,10 @@ msgid "Syllabus"
 msgstr "مخطّط المنهج الدراسي"
 
 #: lms/djangoapps/courseware/tabs.py
+msgid "Information"
+msgstr "المعلومات"
+
+#: lms/djangoapps/courseware/tabs.py
 #: lms/templates/peer_grading/peer_grading.html
 #: lms/templates/ux/reference/bootstrap/course-skeleton.html
 msgid "Progress"
