@@ -20,9 +20,9 @@ def add_verify_status(statistic_map):
         username, course_id = statistic_id.split('::', 1)
         status = SoftwareSecurePhotoVerification.objects.filter(
                 user__username=username,
-        ).values('updated_at', 'STATUS').first()
+        ).values('updated_at', 'status').first()
         if status:
-            data['idVerify'] = status['STATUS']
+            data['idVerify'] = status['status']
             data['idVerifyDate'] = status['updated_at'].strftime("%Y-%m-%d %H:%M:%S")
 
 
