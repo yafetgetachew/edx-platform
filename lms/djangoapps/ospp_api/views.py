@@ -462,14 +462,15 @@ class OsppDashboardView(MethodViewWithMakoMixin, View):
         return context
 
     def get(self, request):
-        student_state = get_learner_info(request.user.id)
-        if student_state:
-            for enrollment in CourseEnrollment.enrollments_for_user_with_overviews_preload(request.user):
-                applay_user_status_to_enroll(
-                    user=request.user,
-                    course_enrollment=enrollment,
-                    status=student_state,
-                )
+        if request.user.is_authenticated():
+            student_state = get_learner_info(request.user.id)
+            if student_state:
+                for enrollment in CourseEnrollment.enrollments_for_user_with_overviews_preload(request.user):
+                    applay_user_status_to_enroll(
+                        user=request.user,
+                        course_enrollment=enrollment,
+                        status=student_state,
+                    )
         # Called method dashboard from the patched module (represents original student`s dashboard view with the
         # updated context)
         return self.get_patched_module(request).dashboard(request)
