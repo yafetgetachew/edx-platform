@@ -9887,6 +9887,18 @@ msgstr ""
 "استخدم العلامات المرجعيّة لتتمكّن من العودة إلى صفحات محتويات الدورة بسهولة."
 " لوضع علامة مرجعيّة لصفحة معيّنة، اختر \"علامة مرجعيّة\" تحت عنوان الصفحة."
 
+#: lms/static/course_bookmarks/templates/bookmarks-list.underscore
+#: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
+msgid "You have not bookmarked any courseware pages yet."
+msgstr "لم تضع أي أشارة مرجعيّة لأي من صفحات محتويات الدورة بعد"
+
+#: lms/static/course_bookmarks/templates/bookmarks-list.underscore
+#: openedx/features/course_bookmarks/static/course_bookmarks/templates/bookmarks-list.underscore
+msgid ""
+"Use bookmarks to help you easily return to courseware pages. To bookmark a page, click \"Bookmark this page\" under the page title."
+msgstr ""
+"استخدم العلامات المرجعيّة لتتمكّن من العودة إلى صفحات محتويات الدورة بسهولة. لوضع علامة مرجعيّة لصفحة معيّنة، اختر \"علامة مرجعيّة\" تحت عنوان الصفحة."
+
 #: openedx/features/course_search/static/course_search/templates/course_search_results.underscore
 #: openedx/features/course_search/static/course_search/templates/dashboard_search_results.underscore
 #: test_root/staticfiles/course_search/templates/course_search_results.underscore
