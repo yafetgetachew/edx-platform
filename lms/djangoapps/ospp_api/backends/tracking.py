@@ -1,14 +1,15 @@
 import logging
-from datetime import datetime as dt
 
 from abc import ABCMeta, abstractmethod
 from django.conf import settings
+from django.core.cache import cache
 
-from ospp_api import tasks as celery_task
 from track.backends import BaseBackend
 
 log = logging.getLogger(__name__)
 
+OSPP_TRACKER_CACHE_KEY = 'ospp.tracker'
+OSPP_TRACKER_CACHE_KEY_ALL_TASK = '{}.all'.format(OSPP_TRACKER_CACHE_KEY)
 
 class StatisticProcessor(object):
     """
@@ -120,11 +121,11 @@ class CreditProcessor(StatisticProcessor):
 
 class TrackingBackend(BaseBackend):
 
+    cache_lifetime = getattr(settings, 'ASU_CACHE_LIFETIME', 60 * 60 * 24 * 30)
+
     def __init__(self, **kwargs):
         super(TrackingBackend, self).__init__(**kwargs)
 
-        self.max_statistic_buffer_size = getattr(settings, 'ASU_TRACKER_BUFFER_SIZE', 10)
-        self.max_statistic_buffer_life_time = getattr(settings, 'ASU_TRACKER_BUFFER_LIFE_TIME', 60)
         self.statistic_processors = [
             LastLoginStaticsProcessor(),
             GradeStaticsProcessor(),
@@ -132,37 +133,22 @@ class TrackingBackend(BaseBackend):
             CreditEligibilityProcessor(),
         ]
 
-        self.statistic = {}
-        self.statistic_item_count = 0
-        self.last_statistic_submit = dt.now()
-
     def send(self, event):
         for processor in self.statistic_processors:
             if processor.is_can_process(event):
                 body = processor.process(event)
                 if not body:
                     continue
-                course_id = event['context']['course_id']
                 username = StatisticProcessor.get_event_user(event)
-                statistic_id = '{}::{}'.format(username, course_id)
-                if statistic_id in self.statistic:
-                    self.statistic[statistic_id].update(body)
+                course_id = event['context']['course_id']
+
+                cached_item_tag = '.'.join([OSPP_TRACKER_CACHE_KEY, username, course_id])
+                cached_item = cache.get(cached_item_tag)
+                if not cached_item:
+                    cached_item = {'body': body, 'username': username, 'course_id': course_id}
                 else:
-                    self.statistic[statistic_id] = body
-                    self.statistic_item_count += 1
-                if (
-                    self.statistic_item_count > self.max_statistic_buffer_size
-                    or (
-                        (dt.now()-self.last_statistic_submit).seconds > self.max_statistic_buffer_life_time
-                        and self.statistic
-                    )
-                ):
-                    self.send_statistic()
-
-    def send_statistic(self):
-        self.statistic_item_count = 0
-        data_for_send = self.statistic
-        self.last_statistic_submit = dt.now()
-        self.statistic = {}
-        celery_task.send_statistic.delay(data_for_send)
-
+                    cached_item['body'].update(body)
+                cache.set(cached_item_tag, cached_item, self.cache_lifetime)
+                all_task = cache.get(OSPP_TRACKER_CACHE_KEY_ALL_TASK, set())
+                all_task.add(cached_item_tag)
+                cache.set(OSPP_TRACKER_CACHE_KEY_ALL_TASK, all_task, self.cache_lifetime)

@@ -3237,3 +3237,4 @@ EVENT_TRACKING_BACKENDS['ossp_tracking'] = {
 # Leave registration opened for the lms
 FEATURES['ALLOW_PUBLIC_ACCOUNT_CREATION'] = True
 
+ASU_CACHE_LIFETIME = 60 * 60 * 24 * 30  # 30 days

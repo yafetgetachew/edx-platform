@@ -2,75 +2,78 @@
 Asynchronous tasks for the CCX app.
 """
 import logging
-import requests
+from datetime import timedelta
 
+import requests
+from celery.task import task, periodic_task
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.core.cache import cache
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 
-from lms import CELERY_APP
+from ospp_api.backends.tracking import OSPP_TRACKER_CACHE_KEY_ALL_TASK
 
 log = logging.getLogger(__name__)
 
 
-def add_verify_status(statistic_map):
+def add_verify_status(statistic_map, username):
     from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification
-    for statistic_id, data in statistic_map.iteritems():
-        username, course_id = statistic_id.split('::', 1)
-        status = SoftwareSecurePhotoVerification.objects.filter(
-                user__username=username,
-        ).values('updated_at', 'status').first()
-        if status:
-            data['idVerify'] = status['status']
-            data['idVerifyDate'] = status['updated_at'].strftime("%Y-%m-%d %H:%M:%S")
+    status = SoftwareSecurePhotoVerification.objects.filter(
+        user__username=username,
+    ).values('updated_at', 'status').first()
+    if status:
+        statistic_map['idVerify'] = status['status']
+        statistic_map['idVerifyDate'] = status['updated_at'].strftime("%Y-%m-%d %H:%M:%S")
 
 
-def add_grades(statistic_map):
+def add_grades(statistic_map, username, course_id):
     from courseware.courses import get_course_with_access
     from lms.djangoapps.grades.new.course_grade_factory import CourseGradeFactory
 
-    for statistic_id, data in statistic_map.iteritems():
-        if 'finalGrade' not in data:
-            continue
+    if 'finalGrade' not in statistic_map:
+        return
 
-        username, course_id = statistic_id.split('::', 1)
-        try:
-            course_key = CourseKey.from_string(course_id)
-        except InvalidKeyError:
-            data.pop('finalGrade', None)
-            continue
-        user = User.objects.get(username=username)
-        course = get_course_with_access(user, 'load', course_key)
+    try:
+        course_key = CourseKey.from_string(course_id)
+    except InvalidKeyError:
+        statistic_map.pop('finalGrade', None)
+        return
+    user = User.objects.get(username=username)
+    course = get_course_with_access(user, 'load', course_key)
 
-        course_grade = CourseGradeFactory().create(user, course)
-        grade_summary = course_grade.summary
-        final_grade = grade_summary.get('grade')
-        if final_grade:
-            data['finalGrade'] = final_grade
-        else:
-            # finalGrade passed to data map with an empty value for feature calculation.
-            # In case, when we can not calculate the value we don't send an empty value to the server.
-            data.pop('finalGrade', None)
-        data['grade'] = grade_summary['percent']
+    course_grade = CourseGradeFactory().create(user, course)
+    grade_summary = course_grade.summary
+    final_grade = grade_summary.get('grade')
+    if final_grade:
+        statistic_map['finalGrade'] = final_grade
+    else:
+        # finalGrade passed to data map with an empty value for feature calculation.
+        # In case, when we can not calculate the value we don't send an empty value to the server.
+        statistic_map.pop('finalGrade', None)
+    statistic_map['grade'] = grade_summary['percent']
 
 
-@CELERY_APP.task
-def send_statistic(statistic_map):
-    log.info("receive statistic map :: " + str(statistic_map))
-    add_verify_status(statistic_map)
-    add_grades(statistic_map)
+def send_statistic_list(items_ids):
+    url = getattr(settings, 'ASU_API_URL', '') + "/api/enrollments"
     statistic_list = []
-    for statistic_id, data in statistic_map.iteritems():
-        username, course_id = statistic_id.split('::', 1)
-        data.update({
+    for record_id in items_ids:
+        data = cache.get(record_id)
+        if not data:
+            log.warn("Can not find record wit key `%s` inside cache", record_id)
+            continue
+        body = data['body']
+        username = data['username']
+        course_id = data['course_id']
+        add_verify_status(body, username)
+        add_grades(body, username, course_id)
+        body.update({
             'username': username,
             "courseInfo": {
                 "openEdxCourseId": course_id,
             }
         })
-        statistic_list.append(data)
-    url = getattr(settings, 'ASU_API_URL', '') + "/api/enrollments"
+        statistic_list.append(body)
     headers = {
         'Content-Type': 'application/json',
         'tokentype': 'OPENEDX',
@@ -79,3 +82,15 @@ def send_statistic(statistic_map):
     log.info("sending statistic to server :: " + str(statistic_list))
     result = requests.patch(url, json=statistic_list, headers=headers)
     log.info("Server response with code: " + str(result.status_code) + " and body: " + str(result.json()))
+
+
+@periodic_task(run_every=timedelta(seconds=getattr(settings, 'ASU_TRACKER_BUFFER_LIFE_TIME', 60)))
+def send_statistic():
+    batch_size = getattr(settings, 'ASU_TRACKER_BUFFER_SIZE', 60)
+    all_records = cache.get(OSPP_TRACKER_CACHE_KEY_ALL_TASK)
+    if not all_records:
+        return
+    all_records = list(all_records)
+    cache.delete(OSPP_TRACKER_CACHE_KEY_ALL_TASK)
+    for i in xrange(0, len(all_records), batch_size):
+        send_statistic_list(all_records[i:i + batch_size])
