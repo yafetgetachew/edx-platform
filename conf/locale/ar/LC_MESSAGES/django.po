@@ -6296,7 +6296,7 @@ msgid "Syllabus"
 msgstr "مخطّط المنهج الدراسي"
 
 #: lms/djangoapps/courseware/tabs.py
-msgid "Information"
+msgid "Info"
 msgstr "المعلومات"
 
 #: lms/djangoapps/courseware/tabs.py
