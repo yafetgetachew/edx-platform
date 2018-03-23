@@ -5600,7 +5600,7 @@ msgstr "Підтвердіть цей сертифікат самостійно"
 #, python-brace-format
 msgid "{platform_name} offers interactive online classes and MOOCs."
 msgstr ""
-"Неформальна система навчання протягом життя,</b>"
+"<!-- {platform_name} -->Неформальна система навчання протягом життя,</br>"
 "яка поєднує кращі надбання очної та онлайн-освіти."
 
 #: lms/djangoapps/certificates/views/webview.py
