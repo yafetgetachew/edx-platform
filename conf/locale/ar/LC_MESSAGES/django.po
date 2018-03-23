@@ -10534,7 +10534,7 @@ msgstr ""
 #: lms/templates/courseware/courseware.html
 #: openedx/features/course_bookmarks/templates/course_bookmarks/course-bookmarks.html
 msgid "Bookmarks"
-msgstr "العلامات"
+msgstr "العلامات المرجعية"
 
 #: openedx/core/djangoapps/bookmarks/views.py
 msgid "An error has occurred. Please try again."
@@ -10565,7 +10565,7 @@ msgid ""
 "remove some bookmarks before you can add new ones."
 msgstr ""
 "يمكنك إنشاء {max_num_bookmarks_per_course} علامة على الأكثر. يجب حذف بعض "
-"العلامات قبل السماح بإضافة علامات جديدة."
+"العلامات المرجعية قبل السماح بإضافة علامات جديدة."
 
 #: openedx/core/djangoapps/bookmarks/views.py
 #, python-brace-format
