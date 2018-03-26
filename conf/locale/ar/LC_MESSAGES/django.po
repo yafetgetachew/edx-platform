@@ -19525,7 +19525,7 @@ msgid "View a specific learner's grades and progress"
 msgstr "عرض علامات وتقدم أحد الطلاب."
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
-msgid "Learner's {platform_name} email address or username"
+msgid "Learner's {platform_name} email address or username *"
 msgstr "عنوان البريد الإلكتروني أو إسم المستخدم لطالب في {platform_name}"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
@@ -19541,7 +19541,7 @@ msgid "Adjust a learner's grade for a specific problem"
 msgstr "تعديل درجات الطالب في مسألة محددة"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
-msgid "Location of problem in course"
+msgid "Location of problem in course *"
 msgstr "موقع المسألة في الدورة"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
