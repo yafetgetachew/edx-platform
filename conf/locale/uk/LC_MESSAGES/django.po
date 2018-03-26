@@ -12280,7 +12280,7 @@ msgstr "Знайдіть курс для себе зараз!"
 
 #: lms/templates/registration/activate_account_notice.html
 msgid "Thanks for Registering!"
-msgstr "Дякуюмо за реєстрацію!"
+msgstr "Дякуємо за реєстрацію!"
 
 #: lms/templates/registration/activate_account_notice.html
 msgid ""
