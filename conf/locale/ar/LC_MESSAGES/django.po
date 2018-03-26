@@ -18050,19 +18050,19 @@ msgstr "شهادات أنشأها الطلاب"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Disable Student-Generated Certificates"
-msgstr "تعطيل الشهادات من إنشاء الطلاب"
+msgstr "تعطيل الطلاب من إنشاء الشهادات"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Enable Student-Generated Certificates"
-msgstr "تمكين الشهادات من إنشاء الطلاب"
+msgstr "تمكين الطلاب من إنشاء الشهادات"
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid ""
 "You must successfully generate example certificates before you enable "
 "student-generated certificates."
 msgstr ""
-"يجب أن تنجح في إنشاء مثال عن الشهادة قبل أن تمكّن خيار الشهادات من إنشاء "
-"الطلاب."
+"يجب أن تنجح في إنشاء مثال عن الشهادة قبل أن تمكّن الطلاب من إنشاء الشهادات"
+"."
 
 #: lms/templates/instructor/instructor_dashboard_2/certificates.html
 msgid "Generate Certificates"
