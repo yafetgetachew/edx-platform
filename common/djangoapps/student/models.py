@@ -2466,7 +2466,7 @@ def _automatic_add_user_to_cohort(course_id, user):
     from openedx.core.djangoapps.course_groups import cohorts, models
 
     if not cohorts.is_course_cohorted(course_id):
-        cohorts.set_course_cohort_settings(course_id, is_cohorted=True)
+        cohorts.set_course_cohorted(course_id, True)
 
     try:
         male_cohort = cohorts.get_cohort_by_name(course_id, 'Male')
