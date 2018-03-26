@@ -12,3 +12,4 @@ $pattern-library-path: '../edx-pattern-library' !default;
 
 // Load the shared build
 @import 'build-lms-v2';
+@import 'override';

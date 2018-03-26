@@ -337,3 +337,15 @@
     }
   }
 }
+
+.discussion .theme-nav-wrapper .nav-global .item {
+  font-size: 14px;
+  a {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+body.discussion .header-global .theme-nav-wrapper .nav-global {
+  margin-top: 36px;
+  margin-left: 40px;
+}

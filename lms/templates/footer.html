@@ -17,6 +17,7 @@
       dir=${bidi}
     % endif
   >
+  <div class="footer-wrapper">
     <div class="colophon">
       <nav class="nav-colophon" aria-label="${_('About')}">
         <ol>
@@ -27,7 +28,7 @@
               <a id="news" href="/news">Новости</a>
             </li>
             <li class="nav-colophon-03">
-              <a id="news" href="/blog">Блог</a>
+              <a id="news" href="http://blog.${settings.SITE_NAME}/">Блог</a>
             </li>
             <li class="nav-colophon-04">
               <a id="contacts" href="/contact">Контакты</a>
@@ -48,17 +49,16 @@
           </a>
         </p>
       </div>
-
-
-      <p class="copyright">Открытый университет Егора Гайдара - это электронная образовательная площадка на платформе Open edX, предлагающая преподавателям вузов, учителям школ, студентам и широкой публике учебные курсы по экономике и другим социальным и гуманитарным наукам. Курсы разрабатывают и ведут преподаватели ведущих российских вузов: МГУ, НИУ ВШЭ, РЭШ, «Шанинка»
-        <br>
-        Обучение на всех курсах бесплатное.
-        <br>
-        Образовательная деятельность осуществляется на основании лицензии № 037202, выданной 02.03.2016 Департаментом образования города Москвы. Более подробная информация – на сайте Фонда: <a href="http://dist.gaidarfund.ru/tab6">dist.gaidarfund.ru</a>. Благодаря этому, успешно освоив курс, слушатель может получить Удостоверение о повышении квалификации или электронный сертификат Фонда Егора Гайдара (подробности - в описании каждой из программ).
-      </p>
-
-
     </div>
+  </div>
+
+
+  <p class="copyright">Открытый университет Егора Гайдара - это электронная образовательная площадка на платформе Open edX, предлагающая преподавателям вузов, учителям школ, студентам и широкой публике учебные курсы по экономике и другим социальным и гуманитарным наукам. Курсы разрабатывают и ведут преподаватели ведущих российских вузов: МГУ, НИУ ВШЭ, РЭШ, «Шанинка»
+    <br>
+    Обучение на всех курсах бесплатное.
+    <br>
+    Образовательная деятельность осуществляется на основании лицензии № 037202, выданной 02.03.2016 Департаментом образования города Москвы. Более подробная информация – на сайте Фонда: <a target="_blank" href="http://dist.gaidarfund.ru/tab6">dist.gaidarfund.ru</a>. Благодаря этому, успешно освоив курс, слушатель может получить Удостоверение о повышении квалификации или электронный сертификат Фонда Егора Гайдара (подробности - в описании каждой из программ).
+  </p>
 
     ## Please leave this link and use one of the logos provided
     ## The OpenEdX link may be hidden when this view is served
@@ -68,6 +68,10 @@
 
     % endif
   </footer>
+  <ul class="social-list social-list--footer">
+      <li class="social-list_item"><a class="social-list_link" href="https://vk.com/gaidaropenuniversity" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+      <li class="social-list_item"><a class="social-list_link" href="https://www.facebook.com/GaidarOpenUniversity" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+  </ul>
 </div>
 % if include_dependencies:
   <%static:js group='base_vendor'/>
