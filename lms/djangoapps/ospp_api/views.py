@@ -31,8 +31,8 @@ from edxmako.shortcuts import render_to_response
 from enrollment import api
 from enrollment.errors import CourseEnrollmentError, CourseEnrollmentExistsError, CourseModeNotFoundError
 from enrollment.views import REQUIRED_ATTRIBUTES
+from ospp_api.mixins import EligibleCheckViewMixin, MethodViewWithMakoMixin
 from ospp_api.models import OSPPEnrollmentFeature
-from ospp_api.utils import MethodViewWithMakoMixin, get_learner_info, applay_user_status_to_enroll
 from student.models import CourseEnrollment, User, CourseAccessRole
 from student.views import create_account_with_params
 from third_party_auth.models import SAMLProviderConfig
@@ -442,7 +442,7 @@ def ospp_registration_stub(request):
     return render_to_response('ospp/blank_registration.html', {})
 
 
-class OsppDashboardView(MethodViewWithMakoMixin, View):
+class OsppDashboardView(MethodViewWithMakoMixin, EligibleCheckViewMixin, View):
     """
     Overwrite original dashboard view.
 
@@ -462,21 +462,12 @@ class OsppDashboardView(MethodViewWithMakoMixin, View):
         return context
 
     def get(self, request):
-        if request.user.is_authenticated():
-            student_state = get_learner_info(request.user.id)
-            if student_state:
-                for enrollment in CourseEnrollment.enrollments_for_user_with_overviews_preload(request.user):
-                    applay_user_status_to_enroll(
-                        user=request.user,
-                        course_enrollment=enrollment,
-                        status=student_state,
-                    )
         # Called method dashboard from the patched module (represents original student`s dashboard view with the
         # updated context)
         return self.get_patched_module(request).dashboard(request)
 
 
-class RoutView(View):
+class RoutView(EligibleCheckViewMixin, View):
     @staticmethod
     def course_key_from_request(request):
         return request.GET['course_id'].replace(' ', '+')
