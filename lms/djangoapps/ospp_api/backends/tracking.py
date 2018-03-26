@@ -102,20 +102,28 @@ class CreditEligibilityProcessor(StatisticProcessor):
 class CreditProcessor(StatisticProcessor):
 
     def is_can_process(self, event):
-        return self.get_event_name(event) == 'common.student.CourseEnrollment'
+        return self.get_event_name(event) == 'credit.request.created'
 
     def process(self, event):
         timestamp = self.get_event_timestamp_as_string(event)
         result = {
-            'enrollmentMode': event['data']['mode'],
-            'enrollmentModeDate': timestamp,
+            'creditConverted': 'Y',
+            'creditConvertedDate': timestamp,
+            'courseCompletedDate': timestamp,
         }
-        if event['data']['mode'] == 'credit':
-            result.update({
-                'creditConverted': 'Y',
-                'creditConvertedDate': timestamp,
-                'courseCompletedDate': timestamp,
-            })
+        return result
+
+
+class EnrollmentProcessor(StatisticProcessor):
+
+    def is_can_process(self, event):
+        return self.get_event_name(event) == 'common.student.CourseEnrollment'
+
+    def process(self, event):
+        result = {
+            'enrollmentMode': event['data']['mode'],
+            'enrollmentModeDate': self.get_event_timestamp_as_string(event),
+        }
         return result
 
 
@@ -131,6 +139,7 @@ class TrackingBackend(BaseBackend):
             GradeStaticsProcessor(),
             CreditProcessor(),
             CreditEligibilityProcessor(),
+            CreditProcessor(),
         ]
 
     def send(self, event):
