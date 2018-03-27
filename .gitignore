@@ -108,3 +108,8 @@ lms/lib/comment_client/python
 autodeploy.properties
 .ws_migrations_complete
 dist
+
+# RG
+!lms/static/css/slick-theme.css
+!lms/static/css/slick.css
+
