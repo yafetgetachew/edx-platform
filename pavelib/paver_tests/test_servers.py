@@ -49,6 +49,10 @@ EXPECTED_WEBPACK_COMMAND = (
     u"NODE_ENV={node_env} STATIC_ROOT_LMS={static_root_lms} STATIC_ROOT_CMS={static_root_cms} $(npm bin)/webpack"
 )
 
+EXPECTED_REBACE_COMMAND = [
+    u"python manage.py lms --settings=test_static_optimized print_settings STATIC_ROOT_BASE --format=value 2>/dev/null",
+    u"python manage.py lms --settings=test_static_optimized print_settings EDX_PLATFORM_STATIC_ROOT_BASE --format=value 2>/dev/null"
+]
 
 @ddt.ddt
 class TestPaverServerTasks(PaverTestCase):
@@ -257,9 +261,15 @@ class TestPaverServerTasks(PaverTestCase):
             settings=expected_settings,
             port=port,
         )
+        expected_messages.extend(EXPECTED_REBACE_COMMAND)
+        if system == 'lms':
+            expected_messages.extend(EXPECTED_REBACE_COMMAND)
+            expected_messages.extend(EXPECTED_REBACE_COMMAND)
+
         if not no_contracts:
             expected_run_server_command += " --contracts"
         expected_messages.append(expected_run_server_command)
+
         self.assertEquals(self.task_messages, expected_messages)
 
     def verify_run_all_servers_task(self, options):

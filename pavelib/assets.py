@@ -664,32 +664,7 @@ def collect_assets(systems, settings, **kwargs):
         )))
         print("\t\tFinished collecting {} assets.".format(sys))
 
-    print ("Sync static from {static_collector_dir}/* to {platform_static_dir}/".format(
-        static_collector_dir=django_settings.STATIC_ROOT_BASE,
-        platform_static_dir=django_settings.EDX_PLATFORM_STATIC_ROOT_BASE
-    ))
-    os.system("rsync -av {static_collector_dir}/* {platform_static_dir}/ ".format(
-        static_collector_dir=django_settings.STATIC_ROOT_BASE,
-        platform_static_dir=django_settings.EDX_PLATFORM_STATIC_ROOT_BASE
-    ))
 
-    print ("Sync static from {static_collector_dir}/{current_sys}/* to {platform_static_dir}/{current_sys}/ with --delete-after option".format(
-            static_collector_dir=django_settings.STATIC_ROOT_BASE,
-            platform_static_dir=django_settings.EDX_PLATFORM_STATIC_ROOT_BASE,
-            current_sys=sys
-        ))
-    for sys in systems:
-        if (sys == 'lms'):
-            os.system("rsync -av {static_collector_dir}/js/i18n/* {platform_static_dir}/cms/js/i18n/ --delete-after".format(
-                static_collector_dir=django_settings.STATIC_ROOT_BASE,
-                platform_static_dir=django_settings.EDX_PLATFORM_STATIC_ROOT_BASE,
-                current_sys=sys
-            ))
-            os.system("rsync -av {static_collector_dir}/{current_sys}/* {platform_static_dir}/{current_sys}/ --delete-after".format(
-                static_collector_dir=django_settings.STATIC_ROOT_BASE,
-                platform_static_dir=django_settings.EDX_PLATFORM_STATIC_ROOT_BASE,
-                current_sys=sys
-            ))
 
 def _collect_assets_cmd(system, **kwargs):
     """
@@ -884,8 +859,8 @@ def update_assets(args):
     )
 
     args = parser.parse_args(args)
-    if args.settings == 'aws':
-        args.settings = 'static_collector'
+    # if args.settings == 'aws':
+    #     args.settings = 'static_collector'
     collect_log_args = {}
 
     current_sys = args.system[0]
@@ -896,7 +871,7 @@ def update_assets(args):
     os.environ.setdefault("SERVICE_VARIANT","{sys}".format(sys=current_sys))
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{sys}.envs.static_collector".format(sys=current_sys))
 
-    application = get_wsgi_application()  # pylint: disable=invalid-name
+    #application = get_wsgi_application()  # pylint: disable=invalid-name
 
     if hasattr(django_settings, 'STATIC_COLLECTOR_ROOT'):
         STATIC_COLLECTOR_ROOT = django_settings.STATIC_COLLECTOR_ROOT
@@ -924,6 +899,28 @@ def update_assets(args):
             collect_log_args.update({COLLECTSTATIC_LOG_DIR_ARG: args.collect_log_dir})
 
         collect_assets(args.system, args.settings, **collect_log_args)
+
+        os.system("rsync -av {static_collector_dir}/* {platform_static_dir}/ ".format(
+            static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
+            platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms", settings=args.settings)
+        ))
+
+        for sys in args.system:
+            if (sys == 'lms'):
+                os.system(
+                    "rsync -av {static_collector_dir}/js/i18n/* {platform_static_dir}/cms/js/i18n/ --delete-after".format(
+                        static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
+                        platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms",
+                                                                   settings=args.settings),
+                        current_sys=sys
+                    ))
+                os.system(
+                    "rsync -av {static_collector_dir}/{current_sys}/* {platform_static_dir}/{current_sys}/ --delete-after".format(
+                        static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
+                        platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms",
+                                                                   settings=args.settings),
+                        current_sys=sys
+                    ))
 
     if args.watch:
         call_task(
