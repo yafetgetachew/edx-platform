@@ -16048,7 +16048,7 @@ msgstr "لستَ مسجّلًا بعد في هذه الدورة. {link_start} س
 
 #: lms/templates/courseware/info.html
 msgid "Welcome to {org}'s {course_name}!"
-msgstr "مرحبًا بك في الدورة {course_name} التابع للمؤسسة {org}!"
+msgstr "مرحبًا بك في دورة: "
 
 #: lms/templates/courseware/info.html
 #: openedx/features/course_experience/templates/course_experience/course-home-fragment.html
