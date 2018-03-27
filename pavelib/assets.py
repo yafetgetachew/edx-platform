@@ -86,6 +86,7 @@ SASS_LOOKUP_DEPENDENCIES = {
 # Collectstatic log directory setting
 COLLECTSTATIC_LOG_DIR_ARG = "collect_log_dir"
 
+IS_TESTING = False
 
 def get_sass_directories(system, theme_dir=None):
     """
@@ -900,27 +901,28 @@ def update_assets(args):
 
         collect_assets(args.system, args.settings, **collect_log_args)
 
-        os.system("rsync -av {static_collector_dir}/* {platform_static_dir}/ ".format(
-            static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
-            platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms", settings=args.settings)
-        ))
+        if not IS_TESTING:
+            os.system("rsync -av {static_collector_dir}/* {platform_static_dir}/ ".format(
+                static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
+                platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms", settings=args.settings)
+            ))
 
-        for sys in args.system:
-            if (sys == 'lms'):
-                os.system(
-                    "rsync -av {static_collector_dir}/js/i18n/* {platform_static_dir}/cms/js/i18n/ --delete-after".format(
-                        static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
-                        platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms",
-                                                                   settings=args.settings),
-                        current_sys=sys
-                    ))
-                os.system(
-                    "rsync -av {static_collector_dir}/{current_sys}/* {platform_static_dir}/{current_sys}/ --delete-after".format(
-                        static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
-                        platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms",
-                                                                   settings=args.settings),
-                        current_sys=sys
-                    ))
+            for sys in args.system:
+                if (sys == 'lms'):
+                    os.system(
+                        "rsync -av {static_collector_dir}/js/i18n/* {platform_static_dir}/cms/js/i18n/ --delete-after".format(
+                            static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
+                            platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms",
+                                                                       settings=args.settings),
+                            current_sys=sys
+                        ))
+                    os.system(
+                        "rsync -av {static_collector_dir}/{current_sys}/* {platform_static_dir}/{current_sys}/ --delete-after".format(
+                            static_collector_dir=Env.get_django_setting("STATIC_ROOT_BASE", "lms", settings=args.settings),
+                            platform_static_dir=Env.get_django_setting("EDX_PLATFORM_STATIC_ROOT_BASE", "lms",
+                                                                       settings=args.settings),
+                            current_sys=sys
+                        ))
 
     if args.watch:
         call_task(
