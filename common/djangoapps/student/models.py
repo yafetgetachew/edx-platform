@@ -2371,3 +2371,41 @@ class LogoutViewConfiguration(ConfigurationModel):
     def __unicode__(self):
         """Unicode representation of the instance. """
         return u'Logout view configuration: {enabled}'.format(enabled=self.enabled)
+
+
+class StudentReport(models.Model):
+    user = models.ForeignKey(User)
+    course_id = CourseKeyField(max_length=255, db_index=True, blank=True)
+
+    fname = models.CharField(default=_('N/A'), max_length=255)
+    lname = models.CharField(default=_('N/A'), max_length=255)
+    email = models.CharField(default=_('N/A'), max_length=255)
+    job = models.CharField(default=_('N/A'), max_length=255)
+    org = models.CharField(default=_('N/A'), max_length=255)
+    country = models.CharField(default=_('N/A'), max_length=255)
+    region = models.CharField(default=_('N/A'), max_length=255)
+    mooc_name = models.CharField(default=_('N/A'), max_length=255)
+    mooc_number = models.CharField(default=_('N/A'), max_length=255)
+    mooc_code = models.CharField(default=_('N/A'), max_length=255)
+    mooc_status = models.CharField(default=_('N/A'), max_length=255)
+    course_start = models.CharField(default=_('N/A'), max_length=255)
+    course_end = models.CharField(default=_('N/A'), max_length=255)
+    certified = models.CharField(default=_('N/A'), max_length=255)
+    cocd = models.CharField(default=_('N/A'), max_length=255)
+    price = models.CharField(default=_('N/A'), max_length=255)
+    currency = models.CharField(default=_('N/A'), max_length=255)
+
+    fields = ('fname', 'lname', 'email', 'job', 'org', 'country', 'region',
+              'mooc_name', 'mooc_number', 'mooc_code', 'mooc_status',
+              'course_start', 'course_end', 'certified', 'cocd', 'price', 'currency')
+
+    @classmethod
+    def create_or_update_from_list(cls, user, course_key, row):
+        obj, created = cls.objects.update_or_create(
+            user=user,
+            course_id=course_key or CourseKeyField.Empty,
+            defaults=dict(zip(cls.fields, row))
+        )
+
+    def to_list(self):
+        return list(getattr(self, f, _('N/A')) for f in self.fields)

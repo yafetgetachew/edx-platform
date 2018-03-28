@@ -62,7 +62,7 @@ def send_activation_email(self, subject, message, from_address, dest_addr):
 def send_users_report():
     qs = User.objects.all()
     fd = StringIO.StringIO()
-    write_users_report(qs, fd)
+    write_users_report(qs, fd, overwrite=True)
     email = mail.EmailMessage(
         _('Users report'),
         _('Users report in attachment...'),

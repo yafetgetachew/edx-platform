@@ -14,10 +14,12 @@ from config_models.admin import ConfigurationModelAdmin
 from student.models import (
     UserProfile, UserTestGroup, CourseEnrollmentAllowed, DashboardConfiguration, CourseEnrollment, Registration,
     PendingNameChange, CourseAccessRole, LinkedInAddToProfileConfiguration, UserAttribute, LogoutViewConfiguration,
-    RegistrationCookieConfiguration
+    RegistrationCookieConfiguration, StudentReport
 )
 from student.roles import REGISTERED_ACCESS_ROLES
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
+from openedx.core.djangoapps.content.course_overviews.models import CourseOverview
+from openedx.core.djangoapps.xmodule_django.models import CourseKeyField
 from course_modes.models import CourseMode
 from django_countries import countries as django_countries
 import unicodecsv
@@ -184,7 +186,7 @@ def _is_shopping_cart_enabled():
     )
 
 
-def write_users_report(queryset, fd):
+def write_users_report(queryset, fd, overwrite=False):
     header = (
         _('First name'),
         _('Last name'),
@@ -209,63 +211,89 @@ def write_users_report(queryset, fd):
     writer.writerow(header)
 
     countries = dict(django_countries)
+    courses = {}
 
-    for user in queryset.prefetch_related('groups'):
-        if hasattr(user, 'profile'):
-            name_list = user.profile.name and user.profile.name.split() or ['', '']
+    users = dict((u.id, u) for u in User.objects.all())
+
+    for course in CourseOverview.objects.all():
+        course_status = course.has_ended() and _('Complete') or course.has_started() and _('In Progress') or _('Not Started')
+        course_content = modulestore().get_course(course.id)
+        courses[course.id.to_deprecated_string()] = {
+            'row': [
+                course.display_name_with_default,
+                course.display_number_with_default,
+                course.id.to_deprecated_string(),
+                course_status,
+                course.start and course.start.strftime('%d/%m/%Y') or _('N/A'),
+                course.end and course.end.strftime('%d/%m/%Y') or _('N/A'),
+                _('N'),
+                _('N/A'),
+                '0',
+                settings.PAID_COURSE_REGISTRATION_CURRENCY[1]
+            ],
+            'course': course_content,
+            'course_key': course.id,
+        }
+
+    user_attrs = (
+        'id',
+        'email',
+        'first_name',
+        'last_name',
+        'profile__name',
+        'profile__country',
+        'profile__job',
+        'profile__organization',
+        'profile__region',
+        'courseenrollment__course_id',
+    )
+
+    for user in queryset.values(*user_attrs):
+        course = courses.get(user['courseenrollment__course_id'])
+
+        try:
+            row_from_cache = StudentReport.objects.get(
+                user_id=user['id'],
+                course_id=course and course['course_key'] or CourseKeyField.Empty
+            )
+        except StudentReport.DoesNotExist:
+            row_from_cache = None
+
+        if not row_from_cache or overwrite:
+            name_list = user['profile__name'] and user['profile__name'].split() or [user['first_name'], user['last_name']]
             fname = name_list[0]
             lname = ' '.join(name_list[1:])
-            country = countries.get(user.profile.country, user.profile.country)
-            job = user.profile.job
-            org = user.profile.organization
-            region = user.profile.region
-        else:
-            fname = user.first_name
-            lname = user.last_name
-            country = _('N/A')
-            job = _('N/A')
-            org = _('N/A')
-            region = _('N/A')
+            country = countries.get(user['profile__country'], user['profile__country'] or _('N/A'))
+            job = user['profile__job'] or _('N/A')
+            org = user['profile__organization'] or _('N/A')
+            region = user['profile__region'] or _('N/A')
 
-        user_row = (fname, lname, user.email, job, org, country, region,)
-
-        enrollments = CourseEnrollment.objects.filter(is_active=True, user=user)
-        if not enrollments.exists():
-            writer.writerow(user_row + (_('N/A'),) * 9)
-
-        for enrollment in enrollments:
-            course = enrollment.course
-
-            try:
-                from lms.djangoapps.courseware.views.views import is_course_passed
-                is_passed = is_course_passed(modulestore().get_course(enrollment.course_id), None, user) and _('Y') or _('N')
-            except Exception:
-                is_passed = _('N')
+            user_row = [fname, lname, user['email'], job, org, country, region,]
 
             if course:
-                course_status = course.has_ended() and _('Complete') or course.has_started() and _('In Progress') or _('Not Started')
+                try:
+                    from lms.djangoapps.courseware.views.views import is_course_passed
+                    is_passed = is_course_passed(course['course'], None, users[user['id']]) and _('Y') or _('N')
+                except Exception:
+                    is_passed = _('N')
+
+                price = CourseMode.min_course_price_for_currency(
+                    course.get('course_key'),
+                    settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
+                )
+
+                can_add_course_to_cart = _is_shopping_cart_enabled() and price
+                course_row = list(course.get('row', [_('N/A')] * 10))
+                course_row[6] = is_passed
+                course_row[8] = price
             else:
-                course_status = _('Deleted')
+                course_row = [_('N/A')] * 10
 
-            price = CourseMode.min_course_price_for_currency(
-                enrollment.course_id,
-                settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
-            )
-            can_add_course_to_cart = _is_shopping_cart_enabled() and price
-
-            row = user_row + (
-                course and course.display_name_with_default or _('N/A'),
-                course and course.display_number_with_default or _('N/A'),
-                str(enrollment.course_id),
-                course_status,
-                course and course.start and course.start.strftime('%d/%m/%Y') or _('N/A'),
-                course and course.end and course.end.strftime('%d/%m/%Y') or _('N/A'),
-                is_passed,
-                _('N/A'),
-                price,
-                settings.PAID_COURSE_REGISTRATION_CURRENCY[1]
-            )
-            writer.writerow(row)
+            row = user_row + course_row
+            StudentReport.create_or_update_from_list(users[user['id']], course and course['course_key'] or CourseKeyField.Empty, row)
+        else:
+            row = row_from_cache.to_list()
+        writer.writerow(row)
 
 
 def export_users_as_csv(modeladmin, request, queryset):
