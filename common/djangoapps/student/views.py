@@ -122,6 +122,7 @@ from student.models import (
     unique_id_for_user
 )
 from student.tasks import send_activation_email
+from student.decorators import check_recaptcha
 from third_party_auth import pipeline, provider
 from util.bad_request_rate_limiter import BadRequestRateLimiter
 from util.db import outer_atomic
@@ -471,7 +472,8 @@ def signin_user(request):
             'platform_name',
             settings.PLATFORM_NAME
         ),
-        'third_party_auth_error': third_party_auth_error
+        'third_party_auth_error': third_party_auth_error,
+        'google_recaptcha_site_key': settings.GOOGLE_RECAPTCHA_DATA_SITE_KEY
     }
 
     return render_to_response('login.html', context)
@@ -501,6 +503,7 @@ def register_user(request, extra_context=None):
         ),
         'selected_provider': '',
         'username': '',
+        'google_recaptcha_site_key': settings.GOOGLE_RECAPTCHA_DATA_SITE_KEY
     }
 
     if extra_context is not None:
@@ -1378,7 +1381,6 @@ def login_user(request, error=""):  # pylint: disable=too-many-statements,unused
             return HttpResponse(message, content_type="text/plain", status=403)
 
     else:
-
         if 'email' not in request.POST or 'password' not in request.POST:
             return JsonResponse({
                 "success": False,
@@ -1500,6 +1502,12 @@ def login_user(request, error=""):  # pylint: disable=too-many-statements,unused
                 }
             }
         )
+    if settings.USE_GOOGLE_RECAPTCHA:
+        if not request.recaptcha_is_valid:
+            return JsonResponse({
+                "success": False,
+                "value": _('Invalid reCAPTCHA. Please try again.'),
+            })
     if user is not None and user.is_active:
         try:
             # We do not log here, because we have a handler registered
