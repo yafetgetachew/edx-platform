@@ -13,7 +13,7 @@ from django.utils.translation.trans_real import get_supported_language_variant
 from django.views.decorators.cache import cache_control
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_http_methods
-
+from django.utils.translation import ugettext as _
 import branding.api as branding_api
 import courseware.views.views
 import student.views
@@ -322,6 +322,7 @@ def contact_form(request):
             is_can_to_save = request.recaptcha_is_valid
 
         form = ContactForm(request.POST)
+
         if is_can_to_save:
             saved = form.save()
             if saved:
@@ -331,8 +332,11 @@ def contact_form(request):
 
     context = {
         'form': form,
-        'google_recaptcha_site_key': settings.GOOGLE_RECAPTCHA_DATA_SITE_KEY
+        'google_recaptcha_site_key': settings.GOOGLE_RECAPTCHA_DATA_SITE_KEY,
+        'captcha_error': ''
     }
+    if settings.USE_GOOGLE_RECAPTCHA and request.method == 'POST':
+        context['captcha_error'] = _('This field is required.') if not request.recaptcha_is_valid else ''
     return render_to_response('static_templates/contact.html', context)
 
 

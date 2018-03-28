@@ -4488,6 +4488,10 @@ msgstr ""
 msgid "Download the {platform_name} mobile app from Google Play"
 msgstr ""
 
+#: lms/djangoapps/branding/views.py
+msgid "This field is required."
+msgstr ""
+
 #. Translators: Bulk email from address e.g. ("Physics 101" Course Staff)
 #: lms/djangoapps/bulk_email/tasks.py
 #, python-brace-format
