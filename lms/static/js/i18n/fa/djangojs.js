@@ -4586,6 +4586,7 @@
     "Use my institution/campus credentials": "Utiliser mes informations institution/campus", 
     "Use parentheses () to make expressions clear. You can use parentheses inside other parentheses.": "Utilisez les parenth\u00e8ses () pour clarifier vos expressions. Vous pouvez utiliser des parenth\u00e8ses au sein d'autres parenth\u00e8ses.", 
     "Use the All Topics menu to find specific topics.": "Utilisez le menu 'Tous les sujets' pour trouver un sujet sp\u00e9cific", 
+    "Use the Discussion Topics menu to find specific topics.": "Utiliser le menu pour trouver un sujet en particulier.", 
     "Use the Sailthru content API to fetch course tags.": "Utiliser l'API de contenu Sailthru pour obtenir les tags de cours.", 
     "Use the arrow keys to navigate the tips or use the tab key to return to the calculator": "Utiliser les fl\u00e8ches pour naviguer aux travers des astuces ou utiliser la touche TAB pour retourner \u00e0 la calculatrice", 
     "Use the checkout page hosted by the E-Commerce service.": "Utiliser la page de paiement h\u00e9berg\u00e9 par le service de commerce \u00e9lectronique.", 

@@ -33979,3 +33979,7 @@ msgstr "Valider"
 
 msgid "You have used {num_used} of {num_total} submissions"
 msgstr "Vous avez utilisé {num_used} soumissions sur {num_total}"
+
+msgid "Use the Discussion Topics menu to find specific topics."
+msgstr "Utiliser le menu pour trouver un sujet en particulier."
+
