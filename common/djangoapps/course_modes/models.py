@@ -15,6 +15,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from openedx.core.djangoapps.xmodule_django.models import CourseKeyField
 from request_cache.middleware import RequestCache, ns_request_cached
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 Mode = namedtuple('Mode',
                   [
@@ -652,6 +653,19 @@ class CourseMode(models.Model):
           min_coures_price = 0
 
         return min_coures_price
+
+    @classmethod
+    def min_course_price(cls, course_id):
+        modes = cls.modes_for_course(course_id)
+        modes.sort(key=lambda x: x.min_price)
+        try:
+            min_coures_price = modes and modes[0].min_price
+            currency = modes and modes[0].currency
+        except ValueError:
+            min_coures_price = 0
+            currency = configuration_helpers.get_value('PAID_COURSE_REGISTRATION_CURRENCY', settings.PAID_COURSE_REGISTRATION_CURRENCY)[0]
+
+        return (min_coures_price, currency)
 
     @classmethod
     def is_eligible_for_certificate(cls, mode_slug):

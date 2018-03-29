@@ -601,13 +601,17 @@ def get_course_prices(course, verified_only=False):
             course.id,
             settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
         )
+        currency = settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
     else:
-        registration_price = CourseMode.min_course_price_for_currency(
-            course.id,
-            settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
-        )
+        registration_price, currency = CourseMode.min_course_price(course.id)
 
-    currency_symbol = settings.PAID_COURSE_REGISTRATION_CURRENCY[1]
+    currency_symbol = dict(settings.CURRENCIES).get(
+        currency.lower(),
+        configuration_helpers.get_value(
+            'PAID_COURSE_REGISTRATION_CURRENCY',
+            settings.PAID_COURSE_REGISTRATION_CURRENCY
+        )[1]
+    )
 
     if registration_price > 0:
         price = registration_price
