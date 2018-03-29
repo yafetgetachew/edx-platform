@@ -3239,3 +3239,8 @@ ARABIC_MONTHS = [
     "نوفمبر",
     "ديسمبر"
 ]
+
+############## Settings for reCaptcha ############################
+
+USE_GOOGLE_RECAPTCHA = False
+
