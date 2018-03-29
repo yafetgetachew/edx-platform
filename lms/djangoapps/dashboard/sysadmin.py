@@ -2,7 +2,7 @@
 This module creates a sysadmin dashboard for managing and viewing
 courses.
 """
-import csv
+import unicodecsv as csv
 import json
 import logging
 import os
@@ -81,7 +81,7 @@ class SysadminDashboardView(TemplateView):
         """
 
         csv_file = StringIO.StringIO()
-        writer = csv.writer(csv_file, dialect='excel', quotechar='"',
+        writer = csv.writer(csv_file, encoding='utf-8', dialect='excel', quotechar='"',
                             quoting=csv.QUOTE_ALL)
 
         writer.writerow(header)
