@@ -50,7 +50,8 @@ from .exceptions import (
     ItemNotFoundInCartException,
     MultipleCouponsNotAllowedException,
     PurchasedCallbackException,
-    UnexpectedOrderItemStatus
+    UnexpectedOrderItemStatus,
+    DifferentCurrencyException
 )
 
 log = logging.getLogger("shoppingcart")
@@ -1511,6 +1512,10 @@ class PaidCourseRegistration(OrderItem):
         ]
 
     @classmethod
+    def contained_item_with_different_currency(cls, order, currency):
+         return order.orderitem_set.all().select_subclasses("paidcourseregistration").filter(~Q(currency=currency)).exists()
+
+    @classmethod
     def get_total_amount_of_purchased_item(cls, course_key, status='purchased'):
         """
         This will return the total amount of money that a purchased course generated
@@ -1561,16 +1566,21 @@ class PaidCourseRegistration(OrderItem):
                         .format(order.user.email, course_id, order.id))
             raise AlreadyEnrolledInCourseException
 
+        site_currency = configuration_helpers.get_value('PAID_COURSE_REGISTRATION_CURRENCY')
+        if site_currency:
+            cost = CourseMode.min_course_price_for_currency(course_id, site_currency[0])
+            currency = site_currency[0]
+        else:
+            cost, currency = CourseMode.min_course_price(course_id)
+
+        course_mode = CourseMode.objects.filter(course_id=course_id, min_price=cost, currency=currency).first()
+
+        if cls.contained_item_with_different_currency(order, currency):
+            log.warning(u"User %s tried to add an item with a different currency to cart", order.user.email)
+            raise DifferentCurrencyException
+
         ### Validations done, now proceed
         ### handle default arguments for mode_slug, cost, currency
-        course_mode = CourseMode.mode_for_course(course_id, mode_slug)
-        if not course_mode:
-            # user could have specified a mode that's not set, in that case return the DEFAULT_MODE
-            course_mode = CourseMode.DEFAULT_SHOPPINGCART_MODE
-        if not cost:
-            cost = course_mode.min_price
-        if not currency:
-            currency = course_mode.currency
 
         super(PaidCourseRegistration, cls).add_to_order(order, course_id, cost, currency=currency)
 

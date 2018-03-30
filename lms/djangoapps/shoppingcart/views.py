@@ -52,7 +52,8 @@ from .exceptions import (
     ItemNotFoundInCartException,
     MultipleCouponsNotAllowedException,
     RedemptionCodeError,
-    ReportTypeDoesNotExistException
+    ReportTypeDoesNotExistException,
+    DifferentCurrencyException
 )
 from .models import (
     CertificateItem,
@@ -121,6 +122,8 @@ def add_course_to_cart(request, course_id):
     except AlreadyEnrolledInCourseException:
         return HttpResponseBadRequest(
             _('You are already registered in course {course_id}.').format(course_id=course_id))
+    except DifferentCurrencyException:
+        return HttpResponseBadRequest(_('Your cart already contain a course with another currency.'))
     else:
         # in case a coupon redemption code has been applied, new items should also get a discount if applicable.
         order = paid_course_item.order
@@ -210,8 +213,8 @@ def show_cart(request):
         'expired_course_names': expired_cart_item_names,
         'site_name': site_name,
         'form_html': form_html,
-        'currency_symbol': settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
-        'currency': settings.PAID_COURSE_REGISTRATION_CURRENCY[0],
+        'currency_symbol': dict(settings.CURRENCIES).get(cart.currency, settings.PAID_COURSE_REGISTRATION_CURRENCY[0]),
+        'currency': cart.currency,
         'enable_bulk_purchase': configuration_helpers.get_value('ENABLE_SHOPPING_CART_BULK_PURCHASE', True)
     }
     return render_to_response("shoppingcart/shopping_cart.html", context)
