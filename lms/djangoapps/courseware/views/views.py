@@ -596,21 +596,23 @@ def get_course_prices(course, verified_only=False):
     cosmetic_display_prices is the course price as a string preceded by correct currency, or 'Free'.
     """
     # Find the
+    site_currency = configuration_helpers.get_value('PAID_COURSE_REGISTRATION_CURRENCY')
+
     if verified_only:
         registration_price = CourseMode.min_course_price_for_verified_for_currency(
             course.id,
             settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
         )
         currency = settings.PAID_COURSE_REGISTRATION_CURRENCY[0]
+    elif site_currency:
+        registration_price = CourseMode.min_course_price_for_currency(course.id, site_currency[0])
+        currency = site_currency[0]
     else:
         registration_price, currency = CourseMode.min_course_price(course.id)
 
-    currency_symbol = dict(settings.CURRENCIES).get(
+    currency_symbol = site_currency and site_currency[1] or dict(settings.CURRENCIES).get(
         currency.lower(),
-        configuration_helpers.get_value(
-            'PAID_COURSE_REGISTRATION_CURRENCY',
-            settings.PAID_COURSE_REGISTRATION_CURRENCY
-        )[1]
+        settings.PAID_COURSE_REGISTRATION_CURRENCY[1]
     )
 
     if registration_price > 0:
