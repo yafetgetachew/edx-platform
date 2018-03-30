@@ -81,7 +81,7 @@
                         method: 'GET',
                         url: '#'
                     });
-
+                    this.googleRecaptchaSiteKey = options.google_recaptcha_site_key;
                     this.render();
 
                 // Once the third party error message has been shown once,
@@ -91,6 +91,8 @@
                     // Once the account activation messages have been shown once,
                     // there is no need to show it again, if the user changes mode:
                     this.accountActivationMessages = [];
+
+
                 },
 
                 render: function() {
@@ -133,7 +135,8 @@
                             supportURL: this.supportURL,
                             passwordResetSupportUrl: this.passwordResetSupportUrl,
                             createAccountOption: this.createAccountOption,
-                            hideAuthWarnings: this.hideAuthWarnings
+                            hideAuthWarnings: this.hideAuthWarnings,
+                            googleRecaptchaSiteKey: this.googleRecaptchaSiteKey
                         });
 
                     // Listen for 'password-help' event to toggle sub-views
@@ -170,7 +173,8 @@
                             model: model,
                             thirdPartyAuth: this.thirdPartyAuth,
                             platformName: this.platformName,
-                            hideAuthWarnings: this.hideAuthWarnings
+                            hideAuthWarnings: this.hideAuthWarnings,
+                            googleRecaptchaSiteKey: this.googleRecaptchaSiteKey
                         });
 
                     // Listen for 'auth-complete' event so we can enroll/redirect the user appropriately.

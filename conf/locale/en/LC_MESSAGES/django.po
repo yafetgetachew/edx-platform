@@ -734,6 +734,11 @@ msgid ""
 msgstr ""
 
 #: common/djangoapps/student/views.py
+msgid "Invalid reCAPTCHA. Please try again."
+msgstr ""
+"ReCAPTCHA غير صالح. حاول ثانية."
+
+#: common/djangoapps/student/views.py
 msgid "There was an error receiving your login information. Please email us."
 msgstr ""
 
@@ -4481,6 +4486,10 @@ msgstr ""
 #: lms/djangoapps/branding/api.py
 #, python-brace-format
 msgid "Download the {platform_name} mobile app from Google Play"
+msgstr ""
+
+#: lms/djangoapps/branding/views.py
+msgid "This field is required."
 msgstr ""
 
 #. Translators: Bulk email from address e.g. ("Physics 101" Course Staff)

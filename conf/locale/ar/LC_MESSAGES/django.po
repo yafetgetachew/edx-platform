@@ -924,6 +924,11 @@ msgstr ""
 "إذا لم تكن قد أنشأت حسابًا لدى {platform_name} بعد، يُرجة النقر على "
 "<strong>سجّل الآن</strong> في أعلى الصفحة."
 
+#: common/djangoapps/student/views/login.py common/djangoapps/student/views.py
+msgid "Invalid reCAPTCHA. Please try again."
+msgstr ""
+"ReCAPTCHA غير صالح. حاول ثانية."
+
 #: common/djangoapps/student/views/login.py
 msgid "There was an error receiving your login information. Please email us."
 msgstr ""
@@ -5396,6 +5401,11 @@ msgstr "يُرجى تنزيل تطبيق الهاتف المحمول لمنصّ�
 #, python-brace-format
 msgid "Download the {platform_name} mobile app from Google Play"
 msgstr "يُرجى تنزيل تطبيق الهاتف المحمول لمنصّة {platform_name} من غوغل بلاي"
+
+#: lms/djangoapps/branding/views.py
+msgid "This field is required."
+msgstr "هذا الحقل مطلوب."
+
 
 #. Translators: Bulk email from address e.g. ("Physics 101" Course Staff)
 #: lms/djangoapps/bulk_email/tasks.py
