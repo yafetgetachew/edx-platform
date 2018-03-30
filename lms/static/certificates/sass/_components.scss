@@ -291,6 +291,7 @@
     // signatories
     .accomplishment-signatories {
         @extend %rendering-section;
+        border: none;
 
         .list-signatories {
             @extend %list-unstyled;

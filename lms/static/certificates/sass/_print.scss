@@ -245,6 +245,7 @@
         .accomplishment-signatories {
             @extend %print-rendering-section;
             @include span(12 last);
+            border: none;
 
             .signatory-credentials {
                 font-size: 8pt;
