@@ -1034,5 +1034,12 @@ COURSEGRAPH_JOB_QUEUE = ENV_TOKENS.get('COURSEGRAPH_JOB_QUEUE', LOW_PRIORITY_QUE
 
 
 CURRENCIES = (
+    ('tzs', 'TSh'),
+    ('kes', 'KSh'),
+    ('zmk', 'K'),
+    ('etb', 'Br'),
+    ('eur', '€'),
     ('usd', '$'),
+    ('lsl', 'L'),
+    ('gbp', '£'),
 )
