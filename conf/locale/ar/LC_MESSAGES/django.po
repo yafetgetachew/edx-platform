@@ -9385,6 +9385,10 @@ msgstr "الولاية/المقاطعة/المنطقة"
 msgid "Company"
 msgstr "الشركة"
 
+#: openedx/core/djangoapps/user_api/views.py
+msgid "Please select your Country."
+msgstr "يُرجى اختيار البلد"
+
 #. Translators: This label appears above a field on the registration form
 #. which allows the user to input the Job Title
 #: lms/djangoapps/student_account/views.py
