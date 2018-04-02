@@ -1339,3 +1339,5 @@ RECALCULATE_GRADES_ROUTING_KEY = LOW_PRIORITY_QUEUE
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = LOW_PRIORITY_QUEUE
+
+PAID_COURSE_REGISTRATION_CURRENCY = ['usd', '$']

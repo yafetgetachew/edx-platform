@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 This is the default template for our main set of AWS servers.
 """
@@ -516,4 +517,18 @@ MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB = FEATURES.get("MAX_ASSET_UPLOAD_FILE_SIZE_IN_M
 ORA2_FILEUPLOAD_BACKEND = ENV_TOKENS.get('ORA2_FILEUPLOAD_BACKEND', 'filesystem')
 ORA2_FILEUPLOAD_ROOT = ENV_TOKENS.get('ORA2_FILEUPLOAD_BACKEND',  os.path.join(MEDIA_ROOT, 'submissions_attachments/'))
 ORA2_FILEUPLOAD_CACHE_NAME = ENV_TOKENS.get('ORA2_FILEUPLOAD_CACHE_NAME', 'default')
+
+
+PAID_COURSE_REGISTRATION_CURRENCY = ENV_TOKENS.get('PAID_COURSE_REGISTRATION_CURRENCY', PAID_COURSE_REGISTRATION_CURRENCY)
+
+CURRENCIES = (
+    ('tzs', 'TSh'),
+    ('kes', 'KSh'),
+    ('zmk', 'K'),
+    ('etb', 'Br'),
+    ('eur', '€'),
+    ('usd', '$'),
+    ('lsl', 'L'),
+    ('gbp', '£'),
+)
 #RACCOONGANG
