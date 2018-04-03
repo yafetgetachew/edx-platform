@@ -5402,6 +5402,10 @@ msgstr "يُرجى تنزيل تطبيق الهاتف المحمول لمنصّ�
 msgid "Download the {platform_name} mobile app from Google Play"
 msgstr "يُرجى تنزيل تطبيق الهاتف المحمول لمنصّة {platform_name} من غوغل بلاي"
 
+#: lms/djangoapps/branding/views.py
+msgid "This field is required."
+msgstr "هذا الحقل مطلوب."
+
 #. Translators: Bulk email from address e.g. ("Physics 101" Course Staff)
 #: lms/djangoapps/bulk_email/tasks.py
 #, python-brace-format
