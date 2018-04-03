@@ -3240,3 +3240,7 @@ ARABIC_MONTHS = [
     "ديسمبر"
 ]
 
+############## Settings for reCaptcha ############################
+GOOGLE_RECAPTCHA_SECRET_KEY = ""
+GOOGLE_RECAPTCHA_DATA_SITE_KEY = ""
+USE_GOOGLE_RECAPTCHA = False

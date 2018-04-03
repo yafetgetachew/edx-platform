@@ -924,6 +924,11 @@ msgstr ""
 "إذا لم تكن قد أنشأت حسابًا لدى {platform_name} بعد، يُرجة النقر على "
 "<strong>سجّل الآن</strong> في أعلى الصفحة."
 
+#: common/djangoapps/student/views/login.py common/djangoapps/student/views.py
+msgid "Invalid reCAPTCHA. Please try again."
+msgstr ""
+"ReCAPTCHA غير صالح. حاول مره ثانية."
+
 #: common/djangoapps/student/views/login.py
 msgid "There was an error receiving your login information. Please email us."
 msgstr ""

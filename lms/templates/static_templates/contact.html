@@ -13,6 +13,8 @@ from django.core.urlresolvers import reverse
         <form id="contact_form" name="contact_form" class="" action="${reverse('contact_form')}" method="post">
           <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
           ${form.as_ul() | n}
+            <div class="g-recaptcha" data-sitekey="${google_recaptcha_site_key}"></div>
+            <script src='https://www.google.com/recaptcha/api.js'></script>
           <button type="submit">${_('Submit')}</button>
     </section>
 </main>

@@ -23,6 +23,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 from util.cache import cache_if_anonymous
 from util.json_request import JsonResponse
 from .forms import ContactForm
+from student.decorators import check_recaptcha
 
 log = logging.getLogger(__name__)
 
@@ -313,15 +314,26 @@ def footer(request):
 
 
 @require_http_methods(['GET', 'POST'])
+@check_recaptcha
 def contact_form(request):
     if request.method == 'POST':
+        is_can_to_save = True
+        if settings.USE_GOOGLE_RECAPTCHA:
+            is_can_to_save = request.recaptcha_is_valid
+
         form = ContactForm(request.POST)
-        saved = form.save()
-        if saved:
-            return redirect(reverse('contact_form_sended'))
+        if is_can_to_save:
+            saved = form.save()
+            if saved:
+                return redirect(reverse('contact_form_sended'))
     else:
         form = ContactForm()
-    return render_to_response('static_templates/contact.html', {'form': form})
+
+    context = {
+        'form': form,
+        'google_recaptcha_site_key': settings.GOOGLE_RECAPTCHA_DATA_SITE_KEY
+    }
+    return render_to_response('static_templates/contact.html', context)
 
 
 def contact_form_sended(request):

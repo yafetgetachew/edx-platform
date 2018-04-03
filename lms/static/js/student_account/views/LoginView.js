@@ -49,7 +49,7 @@
                 this.createAccountOption = data.createAccountOption;
                 this.accountActivationMessages = data.accountActivationMessages;
                 this.hideAuthWarnings = data.hideAuthWarnings;
-
+                this.googleRecaptchaSiteKey = data.googleRecaptchaSiteKey;
                 this.listenTo(this.model, 'sync', this.saveSuccess);
                 this.listenTo(this.resetModel, 'sync', this.resetEmail);
             },
@@ -66,7 +66,8 @@
                         providers: this.providers,
                         hasSecondaryProviders: this.hasSecondaryProviders,
                         platformName: this.platformName,
-                        createAccountOption: this.createAccountOption
+                        createAccountOption: this.createAccountOption,
+                        googleRecaptchaSiteKey: this.googleRecaptchaSiteKey
                     }
                 }));
 
