@@ -113,19 +113,24 @@ def _update_certificate_context(context, user_certificate, platform_name):
     )
 
     # Translators:  This text is bound to the HTML 'title' element of the page and appears in the browser title bar
-    context['document_title'] = _("{partner_short_name} {course_number} Certificate | {platform_name}").format(
+    context['document_title'] = _("{partner_short_name} {course_number} Certificate").format(
         partner_short_name=context['organization_short_name'],
-        course_number=context['course_number'],
-        platform_name=platform_name
+        course_number=context['course_number']
     )
+#    context['document_title'] = _("{partner_short_name} {course_number} Certificate | {platform_name}").format(
+#        partner_short_name=context['organization_short_name'],
+#        course_number=context['course_number'],
+#        platform_name=platform_name
+#    )
 
     # Translators:  This text fragment appears after the student's name (displayed in a large font) on the certificate
     # screen.  The text describes the accomplishment represented by the certificate information displayed to the user
-    context['accomplishment_copy_description_full'] = _("successfully completed, received a passing grade, and was "
-                                                        "awarded this {platform_name} {certificate_type} "
-                                                        "Certificate of Completion in ").format(
-        platform_name=platform_name,
-        certificate_type=context.get("certificate_type"))
+    context['accomplishment_copy_description_full'] = _("successfully completed")
+#    context['accomplishment_copy_description_full'] = _("successfully completed, received a passing grade, and was "
+#                                                        "awarded this {platform_name} {certificate_type} "
+#                                                        "Certificate of Completion in ").format(
+#        platform_name=platform_name,
+#        certificate_type=context.get("certificate_type"))
 
     certificate_type_description = get_certificate_description(user_certificate.mode, certificate_type, platform_name)
     if certificate_type_description:
@@ -233,12 +238,15 @@ def _update_course_context(request, context, course, platform_name):
     context['featured'] = course.featured
     if context['organization_long_name']:
         # Translators:  This text represents the description of course
-        context['accomplishment_copy_course_description'] = _('a course of study offered by {partner_short_name}, '
-                                                              'an online learning initiative of '
-                                                              '{partner_long_name}.').format(
-            partner_short_name=context['organization_short_name'],
-            partner_long_name=context['organization_long_name'],
-            platform_name=platform_name)
+        context['accomplishment_copy_course_description'] = _('a course of study offered by {partner_short_name}').format(
+            partner_short_name=context['organization_short_name']
+        )
+#        context['accomplishment_copy_course_description'] = _('a course of study offered by {partner_short_name}, '
+#                                                              'an online learning initiative of '
+#                                                              '{partner_long_name}.').format(
+#            partner_short_name=context['organization_short_name'],
+#            partner_long_name=context['organization_long_name'],
+#            platform_name=platform_name)
     else:
         # Translators:  This text represents the description of course
         context['accomplishment_copy_course_description'] = _('a course of study offered by '
