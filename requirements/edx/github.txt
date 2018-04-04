@@ -97,6 +97,7 @@ git+https://github.com/edx/edx-proctoring.git@0.12.21#egg=edx-proctoring==0.12.2
 -e git+https://github.com/open-craft/xblock-poll@v1.1#egg=xblock-poll==1.1
 git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.7#egg=xblock-drag-and-drop-v2==2.0.7
 -e git+https://github.com/raccoongang/edx-oauth-client.git@scout-drupal#egg=edx_oauth_client
+-e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx_xblock_scorm
 
 # Raccoongang fixed search for course visibility
 -e git+https://github.com/raccoongang/edx-search.git@0.1.2-rg#egg=edx-search
