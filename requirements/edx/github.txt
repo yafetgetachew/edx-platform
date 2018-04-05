@@ -104,5 +104,7 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-
 -e git+https://github.com/raccoongang/edx-xblock-in-video-quiz.git#egg=invideoquiz-xblock
 -e git+https://github.com/OfficeDev/xblock-officemix.git#egg=xblock_officemix
 
+-e git+https://github.com/eduNEXT/flow-control-xblock.git#egg=flow_control_xblock
+
 # Raccoongang fixed search for course visibility
 -e git+https://github.com/raccoongang/edx-search.git@0.1.2-rg#egg=edx-search
