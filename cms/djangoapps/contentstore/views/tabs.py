@@ -44,6 +44,10 @@ def tabs_handler(request, course_key_string):
         raise PermissionDenied()
 
     course_item = modulestore().get_course(course_key)
+    if course_item is None:
+        return JsonResponse(
+            {"error": "course_item with course_key '{0}' inot found.".format(course_key)}, status=400
+        )
 
     if 'application/json' in request.META.get('HTTP_ACCEPT', 'application/json'):
         if request.method == 'GET':

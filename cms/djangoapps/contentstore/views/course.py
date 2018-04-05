@@ -972,6 +972,10 @@ def settings_handler(request, course_key_string):
     credit_eligibility_enabled = settings.FEATURES.get('ENABLE_CREDIT_ELIGIBILITY', False)
     with modulestore().bulk_operations(course_key):
         course_module = get_course_and_check_access(course_key, request.user)
+        if course_module is None:
+            return JsonResponse({
+                "ErrMsg": _("Access to course module {0} for user {1} denied.").format(course_key, request.user)}
+            )
         if 'text/html' in request.META.get('HTTP_ACCEPT', '') and request.method == 'GET':
             upload_asset_url = reverse_course_url('assets_handler', course_key)
 
