@@ -15,6 +15,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from openedx.core.djangoapps.xmodule_django.models import CourseKeyField
 from request_cache.middleware import RequestCache, ns_request_cached
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 Mode = namedtuple('Mode',
                   [
@@ -55,7 +56,14 @@ class CourseMode(models.Model):
     min_price = models.IntegerField(default=0, verbose_name=_("Price"))
 
     # the currency these prices are in, using lower case ISO currency codes
-    currency = models.CharField(default="tzs", max_length=8)
+    currency = models.CharField(
+        default=configuration_helpers.get_value(
+            'PAID_COURSE_REGISTRATION_CURRENCY',
+            settings.PAID_COURSE_REGISTRATION_CURRENCY
+        )[0],
+        max_length=8,
+        choices=settings.CURRENCIES
+    )
 
     # The datetime at which the course mode will expire.
     # This is used to implement "upgrade" deadlines.
@@ -647,11 +655,24 @@ class CourseMode(models.Model):
         """
         modes = cls.modes_for_course(course_id)
         try:
-          min_coures_price = min(mode.min_price for mode in modes if mode.currency.lower() == currency.lower())
+            min_course_price = min(mode.min_price for mode in modes if mode.currency.lower() == currency.lower())
         except ValueError:
-          min_coures_price = 0
+            min_course_price = 0
 
-        return min_coures_price
+        return min_course_price
+
+    @classmethod
+    def min_course_price(cls, course_id):
+        modes = cls.modes_for_course(course_id)
+        modes.sort(key=lambda x: x.min_price)
+        try:
+            min_coures_price = modes and modes[0].min_price
+            currency = modes and modes[0].currency
+        except ValueError:
+            min_coures_price = 0
+            currency = configuration_helpers.get_value('PAID_COURSE_REGISTRATION_CURRENCY', settings.PAID_COURSE_REGISTRATION_CURRENCY)[0]
+
+        return (min_coures_price, currency)
 
     @classmethod
     def is_eligible_for_certificate(cls, mode_slug):

@@ -15,6 +15,7 @@ from opaque_keys import InvalidKeyError
 from util.date_utils import get_time_display
 from xmodule.modulestore.django import modulestore
 from course_modes.models import CourseMode, CourseModeExpirationConfig
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 # Technically, we shouldn't be doing this, since verify_student is defined
 # in LMS, and course_modes is defined in common.
@@ -62,6 +63,13 @@ class CourseModeForm(forms.ModelForm):
 
         default_tz = timezone(settings.TIME_ZONE)
 
+        self.site_currency = configuration_helpers.get_value('PAID_COURSE_REGISTRATION_CURRENCY')
+
+        if self.site_currency:
+            self.initial['currency'] = self.site_currency[0]
+            self.fields['currency'].widget.attrs['disabled'] = 'disabled'
+            self.fields['currency'].required = False
+
         if self.instance._expiration_datetime:  # pylint: disable=protected-access
             # django admin is using default timezone. To avoid time conversion from db to form
             # convert the UTC object to naive and then localize with default timezone.
@@ -80,6 +88,11 @@ class CourseModeForm(forms.ModelForm):
                 default_tz.localize(deadline.replace(tzinfo=None))
                 if deadline is not None else None
             )
+
+    def clean_currency(self):
+        if self.site_currency:
+            return self.site_currency[0]
+        return self.cleaned_data.get('currency', settings.PAID_COURSE_REGISTRATION_CURRENCY[0])
 
     def clean_course_id(self):
         course_id = self.cleaned_data['course_id']

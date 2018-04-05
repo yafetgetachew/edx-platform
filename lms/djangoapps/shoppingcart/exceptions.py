@@ -60,3 +60,6 @@ class UnexpectedOrderItemStatus(Exception):
 
 class ItemNotFoundInCartException(Exception):
     pass
+
+class DifferentCurrencyException(InvalidCartItem):
+    pass

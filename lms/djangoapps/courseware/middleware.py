@@ -69,7 +69,7 @@ class SsoMiddleware(object):
                     return False
 
             thing_to_hash = '{}:{}:{}'.format(access_id, timestamp_request, username)
-            dig = hmac.new(str(settings.CAMARA_SECRET), msg=thing_to_hash, digestmod=hashlib.sha256).digest()
+            dig = hmac.new(str(settings.CAMARA_SECRET), msg=thing_to_hash, digestmod=hashlib.sha256).hexdigest()
             verification_signature = base64.b64encode(dig).decode()
 
             if verification_signature != signature.replace(' ', '+'):
