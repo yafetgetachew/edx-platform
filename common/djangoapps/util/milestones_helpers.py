@@ -158,11 +158,12 @@ def get_prerequisite_courses_display(course_descriptor):
         for course_id in course_descriptor.pre_requisite_courses:
             course_key = CourseKey.from_string(course_id)
             required_course_descriptor = modulestore().get_course(course_key)
-            prc = {
-                'key': course_key,
-                'display': get_course_display_string(required_course_descriptor)
-            }
-            pre_requisite_courses.append(prc)
+            if required_course_descriptor:
+                prc = {
+                    'key': course_key,
+                    'display': get_course_display_string(required_course_descriptor)
+                }
+                pre_requisite_courses.append(prc)
     return pre_requisite_courses
 
 
