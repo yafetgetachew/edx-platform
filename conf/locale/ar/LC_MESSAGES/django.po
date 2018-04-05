@@ -3717,7 +3717,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
 msgid "{section_type} {index} Unreleased - 0% (?/?)"
-msgstr ""
+msgstr "{section_type} {index} غير مصدر  - 0% (?/?)"
 
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
@@ -3728,7 +3728,7 @@ msgstr "أقل نتائج {drop_count} {section_type} لن تُحسب."
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
 msgid "{section_type} Average = {percent:.0%}"
-msgstr ""
+msgstr "{section_type} معدل = {percent:.0%}"
 
 #. Translators: Avg is short for Average
 #: common/lib/xmodule/xmodule/graders.py
@@ -25705,3 +25705,9 @@ msgstr "أُنشأت مراجعة جديدة: الدمج بين المراجعة
 
 msgid "Enroll"
 msgstr "سجّل"
+
+msgid "TOTAL"
+msgstr "المجموع الكلي"
+
+msgid "Unreleased"
+msgstr "غير مصدر"
