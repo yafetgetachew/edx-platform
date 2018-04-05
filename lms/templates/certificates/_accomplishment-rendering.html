@@ -5,89 +5,66 @@ course_mode_class = course_mode if course_mode else ''
 %>
 
 <main class="accomplishment accomplishment-main" style="background:rgb(12, 134, 118)!important">
-
     <div class="wrapper-accomplishment-rendering">
         <div class="accomplishment-rendering">
-            <span class="deco-corner deco-corner-tl"></span>
-            <span class="deco-corner deco-corner-tr"></span>
-            <span class="deco-corner deco-corner-bl"></span>
-            <span class="deco-corner deco-corner-br"></span>
+            <!--<span class="deco-corner deco-corner-tl"></span>-->
+            <!--<span class="deco-corner deco-corner-tr"></span>-->
+            <!--<span class="deco-corner deco-corner-bl"></span>-->
+            <!--<span class="deco-corner deco-corner-br"></span>-->
 
             <div class="accomplishment-type">
-                <span class="accomplishment-type-symbol">
-                    <img class="src" src="http://etraining.moe.gov.sa/static/stanford-style/images/logo.png" alt="">
+                <br/>
+                <span style="float: right; margin-right: 32px;">
+                    <img class="organization-logo" src="${organization_logo.url}" alt="${platform_name}">
                 </span>
 
-                <span class="accomplishment-type-label hd-4" style="color: #00b0a2!important; font-size: 40px; padding-bottom: 20px;"
->شهادة إكمال دورة￼</span>
-
-
-            <!--<span class="accomplishment-type-label hd-6"> تم منح شهادة إتمام الدورة للمتدرب</span>
--->
+                <span class="accomplishment-type-label hd-4" style="color: #00b0a2!important; font-size: 40px; padding-bottom: 20px;">
+                        شهادة إكمال دورة
+                </span>
             </div>
 
             <div class="wrapper-statement-and-signatories">
                 <span class="accomplishment-type-label hd-6">
-                    تم منح شهادة إتمام الدورة للمتدرب
+                    تم منح شهادة إتمام الدورة للأستاذ
                 </span>
                 <div class="accomplishment-statement">
                     <p class="accomplishment-statement-lead" style="text-align: right; margin-right: 98px;">
                         <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</strong>
                         <span class="accomplishment-summary copy copy-lead"> لإتمام المسار التالي بنجاح</span>
-
                         <span class="accomplishment-course hd-1 emphasized">
                             <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
                         </span>
                     </p>
-
-                    <p class="accomplishment-statement-detail copy copy-lead">${accomplishment_copy_course_description}</p>
                 </div>
 
                 % if mode != 'base':
                 <div class="accomplishment-signatories">
-                    <h3 class="accomplishment-signatories-title sr-only">${_("Noted by")}</h3>
-
                     <div class="wrapper-signatories">
                         <div class="list-signatories">
                             % if certificate_data:
                                 % for signatory in certificate_data.get('signatories', []):
-                                <div class="signatory">
+                                <div class="signatory" style="float: right;">
                                     <img class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
 
                                     <h4 class="signatory-name hd-5">التوقيع</h4>
                                     <p class="signatory-credentials copy copy-micro">
                                     </p>
                                 </div>
-                                <div class="signatory">
+                                <div class="signatory" style="float: right;">
                                     <h4 class="signatory-name hd-5" style="font-family: verdana; margin-top: 108px; float: left;">التاريخ: ${certificate_date_issued}</h4>
                                     <p class="signatory-credentials copy copy-micro"></p>
                                 </div>
                                 % endfor
+
+                                <div class="organization organization-edX">
+                                    <img class="organization-logo" src="http://staging.ilearn-portal.com/lms/star.png"
+                                         alt="${platform_name}" style="width: 150px;">
+                                </div>
                             % endif
                         </div>
                     </div>
                 </div>
                 % endif
-            </div>
-
-            <div class="accomplishment-orgs">
-                <h3 class="accomplishment-orgs-title sr-only">${_("Supported by the following organizations")}</h3>
-
-                <ul class="wrapper-orgs list-orgs">
-                    <li class="wrapper-organization">
-                        <div class="organization organization-edX">
-                            <img class="organization-logo" src="http://staging.ilearn-portal.com/lms/star.png" alt="${platform_name}">
-                        </div>
-                    </li>
-
-                    % if organization_logo:
-                    <li class="wrapper-organization">
-                        <div class="organization">
-                            <img class="organization-logo" src="${organization_logo.url}" alt="${platform_name}">
-                        </div>
-                    </li>
-                    % endif
-                </ul>
             </div>
         </div>
     </div>
