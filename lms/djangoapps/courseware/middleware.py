@@ -43,16 +43,10 @@ class SsoMiddleware(object):
             request.GET.has_key("timestamp")
         )
         is_need_login_another_user = is_enable_sso and is_has_attr and request.user.is_authenticated()
-
-        if is_need_login_another_user:
-            is_need_logout = True
-        else:
-            is_need_logout = False
-
         is_need_login = (not request.user.is_authenticated()) and is_enable_sso
 
         if is_need_login_another_user or is_need_login:
-            status = self._check_sso_and_register_user(request, is_need_logout)
+            status = self._check_sso_and_register_user(request, is_need_login_another_user)
 
             if 'course_id' in view_kwargs:
                 if not status:
