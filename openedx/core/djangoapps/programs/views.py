@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.views.decorators.http import require_GET
+from django.core.urlresolvers import reverse
 
 from edxmako.shortcuts import render_to_response
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
@@ -18,15 +19,19 @@ def program_listing(request, user=None):
 
     meter = ProgramProgressMeter(user)
 
+    programs = user and meter.engaged_programs or meter.programs
+    mktg_url = lambda p: reverse('program_marketing_view', kwargs={'program_uuid': p['uuid']})
+    [p.update({'marketing_page_url': mktg_url(p)}) for p in programs]
+
     context = {
         'disable_courseware_js': True,
         'marketing_url': get_program_marketing_url(programs_config),
         'nav_hidden': True,
-        'programs': user and meter.engaged_programs or meter.programs,
+        'programs': programs,
         'progress': meter.progress(),
         'show_program_listing': programs_config.enabled,
         'uses_pattern_library': True,
+        'is_marketing': not bool(user)
     }
 
     return render_to_response('learner_dashboard/programs.html', context)
-

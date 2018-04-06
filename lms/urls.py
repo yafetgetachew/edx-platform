@@ -448,7 +448,7 @@ urlpatterns += (
     ),
 
     url(
-        r'^xseries$',
+        r'^xseries$|^programs$',
         'openedx.core.djangoapps.programs.views.program_listing',
          name='programs',
     ),
