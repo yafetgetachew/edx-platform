@@ -28,11 +28,12 @@ course_mode_class = course_mode if course_mode else ''
                 <span class="accomplishment-type-label hd-6">
                     تم منح شهادة إتمام الدورة للأستاذ
                 </span>
-                <div class="accomplishment-statement">
-                    <p class="accomplishment-statement-lead" style="text-align: right; margin-right: 98px;">
-                        <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</strong>
-                        <span class="accomplishment-summary copy copy-lead"> لإتمام المسار التالي بنجاح</span>
-                        <span class="accomplishment-course hd-1 emphasized">
+                <div>
+                    <p style="text-align: right;">
+                        <strong class="accomplishment-type-label hd-1 emphasized">${accomplishment_copy_name | h}</strong>
+                        <br/>
+                        <span class="accomplishment-type-label copy copy-lead"> لإتمام المسار التالي بنجاح</span>
+                        <span class="accomplishment-type-label hd-1 emphasized">
                             <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
                         </span>
                     </p>
