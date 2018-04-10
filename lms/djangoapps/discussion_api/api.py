@@ -50,17 +50,20 @@ from lms.lib.comment_client.utils import CommentClientRequestError
 from openedx.core.djangoapps.course_groups.cohorts import get_cohort_id
 from openedx.core.lib.exceptions import CourseNotFoundError, PageNotFoundError, DiscussionNotFoundError
 
+from natsort import natsorted, ns
+
 
 class DiscussionTopic(object):
     """
     Class for discussion topic structure
     """
 
-    def __init__(self, topic_id, name, thread_list_url, children=None):
+    def __init__(self, topic_id, name, thread_list_url, children=None, sort_key=None):
         self.id = topic_id  # pylint: disable=invalid-name
         self.name = name
         self.thread_list_url = thread_list_url
         self.children = children or []  # children are of same type i.e. DiscussionTopic
+        self.sort_key = sort_key or name
 
 
 class DiscussionEntity(Enum):
@@ -281,7 +284,7 @@ def get_non_courseware_topics(request, course_key, course, topic_ids):
     for name, entry in sorted(course.discussion_topics.items(), key=lambda item: item[1].get("sort_key", item[0])):
         if not topic_ids or entry['id'] in topic_ids:
             discussion_topic = DiscussionTopic(
-                entry["id"], name, get_thread_list_url(request, course_key, [entry["id"]])
+                entry["id"], name, get_thread_list_url(request, course_key, [entry["id"]], entry.get("sort_key"))
             )
             non_courseware_topics.append(DiscussionTopicSerializer(discussion_topic).data)
 
@@ -289,6 +292,15 @@ def get_non_courseware_topics(request, course_key, course, topic_ids):
                 existing_topic_ids.add(entry["id"])
 
     return non_courseware_topics, existing_topic_ids
+
+
+def _sort(items):
+    items = natsorted(items, key=lambda x: x.get('sort_key', x.get('name')), alg=ns.IGNORECASE)
+    for item in items:
+        children = item.get('children', [])
+        if children:
+            item['children'] = _sort(children)
+    return items
 
 
 def get_course_topics(request, course_key, topic_ids=None):
@@ -325,8 +337,8 @@ def get_course_topics(request, course_key, topic_ids=None):
             )
 
     return {
-        "courseware_topics": courseware_topics,
-        "non_courseware_topics": non_courseware_topics,
+        "courseware_topics": _sort(courseware_topics),
+        "non_courseware_topics": _sort(non_courseware_topics),
     }
 
 
