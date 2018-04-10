@@ -140,6 +140,7 @@ class TrackingBackend(BaseBackend):
             CreditProcessor(),
             CreditEligibilityProcessor(),
             CreditProcessor(),
+            EnrollmentProcessor(),
         ]
 
     def send(self, event):
