@@ -9884,10 +9884,10 @@ msgstr "حدث خطأ"
 #: lms/templates/registration/password_reset_email.html
 msgid ""
 "You're receiving this e-mail because you requested a password reset for your"
-" user account at %(platform_name)s."
+" user account at %(site_name)s."
 msgstr ""
 "وصلتك رسالة البريد الالكتروني هذه بناءً على طلبك بتغيير كلمة المرور لحسابك "
-"على %(platform_name)s."
+"على %(site_name)s."
 
 #: lms/templates/registration/password_reset_email.html
 #, python-format
