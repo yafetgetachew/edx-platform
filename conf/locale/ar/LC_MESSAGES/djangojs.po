@@ -9145,7 +9145,7 @@ msgstr "استخدام بياناتي لدى المؤسّسة/ الحرم الج
 #: lms/templates/student_account/password_reset.underscore
 #: test_root/staticfiles/templates/student_account/password_reset.underscore
 msgid "Password assistance"
-msgstr "المساعدة بخصوص كلمة المرور"
+msgstr "تغيير كلمة المرور"
 
 #: lms/templates/student_account/password_reset.underscore
 #: test_root/staticfiles/templates/student_account/password_reset.underscore
