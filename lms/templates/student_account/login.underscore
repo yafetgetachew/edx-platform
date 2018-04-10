@@ -8,6 +8,8 @@
 </div>
 <% } %>
 
+<h2><%- gettext("تسجيل الدخول") %></h2>
+
 <form id="login" class="login-form" tabindex="-1" method="POST" autocomplete="off">
 
     <p class="sr">
