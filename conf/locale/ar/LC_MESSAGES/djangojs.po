@@ -7550,13 +7550,13 @@ msgstr "المناقشة"
 #: test_root/staticfiles/common/templates/discussion/thread.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/thread.underscore
 msgid "Add a Response"
-msgstr "إضافة رد:"
+msgstr "إضافة رد"
 
 #: common/static/common/templates/discussion/thread.underscore
 #: test_root/staticfiles/common/templates/discussion/thread.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/thread.underscore
 msgid "Add a response:"
-msgstr "أضف رداً:"
+msgstr "أضف رداً"
 
 #: common/static/common/templates/discussion/topic.underscore
 #: test_root/staticfiles/common/templates/discussion/topic.underscore
