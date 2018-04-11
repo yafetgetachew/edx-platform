@@ -7579,7 +7579,7 @@ msgstr "صفحة المناقشة الرئيسية"
 #: test_root/staticfiles/discussion/templates/discussion-home.underscore
 #, python-format
 msgid "How to use %(platform_name)s discussions"
-msgstr "كيفية استخدام نقاشات %(platform_name)s"
+msgstr "إرشادات استخدام المناقشة في %(platform_name)s"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #: test_root/staticfiles/discussion/templates/discussion-home.underscore
