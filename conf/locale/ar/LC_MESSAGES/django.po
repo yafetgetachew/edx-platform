@@ -17005,11 +17005,11 @@ msgstr "قائمة مواضيع النقاش"
 
 #: lms/templates/discussion/_filter_dropdown.html
 msgid "Filter Topics"
-msgstr "فلترة المواضيع"
+msgstr "تصفية المواضيع"
 
 #: lms/templates/discussion/_filter_dropdown.html
 msgid "filter topics"
-msgstr "فلترة المواضيع"
+msgstr "تصفية المواضيع"
 
 #: lms/templates/discussion/_filter_dropdown.html
 msgid "All Discussions"
@@ -17022,7 +17022,7 @@ msgstr "المنشورات التي أتابعها "
 #. Translators: This labels a filter menu in forum navigation
 #: lms/templates/discussion/_thread_list_template.html
 msgid "Filter:"
-msgstr "الفلترة:"
+msgstr "التصفية:"
 
 #. Translators: This is a menu option for showing all forum threads unfiltered
 #: lms/templates/discussion/_thread_list_template.html
@@ -25212,7 +25212,7 @@ msgstr "المقال مفتوح للتعديل"
 
 #: wiki/forms.py
 msgid "Filter"
-msgstr "فلترة"
+msgstr "تصفية"
 
 #: wiki/core/plugins/base.py
 msgid "Settings for plugin"
