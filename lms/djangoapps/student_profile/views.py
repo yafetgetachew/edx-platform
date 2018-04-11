@@ -18,6 +18,7 @@ from student.models import User
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 
+@configuration_helpers.check_site_setting('PROFILE_ENABLED', True)
 @login_required
 @require_http_methods(['GET'])
 def learner_profile(request, username):

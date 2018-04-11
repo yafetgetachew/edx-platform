@@ -15,6 +15,7 @@ from openedx.core.djangoapps.auth_exchange.views import LoginWithAccessTokenView
 from openedx.core.djangoapps.catalog.models import CatalogIntegration
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
+from openedx.core.djangoapps.site_configuration.helpers import get_value
 from django_comment_common.models import ForumsConfig
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from util.enterprise_helpers import enterprise_enabled
@@ -579,11 +580,11 @@ urlpatterns += (
     ),
 
     # Student profile
-#    url(
-#        r'^u/(?P<username>[\w.@+-]+)$',
-#        'student_profile.views.learner_profile',
-#        name='learner_profile',
-#    ),
+    url(
+        r'^u/(?P<username>[\w.@+-]+)$',
+        'student_profile.views.learner_profile',
+        name='learner_profile',
+    ),
 
     # Student Notes
     url(
