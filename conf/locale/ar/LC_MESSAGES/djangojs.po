@@ -3119,7 +3119,7 @@ msgstr "استعراض المنشور في HTML"
 #: test_root/staticfiles/common/templates/discussion/new-post.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/new-post.underscore
 msgid "Your question or idea (required)"
-msgstr "سؤالك أو فكرتك (مطلوب)"
+msgstr "سؤالك أو فكرتك (*)"
 
 #: lms/static/js/Markdown.Editor.js
 msgid "Insert Hyperlink"
@@ -7246,7 +7246,7 @@ msgstr "كافّة المجموعات "
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/thread-edit.underscore
 msgid ""
 "Add a clear and descriptive title to encourage participation. (Required)"
-msgstr "أضف عنوان واضح ومفصل لتشجيع المشاركة. (مطلوب)"
+msgstr "أضف عنوان واضح ومفصل لتشجيع المشاركة. (*)"
 
 #: common/static/common/templates/discussion/new-post.underscore
 #: test_root/staticfiles/common/templates/discussion/new-post.underscore
@@ -7532,7 +7532,7 @@ msgid ""
 "conversations. (Required)"
 msgstr ""
 "أسئلة التي تثير قضايا التي تحتاج إلى إجابات. مناقشات تبادل الأفكار وبدء "
-"المحادثات. (مطلوب)"
+"المحادثات. (*)"
 
 #: common/static/common/templates/discussion/thread-type.underscore
 #: test_root/staticfiles/common/templates/discussion/thread-type.underscore
@@ -7568,7 +7568,7 @@ msgstr "منطقة الموضوع"
 #: test_root/staticfiles/common/templates/discussion/topic.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/topic.underscore
 msgid "Add your post to a relevant topic to help others find it. (Required)"
-msgstr "أضف ردك للموضوع ذو الصلة لمساعدة الآخرين في العثور عليه. (مطلوب)"
+msgstr "أضف ردك للموضوع ذو الصلة لمساعدة الآخرين في العثور عليه. (*)"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #: test_root/staticfiles/discussion/templates/discussion-home.underscore
