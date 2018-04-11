@@ -12792,6 +12792,10 @@ msgstr "أضف منشوراً"
 msgid "New topic form"
 msgstr "استمارة موضوع جديد"
 
+#: lms/djangoapps/discussion/templates/discussion/discussion_profile_page.html
+msgid "Discussion - {course_number}"
+msgstr "المناقشة – {course_number}"
+
 #: lms/djangoapps/discussion/templates/discussion/discussion_board_fragment.html
 msgid "Discussion thread list"
 msgstr "قائمة مواضيع المناقشة "
