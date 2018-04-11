@@ -5407,6 +5407,7 @@ msgid "Overall Score"
 msgstr "النتيجة الكلية"
 
 #: openedx/features/course_bookmarks/static/course_bookmarks/js/views/bookmark_button.js
+#: lms/static/course_bookmarks/js/views/bookmark_button.js
 msgid "Bookmark this page"
 msgstr "إضافة علامة مرجعية"
 
