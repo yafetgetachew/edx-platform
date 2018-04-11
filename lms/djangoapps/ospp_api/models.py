@@ -1,11 +1,14 @@
 import logging
-import requests
 
-from django.db import models
+import requests
 from django.conf import settings
-from student.models import CourseEnrollment
+from django.db import models
 from edx_proctoring.models import ProctoredExamStudentAttempt
-from eventtracking import tracker as eventtracking
+from eventtracking import tracker
+from lms.djangoapps.verify_student.models import SoftwareSecurePhotoVerification
+
+from course_modes.models import CourseMode
+from student.models import CourseEnrollment
 
 log = logging.getLogger(__name__)
 
@@ -61,3 +64,29 @@ def on_proctoring_attempts_save(
 
 # Hook for implement custom save method for the library model `ProctoredExamStudentAttempt`
 ProctoredExamStudentAttempt.save = on_proctoring_attempts_save
+
+
+def on_photo_verification_save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+):
+    super(SoftwareSecurePhotoVerification, self).save(
+        force_insert=force_insert,
+        force_update=force_update,
+        using=using,
+        update_fields=update_fields,
+    )
+    eventtracking = tracker.get_tracker()
+    avalible_enrolls_modes = [CourseMode.VERIFIED, CourseMode.CREDIT_MODE]
+    for enrollment in CourseEnrollment.objects.all().filter(user=self.user, mode__in=avalible_enrolls_modes):
+        context = {
+            'username': self.user.username,
+            'course_id': enrollment.course_id.to_deprecated_string()
+        }
+        with eventtracking.context('custom_user_context', context):
+            eventtracking.emit('photo_varification.update', {
+                'idVerify': self.status,
+                'idVerifyDate': self.updated_at.strftime("%Y-%m-%d %H:%M:%S")
+            })
+
+
+SoftwareSecurePhotoVerification.save = on_photo_verification_save

@@ -127,6 +127,19 @@ class EnrollmentProcessor(StatisticProcessor):
         return result
 
 
+class PhotoVerificationProcessor(StatisticProcessor):
+
+    def is_can_process(self, event):
+        return self.get_event_name(event) == 'photo_varification.update'
+
+    def process(self, event):
+        result = {
+            'idVerify': event['data']['idVerify'],
+            'idVerifyDate': event['data']['idVerifyDate'],
+        }
+        return result
+
+
 class TrackingBackend(BaseBackend):
 
     cache_lifetime = getattr(settings, 'ASU_CACHE_LIFETIME', 60 * 60 * 24 * 30)
@@ -141,6 +154,7 @@ class TrackingBackend(BaseBackend):
             CreditEligibilityProcessor(),
             CreditProcessor(),
             EnrollmentProcessor(),
+            PhotoVerificationProcessor(),
         ]
 
     def send(self, event):
