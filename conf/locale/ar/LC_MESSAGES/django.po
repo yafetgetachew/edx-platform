@@ -3717,7 +3717,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
 msgid "{section_type} {index} Unreleased - 0% (?/?)"
-msgstr ""
+msgstr "{section_type} {index} غير مصدر - 0% (?/?)"
 
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
@@ -3735,11 +3735,6 @@ msgstr "{section_type} متوسط = {percent:.0%}"
 #, python-brace-format
 msgid "{short_label} Avg"
 msgstr "{short_label} متوسط"
-
-#: common/lib/xmodule/xmodule/graders.py
-#, python-brace-format
-msgid "{section_type} {index} Unreleased - 0% (?/?)"
-msgstr "{section_type} {index} غير مصدر - 0% (?/?)"
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "Text"
