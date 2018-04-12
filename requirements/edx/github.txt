@@ -123,6 +123,7 @@ git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.18#egg=xblock-
 -e git+https://github.com/Microsoft/xblock-azure-media-services.git#egg=azure-media-services-xblock
 
 -e git+https://github.com/MarCnu/flashXBlock.git#egg=xblock-flashXBlock
+-e git+https://github.com/MarCnu/pdfXBlock.git#egg=xblock-pdfXBlock
 
 # Raccoongang fixed search for course visibility
 -e git+https://github.com/raccoongang/edx-search.git@1.1.0-rg#egg=edx-search
