@@ -466,6 +466,7 @@ def signin_user(request):
     return render_to_response('login.html', context)
 
 
+@configuration_helpers.check_site_setting('REGISTRATION_ENABLED', True)
 @ensure_csrf_cookie
 def register_user(request, extra_context=None):
     """Deprecated. To be replaced by :class:`student_account.views.login_and_registration_form`."""
