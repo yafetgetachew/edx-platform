@@ -3709,6 +3709,11 @@ msgid "{assignment_type} = {weighted_percent:.2%} of a possible {weight:.2%}"
 msgstr "{assignment_type} = {weighted_percent:.2%} من ضمن {weight:.2%} ممكنة."
 
 #: common/lib/xmodule/xmodule/graders.py
+#, python-brace-format
+msgid "{0} = {1:.2%} of a possible {2:.2%}"
+msgstr "{0} = {1:.2%} من ضمن {2:.2%} ممكنة."
+
+#: common/lib/xmodule/xmodule/graders.py
 msgid "Generated"
 msgstr ""
 
