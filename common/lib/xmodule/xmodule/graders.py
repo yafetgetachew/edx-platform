@@ -14,6 +14,7 @@ from datetime import datetime
 
 from contracts import contract
 from pytz import UTC
+from django.utils.translation import ugettext as _
 
 log = logging.getLogger("edx.courseware")
 
@@ -392,9 +393,10 @@ class AssignmentFormatGrader(CourseGrader):
                 )
             else:
                 percentage = 0.0
-                summary = u"{section_type} {index} Unreleased - 0% (?/?)".format(
+                locale_summary = _(u"{section_type} {index} Unreleased - 0% (?/?)")
+                summary = locale_summary.format(
                     index=i + self.starting_index,
-                    section_type=self.section_type
+                    section_type=self.section_type,
                 )
 
             short_label = u"{short_label} {index:02d}".format(
@@ -426,11 +428,13 @@ class AssignmentFormatGrader(CourseGrader):
             breakdown = [{'percent': total_percent, 'label': total_label,
                           'detail': total_detail, 'category': self.category, 'prominent': True}, ]
         else:
-            total_detail = u"{section_type} Average = {percent:.0%}".format(
+            locale_total_detail = _(u"{section_type} Average = {percent:.0%}")
+            total_detail = locale_total_detail.format(
                 percent=total_percent,
                 section_type=self.section_type
             )
-            total_label = u"{short_label} Avg".format(short_label=self.short_label)
+            locale_total_label = _(u"{short_label} Avg")
+            total_label = locale_total_label.format(short_label=self.short_label,)
 
             if self.show_only_average:
                 breakdown = []

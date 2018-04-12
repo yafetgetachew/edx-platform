@@ -3728,13 +3728,18 @@ msgstr "أقل نتائج {drop_count} {section_type} لن تُحسب."
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
 msgid "{section_type} Average = {percent:.0%}"
-msgstr ""
+msgstr "{section_type} متوسط = {percent:.0%}"
 
 #. Translators: Avg is short for Average
 #: common/lib/xmodule/xmodule/graders.py
 #, python-brace-format
 msgid "{short_label} Avg"
 msgstr "{short_label} متوسط"
+
+#: common/lib/xmodule/xmodule/graders.py
+#, python-brace-format
+msgid "{section_type} {index} Unreleased - 0% (?/?)"
+msgstr "{section_type} {index} غير مصدر - 0% (?/?)"
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "Text"
