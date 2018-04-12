@@ -18,6 +18,7 @@ log = logging.getLogger(__name__)
 # HACK: This shouldn't be hard-coded to two types
 # OBSOLETE: This obsoletes 'type'
 CLASS_PRIORITY = [
+    'news',
     'maps',
     'how_to',
     'text_icon',

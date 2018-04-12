@@ -203,6 +203,12 @@ $seq-nav-height: 44px;
           }
         }
 
+        &.seq_news {
+          .icon:before {
+            content: "\f1ea";  // .fa-newspaper-o
+          }
+        }
+
         .sequence-tooltip {
           @include text-align(left);
           @extend %ui-depth2;

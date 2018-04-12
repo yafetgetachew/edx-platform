@@ -96,6 +96,7 @@ class HtmlBlock(object):
             {"display_name": _("Text"), "value": "text_icon"},
             {"display_name": _("\"How to\""), "value": "how_to"},
             {"display_name": _("Learner location maps"), "value": "maps"},
+            {"display_name": _("ICNC News and Blog"), "value": "news"},
         ],
         scope=Scope.settings
     )
