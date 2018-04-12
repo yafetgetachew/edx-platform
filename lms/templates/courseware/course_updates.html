@@ -1,9 +1,17 @@
-<%! from django.utils.translation import ugettext as _ %>
+<%! from django.utils.translation import ugettext as _
+from datetime import datetime
+from django.conf import settings
+%>
 <div class="recent-updates">
   % for index, update in enumerate(visible_updates):
     <article class="updates-article">
       % if not update.get("is_error"):
-        <h5 class="date" id="msg-date-${index}">${update.get("date")}</h5>
+        <%
+          date = datetime.strptime(update.get("date"), "%B %d, %Y")
+          month = settings.ARABIC_MONTHS[date.month]
+          localized_date =  format(date.strftime('{} %d, %Y').format(month))
+        %>
+        <h5 class="date" id="msg-date-${index}">${localized_date}</h5>
         <button
             class="toggle-visibility-button"
             data-hide="${_('Hide')}"
@@ -32,8 +40,13 @@
 
 <div class="old-updates hidden toggle-visibility-element" id="old-updates">
   % for index, update in enumerate(hidden_updates):
+  <%
+    date = datetime.strptime(update.get("date"), "%B %d, %Y")
+    month = settings.ARABIC_MONTHS[date.month]
+    localized_date =  format(date.strftime('{} %d, %Y').format(month))
+  %>
     <article class="updates-article">
-      <h5 class="date" id="msg-date-${index + len(visible_updates)}">${update.get("date")}</h5>
+      <h5 class="date" id="msg-date-${index + len(visible_updates)}">${localized_date}</h5>
       <button
           class="toggle-visibility-button"
           data-hide="${_('Hide')}"
