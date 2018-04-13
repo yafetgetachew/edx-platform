@@ -392,13 +392,14 @@ def get_discussion_category_map(course, user, cohorted_if_in_list=False, exclude
     # (I think Kevin already noticed this)  Need to send course_id with requests, store it
     # in the backend.
     for topic, entry in course.discussion_topics.items():
-        category_map['entries'][topic] = {
-            "id": entry["id"],
-            "sort_key": entry.get("sort_key", topic),
-            "start_date": datetime.now(UTC()),
-            "is_cohorted": (course_cohort_settings.is_cohorted and
-                            entry["id"] in course_cohort_settings.cohorted_discussions)
-        }
+        if topic:
+            category_map['entries'][topic] = {
+                "id": entry["id"],
+                "sort_key": entry.get("sort_key", topic),
+                "start_date": datetime.now(UTC()),
+                "is_cohorted": (course_cohort_settings.is_cohorted and
+                                entry["id"] in course_cohort_settings.cohorted_discussions)
+            }
 
     _sort_map_entries(category_map, course.discussion_sort_alpha)
 

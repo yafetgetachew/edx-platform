@@ -282,7 +282,7 @@ def get_non_courseware_topics(request, course_key, course, topic_ids):
     non_courseware_topics = []
     existing_topic_ids = set()
     for name, entry in sorted(course.discussion_topics.items(), key=lambda item: item[1].get("sort_key", item[0])):
-        if not topic_ids or entry['id'] in topic_ids:
+        if name and (not topic_ids or entry['id'] in topic_ids):
             discussion_topic = DiscussionTopic(
                 entry["id"], name, get_thread_list_url(request, course_key, [entry["id"]], entry.get("sort_key"))
             )
