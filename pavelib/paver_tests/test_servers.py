@@ -58,7 +58,12 @@ RCYNC_SECOND_COMMAND = (
     u'python manage.py lms --settings={} print_settings EDX_PLATFORM_STATIC_ROOT_BASE --format=value 2>/dev/null'
 )
 
+
+get_static_collector_root_mock = Mock()
+get_static_collector_root_mock.return_value = Env.STATIC_COLLECTOR_ROOT_TEST
+
 @ddt.ddt
+@patch('pavelib.assets.get_static_collector_root', get_static_collector_root_mock)
 class TestPaverServerTasks(PaverTestCase):
     """
     Test the Paver server tasks.

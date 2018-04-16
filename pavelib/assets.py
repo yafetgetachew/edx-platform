@@ -78,13 +78,17 @@ NPM_INSTALLED_DEVELOPER_LIBRARIES = [
 # Directory to install static vendor files
 NPM_VENDOR_DIRECTORY = path("common/static/common/js/vendor")
 
-# system specific lookup path additions, add sass dirs if one system depends on the sass files for other systems
+# system specific lookup path additions, add sass dirs if one sy stem depends on the sass files for other systems
 SASS_LOOKUP_DEPENDENCIES = {
     'cms': [path('lms') / 'static' / 'sass' / 'partials', ],
 }
 
 # Collectstatic log directory setting
 COLLECTSTATIC_LOG_DIR_ARG = "collect_log_dir"
+
+def get_static_collector_root():
+    return os.environ.get('STATIC_COLLECTOR_ROOT', '/edx/var/edxapp/static_collector')
+
 
 
 def get_sass_directories(system, theme_dir=None):
@@ -874,10 +878,7 @@ def update_assets(args):
 
     application = get_wsgi_application()  # pylint: disable=invalid-name
 
-    if hasattr(django_settings, 'STATIC_COLLECTOR_ROOT'):
-        STATIC_COLLECTOR_ROOT = django_settings.STATIC_COLLECTOR_ROOT
-    else:
-        STATIC_COLLECTOR_ROOT=os.environ.get('STATIC_COLLECTOR_ROOT', '/edx/var/edxapp/static_collector')
+    STATIC_COLLECTOR_ROOT=get_static_collector_root()
 
     if not os.path.isdir(STATIC_COLLECTOR_ROOT):
         os.mkdir(STATIC_COLLECTOR_ROOT)
