@@ -259,6 +259,13 @@ def _section_e_commerce(course, access, paid_mode, coupons_enabled, reports_enab
     course_key = course.id
     coupons = Coupon.objects.filter(course_id=course_key).order_by('-is_active')
     course_price = paid_mode.min_price
+    site_currency = configuration_helpers.get_value('PAID_COURSE_REGISTRATION_CURRENCY')
+    currency_symbol = dict(settings.CURRENCIES).get(
+        paid_mode.currency.lower(),
+        (site_currency or settings.PAID_COURSE_REGISTRATION_CURRENCY)[1]
+    )
+    sc = site_currency and site_currency[0]
+    currencies = filter(lambda c: c[0] == sc, settings.CURRENCIES) or settings.CURRENCIES
 
     total_amount = None
     if access['finance_admin']:
@@ -271,7 +278,8 @@ def _section_e_commerce(course, access, paid_mode, coupons_enabled, reports_enab
         'section_display_name': _('E-Commerce'),
         'access': access,
         'course_id': unicode(course_key),
-        'currency_symbol': settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
+        'currency_symbol': currency_symbol,
+        'currencies': currencies,
         'ajax_remove_coupon_url': reverse('remove_coupon', kwargs={'course_id': unicode(course_key)}),
         'ajax_get_coupon_info': reverse('get_coupon_info', kwargs={'course_id': unicode(course_key)}),
         'get_user_invoice_preference_url': reverse('get_user_invoice_preference', kwargs={'course_id': unicode(course_key)}),
