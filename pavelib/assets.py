@@ -878,7 +878,10 @@ def update_assets(args):
 
     application = get_wsgi_application()  # pylint: disable=invalid-name
 
-    STATIC_COLLECTOR_ROOT=get_static_collector_root()
+    if hasattr(django_settings, 'STATIC_COLLECTOR_ROOT'):
+        STATIC_COLLECTOR_ROOT = django_settings.STATIC_COLLECTOR_ROOT
+    else:
+        STATIC_COLLECTOR_ROOT = get_static_collector_root()
 
     if not os.path.isdir(STATIC_COLLECTOR_ROOT):
         os.mkdir(STATIC_COLLECTOR_ROOT)
