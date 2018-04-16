@@ -17,9 +17,10 @@ def program_listing(request, user=None):
     if not programs_config.enabled:
         raise Http404
 
-    meter = ProgramProgressMeter(user)
+    is_marketing = not bool(user)
+    meter = ProgramProgressMeter(user=user or request.user)
 
-    programs = user and meter.engaged_programs or meter.programs
+    programs = is_marketing and meter.programs or meter.engaged_programs
     mktg_url = lambda p: reverse('program_marketing_view', kwargs={'program_uuid': p['uuid']})
     [p.update({'marketing_page_url': mktg_url(p)}) for p in programs]
 
@@ -28,10 +29,10 @@ def program_listing(request, user=None):
         'marketing_url': get_program_marketing_url(programs_config),
         'nav_hidden': True,
         'programs': programs,
-        'progress': meter.progress(),
+        'progress': meter.progress(programs),
         'show_program_listing': programs_config.enabled,
         'uses_pattern_library': True,
-        'is_marketing': not bool(user)
+        'is_marketing': is_marketing
     }
 
     return render_to_response('learner_dashboard/programs.html', context)
