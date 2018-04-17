@@ -146,3 +146,9 @@ MODULESTORE = convert_module_store_setting_if_needed(MODULESTORE)
 
 # Dummy secret key for dev
 SECRET_KEY = '85920908f28904ed733fe576320db18cabd7b6cd'
+
+FEATURES["ENABLE_VIDEO_UPLOAD_PIPELINE"] = True
+VIDEO_UPLOAD_PIPELINE = {
+   "CLOUD": "azure"        # <-- it is "aws" as default alternative
+}
+ENABLE_COMPREHENSIVE_THEMING = False
