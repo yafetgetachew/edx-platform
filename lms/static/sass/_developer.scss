@@ -286,7 +286,8 @@
     }
   }
 }
-.header-global h1.logo img {
-  max-height: 48px;
+.header-global h1.logo img,
+.wrapper-logo img {
+  max-height: 58px;
   width: auto;
 }
