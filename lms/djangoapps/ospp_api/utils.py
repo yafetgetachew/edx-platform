@@ -59,7 +59,7 @@ def applay_user_status_to_enroll(user, course_enrollment, status):
 
     if benefit_type in CREDIT_ELIGIBLE and get_credit_convert_eligibility(user, course_enrollment.course_id):
         change_user_enrollment(course_enrollment, 'credit')
-    elif benefit_type in VERIFY_ELIGIBLE:
+    elif benefit_type in VERIFY_ELIGIBLE and course_enrollment.mode != 'credit':
         change_user_enrollment(course_enrollment, 'verified')
 
 
