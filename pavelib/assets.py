@@ -78,7 +78,7 @@ NPM_INSTALLED_DEVELOPER_LIBRARIES = [
 # Directory to install static vendor files
 NPM_VENDOR_DIRECTORY = path("common/static/common/js/vendor")
 
-# system specific lookup path additions, add sass dirs if one sy stem depends on the sass files for other systems
+# system specific lookup path additions, add sass dirs if one system depends on the sass files for other systems
 SASS_LOOKUP_DEPENDENCIES = {
     'cms': [path('lms') / 'static' / 'sass' / 'partials', ],
 }
