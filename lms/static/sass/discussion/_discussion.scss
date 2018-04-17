@@ -158,3 +158,13 @@ section.discussion-pagination {
     }
   }
 }
+.header-global h1.logo img,
+.wrapper-logo img {
+  height: 58px;
+  width: auto;
+  margin-top: -11px;
+}
+.header-global.slim h1.logo img {
+  height: 58px;
+  margin-top: -10px;
+}
