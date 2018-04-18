@@ -23,7 +23,8 @@ def add_verify_status(statistic_map, username):
         user__username=username,
     ).values('updated_at', 'status').first()
     if status:
-        statistic_map['idVerify'] = status['status']
+        from lms.djangoapps.ospp_api.utils import map_photo_verification_status_for_sf
+        statistic_map['idVerify'] = map_photo_verification_status_for_sf(status['status'])
         statistic_map['idVerifyDate'] = status['updated_at'].strftime("%Y-%m-%d %H:%M:%S")
 
 

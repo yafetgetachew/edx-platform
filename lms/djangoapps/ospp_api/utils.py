@@ -82,3 +82,12 @@ def update_user_state_from_eligible(user, course_key):
 
     status = get_learner_info(user.id)
     applay_user_status_to_enroll(user, course_enrollment, status)
+
+def map_photo_verification_status_for_sf(status):
+    """
+    Workaround for sales force and earn admission.
+    """
+    if status in ['submitted', 'approved']:
+        return 'verified'
+    else:
+        return status
