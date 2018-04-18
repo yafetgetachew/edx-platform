@@ -431,6 +431,7 @@ def _cert_info(user, course_overview, cert_status, course_mode):  # pylint: disa
     return status_dict
 
 
+@configuration_helpers.check_site_setting('LOGIN_ENABLED', True)
 @ensure_csrf_cookie
 def signin_user(request):
     """Deprecated. To be replaced by :class:`student_account.views.login_and_registration_form`."""
@@ -466,6 +467,7 @@ def signin_user(request):
     return render_to_response('login.html', context)
 
 
+@configuration_helpers.check_site_setting('REGISTRATION_ENABLED', True)
 @ensure_csrf_cookie
 def register_user(request, extra_context=None):
     """Deprecated. To be replaced by :class:`student_account.views.login_and_registration_form`."""

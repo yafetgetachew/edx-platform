@@ -15,9 +15,11 @@ from openedx.core.djangoapps.auth_exchange.views import LoginWithAccessTokenView
 from openedx.core.djangoapps.catalog.models import CatalogIntegration
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
+from openedx.core.djangoapps.site_configuration.helpers import get_value
 from django_comment_common.models import ForumsConfig
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from util.enterprise_helpers import enterprise_enabled
+from student_account.views import login_and_registration_form
 
 # Uncomment the next two lines to enable the admin:
 if settings.DEBUG or settings.FEATURES.get('ENABLE_DJANGO_ADMIN_SITE'):
@@ -112,20 +114,20 @@ urlpatterns += (
 
 # TODO: This needs to move to a separate urls.py once the student_account and
 # student views below find a home together
-#if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
-#    # Backwards compatibility with old URL structure, but serve the new views
-#    urlpatterns += (
-#        url(r'^login$', 'student_account.views.login_and_registration_form',
-#            {'initial_mode': 'login'}, name="signin_user"),
-#        url(r'^register$', 'student_account.views.login_and_registration_form',
-#            {'initial_mode': 'register'}, name="register_user"),
-#    )
-#else:
-#    # Serve the old views
-#    urlpatterns += (
-#        url(r'^login$', 'student.views.signin_user', name="signin_user"),
-#        url(r'^register$', 'student.views.register_user', name="register_user"),
-#    )
+if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
+    # Backwards compatibility with old URL structure, but serve the new views
+    urlpatterns += (
+        url(r'^login$', configuration_helpers.check_site_setting('REGISTRATION_ENABLED', True)(login_and_registration_form),
+            {'initial_mode': 'login'}, name="signin_user"),
+        url(r'^register$', configuration_helpers.check_site_setting('REGISTRATION_ENABLED', True)(login_and_registration_form),
+            {'initial_mode': 'register'}, name="register_user"),
+    )
+else:
+    # Serve the old views
+    urlpatterns += (
+        url(r'^login$', 'student.views.signin_user', name="signin_user"),
+        url(r'^register$', 'student.views.register_user', name="register_user"),
+    )
 
 if settings.FEATURES["ENABLE_MOBILE_REST_API"]:
     urlpatterns += (
@@ -579,11 +581,11 @@ urlpatterns += (
     ),
 
     # Student profile
-#    url(
-#        r'^u/(?P<username>[\w.@+-]+)$',
-#        'student_profile.views.learner_profile',
-#        name='learner_profile',
-#    ),
+    url(
+        r'^u/(?P<username>[\w.@+-]+)$',
+        'student_profile.views.learner_profile',
+        name='learner_profile',
+    ),
 
     # Student Notes
     url(

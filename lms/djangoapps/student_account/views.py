@@ -364,6 +364,7 @@ def get_user_orders(user):
     return user_orders
 
 
+@configuration_helpers.check_site_setting('PROFILE_ENABLED', True)
 @login_required
 @require_http_methods(['GET'])
 def account_settings(request):

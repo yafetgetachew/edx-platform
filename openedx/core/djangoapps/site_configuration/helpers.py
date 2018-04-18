@@ -2,6 +2,7 @@
 Helpers methods for site configuration.
 """
 from django.conf import settings
+from django.http import Http404
 from openedx.core.djangoapps.site_configuration.models import SiteConfiguration
 from microsite_configuration import microsite
 
@@ -215,3 +216,14 @@ def page_title_breadcrumbs(*crumbs, **kwargs):
         return u'{}{}{}'.format(separator.join(crumbs), separator, platform_name)
     else:
         return platform_name
+
+
+def check_site_setting(var, val):
+    def _check_site_setting(func):
+        def wrapper(request, *args, **kwargs):
+            if get_value(var) == val:
+                return func(request, *args, **kwargs)
+            raise Http404
+
+        return wrapper
+    return _check_site_setting
