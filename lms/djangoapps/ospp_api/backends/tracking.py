@@ -120,9 +120,9 @@ class EnrollmentProcessor(StatisticProcessor):
         return self.get_event_name(event) == 'common.student.CourseEnrollment'
 
     def process(self, event):
-        from lms.djangoapps.ospp_api.utils import map_photo_verification_status_for_sf
+        mode = event['data']['mode']
         result = {
-            'enrollmentMode': map_photo_verification_status_for_sf(event['data']['mode']),
+            'enrollmentMode': mode if mode not in ['submitted', 'approved'] else 'verified',
             'enrollmentModeDate': self.get_event_timestamp_as_string(event),
         }
         return result
