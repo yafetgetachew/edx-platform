@@ -120,8 +120,9 @@ class EnrollmentProcessor(StatisticProcessor):
         return self.get_event_name(event) == 'common.student.CourseEnrollment'
 
     def process(self, event):
+        mode = event['data']['mode']
         result = {
-            'enrollmentMode': event['data']['mode'],
+            'enrollmentMode': mode if mode not in ['submitted', 'approved'] else 'verified',
             'enrollmentModeDate': self.get_event_timestamp_as_string(event),
         }
         return result

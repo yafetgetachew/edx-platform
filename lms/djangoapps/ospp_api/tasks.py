@@ -23,7 +23,8 @@ def add_verify_status(statistic_map, username):
         user__username=username,
     ).values('updated_at', 'status').first()
     if status:
-        statistic_map['idVerify'] = status['status']
+        mode = status['status']
+        statistic_map['idVerify'] = mode if mode not in ['submitted', 'approved'] else 'verified'
         statistic_map['idVerifyDate'] = status['updated_at'].strftime("%Y-%m-%d %H:%M:%S")
 
 
