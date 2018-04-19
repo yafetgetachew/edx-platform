@@ -241,6 +241,7 @@
             @extend %print-rendering-section;
             @include span(12 last);
             border: none;
+            padding-top: 20px;
 
             .signatory-credentials {
                 font-size: 8pt;
