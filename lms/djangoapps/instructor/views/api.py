@@ -489,6 +489,7 @@ def create_user_and_user_profile(email, username, name, last_name, country, pass
     user = User.objects.create_user(username, email, password)
     user.first_name = name
     user.last_name = last_name
+    user.save()
     reg = Registration()
     reg.register(user)
 
