@@ -1,3 +1,4 @@
+import ssl
 import urllib
 import urllib2
 import json
@@ -28,8 +29,21 @@ def check_recaptcha(view_func):
         if request.method == 'POST' and settings.USE_GOOGLE_RECAPTCHA:
 
             ''' Begin reCAPTCHA validation '''
+
+            # Adding proxy #
+            ssl._create_default_https_context = ssl._create_unverified_context
+            proxies = {'https':PROXY_HTTP}
+            opener = urllib2.build_opener(urllib2.ProxyHandler(proxies))
+            opener.addheaders = [('User-agent', 'Mozilla/5.0')]
+            urllib2.install_opener(opener)
+
             recaptcha_response = request.POST.get('g-recaptcha-response')
             url = 'https://www.google.com/recaptcha/api/siteverify'
+
+            # adding headers #
+            user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+            headers={'User-Agent':user_agent,}
+
             values = {
                 'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
