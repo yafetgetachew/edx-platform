@@ -134,3 +134,7 @@ dist
 
 conf/locale/ar/LC_MESSAGES/django.mo
 conf/locale/ar/LC_MESSAGES/djangojs.mo
+
+common/djangoapps/student/decorators.py
+
+
