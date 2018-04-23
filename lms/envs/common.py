@@ -2161,6 +2161,9 @@ INSTALLED_APPS = (
     # Gamification
     'gamification_metric',
     'referrals',
+
+    # global-statistics application
+    'openedx.core.djangoapps.edx_global_analytics',
 )
 
 # Migrations which are not in the standard module "migrations"
