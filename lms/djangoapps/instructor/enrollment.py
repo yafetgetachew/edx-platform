@@ -115,6 +115,8 @@ def enroll_email(course_id, student_email, auto_enroll=False, email_students=Fal
     returns two EmailEnrollmentState's
         representing state before and after the action.
     """
+
+
     previous_state = EmailEnrollmentState(course_id, student_email)
     enrollment_obj = None
     if previous_state.user:
@@ -487,7 +489,12 @@ def send_mail_to_student(student, param_dict, language=None):
             settings.DEFAULT_FROM_EMAIL
         )
 
-        send_mail(subject, message, from_address, [student], fail_silently=False)
+        if message_type == 'enrolled_enroll':
+            html_message = message
+        else:
+            html_message = None
+
+        send_mail(subject, message, from_address, [student], fail_silently=False,  html_message=message)
 
 
 def render_message_to_string(subject_template, message_template, param_dict, language=None):
