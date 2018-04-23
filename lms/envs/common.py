@@ -61,6 +61,7 @@ LMS_ROOT_URL = "http://localhost:8000"
 
 # Features
 FEATURES = {
+    
     'DISPLAY_DEBUG_INFO_TO_STAFF': True,
     'DISPLAY_HISTOGRAMS_TO_STAFF': False,  # For large courses this slows down courseware access for staff.
 
@@ -396,7 +397,7 @@ FEATURES = {
     # Disable bulk email send from random different addresses when 'False'
     'BULK_EMAIL_FROM_DIFFERENT_ADDRESSES': False,
 }
-
+FEATURES['ENABLE_XBLOCK_VIEW_ENDPOINT'] = True
 # Settings for the course reviews tool template and identification key, set either to None to disable course reviews
 COURSE_REVIEWS_TOOL_PROVIDER_FRAGMENT_NAME = 'coursetalk-reviews-fragment.html'
 COURSE_REVIEWS_TOOL_PROVIDER_PLATFORM_KEY = 'edx'
@@ -3219,3 +3220,5 @@ COURSES_API_CACHE_TIMEOUT = 3600  # Value is in seconds
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = LOW_PRIORITY_QUEUE
+
+INSTALLED_APPS += ('rg_instructor_analytics',)

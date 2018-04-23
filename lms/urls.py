@@ -28,7 +28,13 @@ if settings.DEBUG or settings.FEATURES.get('ENABLE_DJANGO_ADMIN_SITE'):
 # Use urlpatterns formatted as within the Django docs with first parameter "stuck" to the open parenthesis
 urlpatterns = (
     '',
-
+    url(
+        r'^courses/{}/tab/instructor_analytics/'.format(
+            settings.COURSE_ID_PATTERN,
+        ),
+        include('rg_instructor_analytics.urls'),
+        name='instructor_analytics_endpoint',
+    ),
     url(r'^$', 'branding.views.index', name="root"),   # Main marketing page, or redirect to courseware
 
     url(r'', include('student.urls')),
