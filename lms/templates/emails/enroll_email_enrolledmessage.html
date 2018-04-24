@@ -1,40 +1,58 @@
 <%! from django.utils.translation import ugettext as _ %>
 
-${_("Dear {full_name}").format(full_name=full_name)}
 
+<div style="direction: rtl; text-align: right;">
+<p>
+${_("Dear {full_name}").format(full_name=full_name)}
+</p>
+<p>
 ${_("You have been enrolled in {course_name} at {site_name} by a member "
 	"of the course staff. The course should now appear on your {site_name} "
 	"dashboard.").format(
 		course_name=display_name or course.display_name_with_default_escaped,
 		site_name=site_name
 	)}
-
+</p>
+<p>
 ${_("To start accessing course materials, please visit {course_url}").format(
 		course_url=course_url
 	)}
-
-----
+</p>
+<hr />
+<p>
 ${_("This email was automatically sent from {site_name} to "
 	"{full_name}").format(
 		site_name=site_name, full_name=full_name
 	)}
+</p>
+</div>
 
+<br />
 
+<div style="direction: ltr; text-align: left;">
+<p>
 ${"Dear {full_name}".format(full_name=full_name)}
+</p>
 
+<p>
 ${("You have been enrolled in {course_name} at {site_name} by a member "
-        "of the course staff. The course should now appear on your {site_name} "
-        "dashboard.").format(
-                course_name=display_name or course.display_name_with_default_escaped,
-                site_name=site_name
-        )}
-
+	"of the course staff. The course should now appear on your {site_name} "
+	"dashboard.").format(
+		course_name=display_name or course.display_name_with_default_escaped,
+		site_name=site_name
+	)}
+</p>
+<p>
 ${"To start accessing course materials, please visit {course_url}".format(
-                course_url=course_url
-        )}
+		course_url=course_url
+	)}
+</p>
 
-----
+<hr />
+<p>
 ${("This email was automatically sent from {site_name} to "
-        "{full_name}").format(
-                site_name=site_name, full_name=full_name
-        )}
+	"{full_name}").format(
+		site_name=site_name, full_name=full_name
+	)}
+</p>
+</div>
