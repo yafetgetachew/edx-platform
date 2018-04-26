@@ -419,8 +419,10 @@ def sort_by_start_date(courses):
     """
     courses = sorted(
         courses,
-        key=lambda course: (course.has_ended(), course.start is None, course.start),
-        reverse=False
+        key=lambda c: c.start,
+#        key=lambda course: (course.has_ended(), course.start is None, course.start),
+        reverse=True
+#        reverse=False
     )
 
     return courses
