@@ -187,7 +187,7 @@ FEATURES = {
     'ENABLE_COSMETIC_DISPLAY_PRICE': False,
 
     # Automatically approve student identity verification attempts
-    'AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING': False,
+    'AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING': True,
 
     # Disable instructor dash buttons for downloading course data
     # when enrollment exceeds this number
