@@ -60,6 +60,7 @@ urlpatterns = (
 
     # Enrollment API RESTful endpoints
     url(r'^api/enrollment/v1/', include('enrollment.urls')),
+    url(r'^appsembler_api/v0/', include('appsembler_api.urls')),
 
     # Courseware search endpoints
     url(r'^search/', include('search.urls')),
@@ -967,3 +968,5 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+
+WEBPACK_LOADER = {}
