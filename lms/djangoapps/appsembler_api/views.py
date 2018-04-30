@@ -163,7 +163,7 @@ class CreateUserAccountWithoutPasswordView(APIView):
 
             user = create_account_with_params(request, data)
             # set the user as inactive
-            user.is_active = False
+            user.is_active = True
             user.save()
             user_id = user.id
             send_activation_email(request)
