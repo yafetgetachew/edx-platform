@@ -27,7 +27,6 @@ urlpatterns = (
     url(r'^press$', 'render', {'template': 'press.html'}, name="press"),
     url(r'^media-kit$', 'render', {'template': 'media-kit.html'}, name="media-kit"),
     url(r'^copyright$', 'render', {'template': 'copyright.html'}, name="copyright"),
-    url(r'^how_to_access$', 'render', {'template': 'how_to_access.html'}, name="how_to_access"),
 
     # Press releases
     url(r'^press/([_a-zA-Z0-9-]+)$', 'render_press_release', name='press_release'),
