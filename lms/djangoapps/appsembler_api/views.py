@@ -65,8 +65,8 @@ log = logging.getLogger(__name__)
 
 
 class CreateUserAccountView(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser,
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    permission_classes = IsStaffOrOwner,
 
 
     def post(self, request):
@@ -127,8 +127,8 @@ class CreateUserAccountView(APIView):
 
 
 class CreateUserAccountWithoutPasswordView(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser,
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    permission_classes = IsStaffOrOwner,
 
 
     def post(self, request):
@@ -182,8 +182,8 @@ class CreateUserAccountWithoutPasswordView(APIView):
 
 
 class UserAccountConnect(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser,
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    permission_classes = IsStaffOrOwner,
 
     def post(self, request):
         """
@@ -255,8 +255,8 @@ class UserAccountConnect(APIView):
 class UpdateUserAccount(APIView):
     """ HTTP endpoint for updating and user account """
 
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser,
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    permission_classes = IsStaffOrOwner,
 
     def post(self, request):
         """
@@ -354,8 +354,8 @@ class UpdateUserAccount(APIView):
 
 
 class GetUserAccountView(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser,
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    permission_classes = IsStaffOrOwner,
 
     def get(self, request, username):
         """
@@ -382,10 +382,10 @@ class GetUserAccountView(APIView):
 
 @can_disable_rate_limit
 class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
-    #                          EnrollmentCrossDomainSessionAuth
-    # permission_classes = ApiKeyHeaderPermissionIsAuthenticated,
-    # throttle_classes = EnrollmentUserThrottle,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
+                             EnrollmentCrossDomainSessionAuth
+    permission_classes = ApiKeyHeaderPermissionIsAuthenticated,
+    throttle_classes = EnrollmentUserThrottle,
 
     def post(self, request):
         data = request.data
@@ -401,10 +401,6 @@ class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
                 'action': serializer.data.get('action'),
                 'courses': {}
             }
-            staff = User.objects.get(username='staff')
-            staff.backend = 'face'
-            if staff is not None:
-                login(request, staff)
             for course in serializer.data.get('courses'):
                 response = students_update_enrollment(
                     self.request, course_id=course
@@ -420,9 +416,9 @@ class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
 
 
 class GenerateRegistrationCodesView(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
-    #                          EnrollmentCrossDomainSessionAuth
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
+                             EnrollmentCrossDomainSessionAuth
+    permission_classes = IsStaffOrOwner,
 
     def post(self, request):
         course_id = CourseKey.from_string(request.data.get('course_id'))
@@ -458,9 +454,9 @@ class GenerateRegistrationCodesView(APIView):
 
 
 class EnrollUserWithEnrollmentCodeView(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
-    #                          EnrollmentCrossDomainSessionAuth
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
+                             EnrollmentCrossDomainSessionAuth
+    permission_classes = IsStaffOrOwner,
 
     def post(self, request):
         enrollment_code = request.data.get('enrollment_code')
@@ -524,8 +520,8 @@ class EnrollmentCodeStatusView(APIView):
     restore: If the code was user for enroll an user, the user is unenrolled and the code becomes available for use it
     again.
     """
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser, EnrollmentCrossDomainSessionAuth
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser, EnrollmentCrossDomainSessionAuth
+    permission_classes = IsStaffOrOwner,
 
     def post(self, request):
         code = request.data.get('enrollment_code')
@@ -563,8 +559,8 @@ class EnrollmentCodeStatusView(APIView):
 
 
 class GetBatchUserDataView(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser,
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    permission_classes = IsStaffOrOwner,
 
     def get(self, request):
         """
@@ -711,8 +707,8 @@ class CourseListSearchView(DeveloperErrorViewMixin, ListAPIView):
 
 
 class GetBatchEnrollmentDataView(APIView):
-    # authentication_classes = OAuth2AuthenticationAllowInactiveUser,
-    # permission_classes = IsStaffOrOwner,
+    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    permission_classes = IsStaffOrOwner,
 
     def get(self, request):
         """
