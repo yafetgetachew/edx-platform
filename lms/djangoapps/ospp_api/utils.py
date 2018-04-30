@@ -52,14 +52,14 @@ def change_user_enrollment(enrollment, type):
     enrollment.save()
 
 
-def applay_user_status_to_enroll(user, course_enrollment, status):
+def apply_user_status_to_enroll(user, course_enrollment, status, is_apply_for_verified=False):
     benefit_type = int(status.get('benefitType', 0))
     if not status or status.get('eligibilityStatus') != 'true' or not benefit_type:
         return
 
     if benefit_type in CREDIT_ELIGIBLE and get_credit_convert_eligibility(user, course_enrollment.course_id):
         change_user_enrollment(course_enrollment, 'credit')
-    elif benefit_type in VERIFY_ELIGIBLE and course_enrollment.mode != 'credit':
+    elif benefit_type in VERIFY_ELIGIBLE and is_apply_for_verified and course_enrollment.mode != 'credit':
         change_user_enrollment(course_enrollment, 'verified')
 
 
@@ -81,4 +81,4 @@ def update_user_state_from_eligible(user, course_key):
         return
 
     status = get_learner_info(user.id)
-    applay_user_status_to_enroll(user, course_enrollment, status)
+    apply_user_status_to_enroll(user, course_enrollment, status)

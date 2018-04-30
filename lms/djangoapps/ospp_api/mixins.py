@@ -2,7 +2,7 @@ from abc import abstractmethod, ABCMeta
 from django.views.generic import View
 
 from edxmako.shortcuts import render_to_response, render_to_string
-from ospp_api.utils import get_learner_info, applay_user_status_to_enroll
+from ospp_api.utils import get_learner_info, apply_user_status_to_enroll
 from student.models import CourseEnrollment
 
 
@@ -66,7 +66,7 @@ class EligibleCheckViewMixin(View):
             student_state = get_learner_info(request.user.id)
             if student_state:
                 for enrollment in CourseEnrollment.enrollments_for_user_with_overviews_preload(request.user):
-                    applay_user_status_to_enroll(
+                    apply_user_status_to_enroll(
                         user=request.user,
                         course_enrollment=enrollment,
                         status=student_state,

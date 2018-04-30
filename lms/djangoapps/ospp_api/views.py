@@ -34,6 +34,7 @@ from enrollment.errors import CourseEnrollmentError, CourseEnrollmentExistsError
 from enrollment.views import REQUIRED_ATTRIBUTES
 from ospp_api.mixins import EligibleCheckViewMixin, MethodViewWithMakoMixin
 from ospp_api.models import OSPPEnrollmentFeature
+from ospp_api.utils import get_learner_info, apply_user_status_to_enroll
 from student.models import CourseEnrollment, User, CourseAccessRole
 from student.views import create_account_with_params
 from third_party_auth.models import SAMLProviderConfig
@@ -495,7 +496,7 @@ class RoutView(EligibleCheckViewMixin, View):
 
     def _rout_to_verify(self, request):
         course_id = self.course_key_from_request(request)
-        redirect_url = reverse('verify_student_verify_now', kwargs={'course_id': course_id})
+        redirect_url = reverse('ospp_api_v0:enrollments_status_update', kwargs={'course_id': course_id})
         return redirect(redirect_url)
 
     def get(self, request, lms_page_name):
@@ -506,3 +507,15 @@ class RoutView(EligibleCheckViewMixin, View):
                     'get_credit': self._rout_to_credit,
                     'pursue_credit': self._rout_to_verify,
                 }.get(lms_page_name, None) or (lambda _: redirect('/')))(request)
+
+
+class UpdateEnrollForCourseView(View):
+
+    def get(self, request, course_id):
+        if request.user.is_authenticated():
+            enrollment = CourseEnrollment.objects.filter(course_id=CourseKey.from_string(course_id), user=request.user)
+            if enrollment.exists():
+                student_state = get_learner_info(request.user.id)
+                if student_state:
+                    apply_user_status_to_enroll(request.user, enrollment.first(), student_state, True)
+        return redirect(reverse('verify_student_upgrade_and_verify', kwargs={'course_id': course_id}))
