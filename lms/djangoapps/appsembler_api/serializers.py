@@ -5,7 +5,8 @@ from rest_framework import serializers
 
 class StringListField(serializers.ListField):
     def to_internal_value(self, data):
-        data = data[0]
+        if type(data) is list or type(data) is tuple:
+            data = data[0]
         return data.split(',')
 
 class BulkEnrollmentSerializer(serializers.Serializer):
