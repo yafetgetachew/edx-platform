@@ -3,6 +3,8 @@
 import logging
 import json
 import urlparse
+import urllib
+
 from datetime import datetime
 
 from django.conf import settings
@@ -11,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse, resolve
 from django.http import (
-    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest
+    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest, HttpResponseRedirect
 )
 from django.shortcuts import redirect
 from django.utils.translation import ugettext as _
@@ -90,6 +92,14 @@ def login_and_registration_form(request, initial_mode="login"):
             pass
 
     set_enterprise_branding_filter_param(request=request, provider_id=third_party_auth_hint)
+
+    #if 'ENABLE_REDIRECT_REGISTER' is True redirect to the 'REGISTER_REDIRECT_URL'
+    if settings.ENABLE_REDIRECT_REGISTER and initial_mode == "register":
+        params = [(param, request.GET[param]) for param in request.GET]
+        if params:
+            return HttpResponseRedirect("{}?{}".format(settings.REGISTER_REDIRECT_URL, urllib.urlencode(params)))
+        else:
+            return HttpResponseRedirect(settings.REGISTER_REDIRECT_URL)
 
     # If this is a themed site, revert to the old login/registration pages.
     # We need to do this for now to support existing themes.

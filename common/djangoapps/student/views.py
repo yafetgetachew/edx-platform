@@ -6,6 +6,7 @@ import logging
 import uuid
 import json
 import warnings
+import urllib
 from collections import defaultdict
 from urlparse import urljoin, urlsplit, parse_qs, urlunsplit
 
@@ -26,7 +27,7 @@ from django.core import mail
 from django.core.urlresolvers import reverse, NoReverseMatch, reverse_lazy
 from django.core.validators import validate_email, ValidationError
 from django.db import IntegrityError, transaction
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseServerError, Http404
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseServerError, Http404, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.utils.encoding import force_bytes, force_text
 from django.utils.translation import ungettext
@@ -511,6 +512,14 @@ def register_user(request, extra_context=None):
             overrides['running_pipeline'] = running_pipeline
             overrides['selected_provider'] = current_provider.name
             context.update(overrides)
+
+    # if 'ENABLE_REDIRECT_REGISTER' is True redirect to the 'REGISTER_REDIRECT_URL'
+    if settings.ENABLE_REDIRECT_REGISTER:
+        params = [(param, request.GET[param]) for param in request.GET]
+        if params:
+            return HttpResponseRedirect("{}?{}".format(settings.REGISTER_REDIRECT_URL, urllib.urlencode(params)))
+        else:
+            return HttpResponseRedirect(settings.REGISTER_REDIRECT_URL)
 
     return render_to_response('register.html', context)
 
