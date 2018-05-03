@@ -1,7 +1,5 @@
-from django.middleware.csrf import CsrfViewMiddleware
 
-
-class CsrfViewMiddlewareDeleteSessionIDCSFToken(CsrfViewMiddleware):
+class CsrfViewMiddlewareDeleteSessionIDCSFToken():
     """
     if request header get attr csrf_delete_cookie is True than delete csrftoken and sessionid
     """
