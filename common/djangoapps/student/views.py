@@ -471,6 +471,12 @@ def signin_user(request):
 @ensure_csrf_cookie
 def register_user(request, extra_context=None):
     """Deprecated. To be replaced by :class:`student_account.views.login_and_registration_form`."""
+    if settings.ENABLE_REDIRECT_REGISTER:
+        params = [(param, request.GET[param]) for param in request.GET]
+        if params:
+            return HttpResponseRedirect("{}?{}".format(settings.REGISTER_REDIRECT_URL, urllib.urlencode(params)))
+        else:
+            return HttpResponseRedirect(settings.REGISTER_REDIRECT_URL)
     # Determine the URL to redirect to following login:
     redirect_to = get_next_url_for_login_page(request)
     if request.user.is_authenticated():
@@ -514,12 +520,7 @@ def register_user(request, extra_context=None):
             context.update(overrides)
 
     # if 'ENABLE_REDIRECT_REGISTER' is True redirect to the 'REGISTER_REDIRECT_URL'
-    if settings.ENABLE_REDIRECT_REGISTER:
-        params = [(param, request.GET[param]) for param in request.GET]
-        if params:
-            return HttpResponseRedirect("{}?{}".format(settings.REGISTER_REDIRECT_URL, urllib.urlencode(params)))
-        else:
-            return HttpResponseRedirect(settings.REGISTER_REDIRECT_URL)
+
 
     return render_to_response('register.html', context)
 
