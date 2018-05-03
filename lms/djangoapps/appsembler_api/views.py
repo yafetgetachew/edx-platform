@@ -393,7 +393,7 @@ class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
             data[key] = str(value)
 
         serializer = BulkEnrollmentSerializer(data=request.data)
-        request.POST['csrf_disable_set_cookie'] = True
+
         if serializer.is_valid():
             request.POST = request.data
             response_dict = {
