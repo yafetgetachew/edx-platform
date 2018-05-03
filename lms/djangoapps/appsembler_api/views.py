@@ -393,7 +393,6 @@ class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
             data[key] = str(value)
 
         serializer = BulkEnrollmentSerializer(data=request.data)
-
         if serializer.is_valid():
             request.POST = request.data
             response_dict = {
