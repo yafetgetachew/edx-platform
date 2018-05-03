@@ -7,11 +7,9 @@ import os
 from path import Path as path
 import shutil
 import tempfile
-from StringIO import StringIO
 
 from django.core.management import CommandError, call_command
 
-from opaque_keys.edx.keys import CourseKey
 from opaque_keys.edx.locator import LibraryLocator
 from xmodule.modulestore.django import modulestore
 from xmodule.modulestore import ModuleStoreEnum
@@ -43,8 +41,6 @@ class TestImportLibrary(ModuleStoreTestCase):
         super(TestImportLibrary, self).setUp()
         self.content_dir = path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, self.content_dir)
-
-        # self.test_library = LibraryFactory.create(org=self.org, library=self.lib_code, modulestore=self.store)
         self.library_key = LibraryLocator(self.org, self.lib_code)
         self.library_dir = self.create_library_xml(self.content_dir)
 
@@ -56,9 +52,13 @@ class TestImportLibrary(ModuleStoreTestCase):
             call_command('import-library', self.content_dir, self.library_dir)
             self.library_from_store = modulestore().get_library(self.library_key)
 
-        # compare library_key of imported library with self-generated
+        """
+        Compare library_key of imported library with self-generated
+        """
         self.assertEqual(unicode(self.library_from_store.location.library_key), unicode(self.library_key))
-        # conpare display_name of imported library with original
+        """ 
+        Compare display_name of imported library with original
+        """
         self.assertEqual(unicode(self.library_from_store), u"Library: " + unicode(self.display_name))
 
     @ddt.data(u'/tmp/xxx/yyy/zzz', u'')
