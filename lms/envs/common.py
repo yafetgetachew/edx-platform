@@ -1109,6 +1109,7 @@ simplefilter('ignore')
 ################################# Middleware ###################################
 
 MIDDLEWARE_CLASSES = (
+    'lms.djangoapps.appsembler_api.middleware.CsrfViewMiddlewareDeleteSessionIDCSFToken',
     'crum.CurrentRequestUserMiddleware',
 
     'request_cache.middleware.RequestCache',
@@ -1150,6 +1151,7 @@ MIDDLEWARE_CLASSES = (
     'openedx.core.djangoapps.cors_csrf.middleware.CorsCSRFMiddleware',
     'openedx.core.djangoapps.cors_csrf.middleware.CsrfCrossDomainCookieMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+
 
     'splash.middleware.SplashMiddleware',
 
