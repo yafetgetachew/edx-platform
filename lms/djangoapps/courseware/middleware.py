@@ -43,7 +43,7 @@ class SsoMiddleware(object):
             request.GET.has_key("timestamp")
         )
         is_need_login_another_user = is_enable_sso and is_has_attr and request.user.is_authenticated()
-        is_need_login = (not request.user.is_authenticated()) and is_enable_sso
+        is_need_login = (not request.user.is_authenticated()) and is_enable_sso and is_has_attr
 
         if is_need_login_another_user or is_need_login:
             status = self._check_sso_and_register_user(request, is_need_login_another_user)
