@@ -3,12 +3,22 @@ Slightly customized python-social-auth backend for SAML 2.0 support
 """
 import logging
 
+from base64 import b64encode
+import random
+import hashlib
 import requests
+import json
+import urllib
+from django.conf import settings
 from django.contrib.sites.models import Site
 from django.http import Http404
 from django.utils.functional import cached_property
+from django.template.defaultfilters import slugify
 from social_core.backends.saml import OID_EDU_PERSON_ENTITLEMENT, SAMLAuth, SAMLIdentityProvider
-from social_core.exceptions import AuthForbidden
+from social_core.exceptions import AuthForbidden, AuthFailed
+from onelogin.saml2.auth import OneLogin_Saml2_Auth
+from defusedxml.lxml import tostring, fromstring
+from lxml import etree
 
 from openedx.core.djangoapps.theming.helpers import get_current_request
 
@@ -244,6 +254,172 @@ class SapSuccessFactorsIdentityProvider(EdXSAMLIdentityProvider):
             'fullname': response['d']['defaultFullName'],
             'email': response['d']['email'],
         }
+
+
+class WsFederationBackend(SAMLAuthBackend):
+    name = "tpa-ws-federation"
+    _assertion_ns = 'urn:oasis:names:tc:SAML:2.0:assertion'
+
+    def find_tag(self, path, elem, ns=None):
+        el = elem
+        for tag in path.split('/'):
+            tag_name = ns and '{{{}}}{}'.format(ns, tag) or tag
+            el = el.find(tag_name)
+        return el
+
+    def auth_url(self):
+        from .models import SAMLProviderConfig
+        idp_conf = SAMLProviderConfig.current(self.data['idp'])
+        login_url = json.loads(idp_conf.other_settings or '{}').get('WS_FEDERATION_LOGIN_URL')
+        self_url = 'http{}://{}/'.format(self.strategy.request_is_secure() and 's' or '', self.strategy.request_host())
+
+        params = {
+            'wtrealm': self_url,
+            'wa': 'wsignin1.0',
+            'wctx': self.get_wctx()
+        }
+        return '{}?{}'.format(login_url, urllib.urlencode(params))
+
+    def check_hash(self, hash):
+        salt = hash[:10]
+        expect = hashlib.sha256('{}{}{}'.format(
+            salt,
+            settings.SECRET_KEY,
+            self.strategy.session.session_key
+        ))
+        return (hash[10:] == expect.hexdigest())
+
+    def get_wctx(self):
+        salt = hex(random.randint(1099511627776, 2199023255551))[3:]
+        hash = hashlib.sha256('{}{}{}'.format(
+            salt,
+            settings.SECRET_KEY,
+            self.strategy.session.session_key
+        ))
+        return '{}/{}{}'.format(self.data['idp'], salt, hash.hexdigest())
+
+    def ws_to_saml(self, resp, idp):
+        response = fromstring(resp)
+        tag = '{{{{{prefix}}}}}{{name}}'.format(prefix=response.nsmap[response.prefix])
+        token_tag = tag.format(name='RequestedSecurityToken')
+        token_type_tag = tag.format(name='TokenType')
+        lifetime_tag = tag.format(name='Lifetime')
+        resp_tag = tag.format(name='RequestSecurityTokenResponse')
+
+        for el in response.getchildren():
+            if el.tag == resp_tag:
+                context = el.attrib['Context']
+
+            for e in el.getchildren():
+                if e.tag == token_tag:
+                    saml_resp = e
+                    issuer_val = self.find_tag('Assertion/Issuer', e, self._assertion_ns).text
+                    nooa = self.find_tag('Assertion/Conditions', e, self._assertion_ns).attrib['NotOnOrAfter']
+                    sp_id = self.find_tag('Assertion/Conditions/AudienceRestriction/Audience', e, self._assertion_ns).text
+                elif e.tag == token_type_tag:
+                    token_type = e.text
+                elif e.tag == lifetime_tag:
+                    created = filter(lambda x: x.tag == '{{{}}}{}'.format(x.nsmap[x.prefix], 'Created'), e.getchildren())
+                    created = created and created[0].text or ''
+
+        saml_resp.tag = '{urn:oasis:names:tc:SAML:2.0:protocol}Response'
+        saml_resp.attrib['Version'] = '2.0'
+        saml_resp.attrib['ID'] = slugify(context)
+        saml_resp.attrib['IssueInstant'] = created
+
+        saml_nm = saml_resp.nsmap
+        saml_prefix = saml_resp.prefix
+
+        status = etree.Element('{{{}}}Status'.format(saml_nm[saml_prefix]), nsmap=saml_nm)
+        status_code = etree.Element(
+            '{{{}}}StatusCode'.format(saml_nm[saml_prefix]),
+            attrib={'Value': 'urn:oasis:names:tc:SAML:2.0:status:Success'},
+            nsmap=saml_nm
+        )
+        status.append(status_code)
+        issuer = etree.Element('Issuer', attrib={'xmlns': 'urn:oasis:names:tc:SAML:2.0:assertion'})
+        issuer.text = issuer_val
+        saml_resp.insert(0, status)
+        saml_resp.insert(0, issuer)
+
+        _sc = self.find_tag('Assertion/Subject/SubjectConfirmation', saml_resp, self._assertion_ns)
+        current_url = '{}{}'.format(
+            sp_id.endswith('/') and sp_id[:-1] or sp_id,
+            self.strategy.request_path()
+        )
+        scd = etree.Element(
+            'SubjectConfirmationData',
+            attrib={'Recipient': current_url, 'NotOnOrAfter': nooa}
+        )
+        _sc.append(scd)
+
+        return token_type, saml_resp
+
+    def _create_saml_auth(self, idp):
+        """Get an instance of OneLogin_Saml2_Auth"""
+        config = self.generate_saml_config(idp)
+        token_type, resp = self.ws_to_saml(self.strategy.request_post().get('wresult', ''), idp)
+
+        if token_type != 'urn:oasis:names:tc:SAML:2.0:assertion':
+            raise AuthFailed(self, 'SAML login failed: Unsupported token type.')
+
+        post_data = {
+            'SAMLResponse': b64encode(tostring(resp))
+        }
+        request_info = {
+            'https': 'on' if self.strategy.request_is_secure() else 'off',
+            'http_host': self.strategy.request_host(),
+            'script_name': self.strategy.request_path(),
+            'server_port': self.strategy.request_port(),
+            'get_data': self.strategy.request_get(),
+            'post_data': post_data,
+        }
+
+        from .models import SAMLProviderConfig
+        idp_conf = SAMLProviderConfig.current(idp.name)
+        cfg = json.loads(idp_conf.other_settings or '{}')
+        return OneLogin_Saml2_Auth(request_info, config, skip_signature_verification=cfg.get('SKIP_SIGNATURE_VERIFICATION'))
+
+    def auth_complete(self, *args, **kwargs):
+        """
+        The user has been redirected back from the IdP and we should
+        now log them in, if everything checks out.
+        """
+
+        data = self.strategy.request_data()
+        wa = data.get('wa')
+        wctx = data.get('wctx')
+        wresult = data.get('wresult')
+        if wa != 'wsignin1.0':
+            raise AuthFailed(self, 'SAML login failed: Unknown action {}'.format(wa))
+
+        wctx_list = wctx.split('/')
+        hash = wctx_list[1]
+        idp_name = wctx_list[0]
+
+        if not self.check_hash(hash):
+            raise AuthFailed(self, 'SAML login failed: Wrong response wctx')
+
+        idp = self.get_idp(idp_name)
+        auth = self._create_saml_auth(idp)
+        auth.process_response()
+        errors = auth.get_errors()
+        if errors or not auth.is_authenticated():
+            reason = auth.get_last_error_reason()
+            raise AuthFailed(
+                self, 'SAML login failed: {0} ({1})'.format(errors, reason)
+            )
+
+        attributes = auth.get_attributes()
+        attributes['name_id'] = auth.get_nameid()
+        self._check_entitlements(idp, attributes)
+        response = {
+            'idp_name': idp_name,
+            'attributes': attributes,
+            'session_index': auth.get_session_index(),
+        }
+        kwargs.update({'response': response, 'backend': self})
+        return self.strategy.authenticate(*args, **kwargs)
 
 
 def get_saml_idp_choices():
