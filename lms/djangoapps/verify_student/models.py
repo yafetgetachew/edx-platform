@@ -659,8 +659,8 @@ class SoftwareSecurePhotoVerification(PhotoVerification):
         # developing and aren't interested in working on student identity
         # verification functionality. If you do want to work on it, you have to
         # explicitly enable these in your private settings.
-        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
-            return
+        # if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+        #     return
 
         aes_key_str = settings.VERIFY_STUDENT["SOFTWARE_SECURE"]["FACE_IMAGE_AES_KEY"]
         aes_key = aes_key_str.decode("hex")
@@ -685,11 +685,11 @@ class SoftwareSecurePhotoVerification(PhotoVerification):
         # developing and aren't interested in working on student identity
         # verification functionality. If you do want to work on it, you have to
         # explicitly enable these in your private settings.
-        if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
-            # fake photo id key is set only for initial verification
-            self.photo_id_key = 'fake-photo-id-key'
-            self.save()
-            return
+        # if settings.FEATURES.get('AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'):
+        #     # fake photo id key is set only for initial verification
+        #     self.photo_id_key = 'fake-photo-id-key'
+        #     self.save()
+        #     return
 
         # NOTE(OSPP changes) Change images encrypting for manual student verification
         aes_key_str = settings.VERIFY_STUDENT["SOFTWARE_SECURE"]["FACE_IMAGE_AES_KEY"]
