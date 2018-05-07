@@ -277,3 +277,16 @@ if os.path.isfile(join(dirname(abspath(__file__)), 'private.py')):
 MODULESTORE = convert_module_store_setting_if_needed(MODULESTORE)
 
 SECRET_KEY = '85920908f28904ed733fe576320db18cabd7b6cd'
+
+FEATURES['ENABLE_XBLOCK_VIEW_ENDPOINT'] = True
+
+FAKE_DATA_FOR_RG_INSIGHTS_ENABLE = True
+# FAKE_DATA_FOR_RG_INSIGHTS_ENABLE = False
+
+RG_ANALYTICS_ENROLLMENT_STAT_UPDATE = {
+    'minute': '*/1',
+    'hour': '*',
+    'day_of_week': '*',
+    'day_of_month': '*',
+    'month_of_year': '*',
+}

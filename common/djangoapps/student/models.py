@@ -1591,7 +1591,7 @@ class CourseEnrollment(models.Model):
         else:
             return True
 
-    def refund_cutoff_date(self):
+    def  refund_cutoff_date(self):
         """ Calculate and return the refund window end date. """
         # NOTE: This is here to avoid circular references
         from openedx.core.djangoapps.commerce.utils import ecommerce_api_client, ECOMMERCE_DATE_FORMAT
