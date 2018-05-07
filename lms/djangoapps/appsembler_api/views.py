@@ -136,7 +136,7 @@ class CreateUserAccountWithoutPasswordView(APIView):
 
         """
         data = request.data
-
+        request.META["csrf_delete_cookie"] = True
         # set the honor_code and honor_code like checked,
         # so we can use the already defined methods for creating an user
         data['honor_code'] = "True"
@@ -178,6 +178,7 @@ class CreateUserAccountWithoutPasswordView(APIView):
             return Response(errors, status=400)
 
         response = Response({'user_id': user_id, 'username': username}, status=200)
+
         return response
 
 
@@ -386,6 +387,8 @@ class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
 
     def post(self, request):
         data = request.data
+        request.META["csrf_delete_cookie"] = True
+
         for key, value in data.iteritems():
             data[key] = str(value)
 
