@@ -26329,3 +26329,18 @@ msgstr "مرفقات ويكي"
 #: wiki/views/article.py
 msgid "A new revision of the article was successfully added."
 msgstr "تمت إضافة تنقيح جديد لهذا المقال بنجاح."
+
+#: lms/templates/emails/enroll_email_enrolledmessage.txt
+msgid ""
+"You have now been enrolled in {course_name} on {site_name} by the course staff. "
+"The course should be available in your My Courses list on {site_name}. "
+"To start viewing course materials, please visit the page below:"
+msgstr ""
+"لقد تم تسجيلك في دورة {course_name} على الموقع {site_name} من قبل أحد أعضاء طاقم الدورة."
+"يجب أن تكون الدورة متوفرة الآن على قائمة الدورات الخاصة بك على موقع {site_name}."
+"للبدء بالاطلاع على مواد الدورة، يُرجى زيارة الصفحة"
+
+
+msgid "This email was sent automatically from: {site_name} to {to_email}"
+msgstr ""
+"تم إرسال هذه الرسالة الإلكترونية تلقائياً من {site_name} الى {to_email}"
