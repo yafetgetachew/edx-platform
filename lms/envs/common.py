@@ -1081,6 +1081,7 @@ HELPDESK_URL = None
 HELPDESK_USER = None
 HELPDESK_API_KEY = None
 ZENDESK_CUSTOM_FIELDS = {}
+HELPDESK_SUPPORT_BACKEND = 'email'
 
 ##### EMBARGO #####
 EMBARGO_SITE_REDIRECT_URL = None
@@ -2864,6 +2865,7 @@ OPTIONAL_APPS = [
 
     # Organizations App (http://github.com/edx/edx-organizations)
     ('organizations', None),
+    ('genesys', None),
 
     # Enterprise Apps (http://github.com/edx/edx-enterprise)
     ('enterprise', None),
