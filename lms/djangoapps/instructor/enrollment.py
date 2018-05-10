@@ -448,7 +448,7 @@ def send_mail_to_student(student, param_dict, language=None):
         ),
         'enrolled_enroll': (
             'emails/enroll_email_enrolledsubject.txt',
-            'emails/enroll_email_enrolledmessage.txt'
+            'emails/enroll_email_enrolledmessage.html'
         ),
         'allowed_unenroll': (
             'emails/unenroll_email_subject.txt',

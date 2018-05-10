@@ -3,26 +3,25 @@
 
 <div style="direction: rtl; text-align: right;">
 <p>
-${_("Dear {full_name}").format(full_name=full_name)}
+${_("Hello, {full_name}").format(full_name=full_name)}
 </p>
 <p>
-${_("You have been enrolled in {course_name} at {site_name} by a member "
-	"of the course staff. The course should now appear on your {site_name} "
-	"dashboard.").format(
+${_("You have now been enrolled in {course_name} on {site_name} by the course staff. "
+	"The course should be available in your My Courses list on {site_name}. "
+	"To start viewing course materials, please visit the page below:").format(
 		course_name=display_name or course.display_name_with_default_escaped,
 		site_name=site_name
 	)}
 </p>
 <p>
-${_("To start accessing course materials, please visit {course_url}").format(
+${"{course_url}".format(
 		course_url=course_url
 	)}
 </p>
 <hr />
 <p>
-${_("This email was automatically sent from {site_name} to "
-	"{full_name}").format(
-		site_name=site_name, full_name=full_name
+${_("This email was sent automatically from: {site_name} to {to_email}").format(
+		site_name=site_name, to_email=email_address
 	)}
 </p>
 </div>
@@ -31,28 +30,25 @@ ${_("This email was automatically sent from {site_name} to "
 
 <div style="direction: ltr; text-align: left;">
 <p>
-${"Dear {full_name}".format(full_name=full_name)}
+${("Hello, {full_name}").format(full_name=full_name)}
 </p>
-
 <p>
-${("You have been enrolled in {course_name} at {site_name} by a member "
-	"of the course staff. The course should now appear on your {site_name} "
-	"dashboard.").format(
+${("You have now been enrolled in {course_name} on {site_name} by the course staff. "
+	"The course should be available in your My Courses’ list on {site_name}. "
+	"To start viewing course materials, please visit the page below:").format(
 		course_name=display_name or course.display_name_with_default_escaped,
 		site_name=site_name
 	)}
 </p>
 <p>
-${"To start accessing course materials, please visit {course_url}".format(
+${"{course_url}".format(
 		course_url=course_url
 	)}
 </p>
-
 <hr />
 <p>
-${("This email was automatically sent from {site_name} to "
-	"{full_name}").format(
-		site_name=site_name, full_name=full_name
+${("This email was sent automatically from: {site_name} to {to_email}").format(
+		site_name=site_name, to_email=email_address
 	)}
 </p>
 </div>
