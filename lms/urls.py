@@ -622,14 +622,16 @@ urlpatterns += (
         include('student_account.urls')
     ),
 
+    ######################### BAOBAB customization start #########################
     # Student profile
-    url(
-        r'^u/{username_pattern}$'.format(
-            username_pattern=settings.USERNAME_PATTERN,
-        ),
-        'student_profile.views.learner_profile',
-        name='learner_profile',
-    ),
+    # url(
+    #     r'^u/{username_pattern}$'.format(
+    #         username_pattern=settings.USERNAME_PATTERN,
+    #     ),
+    #     'student_profile.views.learner_profile',
+    #     name='learner_profile',
+    # ),
+    ######################### BAOBAB customization end #########################
 
     # Student Notes
     url(
