@@ -98,4 +98,4 @@ git+https://github.com/Stanford-Online/xblock-in-video-quiz@release/v0.1.6#egg=i
 -e git+https://github.com/raccoongang/edx_xblock_scorm.git#egg=edx_xblock_scorm
 
 #mpesa
--e git+https://github.com/raccoongang/mpesa_api.git#egg=edx-ginkgo-version
+-e git+https://github.com/raccoongang/mpesa_api.git@3b730126d184a08ec1473e5aeb7d5eb37da1ca9e#egg=edx-ginkgo-version

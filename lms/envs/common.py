@@ -1081,6 +1081,9 @@ CC_PROCESSOR = {
         "SECRET_KEY": '',
         "ACCESS_KEY": '',
         "PROFILE_ID": '',
+    },
+    'MPesa':{
+        "PHONE" '',
     }
 }
 
@@ -3239,14 +3242,14 @@ B2C_SECURITY_TOKEN = ''
 # B2C_SECURITY_TOKEN = 'E3Lw64xJ+/ayn1StCP9nu/ObqzgPgCf1IG6JEiubn91QOxkc4u8F0h9NdgjGHaWDHYDEaWxdxqd7uh3ZBsZCrPCm+8ckz8BX/Fqu/x0jOnKzEWwUdbdbFm+hV2q5HJY/EWIq6lnJQeCahkte0TQ6OoVzKyRIUsD4F+pkIIaMkjvqK5mcFWlZQIhoodXd9oBtlo7GWbcYNOjO1+GatYCtVgvjmfWHqI5k4PV/3zjNxvIcTmlB4Ao43fRvXwkRQsvc+8QOUDb6JDO0uF0UhAtz53QLdVmMNmldRoy/nEQ+QrKheY4PhXxnwhrIkFtzWhEG8AhWZjz/Ck4Kr6ePepNEuA=='
 B2C_INITIATOR_NAME = 'testapi409'
 B2C_COMMAND_ID = 'SalaryPayment'
-B2C_SHORTCODE = '601409'
+B2C_SHORTCODE = '545980'
 B2C_QUEUE_TIMEOUT_URL = 'http://localhost:8000/mpesa/b2c/timeout'
 B2C_RESULT_URL = 'http://localhost:8000/mpesa/b2c/result'
 
 C2B_REGISTER_URL = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl'
 C2B_VALIDATE_URL = 'http://localhost:8000/mpesa/c2b/validate'
 C2B_CONFIRMATION_URL = 'http://localhost:8000/mpesa/c2b/confirmation'
-C2B_SHORT_CODE = '600000'
+C2B_SHORT_CODE = '545980'
 C2B_RESPONSE_TYPE = 'Completed'
 
 C2B_ONLINE_CHECKOUT_URL = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
