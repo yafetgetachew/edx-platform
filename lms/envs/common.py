@@ -417,6 +417,9 @@ XQUEUE_WAITTIME_BETWEEN_REQUESTS = 5  # seconds
 RETRY_ACTIVATION_EMAIL_MAX_ATTEMPTS = 5
 RETRY_ACTIVATION_EMAIL_TIMEOUT = 0.5
 
+SESSION_INACTIVITY_TIMEOUT_IN_SECONDS = 20  # auto-expire login sessions after 5 minutes of inactivity
+
+
 ############################# SET PATH INFORMATION #############################
 PROJECT_ROOT = path(__file__).abspath().dirname().dirname()  # /edx-platform/lms
 REPO_ROOT = PROJECT_ROOT.dirname()
@@ -849,7 +852,7 @@ COURSES_WITH_UNSAFE_CODE = []
 # Change DEBUG in your environment settings files, not here
 DEBUG = False
 USE_TZ = True
-SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = True
 SESSION_SAVE_EVERY_REQUEST = False
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
@@ -2550,13 +2553,18 @@ FINANCIAL_REPORTS = {
 }
 
 #### PASSWORD POLICY SETTINGS #####
-PASSWORD_MIN_LENGTH = 8
-PASSWORD_MAX_LENGTH = None
-PASSWORD_COMPLEXITY = {"UPPER": 1, "LOWER": 1, "DIGITS": 1}
-PASSWORD_DICTIONARY_EDIT_DISTANCE_THRESHOLD = None
-PASSWORD_DICTIONARY = []
 
-############################ ORA 2 ############################################
+PASSWORD_MIN_LENGTH = 5
+PASSWORD_MAX_LENGTH = 100
+
+FEATURES['ENFORCE_PASSWORD_POLICY'] = True
+
+PASSWORD_COMPLEXITY = {
+    'ALPHABETIC': 1,
+    'NUMERIC': 1,
+}
+PASSWORD_DICTIONARY = ['password1', 'abcd1234']
+PASSWORD_DICTIONARY_EDIT_DISTANCE_THRESHOLD = 1
 
 # By default, don't use a file prefix
 ORA2_FILE_PREFIX = None

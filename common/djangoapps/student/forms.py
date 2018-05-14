@@ -212,8 +212,8 @@ class AccountCreationForm(forms.Form):
             data=None,
             extra_fields=None,
             extended_profile_fields=None,
-            enforce_username_neq_password=False,
-            enforce_password_policy=False,
+            enforce_username_neq_password=True,
+            enforce_password_policy=True,
             tos_required=True
     ):
         super(AccountCreationForm, self).__init__(data)
