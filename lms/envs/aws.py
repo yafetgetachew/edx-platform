@@ -702,6 +702,7 @@ if FEATURES.get('ENABLE_THIRD_PARTY_AUTH'):
             'social_core.backends.azuread.AzureADOAuth2',
             'third_party_auth.saml.SAMLAuthBackend',
             'third_party_auth.lti.LTIAuthBackend',
+            'edx_oauth_client.backends.drupal_oauth_client.DrupalOAuthBackend',
         ]) + list(AUTHENTICATION_BACKENDS)
     )
 
