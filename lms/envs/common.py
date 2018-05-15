@@ -1067,7 +1067,7 @@ PAYMENT_SUPPORT_EMAIL = 'payment@example.com'
 
 ##### Using cybersource by default #####
 
-CC_PROCESSOR_NAME = 'CyberSource'
+CC_PROCESSOR_NAME = 'MPesa'
 CC_PROCESSOR = {
     'CyberSource': {
         'SHARED_SECRET': '',
@@ -1083,7 +1083,8 @@ CC_PROCESSOR = {
         "PROFILE_ID": '',
     },
     'MPesa':{
-        "PHONE" '',
+        "PHONE" :'',
+        "PURCHASE_ENDPOINT": '',
     }
 }
 
