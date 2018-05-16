@@ -7,8 +7,9 @@ import httplib
 import logging
 from datetime import date, timedelta
 from django.contrib.auth.models import User
-from django.db.models.aggregates import Count
+from django.db.models.aggregates import Count, Max
 from django.db.models.expressions import F, Func, Value
+from django.db.transaction import atomic
 
 import requests
 
@@ -169,6 +170,7 @@ def send_instance_statistics_to_acceptor(olga_acceptor_url, data):
         return False
 
 
+@atomic
 def get_registered_students_daily(token):
     """
     Get registered users count daily starting from the day after the date_start.
@@ -177,12 +179,17 @@ def get_registered_students_daily(token):
     :return: Dictionary where the keys is a dates and the values is the counts.
     """
     last_date = get_last_analytics_sent_date('registered_students', token)
-    registered_users = User.objects.filter(date_joined__gt=last_date).annotate(
+    queryset = User.objects.filter(date_joined__gt=last_date)
+    registered_users = queryset.annotate(
         date=Func(F('date_joined'), Value('%Y-%m-%d'), function='date_format')
-    ).values('date').annotate(count=Count('id'))
-    return dict((day['date'], day['count']) for day in registered_users)
+    ).values('date').annotate(count=Count('id'), datetime=Max('date_joined'))
+    new_last_date = queryset.aggregate(
+        datetime=Max('date_joined')
+    )['datetime']
+    return (dict((day['date'], day['count']) for day in registered_users), new_last_date)
 
 
+@atomic
 def get_generated_certificates_daily(token):
     """
     Get the count of the certificates generated  daily starting from the day after the date_start.
@@ -192,14 +199,17 @@ def get_generated_certificates_daily(token):
     :return: Dictionary where the keys is a dates and the values is the counts.
     """
     last_date = get_last_analytics_sent_date('generated_certificates', token)
-    generated_certificates = GeneratedCertificate.objects.filter(
-        created_date__gt=last_date
-    ).annotate(
+    queryset = GeneratedCertificate.objects.filter(created_date__gt=last_date)
+    generated_certificates = queryset.annotate(
         date=Func(F('created_date'), Value('%Y-%m-%d'), function='date_format')
-    ).values('date').annotate(count=Count('id'))
-    return dict((day['date'], day['count']) for day in generated_certificates)
+    ).values('date').annotate(count=Count('id'), datetime=Max('created_date'))
+    new_last_date = queryset.aggregate(
+        datetime=Max('created_date')
+    )['datetime']
+    return (dict((day['date'], day['count']) for day in generated_certificates), new_last_date)
 
 
+@atomic
 def get_enthusiastic_students_daily(token):
     """
     Get enthusiastic students count daily starting from the day after the date_start.
@@ -210,12 +220,16 @@ def get_enthusiastic_students_daily(token):
     """
     last_date = get_last_analytics_sent_date('enthusiastic_students', token)
     last_sections_ids = get_all_courses_last_sections_ids()
-    enthusiastic_students = StudentModule.objects.filter(
+    queryset = StudentModule.objects.filter(
         created__gt=last_date, module_state_key__in=last_sections_ids
-    ).annotate(
+    )
+    enthusiastic_students = queryset.annotate(
         date=Func(F('created'), Value('%Y-%m-%d'), function='date_format')
-    ).values('date').annotate(count=Count('student_id'))
-    return dict((day['date'], day['count']) for day in enthusiastic_students)
+    ).values('date').annotate(count=Count('student_id', datetime=Max('created')))
+    new_last_date = queryset.aggregate(
+        datetime=Max('created')
+    )['datetime']
+    return (dict((day['date'], day['count']) for day in enthusiastic_students), new_last_date)
 
 
 def get_all_courses_last_sections_ids():
