@@ -89,6 +89,7 @@ def get_grade_book_page(request, course, course_key):
         student_info = [
             {
                 'username': student.username,
+                'name': hasattr(student, 'profile') and student.profile.name or student.get_full_name(),
                 'id': student.id,
                 'email': student.email,
                 'grade_summary': student_grades(student, request, course),

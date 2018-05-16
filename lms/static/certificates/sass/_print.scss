@@ -206,12 +206,7 @@
             border: none !important;
         }
 
-        .wrapper-statement-and-signatories {
-            border-bottom: rem(2) solid palette(grayscale-cool, x-light);
-        }
-
-        .accomplishment-statement {
-            @extend %print-rendering-section;
+        .accomplishment-statement {        
             width: span(8);
             margin: 0 auto;
         }
@@ -246,6 +241,7 @@
             @extend %print-rendering-section;
             @include span(12 last);
             border: none;
+            padding-top: 20px;
 
             .signatory-credentials {
                 font-size: 8pt;
