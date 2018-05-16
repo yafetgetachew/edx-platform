@@ -108,6 +108,14 @@ def collect_stats():
     (active_students_amount_day,
      active_students_amount_week,
      active_students_amount_month) = paranoid_level_statistics_bunch()
+    registered_students, registered_students_last_date = get_registered_students_daily(access_token)
+    generated_certificates, generated_certificates_last_date = get_generated_certificates_daily(access_token)
+    enthusiastic_students, enthusiastic_students_last_date = get_enthusiastic_students_daily(access_token)
+    last_dates = {
+        'registered_students': registered_students_last_date,
+        'generated_certificates': generated_certificates_last_date,
+        'enthusiastic_students': enthusiastic_students_last_date,
+    }
 
     # Paranoid statistics level basic data.
     data = {
@@ -117,9 +125,9 @@ def collect_stats():
         'active_students_amount_month': active_students_amount_month,
         'courses_amount': courses_amount,
         'statistics_level': 'paranoid',
-        'registered_students': get_registered_students_daily(access_token),
-        'generated_certificates': get_generated_certificates_daily(access_token),
-        'enthusiastic_students': get_enthusiastic_students_daily(access_token),
+        'registered_students': registered_students,
+        'generated_certificates': generated_certificates,
+        'enthusiastic_students': enthusiastic_students,
     }
 
     if statistics_level == 'enthusiast':
@@ -141,7 +149,7 @@ def collect_stats():
     set_last_sent_date(result, access_token, data)
 
 
-def set_last_sent_date(result, token, data):
+def set_last_sent_date(result, token, dates):
     """
     Set last sent dates to the cache.
 
@@ -154,7 +162,6 @@ def set_last_sent_date(result, token, data):
     if not result:  # If http request is failed
         return
 
-    for stat_type in ('registered_students', 'generated_certificates', 'enthusiastic_students'):
-        if data[stat_type]:
-            str_date = sorted(data[stat_type].keys(), reverse=True)[0]
-            set_last_analytics_sent_date(stat_type, token, datetime.strptime(str_date, '%Y-%m-%d'))
+    for stat_type, stat_date in dates.iteritems():
+        if stat_date:
+            set_last_analytics_sent_date(stat_type, token, stat_date)
