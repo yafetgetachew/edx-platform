@@ -125,9 +125,9 @@ def collect_stats():
         'active_students_amount_month': active_students_amount_month,
         'courses_amount': courses_amount,
         'statistics_level': 'paranoid',
-        'registered_students': registered_students,
-        'generated_certificates': generated_certificates,
-        'enthusiastic_students': enthusiastic_students,
+        'registered_students': json.dumps(registered_students),
+        'generated_certificates': json.dumps(generated_certificates),
+        'enthusiastic_students': json.dumps(enthusiastic_students),
     }
 
     if statistics_level == 'enthusiast':
@@ -146,7 +146,7 @@ def collect_stats():
         })
 
     result = send_instance_statistics_to_acceptor(olga_acceptor_url, data)
-    set_last_sent_date(result, access_token, data)
+    set_last_sent_date(result, access_token, last_dates)
 
 
 def set_last_sent_date(result, token, dates):
@@ -162,6 +162,6 @@ def set_last_sent_date(result, token, dates):
     if not result:  # If http request is failed
         return
 
-    for stat_type, stat_date in dates.iteritems():
-        if stat_date:
-            set_last_analytics_sent_date(stat_type, token, stat_date)
+    for stat_type in ('registered_students', 'generated_certificates', 'enthusiastic_students'):
+        if dates[stat_type]:
+            set_last_analytics_sent_date(stat_type, token, dates[stat_type])
