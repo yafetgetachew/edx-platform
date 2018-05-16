@@ -65,18 +65,6 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
 
         self.assertEqual(result, 2)
 
-    def test_miss_statistics_query_fetch_instance_information_for_active_students_amount(self):
-        """
-        Verifies that fetch_instance_information raise `KeyError` if default statistics queries don't have
-        corresponding name (dict`s key).
-        """
-        activity_period = datetime.date(2017, 5, 15), datetime.date(2017, 5, 16)
-        cache_timeout = None
-
-        self.assertRaises(KeyError, lambda: fetch_instance_information(
-            'active_students_amount_day', 'active_students_amount_day', activity_period, cache_timeout
-        ))
-
     def test_datetime_is_none_fetch_instance_information_for_active_students_amount(self):
         """
         Verifies that fetch_instance_information raise `TypeError` if needed datetime objects are missed
@@ -150,16 +138,11 @@ class TestCacheInstanceData(TestCase):
         Verifies that cache_instance_data returns data as expected after caching it.
         """
         self.create_cache_instance_data_default_database_data()
-
-        period_start, period_end = datetime.date(2017, 5, 8), datetime.date(2017, 5, 15)
-
-        active_students_amount_week = UserProfile.objects.exclude(
-            Q(user__last_login=None) | Q(user__is_active=False)
-        ).filter(user__last_login__gte=period_start, user__last_login__lt=period_end).count()
-
+        activity_period = (datetime.date(2017, 5, 8), datetime.date(2017, 5, 15))
         cache_timeout = None
-
-        result = cache_instance_data('active_students_amount_week', active_students_amount_week, cache_timeout)
+        result = cache_instance_data(
+            'active_students_amount_week', 'active_students_amount', activity_period
+        )
 
         self.assertEqual(result, 2)
 
@@ -174,22 +157,16 @@ class TestLastSentStatisticsDate(TestCase):
         Verifies that cache returns the default stats date (the Unix epoch start).
         """
         cache.clear()
-        data = {
-            'registered_students': {
-                '2017-01-01': 17,
-                '2018-01-01': 18,
-            },
-            'generated_certificates': {
-                '2016-01-01': 16,
-            },
-            'enthusiastic_students': {
-            },
+        last_dates = {
+            'registered_students': datetime.datetime(2018, 1, 1),
+            'generated_certificates': datetime.datetime(2016, 1, 1),
+            'enthusiastic_students': None,
         }
         token = 'test-token'
         default_date1 = get_last_analytics_sent_date('registered_students', token)
         default_date2 = get_last_analytics_sent_date('enthusiastic_students', token)
 
-        set_last_sent_date(True, token, data)
+        set_last_sent_date(True, token, last_dates)
 
         registered_students = get_last_analytics_sent_date('registered_students', token)
         certs_latest = get_last_analytics_sent_date('generated_certificates', token)
@@ -211,7 +188,8 @@ class TestGetStatsDailyRegistered(TestCase):
         """
         Checks that the function returns an empty dict by the date in filter that didn't existed yet.
         """
-        self.assertEqual(len(get_registered_students_daily('test-token')), 0)
+        registered_students, _ = get_registered_students_daily('test-token')
+        self.assertEqual(len(registered_students), 0)
 
     def test_return_data_on_previous_dates(self):
         """
@@ -221,24 +199,21 @@ class TestGetStatsDailyRegistered(TestCase):
         User.objects.create(username='test1', password='test1', email='test1@example.com', date_joined='2016-01-01')
         User.objects.create(username='test2', password='test2', email='test2@example.com', date_joined='2016-01-01')
         User.objects.create(username='test3', password='test3', email='test3@example.com', date_joined='2017-01-01')
-        first_students_part = get_registered_students_daily('test-token')
+        first_students_part, _ = get_registered_students_daily('test-token')
 
         self.assertEqual(len(first_students_part), 2)
         self.assertEqual(first_students_part['2016-01-01'], 2)
         self.assertEqual(first_students_part['2017-01-01'], 1)
 
-        data = {
-            'registered_students': {
-                '2016-01-01': 2,
-                '2017-01-01': 1,
-            },
-            'generated_certificates': {},
-            'enthusiastic_students': {},
+        last_dates = {
+            'registered_students': datetime.datetime(2017, 1, 1),
+            'generated_certificates': None,
+            'enthusiastic_students': None,
         }
-        set_last_sent_date(True, 'test-token', data)  # Saving the last date
+        set_last_sent_date(True, 'test-token', last_dates)  # Saving the last date
 
         User.objects.create(username='test4', password='test4', email='test4@example.com', date_joined='2018-01-01')
-        second_students_part = get_registered_students_daily('test-token')
+        second_students_part, _ = get_registered_students_daily('test-token')
 
         self.assertEqual(len(second_students_part), 1)
         self.assertEqual(second_students_part['2018-01-01'], 1)
@@ -253,7 +228,8 @@ class TestGetStatsDailyCertificates(TestCase):
         """
         Checks that the function returns an empty dict by the date in filter that didn't existed yet.
         """
-        self.assertEqual(len(get_generated_certificates_daily('test-token')), 0)
+        generated_certificates, _ = get_generated_certificates_daily('test-token')
+        self.assertEqual(len(generated_certificates), 0)
 
     def test_return_data_on_previous_dates(self):
         """
@@ -263,28 +239,33 @@ class TestGetStatsDailyCertificates(TestCase):
         User.objects.create(username='test1', password='test1', email='test1@example.com', date_joined='2016-01-01')
         User.objects.create(username='test2', password='test2', email='test2@example.com', date_joined='2016-01-01')
         User.objects.create(username='test3', password='test3', email='test3@example.com', date_joined='2017-01-01')
-        GeneratedCertificate.objects.create(user_id=1, created_date='2016-01-01')
-        GeneratedCertificate.objects.create(user_id=2, created_date='2016-01-01')
-        GeneratedCertificate.objects.create(user_id=3, created_date='2017-01-01')
-        first_certificates_part = get_generated_certificates_daily('test-token')
+        cert1 = GeneratedCertificate.objects.create(user_id=1)
+        cert1.created_date='2016-01-01'
+        cert1.save()
+        cert2 = GeneratedCertificate.objects.create(user_id=2)
+        cert2.created_date = '2016-01-01'
+        cert2.save()
+        cert3 = GeneratedCertificate.objects.create(user_id=3)
+        cert3.created_date = '2017-01-01'
+        cert3.save()
+        first_certificates_part, _ = get_generated_certificates_daily('test-token')
 
         self.assertEqual(len(first_certificates_part), 2)
         self.assertEqual(first_certificates_part['2016-01-01'], 2)
         self.assertEqual(first_certificates_part['2017-01-01'], 1)
 
-        data = {
-            'registered_students': {},
-            'generated_certificates': {
-                '2016-01-01': 2,
-                '2017-01-01': 1,
-            },
-            'enthusiastic_students': {},
+        last_dates = {
+            'registered_students': None,
+            'generated_certificates': datetime.datetime(2017, 1, 1),
+            'enthusiastic_students': None,
         }
-        set_last_sent_date(True, 'test-token', data)  # Saving the last date
+        set_last_sent_date(True, 'test-token', last_dates)  # Saving the last date
 
         User.objects.create(username='test4', password='test4', email='test4@example.com', date_joined='2018-01-01')
-        GeneratedCertificate.objects.create(user_id=4, created_date='2018-01-01')
-        second_certificates_part = get_generated_certificates_daily('test-token')
+        cert4 = GeneratedCertificate.objects.create(user_id=4)
+        cert4.created_date = '2018-01-01'
+        cert4.save()
+        second_certificates_part, _ = get_generated_certificates_daily('test-token')
 
         self.assertEqual(len(second_certificates_part), 1)
         self.assertEqual(second_certificates_part['2018-01-01'], 1)
@@ -299,4 +280,5 @@ class TestGetStatsDailyEnthusiastic(TestCase):
         """
         Checks that the function returns an empty dict by the date in filter that didn't existed yet.
         """
-        self.assertEqual(len(get_enthusiastic_students_daily('test-token')), 0)
+        enthusiastic_students, _ = get_enthusiastic_students_daily('test-token')
+        self.assertEqual(len(enthusiastic_students), 0)
