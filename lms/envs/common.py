@@ -31,17 +31,13 @@ Longer TODO:
 
 import imp
 import sys
-import os
 
+import os
+from django.utils.translation import ugettext_lazy as _
+from lms.djangoapps.lms_xblock.mixin import LmsBlockMixin
 from path import Path as path
 from warnings import simplefilter
-from django.utils.translation import ugettext_lazy as _
-
-from .discussionsettings import *
-from xmodule.modulestore.modulestore_settings import update_module_store_settings
 from xmodule.modulestore.edit_info import EditInfoMixin
-from openedx.core.lib.license import LicenseMixin
-from lms.djangoapps.lms_xblock.mixin import LmsBlockMixin
 
 ################################### FEATURES ###################################
 # The display name of the platform to be used in templates/emails/etc.
@@ -506,6 +502,7 @@ OAUTH2_PROVIDER_APPLICATION_MODEL = 'oauth2_provider.Application'
 # Mako templating
 # TODO: Move the Mako templating into a different engine in TEMPLATES below.
 import tempfile
+
 MAKO_MODULE_DIR = os.path.join(tempfile.gettempdir(), 'mako_lms')
 MAKO_TEMPLATES = {}
 MAKO_TEMPLATES['main'] = [
@@ -655,13 +652,11 @@ USAGE_KEY_PATTERN = r'(?P<usage_key_string>(?:i4x://?[^/]+/[^/]+/[^/]+/[^@]+(?:@
 ASSET_KEY_PATTERN = r'(?P<asset_key_string>(?:/?c4x(:/)?/[^/]+/[^/]+/[^/]+/[^@]+(?:@[^/]+)?)|(?:[^/]+))'
 USAGE_ID_PATTERN = r'(?P<usage_id>(?:i4x://?[^/]+/[^/]+/[^/]+/[^@]+(?:@[^/]+)?)|(?:[^/]+))'
 
-
 # The space is required for space-dependent languages like Arabic and Farsi.
 # However, backward compatibility with Ficus older releases is still maintained (space is still not valid)
 # in the AccountCreationForm and the user_api through the ENABLE_UNICODE_USERNAME feature flag.
 USERNAME_REGEX_PARTIAL = r'[\w .@_+-]+'
 USERNAME_PATTERN = r'(?P<username>{regex})'.format(regex=USERNAME_REGEX_PARTIAL)
-
 
 ############################## EVENT TRACKING #################################
 LMS_SEGMENT_KEY = None
@@ -912,7 +907,7 @@ LANGUAGES = (
     ('en', u'English'),
     ('rtl', u'Right-to-Left Test Language'),
     ('eo', u'Dummy Language (Esperanto)'),  # Dummy languaged used for testing
-    ('fake2', u'Fake translations'),        # Another dummy language for testing (not pushed to prod)
+    ('fake2', u'Fake translations'),  # Another dummy language for testing (not pushed to prod)
 
     ('am', u'አማርኛ'),  # Amharic
     ('ar', u'العربية'),  # Arabic
@@ -1103,7 +1098,6 @@ PARENTAL_CONSENT_AGE_LIMIT = 13
 ################################# Jasmine ##################################
 JASMINE_TEST_DIRECTORY = PROJECT_ROOT + '/static/coffee'
 
-
 ######################### Branded Footer ###################################
 # Constants for the footer used on the site and shared with other sites
 # (such as marketing and the blog) via the branding API.
@@ -1176,7 +1170,7 @@ MIDDLEWARE_CLASSES = (
     'openedx.core.djangoapps.safe_sessions.middleware.SafeSessionMiddleware',
 
     # Instead of AuthenticationMiddleware, we use a cached backed version
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     'openedx.core.djangoapps.cache_toolbox.middleware.CacheBackedAuthenticationMiddleware',
     # Enable SessionAuthenticationMiddleware in order to invalidate
     # user sessions after a password change.
@@ -1243,6 +1237,7 @@ MIDDLEWARE_CLASSES = (
 
     # This must be last
     'openedx.core.djangoapps.site_configuration.middleware.SessionCookieDomainOverrideMiddleware',
+
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
@@ -1279,35 +1274,35 @@ PIPELINE_UGLIFYJS_BINARY = 'node_modules/.bin/uglifyjs'
 from openedx.core.lib.rooted_paths import rooted_glob
 
 courseware_js = (
-    [
-        'coffee/src/' + pth + '.js'
-        for pth in ['courseware', 'histogram', 'navigation']
-    ] +
-    ['js/' + pth + '.js' for pth in ['ajax-error']] +
-    sorted(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/modules/**/*.js'))
+        [
+            'coffee/src/' + pth + '.js'
+            for pth in ['courseware', 'histogram', 'navigation']
+        ] +
+        ['js/' + pth + '.js' for pth in ['ajax-error']] +
+        sorted(rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/modules/**/*.js'))
 )
 
 proctoring_js = (
-    [
-        'proctoring/js/models/proctored_exam_allowance_model.js',
-        'proctoring/js/models/proctored_exam_attempt_model.js',
-        'proctoring/js/models/proctored_exam_model.js'
-    ] +
-    [
-        'proctoring/js/collections/proctored_exam_allowance_collection.js',
-        'proctoring/js/collections/proctored_exam_attempt_collection.js',
-        'proctoring/js/collections/proctored_exam_collection.js'
-    ] +
-    [
-        'proctoring/js/views/Backbone.ModalDialog.js',
-        'proctoring/js/views/proctored_exam_add_allowance_view.js',
-        'proctoring/js/views/proctored_exam_allowance_view.js',
-        'proctoring/js/views/proctored_exam_attempt_view.js',
-        'proctoring/js/views/proctored_exam_view.js'
-    ] +
-    [
-        'proctoring/js/proctored_app.js'
-    ]
+        [
+            'proctoring/js/models/proctored_exam_allowance_model.js',
+            'proctoring/js/models/proctored_exam_attempt_model.js',
+            'proctoring/js/models/proctored_exam_model.js'
+        ] +
+        [
+            'proctoring/js/collections/proctored_exam_allowance_collection.js',
+            'proctoring/js/collections/proctored_exam_attempt_collection.js',
+            'proctoring/js/collections/proctored_exam_collection.js'
+        ] +
+        [
+            'proctoring/js/views/Backbone.ModalDialog.js',
+            'proctoring/js/views/proctored_exam_add_allowance_view.js',
+            'proctoring/js/views/proctored_exam_allowance_view.js',
+            'proctoring/js/views/proctored_exam_attempt_view.js',
+            'proctoring/js/views/proctored_exam_view.js'
+        ] +
+        [
+            'proctoring/js/proctored_app.js'
+        ]
 )
 
 # Before a student accesses courseware, we do not
@@ -1365,11 +1360,11 @@ dashboard_js = (
     sorted(rooted_glob(PROJECT_ROOT / 'static', 'js/dashboard/**/*.js'))
 )
 discussion_js = (
-    rooted_glob(COMMON_ROOT / 'static', 'common/js/discussion/mathjax_include.js') +
-    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/customwmd.js') +
-    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/mathjax_accessible.js') +
-    rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/mathjax_delay_renderer.js') +
-    sorted(rooted_glob(COMMON_ROOT / 'static', 'common/js/discussion/**/*.js'))
+        rooted_glob(COMMON_ROOT / 'static', 'common/js/discussion/mathjax_include.js') +
+        rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/customwmd.js') +
+        rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/mathjax_accessible.js') +
+        rooted_glob(PROJECT_ROOT / 'static', 'coffee/src/mathjax_delay_renderer.js') +
+        sorted(rooted_glob(COMMON_ROOT / 'static', 'common/js/discussion/**/*.js'))
 )
 
 discussion_vendor_js = [
@@ -1608,7 +1603,6 @@ PIPELINE_CSS = {
     },
 }
 
-
 separately_bundled_js = set(courseware_js + discussion_js + notes_js + instructor_dash_js)
 common_js = sorted(set(rooted_glob(COMMON_ROOT / 'static', 'coffee/src/**/*.js')) - separately_bundled_js)
 xblock_runtime_js = [
@@ -1625,13 +1619,13 @@ PIPELINE_JS = {
     },
     'application': {
         'source_filenames': (
-            common_js + xblock_runtime_js + base_application_js + lms_application_js +
-            [
-                'js/sticky_filter.js',
-                'js/query-params.js',
-                'common/js/vendor/moment-with-locales.js',
-                'common/js/vendor/moment-timezone-with-data.js',
-            ]
+                common_js + xblock_runtime_js + base_application_js + lms_application_js +
+                [
+                    'js/sticky_filter.js',
+                    'js/query-params.js',
+                    'common/js/vendor/moment-with-locales.js',
+                    'common/js/vendor/moment-timezone-with-data.js',
+                ]
         ),
         'output_filename': 'js/lms-application.js',
     },
@@ -1716,7 +1710,6 @@ PIPELINE_JS = {
     }
 }
 
-
 STATICFILES_IGNORE_PATTERNS = (
     "*.py",
     "*.pyc",
@@ -1741,7 +1734,6 @@ STATICFILES_IGNORE_PATTERNS = (
     # Symlinks used by js-test-tool
     "xmodule_js",
 )
-
 
 ################################# DJANGO-REQUIRE ###############################
 
@@ -2055,7 +2047,7 @@ INSTALLED_APPS = (
 
     'openedx.core.djangoapps.auth_exchange',
 
-    #SSO Client for Drupal. https://github.com/raccoongang/edx-oauth-client/tree/drupal
+    # SSO Client for Drupal. https://github.com/raccoongang/edx-oauth-client/tree/drupal
     'edx_oauth_client',
 
     # For the wiki
@@ -2064,12 +2056,12 @@ INSTALLED_APPS = (
     'course_wiki',  # Our customizations
     'mptt',
     'sekizai',
-    #'wiki.plugins.attachments',
+    # 'wiki.plugins.attachments',
     'wiki.plugins.links',
     # Notifications were enabled, but only 11 people used it in three years. It
     # got tangled up during the Django 1.8 migration, so we are disabling it.
     # See TNL-3783 for details.
-    #'wiki.plugins.notifications',
+    # 'wiki.plugins.notifications',
     'course_wiki.plugins.markdownedx',
 
     # For testing
@@ -2134,7 +2126,7 @@ INSTALLED_APPS = (
     'course_action_state',
 
     # Additional problem types
-    'edx_jsme',    # Molecular Structure
+    'edx_jsme',  # Molecular Structure
 
     # Country list
     'django_countries',
@@ -2271,7 +2263,6 @@ REST_FRAMEWORK = {
         'service_user': '120/minute',
     },
 }
-
 
 ######################### MARKETING SITE ###############################
 EDXMKTG_LOGGED_IN_COOKIE_NAME = 'edxloggedin'
@@ -2568,10 +2559,8 @@ FILE_UPLOAD_STORAGE_PREFIX = 'submissions_attachments'
 MAX_FAILED_LOGIN_ATTEMPTS_ALLOWED = 5
 MAX_FAILED_LOGIN_ATTEMPTS_LOCKOUT_PERIOD_SECS = 15 * 60
 
-
 ##### LMS DEADLINE DISPLAY TIME_ZONE #######
 TIME_ZONE_DISPLAYED_FOR_DEADLINES = 'UTC'
-
 
 # Source:
 # http://loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt according to http://en.wikipedia.org/wiki/ISO_639-1
@@ -2766,7 +2755,6 @@ ALL_LANGUAGES = (
     [u"zu", u"Zulu"]
 )
 
-
 ### Apps only installed in some instances
 OPTIONAL_APPS = (
     'mentoring',
@@ -2845,10 +2833,8 @@ COURSE_CATALOG_VISIBILITY_PERMISSION = 'see_exists'
 # visible. We default this to the legacy permission 'see_exists'.
 COURSE_ABOUT_VISIBILITY_PERMISSION = 'see_exists'
 
-
 # Enrollment API Cache Timeout
 ENROLLMENT_COURSE_DETAILS_CACHE_TIMEOUT = 60
-
 
 OAUTH_ID_TOKEN_EXPIRATION = 60 * 60
 
@@ -3033,7 +3019,6 @@ LTI_USER_EMAIL_DOMAIN = 'lti.example.com'
 # The time value is in seconds.
 LTI_AGGREGATE_SCORE_PASSBACK_DELAY = 15 * 60
 
-
 # For help generating a key pair import and run `openedx.core.lib.rsa_key_utils.generate_rsa_key_pair()`
 JWT_PRIVATE_SIGNING_KEY = None
 JWT_EXPIRED_PRIVATE_SIGNING_KEYS = []
@@ -3041,7 +3026,6 @@ JWT_EXPIRED_PRIVATE_SIGNING_KEYS = []
 # Credit notifications settings
 NOTIFICATION_EMAIL_CSS = "templates/credit_notifications/credit_notification.css"
 NOTIFICATION_EMAIL_EDX_LOGO = "templates/credit_notifications/edx-logo-header.png"
-
 
 ################################ Settings for Microsites ################################
 
@@ -3183,7 +3167,7 @@ ENTERPRISE_COURSE_ENROLLMENT_AUDIT_MODES = ['audit', 'honor']
 ENTERPRISE_API_URL = LMS_ROOT_URL + '/enterprise/api/v1/'
 ENTERPRISE_SERVICE_WORKER_USERNAME = 'enterprise_worker'
 ENTERPRISE_API_CACHE_TIMEOUT = 3600  # Value is in seconds
-ENTERPRISE_CUSTOMER_LOGO_IMAGE_SIZE = 512   # Enterprise logo image size limit in KB's
+ENTERPRISE_CUSTOMER_LOGO_IMAGE_SIZE = 512  # Enterprise logo image size limit in KB's
 
 ############## ENTERPRISE SERVICE LMS CONFIGURATION ##################################
 # The LMS has some features embedded that are related to the Enterprise service, but

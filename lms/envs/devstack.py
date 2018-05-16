@@ -278,12 +278,13 @@ MODULESTORE = convert_module_store_setting_if_needed(MODULESTORE)
 
 SECRET_KEY = '85920908f28904ed733fe576320db18cabd7b6cd'
 
-# FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"] = True,
-# FEATURES["ENABLE_THIRD_PARTY_AUTH"] = True,
-# FEATURES["DRUPAL_PRIVIDER_URL"] = "http://drupalsite.domain"
+FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"] = True,
+FEATURES["ENABLE_THIRD_PARTY_AUTH"] = True,
+FEATURES["DRUPAL_PRIVIDER_URL"] = "http://yt-portal.raccoongang.com"
 #
-# THIRD_PARTY_AUTH_BACKENDS = ["edx_oauth_client.backends.drupal_oauth_client.DrupalOAuthBackend"]
+THIRD_PARTY_AUTH_BACKENDS = ["edx_oauth_client.backends.drupal_oauth_client.DrupalOAuthBackend"]
 
 # INSTALLED_APPS += ('edx_oauth_client',)
 
 MIDDLEWARE_CLASSES += ("edx_oauth_client.middleware.SeamlessAuthorization",)
+SOCIAL_AUTH_EXCLUDE_URL_PATTERN = r"(\/admin\/)*"
