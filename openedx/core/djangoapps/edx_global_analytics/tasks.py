@@ -162,6 +162,6 @@ def set_last_sent_date(result, token, dates):
     if not result:  # If http request is failed
         return
 
-    for stat_type in ('registered_students', 'generated_certificates', 'enthusiastic_students'):
-        if dates[stat_type]:
-            set_last_analytics_sent_date(stat_type, token, dates[stat_type])
+    for stat_type, date in dates.iteritems():
+        if date:
+            set_last_analytics_sent_date(stat_type, token, date)
