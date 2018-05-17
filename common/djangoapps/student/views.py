@@ -1892,6 +1892,9 @@ def create_account_with_params(request, params):
     )
     custom_form = get_registration_extension_form(data=params)
 
+    if is_third_party_auth_enabled and (pipeline.running(request) or third_party_auth_credentials_in_api):
+        custom_form = None
+
     # Perform operations within a transaction that are critical to account creation
     with transaction.atomic():
         # first, create the account

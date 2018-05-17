@@ -225,6 +225,7 @@ class RegistrationView(APIView):
             field_order = valid_fields
 
         self.field_order = field_order
+        self.current_provider = None
 
     @method_decorator(ensure_csrf_cookie)
     def get(self, request):
@@ -254,7 +255,7 @@ class RegistrationView(APIView):
         # Custom form fields can be added via the form set in settings.REGISTRATION_EXTENSION_FORM
         custom_form = get_registration_extension_form()
 
-        if custom_form:
+        if custom_form and not self.current_provider:
             # Default fields are always required
             for field_name in self.DEFAULT_FIELDS:
                 self.field_handlers[field_name](form_desc, required=True)
@@ -935,7 +936,7 @@ class RegistrationView(APIView):
             running_pipeline = third_party_auth.pipeline.get(request)
             if running_pipeline:
                 current_provider = third_party_auth.provider.Registry.get_from_pipeline(running_pipeline)
-
+                self.current_provider = current_provider
                 if current_provider:
                     # Override username / email / full name
                     field_overrides = current_provider.get_register_form_data(
