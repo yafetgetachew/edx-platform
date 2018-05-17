@@ -15,7 +15,7 @@ def render_purchase_form_html(cart, callback_url=''):
     shoppingcart_items = verify_for_closed_enrollment(cart.user, cart)[-1]
     description = [("Payment for course '{}'\n".format(course.display_name)) for item, course in shoppingcart_items]
     return render_to_string('shoppingcart/mpesa_form.html', {
-        'action': get_processor_config().get('ACTION'),
+        'action': get_processor_config().get('PURCHASE_ENDPOINT'),
         'params': {
             'cmd': '_xclick',
             'charset': 'utf-8',
