@@ -215,8 +215,8 @@ FEATURES['ENABLE_COSMETIC_DISPLAY_PRICE'] = True
 
 ########################## Third Party Auth #######################
 
-if FEATURES.get('ENABLE_THIRD_PARTY_AUTH') and 'third_party_auth.dummy.DummyBackend' not in AUTHENTICATION_BACKENDS:
-    AUTHENTICATION_BACKENDS = ['third_party_auth.dummy.DummyBackend'] + list(AUTHENTICATION_BACKENDS)
+# if FEATURES.get('ENABLE_THIRD_PARTY_AUTH') and 'third_party_auth.dummy.DummyBackend' not in AUTHENTICATION_BACKENDS:
+#     AUTHENTICATION_BACKENDS = ['third_party_auth.dummy.DummyBackend'] + list(AUTHENTICATION_BACKENDS)
 
 ############## ECOMMERCE API CONFIGURATION SETTINGS ###############
 ECOMMERCE_PUBLIC_URL_ROOT = "http://localhost:8002"
@@ -282,9 +282,9 @@ FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"] = True,
 FEATURES["ENABLE_THIRD_PARTY_AUTH"] = True,
 FEATURES["DRUPAL_PRIVIDER_URL"] = "http://yt-portal.raccoongang.com"
 #
-THIRD_PARTY_AUTH_BACKENDS = ["edx_oauth_client.backends.drupal_oauth_client.DrupalOAuthBackend"]
+# AUTHENTICATION_BACKENDS += ["edx_oauth_client.backends.drupal_oauth_client.DrupalOAuthBackend"]
 
 # INSTALLED_APPS += ('edx_oauth_client',)
 
-MIDDLEWARE_CLASSES += ("edx_oauth_client.middleware.SeamlessAuthorization",)
-SOCIAL_AUTH_EXCLUDE_URL_PATTERN = r"(\/admin\/)*"
+# MIDDLEWARE_CLASSES += ("edx_oauth_client.middleware.SeamlessAuthorization",)
+# SOCIAL_AUTH_EXCLUDE_URL_PATTERN = r"(\/admin\/)*"

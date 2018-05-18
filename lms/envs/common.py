@@ -583,6 +583,7 @@ STANDALONE_FRAGMENT_VIEW_TEMPLATE = 'fragment-view-chromeless.html'
 # use the ratelimit backend to prevent brute force attacks
 AUTHENTICATION_BACKENDS = (
     'ratelimitbackend.backends.RateLimitModelBackend',
+"edx_oauth_client.backends.drupal_oauth_client.DrupalOAuthBackend",
 )
 STUDENT_FILEUPLOAD_MAX_SIZE = 4 * 1000 * 1000  # 4 MB
 MAX_FILEUPLOADS_PER_INPUT = 20
@@ -1237,6 +1238,9 @@ MIDDLEWARE_CLASSES = (
 
     # This must be last
     'openedx.core.djangoapps.site_configuration.middleware.SessionCookieDomainOverrideMiddleware',
+
+    "edx_oauth_client.middleware.SeamlessAuthorization",
+
 
 )
 
