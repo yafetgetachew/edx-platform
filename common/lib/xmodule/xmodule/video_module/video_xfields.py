@@ -98,6 +98,12 @@ class VideoFields(object):
         scope=Scope.settings,
         default=0
     )
+    file_length = RelativeTime(
+        help=_("Add video length. This length appears in mobile app via file downloading. Formatted as HH:MM:SS"),
+        display_name=_("Video File Length"),
+        scope=Scope.settings,
+        default=datetime.timedelta(seconds=0)
+    )
     track = String(
         help=_("By default, students can download an .srt or .txt transcript when you set Download Transcript Allowed to True. If you want to provide a downloadable transcript in a different format, we recommend that you upload a handout by using the Upload a Handout field. If this isn't possible, you can post a transcript file on the Files & Uploads page or on the Internet, and then add the URL for the transcript here. Students see a link to download that transcript below the video."),  # pylint: disable=line-too-long
         display_name=_("Downloadable Transcript URL"),
