@@ -70,12 +70,14 @@ def login_and_registration_form(request, initial_mode="login"):
 
     """
     # if 'ENABLE_REDIRECT_REGISTER' is True redirect to the 'REGISTER_REDIRECT_URL'
-    if settings.ENABLE_REDIRECT_REGISTER and initial_mode == "register":
+    # This params you need to set in admin page - site settings page
+    if configuration_helpers.get_value('ENABLE_REDIRECT_REGISTER') and initial_mode == "register":
+        REGISTER_REDIRECT_URL =configuration_helpers.get_value('REGISTER_REDIRECT_URL')
         params = [(param, request.GET[param]) for param in request.GET]
         if params:
-            return HttpResponseRedirect("{}?{}".format(settings.REGISTER_REDIRECT_URL, urllib.urlencode(params)))
+            return HttpResponseRedirect("{}?{}".format(REGISTER_REDIRECT_URL, urllib.urlencode(params)))
         else:
-            return HttpResponseRedirect(settings.REGISTER_REDIRECT_URL)
+            return HttpResponseRedirect(REGISTER_REDIRECT_URL)
     # Determine the URL to redirect to following login/registration/third_party_auth
     redirect_to = get_next_url_for_login_page(request)
     # If we're already logged in, redirect to the dashboard

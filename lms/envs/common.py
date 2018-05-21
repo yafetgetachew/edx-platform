@@ -1109,7 +1109,6 @@ simplefilter('ignore')
 ################################# Middleware ###################################
 
 MIDDLEWARE_CLASSES = (
-    'lms.djangoapps.appsembler_api.middleware.CsrfViewMiddlewareDeleteSessionIDCSFToken',
     'crum.CurrentRequestUserMiddleware',
 
     'request_cache.middleware.RequestCache',
