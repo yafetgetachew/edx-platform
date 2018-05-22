@@ -95,7 +95,8 @@ class CreditEligibilityProcessor(StatisticProcessor):
 
     def process(self, event):
         return {
-            'creditEligible': event['data']['creditEligible']
+            'creditEligible': event['data']['creditEligible'],
+            'courseCompletedDate': self.get_event_timestamp_as_string(event),
         }
 
 
@@ -105,11 +106,9 @@ class CreditProcessor(StatisticProcessor):
         return self.get_event_name(event) == 'credit.request.created'
 
     def process(self, event):
-        timestamp = self.get_event_timestamp_as_string(event)
         result = {
             'creditConverted': 'Y',
-            'creditConvertedDate': timestamp,
-            'courseCompletedDate': timestamp,
+            'creditConvertedDate': self.get_event_timestamp_as_string(event),
         }
         return result
 
