@@ -468,6 +468,7 @@ class OsppDashboardView(MethodViewWithMakoMixin, EligibleCheckViewMixin, View):
             user__id=request.user.id,
             role__in=['instructor', 'staff']
         ).exists()
+        context['benefit_type'] = self.benefit_type
         return context
 
     def get(self, request):

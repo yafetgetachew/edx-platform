@@ -61,10 +61,13 @@ class MethodViewWithMakoMixin(object):
 
 
 class EligibleCheckViewMixin(View):
+    benefit_type = 4
+
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated():
             student_state = get_learner_info(request.user.id)
             if student_state:
+                self.benefit_type = int(student_state.get('benefitType', 0))
                 for enrollment in CourseEnrollment.enrollments_for_user_with_overviews_preload(request.user):
                     apply_user_status_to_enroll(
                         user=request.user,
