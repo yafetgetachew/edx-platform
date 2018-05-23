@@ -23,6 +23,7 @@ import warnings
 
 import dateutil
 from celery.schedules import crontab
+import random
 
 from .common import *
 from openedx.core.lib.logsettings import get_logger_config
@@ -111,18 +112,7 @@ if os.environ.get('QUEUE') == 'high_mem':
     CELERYD_MAX_TASKS_PER_CHILD = 1
 
 # For scheduling tasks, entries can be added to this dict.
-CELERYBEAT_SCHEDULE = {
-    """
-    'collect_stats' is the celery periodic task that gathers information about the
-    students amount, geographical coordinates of the platform, courses amount and
-    makes a POST request with the data to the appropriate service.
-    """
-
-    'collect_stats': {
-        'task': 'openedx.core.djangoapps.edx_global_analytics.tasks.collect_stats',
-        'schedule': crontab(hour=0, minute=random.randint(1, 59)),
-    }
-}
+CELERYBEAT_SCHEDULE = {}
 
 ########################## NON-SECURE ENV CONFIG ##############################
 # Things like server locations, ports, etc.
@@ -131,9 +121,19 @@ with open(CONFIG_ROOT / CONFIG_PREFIX + "env.json") as env_file:
     ENV_TOKENS = json.load(env_file)
 
 # Celery time zone settings for periodic task.
-if ENV_TOKENS.get('OLGA_ENABLE', False):
-    OLGA_SETTINGS = ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS')
-    CELERY_TIMEZONE = OLGA_SETTINGS.get('CELERY_TIMEZONE') or TIME_ZONE
+OPENEDX_LEARNERS_GLOBAL_ANALYTICS_ENABLE = ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS_ENABLE', False)
+OPENEDX_LEARNERS_GLOBAL_ANALYTICS_SETTINGS = ENV_TOKENS.get('OPENEDX_LEARNERS_GLOBAL_ANALYTICS', None)
+if OPENEDX_LEARNERS_GLOBAL_ANALYTICS_ENABLE and OPENEDX_LEARNERS_GLOBAL_ANALYTICS_SETTINGS:
+    CELERY_TIMEZONE = OPENEDX_LEARNERS_GLOBAL_ANALYTICS_SETTINGS.get('CELERY_TIMEZONE') or TIME_ZONE
+    CELERYBEAT_SCHEDULE.update({
+        # 'collect_stats' is the celery periodic task that gathers information about the
+        # students amount, geographical coordinates of the platform, courses amount and
+        # makes a POST request with the data to the appropriate service.
+        'collect_stats': {
+            'task': 'openedx.core.djangoapps.edx_global_analytics.tasks.collect_stats',
+            'schedule': crontab(hour=0, minute=random.randint(1, 59)),
+        }
+    })
 
 # STATIC_ROOT specifies the directory where static files are
 # collected
