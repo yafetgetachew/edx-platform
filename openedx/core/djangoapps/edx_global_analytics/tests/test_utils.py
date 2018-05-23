@@ -53,10 +53,9 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
         self.create_active_students_amount_default_database_data()
 
         activity_period = datetime.date(2017, 5, 15), datetime.date(2017, 5, 16)
-        cache_timeout = None
 
         result = fetch_instance_information(
-            'active_students_amount_day', 'active_students_amount', activity_period, cache_timeout
+            'active_students_amount', activity_period, 'active_students_amount_day'
         )
 
         self.assertEqual(result, 2)
@@ -66,10 +65,10 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
         Verifies that fetch_instance_information raise `TypeError` if needed datetime objects are missed
         as activity period is None.
         """
-        activity_period, cache_timeout = None, None
+        activity_period = None
 
         self.assertRaises(TypeError, lambda: fetch_instance_information(
-            'active_students_amount_day', 'active_students_amount', activity_period, cache_timeout
+            'active_students_amount', activity_period, 'active_students_amount_day'
         ))
 
     def test_fetch_instance_information_for_students_per_country(self):
@@ -86,10 +85,9 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
             profile.save()
 
         activity_period = datetime.date(2017, 5, 15), datetime.date(2017, 5, 16)
-        cache_timeout = None
 
         result = fetch_instance_information(
-            'students_per_country', 'students_per_country', activity_period, cache_timeout)
+            'students_per_country', activity_period, 'students_per_country')
 
         self.assertItemsEqual(result, {u'US': 1, u'CA': 1})
 
@@ -97,15 +95,14 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
         """
         Verifies that students_per_country returns data as expected if no students with country.
         """
-        last_login = timezone.make_aware(datetime.datetime(2017, 5, 15, 14, 23, 23), timezone.get_default_timezone())
+        last_login = timezone.make_aware(datetime.datetime(2017, 5, 17, 14, 23, 23), timezone.get_default_timezone())
 
         UserFactory.create(last_login=last_login)
 
-        activity_period = datetime.date(2017, 5, 15), datetime.date(2017, 5, 16)
-        cache_timeout = None
+        activity_period = datetime.date(2017, 5, 17), datetime.date(2017, 5, 18)
 
         result = fetch_instance_information(
-            'students_per_country', 'students_per_country', activity_period, cache_timeout)
+            'students_per_country', activity_period, 'students_per_country')
 
         self.assertEqual(result, {None: 0})
 
@@ -135,7 +132,6 @@ class TestCacheInstanceData(TestCase):
         """
         self.create_cache_instance_data_default_database_data()
         activity_period = (datetime.date(2017, 5, 8), datetime.date(2017, 5, 15))
-        cache_timeout = None
         result = cache_instance_data(
             'active_students_amount_week', 'active_students_amount', activity_period
         )
