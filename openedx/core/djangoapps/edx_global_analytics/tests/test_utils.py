@@ -3,8 +3,6 @@ Tests for edx_global_analytics application helper functions aka utils.
 """
 
 import datetime
-import logging
-import pytest
 
 from certificates.models import GeneratedCertificate
 from django.test import TestCase
@@ -12,10 +10,8 @@ from django.utils import timezone
 
 from django.contrib.auth.models import User
 from django.core.cache import cache
-from django.db.models import Q
 from django_countries.fields import Country
 
-from student.models import UserProfile
 from student.tests.factories import UserFactory
 from openedx.core.djangoapps.edx_global_analytics.utils.utilities import (
     fetch_instance_information,
