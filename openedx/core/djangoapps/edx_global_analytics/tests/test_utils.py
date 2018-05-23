@@ -87,7 +87,7 @@ class TestStudentsAmountPerParticularPeriod(TestCase):
         activity_period = datetime.date(2017, 5, 15), datetime.date(2017, 5, 16)
 
         result = fetch_instance_information(
-            'students_per_country', activity_period, 'students_per_country')
+            'students_per_country', activity_period)
 
         self.assertItemsEqual(result, {u'US': 1, u'CA': 1})
 
