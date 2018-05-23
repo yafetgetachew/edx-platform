@@ -83,11 +83,11 @@ def get_last_analytics_sent_date(type, token):
     """
     Get last analytics sent date from the cache.
     """
-    current_datetime = datetime.fromtimestamp(0)
     cache_key = 'ega_{}_{}'.format(type, token)
-    cache_value = cache.get(cache_key, current_datetime)
+    default_date = datetime.fromtimestamp(0)
+    cache_value = cache.get(cache_key, default_date)
 
-    if cache_value == current_datetime:
+    if cache_value == default_date:
         cache.set(cache_key, cache_value, WEEK_TIMEOUT)
 
     return cache_value
