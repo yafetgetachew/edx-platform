@@ -27,6 +27,9 @@ def render_purchase_form_html(cart, callback_url=''):
             'notify_url': callback_url,
             'cancel_return': 'http://{}{}'.format(settings.SITE_NAME, reverse('shoppingcart.views.show_cart')),
             'return': 'http://{}{}'.format(settings.SITE_NAME, reverse('dashboard')),
+        },
+        'fields': {
+            'phone': 'phone',
         }
     })
 
@@ -36,13 +39,6 @@ def process_postpay_callback(params):
     if params['payment_status'] == 'Completed':
         log.info('Order "{}" and transaction "{}" is successed'.format(order, params['txn_id']))
         order.purchase(
-            country=params.get('address_country'),
-            first=params.get('first_name'),
-            last=params.get('last_name'),
-            street1=params.get('address_street'),
-            city=params.get('address_city'),
-            state=params.get('address_state'),
-            postalcode=params.get('address_zip'),
             processor_reply_dump=json.dumps(params)
         )
         return {'success': True, 'order': order, 'error_html': ''}
