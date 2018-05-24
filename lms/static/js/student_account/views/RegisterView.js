@@ -69,8 +69,10 @@
                     // Must be called after postRender, since postRender sets up $formFeedback.
                     if (this.errorMessage) {
                         this.renderErrors(formErrorsTitle, [this.errorMessage]);
+                        grecaptcha.reset();
                     } else if (this.currentProvider && !this.hideAuthWarnings) {
                         this.renderAuthWarning();
+                        grecaptcha.reset();
                     }
 
                     this.addWrapMobile();
@@ -111,6 +113,7 @@
                         )
                     );
                     this.renderErrors(this.defaultFormErrorsTitle, this.errors);
+                    grecaptcha.reset();
                     this.toggleDisableButton(false);
                 },
 
@@ -118,6 +121,7 @@
                     if (_.compact(this.errors).length) {
                     // The form did not get submitted due to validation errors.
                         $(this.el).show(); // Show in case the form was hidden for auto-submission
+                        grecaptcha.reset();
                     }
                 },
 
