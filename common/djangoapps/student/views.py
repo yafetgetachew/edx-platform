@@ -176,8 +176,9 @@ def index(request, extra_context=None, user=AnonymousUser()):
     if extra_context is None:
         extra_context = {}
 
-    course_ids = [c.id for c in modulestore().get_courses() if c.featured]
-    courses = get_courses(user, filter_={'id__in': course_ids})
+    #course_ids = [c.id for c in modulestore().get_courses() if c.featured]
+    #courses = get_courses(user, filter_={'id__in': course_ids})
+    courses = get_courses(user)
 
     if configuration_helpers.get_value(
             "ENABLE_COURSE_SORTING_BY_START_DATE",
