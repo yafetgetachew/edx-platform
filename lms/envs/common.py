@@ -1067,7 +1067,7 @@ PAYMENT_SUPPORT_EMAIL = 'payment@example.com'
 
 ##### Using cybersource by default #####
 
-CC_PROCESSOR_NAME = 'MPesa'
+CC_PROCESSOR_NAME = 'CyberSource'
 CC_PROCESSOR = {
     'CyberSource': {
         'SHARED_SECRET': '',
@@ -1083,7 +1083,6 @@ CC_PROCESSOR = {
         "PROFILE_ID": '',
     },
     'MPesa':{
-        "PHONE" :'',
         "PURCHASE_ENDPOINT": '/mpesa/payment/',
     }
 }
@@ -3233,35 +3232,3 @@ COURSES_API_CACHE_TIMEOUT = 3600  # Value is in seconds
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = LOW_PRIORITY_QUEUE
 ENABLE_ENTERPRISE_INTEGRATION = False
-
-MPESA_B2C_ACCESS_KEY = 'cUbohz0F5XC49DcDNrd9gdSjlBC0JFGi'
-MPESA_B2C_CONSUMER_SECRET = 'b1eqpdYroaWiJAlG'
-MPESA_C2B_ACCESS_KEY = 'cUbohz0F5XC49DcDNrd9gdSjlBC0JFGi'
-MPESA_C2B_CONSUMER_SECRET = 'b1eqpdYroaWiJAlG'
-
-B2C_SECURITY_TOKEN = ''
-# B2C_SECURITY_TOKEN = 'E3Lw64xJ+/ayn1StCP9nu/ObqzgPgCf1IG6JEiubn91QOxkc4u8F0h9NdgjGHaWDHYDEaWxdxqd7uh3ZBsZCrPCm+8ckz8BX/Fqu/x0jOnKzEWwUdbdbFm+hV2q5HJY/EWIq6lnJQeCahkte0TQ6OoVzKyRIUsD4F+pkIIaMkjvqK5mcFWlZQIhoodXd9oBtlo7GWbcYNOjO1+GatYCtVgvjmfWHqI5k4PV/3zjNxvIcTmlB4Ao43fRvXwkRQsvc+8QOUDb6JDO0uF0UhAtz53QLdVmMNmldRoy/nEQ+QrKheY4PhXxnwhrIkFtzWhEG8AhWZjz/Ck4Kr6ePepNEuA=='
-B2C_INITIATOR_NAME = 'testapi409'
-B2C_COMMAND_ID = 'SalaryPayment'
-B2C_SHORTCODE = '545980'
-B2C_QUEUE_TIMEOUT_URL = 'http://localhost:8000/mpesa/b2c/timeout'
-B2C_RESULT_URL = 'http://localhost:8000/mpesa/b2c/result'
-
-C2B_REGISTER_URL = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl'
-C2B_VALIDATE_URL = 'http://localhost:8000/mpesa/c2b/validate'
-C2B_CONFIRMATION_URL = 'http://localhost:8000/mpesa/c2b/confirmation'
-C2B_SHORT_CODE = '545980'
-C2B_RESPONSE_TYPE = 'Completed'
-
-C2B_ONLINE_CHECKOUT_URL = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
-C2B_ONLINE_CHECKOUT_CALLBACK_URL = 'http://localhost:8000/mpesa/c2b/online_checkout/{}/callback'
-C2B_TRANSACTION_TYPE = 'CustomerPayBillOnline'
-C2B_ONLINE_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
-C2B_ONLINE_SHORT_CODE = '174379'
-
-# Urls
-GENERATE_TOKEN_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
-B2C_URL = 'https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest'
-
-# number of seconds from the expiry we consider the token expired
-TOKEN_THRESHOLD = 600

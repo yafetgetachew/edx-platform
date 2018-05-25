@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from edxmako.shortcuts import render_to_string
 from shoppingcart.processors.helpers import get_processor_config
 from shoppingcart.models import Order
-
+from mpesa_api.tasks import check_paymet
 import logging
 
 log = logging.getLogger(__name__)
@@ -25,26 +25,24 @@ def render_purchase_form_html(cart, callback_url=''):
             'custom': cart.id,
             'business': get_processor_config().get('CLIENT_ID'),
             'notify_url': callback_url,
-            'cancel_return': 'http://{}{}'.format(settings.SITE_NAME, reverse('shoppingcart.views.show_cart')),
-            'return': 'http://{}{}'.format(settings.SITE_NAME, reverse('dashboard')),
-        },
-        'fields': {
-            'phone': 'phone',
+            'cancel_return': 'https://{}{}'.format(settings.SITE_NAME, reverse('shoppingcart.views.show_cart')),
+            'return': 'https://{}{}'.format(settings.SITE_NAME, reverse('dashboard')),
         }
     })
 
 
 def process_postpay_callback(params):
-    order = Order.objects.get(id=int(params['custom']))
-    if params['payment_status'] == 'Completed':
-        log.info('Order "{}" and transaction "{}" is successed'.format(order, params['txn_id']))
+    mpesa_result = check_paymet(int(params['order_id']))
+    order = Order.objects.get(id=int(mpesa_result['custom']))
+    if mpesa_result['payment_status'] == 'ok':
+        log.info('Order "{}" and transaction "{}" is successed'.format(order, mpesa_result['txn_id']))
         order.purchase(
             processor_reply_dump=json.dumps(params)
         )
         return {'success': True, 'order': order, 'error_html': ''}
     else:
-        log.error('Order "{}" and transaction "{}" is failed'.format(order, params['txn_id']))
-        return {'success': False, 'order': order, 'error_html': 'Transaction "{}" is filed'.format(params['txn_id'])}
+        log.error('Order "{}" and transaction "{}" is failed'.format(order, mpesa_result['txn_id']))
+        return {'success': False, 'order': order, 'error_html': 'Transaction "{}" is filed'.format(mpesa_result['txn_id'])}
 
 def get_purchase_endpoint():
     """

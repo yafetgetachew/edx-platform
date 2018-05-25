@@ -9,12 +9,14 @@ from django.conf import settings
  <%block name="custom_content">
 <%! from django.utils.translation import ugettext as _ %>
 <div class="mpesa_payment">
+    <h1>Mpesa Payment</h1>
+    <h3>For payment, enter the phone number and unlock the phone</h3>
     <form action="${action}" method="post" id="mpesa_form">
         % for pk, pv in params.iteritems():
             <input type="hidden" name="${pk}" value="${pv}" />
         % endfor
 
-        <input type="txt" name="phone" id="phone" placeholder="${_('Your phone number')}" required="required" >
+        <input type="text" name="phone" id="phone" placeholder="${_('Your phone number')}" required="required" >
         <button id="submit" type="submit" class="button postfix discovery-submit">
             <div id="button_text">${_('Payment')}</div>
             <div aria-live="polite" aria-relevant="all">
@@ -25,23 +27,15 @@ from django.conf import settings
             </div>
         </button>
     </form>
-
-
+    <form action="/shoppingcart/postpay_callback/" method="post" id="check_form" >
+        <input type="hidden" name="order_id" id="check_form_name" value="${params['custom']}" />
+    </form>
 
 </section>
 
 
 <script>
-    /**
- * charCode [48,57] 	Numbers 0 to 9
- * keyCode 46  			"delete"
- * keyCode 9  			"tab"
- * keyCode 13  			"enter"
- * keyCode 116 			"F5"
- * keyCode 8  			"backscape"
- * keyCode 37,38,39,40	Arrows
- * keyCode 10			(LF)
- */
+
 function validate_int(myEvento) {
   var myCaja = document.getElementById("phone");
   myText = myCaja.value;
@@ -56,6 +50,31 @@ function validate_int(myEvento) {
 document.getElementById("phone").onkeypress = validate_int;
 
 
+var checkStatus = {
+    notify: function(){
+       $("#check_form").submit()
+    },
+    sendResponse: function(url){
+        $.ajax({
+           type: "POST",
+           url: url,
+           data: "order_id=${params['custom']}",
+           success: function(data)
+           {
+               console.log("checking")
+               console.log(data)
+               if (data['key']==0){
+                    setTimeout(function(){ checkStatus.sendResponse(url); }, 3000);
+                    console.log("checking again")
+               } else {
+                    checkStatus.notify()
+               }
+           }
+         });
+         this.isSendRequest = 1
+    }
+
+}
 
 
 $("#mpesa_form").submit(function(e) {
@@ -68,7 +87,8 @@ $("#mpesa_form").submit(function(e) {
            data: $("#mpesa_form").serialize(),
            success: function(data)
            {
-               alert(data);
+               checkStatus.sendResponse(data['check_url'])
+               console.log(data['check_url'])
            }
          });
     document.getElementById("submit").disabled = true;
