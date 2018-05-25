@@ -310,7 +310,8 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 <span class="tip">${_("Information for prospective students")}</span>
               </header>
               <ol class="list-input">
-
+                ## disable fields
+<%doc>
                 % if enable_extended_course_details:
                 <li class="field text" id="field-course-title">
                   <label for="course-title">${_("Course Title")}</label>
@@ -333,7 +334,7 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                   <span class="tip tip-stacked">${_("Displayed on the course details page. Limit to 1000 characters.")}</span>
                 </li>
                 % endif
-
+</%doc>
                 % if short_description_editable:
                 <li class="field text" id="field-course-short-description">
                   <label for="course-short-description">${_("Course Short Description")}</label>
@@ -391,6 +392,7 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 </li>
 
                 % if enable_extended_course_details:
+<%doc>
                 <li class="field image" id="field-banner-image">
                   <label for="banner-image-url">${_("Course Banner Image")}</label>
                   <div class="current current-course-image">
@@ -423,7 +425,7 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                     <button type="button" class="action action-upload-image" id="upload-banner-image">${_("Upload Course Banner Image")}</button>
                   </div>
                 </li>
-
+</%doc>
                 <li class="field image" id="field-video-thumbnail-image">
                   <label for="video-thumbnail-image-url">${_("Course Video Thumbnail Image")}</label>
                   <div class="current current-course-image">
@@ -481,6 +483,7 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
             </div>
 
           % if enable_extended_course_details:
+<%doc>
             <hr class="divide" />
             <div class="group-settings course-learning-info">
               <header>
@@ -496,6 +499,7 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
                 </button>
               </div>
             </div>
+</%doc>
 
             <hr class="divide" />
             <div class="group-settings instructor-types">
@@ -506,11 +510,21 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
               <ol class="list-input enum">
                 <li class="course-instructor-details-fields"></li>
               </ol>
+
+
               <div class="actions">
-                <button type="button" class="action action-primary button new-button add-course-instructor-info">
+
+                <%
+                style_for_button_course_instructor_info = ""
+                if is_enable_instuctors:
+                    style_for_button_course_instructor_info="display: none;"
+                %>
+
+                <button type="button" class="action action-primary button new-button add-course-instructor-info" style="${style_for_button_course_instructor_info}" >
                   <span class="icon fa fa-plus icon-inline" aria-hidden="true"></span>${_("Add Instructor")}
                 </button>
               </div>
+
             </div>
           % endif
 

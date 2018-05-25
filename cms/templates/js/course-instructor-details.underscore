@@ -11,6 +11,7 @@
     <span class="tip tip-stacked"><%- gettext("Please add the instructor's title")%></span>
   </div>
 
+<!--
   <div class="field text field-course-instructor-organization">
     <label for="course-instructor-organization-<%- index %>"><%- gettext("Organization") %></label>
     <input type="text" class="long" id="course-instructor-organization-<%- index %>" value = "<%- data['organization'] %>" data-index=<%- index %> data-field="organization" placeholder="<%- gettext('Organization Name') %>" />
@@ -36,7 +37,7 @@
       <button type="button" class="action action-upload-instructor-image" data-index=<%- index %>><%- gettext("Upload Photo") %></button>
     </div>
   </div>
-
+-->
   <div class="actions">
   	<button type="button" class="button delete-button standard remove-item remove-instructor-data" data-index=<%- index %>><%- gettext("Delete") %></button>
   </div>

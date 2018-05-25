@@ -849,7 +849,7 @@ COURSES_WITH_UNSAFE_CODE = []
 # Change DEBUG in your environment settings files, not here
 DEBUG = False
 USE_TZ = True
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
 SESSION_SAVE_EVERY_REQUEST = False
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
@@ -3243,4 +3243,6 @@ ARABIC_MONTHS = [
 ]
 
 ############## Settings for reCaptcha ############################
+
 USE_GOOGLE_RECAPTCHA = False
+

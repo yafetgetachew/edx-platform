@@ -736,6 +736,7 @@ msgstr ""
 #: common/djangoapps/student/views.py
 msgid "Invalid reCAPTCHA. Please try again."
 msgstr ""
+"ReCAPTCHA غير صالح. حاول ثانية."
 
 #: common/djangoapps/student/views.py
 msgid "There was an error receiving your login information. Please email us."

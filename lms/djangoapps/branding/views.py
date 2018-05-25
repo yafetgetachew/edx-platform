@@ -322,6 +322,7 @@ def contact_form(request):
             is_can_to_save = request.recaptcha_is_valid
 
         form = ContactForm(request.POST)
+
         if is_can_to_save:
             saved = form.save()
             if saved:

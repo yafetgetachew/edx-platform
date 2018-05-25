@@ -43,8 +43,6 @@ from .models import UserPreference, UserProfile
 from .preferences.api import get_country_time_zones, update_email_opt_in
 from .serializers import CountryTimeZoneSerializer, UserPreferenceSerializer, UserSerializer
 from student.decorators import check_recaptcha
-
-
 class LoginSessionView(APIView):
     """HTTP end-points for logging in users. """
 
@@ -115,6 +113,13 @@ class LoginSessionView(APIView):
             label=_("Remember me"),
             default=False,
             required=False,
+        )
+
+        form_desc.add_field(
+            "captcha",
+            label=_("reCAPTCHA"),
+            field_type="hidden",
+            required=True,
         )
 
         return HttpResponse(form_desc.to_json(), content_type="application/json")
@@ -225,7 +230,6 @@ class RegistrationView(APIView):
             field_order = valid_fields
 
         self.field_order = field_order
-        self.current_provider = None
 
     @method_decorator(ensure_csrf_cookie)
     def get(self, request):
@@ -255,7 +259,7 @@ class RegistrationView(APIView):
         # Custom form fields can be added via the form set in settings.REGISTRATION_EXTENSION_FORM
         custom_form = get_registration_extension_form()
 
-        if custom_form and not self.current_provider:
+        if custom_form:
             # Default fields are always required
             for field_name in self.DEFAULT_FIELDS:
                 self.field_handlers[field_name](form_desc, required=True)
@@ -339,7 +343,6 @@ class RegistrationView(APIView):
                     "captcha": [{"user_message": _('Invalid reCAPTCHA. Please try again.')}],
                 }
                 return JsonResponse(errors, status=400)
-
         # Handle duplicate email/username
         conflicts = check_account_exists(email=email, username=username)
         if conflicts:
@@ -936,7 +939,7 @@ class RegistrationView(APIView):
             running_pipeline = third_party_auth.pipeline.get(request)
             if running_pipeline:
                 current_provider = third_party_auth.provider.Registry.get_from_pipeline(running_pipeline)
-                self.current_provider = current_provider
+
                 if current_provider:
                     # Override username / email / full name
                     field_overrides = current_provider.get_register_form_data(

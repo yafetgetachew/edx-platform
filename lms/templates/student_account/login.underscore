@@ -10,7 +10,7 @@
 
 <h2><%- gettext("تسجيل الدخول") %></h2>
 
-<form id="login" class="login-form" tabindex="-1" method="POST" autocomplete="off">
+<form id="login" class="login-form" tabindex="-1" method="POST">
 
     <p class="sr">
         <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
@@ -23,7 +23,7 @@
 
     <%= context.fields %>
 
-    <div class="g-recaptcha" data-sitekey="<%= context.googleRecaptchaSiteKey %>"></div>
+    <div class="g-recaptcha" data-callback="setRecaptcha"  data-sitekey="<%= context.googleRecaptchaSiteKey %>"></div>
 
     <button type="submit" class="action action-primary action-update js-login login-button"><%- gettext("Sign in") %></button>
 

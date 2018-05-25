@@ -81,7 +81,7 @@
                         method: 'GET',
                         url: '#'
                     });
-
+                    this.googleRecaptchaSiteKey = options.google_recaptcha_site_key;
                     this.googleRecaptchaSiteKey = options.google_recaptcha_site_key;
                     this.render();
 
@@ -92,6 +92,8 @@
                     // Once the account activation messages have been shown once,
                     // there is no need to show it again, if the user changes mode:
                     this.accountActivationMessages = [];
+
+
                 },
 
                 render: function() {
