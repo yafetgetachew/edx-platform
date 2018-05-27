@@ -221,3 +221,6 @@ django-mptt-admin==0.4.2
 
 # Redis version
 redis==2.10.6
+
+# Zeep Python SOAP client
+zeep==2.5.0

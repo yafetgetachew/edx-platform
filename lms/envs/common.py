@@ -2248,6 +2248,8 @@ INSTALLED_APPS = (
     'course_category',
 
     'django_mptt_admin',
+
+    'custom_reg_form',
 )
 
 ######################### CSRF #########################################
