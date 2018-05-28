@@ -298,7 +298,25 @@ class WsFederationBackend(SAMLAuthBackend):
         ))
         return '{}/{}{}'.format(self.data['idp'], salt, hash.hexdigest())
 
+    def pprint_xml(self, xml_string):
+        xslt_tree = etree.XML('''
+            <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+              <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+                <xsl:strip-space elements="*"/>
+                <xsl:template match="/">
+                  <xsl:copy-of select="."/>
+                </xsl:template>
+            </xsl:stylesheet>
+        ''')
+        transform = etree.XSLT(xslt_tree)
+        return transform(xml_string)
+
     def ws_to_saml(self, resp, idp):
+        from .models import SAMLProviderConfig
+        samlp_conf = SAMLProviderConfig.current(idp.name)
+        if samlp_conf.debug_mode:
+            log.info('WS-Federation response: \n%s', self.pprint_xml(fromstring(resp)))
+
         response = fromstring(resp)
         tag = '{{{{{prefix}}}}}{{name}}'.format(prefix=response.nsmap[response.prefix])
         token_tag = tag.format(name='RequestedSecurityToken')
@@ -352,6 +370,9 @@ class WsFederationBackend(SAMLAuthBackend):
             attrib={'Recipient': current_url, 'NotOnOrAfter': nooa}
         )
         _sc.append(scd)
+
+        if samlp_conf.debug_mode:
+            log.info('Converted SAML2 response: \n%s', self.pprint_xml(saml_resp))
 
         return token_type, saml_resp
 
