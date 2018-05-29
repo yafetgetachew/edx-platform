@@ -1,13 +1,8 @@
 <div id="wrapper-idphoto" class="wrapper-view block-photo id-photo-step">
   <div class="idphoto view">
-    <h3 class="title"><%- gettext( "Take a Photo of Your ID" ) %></h3>
-    <div class="instruction">
-      <p><%- gettext("Use your webcam to take a photo of your ID. We will match this photo with the photo of your face and the name on your account.") %></p>
-    </div>
-
     <div class="wrapper-task">
       <h3><%- gettext("Take a photo of your ID" ) %></h3>
-      <p class="photo-tip"><%- gettext("Use your webcam to take a picture of your photo ID card. Acceptable forms of photo IDs include a driver’s license, passport, national ID card, state or province ID card, or an official student ID card." ) %></p>
+      <p class="photo-tip"><%- gettext("Use your webcam to take a picture of your photo ID card. Acceptable forms of photo IDs include a driver's license, passport, national ID card, state or province ID card, or an official student ID card. " ) %></p>
       <div id="idcam" class="task cam"></div>
 
       <div class="wrapper-help">
@@ -18,12 +13,12 @@
 
           <div class="copy">
             <ul class="list-help">
-              <li class="help-item"><%- gettext( "Ensure that you can see your photo and read your name" ) %></li>
-              <li class="help-item"><%- gettext( "Make sure your ID is well-lit" ) %></li>
               <li class="help-item">
                 <%=  HtmlUtils.interpolateHtml( gettext( "Once in position, use the camera button {icon} to capture your ID" ), { icon: HtmlUtils.HTML('<span class="example">(<span class="icon fa fa-camera" aria-hidden="true"></span>)</span>') } ) %>
               </li>
-              <li class="help-item"><%- gettext( "Use the retake photo button if you are not pleased with your photo" ) %></li>
+              <li class="help-item">
+                <%=  HtmlUtils.interpolateHtml( gettext( "If you need to retake your photo, click the camera button {icon} again." ), { icon: HtmlUtils.HTML('<span class="example">(<span class="icon fa fa-camera" aria-hidden="true"></span>)</span>') } ) %>
+              </li>
             </ul>
           </div>
         </div>
@@ -36,7 +31,7 @@
               <dt class="faq-question">
                 <%- _.sprintf( gettext( "Why does %(platformName)s need my photo?" ), { platformName: platformName } ) %>
               </dt>
-              <dd class="faq-answer"><%- gettext( "As part of the verification process, you take a photo of both your face and a government-issued photo ID. Our authorization service confirms your identity by comparing the photo you take with the photo on your ID." ) %></dd>
+              <dd class="faq-answer"><%- gettext( "To be eligible for academic credit, you must verify your identification so we know who you are. This lets us ensure the academic credit you earn appears on your official ASU transcript. " ) %></dd>
 
               <dt class="faq-question">
                 <%- _.sprintf( gettext( "What does %(platformName)s do with this photo?" ), { platformName: platformName } ) %>
