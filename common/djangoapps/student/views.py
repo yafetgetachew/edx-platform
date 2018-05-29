@@ -474,7 +474,7 @@ def register_user(request, extra_context=None):
     # if 'ENABLE_REDIRECT_REGISTER' is True redirect to the 'REGISTER_REDIRECT_URL'
     # This params you need to set in admin page - site settings page
     if configuration_helpers.get_value('ENABLE_REDIRECT_REGISTER'):
-        REGISTER_REDIRECT_URL =configuration_helpers.get_value('REGISTER_REDIRECT_URL')
+        REGISTER_REDIRECT_URL = configuration_helpers.get_value('REGISTER_REDIRECT_URL')
         params = [(param, request.GET[param]) for param in request.GET]
         if params:
             return HttpResponseRedirect("{}?{}".format(REGISTER_REDIRECT_URL, urllib.urlencode(params)))
