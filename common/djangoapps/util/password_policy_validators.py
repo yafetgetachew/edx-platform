@@ -58,6 +58,11 @@ def validate_password_complexity(value):
     message = _("Must be more complex ({0})")
     code = "complexity"
 
+    complexities =  {
+        'UPPER': 5,
+        'DIGITS': 5,
+    }
+
     complexities = getattr(settings, "PASSWORD_COMPLEXITY", None)
 
     if complexities is None:

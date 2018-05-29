@@ -51,7 +51,7 @@ class CourseInfoTab(CourseTab):
     The course info view.
     """
     type = 'course_info'
-    title = ugettext_noop('Home')
+    title = ugettext_noop('Info')
     priority = 20
     view_name = 'info'
     tab_id = 'info'
@@ -61,7 +61,7 @@ class CourseInfoTab(CourseTab):
     @classmethod
     def is_enabled(cls, course, user=None):
         """
-        The "Home" tab is not shown for the new unified course experience.
+        The "Info" tab is not shown for the new unified course experience.
         """
         return not UNIFIED_COURSE_TAB_FLAG.is_enabled(course.id)
 

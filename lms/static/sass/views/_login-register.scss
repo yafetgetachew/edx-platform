@@ -776,3 +776,47 @@ body.open-modal {
     overflow: hidden;
 }
 
+body .form-type .register-form {
+    .wrap-register-mobile {
+        position: relative;
+
+        span {
+            position: absolute;
+            left: 6px;
+            top: 50%;
+            transform: translate(0, -50%);
+            &:before {
+                content: '';
+                height: 22px;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: -8px;
+                background: #777;
+                width: 1px;
+                position: absolute;
+            }
+        }
+        input {
+            padding-left: 55px;
+        }
+    }
+    .select-date_of_birth_day,
+    .select-date_of_birth_month,
+    .select-date_of_birth_year {
+        display: inline-block;
+        width: 33%;
+
+        @media (max-width: 767px) {
+            display: block;
+            width: 100%;
+        }
+    }
+    .select-date_of_birth_year {
+        width: 32%;
+        @media (max-width: 767px) {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+

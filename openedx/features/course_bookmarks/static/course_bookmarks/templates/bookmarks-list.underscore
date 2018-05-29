@@ -41,12 +41,12 @@
     <div class="bookmarks-empty">
         <h3 class="hd-4 bookmarks-empty-header">
             <span class="icon fa fa-bookmark-o bookmarks-empty-header-icon" aria-hidden="true"></span>
-            <%- gettext("You have not bookmarked any courseware pages yet") %>
+            <%- gettext("لم تضع أي أشارة مرجعيّة لأي من صفحات محتويات الدورة بعد") %>
             <br>
         </h3>
         <div  class="bookmarks-empty-detail">
             <span class="bookmarks-empty-detail-title">
-                <%- gettext('Use bookmarks to help you easily return to courseware pages. To bookmark a page, click "Bookmark this page" under the page title.') %>
+                <%- gettext('استخدم العلامات المرجعيّة لتتمكّن من العودة إلى صفحات محتويات الدورة بسهولة. لوضع علامة مرجعيّة لصفحة معيّنة، اختر "علامة مرجعيّة" تحت عنوان الصفحة.') %>
             </span>
         </div>
     </div>

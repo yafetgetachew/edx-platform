@@ -15,7 +15,10 @@
 
                 events: {
                     'click .js-register': 'submitForm',
-                    'click .login-provider': 'thirdPartyAuth'
+                    'click .login-provider': 'thirdPartyAuth',
+                    'keypress #register-mobile': 'onlyNumbers',
+                    'keyup #register-mobile': 'trimFirstZero',
+                    'keypress #register-nationality_id': 'onlyNumbers',
                 },
 
                 formType: 'register',
@@ -69,6 +72,8 @@
                     } else if (this.currentProvider && !this.hideAuthWarnings) {
                         this.renderAuthWarning();
                     }
+
+                    this.addWrapMobile();
 
                     if (this.autoSubmit) {
                         $(this.el).hide();
@@ -161,6 +166,24 @@
                     }
 
                     return obj;
+                },
+                
+                onlyNumbers: function(e) {
+                    //Only accepts digits
+                    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                        return false;
+                    }
+                },
+
+                trimFirstZero: function(e) {
+                    var str = $(e.currentTarget).val();
+                    $(e.currentTarget).val(str.replace(/^[ 0]/g,''));
+                },
+
+                addWrapMobile: function() {
+                    var $registerMobile = $(this.el).find('#register-mobile');
+                    $registerMobile.wrap("<div class='wrap-register-mobile'></div>");
+                    $registerMobile.before("<span>+966</span>");
                 }
             });
         });

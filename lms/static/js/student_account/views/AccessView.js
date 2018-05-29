@@ -82,6 +82,7 @@
                         url: '#'
                     });
                     this.googleRecaptchaSiteKey = options.google_recaptcha_site_key;
+                    this.googleRecaptchaSiteKey = options.google_recaptcha_site_key;
                     this.render();
 
                 // Once the third party error message has been shown once,

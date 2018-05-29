@@ -22,7 +22,7 @@ from openedx.core.djangolib.js_utils import js_escaped_string
     </header>
 
     <article class="content-primary" role="main">
-      <form id="login_form" method="post" action="login_post" onsubmit="return false;">
+      <form autocomplete="off" id="login_form" method="post" action="login_post" onsubmit="return false;">
 
         <fieldset>
           <legend class="sr">${_("Required Information to Sign In to {studio_name}").format(studio_name=settings.STUDIO_NAME)}</legend>

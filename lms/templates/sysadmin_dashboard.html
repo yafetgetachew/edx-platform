@@ -65,7 +65,7 @@ textarea {
 %if modeflag.get('users'):
 	<h3>${_('User Management')}</h3>
 
-    <form name="action" method="POST">
+    <form name="action" method="POST" autocomplete="off">
     <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }" />
 
 	<ul class="list-input">

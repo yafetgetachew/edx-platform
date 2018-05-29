@@ -6,6 +6,7 @@ Code to manage fetching and storing the metadata of IdPs.
 import datetime
 import logging
 
+import json
 import dateutil.parser
 import pytz
 import requests
@@ -15,6 +16,8 @@ from onelogin.saml2.utils import OneLogin_Saml2_Utils
 from requests import exceptions
 
 from third_party_auth.models import SAMLConfiguration, SAMLProviderConfig, SAMLProviderData
+
+from .saml import WsFederationBackend
 
 log = logging.getLogger(__name__)
 
@@ -49,6 +52,7 @@ def fetch_saml_metadata():
     num_total = len(saml_providers)
     num_skipped = 0
     url_map = {}
+    idp_settings = {}
     for idp_slug in saml_providers:
         config = SAMLProviderConfig.current(idp_slug)
 
@@ -66,6 +70,9 @@ def fetch_saml_metadata():
             url_map[url] = []
         if config.entity_id not in url_map[url]:
             url_map[url].append(config.entity_id)
+
+        idp_settings[config.entity_id] = json.loads(config.other_settings or '{}')
+        idp_settings[config.entity_id]['backend'] = config.backend_name
 
     # Now attempt to fetch the metadata for the remaining SAML providers:
     num_attempted = len(url_map)
@@ -88,7 +95,7 @@ def fetch_saml_metadata():
 
             for entity_id in entity_ids:
                 log.info(u"Processing IdP with entityID %s", entity_id)
-                public_key, sso_url, expires_at = _parse_metadata_xml(xml, entity_id)
+                public_key, sso_url, expires_at = _parse_metadata_xml(xml, entity_id, idp=idp_settings[entity_id])
                 changed = _update_data(entity_id, public_key, sso_url, expires_at)
                 if changed:
                     log.info(u"→ Created new record for SAMLProviderData")
@@ -130,13 +137,14 @@ def fetch_saml_metadata():
     return num_total, num_skipped, num_attempted, num_updated, len(failure_messages), failure_messages
 
 
-def _parse_metadata_xml(xml, entity_id):
+def _parse_metadata_xml(xml, entity_id, idp=None):
     """
     Given an XML document containing SAML 2.0 metadata, parse it and return a tuple of
     (public_key, sso_url, expires_at) for the specified entityID.
 
     Raises MetadataParseError if anything is wrong.
     """
+    idp = idp or {'backend': None}
     if xml.tag == etree.QName(SAML_XML_NS, 'EntityDescriptor'):
         entity_desc = xml
     else:
@@ -157,10 +165,20 @@ def _parse_metadata_xml(xml, entity_id):
         if expires_at is None or cache_expires < expires_at:
             expires_at = cache_expires
 
-    sso_desc = entity_desc.find(etree.QName(SAML_XML_NS, "IDPSSODescriptor"))
+    if idp['backend'] == WsFederationBackend.name:
+        sso_desc = entity_desc.find(etree.QName(SAML_XML_NS, "RoleDescriptor"))
+        sso_desc_msg = "RoleDescriptor missing"
+    else:
+        sso_desc = entity_desc.find(etree.QName(SAML_XML_NS, "IDPSSODescriptor"))
+        sso_desc_msg = "IDPSSODescriptor missing"
     if not sso_desc:
-        raise MetadataParseError("IDPSSODescriptor missing")
-    if 'urn:oasis:names:tc:SAML:2.0:protocol' not in sso_desc.get("protocolSupportEnumeration"):
+        raise MetadataParseError(sso_desc_msg)
+
+    wsfed_proto = 'http://docs.oasis-open.org/wsfed/federation/200706'
+    saml2_proto = 'urn:oasis:names:tc:SAML:2.0:protocol'
+    if idp['backend'] == WsFederationBackend.name and wsfed_proto not in sso_desc.get("protocolSupportEnumeration"):
+        raise MetadataParseError("This IdP does not support WS-Federation")
+    elif idp['backend'] != WsFederationBackend.name and saml2_proto not in sso_desc.get("protocolSupportEnumeration"):
         raise MetadataParseError("This IdP does not support SAML 2.0")
 
     # Now we just need to get the public_key and sso_url
@@ -174,7 +192,10 @@ def _parse_metadata_xml(xml, entity_id):
     sso_bindings = {element.get('Binding'): element.get('Location') for element in binding_elements}
     try:
         # The only binding supported by python-saml and python-social-auth is HTTP-Redirect:
-        sso_url = sso_bindings['urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect']
+        if idp['backend'] == WsFederationBackend.name:
+            sso_url = idp['WS_FEDERATION_LOGIN_URL']
+        else:
+            sso_url = sso_bindings['urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect']
     except KeyError:
         raise MetadataParseError("Unable to find SSO URL with HTTP-Redirect binding.")
     return public_key, sso_url, expires_at

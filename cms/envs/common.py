@@ -356,7 +356,7 @@ from lms.envs.common import (
 CSRF_COOKIE_AGE = 60 * 60 * 24 * 7 * 52
 # It is highly recommended that you override this in any environment accessed by
 # end users
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 
 #################### CAPA External Code Evaluation #############################
 XQUEUE_INTERFACE = {
@@ -434,7 +434,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
-X_FRAME_OPTIONS = 'ALLOW'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Platform for Privacy Preferences header
 P3P_HEADER = 'CP="Open EdX does not have a P3P policy."'
@@ -518,7 +518,7 @@ CODE_JAIL = {
 ############################ DJANGO_BUILTINS ################################
 # Change DEBUG in your environment settings files, not here
 DEBUG = False
-SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = True
 SESSION_SAVE_EVERY_REQUEST = False
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 

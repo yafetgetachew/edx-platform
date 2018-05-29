@@ -409,7 +409,7 @@ class AssignmentFormatGrader(CourseGrader):
 
         for dropped_index in dropped_indices:
             breakdown[dropped_index]['mark'] = {
-                'detail': u"The lowest {drop_count} {section_type} scores are dropped.".format(
+                'detail': u"{drop_count} {section_type}".format(
                     drop_count=self.drop_count,
                     section_type=self.section_type
                 )

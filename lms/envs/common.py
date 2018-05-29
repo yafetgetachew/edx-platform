@@ -1246,7 +1246,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 # Clickjacking protection can be enabled by setting this to 'DENY'
-X_FRAME_OPTIONS = 'ALLOW'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Platform for Privacy Preferences header
 P3P_HEADER = 'CP="Open EdX does not have a P3P policy."'
@@ -2248,6 +2248,8 @@ INSTALLED_APPS = (
     'course_category',
 
     'django_mptt_admin',
+
+    'custom_reg_form',
 )
 
 ######################### CSRF #########################################
@@ -2551,8 +2553,8 @@ FINANCIAL_REPORTS = {
 
 #### PASSWORD POLICY SETTINGS #####
 PASSWORD_MIN_LENGTH = 8
-PASSWORD_MAX_LENGTH = None
-PASSWORD_COMPLEXITY = {"UPPER": 1, "LOWER": 1, "DIGITS": 1}
+PASSWORD_MAX_LENGTH = 100
+PASSWORD_COMPLEXITY = {"UPPER": 2, "LOWER": 2, "DIGITS": 2}
 PASSWORD_DICTIONARY_EDIT_DISTANCE_THRESHOLD = None
 PASSWORD_DICTIONARY = []
 

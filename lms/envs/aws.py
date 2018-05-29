@@ -701,6 +701,7 @@ if FEATURES.get('ENABLE_THIRD_PARTY_AUTH'):
             'social_core.backends.facebook.FacebookOAuth2',
             'social_core.backends.azuread.AzureADOAuth2',
             'third_party_auth.saml.SAMLAuthBackend',
+            'third_party_auth.saml.WsFederationBackend',
             'third_party_auth.lti.LTIAuthBackend',
         ]) + list(AUTHENTICATION_BACKENDS)
     )
@@ -1029,6 +1030,13 @@ ORA2_FILEUPLOAD_CACHE_NAME = ENV_TOKENS.get('ORA2_FILEUPLOAD_CACHE_NAME', 'defau
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = ENV_TOKENS.get('COURSEGRAPH_JOB_QUEUE', LOW_PRIORITY_QUEUE)
+
+############## Settings for reCaptcha ############################
+GOOGLE_RECAPTCHA_SECRET_KEY = AUTH_TOKENS.get('GOOGLE_RECAPTCHA_SECRET_KEY', '')
+GOOGLE_RECAPTCHA_DATA_SITE_KEY = AUTH_TOKENS.get('GOOGLE_RECAPTCHA_DATA_SITE_KEY', '')
+USE_GOOGLE_RECAPTCHA = ENV_TOKENS.get('USE_GOOGLE_RECAPTCHA', False)
+
+REGISTRATION_EXTENSION_FORM = "custom_reg_form.forms.ExtraInfoForm"
 
 ############## Settings for reCaptcha ############################
 
