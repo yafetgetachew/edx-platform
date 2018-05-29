@@ -60,12 +60,18 @@ from .serializers import BulkEnrollmentSerializer
 from .utils import auto_generate_username, send_activation_email, ApiKeyHeaderPermissionInToken
 
 from django.contrib.auth import authenticate, login
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+
+class CsrfExemptSessionAuthentication(SessionAuthentication):
+
+    def enforce_csrf(self, request):
+        return  # To not perform the csrf check previously happening
 
 log = logging.getLogger(__name__)
 
 
 class CreateUserAccountView(APIView):
-    #authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
 
@@ -127,7 +133,7 @@ class CreateUserAccountView(APIView):
 
 
 class CreateUserAccountWithoutPasswordView(APIView):
-    #authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
 
@@ -136,7 +142,6 @@ class CreateUserAccountWithoutPasswordView(APIView):
 
         """
         data = request.data
-        request.META["csrf_delete_cookie"] = True
         # set the honor_code and honor_code like checked,
         # so we can use the already defined methods for creating an user
         data['honor_code'] = "True"
@@ -183,7 +188,7 @@ class CreateUserAccountWithoutPasswordView(APIView):
 
 
 class UserAccountConnect(APIView):
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def post(self, request):
@@ -256,7 +261,7 @@ class UserAccountConnect(APIView):
 class UpdateUserAccount(APIView):
     """ HTTP endpoint for updating and user account """
 
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def post(self, request):
@@ -355,7 +360,7 @@ class UpdateUserAccount(APIView):
 
 
 class GetUserAccountView(APIView):
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def get(self, request, username):
@@ -383,12 +388,11 @@ class GetUserAccountView(APIView):
 
 @can_disable_rate_limit
 class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def post(self, request):
         data = request.data
-        request.META["csrf_delete_cookie"] = True
-
         for key, value in data.iteritems():
             data[key] = str(value)
 
@@ -421,8 +425,7 @@ class BulkEnrollView(APIView, ApiKeyPermissionMixIn):
 
 
 class GenerateRegistrationCodesView(APIView):
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
-                             EnrollmentCrossDomainSessionAuth
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def post(self, request):
@@ -459,8 +462,7 @@ class GenerateRegistrationCodesView(APIView):
 
 
 class EnrollUserWithEnrollmentCodeView(APIView):
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser, \
-                             EnrollmentCrossDomainSessionAuth
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def post(self, request):
@@ -525,7 +527,7 @@ class EnrollmentCodeStatusView(APIView):
     restore: If the code was user for enroll an user, the user is unenrolled and the code becomes available for use it
     again.
     """
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser, EnrollmentCrossDomainSessionAuth
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def post(self, request):
@@ -564,7 +566,7 @@ class EnrollmentCodeStatusView(APIView):
 
 
 class GetBatchUserDataView(APIView):
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def get(self, request):
@@ -712,7 +714,7 @@ class CourseListSearchView(DeveloperErrorViewMixin, ListAPIView):
 
 
 class GetBatchEnrollmentDataView(APIView):
-    authentication_classes = OAuth2AuthenticationAllowInactiveUser,
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
     permission_classes = ApiKeyHeaderPermissionInToken,
 
     def get(self, request):

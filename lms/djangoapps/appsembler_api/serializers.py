@@ -7,7 +7,12 @@ class StringListField(serializers.ListField):
     def to_internal_value(self, data):
         if type(data) is list or type(data) is tuple:
             data = data[0]
-        return data.split(',')
+        data_list = data.split(',')
+        without_null_string_data_list = []
+        for course in data_list:
+            if len(course) > 0:
+                without_null_string_data_list.append(course)
+        return without_null_string_data_list
 
 class BulkEnrollmentSerializer(serializers.Serializer):
     identifiers = serializers.CharField(required=True)
