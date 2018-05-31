@@ -32,7 +32,7 @@ def check_recaptcha(view_func):
 
             # Adding proxy #
             ssl._create_default_https_context = ssl._create_unverified_context
-            proxies = {'https':settings.PROXY_HTTP}
+            proxies = {'https':settings.HTTP_PROXY}
             opener = urllib2.build_opener(urllib2.ProxyHandler(proxies))
             opener.addheaders = [('User-agent', 'Mozilla/5.0')]
             urllib2.install_opener(opener)

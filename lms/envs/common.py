@@ -3244,3 +3244,4 @@ ARABIC_MONTHS = [
 
 ############## Settings for reCaptcha ############################
 USE_GOOGLE_RECAPTCHA = False
+HTTP_PROXY = ''
