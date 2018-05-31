@@ -604,6 +604,7 @@ def course_index(request, course_key):
         deprecated_blocks_info = _deprecated_blocks_info(course_module, deprecated_block_names)
 
         return render_to_response('course_outline.html', {
+            'preview_lms_link': get_lms_link_for_item(course_module.location, preview=True),
             'context_course': course_module,
             'lms_link': lms_link,
             'sections': sections,
