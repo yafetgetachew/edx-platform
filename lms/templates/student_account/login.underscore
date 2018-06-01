@@ -10,7 +10,7 @@
 
 <h2><%- gettext("تسجيل الدخول") %></h2>
 
-<form id="login" class="login-form" tabindex="-1" method="POST" autocomplete="off">
+<form id="login" class="login-form login-form-flex" tabindex="-1" method="POST" autocomplete="off">
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
         <div class="login-form-box">
             <div class="login-providers">
