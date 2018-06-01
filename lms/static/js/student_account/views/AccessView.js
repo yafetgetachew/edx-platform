@@ -83,6 +83,7 @@
                     });
 
                     this.googleRecaptchaSiteKey = options.google_recaptcha_site_key;
+                    this.registerURL = options.register_url;
                     this.render();
 
                 // Once the third party error message has been shown once,
@@ -135,7 +136,8 @@
                             passwordResetSupportUrl: this.passwordResetSupportUrl,
                             createAccountOption: this.createAccountOption,
                             hideAuthWarnings: this.hideAuthWarnings,
-                            googleRecaptchaSiteKey: this.googleRecaptchaSiteKey
+                            googleRecaptchaSiteKey: this.googleRecaptchaSiteKey,
+                            registerURL: this.registerURL
                         });
 
                     // Listen for 'password-help' event to toggle sub-views
