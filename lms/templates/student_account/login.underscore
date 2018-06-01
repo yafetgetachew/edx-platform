@@ -25,6 +25,7 @@
 
     <div class="g-recaptcha" data-callback="setRecaptcha"  data-sitekey="<%= context.googleRecaptchaSiteKey %>"></div>
 
+    <a class="action action-primary action-update js-register register-button" href="<%- context.registerURL %>"><%- gettext("التسجيل") %></a>
     <button type="submit" class="action action-primary action-update js-login login-button"><%- gettext("Sign in") %></button>
 
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>

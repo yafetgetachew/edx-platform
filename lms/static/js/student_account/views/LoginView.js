@@ -50,6 +50,7 @@
                 this.accountActivationMessages = data.accountActivationMessages;
                 this.hideAuthWarnings = data.hideAuthWarnings;
                 this.googleRecaptchaSiteKey = data.googleRecaptchaSiteKey;
+                this.registerURL = data.registerURL;
                 this.listenTo(this.model, 'sync', this.saveSuccess);
                 this.listenTo(this.resetModel, 'sync', this.resetEmail);
             },
@@ -66,7 +67,8 @@
                         hasSecondaryProviders: this.hasSecondaryProviders,
                         platformName: this.platformName,
                         createAccountOption: this.createAccountOption,
-                        googleRecaptchaSiteKey: this.googleRecaptchaSiteKey
+                        googleRecaptchaSiteKey: this.googleRecaptchaSiteKey,
+                        registerURL: this.registerURL
                     }
                 }));
 
