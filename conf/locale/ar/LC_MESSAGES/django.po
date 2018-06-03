@@ -599,6 +599,34 @@ msgstr ""
 "يبدو أنّ عنوان البريد الإلكتروني {email} يخصّ حسابًا قائمًا. يُرجى إعادة "
 "المحاولة بعنوان بريد إلكتروني مختلف."
 
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Enter National ID"
+msgstr "أدخل رقم الهوية"
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Date of birth (Hijri)"
+msgstr "تاريخ الميلاد (هجري)"
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Day"
+msgstr "يوم"
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Month"
+msgstr "شهر"
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Year"
+msgstr "سنة"
+
+#: lms/djangoapps/custom_reg_form/models.py
+msgid "National ID"
+msgstr "رقم الهوية"
+
+#: lms/djangoapps/custom_reg_form/models.py
+msgid "Mobile Number"
+msgstr "رقم الجوال"
+
 #: common/djangoapps/student/helpers.py
 #, python-brace-format
 msgid "An account with the Public Username '{username}' already exists."

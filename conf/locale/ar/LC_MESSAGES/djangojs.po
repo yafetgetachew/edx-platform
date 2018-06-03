@@ -9071,7 +9071,7 @@ msgstr "لأول مرة هنا؟"
 #: lms/templates/student_account/login.underscore
 #: test_root/staticfiles/templates/student_account/login.underscore
 msgid "Create an Account."
-msgstr "إنشاء حساب."
+msgstr "إنشاء حساب"
 
 #: lms/templates/student_account/login.underscore
 msgid "Sign in to continue learning as {email}"
