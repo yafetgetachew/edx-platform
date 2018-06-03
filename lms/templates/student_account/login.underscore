@@ -13,13 +13,10 @@
 <form id="login" class="login-form login-form-flex" tabindex="-1" method="POST" autocomplete="off">
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
         <div class="login-form-box">
+            <h3>
+                <span class="text"><%- gettext("or sign in with") %></span>
+            </h3>
             <div class="login-providers">
-                <div class="section-title lines">
-                    <h3>
-                        <span class="text"><%- gettext("or sign in with") %></span>
-                    </h3>
-                </div>
-
                 <% _.each( context.providers, function( provider ) {
                     if ( provider.loginUrl ) { %>
                         <button type="button" class="button button-primary button-<%- provider.id %> login-provider login-<%- provider.id %>" data-provider-url="<%- provider.loginUrl %>">
