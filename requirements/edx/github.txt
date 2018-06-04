@@ -85,7 +85,6 @@ git+https://github.com/solashirai/crowdsourcehinter.git@518605f0a95190949fe77bd3
 -e git+https://github.com/pmitros/RateXBlock.git@367e19c0f6eac8a5f002fd0f1559555f8e74bfff#egg=rate-xblock
 -e git+https://github.com/pmitros/DoneXBlock.git@release-2016-08-10#egg=done-xblock
 git+https://github.com/edx/edx-milestones.git@v0.1.10#egg=edx-milestones==0.1.10
-git+https://github.com/edx/xblock-utils.git@v1.0.3#egg=xblock-utils==1.0.3
 -e git+https://github.com/edx-solutions/xblock-google-drive.git@138e6fa0bf3a2013e904a085b9fed77dab7f3f21#egg=xblock-google-drive
 -e git+https://github.com/edx/edx-reverification-block.git@0.0.5#egg=edx-reverification-block==0.0.5
 git+https://github.com/edx/edx-user-state-client.git@1.0.1#egg=edx-user-state-client==1.0.1
@@ -96,3 +95,8 @@ git+https://github.com/edx/edx-proctoring.git@0.17.0#egg=edx-proctoring==0.17.0
 -e git+https://github.com/mitodl/edx-sga@172a90fd2738f8142c10478356b2d9ed3e55334a#egg=edx-sga
 -e git+https://github.com/open-craft/xblock-poll@v1.2.3#egg=xblock-poll==1.2.3
 git+https://github.com/edx-solutions/xblock-drag-and-drop-v2@v2.0.15#egg=xblock-drag-and-drop-v2==2.0.15
+-e git+https://github.com/raccoongang/edx_xblock_scorm.git@v1.0#egg=edx_xblock_scorm
+-e git+https://github.com/raccoongang/flow-control-xblock.git@v0.2.0#egg=flow_control_xblock
+-e git+https://github.com/raccoongang/xblock-pdf.git@v1.0.0-rg#egg=xblock_pdf
+-e git+https://github.com/raccoongang/xblock-video.git@v0.10.1#egg=rg_xblock_video
+-e git+https://github.com/edx/xblock-utils.git@v1.0.5#egg=xblock-utils==1.0.5
