@@ -619,6 +619,10 @@ msgstr "شهر"
 msgid "Year"
 msgstr "سنة"
 
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Sorry, the information you provided is incorrect, please make sure you enter correct information"
+msgstr "المعلومات التي سجلتها غير صحيحة ، تأكد من إدخال معلومات صحيحة"
+
 #: lms/djangoapps/custom_reg_form/models.py
 msgid "National ID"
 msgstr "رقم الهوية"
