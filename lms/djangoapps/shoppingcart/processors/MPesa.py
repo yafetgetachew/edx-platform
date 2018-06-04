@@ -11,9 +11,6 @@ log = logging.getLogger(__name__)
 
 
 def render_purchase_form_html(cart, callback_url=''):
-    from shoppingcart.views import verify_for_closed_enrollment
-    shoppingcart_items = verify_for_closed_enrollment(cart.user, cart)[-1]
-    description = [("Payment for course '{}'\n".format(course.display_name)) for item, course in shoppingcart_items]
     return render_to_string('shoppingcart/mpesa_form.html', {
         'action': get_processor_config().get('PURCHASE_ENDPOINT'),
         'params': {
@@ -21,7 +18,7 @@ def render_purchase_form_html(cart, callback_url=''):
             'charset': 'utf-8',
             'currency_code': cart.currency.upper(),
             'amount': cart.total_cost,
-            'item_name': "".join(description)[0:127],
+            'item_name': "Camara:{}".format(cart.total_cost),
             'custom': cart.id,
             'business': get_processor_config().get('CLIENT_ID'),
             'notify_url': callback_url,
