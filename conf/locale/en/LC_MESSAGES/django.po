@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2018-05-08 03:21-0900\n"
-"PO-Revision-Date: 2018-05-08 12:21:04.572900\n"
+"POT-Creation-Date: 2018-06-03 04:18-0900\n"
+"PO-Revision-Date: 2018-06-03 13:18:14.865853\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -5434,6 +5434,44 @@ msgstr ""
 msgid ""
 "I allow edX to use the information provided in this application (except for "
 "financial information) for edX marketing purposes."
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Enter National ID"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Date of birth (Hijri)"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Day"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Month"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Year"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid "Integration server is not available"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/forms.py
+msgid ""
+"Sorry, the information you provided is incorrect, please make sure you enter"
+" correct information"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/models.py
+msgid "Mobile Number"
+msgstr ""
+
+#: lms/djangoapps/custom_reg_form/models.py
+msgid "National ID"
 msgstr ""
 
 #: lms/djangoapps/dashboard/git_import.py

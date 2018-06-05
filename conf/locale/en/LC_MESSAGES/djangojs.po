@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2018-05-08 03:20-0900\n"
-"PO-Revision-Date: 2018-05-08 12:21:05.305195\n"
+"POT-Creation-Date: 2018-06-03 04:17-0900\n"
+"PO-Revision-Date: 2018-06-03 13:18:15.794943\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -7191,29 +7191,15 @@ msgid "Register through edX"
 msgstr ""
 
 #: lms/templates/student_account/login.underscore
+msgid "تسجيل الدخول"
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
 msgid "First time here?"
 msgstr ""
 
 #: lms/templates/student_account/login.underscore
 msgid "Create an Account."
-msgstr ""
-
-#: lms/templates/student_account/login.underscore
-msgid "تسجيل الدخول"
-msgstr ""
-
-#: lms/templates/student_account/login.underscore
-msgid ""
-"Sign in here using your email address and password, or use one of the "
-"providers listed below."
-msgstr ""
-
-#: lms/templates/student_account/login.underscore
-msgid "Sign in here using your email address and password."
-msgstr ""
-
-#: lms/templates/student_account/login.underscore
-msgid "If you do not yet have an account, use the button below to register."
 msgstr ""
 
 #: lms/templates/student_account/login.underscore
@@ -7228,6 +7214,20 @@ msgstr ""
 #: lms/templates/student_account/login.underscore
 #: lms/templates/student_account/register.underscore
 msgid "Use my institution/campus credentials"
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
+msgid ""
+"Sign in here using your email address and password, or use one of the "
+"providers listed below."
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
+msgid "Sign in here using your email address and password."
+msgstr ""
+
+#: lms/templates/student_account/login.underscore
+msgid "If you do not yet have an account, use the button below to register."
 msgstr ""
 
 #: lms/templates/student_account/password_reset.underscore
