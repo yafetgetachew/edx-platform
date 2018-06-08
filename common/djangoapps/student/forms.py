@@ -4,6 +4,8 @@ Utility functions for validating forms
 from importlib import import_module
 import re
 
+from validate_email import validate_email
+
 from django import forms
 from django.forms import widgets
 from django.core.exceptions import ValidationError
@@ -64,6 +66,10 @@ class PasswordResetFormNoActive(PasswordResetForm):
         # django.contrib.auth.forms.PasswordResetForm directly, which has this import in this place.
         from django.core.mail import send_mail
         for user in self.users_cache:
+            timeout = settings.FEATURES.get('EMAIL_VALIDATION_TIMEOUT', 30)
+            if not validate_email(user.email, check_mx=True, verify=True, smtp_timeout=timeout):
+                return None
+
             if not domain_override:
                 site_name = configuration_helpers.get_value(
                     'SITE_NAME',

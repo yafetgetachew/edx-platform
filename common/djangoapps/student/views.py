@@ -13,6 +13,7 @@ from django.views.generic import TemplateView
 from pytz import UTC
 from requests import HTTPError
 from ipware.ip import get_ip
+from validate_email import validate_email as validate_email_exists
 
 import edx_oauth2_provider
 from django.conf import settings
@@ -2293,6 +2294,10 @@ def validate_new_email(user, new_email):
 
     if User.objects.filter(email=new_email).count() != 0:
         raise ValueError(_('An account with this e-mail already exists.'))
+
+    timeout = settings.FEATURES.get('EMAIL_VALIDATION_TIMEOUT', 30)
+    if not validate_email_exists(user.email, check_mx=True, verify=True, smtp_timeout=timeout):
+        raise ValueError(_('Valid e-mail address required.'))
 
 
 def do_email_change_request(user, new_email, activation_key=None):

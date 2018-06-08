@@ -1,6 +1,8 @@
 """HTTP end-points for the User API. """
 import copy
 
+from validate_email import validate_email
+
 from opaque_keys import InvalidKeyError
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -306,6 +308,10 @@ class RegistrationView(APIView):
 
         # Handle duplicate email/username
         conflicts = check_account_exists(email=email, username=username)
+        timeout = settings.FEATURES.get('EMAIL_VALIDATION_TIMEOUT', 30)
+        if not validate_email(email, check_mx=True, verify=True, smtp_timeout=timeout):
+            return JsonResponse({'email': [{'user_message': _(u'Please use valid email.')}]}, status=409)
+
         if conflicts:
             conflict_messages = {
                 "email": _(
