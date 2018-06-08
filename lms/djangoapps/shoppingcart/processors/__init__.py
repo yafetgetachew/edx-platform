@@ -14,18 +14,6 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 
 # Import the processor implementation, using `CC_PROCESSOR_NAME`
 # as the name of the Python module in `shoppingcart.processors`
-CC_PROCESSOR_NAME = configuration_helpers.get_value('CC_PROCESSOR_NAME', settings.CC_PROCESSOR_NAME)
-
-PROCESSOR_MODULE = __import__(
-    'shoppingcart.processors.' + CC_PROCESSOR_NAME,
-    fromlist=[
-        'render_purchase_form_html',
-        'process_postpay_callback',
-        'get_purchase_endpoint',
-        'get_signed_purchase_params',
-    ]
-)
-
 
 def render_purchase_form_html(cart, **kwargs):
     """
@@ -71,6 +59,15 @@ def process_postpay_callback(params, **kwargs):
         dict
 
     """
+    PROCESSOR_MODULE = __import__(
+        'shoppingcart.processors.' + configuration_helpers.get_value('CC_PROCESSOR_NAME', settings.CC_PROCESSOR_NAME),
+        fromlist=[
+            'render_purchase_form_html',
+            'process_postpay_callback',
+            'get_purchase_endpoint',
+            'get_signed_purchase_params',
+        ]
+    )
     return PROCESSOR_MODULE.process_postpay_callback(params, **kwargs)
 
 
@@ -82,6 +79,15 @@ def get_purchase_endpoint():
         unicode
 
     """
+    PROCESSOR_MODULE = __import__(
+        'shoppingcart.processors.' + configuration_helpers.get_value('CC_PROCESSOR_NAME', settings.CC_PROCESSOR_NAME),
+        fromlist=[
+            'render_purchase_form_html',
+            'process_postpay_callback',
+            'get_purchase_endpoint',
+            'get_signed_purchase_params',
+        ]
+    )
     return PROCESSOR_MODULE.get_purchase_endpoint()
 
 
@@ -99,4 +105,13 @@ def get_signed_purchase_params(cart, **kwargs):
         dict
 
     """
+    PROCESSOR_MODULE = __import__(
+        'shoppingcart.processors.' + configuration_helpers.get_value('CC_PROCESSOR_NAME', settings.CC_PROCESSOR_NAME),
+        fromlist=[
+            'render_purchase_form_html',
+            'process_postpay_callback',
+            'get_purchase_endpoint',
+            'get_signed_purchase_params',
+        ]
+    )
     return PROCESSOR_MODULE.get_signed_purchase_params(cart, **kwargs)
