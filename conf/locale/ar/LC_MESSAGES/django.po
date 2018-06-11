@@ -15359,7 +15359,10 @@ msgstr "هذا الرابط يفتح مستعرضًا في الويب لمشاه
 
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid "View {cert_name_short}"
-msgstr "معاينة {cert_name_short}"
+msgstr "عرض {cert_name_short}"
+
+msgid "Certificate"
+msgstr "الشهادات"
 
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid "This link will open/download a PDF document"
