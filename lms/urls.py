@@ -123,8 +123,8 @@ if settings.FEATURES["ENABLE_COMBINED_LOGIN_REGISTRATION"]:
     # Backwards compatibility with old URL structure, but serve the new views
     urlpatterns += (
         ### BAOBAB CUSTOMIZATION BAOBAB-75 ###
-        # url(r'^login$', 'student_account.views.login_and_registration_form',
-        #     {'initial_mode': 'login'}, name="signin_user"),
+        url(r'^login$', 'student_account.views.login_and_registration_form',
+            {'initial_mode': 'login'}, name="signin_user"),
         ############################################################################################
 
         # Some random string for preventing getting registration page by url
@@ -135,7 +135,7 @@ else:
     # Serve the old views
     urlpatterns += (
         ### BAOBAB CUSTOMIZATION BAOBAB-75 ###
-        # url(r'^login$', 'student.views.signin_user', name="signin_user"),
+        url(r'^login$', 'student.views.signin_user', name="signin_user"),
         ############################################################################################
 
         # Some random string for preventing getting registration page by url
