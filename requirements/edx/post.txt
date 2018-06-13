@@ -11,3 +11,4 @@
 
 python-saml==2.2.1
 requests[security]==2.14.2
+cryptography==1.9
