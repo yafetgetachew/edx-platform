@@ -873,7 +873,7 @@ def update_assets(args):
             "STATIC_ROOT_BASE", "lms", settings=args.settings)
 
         EDX_PLATFORM_STATIC_ROOT_BASE = django_settings.EDX_PLATFORM_STATIC_ROOT_BASE if hasattr(django_settings,
-                                                                       'EDX_PLATFORM_STATIC_ROOT_BASE') else Env.get_django_setting(
+                                                                                                 'EDX_PLATFORM_STATIC_ROOT_BASE') else Env.get_django_setting(
             "EDX_PLATFORM_STATIC_ROOT_BASE", "lms", settings=args.settings)
 
         os.system("rsync -av {static_collector_dir}/* {platform_static_dir}/ ".format(

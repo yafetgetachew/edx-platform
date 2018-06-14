@@ -43,6 +43,13 @@ EXPECTED_INDEX_COURSE_COMMAND = (
     u"python manage.py {system} --settings={settings} reindex_course --setup"
 )
 
+RCYNC_FIRST_COMMAND = (
+    u'python manage.py lms --settings={} print_settings STATIC_ROOT_BASE --format=value 2>/dev/null'
+)
+RCYNC_SECOND_COMMAND = (
+    u'python manage.py lms --settings={} print_settings EDX_PLATFORM_STATIC_ROOT_BASE --format=value 2>/dev/null'
+)
+
 get_static_collector_root_mock = Mock()
 get_static_collector_root_mock.return_value = Env.STATIC_COLLECTOR_ROOT_TEST
 
@@ -66,7 +73,12 @@ class TestPaverServerTasks(PaverTestCase):
         """
         Test the "devstack" task.
         """
-        self.verify_server_task("lms", options)
+        if 'settings' in options or ('optimized' in options and 'fast' not in options):
+            rsync_output = True
+        else:
+            rsync_output = False
+
+        self.verify_server_task("lms", options, rsync_output=rsync_output)
 
     @ddt.data(
         [{}],
@@ -81,7 +93,12 @@ class TestPaverServerTasks(PaverTestCase):
         """
         Test the "devstack" task.
         """
-        self.verify_server_task("studio", options)
+        if 'settings' in options or ('optimized' in options and 'fast' not in options):
+            rsync_output = True
+        else:
+            rsync_output = False
+
+        self.verify_server_task("studio", options, rsync_output=rsync_output)
 
     @ddt.data(
         [{}],
@@ -99,6 +116,10 @@ class TestPaverServerTasks(PaverTestCase):
         Test the "devstack" task.
         """
         options = server_options.copy()
+        if 'settings' in options or ('optimized' in options and 'fast' not in options):
+            rsync_output = True
+        else:
+            rsync_output = False
         is_optimized = options.get("optimized", False)
         expected_settings = "devstack_optimized" if is_optimized else options.get("settings", "devstack")
 
@@ -110,7 +131,7 @@ class TestPaverServerTasks(PaverTestCase):
                 settings=expected_settings,
             )
         ]
-        self.verify_server_task("devstack", options, contracts_default=True)
+        self.verify_server_task("devstack", options, contracts_default=True, rsync_output=rsync_output)
 
         # Then test with Studio
         options["system"] = "cms"
@@ -120,7 +141,7 @@ class TestPaverServerTasks(PaverTestCase):
                 settings=expected_settings,
             )
         ]
-        self.verify_server_task("devstack", options, contracts_default=True)
+        self.verify_server_task("devstack", options, contracts_default=True, rsync_output=rsync_output)
 
     @ddt.data(
         [{}],
@@ -195,7 +216,7 @@ class TestPaverServerTasks(PaverTestCase):
             ]
         )
 
-    def verify_server_task(self, task_name, options, contracts_default=False):
+    def verify_server_task(self, task_name, options, contracts_default=False, rsync_output=False):
         """
         Verify the output of a server task.
         """
@@ -249,6 +270,23 @@ class TestPaverServerTasks(PaverTestCase):
             settings=expected_settings,
             port=port,
         )
+
+        if rsync_output:
+            if 'asset-settings' in options:
+                settings = options['asset-settings']
+            elif 'settings' in options:
+                settings = options['settings']
+            elif 'optimized' in options and options['optimized'] is True:
+                settings = 'test_static_optimized'
+            else:
+                settings = 'static_collector'
+
+            first = RCYNC_FIRST_COMMAND.format(settings)
+            second = RCYNC_SECOND_COMMAND.format(settings)
+
+            expected_messages.append(first)
+            expected_messages.append(second)
+
         if not no_contracts:
             expected_run_server_command += " --contracts"
         expected_messages.append(expected_run_server_command)
