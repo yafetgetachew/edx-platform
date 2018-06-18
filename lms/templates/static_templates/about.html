@@ -36,5 +36,73 @@
         <br><br>
         <h4>Что получают слушатели по итогам обучения</h4>
         <br>
-        По итогам успешного освоения каждого курса в Открытом университете Егора Гайдара слушатели получают сертификат, подтверждающий прохождение ими курса и полученную квалификацию.
+        По итогам успешного освоения каждого курса в Открытом университете Егора Гайдара слушатели получают <strong class="popup-anchor" data-attr="cert">сертификат</strong>, подтверждающий прохождение ими курса и полученную квалификацию. Также можно получить <strong class="popup-anchor" data-attr="id">удостоверение о повышении квалификации</strong> при успешной сдаче промежуточных тестов, финального экзамена и подготовке необходимого пакета документов.
+
+        <div class="example-holder">
+            <ul>
+                <li class="example-item example-item-cert">
+                    <img src="/static/images/certificate_small.jpg" alt="certificate">
+                    <div class="example-popup hidden"><img class='popup-img' src="/static/images/certificate.jpg" alt="certificate"></div>
+                </li>
+                <li class="example-item example-item-id">
+                    <img src="/static/images/id_small.jpg" alt="id">
+                    <div class="example-popup hidden"><img class='popup-img' src="/static/images/id.jpg" alt="id"></div>
+                </li>
+            </ul>
+        </div>
         </section>
+<style>
+    .example-holder ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    .example-holder ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 40px;
+    }
+    .example-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+    .popup-img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+    .popup-anchor {
+        cursor: pointer;
+    }
+    .popup-anchor:hover {
+        text-decoration: underline;
+    }
+</style>
+<script>
+    $('.example-item').on('click',function (e) {
+        let target = $(e.target)
+        target.next('.example-popup').removeClass('hidden');
+        if (target.hasClass('example-popup') || target.hasClass('popup-img')) {
+            $('.example-popup').addClass('hidden');
+        }
+    });
+    $('.popup-anchor').on('click',function (e) {
+        let data = $(e.target).data().attr;
+        console.log(data);
+        if (data === 'cert') {
+            $('.example-item-cert .example-popup').removeClass('hidden');
+        } else if (data === 'id') {
+            $('.example-item-id .example-popup').removeClass('hidden');
+        }
+    })
+</script>
