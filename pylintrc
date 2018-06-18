@@ -179,5 +179,3 @@ int-import-graph =
 
 [EXCEPTIONS]
 overgeneral-exceptions = Exception
-
-# 42ec1461de97fc01d7191c1c5f2fd5ec67671a61
