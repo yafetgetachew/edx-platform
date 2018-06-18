@@ -21,15 +21,15 @@ class SubmissionHistoryView(APIView, ApiKeyPermissionMixIn):
     def get(self, request):
         username = request.GET.get('user', request.user.username)
         data = []
+        all_users = request.GET.get('all', '').lower() in ('1', 'true', 'ok') and GlobalStaff().has_user(request.user)
 
-        if not (username == request.user.username or GlobalStaff().has_user(request.user) or
+        if not (all_users or username == request.user.username or GlobalStaff().has_user(request.user) or
                 self.has_api_key_permissions(request)):
             return Response(data)
 
-        course_enrollments = CourseEnrollment.objects.filter(
-            user__username=username,
-            is_active=True
-        ).order_by('created')
+        course_enrollments = CourseEnrollment.objects.filter(is_active=True)
+        if not all_users:
+            course_enrollments = course_enrollments.filter(user__username=username).order_by('created')
 
         for course_enrollment in course_enrollments:
             try:
