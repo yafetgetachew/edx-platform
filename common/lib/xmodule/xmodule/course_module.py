@@ -853,6 +853,21 @@ class CourseFields(object):
         scope=Scope.settings, default=False
     )
 
+    category = String(
+        display_name=_("Category"),
+        help="",
+        default="",
+        scope=Scope.settings,
+        values=[
+            {"display_name": "----------", "value": ""},
+            {"display_name": _("Client, Server & Networking"), "value": "client_server"},
+            {"display_name": _("Cloud & DevOps"), "value": "cloud_devops"},
+            {"display_name": _("Data, BI, Machine Learning & Artificial Intelligence"), "value": "data_bi"},
+            {"display_name": _("Development"), "value": "development"},
+            {"display_name": _("Security"), "value": "security"},
+        ]
+    )
+
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
