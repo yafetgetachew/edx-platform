@@ -15928,6 +15928,9 @@ msgstr "За цим посиланням відкриється веб-верс�
 msgid "View {cert_name_short}"
 msgstr "Переглянути {cert_name_short}"
 
+msgid "Certificate"
+msgstr "сертифікат"
+
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid "This link will open/download a PDF document"
 msgstr "Це посилання відкриє/завантажить PDF файл."
