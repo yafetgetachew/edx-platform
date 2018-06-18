@@ -11,6 +11,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 from student.forms import PasswordResetFormNoActive
 from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
 from rest_framework import permissions
+from django.http import Http404
 
 def auto_generate_username(email):
     """
@@ -59,7 +60,10 @@ class ApiKeyHeaderPermissionInToken(ApiKeyHeaderPermission, permissions.IsAuthen
                present in the request and matches the setting.
                """
         api_key = getattr(settings, "EDX_APP_SEMBLER_API_KEY", None)
+        is_enable_api = configuration_helpers.get_value("ENABLE_APPSEMPLER_API", None)
+        if not is_enable_api:
+            raise Http404
         return (
                 (settings.DEBUG and api_key is None) or
-                (api_key is not None and request.META.get("HTTP_X_APP_SEMBLER_API_KEY") == api_key)
+                (is_enable_api is not None and api_key is not None and request.META.get("HTTP_X_APP_SEMBLER_API_KEY") == api_key)
         )
