@@ -937,7 +937,7 @@ COURSE_DISCOVERY_MEANINGS = {
         },
     },
     'language': LANGUAGE_MAP,
-    'category': {
+    'course_category': {
         'name': 'Category',
         'terms': {
             'client_server': 'Client, Server & Networking',
@@ -950,4 +950,4 @@ COURSE_DISCOVERY_MEANINGS = {
 }
 
 # Setting for overriding default filtering facets for Course discovery
-COURSE_DISCOVERY_FILTERS = ["language", "modes", "category"]
+COURSE_DISCOVERY_FILTERS = ["language", "modes", "course_category"]

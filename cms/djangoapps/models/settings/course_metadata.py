@@ -134,7 +134,7 @@ class CourseMetadata(object):
                 'editor_type': ''
             }
 
-            if field.name in ['category']:
+            if field.name in ['course_category']:
                 result[field.name].update({
                     'editor_type': 'select'
                 })
