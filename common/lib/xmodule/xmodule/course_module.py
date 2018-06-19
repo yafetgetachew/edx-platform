@@ -868,6 +868,24 @@ class CourseFields(object):
         ]
     )
 
+    course_format = String(
+        display_name=_("Format"),
+        help=_('Displays whether the course has "Online" or "Offline" format.'),
+        default="online",
+        scope=Scope.settings,
+        values=[
+            {"display_name": _("Online"), "value": "online"},
+            {"display_name": _("Offline"), "value": "offline"},
+        ]
+    )
+
+    index_visible = Boolean(
+        display_name=_("Index page visibility"),
+        help=_('Does this course appear on the index page?'),
+        default=False,
+        scope=Scope.settings,
+    )
+
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
