@@ -27,22 +27,30 @@ class SubmissionHistoryView(APIView, ApiKeyPermissionMixIn):
                 self.has_api_key_permissions(request)):
             return Response(data)
 
-        course_enrollments = CourseEnrollment.objects.filter(is_active=True)
+        course_enrollments = CourseEnrollment.objects.select_related('user').filter(is_active=True)
         if not all_users:
             course_enrollments = course_enrollments.filter(user__username=username).order_by('created')
 
+        courses = {}
         for course_enrollment in course_enrollments:
             try:
-                course = get_course(course_enrollment.course_id, depth=4)
+                course_list = courses.get(course_enrollment.course_id)
+                if course_list:
+                    course, course_children = course_list
+                else:
+                    course = get_course(course_enrollment.course_id, depth=4)
+                    course_children = course.get_children()
+                    courses[course_enrollment.course_id] = [course, course_children]
             except ValueError:
                 continue
 
             course_data = {
                 'course_id': unicode(course_enrollment.course_id),
                 'course_name': course.display_name_with_default,
+                'user': course_enrollment.user.username,
                 'problems': []
             }
-            for section in course.get_children():
+            for section in course_children:
                 for subsection in section.get_children():
                     for vertical in subsection.get_children():
                         for component in vertical.get_children():
