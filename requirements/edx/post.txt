@@ -10,3 +10,7 @@
 # python-saml only after lxml has been successfully installed. 
 
 python-saml==2.2.1
+requests[security]==2.19.1
+cryptography==2.2.2
+enum34==1.1.6
+urllib3==1.23

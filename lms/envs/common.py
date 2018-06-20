@@ -601,8 +601,8 @@ DEV_CONTENT = True
 
 EDX_ROOT_URL = ''
 
-LOGIN_REDIRECT_URL = EDX_ROOT_URL + '/login'
-LOGIN_URL = EDX_ROOT_URL + '/login'
+LOGIN_REDIRECT_URL = EDX_ROOT_URL + '/auth/login/drupal-oauth2/?auth_entry=login'
+LOGIN_URL = EDX_ROOT_URL + '/auth/login/drupal-oauth2/?auth_entry=login'
 
 COURSE_NAME = "6.002_Spring_2012"
 COURSE_NUMBER = "6.002x"
@@ -2054,6 +2054,9 @@ INSTALLED_APPS = (
     'oauth_provider',
 
     'openedx.core.djangoapps.auth_exchange',
+
+    #SSO Client for Drupal. https://github.com/raccoongang/edx-oauth-client/tree/drupal
+    'edx_oauth_client',
 
     # For the wiki
     'wiki',  # The new django-wiki from benjaoming
