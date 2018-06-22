@@ -44,12 +44,14 @@
             },
 
             showFoundMessage: function(count) {
-                var msg = ngettext(
-                'Viewing %s course',
-                'Viewing %s courses',
-                count
-            );
-                this.$message.html(interpolate(msg, [count]));
+            //     var msg = ngettext(
+            //     'Viewing %s course',
+            //     'Viewing %s courses',
+            //     count
+            // );
+            //     this.$message.html(interpolate(msg, [count]));
+                var msg = gettext('our courses');
+                this.$message.html(msg);
             },
 
             showNotFoundMessage: function(term) {
