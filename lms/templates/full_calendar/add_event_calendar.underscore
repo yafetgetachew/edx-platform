@@ -1,0 +1,8 @@
+<div class="event-description">
+    <div>
+        <p><%- gettext('Create an event') %> <%- date.format('ll') %>?</p>
+    </div>
+    <div>
+        <button class="btn"><a href="/calendar/add_event/?date=<%- date.toISOString() %>" class="btn" type="button"><%- gettext('Create') %></button>
+    </div>
+</div>

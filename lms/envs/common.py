@@ -2244,6 +2244,7 @@ INSTALLED_APPS = (
     'openedx.features.enterprise_support',
 
     'experiments',
+    'full_calendar',
 )
 
 ######################### CSRF #########################################

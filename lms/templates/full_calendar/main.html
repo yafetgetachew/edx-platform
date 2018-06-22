@@ -1,0 +1,148 @@
+<%page expression_filter="h"/>
+<%inherit file="../main.html" />
+<%namespace name='static' file='../static_content.html'/>
+
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangolib.js_utils import dump_js_escaped_json
+%>
+
+<%block name="headextra">
+    <link href="${static.url('css/full_calendar/fullcalendar.min.css')}" rel="stylesheet" type="text/css">
+    <link href="${static.url('css/full_calendar/custom_fullcalendar.css')}" rel="stylesheet" type="text/css">
+</%block>
+
+<%block name="header_extras">
+% for template_name in ["event_calendar", "add_event_calendar"]:
+<script type="text/template" id="${template_name}-tpl">
+  <%static:include path="full_calendar/${template_name}.underscore" />
+</script>
+% endfor
+</%block>
+
+
+<%block name="pagetitle">${_("Calendar")}</%block>
+<%block name="bodyclass">view-calendar is-authenticated</%block>
+
+<%block name="js_extra">
+    <script src="${static.url('js/full_calendar/fullcalendar.min.js')}"></script>
+    <script src="${static.url('js/full_calendar/locale-all.js')}"></script>
+    <script src="${static.url('common/js/vendor/moment-timezone-with-data.js')}"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var dateNow = moment.tz(new Date(), '${user_timezone}' || moment.tz.guess());
+        var templateEvent = _.template($('#event_calendar-tpl').html());
+        var templateAddEvent = _.template($('#add_event_calendar-tpl').html());
+
+        var calendarEventList = _.map(
+            ${calendar_events | n, dump_js_escaped_json},
+            function(ev) {
+                ev.start = moment.tz(ev.start, '${user_timezone}' || moment.tz.guess());
+                ev.end = moment.tz(ev.end, '${user_timezone}' || moment.tz.guess());
+                ev.now = dateNow;
+                return ev
+            }
+        );
+        $('.full-calendar').fullCalendar({
+            defaultDate: moment(),
+            locale: '${LANGUAGE_CODE}',
+            editable: false,
+            validRange: function(nowDate) {
+                var startDate= nowDate.set('date', 0);
+                return {
+                    start: startDate.clone().add({months:-1}),
+                    end: startDate.clone().add({months:2})
+                };
+            },
+            ##  eventLimit: true,
+            events: calendarEventList,
+            eventRender: function(event, element) {
+                var text = templateEvent(event);
+                element.qtip({
+                    content: {
+                        text: text,
+                        title: {
+                            text: event.title,
+                            button: true
+                        }
+                    },
+                    show: {
+                        event: 'click',
+                        solo: true
+                    },
+                    hide: {
+                        event: 'click unfocus',
+                    },
+                    position: {
+                        container: $('.qtip-growl-container')
+                    },
+                    events: {
+                        show: function(event, api) {
+                            $(event.currentTarget).addClass('qtip-show');
+                        },
+                        hidden: function(event, api) {
+                            $(event.currentTarget).removeClass('qtip-show');
+                        },
+                    },
+                    style: {
+                      classes: 'qtip-blue',
+                    },
+                });
+            },
+            dayRender: function(date, cell) {
+                if (this.intervalEnd > date && date > dateNow) {
+                    var isEvent = _.find(
+                        calendarEventList,
+                        function(ev){
+                            return ev.start.format('L') == date.format('L');
+                        }
+                    );
+                    
+                    if (!isEvent) {
+                        cell.addClass('plus-event');
+                        var text = templateAddEvent({date: date});
+                        cell.qtip({
+                            content: {
+                                text: text,
+                                title: {
+                                    text: gettext('Event'),
+                                    button: true
+                                }
+                            },
+                            show: {
+                                event: 'click',
+                                solo: true
+                            },
+                            hide: {
+                                event: 'click unfocus',
+                            },
+                            position: {
+                                container: $('.qtip-add-event-container')
+                            },
+                            events: {
+                                show: function(event, api) {
+                                    $(event.currentTarget).addClass('qtip-show');
+                                },
+                                hidden: function(event, api) {
+                                    $(event.currentTarget).removeClass('qtip-show');
+                                },
+                            },
+                            style: {
+                                classes: 'qtip-blue',
+                            },
+                        });
+                    }
+                }
+            }
+        });
+    });
+  </script>
+</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <div class="container">
+        <div class="qtip-growl-container"></div>
+        <div class="qtip-add-event-container"></div>
+        <div class="full-calendar"></div>
+    </div>
+</main>

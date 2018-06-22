@@ -1,0 +1,30 @@
+<div class="event-description">
+    <div>
+        <div><%- gettext('Start date') %>:</div>
+        <div><%- start.format('lll') %></div>
+    </div>
+    <div>
+        <div><%- gettext('End date') %>:</div>
+        <div><%- end.format('lll') %></div>
+    </div>
+    <div>
+        <div><%- gettext('Place') %>:</div>
+        <div><%- place %></div>
+    </div>
+    <div>
+        <div><%- gettext('Price') %>:</div>
+        <div><%- price %> <%- event.currency %></div>
+    </div>
+    <div>
+        <div><%- gettext('Max seats') %>:</div>
+        <div><%- max_seats %></div>
+    </div>
+    <div>
+        <div><%- gettext('Available seats') %>:</div>
+        <div><%- max_seats - number_of_students %></div>
+    </div>
+    <div>
+        <% if (start > now) { %><button class="btn"><a href="/calendar/edit_event/<%- id %>"><%- gettext('Edit') %></button><% } %>
+        <button class="btn"><a href="/calendar/students/<%- id %>" class="btn" type="button"><%- gettext('Students list') %></button>
+    </div>
+</div>
