@@ -2163,7 +2163,7 @@ INSTALLED_APPS = (
    
    # rg_instructor_analytics
    'rg_instructor_analytics',
-   'web_fragments'
+   'web_fragments',
 )
 
 # Migrations which are not in the standard module "migrations"
