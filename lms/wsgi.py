@@ -9,8 +9,8 @@ It exposes a module-level variable named ``application``. Django's
 """
 
 # Patch the xml libs
-from safe_lxml import defuse_xml_libs
-defuse_xml_libs()
+# from safe_lxml import defuse_xml_libs
+# defuse_xml_libs()
 
 # Disable PyContract contract checking when running as a webserver
 import contracts
