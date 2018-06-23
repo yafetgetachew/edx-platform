@@ -6,8 +6,8 @@ It exposes a module-level variable named ``application``.
 """
 
 # Patch the xml libs before anything else.
-from safe_lxml import defuse_xml_libs
-defuse_xml_libs()
+# from safe_lxml import defuse_xml_libs
+# defuse_xml_libs()
 
 import os
 
