@@ -868,15 +868,11 @@ class CourseFields(object):
         ]
     )
 
-    course_format = String(
-        display_name=_("Format"),
-        help=_('Displays whether the course has "Online" or "Offline" format.'),
-        default="online",
-        scope=Scope.settings,
-        values=[
-            {"display_name": _("Online"), "value": "online"},
-            {"display_name": _("Offline"), "value": "offline"},
-        ]
+    course_vendor = String(
+        display_name=_("Vendor"),
+        help=_('Displays whether the course has vendor.'),
+        default="Microsoft",
+        scope=Scope.settings
     )
 
     index_visible = Boolean(

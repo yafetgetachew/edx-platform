@@ -26,8 +26,8 @@ from openedx.core.djangoapps.models.course_details import CourseDetails
         % if details.duration:
         <div class="course-short-duration">${details.duration}</div>
         % endif
-        % if course.format:
-        <div class="course-format">${course.format}</div>
+        % if course.vendor:
+        <div class="course-vendor">${course.vendor}</div>
         % endif
         % if course.certified:
         <div class="course-certified">

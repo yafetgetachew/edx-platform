@@ -18,9 +18,9 @@ from course_modes.models import CourseMode
           for course in courses:
               mongo_course = modulestore().get_course(course.id, depth=0)
               if getattr(mongo_course, 'index_visible'):
-                  # add `format` attr to course:
-                  course_format = getattr(mongo_course, 'course_format')
-                  course.format = course_format
+                  # add `vendor` attr to course:
+                  course_vendor = getattr(mongo_course, 'course_vendor')
+                  course.vendor = course_vendor
                   # add `certified` bool attr to course:
                   mode_slugs = [mode.slug for mode in CourseMode.modes_for_course(course.id)]
                   certified = bool(set(mode_slugs) & {CourseMode.AUDIT, CourseMode.HONOR, CourseMode.VERIFIED})
