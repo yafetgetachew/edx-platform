@@ -1716,6 +1716,10 @@ def _do_create_account(form, custom_form=None):
                 custom_model = custom_form.save(commit=False)
                 custom_model.user = user
                 custom_model.save()
+                try:
+                    custom_form.save_extra()
+                except AttributeError:
+                    pass
     except IntegrityError:
         # Figure out the cause of the integrity error
         if len(User.objects.filter(username=user.username)) > 0:
