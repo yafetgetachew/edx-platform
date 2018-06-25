@@ -2244,6 +2244,9 @@ INSTALLED_APPS = (
     'openedx.features.enterprise_support',
 
     'experiments',
+
+    'localflavor',
+    'calypso_reg_form',
 )
 
 ######################### CSRF #########################################
