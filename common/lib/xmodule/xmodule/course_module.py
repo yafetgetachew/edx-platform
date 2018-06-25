@@ -868,6 +868,20 @@ class CourseFields(object):
         ]
     )
 
+    course_vendor = String(
+        display_name=_("Vendor"),
+        help=_('Displays whether the course has vendor.'),
+        default="Microsoft",
+        scope=Scope.settings
+    )
+
+    index_visible = Boolean(
+        display_name=_("Index page visibility"),
+        help=_('Does this course appear on the index page?'),
+        default=False,
+        scope=Scope.settings,
+    )
+
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
