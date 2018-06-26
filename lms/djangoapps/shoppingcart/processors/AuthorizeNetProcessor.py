@@ -65,6 +65,10 @@ def get_merchant_auth():
 
 
 def render_purchase_form_html(cart, callback_url=None, extra_data=None):
+    # don't render cart without items
+    if not cart.has_items():
+        return None
+
     test_mode = get_processor_config().get('TEST_MODE', False)
     payment_url = 'https://{}.authorize.net/payment/payment'.format('test' if test_mode else 'accept')
 
