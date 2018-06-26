@@ -56,6 +56,9 @@ SHARD=${SHARD:="all"}
 NUMBER_OF_BOKCHOY_THREADS=${NUMBER_OF_BOKCHOY_THREADS:=1}
 TARGET_BRANCH=${TARGET_BRANCH:="origin/master"}
 
+# Clean up previous builds
+git clean -qxfd
+
 function emptyxunit {
 
     cat > reports/$1.xml <<END
