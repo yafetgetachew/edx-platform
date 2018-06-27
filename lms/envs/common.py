@@ -2245,7 +2245,6 @@ INSTALLED_APPS = (
 
     'experiments',
 
-    'localflavor',
     'calypso_reg_form',
 )
 
@@ -3215,6 +3214,51 @@ COURSE_ENROLLMENT_MODES = {
     "credit": 5,
     "honor": 6,
 }
+############## Settings for U.S. State in Registration Form ###################
+US_STATE_CHOICES = (
+   ("AL", "Alabama"),
+   ("AZ", "Arizona"),
+   ("AR", "Arkansas"),
+   ("CA", "California"),
+   ("CO", "Colorado"),
+   ("CT", "Connecticut"),
+   ("DE", "Delaware"),
+   ("FL", "Florida"),
+   ("GA", "Georgia"),
+   ("HI", "Hawaii"),
+   ("ID", "Idaho"),
+   ("IL", "Illinois"),
+   ("IN", "Indiana"),
+   ("KY", "Kentucky"),
+   ("LA", "Louisiana"),
+   ("MD", "Maryland"),
+   ("MA", "Massachusetts"),
+   ("ME", "Maine"),
+   ("MI", "Michigan"),
+   ("MS", "Mississippi"),
+   ("MO", "Missouri"),
+   ("NE", "Nebraska"),
+   ("NV", "Nevada"),
+   ("NH", "New Hampshire"),
+   ("NJ", "New Jersey"),
+   ("NM", "New Mexico"),
+   ("NY", "New York"),
+   ("NC", "North Carolina"),
+   ("ND", "North Dakota"),
+   ("OK", "Oklahoma"),
+   ("OR", "Oregon"),
+   ("PA", "Pennsylvania"),
+   ("RI", "Rhode Island"),
+   ("SC", "South Carolina"),
+   ("TN", "Tennessee"),
+   ("TX", "Texas"),
+   ("UT", "Utah"),
+   ("VT", "Vermont"),
+   ("VA", "Virginia"),
+   ("WA", "Washington"),
+   ("WV", "Wisconsin"),
+   ("WY", "Wyoming"),
+)
 
 ############## Settings for the Discovery App ######################
 
