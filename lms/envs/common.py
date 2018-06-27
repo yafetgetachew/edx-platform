@@ -3214,7 +3214,7 @@ COURSE_ENROLLMENT_MODES = {
     "credit": 5,
     "honor": 6,
 }
-############## Settings for U.S. State in Registration Form ###################
+############## Settings for U.S. State in Registration Form, Course Advanced Settings ###################
 US_STATE_CHOICES = (
    ("AL", "Alabama"),
    ("AZ", "Arizona"),
@@ -3259,6 +3259,19 @@ US_STATE_CHOICES = (
    ("WV", "Wisconsin"),
    ("WY", "Wyoming"),
 )
+
+DEFAULT_PROVIDER = {
+    "CT": "APL.000036",
+    "FL": "005614",
+    "GA": "7395",
+    "IN": "CE21600023",
+    "MI": "239",
+    "NC": "188",
+    "PA": "003065",
+    "SC": "90",
+    "UT": "ACE5680825",
+    "WY": "160"
+}
 
 ############## Settings for the Discovery App ######################
 
