@@ -2613,6 +2613,9 @@ class LogoutView(TemplateView):
     # Keep track of the page to which the user should ultimately be redirected.
     target = reverse_lazy('cas-logout') if settings.FEATURES.get('AUTH_USE_CAS') else '/login'
 
+    ### 2017-08-10 mother of all hacks - force redirect to MyDigicomp
+    target = 'https://www.digicomp.ch/benutzerkonto'
+
     def dispatch(self, request, *args, **kwargs):  # pylint: disable=missing-docstring
         # We do not log here, because we have a handler registered to perform logging on successful logouts.
         request.is_from_logout = True
