@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext as _
-from localflavor.us.models import USStateField
 
 
 class ExtraInfo(models.Model):
@@ -21,21 +20,16 @@ class ExtraInfo(models.Model):
         return unicode(self.user)
 
 
-class LicenseExtraInfo(models.Model):
+class StateExtraInfo(models.Model):
     extra_info = models.ForeignKey('ExtraInfo')
+    state = models.CharField(
+        verbose_name=_('State'),
+        max_length=2,
+        choices=settings.US_STATE_CHOICES,
+    )
     license = models.CharField(
         verbose_name=_('License'),
         max_length=255,
-    )
-
-    class Meta:
-        unique_together = ('extra_info', 'license',)
-
-
-class USStateExtraInfo(models.Model):
-    extra_info = models.ForeignKey('ExtraInfo')
-    state = USStateField(
-        verbose_name=_('State'),
     )
 
     class Meta:

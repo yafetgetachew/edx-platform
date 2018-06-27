@@ -218,4 +218,3 @@ xblock==1.0.0
 edx-sga==0.6.2
 
 authorizenet==1.1.0
-django-localflavor==1.6
