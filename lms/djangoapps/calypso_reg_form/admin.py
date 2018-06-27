@@ -1,20 +1,15 @@
 from django.contrib import admin
 
-from calypso_reg_form.models import ExtraInfo, LicenseExtraInfo, USStateExtraInfo
+from calypso_reg_form.models import ExtraInfo, StateExtraInfo
 
 
-class LicenseInline(admin.TabularInline):
-    model = LicenseExtraInfo
-
-
-class USStateInline(admin.TabularInline):
-    model = USStateExtraInfo
+class StateInline(admin.StackedInline):
+    extra = 0
+    model = StateExtraInfo
 
 
 class ExtraInfoAdmin(admin.ModelAdmin):
-    inlines = [
-        LicenseInline,
-        USStateInline,
-    ]
+    inlines = (StateInline,)
+
 
 admin.site.register(ExtraInfo, ExtraInfoAdmin)
