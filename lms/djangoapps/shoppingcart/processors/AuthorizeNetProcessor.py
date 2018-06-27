@@ -91,6 +91,12 @@ def render_purchase_form_html(cart, callback_url=None, extra_data=None):
         'cancelUrl': urljoin(callback_url, static('IFrameCommunicator.html')),
     })
 
+    add_settings('hostedPaymentPaymentOptions', {
+        'cardCodeRequired': True,
+        'showCreditCard': True,
+        'showBankAccount': False,
+    })
+
     transactionrequest = apicontractsv1.transactionRequestType()
     transactionrequest.transactionType = 'authCaptureTransaction'
     transactionrequest.amount = cart.total_cost
