@@ -117,15 +117,14 @@ PIPELINE_SASS_ARGUMENTS = '--debug-info'
 ########################### VERIFIED CERTIFICATES #################################
 
 FEATURES['AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'] = True
-FEATURES['ENABLE_PAYMENT_FAKE'] = True
+FEATURES['ENABLE_PAYMENT_FAKE'] = False
 
-CC_PROCESSOR_NAME = 'CyberSource2'
+CC_PROCESSOR_NAME = 'AuthorizeNetProcessor'
 CC_PROCESSOR = {
-    'CyberSource2': {
-        "PURCHASE_ENDPOINT": '/shoppingcart/payment_fake/',
-        "SECRET_KEY": 'abcd123',
-        "ACCESS_KEY": 'abcd123',
-        "PROFILE_ID": 'edx',
+    'AuthorizeNetProcessor': {
+        'TEST_MODE': True,
+        'API_LOGIN_ID': '39qK3nK7',
+        'TRANSACTION_KEY': '4hf54GchuYJ349Na',
     }
 }
 

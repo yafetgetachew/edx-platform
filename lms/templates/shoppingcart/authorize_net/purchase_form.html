@@ -1,0 +1,96 @@
+<%! from django.utils.translation import ugettext as _ %>
+<form action="${action}" method="post" target="payment_form" id="payment-button-form">
+    <input type="hidden" name="token" value="${token}"/>
+    <button type="submit">${_('Payment')}<span class="icon fa fa-caret-right" aria-hidden="true"></span></button>
+</form>
+
+<div id="payment-popup" class="white-popup mfp-hide">
+    <iframe name="payment_form" id="payment-form" scrolling="0"></iframe>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<style type="text/css">
+    #payment-popup.white-popup {
+        position: relative;
+        padding: 0;
+        max-width: 600px;
+        height: 100%;
+        margin: 20px auto;
+        background: #FFF;
+        overflow: hidden;
+    }
+
+    #payment-popup iframe {
+        width: 100%;
+    }
+</style>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript">
+    var magnific;
+
+    $('#payment-button-form').on('submit', function (e) {
+        magnific = $.magnificPopup.open({
+            items: {
+                src: '#payment-popup',
+                type: 'inline',
+            },
+            closeOnBgClick: false,
+        }, 0);
+    });
+
+    function parseQueryString(str) {
+        var vars = [];
+        var arr = str.split('&');
+        var pair;
+        for (var i = 0; i < arr.length; i++) {
+            pair = arr[i].split('=');
+            vars[pair[0]] = decodeURI(pair[1]);
+        }
+        return vars;
+    }
+
+    function post(path, params, method) {
+        method = method || "post"; // Set method to post by default if not specified.
+
+        // The rest of this code assumes you are not using a library.
+        // It can be made less wordy if you use one.
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for (var key in params) {
+            if (params.hasOwnProperty(key)) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+
+                form.appendChild(hiddenField);
+            }
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    window.CommunicationHandler = {
+        onReceiveCommunication: function (argument) {
+            var params = parseQueryString(argument.qstr);
+            switch (params['action']) {
+                case 'cancel':
+                    $.magnificPopup.instance.close();
+                    break;
+                case 'resizeWindow':
+                    $('#payment-form').height(params['height']);
+                    break;
+                case 'transactResponse':
+                    post('${callback_url}', JSON.parse(params['response']));
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+</script>

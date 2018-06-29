@@ -907,7 +907,7 @@ def _show_receipt_html(request, order):
     order_type = order.order_type
 
     recipient_list = []
-    total_registration_codes = None
+    total_registration_codes = 0
     reg_code_info_list = []
     recipient_list.append(order.user.email)
     if order_type == OrderTypes.BUSINESS:
@@ -918,7 +918,7 @@ def _show_receipt_html(request, order):
 
         for __, course in shoppingcart_items:
             course_registration_codes = CourseRegistrationCode.objects.filter(order=order, course_id=course.id)
-            total_registration_codes = course_registration_codes.count()
+            total_registration_codes += course_registration_codes.count()
             for course_registration_code in course_registration_codes:
                 reg_code_info_list.append({
                     'course_name': course.display_name,
