@@ -42,6 +42,8 @@ from third_party_auth import pipeline
 from third_party_auth.decorators import xframe_allow_whitelisted
 from util.bad_request_rate_limiter import BadRequestRateLimiter
 from util.date_utils import strftime_localized
+from shoppingcart.models import Order
+from shoppingcart.api import order_history
 
 AUDIT_LOG = logging.getLogger("audit")
 log = logging.getLogger(__name__)
@@ -439,17 +441,32 @@ def get_user_orders(user):
         commerce_configuration, 'orders', api=api, querystring=user_query, cache_key=cache_key
     )
 
-    for order in commerce_user_orders:
-        if order['status'].lower() == 'complete':
-            date_placed = datetime.strptime(order['date_placed'], "%Y-%m-%dT%H:%M:%SZ")
-            order_data = {
-                'number': order['number'],
-                'price': order['total_excl_tax'],
-                'order_date': strftime_localized(date_placed, 'SHORT_DATE'),
-                'receipt_url': EcommerceService().get_receipt_page_url(order['number']),
-                'lines': order['lines'],
-            }
-            user_orders.append(order_data)
+    if commerce_user_orders:
+        for order in commerce_user_orders:
+            if order['status'].lower() == 'complete':
+                date_placed = datetime.strptime(order['date_placed'], "%Y-%m-%dT%H:%M:%SZ")
+                order_data = {
+                    'number': order['number'],
+                    'price': order['total_excl_tax'],
+                    'order_date': strftime_localized(date_placed, 'SHORT_DATE'),
+                    'receipt_url': EcommerceService().get_receipt_page_url(order['number']),
+                    'lines': order['lines'],
+                }
+                user_orders.append(order_data)
+
+    else:
+        orders_dict = dict((o['order_id'], o) for o in order_history(user))
+        orders = Order.objects.filter(id__in=orders_dict.keys())
+        for order in orders:
+            if order.status.lower() == 'purchased':
+                order_data = {
+                    'receipt_url': orders_dict[order.id]['receipt_url'],
+                    'number': order.id,
+                    'price': float(order.total_cost),
+                    'order_date': strftime_localized(order.purchase_time, 'SHORT_DATE'),
+                    'lines': [{'line_price_excl_tax': float(l.line_cost), 'title': l.line_desc} for l in order.orderitem_set.all()]
+                }
+                user_orders.append(order_data)
 
     return user_orders
 
