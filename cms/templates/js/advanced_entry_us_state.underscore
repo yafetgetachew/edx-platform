@@ -1,0 +1,20 @@
+<li class="field-group course-advanced-policy-list-item">
+    <div class="us-state-title"><%= gettext(display_name) %></div>
+
+	<div class="field is-not-editable text key" id="<%= key %>-number">
+		<h3 class="title" id="<%= keyIdNumber %>"><%= gettext('Number') %></h3>
+    </div>
+    <div class="field text value">
+        <label class="sr" for="<%= valueIdNumber %>"><%= gettext('Number') %></label>
+        <textarea class="json text" id="<%= valueIdNumber %>"><%= valueNumber %></textarea>
+    </div>
+
+    <div class="field is-not-editable text key" id="<%= key %>-provider">
+		<h3 class="title" id="<%= keyIdProvider %>"><%= gettext('Provider') %></h3>
+    </div>
+    <div class="field text value">
+        <label class="sr" for="<%= valueIdProvider %>"><%= gettext('Provider') %></label>
+        <textarea class="json text" id="<%= valueIdProvider %>"><%= valueProvider %></textarea>
+    </div>
+
+</li>

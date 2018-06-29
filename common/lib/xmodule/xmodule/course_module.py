@@ -19,6 +19,7 @@ from xmodule.course_metadata_utils import DEFAULT_START_DATE
 from xmodule.graders import grader_from_conf
 from xmodule.seq_module import SequenceDescriptor, SequenceModule
 from xmodule.tabs import CourseTabList, InvalidTabsException
+from django.conf import settings
 from .fields import Date
 
 log = logging.getLogger(__name__)
@@ -858,6 +859,13 @@ class CourseFields(object):
             "more of the base requirements, such as testing, accessibility, internationalization, and documentation."
         ),
         scope=Scope.settings, default=False
+    )
+
+    us_state = Dict(
+        scope=Scope.settings,
+        help='',
+        default={key: {'number': '', 'provider': settings.DEFAULT_PROVIDER.get(key, '')}
+                 for key, value in settings.US_STATE_CHOICES}
     )
 
 

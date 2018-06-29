@@ -17,33 +17,40 @@ define(['js/views/validation',
                 'blur :input': 'blurInput'
         // TODO enable/disable save based on validation (currently enabled whenever there are changes)
             },
-            initialize: function() {
+            initialize: function(option) {
+                this.usStateDict = option.usStateDict;
                 this.template = HtmlUtils.template(
             $('#advanced_entry-tpl').text()
         );
                 this.listenTo(this.model, 'invalid', this.handleValidationError);
                 this.render();
             },
+
             render: function() {
-        // catch potential outside call before template loaded
+                // catch potential outside call before template loaded
                 if (!this.template) return this;
 
                 var listEle$ = this.$el.find('.course-advanced-policy-list');
                 listEle$.empty();
 
-        // b/c we've deleted all old fields, clear the map and repopulate
+                // b/c we've deleted all old fields, clear the map and repopulate
                 this.fieldToSelectorMap = {};
                 this.selectorToField = {};
 
-        // iterate through model and produce key : value editors for each property in model.get
+                // iterate through model and produce key : value editors for each property in model.get
                 var self = this;
-                _.each(_.sortBy(_.keys(this.model.attributes), function(key) { return self.model.get(key).display_name; }),
-            function(key) {
-                if (self.render_deprecated || !self.model.get(key).deprecated) {
-                    HtmlUtils.append(listEle$, self.renderTemplate(key, self.model.get(key)));
-                }
-            });
+                _.each(
+                    _.sortBy(_.keys(this.model.attributes), function(key) { return self.model.get(key).display_name; }),
+                    function(key) {
+                        if (key === 'us_state') {
+                            return
+                        }
 
+                        if (self.render_deprecated || !self.model.get(key).deprecated) {
+                            HtmlUtils.append(listEle$, self.renderTemplate(key, self.model.get(key)));
+                        }
+                    });
+                this.renderUsState(listEle$);
                 var policyValues = listEle$.find('.json');
                 _.each(policyValues, this.attachJSONEditor, this);
                 return this;
@@ -76,7 +83,7 @@ define(['js/views/validation',
                 });
                 cm.on('blur', function(mirror) {
                     $(textarea).parent().children('label').removeClass('is-focused');
-                    var key = $(mirror.getWrapperElement()).closest('.field-group').children('.key').attr('id');
+                    var key = $(mirror.getWrapperElement()).parent().prev().attr('id');
                     var stringValue = $.trim(mirror.getValue());
                 // update CodeMirror to show the trimmed value.
                     mirror.setValue(stringValue);
@@ -101,9 +108,22 @@ define(['js/views/validation',
                         }
                     }
                     if (JSONValue !== undefined) {
-                        var modelVal = self.model.get(key);
-                        modelVal.value = JSONValue;
-                        self.model.set(key, modelVal);
+                        if (/-number/.test(key)) {
+                            key = key.replace("-number", "");
+                            modelVal = self.model.get('us_state');
+                            modelVal.value[key]['number'] = JSONValue;
+                            self.model.set('us_state', modelVal);
+
+                        } else if (/-provider/.test(key)) {
+                            key = key.replace("-provider", "");
+                            modelVal = self.model.get('us_state');
+                            modelVal.value[key]['provider'] = JSONValue;
+                            self.model.set('us_state', modelVal);
+                        } else {
+                            var modelVal = self.model.get(key);
+                            modelVal.value = JSONValue;
+                            self.model.set(key, modelVal);
+                        }
                     }
                 });
             },
@@ -164,6 +184,45 @@ define(['js/views/validation',
             },
             blurInput: function(event) {
                 $(event.target).prev().removeClass('is-focused');
+            },
+
+            renderUsState: function(listEle$) {
+                var newKeyIdNumber,
+                    newKeyIdProvider,
+                    newEle,
+                    self = this,
+                    usStateValues = this.model.get('us_state').value,
+                    template = HtmlUtils.template(
+                        $('#advanced_entry_us_state-tpl').text()
+                    );
+
+                _.each(
+                    _.sortBy(
+                        _.keys(usStateValues),
+                        function(key) {
+                            return gettext(self.usStateDict[key]);
+                        }),
+                    function(key) {
+                        newKeyIdNumber = _.uniqueId('policy_key_');
+                        newKeyIdProvider = _.uniqueId('policy_key_');
+                        newEle = template({
+                            key: key,
+                            display_name: self.usStateDict[key] || key,
+                            valueNumber: JSON.stringify(usStateValues[key].number, null, 4),
+                            valueProvider: JSON.stringify(usStateValues[key].provider, null, 4),
+                            keyIdNumber: newKeyIdNumber,
+                            keyIdProvider: newKeyIdProvider,
+                            valueIdNumber: _.uniqueId('policy_value_'),
+                            valueIdProvider: _.uniqueId('policy_value_'),
+                        });
+
+                        self.fieldToSelectorMap[key + '-number'] = newKeyIdNumber;
+                        self.fieldToSelectorMap[key + '-provider'] = newKeyIdProvider;
+                        self.selectorToField[newKeyIdNumber] = key + '-number';
+                        self.selectorToField[newKeyIdProvider] = key + '-provider';
+                        HtmlUtils.append(listEle$, newEle);
+                    });
+
             }
         });
 
