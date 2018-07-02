@@ -16,6 +16,7 @@ ME = AccountViewSet.as_view({
 
 ACCOUNT_LIST = AccountViewSet.as_view({
     'get': 'list',
+    'post': 'create',
 })
 
 ACCOUNT_DETAIL = AccountViewSet.as_view({

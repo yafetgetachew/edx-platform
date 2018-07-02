@@ -16,8 +16,9 @@ from openedx.core.lib.api.authentication import (
     OAuth2AuthenticationAllowInactiveUser,
 )
 from openedx.core.lib.api.parsers import MergePatchParser
-from .api import get_account_settings, update_account_settings
+from .api import get_account_settings, update_account_settings, create_account, activate_account
 from ..errors import UserNotFound, UserNotAuthorized, AccountUpdateError, AccountValidationError
+from student.models import User
 
 
 class AccountViewSet(ViewSet):
@@ -218,3 +219,47 @@ class AccountViewSet(ViewSet):
             )
 
         return Response(account_settings)
+
+
+    def create(self, request):
+        """
+        POST /api/user/v1/accounts {
+            "username": "<username>",
+            "password": "<password>",
+            "email": "<email>"
+            another optional params like in "PATCH /api/user/v1/accounts/{username}/"
+        }
+
+        """
+
+        if not request.user.is_superuser:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+
+        data = request.data.copy()
+        username = data.pop('username', None)
+        password = data.pop('password', None)
+        email = data.pop('email', None)
+
+        if not (username and password and email):
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            with transaction.atomic():
+                activation_key = create_account(username[0], password[0], email[0])
+                user = User.objects.get(username=username[0], email=email[0])
+                update_account_settings(user, data, username=username[0])
+                activate_account(activation_key)
+        except AccountValidationError as err:
+            return Response({"field_errors": err.field_errors}, status=status.HTTP_400_BAD_REQUEST)
+        except AccountUpdateError as err:
+            return Response(
+                {
+                    "developer_message": err.developer_message,
+                    "user_message": err.user_message
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except Exception:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({'success': True, 'user_id': user.id})
