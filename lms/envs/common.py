@@ -232,6 +232,9 @@ FEATURES = {
     # if you enable this; we don't create tables by default.
     'ENABLE_THIRD_PARTY_AUTH': False,
 
+    # Turn on custom oauth backend
+    'ENABLE_CUSTOM_OAUTH_BACKEND': False,
+
     # Toggle to enable alternate urls for marketing links
     'ENABLE_MKTG_SITE': False,
 
@@ -396,6 +399,9 @@ FEATURES = {
     # Disable bulk email send from random different addresses when 'False'
     'BULK_EMAIL_FROM_DIFFERENT_ADDRESSES': False,
 }
+
+# Setting parameters which are required for the custom oauth backend
+CUSTOM_OAUTH_PARAMS = None
 
 # Settings for the course reviews tool template and identification key, set either to None to disable course reviews
 COURSE_REVIEWS_TOOL_PROVIDER_FRAGMENT_NAME = 'coursetalk-reviews-fragment.html'
