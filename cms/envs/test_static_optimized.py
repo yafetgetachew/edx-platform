@@ -21,7 +21,8 @@ DATABASES = {
         'NAME': 'edxtest',
         'PASSWORD': '',
         'PORT': '3306',
-        'USER': 'root'
+        'USER': 'root',
+        'ATOMIC_REQUESTS': True,
     }
 }
 

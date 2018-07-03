@@ -29,7 +29,8 @@ DATABASES = {
         'NAME': 'edxtest',
         'PASSWORD': '',
         'PORT': '3306',
-        'USER': 'root'
+        'USER': 'root',
+        'ATOMIC_REQUESTS': True,
     },
     'student_module_history': {
         'ENGINE': 'django.db.backends.mysql',
@@ -37,7 +38,7 @@ DATABASES = {
         'NAME': 'student_module_history_test',
         'PASSWORD': '',
         'PORT': '3306',
-        'USER': 'root'
+        'USER': 'root',
     }
 }
 

@@ -135,6 +135,7 @@ DATABASES = {
         'PASSWORD': '',
         'PORT': '3306',
         'USER': 'root',
+        'ATOMIC_REQUESTS': True,
    }
 }
 if os.environ.get('DISABLE_MIGRATIONS'):

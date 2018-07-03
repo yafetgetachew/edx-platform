@@ -192,6 +192,7 @@ DATABASES = {
         'PASSWORD': '',
         'PORT': '3306',
         'USER': 'root',
+        'ATOMIC_REQUESTS': True,
     },
     'student_module_history': {
         'ENGINE': 'django.db.backends.mysql',
