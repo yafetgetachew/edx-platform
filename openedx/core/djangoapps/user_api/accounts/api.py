@@ -12,6 +12,7 @@ from django.http import HttpResponseForbidden
 from openedx.core.djangoapps.user_api.preferences.api import update_user_preferences
 from openedx.core.djangoapps.user_api.errors import PreferenceValidationError
 
+from calypso_reg_form.models import StateExtraInfo
 from student.models import User, UserProfile, Registration
 from student import forms as student_forms
 from student import views as student_views
@@ -33,7 +34,7 @@ from . import (
 )
 from .serializers import (
     AccountLegacyProfileSerializer, AccountUserSerializer,
-    UserReadOnlySerializer, _visible_fields  # pylint: disable=invalid-name
+    UserReadOnlySerializer, _visible_fields, StateExtraInfoSerializer  # pylint: disable=invalid-name
 )
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
@@ -533,3 +534,22 @@ def _validate_email(email):
         raise AccountEmailInvalid(
             u"Email '{email}' format is not valid".format(email=email)
         )
+
+
+@intercept_errors(UserAPIInternalError, ignore_errors=[UserAPIRequestError])
+def get_state_settings(request):
+    extra_info = request.user.extrainfo
+    state_extra_info = StateExtraInfo.objects.filter(extra_info=extra_info)
+    serializer = StateExtraInfoSerializer(state_extra_info, many=True).data
+    return serializer
+
+
+@intercept_errors(UserAPIInternalError, ignore_errors=[UserAPIRequestError])
+def update_state_settings(request, state_id=None):
+    state_extra_info = StateExtraInfo.objects.get(id=state_id)
+    data = request.data
+    state_extra_info.state = data.get('state')
+    state_extra_info.license = data.get('license')
+    state_extra_info.save()
+
+    return state_extra_info

@@ -8,13 +8,15 @@
         'text!templates/fields/field_link.underscore',
         'text!templates/fields/field_text.underscore',
         'text!templates/fields/field_textarea.underscore',
+        'text!templates/fields/field_dual.underscore',
         'backbone-super'
     ], function(gettext, $, _, Backbone, HtmlUtils,
                  field_readonly_template,
                  field_dropdown_template,
                  field_link_template,
                  field_text_template,
-                 field_textarea_template
+                 field_textarea_template,
+                 field_dual_template
     ) {
         var messageRevertDelay = 6000;
         var FieldViews = {};
@@ -646,6 +648,67 @@
             }
         });
 
+        FieldViews.EditableDualFieldView = FieldViews.EditableFieldView.extend({
+
+            fieldType: 'dual',
+
+            fieldTemplate: field_dual_template,
+
+
+            events: {
+                'change input': 'saveFieldsValues',
+                'change select': 'saveFieldsValues'
+            },
+
+            initialize: function(options) {
+                _.bindAll(this, 'render', 'createGroupOptions', 'saveFieldsValues', );
+                this._super(options);
+
+                this.listenTo(this.model, 'change', this.render);
+            },
+
+            saveFieldsValues: function() {
+                if (this.persistChanges === true) {
+                    var valueLicense = this.$('#field-input-' + this.model.cid).val(),
+                        valueState = this.$('#u-field-select-' + this.model.cid).val();
+
+                    if (valueLicense && valueState){
+                        var view = this;
+                        var options = {
+                            success: function() {
+                                view.saveSucceeded();
+                            },
+                            error: function(model, xhr) {
+                                view.showErrorMessage(xhr);
+                            }
+                        };
+                        this.showInProgressMessage();
+                        this.model.save({license: valueLicense, state: valueState}, options);
+                    }
+                }
+            },
+
+            render: function() {
+                HtmlUtils.setHtml(this.$el, HtmlUtils.template(this.fieldTemplate)({
+                    id: this.model.cid,
+                    valueLicense: this.model.get('license'),
+                    valueState: this.model.get('state'),
+                    groupOptions: this.createGroupOptions(),
+                }));
+                this.delegateEvents();
+                return this;
+            },
+
+            createGroupOptions: function() {
+                return !(_.isUndefined(this.options.groupOptions)) ? this.options.groupOptions :
+                    [{
+                        groupTitle: null,
+                        selectOptions: this.options.stateChoices
+                    }];
+            },
+
+        });
         return FieldViews;
+
     });
 }).call(this, define || RequireJS.define);
