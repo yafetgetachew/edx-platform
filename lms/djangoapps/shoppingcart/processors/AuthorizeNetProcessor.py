@@ -146,11 +146,12 @@ def process_postpay_callback(params, **kwargs):
     transactionDetailsController.execute()
     transactionDetailsResponse = transactionDetailsController.getresponse()
 
-    if params['orderInvoiceNumber'] != transactionDetailsResponse.transaction.order.invoiceNumber:
+    if (transactionDetailsResponse is None
+        or transactionDetailsResponse.messages.resultCode != apicontractsv1.messageTypeEnum.Ok):
         raise CCProcessorException
 
     result = {
-        'order_id': int(unicode(transactionDetailsResponse.transaction.order.invoiceNumber)[len(ORDER_PREFIX):]),
+        'order_id': int(params['orderInvoiceNumber'][len(ORDER_PREFIX):]),
         'auth_amount': transactionDetailsResponse.transaction.authAmount,
         'currency': 'USD',
         'decision': transactionDetailsResponse.transaction.responseCode,
