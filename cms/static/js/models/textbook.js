@@ -30,7 +30,7 @@ define(['backbone', 'underscore', 'gettext', 'js/models/chapter', 'js/collection
                     var url = model.urlRoot();
                 } else {
                     var method = 'PUT';
-                    var url = model.urlRoot()+'/'+model.id;
+                    var url = model.urlRoot() + '/' + model.id;
                 }
                 $.ajax({
                     url: url,
