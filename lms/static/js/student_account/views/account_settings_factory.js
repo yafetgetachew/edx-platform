@@ -317,7 +317,9 @@
                         fields.push({
                             view: new AccountSettingsFieldViews.EditableDualFieldView({
                                 model: model,
+                                valueAttribute: 'state',
                                 stateChoices: fieldsData.state.options,
+                                helpMessage: gettext('Select the state and enter the appropriate certificate. Both fields are required.'),
                                 persistChanges: true,
                             })
                         })
@@ -333,8 +335,9 @@
                         fields.push({
                             view: new AccountSettingsFieldViews.EditableDualFieldView({
                                 model: model,
+                                valueAttribute: 'state',
                                 stateChoices: fieldsData.state.options,
-                                helpMessage: gettext('Both fields are required.'),
+                                helpMessage: gettext('Select the state and enter the appropriate certificate. Both fields are required.'),
                                 persistChanges: true,
 
                             })

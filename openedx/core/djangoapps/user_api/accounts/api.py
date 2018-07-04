@@ -12,7 +12,7 @@ from django.http import HttpResponseForbidden
 from openedx.core.djangoapps.user_api.preferences.api import update_user_preferences
 from openedx.core.djangoapps.user_api.errors import PreferenceValidationError
 
-from calypso_reg_form.models import StateExtraInfo
+from calypso_reg_form.models import ExtraInfo, StateExtraInfo
 from student.models import User, UserProfile, Registration
 from student import forms as student_forms
 from student import views as student_views
@@ -23,8 +23,8 @@ from openedx.core.lib.api.view_utils import add_serializer_errors
 from ..errors import (
     AccountUpdateError, AccountValidationError, AccountUsernameInvalid, AccountPasswordInvalid,
     AccountEmailInvalid, AccountUserAlreadyExists,
-    UserAPIInternalError, UserAPIRequestError, UserNotFound, UserNotAuthorized
-)
+    UserAPIInternalError, UserAPIRequestError, UserNotFound, UserNotAuthorized,
+    AccountRequestError)
 from ..forms import PasswordResetFormNoActive
 from ..helpers import intercept_errors
 
@@ -538,18 +538,103 @@ def _validate_email(email):
 
 @intercept_errors(UserAPIInternalError, ignore_errors=[UserAPIRequestError])
 def get_state_settings(request):
-    extra_info = request.user.extrainfo
-    state_extra_info = StateExtraInfo.objects.filter(extra_info=extra_info)
-    serializer = StateExtraInfoSerializer(state_extra_info, many=True).data
-    return serializer
+    try:
+        state_extra_infos = request.user.extrainfo.stateextrainfo_set.all()
+    except AttributeError:
+        serializer_data = []
+    else:
+        serializer_data = StateExtraInfoSerializer(state_extra_infos, many=True).data
+    return serializer_data
 
 
 @intercept_errors(UserAPIInternalError, ignore_errors=[UserAPIRequestError])
 def update_state_settings(request, state_id=None):
-    state_extra_info = StateExtraInfo.objects.get(id=state_id)
+    try:
+        state_extra_info = StateExtraInfo.objects.get(id=state_id)
+    except ObjectDoesNotExist:
+        raise AccountValidationError(
+            field_errors={
+                "state": {
+                    "developer_message": u"State does not exist.",
+                    "user_message": u"State does not exist."
+                }
+            }
+        )
     data = request.data
-    state_extra_info.state = data.get('state')
-    state_extra_info.license = data.get('license')
-    state_extra_info.save()
+    state = data.get('state')
+    license = data.get('license')
+    user_state_extra = request.user.extrainfo.stateextrainfo_set.all()
+    list_states = list(user_state_extra.exclude(id=state_id).values_list('state', flat=True))
 
-    return state_extra_info
+    if state and license:
+        if state not in list_states:
+            state_extra_info.state = state
+            state_extra_info.license = license
+            state_extra_info.save()
+            message = {'status': 'state update'}
+        else:
+            field_errors = {
+                "state": {
+                    "developer_message": u"This state already exists.",
+                    "user_message": u"This state already exists."
+                }
+            }
+            raise AccountValidationError(
+                field_errors
+            )
+
+    elif not state and not license:
+        if user_state_extra.count() > 1:
+            state_extra_info.delete()
+            message = {'status': 'state delete'}
+        else:
+            field_errors = {
+                "state": {
+                    "developer_message": u"You cannot remove the state if it is the only one.",
+                    "user_message": u"You cannot remove the state if it is the only one."
+                }
+            }
+            raise AccountValidationError(
+                field_errors
+            )
+
+    return message
+
+
+@intercept_errors(UserAPIInternalError, ignore_errors=[UserAPIRequestError])
+def create_state_settings(request):
+    data = request.data
+    state = data.get('state')
+    license = data.get('license')
+    try:
+        user_state_extra = request.user.extrainfo.stateextrainfo_set.all()
+    except AttributeError:
+        raise AccountValidationError(
+            field_errors={
+                "state": {
+                    "developer_message": u"There is a problem with the creation of state. Please contact the admin.",
+                    "user_message": u"There is a problem with the adding of State Information. Please contact the admin."
+                }
+            }
+        )
+
+    if state and license:
+        if state not in list(user_state_extra.values_list('state', flat=True)):
+            StateExtraInfo.objects.create(
+                extra_info=request.user.extrainfo,
+                state=state,
+                license=license
+            )
+            message = {'status': 'state save'}
+        else:
+            field_errors = {
+                "state": {
+                    "developer_message": u"This state already exists.",
+                    "user_message": u"This state already exists."
+                }
+            }
+            raise AccountValidationError(
+                field_errors
+            )
+
+    return message

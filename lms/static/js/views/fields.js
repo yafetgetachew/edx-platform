@@ -652,6 +652,10 @@
 
             fieldType: 'dual',
 
+            className: function() {
+                return 'u-field' + ' u-field-' + this.fieldType + ' u-field-' + this.options.valueAttribute + ' u-field-dual__custom';
+            },
+
             fieldTemplate: field_dual_template,
 
 
@@ -661,7 +665,7 @@
             },
 
             initialize: function(options) {
-                _.bindAll(this, 'render', 'createGroupOptions', 'saveFieldsValues', );
+                _.bindAll(this, 'render', 'saveFieldsValues');
                 this._super(options);
 
                 this.listenTo(this.model, 'change', this.render);
@@ -675,6 +679,8 @@
                     if (valueLicense && valueState){
                         var view = this;
                         var options = {
+                            contentType: 'application/merge-patch+json',
+                            wait: true,
                             success: function() {
                                 view.saveSucceeded();
                             },
@@ -684,7 +690,23 @@
                         };
                         this.showInProgressMessage();
                         this.model.save({license: valueLicense, state: valueState}, options);
+                    } else if (!valueLicense && !valueState){
+                        var view = this;
+                        var options = {
+                            contentType: 'application/merge-patch+json',
+                            wait: true,
+                            success: function() {
+                                view.model.clear();
+                                view.saveSucceeded();
+                            },
+                            error: function(model, xhr) {
+                                view.showErrorMessage(xhr);
+                            }
+                        };
+                        this.showInProgressMessage();
+                        this.model.save({license: valueLicense, state: valueState}, options);
                     }
+
                 }
             },
 
@@ -693,18 +715,11 @@
                     id: this.model.cid,
                     valueLicense: this.model.get('license'),
                     valueState: this.model.get('state'),
-                    groupOptions: this.createGroupOptions(),
+                    selectOptions: this.options.stateChoices,
+                    message: this.helpMessage
                 }));
                 this.delegateEvents();
                 return this;
-            },
-
-            createGroupOptions: function() {
-                return !(_.isUndefined(this.options.groupOptions)) ? this.options.groupOptions :
-                    [{
-                        groupTitle: null,
-                        selectOptions: this.options.stateChoices
-                    }];
             },
 
         });

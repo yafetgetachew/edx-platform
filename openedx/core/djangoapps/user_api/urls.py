@@ -24,12 +24,12 @@ ACCOUNT_DETAIL = AccountViewSet.as_view({
 })
 
 STATE_LIST = AccountStateViewSet.as_view({
-    'get': 'list'
+    'get': 'list',
+    'post': 'create',
 })
 
 STATE_DETAIL = AccountStateViewSet.as_view({
     'put': 'update',
-    # 'post': 'create',
 })
 
 urlpatterns = patterns(

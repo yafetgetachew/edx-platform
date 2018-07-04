@@ -13,7 +13,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ViewSet, ModelViewSet
 
-from .api import get_account_settings, update_account_settings, get_state_settings, update_state_settings
+from .api import get_account_settings, update_account_settings, get_state_settings, update_state_settings, \
+    create_state_settings
 
 from .permissions import CanDeactivateUser
 from ..errors import UserNotFound, UserNotAuthorized, AccountUpdateError, AccountValidationError
@@ -266,9 +267,23 @@ class AccountStateViewSet(ViewSet):
         """
         PUT /api/user/v1/accounts_states/{pk}
         """
-        update_state_settings(request, pk)
+        try:
+            update_state_settings(request, pk)
+        except AccountValidationError as err:
+            return Response({"field_errors": err.field_errors}, status=status.HTTP_400_BAD_REQUEST)
+
         state_settings = get_state_settings(request)
         return Response(state_settings)
 
-    # def create(self, request):
-    #     pass
+    def create(self, request):
+        """
+        POST /api/user/v1/accounts_states/
+        """
+        try:
+            create_state_settings(request)
+        except AccountValidationError as err:
+            return Response({"field_errors": err.field_errors}, status=status.HTTP_400_BAD_REQUEST)
+
+        state_settings = get_state_settings(request)
+        return Response(state_settings)
+
