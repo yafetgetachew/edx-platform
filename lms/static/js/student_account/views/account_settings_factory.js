@@ -268,7 +268,7 @@
                 el: accountSettingsElement,
                 tabSections: {
                     aboutTabSections: aboutSectionsData,
-                    accountsTabSections: accountsSectionData,
+//                    accountsTabSections: accountsSectionData,
                     ordersTabSections: ordersSectionData
                 },
                 userPreferencesModel: userPreferencesModel
