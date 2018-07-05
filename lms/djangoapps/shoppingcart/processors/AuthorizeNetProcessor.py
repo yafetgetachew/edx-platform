@@ -138,24 +138,13 @@ def render_purchase_form_html(cart, callback_url=None, extra_data=None):
 
 
 def process_postpay_callback(params, **kwargs):
-    transactionDetailsRequest = apicontractsv1.getTransactionDetailsRequest()
-    transactionDetailsRequest.merchantAuthentication = get_merchant_auth()
-    transactionDetailsRequest.transId = params['transId']
-
-    transactionDetailsController = getTransactionDetailsController(transactionDetailsRequest)
-    transactionDetailsController.execute()
-    transactionDetailsResponse = transactionDetailsController.getresponse()
-
-    if (transactionDetailsResponse is None
-        or transactionDetailsResponse.messages.resultCode != apicontractsv1.messageTypeEnum.Ok):
-        raise CCProcessorException
-
     result = {
         'order_id': int(params['orderInvoiceNumber'][len(ORDER_PREFIX):]),
-        'auth_amount': transactionDetailsResponse.transaction.authAmount,
+        'auth_amount': float(params['totalAmount']),
         'currency': 'USD',
-        'decision': transactionDetailsResponse.transaction.responseCode,
-        'card_number': unicode(transactionDetailsResponse.transaction.payment.creditCard.cardNumber),
+        'decision': int(params['responseCode']),
+        'card_number': params['accountNumber'],
+        'processor_reply_dump': json.dumps(params)
     }
 
     try:
@@ -231,12 +220,8 @@ def _record_purchase(params, order):
     # Usually, the credit card number will have the form "xxxxxxxx1234"
     # Parse the string to retrieve the digits.
     # If we can't find any digits, use placeholder values instead.
-    ccnum_str = params.get('card_number', '')
-    first_digit = re.search(r"\d", ccnum_str)
-    if first_digit:
-        ccnum = ccnum_str[first_digit.start():]
-    else:
-        ccnum = "####"
+    ccnum_str = params.get('card_number', 'xxxx')
+    ccnum = '{}{}'.format('####', ccnum_str[-4:])
 
     if settings.FEATURES.get("LOG_POSTPAY_CALLBACKS"):
         log.info(
