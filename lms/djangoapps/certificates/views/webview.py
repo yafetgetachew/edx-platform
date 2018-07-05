@@ -226,12 +226,15 @@ def _update_course_context(request, context, course, platform_name):
     """
     Updates context dictionary with course info.
     """
+    context['course'] = course
     context['full_course_image_url'] = request.build_absolute_uri(course_image_url(course))
     course_title_from_cert = context['certificate_data'].get('course_title', '')
     accomplishment_copy_course_name = course_title_from_cert if course_title_from_cert else course.display_name
     context['accomplishment_copy_course_name'] = accomplishment_copy_course_name
     course_number = course.display_coursenumber if course.display_coursenumber else course.number
     context['course_number'] = course_number
+    context['us_state'] = course.us_state
+
     if context['organization_long_name']:
         # Translators:  This text represents the description of course
         context['accomplishment_copy_course_description'] = _('a course of study offered by {partner_short_name}, '
@@ -304,6 +307,21 @@ def _update_context_with_user_info(context, user, user_certificate):
     context['accomplishment_user_id'] = user.id
     context['accomplishment_copy_name'] = user_fullname
     context['accomplishment_copy_username'] = user.username
+    context['user_certificate_create'] = user_certificate.created_date
+    context['user_phone'] = ''
+    context['user_address'] = ''
+    context['user_states'] = []
+
+    try:
+        user_extra_info = user.extrainfo
+    except AttributeError:
+        pass
+    else:
+        context.update({
+            'user_phone': user_extra_info.phone,
+            'user_address': user_extra_info.address,
+            'user_states': user_extra_info.stateextrainfo_set.values('license', 'state')
+        })
 
     context['accomplishment_more_title'] = _("More Information About {user_name}'s Certificate:").format(
         user_name=user_fullname
@@ -337,7 +355,9 @@ def _get_user_certificate(request, user, course_key, course, preview_mode=None):
             user_certificate = GeneratedCertificate(
                 mode=preview_mode,
                 verify_uuid=unicode(uuid4().hex),
-                modified_date=datetime.now().date()
+                modified_date=datetime.now().date(),
+                created_date=datetime.now().date()
+
             )
     else:
         # certificate is being viewed by learner or public

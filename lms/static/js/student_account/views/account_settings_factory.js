@@ -4,11 +4,12 @@
         'gettext', 'jquery', 'underscore', 'backbone', 'logger',
         'js/student_account/models/user_account_model',
         'js/student_account/models/user_preferences_model',
+        'js/student_account/models/state_account_model',
         'js/student_account/views/account_settings_fields',
         'js/student_account/views/account_settings_view',
         'edx-ui-toolkit/js/utils/string-utils'
-    ], function(gettext, $, _, Backbone, Logger, UserAccountModel, UserPreferencesModel,
-                 AccountSettingsFieldViews, AccountSettingsView, StringUtils) {
+    ], function(gettext, $, _, Backbone, Logger, UserAccountModel, UserPreferencesModel, StateAccountModel,
+                AccountSettingsFieldViews, AccountSettingsView, StringUtils) {
         return function(
             fieldsData,
             ordersHistoryData,
@@ -19,9 +20,10 @@
             accountUserId,
             platformName,
             contactEmail,
-            allowEmailChange
+            allowEmailChange,
+            stateAccountApiUrl
         ) {
-            var accountSettingsElement, userAccountModel, userPreferencesModel, aboutSectionsData,
+            var accountSettingsElement, userAccountModel, userPreferencesModel, stateAccountModel, aboutSectionsData,
                 accountsSectionData, ordersSectionData, accountSettingsView, showAccountSettingsPage,
                 showLoadingError, orderNumber, getUserField, userFields, timeZoneDropdownField, countryDropdownField,
                 emailFieldView;
@@ -187,7 +189,8 @@
                             })
                         }
                     ]
-                }
+                },
+
             ];
 
             // set TimeZoneField to listen to CountryField
@@ -274,7 +277,7 @@
                 userPreferencesModel: userPreferencesModel
             });
 
-            accountSettingsView.render();
+
 
             showAccountSettingsPage = function() {
                 // Record that the account settings page was viewed.
@@ -296,6 +299,58 @@
                         success: showAccountSettingsPage,
                         error: showLoadingError
                     });
+                },
+                error: showLoadingError
+            });
+
+            var StateAccountCollection = Backbone.Collection.extend({
+                model: StateAccountModel,
+                url: stateAccountApiUrl
+            });
+
+            var stateAccountCollection = new StateAccountCollection()
+
+            stateAccountCollection.fetch({
+                success: function(data) {
+                    var fields = [];
+                    _.each(data.models, function(model) {
+                        fields.push({
+                            view: new AccountSettingsFieldViews.EditableDualFieldView({
+                                model: model,
+                                valueAttribute: 'state',
+                                stateChoices: fieldsData.state.options,
+                                helpMessage: gettext('Select the state and enter the appropriate certificate. Both fields are required.'),
+                                persistChanges: true,
+                            })
+                        })
+                    })
+
+                    var i;
+                    for (i = fields.length; i < 3; i++) {
+                        var model = new StateAccountModel({
+                            state: '',
+                            license: ''
+                        })
+                        stateAccountCollection.add(model)
+                        fields.push({
+                            view: new AccountSettingsFieldViews.EditableDualFieldView({
+                                model: model,
+                                valueAttribute: 'state',
+                                stateChoices: fieldsData.state.options,
+                                helpMessage: gettext('Select the state and enter the appropriate certificate. Both fields are required.'),
+                                persistChanges: true,
+
+                            })
+                        })
+                    }
+
+                    aboutSectionsData.push(
+                        {
+                            title: gettext('State & License Information'),
+                            fields: fields
+                        }
+                    )
+                    accountSettingsView.render();
                 },
                 error: showLoadingError
             });

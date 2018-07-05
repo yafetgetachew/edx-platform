@@ -190,7 +190,8 @@ def get_course_about_section(request, course, section_key):
         'effort',
         'end_date',
         'prerequisites',
-        'ocw_links'
+        'ocw_links',
+        'duration'
     }
 
     if section_key in html_sections:

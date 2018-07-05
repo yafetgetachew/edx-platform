@@ -19,6 +19,7 @@ from xmodule.course_metadata_utils import DEFAULT_START_DATE
 from xmodule.graders import grader_from_conf
 from xmodule.seq_module import SequenceDescriptor, SequenceModule
 from xmodule.tabs import CourseTabList, InvalidTabsException
+from django.conf import settings
 from .fields import Date
 
 log = logging.getLogger(__name__)
@@ -31,6 +32,65 @@ CATALOG_VISIBILITY_CATALOG_AND_ABOUT = "both"
 CATALOG_VISIBILITY_ABOUT = "about"
 CATALOG_VISIBILITY_NONE = "none"
 
+# Variables US_STATE_CHOICES and DEFAULT_PROVIDER are repeated from lms/envs/common.py
+# because Django cannot be imported in this file.
+US_STATE_CHOICES = (
+   ("AL", "Alabama"),
+   ("AZ", "Arizona"),
+   ("AR", "Arkansas"),
+   ("CA", "California"),
+   ("CO", "Colorado"),
+   ("CT", "Connecticut"),
+   ("DE", "Delaware"),
+   ("FL", "Florida"),
+   ("GA", "Georgia"),
+   ("HI", "Hawaii"),
+   ("ID", "Idaho"),
+   ("IL", "Illinois"),
+   ("IN", "Indiana"),
+   ("KY", "Kentucky"),
+   ("LA", "Louisiana"),
+   ("MD", "Maryland"),
+   ("MA", "Massachusetts"),
+   ("ME", "Maine"),
+   ("MI", "Michigan"),
+   ("MS", "Mississippi"),
+   ("MO", "Missouri"),
+   ("NE", "Nebraska"),
+   ("NV", "Nevada"),
+   ("NH", "New Hampshire"),
+   ("NJ", "New Jersey"),
+   ("NM", "New Mexico"),
+   ("NY", "New York"),
+   ("NC", "North Carolina"),
+   ("ND", "North Dakota"),
+   ("OK", "Oklahoma"),
+   ("OR", "Oregon"),
+   ("PA", "Pennsylvania"),
+   ("RI", "Rhode Island"),
+   ("SC", "South Carolina"),
+   ("TN", "Tennessee"),
+   ("TX", "Texas"),
+   ("UT", "Utah"),
+   ("VT", "Vermont"),
+   ("VA", "Virginia"),
+   ("WA", "Washington"),
+   ("WV", "Wisconsin"),
+   ("WY", "Wyoming"),
+)
+
+DEFAULT_PROVIDER = {
+    "CT": "APL.000036",
+    "FL": "005614",
+    "GA": "7395",
+    "IN": "CE21600023",
+    "MI": "239",
+    "NC": "188",
+    "PA": "003065",
+    "SC": "90",
+    "UT": "ACE5680825",
+    "WY": "160"
+}
 
 class StringOrDate(Date):
     def from_json(self, value):
@@ -858,6 +918,13 @@ class CourseFields(object):
             "more of the base requirements, such as testing, accessibility, internationalization, and documentation."
         ),
         scope=Scope.settings, default=False
+    )
+
+    us_state = Dict(
+        scope=Scope.settings,
+        help='',
+        default={key: {'number': '', 'provider': DEFAULT_PROVIDER.get(key, '')}
+                 for key, value in US_STATE_CHOICES}
     )
 
 

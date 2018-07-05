@@ -107,8 +107,8 @@ from lms.envs.common import (
     CONTACT_EMAIL,
 
     DISABLE_ACCOUNT_ACTIVATION_REQUIREMENT_SWITCH,
-
-    US_STATE_CHOICES
+    US_STATE_CHOICES,
+    DEFAULT_PROVIDER,
 )
 from path import Path as path
 from warnings import simplefilter
