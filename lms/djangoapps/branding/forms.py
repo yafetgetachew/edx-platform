@@ -22,7 +22,7 @@ INQUIRY_TYPE = (
 
 
 class ContactForm(forms.Form):
-    full_name = forms.CharField(label=_('You name'), max_length=255)
+    full_name = forms.CharField(label=_('Full name'), max_length=255)
     email = forms.EmailField(label=_('You e-mail'), max_length=255)
     phone = forms.CharField(label=_('You phone'), max_length=16, required=False)
     i_am_a = forms.ChoiceField(choices=I_AM_A, required=True)
