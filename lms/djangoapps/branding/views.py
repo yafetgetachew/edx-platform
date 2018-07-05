@@ -24,6 +24,10 @@ from util.cache import cache_if_anonymous
 from util.json_request import JsonResponse
 from .forms import ContactForm
 
+from django.core.mail import send_mail
+from edxmako.shortcuts import render_to_string
+from django.contrib.auth.models import User
+from django.middleware.csrf import CsrfViewMiddleware
 log = logging.getLogger(__name__)
 
 
@@ -311,9 +315,35 @@ def footer(request):
 
 @require_http_methods(['GET', 'POST'])
 def contact_form(request):
-    error = {}
-    is_valid = False
+    sent_mail = False
+    form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        is_valid, error = form.get_status_form()
-    return render_to_response('static_templates/contact.html', {'error':error, 'is_valid':is_valid} )
+        if form.is_valid():
+            form_params = form.get_data
+            subject, message = get_subject_and_message(
+                "emails/contact_form_email_subject.txt", "emails/contact_form_email_message.txt", form_params
+            )
+            subject = ''.join(subject.splitlines())
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, get_honor_mail(), fail_silently=False)
+            sent_mail = True
+            if sent_mail:
+                form = ContactForm()
+
+    data = {'sent_mail':sent_mail, 'form': form}
+    return render_to_response('static_templates/contact.html', data )
+
+def get_honor_mail():
+    email_list = []
+    users = User.objects.all().filter(is_staff=True)
+    for user in users:
+        email_list.append(user.email)
+    return email_list
+
+def get_subject_and_message(subject_template, message_template, param_dict):
+    """
+    Return the rendered subject and message with the appropriate parameters.
+    """
+    subject = render_to_string(subject_template, param_dict)
+    message = render_to_string(message_template, param_dict)
+    return subject, message

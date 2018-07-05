@@ -42,6 +42,8 @@ urlpatterns = (
     # Performance endpoints
     url(r'', include('openedx.core.djangoapps.performance.urls')),
 
+    url(r'^contact$', 'branding.views.contact_form', name='contact_form'),
+
     # Static template view endpoints like blog, faq, etc.
     url(r'', include('static_template_view.urls')),
 
@@ -1035,6 +1037,3 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
         )
     )
 
-urlpatterns += (
-    url(r'^contact$', 'branding.views.contact_form', name='contact_form'),
-)
