@@ -2,6 +2,7 @@ from django import forms
 from django.utils.translation import ugettext as _
 
 I_AM_A = (
+    ('', '-- select --'),
     ('student', _("Student")),
     ('professor', _("Professor")),
     ('journalist', _("Journalist")),
@@ -10,6 +11,7 @@ I_AM_A = (
 )
 
 INQUIRY_TYPE = (
+    ('', '-- select --'),
     ('registration', _("Question about Registration and Activation")),
     ('technical', _("I am having a Technology Problem")),
     ('accessibility', _("Question about Accessibility for students with disabilities")),
