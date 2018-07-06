@@ -7,7 +7,7 @@ I_AM_A = {
     2: _("Professor"),
     3: _("Journalist"),
     4: _("University Administrator"),
-    5: _("Other")
+    5: _("Other"),
 }
 
 INQUIRY_TYPE = {
@@ -47,7 +47,7 @@ class ContactForm(forms.Form):
             ),
             error_row='<li>%s</li>',
             row_ender='</li>',
-            help_text_html=' <span class="helptext">%s</span>',
+            help_text_html='<span class="helptext">%s</span>',
             errors_on_separate_row=False,
         )
 
