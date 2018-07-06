@@ -53,5 +53,3 @@ class ContactForm(forms.Form):
 
     def save(self):
         raise NotImplementedError
-
-
