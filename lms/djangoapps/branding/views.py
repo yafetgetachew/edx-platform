@@ -325,7 +325,13 @@ def contact_form(request):
                 "emails/contact_form_email_subject.txt", "emails/contact_form_email_message.txt", form_params
             )
             subject = ''.join(subject.splitlines())
-            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, get_honor_mail(), fail_silently=False)
+            send_mail(
+                subject=subject,
+                message=message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=get_honor_mail(),
+                fail_silently=False
+            )
             sent_mail = True
             if sent_mail:
                 form = ContactForm()
