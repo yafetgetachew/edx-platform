@@ -20,7 +20,7 @@ class TestScoredBlockTypes(TestCase):
     Tests for the possibly_scored function.
     """
     possibly_scored_block_types = {
-        'course', 'chapter', 'sequential', 'vertical',
+        'course', 'chapter', 'sequential', 'vertical', 'scormxblock',
         'library_content', 'split_test', 'conditional', 'library', 'randomize',
         'problem', 'drag-and-drop-v2', 'openassessment', 'lti', 'lti_consumer',
         'videosequence', 'problemset', 'acid_parent', 'done', 'wrapper', 'edx_sga',
