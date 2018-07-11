@@ -6,7 +6,9 @@ import logging
 
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 from opaque_keys.edx.keys import CourseKey, UsageKey, BlockTypeKey
+from opaque_keys import InvalidKeyError
 
 log = logging.getLogger(__name__)
 
@@ -118,7 +120,10 @@ class OpaqueKeyField(models.CharField):
                     repr(value)
                 ))
                 value = value.rstrip()
-            return self.KEY_CLASS.from_string(value)
+            try:
+                return self.KEY_CLASS.from_string(value)
+            except InvalidKeyError:
+                return 'INVALID_OPAQUE_KEY'
         else:
             return value
 
@@ -154,6 +159,8 @@ class OpaqueKeyField(models.CharField):
         # raise validation error if the use of this field says it can't be blank but it is
         if not self.blank and value is self.Empty:
             raise ValidationError(self.error_messages['blank'])
+        elif value == 'INVALID_OPAQUE_KEY':
+            raise ValidationError(_('OpaqueKey is not valid.'))
         else:
             return super(OpaqueKeyField, self).validate(value, model_instance)
 
