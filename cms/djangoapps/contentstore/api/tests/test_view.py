@@ -89,8 +89,9 @@ class CourseImportViewTest(SharedModuleStoreTestCase, APITestCase):
             mock = Mock()
             mock.course_key = course_id
             find_all.append(mock)
-        with patch('student.auth.has_studio_read_access',
-                   Mock(side_effect=lambda user,course_key: options['has_studio_read_access'])) as has_access_mock:
+        side_mock_auth = Mock()
+        side_mock_auth.has_studio_read_access_value = options['has_studio_read_access']
+        with patch('student.auth.has_studio_read_access', side_mock_auth):
             with patch('course_action_state.models.CourseRerunState.objects.find_all',
                        Mock(side_effect=lambda exclude_args,should_display: find_all )) as course_rerun_mock:
                 resp = self.client.post('/api/courses/v0/check_rerun_courses/', {'courses': options['courses_ids']})
