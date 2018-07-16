@@ -89,10 +89,15 @@ class CourseImportViewTest(SharedModuleStoreTestCase, APITestCase):
             mock = Mock()
             mock.course_key = course_id
             find_all.append(mock)
-        side_mock_auth = Mock()
-        side_mock_auth.has_studio_read_access_value = options['has_studio_read_access']
-        with patch('student.auth.has_studio_read_access', side_mock_auth):
-            with patch('course_action_state.models.CourseRerunState.objects.find_all',
-                       Mock(side_effect=lambda exclude_args,should_display: find_all )) as course_rerun_mock:
+        course_rerun_mock = Mock()
+        course_rerun_mock.find_all.return_value = find_all
+        with patch(
+                'cms.djangoapps.contentstore.api.views.has_studio_read_access',
+                return_value=options['has_studio_read_access']
+        ):
+            with patch(
+                    'cms.djangoapps.contentstore.api.views.CourseRerunState.objects',
+                       course_rerun_mock
+            ) :
                 resp = self.client.post('/api/courses/v0/check_rerun_courses/', {'courses': options['courses_ids']})
                 self.assertEqual(resp.content, '{}'.format(options['is_reload']))
