@@ -4,7 +4,8 @@ This file contains Django middleware related to the site_configuration app.
 
 from django.conf import settings
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
-
+from django.core.urlresolvers import reverse, resolve
+from django.http import HttpResponseRedirect
 
 class SessionCookieDomainOverrideMiddleware(object):
     """
@@ -53,3 +54,27 @@ class SessionCookieDomainOverrideMiddleware(object):
             response.set_cookie = _set_cookie_wrapper
 
         return response
+
+
+class AuthorizationCheckMiddleware(object):
+    """
+    Middleware for checking the authorization of users.
+    if not authorized and  site's setting 'DISABLE_CHECK_AUTHORIZATION' is False
+    then redirects to the authorization page.
+    Administrator page exceptions.
+    """
+
+    def process_request(self, request):
+        """
+        Django middleware hook for process request
+        """
+        if (
+                not configuration_helpers.get_value('DISABLE_CHECK_AUTHORIZATION', False) and
+                request.method == 'GET' and
+                not request.user.is_authenticated() and
+                '/admin' not in request.get_full_path() and
+                'signin_user' != resolve(request.get_full_path()).url_name
+
+        ):
+            return HttpResponseRedirect(reverse('signin_user'))
+
