@@ -493,8 +493,9 @@
             };
 
             DiscussionContentShowView.prototype.getAuthorDisplay = function() {
+                var fullUserName = document.getElementsByClassName('label-username')[0].innerHTML;
                 return _.template($('#post-user-display-template').html())({
-                    username: this.model.get('username') || null,
+                    username: fullUserName || null,
                     user_url: this.model.get('user_url'),
                     is_community_ta: this.model.get('community_ta_authored'),
                     is_staff: this.model.get('staff_authored')
