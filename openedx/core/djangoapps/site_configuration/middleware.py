@@ -59,7 +59,8 @@ class SessionCookieDomainOverrideMiddleware(object):
 class AuthorizationCheckMiddleware(object):
     """
     Middleware for checking the authorization of users.
-    if not authorized and  site's setting 'DISABLE_CHECK_AUTHORIZATION' is False
+
+    If not authorized and  site's setting 'DISABLE_CHECK_AUTHORIZATION' is False
     then redirects to the authorization page.
     Administrator page exceptions.
     """
