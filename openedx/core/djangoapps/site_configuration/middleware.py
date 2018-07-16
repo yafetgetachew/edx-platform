@@ -77,4 +77,3 @@ class AuthorizationCheckMiddleware(object):
 
         ):
             return HttpResponseRedirect(reverse('signin_user'))
-
