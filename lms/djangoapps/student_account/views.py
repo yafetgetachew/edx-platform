@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse, resolve
 from django.http import (
-    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest
+    HttpResponse, HttpResponseBadRequest, HttpResponseForbidden, HttpRequest, Http404
 )
 from django.shortcuts import redirect
 from django.utils.translation import ugettext as _
@@ -67,6 +67,10 @@ def login_and_registration_form(request, initial_mode="login"):
         initial_mode (string): Either "login" or "register".
 
     """
+    if (initial_mode == "register"  and
+            not settings.FEATURES.get("ALLOW_PUBLIC_ACCOUNT_CREATION" , False)):
+        raise Http404(_('Page not found'))
+
     # Determine the URL to redirect to following login/registration/third_party_auth
     redirect_to = get_next_url_for_login_page(request)
     # If we're already logged in, redirect to the dashboard
