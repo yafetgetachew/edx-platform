@@ -1488,9 +1488,34 @@ class ShoppingCartViewsTests(SharedModuleStoreTestCase, XssTestMixin):
             self.assertEqual(resp.status_code, 200)
             self.assertNotIn('<a class="shopping-cart"', resp.content)
 
+@attr(shard=3)
+@patch.dict('django.conf.settings.FEATURES', {'ENABLE_PAID_COURSE_REGISTRATION': True})
+@ddt.ddt
+class ShoppingCartViewDeletedCourseTests(SharedModuleStoreTestCase, XssTestMixin):
+    """
+    Test shopping cart view deleted course under various states
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        super(ShoppingCartViewDeletedCourseTests, cls).setUpClass()
+        cls.course = CourseFactory.create(org='MITxx', number='9999', display_name='Robot Super Puper Course')
+        cls.course_key = cls.course.id
+
+    def setUp(self):
+        super(ShoppingCartViewDeletedCourseTests, self).setUp()
+        self.user = UserFactory.create()
+        self.user.set_password('password')
+        self.user.save()
+        self.cart = Order.get_cart_for_user(self.user)
+
+    def login_user(self):
+        self.client.login(username=self.user.username, password="password")
+
     @patch('shoppingcart.views.render_to_response', render_mock)
     def test_add_course_to_cart_and_delete_this_course(self):
         self.login_user()
+
         resp = self.client.post(reverse('shoppingcart.views.add_course_to_cart', args=[self.course_key.to_deprecated_string()]))
         self.assertEqual(resp.status_code, 200)
         self.assertTrue(PaidCourseRegistration.contained_in_order(self.cart, self.course_key))
