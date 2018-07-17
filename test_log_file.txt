@@ -1,1 +1,0 @@
-<django.conf.Settings object at 0x7f7e36186e50>
