@@ -983,3 +983,4 @@ urlpatterns += (
         )
     ),
 )
+WEBPACK_LOADER = {}
